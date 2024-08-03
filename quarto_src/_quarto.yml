@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: ../docs
+
+website:
+  title: "Max Jerdee"
+  navbar:
+    left:
+      - href: about.qmd
+        text: About Me
+      - href: research.qmd
+        text: Research
+      - href: publications.qmd
+        text: Publications
+        
+  
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - about.qmd
+      
+      - section: Projects
+        auto: projects
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
