@@ -1,0 +1,30 @@
+#grid {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    grid-gap: 5px;
+    margin: 20px auto;
+    width: 350px;
+  }
+  .cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .boundary {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #000;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .alive {
+    background-color: #F9B25A;
+  }
+  .pause {
+    background-color: #F55F5E;
+  }
+  .play {
+    background-color: #79FF56;
+  }

@@ -1,0 +1,21 @@
+---
+title: "Chaos sampler"
+format: html
+---
+
+```{=html}
+<div id="chaosContainer" style="display: flex; justify-content: space-between;">
+    <img id="chaos" width=400 src="../assets/images/lorentz_explainer.png" style="width: 55%;">
+    <img id="trajectory" width=400 src="../assets/images/lorentz_trajectory.png" style="width: 40%;">
+</div>
+<div id="recordContainer">
+    <img id="record" src="../assets/images/amen-record.png" alt="Record">
+</div>
+<button id="playButton">Play Sound</button>
+<link rel="stylesheet" href="../assets/css/chaos_sampler.css">
+<script src="../assets/js/chaos_sampler.js"></script> 
+```
+
+Chaotic systems are everywhere in nature. These systems are characterized by the way that small changes can snowball into massive changes in behavior, rendering them hard to predict. For example, in our planet’s climate the flap of a butterfly wing in the right place and right time can cause a hurricane to form. In this interactive demo we leverage the unpredictability of a simple chaotic system known as the Lorentz attractor to remix music recordings in unpredictable ways. Particularly, we split a recording (or “sample”) of music into evenly spaced chunks. A trajectory of the Lorentz attractor is then used to associate each of these pieces of the recording to a point in the system’s phase space. The music is then shuffled by continuing to run the trajectory and playing the chunk associated with the nearest written point in phase space at each step. By harnessing this chaos as a creative force we can play with this ubiquitous feature of the world in an accessible way.
+
+This demo made during the 2024 [SFI Complex Systems Summer School](https://www.santafe.edu/engage/learn/programs/sfi-complex-systems-summer-school) as part of the [Art and Complexity Collective](https://maxjerdee.github.io/CSSS-arts/), and was inspired by Liz Bradley's talks on [Nonlinear Dynamics](https://www.complexityexplorer.org/courses/94-nonlinear-dynamics-mathematical-and-computational-approaches-spring-2019). Particularly, heavy inspiration taken from Diana Dabby's work ([paper](https://doi.org/10.1063/1.166171), [video](https://www.youtube.com/watch?v=dL4VKuKNgXI)) on chaotic variations using the Lorentz attractor. 

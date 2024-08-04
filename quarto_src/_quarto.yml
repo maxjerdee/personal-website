@@ -4,24 +4,26 @@ project:
 
 website:
   title: "Max Jerdee"
+  favicon: assets/images/icon.svg
   navbar:
     left:
-      - href: about.qmd
-        text: About Me
       - href: research.qmd
         text: Research
       - href: publications.qmd
         text: Publications
-        
+      - href: cv.qmd
+        text: CV
+
   
   sidebar:
     style: "docked"
     search: true
     contents:
-      - about.qmd
-      
-      - section: Projects
-        auto: projects
+      - section: Blog
+        auto: blog
+
+      - section: Extras
+        auto: extras
 
 format:
   html:

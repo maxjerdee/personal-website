@@ -2,6 +2,6 @@
 title: "Max(imilian) Jerdee"
 ---
 
+![](../assets/images/profile.jpg){width=3in}
 
-
-
+I am a Physics PhD student at the University of Michigan advised by Prof. Mark Newman. I like to research topics between physics, networks, and statistics. I also like to build somewhat educational tools and games.
