@@ -1,8 +1,9 @@
 ---
 title: "Demos"
 listing:
+  type: grid
   contents:
     - "demos/*.qmd"
 ---
 
-Assorted projects that I have worked on over the years, generally try to engage with a neat scientific idea in an interactive way.
+Assorted projects I have worked on, generally try to explore a neat idea in an interactive way.

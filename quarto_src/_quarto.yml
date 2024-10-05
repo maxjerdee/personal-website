@@ -11,10 +11,10 @@ website:
         text: Research
       - href: publications.qmd
         text: Publications
-      - href: blog.qmd
-        text: Blog
       - href: demos.qmd
         text: Demos
+      - href: blog.qmd
+        text: Blog
       - href: cv.qmd
         text: CV
 
@@ -23,11 +23,11 @@ website:
     style: "docked"
     search: true
     contents:
-      - section: Blog
-        auto: blog
-
       - section: Demos
         auto: demos
+
+      - section: Blog
+        auto: blog
 
 format:
   html:
