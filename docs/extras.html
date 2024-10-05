@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Max Jerdee - Extras</title>
+<title>Max Jerdee - Demos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./assets/images/icon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,7 +69,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -116,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Extras</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Demos</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -159,41 +219,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Extras</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./extras/chaos_sampler.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Chaos sampler</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./extras/game_of_life.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Game of life</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./extras/relativity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Relativity demo</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./extras/wikiguess.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WikiGuess</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -207,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Extras</h1>
+<h1 class="title">Demos</h1>
 </div>
 
 
@@ -224,10 +249,106 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Here are some random projects that I have worked on over the years, the general theme is trying to create an interactive way to engage with a neat scientific idea.</p>
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1722784182556" data-listing-reading-time-sort="2" data-listing-word-count-sort="249">
+<div class="thumbnail">
+<p><a href="./demos/chaos_sampler.html" class="no-external"></a></p><a href="./demos/chaos_sampler.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./demos/chaos_sampler.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./demos/chaos_sampler.html" class="no-external">Chaos sampler</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./demos/chaos_sampler.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./demos/chaos_sampler.html" class="no-external"></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./demos/chaos_sampler.html" class="no-external"></a></p><a href="./demos/chaos_sampler.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1722785439420" data-listing-reading-time-sort="2" data-listing-word-count-sort="259">
+<div class="thumbnail">
+<p><a href="./demos/game_of_life.html" class="no-external"></a></p><a href="./demos/game_of_life.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./demos/game_of_life.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./demos/game_of_life.html" class="no-external">Game of life</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./demos/game_of_life.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./demos/game_of_life.html" class="no-external"></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./demos/game_of_life.html" class="no-external"></a></p><a href="./demos/game_of_life.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1722784696818" data-listing-reading-time-sort="1" data-listing-word-count-sort="114">
+<div class="thumbnail">
+<p><a href="./demos/relativity.html" class="no-external"></a></p><a href="./demos/relativity.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./demos/relativity.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./demos/relativity.html" class="no-external">Relativity demo</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./demos/relativity.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./demos/relativity.html" class="no-external"></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./demos/relativity.html" class="no-external"></a></p><a href="./demos/relativity.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1722784937473" data-listing-reading-time-sort="1" data-listing-word-count-sort="56">
+<div class="thumbnail">
+<p><a href="./demos/wikiguess.html" class="no-external"></a></p><a href="./demos/wikiguess.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./demos/wikiguess.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./demos/wikiguess.html" class="no-external">WikiGuess</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./demos/wikiguess.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./demos/wikiguess.html" class="no-external"></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./demos/wikiguess.html" class="no-external"></a></p><a href="./demos/wikiguess.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/blog/information_theory.html",
+      "/blog/luck_and_depth.html"
+    ]
+  },
+  {
+    "listing": "/demos.html",
+    "items": [
+      "/demos/chaos_sampler.html",
+      "/demos/game_of_life.html",
+      "/demos/relativity.html",
+      "/demos/wikiguess.html"
+    ]
+  }
+]
