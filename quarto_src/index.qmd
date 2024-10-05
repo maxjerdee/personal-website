@@ -4,12 +4,13 @@ about:
   template: solana
   image: ../assets/images/profile.jpg
   links:
-    - icon: email
-      text: email
-      href: https://twitter.com
+    - text: "{{< iconify ic outline-email >}} Email"
+      href: mailto:mjerdee@umich.edu
     - icon: github
       text: Github
       href: https://github.com/maxjerdee
+    - text: "{{< iconify academicons google-scholar >}} Google Scholar"
+      href: https://scholar.google.com/citations?user=t13Mib4AAAAJ&hl=en
 ---
 
 I am a Physics PhD student at the University of Michigan advised by Prof. [Mark Newman](https://websites.umich.edu/~mejn/) and affiliated with the [Center for the Study of Complex Systems](https://lsa.umich.edu/cscs). 
