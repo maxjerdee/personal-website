@@ -11,8 +11,10 @@ website:
         text: Research
       - href: publications.qmd
         text: Publications
-      - href: extras.qmd
-        text: Extras
+      - href: blog.qmd
+        text: Blog
+      - href: demos.qmd
+        text: Demos
       - href: cv.qmd
         text: CV
 
@@ -24,8 +26,8 @@ website:
       - section: Blog
         auto: blog
 
-      - section: Extras
-        auto: extras
+      - section: Demos
+        auto: demos
 
 format:
   html:

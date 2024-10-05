@@ -1,0 +1,10 @@
+---
+title: "Blog"
+listing:
+    sort: "date desc"
+    type: default
+    contents:
+        - "blog/*.qmd"
+---
+
+Test-based ramblings

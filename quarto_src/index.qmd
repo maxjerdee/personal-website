@@ -1,7 +1,17 @@
 ---
 title: "Max(imilian) Jerdee"
+about:
+  template: solana
+  image: ../assets/images/profile.jpg
+  links:
+    - icon: email
+      text: email
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com/maxjerdee
 ---
 
-![](../assets/images/profile.jpg){width=3in}
+I am a Physics PhD student at the University of Michigan advised by Prof. [Mark Newman](https://websites.umich.edu/~mejn/) and affiliated with the [Center for the Study of Complex Systems](https://lsa.umich.edu/cscs). 
 
-I am a Physics PhD student at the University of Michigan advised by Prof. Mark Newman. I enjoy researching topics between physics, networks, and statistics ([more info here](publications.qmd)). I also like to build somewhat educational tools and games, mostly housed on this website [here](extras.qmd).
+I enjoy researching topics between physics, networks, and statistics ([more info here](research.qmd)) and building somewhat educational tools and games ([check them out](demos.qmd)).
