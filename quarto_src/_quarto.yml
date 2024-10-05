@@ -11,6 +11,8 @@ website:
         text: Research
       - href: publications.qmd
         text: Publications
+      - href: extras.qmd
+        text: Extras
       - href: cv.qmd
         text: CV
 

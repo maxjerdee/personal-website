@@ -4,22 +4,20 @@ title: "Publications"
 
 ## Pre-prints
 
-- **M. Jerdee**, A. Kirkley, and M. E. J. Newman, Mutual information and the encoding of contingency tables. Preprint arXiv:2405.05393 (2024).
-- **M. Jerdee** and M. E. J. Newman, Luck, skill, and depth of competition in games and social
-hierarchies. Preprint arXiv:2312.04711 (2023).
-- **M. Jerdee**, A. Kirkley, and M. E. J. Newman, Normalized mutual information is a biased measure
-for classification and community detection. Preprint arXiv:2307.01282 (2023).
-
+(@) **M. Jerdee**, A. Kirkley, and M. E. J. Newman, Normalized mutual information is a biased measure
+for classification and community detection. [Preprint arXiv:2307.01282](https://arxiv.org/abs/2307.01282) (2024).
 
 ## Peer reviewed journal publications
 
-- **M. Jerdee**, A. Kirkley, and M. E. J. Newman, Improved estimates for the number of non-negative
-integer matrices with given row and column sums. *Proc. R. Soc. London A* 480, 20230470 (2024).
-- A. G. Lezcano, **M. Jerdee**, and L. A. P. Zayas, Cardy expansion of 3d superconformal indices
-and corrections to the dual black hole entropy. *Journal of High Energy Physics* 1, 1–46 (2023).
-- D. J. Binder, S. M. Chester, and **M. Jerdee**, ABJ correlators with weakly broken higher spin
-symmetry. *Journal of High Energy Physics* 4, 1–57 (2021).
-- D. J. Binder, S. M. Chester, **M. Jerdee**, and S. S. Pufu, The 3d N = 6 bootstrap: from higher
-spins to strings to membranes. *Journal of High Energy Physics* 5, 1–63 (2021).
-- P. Melchior, F. Moolekamp, **M. Jerdee**, R. Armstrong, A. L. Sun, J. Bosch, and R. Lupton,
-SCARLET: Source separation in multi-band images by constrained matrix factorization. *Astronomy and Computing* 24, 129–142 (2018).
+(@) **M. Jerdee**, A. Kirkley, and M. E. J. Newman, Mutual information and the encoding of contingency tables. *in press, Physical Review E*. [Preprint arXiv:2405.05393](https://arxiv.org/abs/2405.05393) (2024).
+(@) **M. Jerdee** and M. E. J. Newman, Luck, skill, and depth of competition in games and social hierarchies. *in press, Science Advances*. [Preprint arXiv:2312.04711](https://arxiv.org/abs/2312.04711) (2024).
+(@) **M. Jerdee**, A. Kirkley, and M. E. J. Newman, Improved estimates for the number of non-negative
+integer matrices with given row and column sums. [*Proc. R. Soc. London A*](https://doi.org/10.1098/rspa.2023.0470) 480, 20230470 (2024).
+(@) A. G. Lezcano, **M. Jerdee**, and L. A. P. Zayas, Cardy expansion of 3d superconformal indices
+and corrections to the dual black hole entropy. [*Journal of High Energy Physics*](https://arxiv.org/abs/2210.12065) 1, 1–46 (2023).
+(@) D. J. Binder, S. M. Chester, and **M. Jerdee**, ABJ correlators with weakly broken higher spin
+symmetry. [*Journal of High Energy Physics*](https://arxiv.org/pdf/2103.01969) 4, 1–57 (2021).
+(@) D. J. Binder, S. M. Chester, **M. Jerdee**, and S. S. Pufu, The 3d N = 6 bootstrap: from higher
+spins to strings to membranes. [*Journal of High Energy Physics*](https://arxiv.org/abs/2011.05728) 5, 1–63 (2021).
+(@) P. Melchior, F. Moolekamp, **M. Jerdee**, R. Armstrong, A. L. Sun, J. Bosch, and R. Lupton,
+SCARLET: Source separation in multi-band images by constrained matrix factorization. [*Astronomy and Computing*](https://arxiv.org/abs/1802.10157) 24, 129–142 (2018).
