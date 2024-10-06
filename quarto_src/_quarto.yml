@@ -25,9 +25,11 @@ website:
     contents:
       - section: Demos
         auto: demos
+        max-items: 5
 
       - section: Blog
         auto: blog
+        max-items: 5
 
 format:
   html:

@@ -1,6 +1,6 @@
 ---
-title: "Implementing special relativity"
-description: "Some interesting work-arounds"
+title: "Demonstrating special relativity"
+description: "Working around phone accelerometer limitations for the demo"
 categories:
   - Demo explainer
   - Physics

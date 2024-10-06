@@ -79,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -224,7 +224,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./demos/relativity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Relativity</span></a>
+ <span class="menu-text">Special relativity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -246,14 +246,74 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./blog/information_theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Information theory</span></a>
+  <a href="./blog/asymmetric_matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Counting matrices with given margins</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/inference_and_information.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inference and information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/ising_SBM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The ising model and the SBM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./blog/luck_and_depth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Luck and depth</span></a>
+ <span class="menu-text">Measuring depth in sports and social hierarchies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/MI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding mutual information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/NMI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normalizing mutual information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/relativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Special relativity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/relativity_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demonstrating special relativity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/RMI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reducing mutual information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/SBM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Stochastic Block Model (SBM)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/wikiguess_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Generating Fermi problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog/wikipedia_numbers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Half-life of history</span></a>
   </div>
 </li>
       </ul>
@@ -265,7 +325,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -295,50 +355,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1722746191196" data-listing-reading-time-sort="1" data-listing-word-count-sort="3">
-<div class="thumbnail">
-<p><a href="./blog/information_theory.html" class="no-external"></a></p><a href="./blog/information_theory.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./blog/information_theory.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blog/information_theory.html" class="no-external">Information theory</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blog/information_theory.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./blog/information_theory.html" class="no-external">(Insightful explanation here)</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./blog/information_theory.html" class="no-external"></a></p><a href="./blog/information_theory.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1728160788942" data-listing-reading-time-sort="1" data-listing-word-count-sort="14">
-<div class="thumbnail">
-<p><a href="./blog/luck_and_depth.html" class="no-external"></a></p><a href="./blog/luck_and_depth.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./blog/luck_and_depth.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blog/luck_and_depth.html" class="no-external">Luck and depth</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./blog/luck_and_depth.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./blog/luck_and_depth.html" class="no-external">(A simple explanation of what is going on with the luck and depth paper.)</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./blog/luck_and_depth.html" class="no-external"></a></p><a href="./blog/luck_and_depth.html" class="no-external">
-</a>
-</div>
-</div>
+
 </div>
 <div class="listing-no-matching d-none">
 No matching items

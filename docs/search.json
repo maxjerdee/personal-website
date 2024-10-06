@@ -25,18 +25,18 @@
     "href": "demos.html",
     "title": "Demos",
     "section": "",
-    "text": "Assorted projects I have worked on, generally try to explore a neat idea in an interactive way.\n\n\n\n\n\n\n\n\n\n\n\n\nChaos sampler\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGame of life\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRelativity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWikiGuess\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Assorted projects I have worked on, generally try to explore a neat idea in an interactive way.\n\n\n\n\n\n\n\n\n\n\n\n\nChaos sampler\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGame of life\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial relativity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWikiGuess\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "demos/relativity.html",
     "href": "demos/relativity.html",
-    "title": "Relativity",
+    "title": "Special relativity",
     "section": "",
-    "text": "When you move faster, your personal (relative!) time slows down. This is one of the many suprising consequences of the theory of relativity, that space and time are intwined into a single ``spacetime” and that the actions we take in one dimension (moving through space) can impact our trajectory through the other (moving through time). This demo uses your phone’s accelerometer data in order to estimate your velocity, and so estimate how much your time slows down as you walk around.\nThis demo was built as part of the Fall 2021 Science Communication Fellows program at the University of Michigan Museum of Natural History.",
+    "text": "When you move faster, your personal (relative!) time slows down. This is one of the many suprising consequences of the theory of relativity, that space and time are intwined into a single spacetime and that the actions we take in one dimension (moving through space) can impact our trajectory through the other (moving through time). This demo uses your phone’s accelerometer data in order to estimate your velocity, and so estimate how much your time slows down as you walk around.\nThis demo was built as part of the Fall 2021 Science Communication Fellows program at the University of Michigan Museum of Natural History.",
     "crumbs": [
       "Research",
       "Demos",
-      "Relativity"
+      "Special relativity"
     ]
   },
   {
@@ -56,31 +56,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Text-based ramblings\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInformation theory\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLuck and depth\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "blog/information_theory.html",
-    "href": "blog/information_theory.html",
-    "title": "Information theory",
-    "section": "",
-    "text": "(Insightful explanation here)",
-    "crumbs": [
-      "Research",
-      "Blog",
-      "Information theory"
-    ]
-  },
-  {
-    "objectID": "blog/luck_and_depth.html",
-    "href": "blog/luck_and_depth.html",
-    "title": "Luck and depth",
-    "section": "",
-    "text": "(A simple explanation of what is going on with the luck and depth paper.)",
-    "crumbs": [
-      "Research",
-      "Blog",
-      "Luck and depth"
-    ]
+    "text": "Text-based ramblings\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "demos/game_of_life.html",
@@ -132,7 +108,7 @@
     "href": "research.html#scalable-inference",
     "title": "Research interests",
     "section": "Scalable inference",
-    "text": "Scalable inference\nAs network models grow more complex, the demands on the computational tools intensify. Each new model represents a competing hypothesis to explain observed data, making model selection crucial. In semi-supervised cases, where algorithm output is checked against known truths, I develop unbiased information-theoretic measures of similarity to declare winners. In unsupervised settings, ideally I aim to use Bayesian evidence—the probability that a given model generates the observed data—to adjudicate between models. This Bayesian evidence is the free energy of the corresponding physical system, and so we can apply and enhance computational physics techniques to approximate it. As data sets grow larger, Monte Carlo methods for full Bayesian inference become prohibitively expensive, necessitating approximations like mean field methods and belief propagation algorithms. Refining these methods and understanding their asymptotic performance is therefore essential to both the understanding of condensed matter and the rigorous analysis of ever larger data sets."
+    "text": "Scalable inference\nAs network models grow more complex, the demands on the underlying computational tools intensify. Each new model represents a competing hypothesis to explain observed data, making model selection crucial. In semi-supervised cases, where algorithm output is checked against known truths, I develop unbiased information-theoretic measures of similarity to declare winners. In unsupervised settings, ideally I aim to use Bayesian evidence—the probability that a given model generates the observed data—to adjudicate between models. This Bayesian evidence is the free energy of the corresponding physical system, and so we can apply and enhance computational physics techniques to approximate it. As data sets grow larger, Monte Carlo methods for full Bayesian inference become prohibitively expensive, necessitating approximations like mean field methods and belief propagation algorithms. Refining these methods and understanding their asymptotic performance is therefore essential to both the understanding of condensed matter and the rigorous analysis of ever larger data sets."
   },
   {
     "objectID": "research.html#asymptotic-understanding",
@@ -147,5 +123,12 @@
     "title": "Research interests",
     "section": "Implementation and outreach",
     "text": "Implementation and outreach\nHolistically, my research goals encompass refining these tools and ensuring their effective application. I am particularly interested in developing online interactive materials to communicate and package these ideas. This effort not only increases visibility of our methodological advances but also enhances educational accessibility and engagement with science for broader audiences."
+  },
+  {
+    "objectID": "research.html#hierarchies",
+    "href": "research.html#hierarchies",
+    "title": "Research interests",
+    "section": "Hierarchies",
+    "text": "Hierarchies\nWhen players enter a sports tournament, humans attend a high school, or chickens are put in a coop, a hierarchy tends to emerge. This pecking order might be reflected in chess game victories, unreciprocated friendships, or chicken pecks. Over the last century many models have been developed and applied to understand and predict these patterns. In recent work, we have developed a Bayesian model to infer both the order of these hierarchies and notably their degree of inequity. We have found a good deal of variation between these settings. Sports leagues tend to be fairly competitive and unpredictable, while animal hierarchies are very unequal and rigid. On this spectrum, human social hierarchies between friends or institutions tend to fall in the middle. With this ability to measure the degree of social inequality, I hope to more deeply analyze the root causes of social inequality and characterize the types of shapes the distribution of social status can take. What societal factors lead one high school to be more socially stratified than another? What are differences in outcomes among those at the top and bottom of a social hierarchy?"
   }
 ]
