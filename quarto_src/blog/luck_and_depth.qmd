@@ -1,7 +1,14 @@
 ---
-title: "Luck and depth"
+title: "Measuring depth in sports and social hierarchies"
+description: "Sports are competitive, animal hierarchies are strict, friendship hierarchies are in between"
+categories:
+  - Hierarchies
+  - Paper explainer
+date: last-modified
+draft: true
 ---
 
-(A simple explanation of what is going on with the luck and depth paper.)
+
+
 
 

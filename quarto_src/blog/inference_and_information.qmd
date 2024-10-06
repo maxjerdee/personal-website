@@ -1,0 +1,10 @@
+---
+title: "Inference and information"
+description: "Thinking about Bayesian inference with information theory"
+categories:
+  - Information theory
+date: last-modified
+draft: true
+---
+
+

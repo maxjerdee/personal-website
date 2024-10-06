@@ -3,6 +3,7 @@ title: "Blog"
 listing:
     sort: "date desc"
     type: default
+    categories: true
     contents: blog
 ---
 

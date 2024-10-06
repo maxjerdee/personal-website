@@ -1,0 +1,11 @@
+---
+title: "The ising model and the SBM"
+description: "We can interpret the SBM as an ising model, and thus do neat physics"
+categories:
+  - Community detection
+  - Physics
+date: last-modified
+draft: true
+---
+
+

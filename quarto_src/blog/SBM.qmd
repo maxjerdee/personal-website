@@ -1,0 +1,11 @@
+---
+title: "The Stochastic Block Model (SBM)"
+description: "Correcting the bias of the mutual information towards finding too many communities"
+categories:
+  - Community detection
+  - Post with code
+date: last-modified
+draft: true
+---
+
+

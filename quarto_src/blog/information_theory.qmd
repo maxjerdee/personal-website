@@ -1,5 +1,0 @@
----
-title: "Information theory"
----
-
-(Insightful explanation here)

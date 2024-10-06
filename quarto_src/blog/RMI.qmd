@@ -1,0 +1,15 @@
+---
+title: "Reducing mutual information"
+description: "Correcting the bias of the mutual information towards finding too many communities"
+categories:
+  - Paper explainer
+  - Community detection
+  - Information theory
+date: last-modified
+draft: true
+---
+
+
+
+
+

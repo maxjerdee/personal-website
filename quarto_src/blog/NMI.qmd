@@ -1,0 +1,15 @@
+---
+title: "Normalizing mutual information"
+description: "How and why the mutual information is normalized"
+categories:
+  - Paper explainer
+  - Community detection
+  - Information theory
+date: last-modified
+draft: true
+---
+
+
+
+
+

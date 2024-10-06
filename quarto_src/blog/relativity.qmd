@@ -1,0 +1,14 @@
+---
+title: "Special relativity"
+description: "Your time slows down when you move quickly, try it on your phone!"
+categories:
+  - Physics
+date: last-modified
+draft: true
+---
+
+
+
+
+
+
