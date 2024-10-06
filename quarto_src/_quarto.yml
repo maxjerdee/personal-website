@@ -15,7 +15,7 @@ website:
         text: Demos
       - href: blog.qmd
         text: Blog
-      - href: cv.qmd
+      - href: CV.qmd
         text: CV
 
   

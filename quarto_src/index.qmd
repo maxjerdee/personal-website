@@ -11,6 +11,8 @@ about:
       href: https://github.com/maxjerdee
     - text: "{{< iconify academicons google-scholar >}} Google Scholar"
       href: https://scholar.google.com/citations?user=t13Mib4AAAAJ&hl=en
+    - text: "CV"
+      href: CV.qmd
 ---
 
 I am a Physics PhD student at the University of Michigan advised by Prof. [Mark Newman](https://websites.umich.edu/~mejn/) and affiliated with the [Center for the Study of Complex Systems](https://lsa.umich.edu/cscs). 

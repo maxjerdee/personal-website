@@ -3,7 +3,7 @@ title: "WikiGuess"
 format: html
 ---
 
-![](../assets/images/wikiguess.png){width=3in}
+![](../assets/images/WikiGuess.png){width=3in}
 
 An estimation game where you can guess numbers from all sorts of wikipedia excerpts. You can also play with friends online by creating a room and guessing on the same questions. In making it, there are some interesting questions about what makes a number fun to guess. 
 
