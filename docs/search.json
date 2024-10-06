@@ -1,22 +1,22 @@
 [
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
+    "objectID": "papers.html",
+    "href": "papers.html",
+    "title": "Papers",
     "section": "",
     "text": "M. Jerdee, A. Kirkley, and M. E. J. Newman, Normalized mutual information is a biased measure for classification and community detection. Preprint arXiv:2307.01282 (2024)."
   },
   {
-    "objectID": "publications.html#pre-prints",
-    "href": "publications.html#pre-prints",
-    "title": "Publications",
+    "objectID": "papers.html#pre-prints",
+    "href": "papers.html#pre-prints",
+    "title": "Papers",
     "section": "",
     "text": "M. Jerdee, A. Kirkley, and M. E. J. Newman, Normalized mutual information is a biased measure for classification and community detection. Preprint arXiv:2307.01282 (2024)."
   },
   {
-    "objectID": "publications.html#peer-reviewed-journal-publications",
-    "href": "publications.html#peer-reviewed-journal-publications",
-    "title": "Publications",
+    "objectID": "papers.html#peer-reviewed-journal-publications",
+    "href": "papers.html#peer-reviewed-journal-publications",
+    "title": "Papers",
     "section": "Peer reviewed journal publications",
     "text": "Peer reviewed journal publications\n\nM. Jerdee, A. Kirkley, and M. E. J. Newman, Mutual information and the encoding of contingency tables. in press, Physical Review E. Preprint arXiv:2405.05393 (2024).\nM. Jerdee and M. E. J. Newman, Luck, skill, and depth of competition in games and social hierarchies. in press, Science Advances. Preprint arXiv:2312.04711 (2024). [code] [video]\nM. Jerdee, A. Kirkley, and M. E. J. Newman, Improved estimates for the number of non-negative integer matrices with given row and column sums. Proc. R. Soc. London A 480, 20230470 (2024). [code]\nA. G. Lezcano, M. Jerdee, and L. A. P. Zayas, Cardy expansion of 3d superconformal indices and corrections to the dual black hole entropy. Journal of High Energy Physics 1, 1–46 (2023).\nD. J. Binder, S. M. Chester, and M. Jerdee, ABJ correlators with weakly broken higher spin symmetry. Journal of High Energy Physics 4, 1–57 (2021).\nD. J. Binder, S. M. Chester, M. Jerdee, and S. S. Pufu, The 3d \\(\\mathcal{N} = 6\\) bootstrap: from higher spins to strings to membranes. Journal of High Energy Physics 5, 1–63 (2021).\nP. Melchior, F. Moolekamp, M. Jerdee, R. Armstrong, A. L. Sun, J. Bosch, and R. Lupton, SCARLET: Source separation in multi-band images by constrained matrix factorization. Astronomy and Computing 24, 129–142 (2018)."
   },
@@ -110,26 +110,5 @@
     "title": "Research interests",
     "section": "Implementation and outreach",
     "text": "Implementation and outreach\nHolistically, my research goals encompass refining these tools and ensuring their effective application. I am particularly interested in developing online interactive materials to communicate and package these ideas. This effort not only increases visibility of our methodological advances but also enhances educational accessibility and engagement with science for broader audiences."
-  },
-  {
-    "objectID": "papers.html",
-    "href": "papers.html",
-    "title": "Papers",
-    "section": "",
-    "text": "M. Jerdee, A. Kirkley, and M. E. J. Newman, Normalized mutual information is a biased measure for classification and community detection. Preprint arXiv:2307.01282 (2024)."
-  },
-  {
-    "objectID": "papers.html#pre-prints",
-    "href": "papers.html#pre-prints",
-    "title": "Papers",
-    "section": "",
-    "text": "M. Jerdee, A. Kirkley, and M. E. J. Newman, Normalized mutual information is a biased measure for classification and community detection. Preprint arXiv:2307.01282 (2024)."
-  },
-  {
-    "objectID": "papers.html#peer-reviewed-journal-publications",
-    "href": "papers.html#peer-reviewed-journal-publications",
-    "title": "Papers",
-    "section": "Peer reviewed journal publications",
-    "text": "Peer reviewed journal publications\n\nM. Jerdee, A. Kirkley, and M. E. J. Newman, Mutual information and the encoding of contingency tables. in press, Physical Review E. Preprint arXiv:2405.05393 (2024).\nM. Jerdee and M. E. J. Newman, Luck, skill, and depth of competition in games and social hierarchies. in press, Science Advances. Preprint arXiv:2312.04711 (2024). [code] [video]\nM. Jerdee, A. Kirkley, and M. E. J. Newman, Improved estimates for the number of non-negative integer matrices with given row and column sums. Proc. R. Soc. London A 480, 20230470 (2024). [code]\nA. G. Lezcano, M. Jerdee, and L. A. P. Zayas, Cardy expansion of 3d superconformal indices and corrections to the dual black hole entropy. Journal of High Energy Physics 1, 1–46 (2023).\nD. J. Binder, S. M. Chester, and M. Jerdee, ABJ correlators with weakly broken higher spin symmetry. Journal of High Energy Physics 4, 1–57 (2021).\nD. J. Binder, S. M. Chester, M. Jerdee, and S. S. Pufu, The 3d \\(\\mathcal{N} = 6\\) bootstrap: from higher spins to strings to membranes. Journal of High Energy Physics 5, 1–63 (2021).\nP. Melchior, F. Moolekamp, M. Jerdee, R. Armstrong, A. L. Sun, J. Bosch, and R. Lupton, SCARLET: Source separation in multi-band images by constrained matrix factorization. Astronomy and Computing 24, 129–142 (2018)."
   }
 ]

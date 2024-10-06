@@ -11,7 +11,7 @@ about:
       href: https://github.com/maxjerdee
     - text: "{{< iconify academicons google-scholar >}} Scholar"
       href: https://scholar.google.com/citations?user=t13Mib4AAAAJ&hl=en
-    - text: "CV"
+    - text: "{{< iconify carbon document >}} CV"
       href: CV.qmd
 ---
 

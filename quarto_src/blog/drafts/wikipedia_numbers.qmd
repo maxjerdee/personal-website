@@ -5,6 +5,6 @@ categories:
 date: last-modified
 ---
 
-As part of my [WikiGuess](https://www.wikiguess.io) project, I've ended up combing through lots of the numbers in wikipedia articles in order to try and generate interesting numbers to guess (details about that process [here](wikiguess_questions.md)). Part of that process has included trying to specifically detect numbers that represent years on the
+As part of my [WikiGuess](https://www.wikiguess.io) project, I've ended up combing through lots of the numbers in wikipedia articles in order to try and generate interesting numbers to guess (details about that process [here](wikiguess_questions.qmd)). Part of that process has included trying to specifically detect numbers that represent years on the
 
 
