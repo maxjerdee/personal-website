@@ -1,5 +1,6 @@
 ---
 title: "Special relativity"
+description: "Use your phone to observe how much your time slows down as you move around"
 ---
 
 When you move faster, your personal (relative!) time slows down. This is one of the many suprising consequences of the theory of relativity, that space and time are intwined into a single *spacetime* and that the actions we take in one dimension (moving through space) can impact our trajectory through the other (moving through time). This [demo](https://www.wikiguess.io/demo) uses your phone's accelerometer data in order to estimate your velocity, and so estimate how much your time slows down as you walk around. 

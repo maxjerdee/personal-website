@@ -1,0 +1,21 @@
+---
+title: "Measuring depth in sports and social hierarchies"
+description: "Sports are competitive, animal hierarchies are strict, friendship hierarchies are in between"
+categories:
+  - Hierarchies
+  - Paper explainer
+date: last-modified
+---
+ 
+This in an informal presentation of [this paper](https://arxiv.org/abs/2312.04711) done in collaboration with Mark Newman. 
+
+- Various different applications that we can treat as a hierarchical question
+- Elo scores as a popular model for quantifying strengths
+- Also talk a bit about luck, and how we might? interpret the presence of a luck component in the animal data sets. 
+
+Recording of a talk on the paper:
+{{< video https://www.youtube.com/watch?v=zD7d2-ZWikY >}}
+
+
+
+

@@ -1,0 +1,10 @@
+---
+title: "Bayesian model selection"
+description: "Any model will 'fit' data, how can we sort out which to trust?"
+categories:
+    - Model selection
+date: last-modified
+---
+
+- Discuss many of the possible ways that one can perform model selection. Frame that the way that I often prefer to do this is with the Bayesian evidence, and can talk about various different ways that this can be approximated. 
+- Structure this around the demonstration for curves through points.

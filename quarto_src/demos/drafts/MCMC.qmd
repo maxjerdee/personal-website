@@ -1,0 +1,7 @@
+---
+title: "MCMC"
+description: "Explore the Metropolis-Hastings algorithm with hopping frogs"
+format: html
+---
+
+The lilypad simulation, link to John's book and the general hub for the demos. 

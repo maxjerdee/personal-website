@@ -18,38 +18,28 @@
     "href": "publications.html#peer-reviewed-journal-publications",
     "title": "Publications",
     "section": "Peer reviewed journal publications",
-    "text": "Peer reviewed journal publications\n\nM. Jerdee, A. Kirkley, and M. E. J. Newman, Mutual information and the encoding of contingency tables. in press, Physical Review E. Preprint arXiv:2405.05393 (2024).\nM. Jerdee and M. E. J. Newman, Luck, skill, and depth of competition in games and social hierarchies. in press, Science Advances. Preprint arXiv:2312.04711 (2024).\nM. Jerdee, A. Kirkley, and M. E. J. Newman, Improved estimates for the number of non-negative integer matrices with given row and column sums. Proc. R. Soc. London A 480, 20230470 (2024).\nA. G. Lezcano, M. Jerdee, and L. A. P. Zayas, Cardy expansion of 3d superconformal indices and corrections to the dual black hole entropy. Journal of High Energy Physics 1, 1–46 (2023).\nD. J. Binder, S. M. Chester, and M. Jerdee, ABJ correlators with weakly broken higher spin symmetry. Journal of High Energy Physics 4, 1–57 (2021).\nD. J. Binder, S. M. Chester, M. Jerdee, and S. S. Pufu, The 3d \\(\\mathcal{N} = 6\\) bootstrap: from higher spins to strings to membranes. Journal of High Energy Physics 5, 1–63 (2021).\nP. Melchior, F. Moolekamp, M. Jerdee, R. Armstrong, A. L. Sun, J. Bosch, and R. Lupton, SCARLET: Source separation in multi-band images by constrained matrix factorization. Astronomy and Computing 24, 129–142 (2018)."
+    "text": "Peer reviewed journal publications\n\nM. Jerdee, A. Kirkley, and M. E. J. Newman, Mutual information and the encoding of contingency tables. in press, Physical Review E. Preprint arXiv:2405.05393 (2024).\nM. Jerdee and M. E. J. Newman, Luck, skill, and depth of competition in games and social hierarchies. in press, Science Advances. Preprint arXiv:2312.04711 (2024). [code] [video]\nM. Jerdee, A. Kirkley, and M. E. J. Newman, Improved estimates for the number of non-negative integer matrices with given row and column sums. Proc. R. Soc. London A 480, 20230470 (2024). [code]\nA. G. Lezcano, M. Jerdee, and L. A. P. Zayas, Cardy expansion of 3d superconformal indices and corrections to the dual black hole entropy. Journal of High Energy Physics 1, 1–46 (2023).\nD. J. Binder, S. M. Chester, and M. Jerdee, ABJ correlators with weakly broken higher spin symmetry. Journal of High Energy Physics 4, 1–57 (2021).\nD. J. Binder, S. M. Chester, M. Jerdee, and S. S. Pufu, The 3d \\(\\mathcal{N} = 6\\) bootstrap: from higher spins to strings to membranes. Journal of High Energy Physics 5, 1–63 (2021).\nP. Melchior, F. Moolekamp, M. Jerdee, R. Armstrong, A. L. Sun, J. Bosch, and R. Lupton, SCARLET: Source separation in multi-band images by constrained matrix factorization. Astronomy and Computing 24, 129–142 (2018)."
   },
   {
     "objectID": "demos.html",
     "href": "demos.html",
     "title": "Demos",
     "section": "",
-    "text": "Assorted projects I have worked on, generally try to explore a neat idea in an interactive way.\n\n\n\n\n\n\n\n\n\n\n\n\nChaos sampler\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGame of life\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial relativity\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWikiGuess\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Assorted projects I have worked on, generally try to explore a neat idea in an interactive way.\n\n\n\n\n\n\n\n\n\n\n\n\nChaos sampler\n\n\nUse a chaotic system to chop up beat samples\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGame of life\n\n\nMake music with Conway’s game of life\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial relativity\n\n\nUse your phone to observe how much your time slows down as you move around\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWikiGuess\n\n\nCompete with friends to estimate numbers from Wikipedia\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "demos/relativity.html",
     "href": "demos/relativity.html",
     "title": "Special relativity",
     "section": "",
-    "text": "When you move faster, your personal (relative!) time slows down. This is one of the many suprising consequences of the theory of relativity, that space and time are intwined into a single spacetime and that the actions we take in one dimension (moving through space) can impact our trajectory through the other (moving through time). This demo uses your phone’s accelerometer data in order to estimate your velocity, and so estimate how much your time slows down as you walk around.\nThis demo was built as part of the Fall 2021 Science Communication Fellows program at the University of Michigan Museum of Natural History.",
-    "crumbs": [
-      "Research",
-      "Demos",
-      "Special relativity"
-    ]
+    "text": "When you move faster, your personal (relative!) time slows down. This is one of the many suprising consequences of the theory of relativity, that space and time are intwined into a single spacetime and that the actions we take in one dimension (moving through space) can impact our trajectory through the other (moving through time). This demo uses your phone’s accelerometer data in order to estimate your velocity, and so estimate how much your time slows down as you walk around.\nThis demo was built as part of the Fall 2021 Science Communication Fellows program at the University of Michigan Museum of Natural History."
   },
   {
     "objectID": "demos/chaos_sampler.html",
     "href": "demos/chaos_sampler.html",
     "title": "Chaos sampler",
     "section": "",
-    "text": "Play Sound\n\n \nChaotic systems are everywhere in nature. These systems are characterized by the way that small changes can snowball into massive changes in behavior, rendering them hard to predict. For example, in our planet’s climate the flap of a butterfly wing in the right place and right time can cause a hurricane to form. In this interactive demo we leverage the unpredictability of a simple chaotic system known as the Lorentz attractor to remix music recordings in unpredictable ways. Particularly, we split a recording (or “sample”) of music into evenly spaced chunks. A trajectory of the Lorentz attractor is then used to associate each of these pieces of the recording to a point in the system’s phase space. The music is then shuffled by continuing to run the trajectory and playing the chunk associated with the nearest written point in phase space at each step. By harnessing this chaos as a creative force we can play with this ubiquitous feature of the world in an accessible way.\nThis demo made during the 2024 SFI Complex Systems Summer School as part of the Art and Complexity Collective, and was inspired by Liz Bradley’s talks on Nonlinear Dynamics. Particularly, heavy inspiration taken from Diana Dabby’s work (paper, video) on chaotic variations using the Lorentz attractor.",
-    "crumbs": [
-      "Research",
-      "Demos",
-      "Chaos sampler"
-    ]
+    "text": "Play Sound\n\n \nChaotic systems are everywhere in nature. These systems are characterized by the way that small changes can snowball into massive changes in behavior, rendering them hard to predict. For example, in our planet’s climate the flap of a butterfly wing in the right place and right time can cause a hurricane to form. In this interactive demo we leverage the unpredictability of a simple chaotic system known as the Lorentz attractor to remix music recordings in unpredictable ways. Particularly, we split a recording (or “sample”) of music into evenly spaced chunks. A trajectory of the Lorentz attractor is then used to associate each of these pieces of the recording to a point in the system’s phase space. The music is then shuffled by continuing to run the trajectory and playing the chunk associated with the nearest written point in phase space at each step. By harnessing this chaos as a creative force we can play with this ubiquitous feature of the world in an accessible way.\nThis demo made during the 2024 SFI Complex Systems Summer School as part of the Art and Complexity Collective, and was inspired by Liz Bradley’s talks on Nonlinear Dynamics. Particularly, heavy inspiration taken from Diana Dabby’s work (paper, video) on chaotic variations using the Lorentz attractor."
   },
   {
     "objectID": "blog.html",
@@ -63,24 +53,14 @@
     "href": "demos/game_of_life.html",
     "title": "Game of life",
     "section": "",
-    "text": "Conway’s game of life is a compact, elegant example of how simple principles can generate complex behaviors. The “game” is played on a 2-dimensional grid, and loosely simulates changes in the population of a species over space and time. Each grid square may either be “alive” or “dead” at each time interval. Only if a grid cell has between 3 and 5 of its 8 neighbors alive will it be alive and happy on the next turn, otherwise it will die of either under- or over-crowding. From this simple rule alone, very complicated behavior can be observed. In this demo we simulate this game of life and play sounds when each of the grid cells is alive. We also mirror our simulation on a Novation Launchpad, an 8 x 8 grid of buttons that can light up with colors. By creating a unified physical, auditory, and visual experience we have an engaging mode to play with this toy example of how complexity can emerge.\nThis demo made during the 2024 SFI Complex Systems Summer School as part of the Art and Complexity Collective.\nIf you plug in a Novation Mini [MK3], you can interact with this demonstration live. That is also what the request to “reprogram your MIDI devices” is about, otherwise you can select “Block” and simply click on the buttons within the browser.\n\n\n\nExample of asking for permissions, unless you are plugging in a Launchpad can select to Block",
-    "crumbs": [
-      "Research",
-      "Demos",
-      "Game of life"
-    ]
+    "text": "Conway’s game of life is a compact, elegant example of how simple principles can generate complex behaviors. The “game” is played on a 2-dimensional grid, and loosely simulates changes in the population of a species over space and time. Each grid square may either be “alive” or “dead” at each time interval. Only if a grid cell has between 3 and 5 of its 8 neighbors alive will it be alive and happy on the next turn, otherwise it will die of either under- or over-crowding. From this simple rule alone, very complicated behavior can be observed. In this demo we simulate this game of life and play sounds when each of the grid cells is alive. We also mirror our simulation on a Novation Launchpad, an 8 x 8 grid of buttons that can light up with colors. We hope that by creating a unified physical, auditory, and visual experience we have an engaging mode to play with this toy example of how complexity can emerge.\nThis demo made during the 2024 SFI Complex Systems Summer School as part of the Art and Complexity Collective.\nIf you plug in a Novation Mini [MK3], you can interact with this demonstration live. That is also what the request to “reprogram your MIDI devices” is about, otherwise you can select “Block” and simply click on the buttons within the browser.\n\n\n\nExample of asking for permissions, unless you are plugging in a Launchpad can select to Block"
   },
   {
     "objectID": "demos/wikiguess.html",
     "href": "demos/wikiguess.html",
     "title": "WikiGuess",
     "section": "",
-    "text": "An estimation game where you can guess numbers from all sorts of wikipedia excerpts. You can also play with friends online by creating a room and guessing on the same questions. In making it, there are some interesting questions about what makes a number fun to guess.\nPlay here (the multiplayer is still a bit buggy)",
-    "crumbs": [
-      "Research",
-      "Demos",
-      "WikiGuess"
-    ]
+    "text": "An estimation game where you can guess numbers from all sorts of wikipedia excerpts. You can also play with friends online by creating a room and guessing on the same questions. In making it, there are some interesting questions about what makes a number fun to guess.\nPlay here (the multiplayer is still a bit buggy)"
   },
   {
     "objectID": "index.html",
@@ -104,6 +84,13 @@
     "text": "Community detection\nA central problem in network science is community detection: identifying latent groups of network nodes with similar behavior. For instance, a school friend group might be defined as a collection of students who are more frequently connected with each other than with those outside the group. This intuitive definition translates into the stochastic block model (SBM), where the model likelihood represents the probability that a given underlying friend group structure would generate the observed network. By inverting this generative model to perform inference, the SBM identifies the most probable friend groups based on the observed friendships. Although first introduced in this sociological context, the SBM is just a form of Ising model or Potts model. In this correspondence, each site represents a student. If the spin is up, the student belongs to one group; if down, they belong to the other. Just as the ground state configuration of the ferromagnetic Ising model minimizes different-spin neighbors, the best fit to the SBM minimizes unlikely friendships between different groups. Thus, many network inference questions can be recast in physical language and solved with physical tools. The same Monte Carlo algorithms used to find ground states and explore entropically typical configurations can be repurposed to fit network models. I look to refine these methods to extend the application of the stochastic model to settings where it consistently exhibits biases."
   },
   {
+    "objectID": "research.html#hierarchies",
+    "href": "research.html#hierarchies",
+    "title": "Research interests",
+    "section": "Hierarchies",
+    "text": "Hierarchies\nWhen players enter a sports tournament, humans attend a high school, or chickens are put in a coop, a hierarchy tends to emerge. This pecking order might be reflected in chess game victories, unreciprocated friendships, or chicken pecks. Over the last century many models have been developed and applied to understand and predict these patterns. In recent work, we have developed a Bayesian model to infer both the order of these hierarchies and notably their degree of inequity. We have found a good deal of variation between these settings. Sports leagues tend to be fairly competitive and unpredictable, while animal hierarchies are very unequal and rigid. On this spectrum, human social hierarchies between friends or institutions tend to fall in the middle. With this ability to measure the degree of social inequality, I hope to more deeply analyze the root causes of social inequality and characterize the types of shapes the distribution of social status can take. What societal factors lead one high school to be more socially stratified than another? What are differences in outcomes among those at the top and bottom of a social hierarchy?"
+  },
+  {
     "objectID": "research.html#scalable-inference",
     "href": "research.html#scalable-inference",
     "title": "Research interests",
@@ -125,10 +112,24 @@
     "text": "Implementation and outreach\nHolistically, my research goals encompass refining these tools and ensuring their effective application. I am particularly interested in developing online interactive materials to communicate and package these ideas. This effort not only increases visibility of our methodological advances but also enhances educational accessibility and engagement with science for broader audiences."
   },
   {
-    "objectID": "research.html#hierarchies",
-    "href": "research.html#hierarchies",
-    "title": "Research interests",
-    "section": "Hierarchies",
-    "text": "Hierarchies\nWhen players enter a sports tournament, humans attend a high school, or chickens are put in a coop, a hierarchy tends to emerge. This pecking order might be reflected in chess game victories, unreciprocated friendships, or chicken pecks. Over the last century many models have been developed and applied to understand and predict these patterns. In recent work, we have developed a Bayesian model to infer both the order of these hierarchies and notably their degree of inequity. We have found a good deal of variation between these settings. Sports leagues tend to be fairly competitive and unpredictable, while animal hierarchies are very unequal and rigid. On this spectrum, human social hierarchies between friends or institutions tend to fall in the middle. With this ability to measure the degree of social inequality, I hope to more deeply analyze the root causes of social inequality and characterize the types of shapes the distribution of social status can take. What societal factors lead one high school to be more socially stratified than another? What are differences in outcomes among those at the top and bottom of a social hierarchy?"
+    "objectID": "papers.html",
+    "href": "papers.html",
+    "title": "Papers",
+    "section": "",
+    "text": "M. Jerdee, A. Kirkley, and M. E. J. Newman, Normalized mutual information is a biased measure for classification and community detection. Preprint arXiv:2307.01282 (2024)."
+  },
+  {
+    "objectID": "papers.html#pre-prints",
+    "href": "papers.html#pre-prints",
+    "title": "Papers",
+    "section": "",
+    "text": "M. Jerdee, A. Kirkley, and M. E. J. Newman, Normalized mutual information is a biased measure for classification and community detection. Preprint arXiv:2307.01282 (2024)."
+  },
+  {
+    "objectID": "papers.html#peer-reviewed-journal-publications",
+    "href": "papers.html#peer-reviewed-journal-publications",
+    "title": "Papers",
+    "section": "Peer reviewed journal publications",
+    "text": "Peer reviewed journal publications\n\nM. Jerdee, A. Kirkley, and M. E. J. Newman, Mutual information and the encoding of contingency tables. in press, Physical Review E. Preprint arXiv:2405.05393 (2024).\nM. Jerdee and M. E. J. Newman, Luck, skill, and depth of competition in games and social hierarchies. in press, Science Advances. Preprint arXiv:2312.04711 (2024). [code] [video]\nM. Jerdee, A. Kirkley, and M. E. J. Newman, Improved estimates for the number of non-negative integer matrices with given row and column sums. Proc. R. Soc. London A 480, 20230470 (2024). [code]\nA. G. Lezcano, M. Jerdee, and L. A. P. Zayas, Cardy expansion of 3d superconformal indices and corrections to the dual black hole entropy. Journal of High Energy Physics 1, 1–46 (2023).\nD. J. Binder, S. M. Chester, and M. Jerdee, ABJ correlators with weakly broken higher spin symmetry. Journal of High Energy Physics 4, 1–57 (2021).\nD. J. Binder, S. M. Chester, M. Jerdee, and S. S. Pufu, The 3d \\(\\mathcal{N} = 6\\) bootstrap: from higher spins to strings to membranes. Journal of High Energy Physics 5, 1–63 (2021).\nP. Melchior, F. Moolekamp, M. Jerdee, R. Armstrong, A. L. Sun, J. Bosch, and R. Lupton, SCARLET: Source separation in multi-band images by constrained matrix factorization. Astronomy and Computing 24, 129–142 (2018)."
   }
 ]

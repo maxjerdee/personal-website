@@ -1,0 +1,9 @@
+---
+title: "Thermodynamic integration for model selection"
+description: "Using MCMC sampling to approximate the model evidence"
+categories:
+  - Model selection
+date: last-modified
+---
+
+- Typically Monte Carlo methods are used in order to sample from the posterior distribution of a model. However, using some neat tricks borrowed from statistical physics it is possible to approximate the model evidence directly. 

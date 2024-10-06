@@ -1,5 +1,6 @@
 ---
 title: "Game of life"
+description: "Make music with Conway's game of life"
 format: html
 ---
 
@@ -18,7 +19,7 @@ format: html
 
 ```
  
-Conway’s game of life is a compact, elegant example of how simple principles can generate complex behaviors. The “game” is played on a 2-dimensional grid, and loosely simulates changes in the population of a species over space and time. Each grid square may either be “alive” or “dead” at each time interval. Only if a grid cell has between 3 and 5 of its 8 neighbors alive will it be alive and happy on the next turn, otherwise it will die of either under- or over-crowding. From this simple rule alone, very complicated behavior can be observed. In this demo we simulate this game of life and play sounds when each of the grid cells is alive. We also mirror our simulation on a Novation Launchpad, an 8 x 8 grid of buttons that can light up with colors. By creating a unified physical, auditory, and visual experience we have an engaging mode to play with this toy example of how complexity can emerge.
+Conway’s game of life is a compact, elegant example of how simple principles can generate complex behaviors. The “game” is played on a 2-dimensional grid, and loosely simulates changes in the population of a species over space and time. Each grid square may either be “alive” or “dead” at each time interval. Only if a grid cell has between 3 and 5 of its 8 neighbors alive will it be alive and happy on the next turn, otherwise it will die of either under- or over-crowding. From this simple rule alone, very complicated behavior can be observed. In this demo we simulate this game of life and play sounds when each of the grid cells is alive. We also mirror our simulation on a Novation Launchpad, an 8 x 8 grid of buttons that can light up with colors. We hope that by creating a unified physical, auditory, and visual experience we have an engaging mode to play with this toy example of how complexity can emerge.
 
 This demo made during the 2024 [SFI Complex Systems Summer School](https://www.santafe.edu/engage/learn/programs/sfi-complex-systems-summer-school) as part of the [Art and Complexity Collective](https://maxjerdee.github.io/CSSS-arts/). 
 

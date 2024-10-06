@@ -1,0 +1,7 @@
+---
+title: "Flipping coins"
+description: "Flip coins and observe how Bayesian inference works"
+format: html
+---
+
+Flip coins and observe how Bayesian inference works

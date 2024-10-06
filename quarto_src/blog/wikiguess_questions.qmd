@@ -1,8 +1,0 @@
----
-title: "Generating Fermi problems"
-description: "How can we automatically generate interesting estimation problems?"
-categories:
-  - Demo explainer
-date: last-modified
-draft: true
----

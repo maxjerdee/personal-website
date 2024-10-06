@@ -1,0 +1,21 @@
+---
+title: "Special relativity"
+description: "Your time slows down when you move quickly, try it on your phone!"
+categories:
+  - Physics
+date: last-modified
+---
+
+- When you move faster, your time slows down. 
+- Classic example of one twin blasting off in a rocket ship while the other stays at home, by the end of it there is a big difference in ages
+- However, our technologies don't go quite this fast, although there are some examples of non-neglible changes in time occuring.
+- GPS example of how this matters. 
+- Interactive demo (need to use your phone), [link](relativity_demo.qmd) to explanation of how the demo works. 
+- Explanation that this is all a result of the idea that there is a single universal speed of light, something has to give. 
+- Train derivation of the equation that is then fed into the demo.
+- Spacetime, movement as a rotation of spacetime, just like a spatial rotation. 
+- Minkowski metric
+
+
+
+

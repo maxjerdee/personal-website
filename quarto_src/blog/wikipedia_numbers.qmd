@@ -1,7 +1,0 @@
----
-title: "Half-life of history"
-description: "A tour through the numbers in Wikipedia articles"
-categories:
-date: last-modified
-draft: true
----

@@ -9,27 +9,14 @@ website:
     left:
       - href: research.qmd
         text: Research
-      - href: publications.qmd
-        text: Publications
+      - href: papers.qmd
+        text: Papers
       - href: demos.qmd
         text: Demos
       - href: blog.qmd
         text: Blog
       - href: CV.qmd
         text: CV
-
-  
-  sidebar:
-    style: "docked"
-    search: true
-    contents:
-      - section: Demos
-        auto: demos
-        max-items: 5
-
-      - section: Blog
-        auto: blog
-        max-items: 5
 
 format:
   html:

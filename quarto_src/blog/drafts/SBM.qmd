@@ -1,0 +1,10 @@
+---
+title: "The Stochastic Block Model (SBM)"
+description: "Correcting the bias of the mutual information towards finding too many communities"
+categories:
+  - Community detection
+  - Post with code
+date: last-modified
+---
+
+A central problem in network science is community detection: identifying latent groups of network nodes with similar behavior. For instance, a school friend group might be defined as a collection of students who are more frequently connected with each other than with those outside the group. This intuitive definition translates into the stochastic block model (SBM), where the model likelihood represents the probability that a given underlying friend group structure would generate the observed network. By inverting this generative model to perform inference, the SBM identifies the most probable friend groups based on the observed friendships. 

@@ -1,0 +1,8 @@
+---
+title: "Curves through points"
+format: html
+---
+
+Interactive demonstration of how we can select what the appropriate model is for a line through a point. 
+
+With the larger models there might be some issues with performance. 

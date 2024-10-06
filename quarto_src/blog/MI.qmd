@@ -1,9 +1,0 @@
----
-title: "Understanding mutual information"
-description: "What the mutual information is, some of its variants and where it is used"
-categories:
-  - Community detection
-  - Information theory
-date: last-modified
-draft: true
----

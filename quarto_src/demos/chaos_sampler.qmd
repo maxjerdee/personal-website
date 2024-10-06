@@ -1,5 +1,6 @@
 ---
 title: "Chaos sampler"
+description: "Use a chaotic system to chop up beat samples"
 format: html
 ---
 

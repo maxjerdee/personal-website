@@ -1,0 +1,9 @@
+---
+title: "Probability test"
+format: html
+---
+
+A little demo asking people to click on buttons with certain probabilities. Also an exploration of what the appropriate way to score how well people do at this task. Presumably people are not great at actually clicking on things with certain probability ranges.
+
+The whole idea is to show that we are not random in our decisions, and generally that it is hard to reckon with numbers. Maybe in some accompanying post I can try to talk about the pyschology of lotteries. 
+

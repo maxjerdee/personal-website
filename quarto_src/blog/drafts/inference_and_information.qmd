@@ -1,0 +1,10 @@
+---
+title: "Inference and information"
+description: "Thinking about Bayesian inference with information theory"
+categories:
+  - Information theory
+date: last-modified
+---
+
+- Quick review of how we quantify information.
+- Equivalence of selecting the parameters that work best for MDL and finding the MAP estimate. 

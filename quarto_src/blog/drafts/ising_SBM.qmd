@@ -1,0 +1,12 @@
+---
+title: "The ising model and the SBM"
+description: "We can interpret the SBM as an ising model, and thus do neat physics"
+categories:
+  - Community detection
+  - Physics
+date: last-modified
+---
+
+A central problem in network science is community detection: identifying latent groups of network nodes with similar behavior. For instance, a school friend group might be defined as a collection of students who are more frequently connected with each other than with those outside the group. This intuitive definition translates into the stochastic block model (SBM), where the model likelihood represents the probability that a given underlying friend group structure would generate the observed network. By inverting this generative model to perform inference, the SBM identifies the most probable friend groups based on the observed friendships. Although first introduced in this sociological context, the SBM is just a form of Ising model or Potts model. In this correspondence, each site represents a student. If the spin is up, the student belongs to one group; if down, they belong to the other. Just as the ground state configuration of the ferromagnetic Ising model minimizes different-spin neighbors, the best fit to the SBM minimizes unlikely friendships between different groups. Thus, many network inference questions can be recast in physical language and solved with physical tools. The same Monte Carlo algorithms used to find ground states and explore entropically typical configurations can be repurposed to fit network models. I look to refine these methods to extend the application of the stochastic model to settings where it consistently exhibits biases.
+
+- Show the figure from the PGSS presentation about the correspondence and the phase transition that we observe. 

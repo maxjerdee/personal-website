@@ -1,0 +1,11 @@
+---
+title: "Understanding mutual information"
+description: "What the mutual information is, some of its variants and where it is used"
+categories:
+  - Community detection
+  - Information theory
+  - Model selection
+date: last-modified
+---
+
+Mutual information is a similarity measure often used to compare the output of two clusterings of the same set of objects. For example, we could be given a set of people 

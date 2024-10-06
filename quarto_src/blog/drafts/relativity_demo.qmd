@@ -1,0 +1,16 @@
+---
+title: "Demonstrating special relativity"
+description: "Working around phone accelerometer limitations for the demo"
+categories:
+  - Demo explainer
+  - Physics
+date: last-modified
+---
+
+- Some extra details I thought were interesting about how the relativity demo works with your phone accelerometer.
+- Link to the context and explanation of the demonstration.
+
+
+
+
+

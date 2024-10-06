@@ -1,0 +1,15 @@
+---
+title: "Counting matrices with given margins"
+description: "Tricks for counting types of matrices, and why that's useful"
+categories:
+  - Paper explainer
+  - Combinatorics
+date: last-modified
+---
+
+This in an informal presentation of [this paper](https://doi.org/10.1098/rspa.2023.0470) done in collaboration with Alec Kirkley and Mark Newman. 
+
+- Should make a figure that schematically shows what is going on in this process
+- Make a picture of what the question is.
+- Explain the importance of answering these types of combinatorial questions to creating microcanonical network models. 
+

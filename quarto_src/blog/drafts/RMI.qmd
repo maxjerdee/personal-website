@@ -1,0 +1,14 @@
+---
+title: "Reducing mutual information"
+description: "Correcting the bias of the mutual information towards finding too many communities"
+categories:
+  - Paper explainer
+  - Community detection
+  - Information theory
+date: last-modified
+---
+
+This in an informal presentation of [this paper](https://arxiv.org/abs/2405.05393) done in collaboration with Alec Kirkley and Mark Newman. 
+
+
+

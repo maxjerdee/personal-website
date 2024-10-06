@@ -9,7 +9,7 @@ about:
     - icon: github
       text: Github
       href: https://github.com/maxjerdee
-    - text: "{{< iconify academicons google-scholar >}} Google Scholar"
+    - text: "{{< iconify academicons google-scholar >}} Scholar"
       href: https://scholar.google.com/citations?user=t13Mib4AAAAJ&hl=en
     - text: "CV"
       href: CV.qmd
