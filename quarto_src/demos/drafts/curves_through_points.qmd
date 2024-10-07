@@ -3,6 +3,7 @@ title: "Curves through points"
 format: html
 ---
 
-Interactive demonstration of how we can select what the appropriate model is for a line through a point. 
+Interactive demonstration of how we can select what the appropriate model is for a line through a point. We should also have a mode that deals with particular one dimensional samples (This can be the M&M data, income data). Should also include the ability to change (and effectively represent) the x and y error bars. Also, there should be a "simulate random outcome" that samples from the posterior distribution of the model. I think that this one would also just generally be useful for actual analysis so there should be a version of it that is not educational but where you can just directly import and export data. (I would probably use this for the various covariances that we are doing). 
 
-With the larger models there might be some issues with performance. 
+With the larger models there might be some issues with performance. Maybe this should also link to some code that does this? I think that the computation should ideally not be happening in javascript so that it is possible to download the code and run it yourself. Maybe this is an R thing? ugh
+

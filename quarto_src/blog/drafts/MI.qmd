@@ -9,3 +9,6 @@ date: last-modified
 ---
 
 Mutual information is a similarity measure often used to compare the output of two clusterings of the same set of objects. For example, we could be given a set of people 
+
+- Base this off of that Northeastern talk:
+- Go through how we can understand the correspondence between probability and information. 

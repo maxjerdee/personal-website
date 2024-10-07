@@ -110,5 +110,54 @@
     "title": "Research interests",
     "section": "Implementation and outreach",
     "text": "Implementation and outreach\nHolistically, my research goals encompass refining these tools and ensuring their effective application. I am particularly interested in developing online interactive materials to communicate and package these ideas. This effort not only increases visibility of our methodological advances but also enhances educational accessibility and engagement with science for broader audiences."
+  },
+  {
+    "objectID": "blog/2024/luck_and_depth.html",
+    "href": "blog/2024/luck_and_depth.html",
+    "title": "Measuring depth in sports and social hierarchies",
+    "section": "",
+    "text": "This in an informal presentation of this paper done in collaboration with Mark Newman. A talk on this work may be found here."
+  },
+  {
+    "objectID": "blog/2024/luck_and_depth.html#examples",
+    "href": "blog/2024/luck_and_depth.html#examples",
+    "title": "Measuring depth in sports and social hierarchies",
+    "section": "Examples",
+    "text": "Examples\nMany classic examples of hierarchies come from games and sports. Suppose that we observe a series of matches between boxers. We can arrange the outcomes of these matches into a directed network where an arrow point from boxer A to boxer B indicates that boxer A won over boxer B. From these observations, a natural question arises of who is the best boxer? In the example of Figure 1 it’s not immetiately obvious, everybody has lost at least one match. Fundamentally the decision about what the appropriate way to rank these boxers requires some sort of judgement call about what is valued in a ranking. In this work we take a probabilistic, modeling approach that tries to tell a story about how the wins and losses came to be. (More on that in the Section 3 Section)\n\n\n\n\n\n\nFigure 1: Translating matches between boxers into a directed network of interactions."
+  },
+  {
+    "objectID": "blog/2024/luck_and_depth.html#results",
+    "href": "blog/2024/luck_and_depth.html#results",
+    "title": "Measuring depth in sports and social hierarchies",
+    "section": "Results",
+    "text": "Results\nThe details of how this is done\n\n\n\nMeasured depths of various hierarchies. Sports tend to have low depth, human hierarchies have medium depth, while animal hierarchies are high depth."
+  },
+  {
+    "objectID": "blog/2024/luck_and_depth.html#methods",
+    "href": "blog/2024/luck_and_depth.html#methods",
+    "title": "Measuring depth in sports and social hierarchies",
+    "section": "Methods",
+    "text": "Methods\n\nThe Bradley-Terry model\n\n\nDefining depth\n\n\nMeasuring depth\n\n\nDefining luck\n\n\nMeasuring luck and depth\n\nVarious different applications that we can treat as a hierarchical question\nElo scores as a popular model for quantifying strengths\nAlso talk a bit about luck, and how we might? interpret the presence of a luck component in the animal data sets.\n\nIt’s fun to talk about this kind of work, and I’ve given a few recorded talks about it if you’d like to check them out:"
+  },
+  {
+    "objectID": "blog/2024/luck_and_depth.html#sec-methods",
+    "href": "blog/2024/luck_and_depth.html#sec-methods",
+    "title": "Measuring depth in sports and social hierarchies",
+    "section": "Methods",
+    "text": "Methods\n\nThe Bradley-Terry model\nOur model is built on the Bradley-Terry model, ::: {.grid} ::: {.g-col-8}\n::: ::: {.g-col-4}\n::: :::\n\n\nDefining depth\n\n\nMeasuring depth\n\n\nDefining luck\n\n\nMeasuring luck and depth\n\nVarious different applications that we can treat as a hierarchical question\nElo scores as a popular model for quantifying strengths\nAlso talk a bit about luck, and how we might? interpret the presence of a luck component in the animal data sets.\n\nIt’s fun to talk about this kind of work, and I’ve given a few recorded talks about it if you’d like to check them out:"
+  },
+  {
+    "objectID": "blog/2024/luck_and_depth.html#examples-of-hierarchies",
+    "href": "blog/2024/luck_and_depth.html#examples-of-hierarchies",
+    "title": "Measuring depth in sports and social hierarchies",
+    "section": "Examples of hierarchies",
+    "text": "Examples of hierarchies\nMany classic examples of hierarchies come from games and sports. Suppose that we observe a series of matches between boxers. We can arrange the outcomes of these matches into a directed network where an arrow pointing from boxer A to boxer B indicates that boxer A won over boxer B. From these observations, a natural question arises of who is the best boxer? In the example of Figure 1 it’s not immetiately obvious, everybody has lost at least one match. Fundamentally the decision about what the appropriate way to rank these boxers requires some sort of judgement call about what is valued in a ranking. In this work we take a probabilistic, modeling approach that tries to tell a story about how the wins and losses came to be. (More details in Section 3)\n\n\n\n\n\n\nFigure 1: Translating matches between boxers into a directed network of interactions.\n\n\n\n\n\n\n\n\n\nFigure 2: Other examples of hierarchies. Pecks among chickens, consumer preferences between sodas, unreciprocated friendships, faculty hiring between universities."
+  },
+  {
+    "objectID": "blog/2024/luck_and_depth.html#comparing-hierarchies",
+    "href": "blog/2024/luck_and_depth.html#comparing-hierarchies",
+    "title": "Measuring depth in sports and social hierarchies",
+    "section": "Comparing hierarchies",
+    "text": "Comparing hierarchies\nSkipping past the details of how we actually carry out this analysis,\n\n\n\nMeasured depths of various hierarchies. Sports tend to have low depth, human hierarchies have medium depth, while animal hierarchies are high depth."
   }
 ]

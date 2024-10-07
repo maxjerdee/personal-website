@@ -4,4 +4,5 @@ description: "Flip coins and observe how Bayesian inference works"
 format: html
 ---
 
-Flip coins and observe how Bayesian inference works
+- Interactive coin flip example where you can choose the type of coin that is being flipped and see the Bayesian evidence update. Also should include the ability to do model selection. 
+- Generally I'm not sure how I would like to incorporate the ability to toggle between possibile modes of operation for the simulation. I need to be able to have some sort of set up with divs that can flex around each other in order to make the mobile responsiveness work well. 

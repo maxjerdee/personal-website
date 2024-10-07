@@ -10,5 +10,8 @@ date: last-modified
 
 This in an informal presentation of [this paper](https://arxiv.org/abs/2405.05393) done in collaboration with Alec Kirkley and Mark Newman. 
 
-
+- Issues with the usual mutual information. Too many groups, show example of this bias. 
+- Ways that people have gone about correcting for this. 
+- Flat encoding
+- Optimized Dirichlet-Multinomial encoding
 

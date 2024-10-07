@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: ../docs
+  resources:
+  - "../docs/assets"
 
 website:
   title: "Max Jerdee"
@@ -20,7 +22,9 @@ website:
 
 format:
   html:
-    theme: flatly
+    theme:
+      light: flatly
+      dark: darkly
     css: styles.css
     toc: true
 

@@ -1,0 +1,7 @@
+---
+title: "Word generator"
+description: "Generate random words based on chosen criteria"
+format: html
+---
+
+- An online random word generator like this can be useful for games, particularly the language learning charades. Can also be a neat exploration of semantic space. (word2vec explanation)

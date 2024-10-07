@@ -3,4 +3,6 @@ title: "Newton's cradle"
 format: html
 ---
 
-Simulate a newton's cradle, particularly interested in the number of possible modes of clicking that we can achieve. Maybe also show music notation for the kinds of rhythms that this produces. 
+- Simulate a newton's cradle, particularly interested in the number of possible modes of clicking that we can achieve. Maybe also show music notation for the kinds of rhythms that this produces. 
+- Generally I think that it would be nice to have a little rhythm game with music notation. 
+

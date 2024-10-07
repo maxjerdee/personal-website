@@ -6,4 +6,20 @@ categories:
 date: last-modified
 ---
 
+- Based on the Copenhagen presentation (which still needs to be made)
 - Typically Monte Carlo methods are used in order to sample from the posterior distribution of a model. However, using some neat tricks borrowed from statistical physics it is possible to approximate the model evidence directly. 
+- Description of what the beta parameter means in physics, the inverse temperature. We are going to do a little bit of a trick and only apply it to the likelihood. (Although this could just be interpreted as reparameterizing)
+- Optimization: (Maybe these parts should be placed in some other post that is jst about the physical interpretation and uses of MCMC).
+- Simulated annealing as an idea
+- Posterior sampling:
+- Parallel tempering in order to improve convergence. 
+- Look into what the Julia implementation is, and if I can code up some sort of add on. 
+- Model evidence/free energy calculation:
+- Explanation of the idea in physics, why it is called calorimetry.
+- For continous models, we can use Hamiltonian Monte Carlo methods. Particularly STAN has a great implementation of this. 
+- In order to leverage the simplicity of this picture, we might consider instead a continuous version of parallel tempering where we allow beta to vary in a continuous way. Note that we will run into issues where the chain is only at beta = 0.
+- Visual representation of what is going on in the continuous sampling picture, a compression of space. 
+- Comparison to approximations of the Bayesian evidence.
+- Need to take a look at that thing that Peter had mentioned. 
+
+

@@ -6,6 +6,7 @@ categories:
 date: last-modified
 ---
 
+- Based on the SciComm presentation
 - When you move faster, your time slows down. 
 - Classic example of one twin blasting off in a rocket ship while the other stays at home, by the end of it there is a big difference in ages
 - However, our technologies don't go quite this fast, although there are some examples of non-neglible changes in time occuring.
