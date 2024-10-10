@@ -2,7 +2,8 @@ project:
   type: website
   output-dir: ../docs
   resources:
-  - "../docs/assets"
+  - "./assets"
+  - "./demos_code"
 
 website:
   title: "Max Jerdee"

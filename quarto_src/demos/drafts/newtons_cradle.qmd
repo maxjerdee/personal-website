@@ -1,8 +1,13 @@
 ---
 title: "Newton's cradle"
-format: html
+description: "Explore the Metropolis-Hastings algorithm with hopping frogs"
 ---
 
 - Simulate a newton's cradle, particularly interested in the number of possible modes of clicking that we can achieve. Maybe also show music notation for the kinds of rhythms that this produces. 
 - Generally I think that it would be nice to have a little rhythm game with music notation. 
 
+```{=html}
+<div>
+<iframe align="middle" frameborder="0" height="1050" scrolling="yes" src="../../demos_code/demos/metropolis_hastings/metropolis_hastings.html" width="1000px"></iframe>
+</div>
+```

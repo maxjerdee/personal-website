@@ -1,0 +1,13 @@
+---
+title: "Parallel tempering"
+description: "A general trick to improve convergence of Monte Carlo methods"
+categories:
+  - Model selection
+  - Physics
+date: last-modified
+---
+
+In order to find the 
+
+
+

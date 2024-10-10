@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-10-06">
+<meta name="dcterms.date" content="2024-10-09">
 <meta name="description" content="Using MCMC sampling to approximate the model evidence">
 
 <title>Max Jerdee - Thermodynamic integration for model selection</title>
@@ -110,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv.html"> 
+    <a class="nav-link" href="../../CV.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -136,6 +136,7 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Thermodynamic integration for model selection</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Model selection</div>
+    <div class="quarto-category">Physics</div>
   </div>
   </div>
 
@@ -152,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 6, 2024</p>
+      <p class="date">October 9, 2024</p>
     </div>
   </div>
   
@@ -164,6 +165,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>By borrowing some tricks from statistical mechanics, it</p>
+<p>Monte Carlo methods are often used in order to sample from the posterior distribution of a model. While this is a great (and often the only) way that we can understand the fit of a model, it does not tell us about how good the model is in some absolute sense. No matter how misspecified our model is, it will still on some level fit the data. In order to avoid this, we often think about model selection.</p>
 <ul>
 <li>Based on the Copenhagen presentation (which still needs to be made)</li>
 <li>Typically Monte Carlo methods are used in order to sample from the posterior distribution of a model. However, using some neat tricks borrowed from statistical physics it is possible to approximate the model evidence directly.</li>

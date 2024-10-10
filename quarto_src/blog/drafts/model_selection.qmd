@@ -6,7 +6,17 @@ categories:
 date: last-modified
 ---
 
-- Discuss many of the possible ways that one can perform model selection. Frame that the way that I often prefer to do this is with the Bayesian evidence, and can talk about various different ways that this can be approximated. 
+Suppose that we have two models. There is a 
+
 - Structure this around the demonstration for curves through points and the coin flipping example. 
+
+- Discuss many of the possible ways that one can perform model selection. Frame that the way that I often prefer to do this is with the Bayesian evidence, and can talk about various different ways that this can be approximated. 
+- Variational methods. 
+- WAIC (weighted AIC?)
+- BIC, AIC
+- Sampling based: 
+- Cross-validation methods (LOO), need to understand this. Equivalence with the calculation of the marginal likelihood
+- PSIS-LOO (gold standard)
+- Chib's method (need to understand this better, but it looks like this can be applied when we are doing Gibbs sampling and know the absolute form of the posterior conditioned on some other latent variable), TI
 
 

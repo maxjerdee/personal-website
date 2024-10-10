@@ -9,3 +9,4 @@ The whole idea is to show that we are not random in our decisions, and generally
 
 Link to those things that are able to beat you in a left/right or rock paper scissors challenge. 
 
+- Should sometimes show a spinner, other times a number, or odds, or other kinds of random chances. Compare the performance at having the right sense of probability. 

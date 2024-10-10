@@ -1,7 +1,27 @@
 ---
 title: "MCMC"
-description: "Explore the Metropolis-Hastings algorithm with hopping frogs"
-format: html
+description: "Explore Monte Carlo methods with hopping frogs"
 ---
 
-The lilypad simulation, link to John's book and the general hub for the demos. 
+Monte Carlo algorithms are often used to explore probability distributions. Particularly, the Metropolis-Hastings algorithm is an extremely widely used technique for sampling from distributions. In this story, there are a few frog characters to familiarize ourselves with. First up, explorer frog:
+- Doesn't give a flip
+- Red
+Next, we have *exploiter frog* (also known as *greedy frog*):
+- Wants flies, now
+- Blue
+Finally, our most complicated frog will be *sampler frog*:
+- Wants flies, most of the time (!)
+- Green
+  
+Key terms/concepts:
+ 
+
+- Simulate a newton's cradle, particularly interested in the number of possible modes of clicking that we can achieve. Maybe also show music notation for the kinds of rhythms that this produces. 
+- Generally I think that it would be nice to have a little rhythm game with music notation. 
+
+
+```{=html}
+<div>
+<iframe align="middle" frameborder="0" height="1050" scrolling="yes" src="../../demos_code/demos/metropolis_hastings/metropolis_hastings.html" width="1000px"></iframe>
+</div>
+```

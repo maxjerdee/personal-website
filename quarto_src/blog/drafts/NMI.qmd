@@ -10,6 +10,6 @@ date: last-modified
 
 This in an informal presentation of [this paper](https://arxiv.org/abs/2307.01282) done in collaboration with Alec Kirkley and Mark Newman. 
 
-
+- Link to the general explanation of mutual information. 
 
 
