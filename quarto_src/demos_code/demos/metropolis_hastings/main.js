@@ -610,7 +610,7 @@ svg.append("g")
 
 const legendData = [
  { label: "% flies", color: "gray" },
- { label: "% frogs", color: "lightgray" }
+ { label: "% frogs", color: z_to_color(beta_to_z(global_beta)) }
 ];
 
 legend.selectAll("rect")
@@ -661,6 +661,10 @@ document.getElementById('frogZSlider').onchange = function() {
     });
     // Change the bar colors
     staticBars.data(data).attr("fill", z_to_color(beta_to_z(global_beta)));
+    legendData[1].color = z_to_color(beta_to_z(global_beta));
+    legend.selectAll("rect")
+    .data(legendData)
+    .style("fill", d => d.color);
 }
 
 // Update the frogCount indicator

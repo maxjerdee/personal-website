@@ -1,17 +1,17 @@
 var animation_speed = 1; // Number of frames to skip in the animation
 var global_beta = 0;
 var num_frogs = 1;
-var lilypad_flies = [2,5,3]; // Number of flies on each lilypad
-var lilypad_frogs = [0,0,0]; // Number of frogs on each lilypad
-var accumulated_count = [0,0,0];
+var lilypad_flies = [0.1,0.9,0.5,0.1,0.1,0.1,0.5,0.9,1.5,1.1]; // Number of flies on each lilypad
+var lilypad_frogs = [0,0,0,0,0,0,0,0,0,0]; // Number of frogs on each lilypad
+var accumulated_count = [0,0,0,0,0,0,0,0,0,0];
 var accumulating_count = false;
-var global_frog_size = 30;
+var global_frog_size = 15;
 var fly_size = 2.5;
 
 // Canvas properties
 const canvas_props = {
     width: 600,
-    height: 500
+    height: 300
 };
 
 const frog_props = {
@@ -34,8 +34,8 @@ const frog_props = {
 
 const lilypad_props = {
     path: '../../../assets/images/blog/metropolis_hastings/Lilypad.png',
-    radius: 50, // In pixels, used to constrain the frog offsets
-    num_lilypads: 3,
+    radius: 20, // In pixels, used to constrain the frog offsets
+    num_lilypads: 10,
 }
 
 const fly_props = {
@@ -305,8 +305,13 @@ class Frog {
         }else{
             // Run logic to determine the next proposal
             if(Math.random() < 0.01*animation_speed){ // Make a proposal (This is the MCMC!)
-                var proposed_lilypad = Math.floor(Math.random() * 3);
-                if(proposed_lilypad != this.current_lilypad){
+                var proposed_lilypad = this.current_lilypad;
+                if(Math.random() < 0.5){
+                    proposed_lilypad--;
+                }else{
+                    proposed_lilypad++;
+                }
+                if(proposed_lilypad >= 0 && proposed_lilypad < lilypad_props.num_lilypads){
                     // Consider the proposal, animation whether or not it is accepted
                     this.in_animation = true;
                     this.proposed_lilypad = proposed_lilypad;
@@ -356,7 +361,7 @@ class Frog {
             ctx.translate(this.pos.x, this.pos.y);
             ctx.rotate(this.angle * Math.PI / 180);
             ctx.scale(this.size / 100, this.size / 100);
-            ctx.drawImage(img.img, -img.svgWidth / 3, -img.svgHeight / 3); // This is just a hack, seems to be sensitive to the size of the surrounding div
+            ctx.drawImage(img.img, -img.svgWidth / 6, -img.svgHeight / 6); // This is just a hack, seems to be sensitive to the size of the surrounding div
             ctx.restore();
         }
     }
@@ -364,35 +369,25 @@ class Frog {
 
 // List all Lilypads
 const lilypads = [
-    new Lilypad(100,400,15),
-    new Lilypad(300,200,15),
-    new Lilypad(500,400,15)
+    new Lilypad(100,200,5),
+    new Lilypad(150,200,5),
+    new Lilypad(200,200,5),
+    new Lilypad(250,200,5),
+    new Lilypad(300,200,5),
+    new Lilypad(350,200,5),
+    new Lilypad(400,200,5),
+    new Lilypad(450,200,5),
+    new Lilypad(500,200,5),
+    new Lilypad(550,200,5)
 ]
 
 // All flies
-const flies = [
-    new Fly(0,fly_size),
-    new Fly(0,fly_size),
-    new Fly(1,fly_size),
-    new Fly(1,fly_size),
-    new Fly(1,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-
-    new Fly(0,fly_size),
-    new Fly(0,fly_size),
-    new Fly(1,fly_size),
-    new Fly(1,fly_size),
-    new Fly(1,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size)
-]
+const flies = []
+for(let i = 0; i < lilypad_props.num_lilypads; i++){
+    for(let j = 0; j < lilypad_flies[i]*4; j++){
+        flies.push(new Fly(i, fly_size));
+    }
+}
 
 // Load all fly images (svg hack)
 let loadCount = 0;
@@ -402,7 +397,7 @@ flies.forEach(fly => {
 
 // Create a list of frogs
 const frogs = [
-    new Frog(lilypads[0].pos.x,lilypads[0].pos.y,30,global_beta)
+    new Frog(lilypads[0].pos.x,lilypads[0].pos.y,global_frog_size,global_beta)
 ];
 
 // Load all frog images (svg hack)
@@ -529,11 +524,10 @@ const svg = d3.select("#barPlot")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // Sample data
-var data = [
-    { interactive: 20, static: 10 },
-    { interactive: 50, static: 40 },
-    { interactive: 30, static: 20 }
-];
+var data = [];
+for(let i = 0; i < lilypad_props.num_lilypads; i++){
+    data.push({interactive: lilypad_flies[i], static: 0});
+}
 
 // Set the scales
 const x0 = d3.scaleBand()
@@ -608,7 +602,7 @@ svg.append("g")
  .attr("class", "legend")
  .attr("transform", `translate(${width - 100}, 10)`);
 
-const legendData = [
+var legendData = [
  { label: "% flies", color: "gray" },
  { label: "% frogs", color: z_to_color(beta_to_z(global_beta)) }
 ];
@@ -685,12 +679,12 @@ document.getElementById('frogCountSlider').addEventListener('input', (event) => 
     // Change size
     
     if(num_frogs < 5){
-        global_frog_size = 30;
+        global_frog_size = 20;
     }else{
         if(num_frogs < 10){
-            global_frog_size = 20;
-        }else{
             global_frog_size = 15;
+        }else{
+            global_frog_size = 10;
         }
     }
     
