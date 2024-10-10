@@ -4,6 +4,7 @@
     "items": [
       "/demos/chaos_sampler.html",
       "/demos/game_of_life.html",
+      "/demos/metropolis_hastings.html",
       "/demos/relativity.html",
       "/demos/wikiguess.html"
     ]

@@ -1,6 +1,6 @@
 // Set up the SVG container dimensions
 const margin = { top: 20, right: 30, bottom: 40, left: 40 };
-const width = 800 - margin.left - margin.right;
+const width = 650 - margin.left - margin.right;
 const height = 400 - margin.top - margin.bottom;
 
 const svg = d3.select("#barPlot")
@@ -72,4 +72,39 @@ svg.append("g")
 
 // Add the Y Axis
 svg.append("g")
-    .call(d3.axisLeft(y));
+    .call(d3.axisLeft(y))
+    .append("text")
+    .attr("class", "axis-label")
+    .attr("transform", "rotate(-90)")
+    .attr("y", -margin.left + 10)
+    .attr("x", -height / 2)
+    .attr("dy", "1em")
+    .style("text-anchor", "middle")
+    .text("%");
+
+ // Add legend
+ const legend = svg.append("g")
+ .attr("class", "legend")
+ .attr("transform", `translate(${width - 100}, 10)`);
+
+const legendData = [
+ { label: "% flies", color: "gray" },
+ { label: "% frogs", color: "lightgray" }
+];
+
+legend.selectAll("rect")
+ .data(legendData)
+ .enter().append("rect")
+ .attr("x", 0)
+ .attr("y", (d, i) => i * 20)
+ .attr("width", 18)
+ .attr("height", 18)
+ .style("fill", d => d.color);
+
+legend.selectAll("text")
+ .data(legendData)
+ .enter().append("text")
+ .attr("x", 24)
+ .attr("y", (d, i) => i * 20 + 9)
+ .attr("dy", ".35em")
+ .text(d => d.label);
