@@ -7,6 +7,7 @@ var accumulated_count = [0,0,0];
 var accumulating_count = false;
 var global_frog_size = 30;
 var fly_size = 2.5;
+var visual_flies_rate = 2; // Number of flies to render for each
 
 // Canvas properties
 const canvas_props = {
@@ -370,29 +371,12 @@ const lilypads = [
 ]
 
 // All flies
-const flies = [
-    new Fly(0,fly_size),
-    new Fly(0,fly_size),
-    new Fly(1,fly_size),
-    new Fly(1,fly_size),
-    new Fly(1,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-
-    new Fly(0,fly_size),
-    new Fly(0,fly_size),
-    new Fly(1,fly_size),
-    new Fly(1,fly_size),
-    new Fly(1,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size),
-    new Fly(2,fly_size)
-]
+const flies = []
+for(let i = 0; i < lilypad_props.num_lilypads; i++){
+    for(let j = 0; j < lilypad_flies[i]*visual_flies_rate; j++){
+        flies.push(new Fly(i, fly_size));
+    }
+}
 
 // Load all fly images (svg hack)
 let loadCount = 0;

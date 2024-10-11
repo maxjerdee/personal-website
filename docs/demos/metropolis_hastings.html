@@ -202,18 +202,18 @@ window.Quarto = {
 <p>In the Metropolis-Hastings algorithm, in order to sample from a distribution proportional to <span class="math inline">\(P(x)\)</span>, a proposed move from a “state” <span class="math inline">\(x\)</span> to some new state <span class="math inline">\(x'\)</span> will be “accepted” with probability <span class="math display">\[P_{\text{accept}}(x \rightarrow x') = \min\left(1,\frac{P(x)}{P(x')}\right).\]</span> (really we should be sure our proposals are symmetric, but we won’t worry about that in this demonstration).</p>
 <p>What is going on with our frogs is that there is a</p>
 <p>So, generally by using parallel tempering method we can quite generically improve the convergence performance of Monte Carlo methods, and therefore the efficiency of our posterior inference.</p>
-<p>A nice side-effect of this, however, is the ability to leverage a technique known as “calorimetry” in the Physics community for computing the free energy of a system, and as “thermodynamic integration” within the statistis community.</p>
+<p>A nice side-effect of this, however, is the ability to leverage a technique known as “calorimetry” in the Physics community for computing the free energy of a system, and as “thermodynamic integration” within the statistics community.</p>
 <p>Suppose that we have a general model where the</p>
 <p>The fundamental identity that will come in handy is that if we define the partition function at an arbitrary <span class="math inline">\(\beta\)</span> as</p>
-<p><span class="math display">\[ Z(\beta) = \int P(A|\vec{\theta})P(\vec{\theta})^\beta d \theta\]</span></p>
+<p><span class="math display">\[ Z(\beta) = \int P(A|\vec{\theta})^\beta P(\vec{\theta}) d \theta\]</span></p>
 <p>so that notably we have that the Bayesian evidence is obtained at <span class="math inline">\(\beta = 1\)</span>:</p>
 <p><span class="math display">\[ Z(1) = \int P(A | \vec{\theta}) P(\vec{\theta}) d \theta = P(A), \qquad Z(0) = \int P(\theta) d\theta = 1\]</span></p>
 <p>Key terms/concepts:</p>
 <ul>
-<li>Simulated annealing is generally a useful way to improve convergence.</li>
+<li>Simulated annealing is generally a useful way to improve convergence. height=“1050px” width=“1000px”</li>
 </ul>
 <div>
-<iframe align="middle" frameborder="0" height="1050" scrolling="yes" src="../../demos_code/demos/metropolis_hastings/metropolis_hastings.html" width="1000px"></iframe>
+<iframe align="middle" frameborder="0" scrolling="yes" src="../../demos_code/demos/metropolis_hastings/metropolis_hastings.html" onload="this.width=screen.width;this.height=screen.height;"></iframe>
 </div>
 
 

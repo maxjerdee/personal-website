@@ -23,16 +23,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 60%;
-  margin: 20px auto;
+  width: 100%;
   position: relative;
 }
 .toggle-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 60%;
-  margin: 20px auto;
+  justify-content: center;
+  width: 100%;
+  margin: 0px auto -20px auto;
   position: relative;
 }
 .slider-container img, .slider-container .frogs, .toggle-container label {
@@ -150,4 +149,13 @@ input:checked + .slider-switch {
 }
 input:checked + .slider-switch:before {
   transform: translateX(26px);
+}
+#all-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.barPlotTitleText {
+  margin: 0px 10px;
 }

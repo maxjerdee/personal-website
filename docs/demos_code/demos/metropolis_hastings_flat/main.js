@@ -7,12 +7,13 @@ var accumulated_count = [0,0,0,0,0,0,0,0,0,0];
 var accumulating_count = false;
 var global_frog_size = 15;
 var fly_size = 2.5;
+var visual_flies_rate = 4;
 
 // Canvas properties
 const canvas_props = {
     width: 600,
     height: 300
-};
+}; 
 
 const frog_props = {
     animation_frames: 60, // Number of frames in an animation of a move (whether it is accepted or rejected)
@@ -311,18 +312,21 @@ class Frog {
                 }else{
                     proposed_lilypad++;
                 }
-                if(proposed_lilypad >= 0 && proposed_lilypad < lilypad_props.num_lilypads){
-                    // Consider the proposal, animation whether or not it is accepted
-                    this.in_animation = true;
-                    this.proposed_lilypad = proposed_lilypad;
-                    this.proposed_pos.x = lilypads[proposed_lilypad].pos.x + this.offset_pos.x;
-                    this.proposed_pos.y = lilypads[proposed_lilypad].pos.y + this.offset_pos.y;
-
-                    // Accept/Reject!
-                    var accept_prob = Math.min(Math.pow(lilypad_flies[proposed_lilypad]/lilypad_flies[this.current_lilypad],this.beta),1);
-                    this.accept = (Math.random() < accept_prob);
-                    
+                if(proposed_lilypad < 0){ // We still need to run an in-place animation in order to preserve symmetric proposals
+                    proposed_lilypad = 0;
+                }else if(proposed_lilypad >= lilypad_props.num_lilypads){
+                    proposed_lilypad = lilypad_props.num_lilypads - 1;
                 }
+                // Consider the proposal, animation whether or not it is accepted
+                this.in_animation = true;
+                this.proposed_lilypad = proposed_lilypad;
+                this.proposed_pos.x = lilypads[proposed_lilypad].pos.x + this.offset_pos.x;
+                this.proposed_pos.y = lilypads[proposed_lilypad].pos.y + this.offset_pos.y;
+
+                // Accept/Reject!
+                var accept_prob = Math.min(Math.pow(lilypad_flies[proposed_lilypad]/lilypad_flies[this.current_lilypad],this.beta),1);
+                this.accept = (Math.random() < accept_prob);
+                    
                 // Rerandomize the frog offset
                 var radius = Math.random()*lilypad_props.radius;
                 var angle = Math.random() * 360;
@@ -368,23 +372,15 @@ class Frog {
 }
 
 // List all Lilypads
-const lilypads = [
-    new Lilypad(100,200,5),
-    new Lilypad(150,200,5),
-    new Lilypad(200,200,5),
-    new Lilypad(250,200,5),
-    new Lilypad(300,200,5),
-    new Lilypad(350,200,5),
-    new Lilypad(400,200,5),
-    new Lilypad(450,200,5),
-    new Lilypad(500,200,5),
-    new Lilypad(550,200,5)
-]
+const lilypads = []
+for(let i = 0; i < lilypad_props.num_lilypads; i++){
+    lilypads.push(new Lilypad(75 + 52*i,200,5)); // Try to space them over the bar plot
+}
 
 // All flies
 const flies = []
 for(let i = 0; i < lilypad_props.num_lilypads; i++){
-    for(let j = 0; j < lilypad_flies[i]*4; j++){
+    for(let j = 0; j < lilypad_flies[i]*visual_flies_rate; j++){
         flies.push(new Fly(i, fly_size));
     }
 }
@@ -425,7 +421,7 @@ function calculateFPS() {
 
 // Update the FPS counter on the page
 function updateFPSCounter() {
-    document.getElementById('fps').innerText = `FPS: ${Math.round(fps)}`;
+    // document.getElementById('fps').innerText = `FPS: ${Math.round(fps)}`;
 }
 
 // Animation function
@@ -514,10 +510,10 @@ function animate(time) {
 // Bar plot
 // Set up the SVG container dimensions
 const margin = { top: 20, right: 30, bottom: 40, left: 40 };
-const width = 650 - margin.left - margin.right;
-const height = 400 - margin.top - margin.bottom;
+const width = 600 - margin.left - margin.right;
+const height = 300 - margin.top - margin.bottom;
 
-const svg = d3.select("#barPlot")
+const svg = d3.select("#barPlotSVG")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -703,8 +699,12 @@ const frogToggle = document.getElementById('frogToggle');
 frogToggle.addEventListener('change', (event) => {
     if (event.target.checked) {
         accumulating_count = true;
-    } else {
+        document.getElementById('accumulatedFrogCount').style.fontWeight = 'bold';
+        document.getElementById('currentFrogCount').style.fontWeight = 'normal';
+    }else{
         accumulating_count = false;
+        document.getElementById('accumulatedFrogCount').style.fontWeight = 'normal';
+        document.getElementById('currentFrogCount').style.fontWeight = 'bold';
         // This will also clear the accumulated counts
         for(let i = 0; i < lilypad_props.num_lilypads; i++){
             accumulated_count[i] = 0;

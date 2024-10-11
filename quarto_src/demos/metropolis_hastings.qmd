@@ -1,6 +1,7 @@
 ---
 title: "MCMC"
 description: "Explore Monte Carlo methods with hopping frogs"
+image: "../assets/images/blog/metropolis_hastings/Teaser.png"
 ---
 
 Monte Carlo algorithms are often used to explore probability distributions. Particularly, the Metropolis-Hastings algorithm is an extremely widely used technique for sampling from distributions. In this story, there are a few frog characters to familiarize ourselves with. 
@@ -28,13 +29,13 @@ What is going on with our frogs is that there is a
 
 So, generally by using parallel tempering method we can quite generically improve the convergence performance of Monte Carlo methods, and therefore the efficiency of our posterior inference. 
 
-A nice side-effect of this, however, is the ability to leverage a technique known as "calorimetry" in the Physics community for computing the free energy of a system, and as "thermodynamic integration" within the statistis community. 
+A nice side-effect of this, however, is the ability to leverage a technique known as "calorimetry" in the Physics community for computing the free energy of a system, and as "thermodynamic integration" within the statistics community. 
 
 Suppose that we have a general model where the 
 
 The fundamental identity that will come in handy is that if we define the partition function at an arbitrary $\beta$ as 
 
-$$ Z(\beta) = \int P(A|\vec{\theta})P(\vec{\theta})^\beta d \theta$$
+$$ Z(\beta) = \int P(A|\vec{\theta})^\beta P(\vec{\theta}) d \theta$$
 
 so that notably we have that the Bayesian evidence is obtained at $\beta = 1$:
 
@@ -43,9 +44,10 @@ $$ Z(1) = \int P(A | \vec{\theta}) P(\vec{\theta}) d \theta = P(A), \qquad Z(0) 
 Key terms/concepts:
 
 - Simulated annealing is generally a useful way to improve convergence. 
-
+ height="1050px" width="1000px"
+ 
 ```{=html}
 <div>
-<iframe align="middle" frameborder="0" height="1050" scrolling="yes" src="../../demos_code/demos/metropolis_hastings/metropolis_hastings.html" width="1000px"></iframe>
+<iframe align="middle" frameborder="0" scrolling="yes" src="../../demos_code/demos/metropolis_hastings/metropolis_hastings.html" onload="this.width=screen.width;this.height=screen.height;"></iframe>
 </div>
 ```
