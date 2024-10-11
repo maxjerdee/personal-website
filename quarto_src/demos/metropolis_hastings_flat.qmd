@@ -52,7 +52,7 @@ Key terms/concepts:
 ::: {.column-screen}
 ```{=html}
 <div>
-<iframe align="middle" frameborder="0" height="1000px" scrolling="yes" src="../../demos_code/demos/metropolis_hastings_flat/metropolis_hastings.html" width="100%"></iframe>
+<iframe align="middle" frameborder="0" height="1000px" scrolling="no" src="../../demos_code/demos/metropolis_hastings_flat/metropolis_hastings.html" width="100%" min-width="600px;"></iframe>
 </div>
 ```
 :::
