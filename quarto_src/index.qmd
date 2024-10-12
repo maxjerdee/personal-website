@@ -2,7 +2,7 @@
 title: "Max(imilian) Jerdee"
 about:
   template: solana
-  image: ../assets/images/profile.jpg
+  image: ../assets/images/profile_alt_square.jpg
   links:
     - text: "{{< iconify ic outline-email >}} Email"
       href: mailto:mjerdee@umich.edu

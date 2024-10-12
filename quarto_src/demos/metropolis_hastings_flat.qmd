@@ -9,17 +9,20 @@ First up, *explorer frog*:
 
 - Doesn't give a flip
 - Red
+- Hot
 
 Next, we have *exploiter frog* (also known as *greedy frog*):
 
 - Wants flies, now
 - Blue
+- Cold
 
 Finally, our most complicated frog will be *sampler frog*:
 
 - Wants flies, most of the time (!)
 - Green
-  
+- Just right
+
 In the Metropolis-Hastings algorithm, in order to sample from a distribution proportional to $P(x)$, a proposed move from a "state" $x$ to some new state $x'$ will be "accepted" with probability 
 $$P_{\text{accept}}(x \rightarrow x') = \min\left(1,\frac{P(x)}{P(x')}\right).$$ 
 (really we should be sure our proposals are symmetric, but we won't worry about that in this demonstration).
@@ -45,9 +48,26 @@ Z(0) &= \int P(\theta) d\theta = 1
 \end{align*}
 $$
 
-Key terms/concepts:
+TODO:
 
-- Simulated annealing is generally a useful way to improve convergence. 
+- Switch the frogs to a raster render to improve efficiency Implement as an svg with a background color that can be changed along with a png on top that handles the hard outline and eyes, and the blush and shading as opacity layers.
+- Make an annealing option that cools down all of the frogs at once (implement as an annealing speed slider)
+- Reset accumulation histogram when changing beta
+- Snap the inverse temperature slier around beta = 1 (unless annealing)
+- Create an asset of spins arranging in order to explain the temperature and tempering idea
+- Add left/right buttons in the top left in order to flip through examples (disable these in the blog post) [Add the ability to highlight these buttons]
+- Examples (include a list in the demo page, designed to be written in a more technical way to describe what is going on likely for those who have already seen this stuff before. Link to the blog post for a more pedagogical explanation.)
+    - Single red frog [triangle]
+    - Many red frogs, high simulation speed
+    - Single blue frog
+    - Many blue frogs, high simulation speed
+    - Single green frog
+    - Many green frogs, high simulation speed
+    - Many red frogs, high speed [line]
+    - Blue frogs, high speed
+    - Green frogs, high speed (introduce the idea of mixing time)
+    - Simulated annealing, medium speed (start on red, cool down)
+    - Simulated annealing, fast speed 
 
 ::: {.column-screen}
 ```{=html}

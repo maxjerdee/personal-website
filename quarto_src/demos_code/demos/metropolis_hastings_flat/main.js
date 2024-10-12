@@ -1,18 +1,19 @@
 var animation_speed = 1; // Number of frames to skip in the animation
 var global_beta = 0;
 var num_frogs = 1;
-var lilypad_flies = [0.1,0.9,0.5,0.1,0.1,0.1,0.5,0.9,1.5,1.1]; // Number of flies on each lilypad
+var lilypad_flies = [0.2,0.9,0.5,0.1,0.05,0.1,0.5,0.9,1.5,1.1]; // Number of flies on each lilypad
 var lilypad_frogs = [0,0,0,0,0,0,0,0,0,0]; // Number of frogs on each lilypad
 var accumulated_count = [0,0,0,0,0,0,0,0,0,0];
 var accumulating_count = false;
 var global_frog_size = 15;
-var fly_size = 2.5;
-var visual_flies_rate = 4;
+var fly_size = 3;
+var visual_flies_rate = 4; // Approximate number of flies to render above each pad in the units of lilypad_flies
+var visual_flies_height = 1; // Characteristic height of the fly swarms in terms of the width of the lilypad
 
 // Canvas properties
 const canvas_props = {
     width: 600,
-    height: 300
+    height: 200
 }; 
 
 const frog_props = {
@@ -27,6 +28,9 @@ const frog_props = {
 
     leaping_path: '../../../assets/images/blog/metropolis_hastings/frog/FrogLeap.svg',
     sitting_path: '../../../assets/images/blog/metropolis_hastings/frog/FrogSit.svg',
+    
+    // leaping_path: '../../../assets/images/blog/metropolis_hastings/frog/FrogLeapBackground.svg',
+    // sitting_path: '../../../assets/images/blog/metropolis_hastings/frog/FrogSitBackground.svg',
 
     beta_0_color: '#c72f25', // Color of the explorer frog // Dark: #ad2920
     beta_1_color: '#739056', // Color of the sampler frog // Dark: #647d4b
@@ -99,7 +103,7 @@ class Fly {
         this.size = size;
         this.img = null;
         this.type = Math.floor(Math.random()*5);
-        this.rel_pos = {x:(Math.random()-0.5)*lilypad_props.radius,y: - 2*lilypad_props.radius + (Math.random()-0.5)*lilypad_props.radius}; // Position relative to the center of the lilypad
+        this.rel_pos = {x:(Math.random()-0.5)*lilypad_props.radius,y: - (2 + visual_flies_height*lilypad_flies[this.lilypad_index])*lilypad_props.radius + (Math.random()-0.5)*lilypad_props.radius}; // Position relative to the center of the lilypad
         this.pos = {x:lilypads[lilypad_index].pos.x + this.rel_pos.x, y:lilypads[lilypad_index].pos.y + this.rel_pos.y};
         this.vel = {x:Math.random()-0.5,y:Math.random()-0.5};
         this.angle = Math.random()*60 - 30;
@@ -129,8 +133,13 @@ class Fly {
         this.rel_pos.y += this.vel.y;
         this.pos.x = this.rel_pos.x + lilypads[this.lilypad_index].pos.x;
         this.pos.y = this.rel_pos.y + lilypads[this.lilypad_index].pos.y;
-        this.vel.x -= (this.rel_pos.x/lilypad_props.radius)/100 + 0.05*(Math.random() - 0.5);
-        this.vel.y -= (this.rel_pos.y/lilypad_props.radius + 2)/(100*lilypad_flies[this.lilypad_index]) + 0.05*(Math.random() - 0.5);
+        this.vel.x -= (this.rel_pos.x/lilypad_props.radius)/100;
+        // Center above the lilypad and at a characteristic height given by (visual_flies_height + 2)*lilypad_props_radius
+        this.vel.y -= (this.rel_pos.y/lilypad_props.radius + 2 + visual_flies_height*lilypad_flies[this.lilypad_index])/(100*lilypad_flies[this.lilypad_index])/(1.3*(1 + visual_flies_height*lilypad_flies[this.lilypad_index]));
+        // Random velocity kick 
+        this.vel.x += 0.05*(Math.random() - 0.5);
+        this.vel.y += 0.05*(Math.random() - 0.5);
+        // Damping
         this.vel.x *= 0.998;
         this.vel.y *= 0.998;
         this.angle = -50*this.vel.x; // Banking
@@ -337,14 +346,11 @@ class Frog {
             if(Math.random() < 0.02){
                 this.turn_animation_speed = Math.random()*4 - 2;
                 this.turn_animation_counter = 10;
-
-                // Easy way to implement random cooling:
-                // this.beta += 0.1;
-                // this.loadImages(); // Need to reload to change the color
-                // if(Math.random() < 0.1){
-                //     animation_speed++;
-                //     console.log(animation_speed);
-                // }
+            }
+            // Random cooling
+            if(Math.random() < 0.02){
+                this.beta += 0.05;
+                this.loadImages(); // Need to reload to change the color
             }
             if(this.turn_animation_counter > 0){
                 this.turn_animation_counter--;
@@ -374,13 +380,13 @@ class Frog {
 // List all Lilypads
 const lilypads = []
 for(let i = 0; i < lilypad_props.num_lilypads; i++){
-    lilypads.push(new Lilypad(75 + 52*i,200,5)); // Try to space them over the bar plot
+    lilypads.push(new Lilypad(75 + 52*i,150,5)); // Try to space them over the bar plot
 }
 
 // All flies
 const flies = []
 for(let i = 0; i < lilypad_props.num_lilypads; i++){
-    for(let j = 0; j < lilypad_flies[i]*visual_flies_rate; j++){
+    for(let j = 0; j < lilypad_flies[i]*visual_flies_rate - 0.25; j++){
         flies.push(new Fly(i, fly_size));
     }
 }
@@ -421,7 +427,7 @@ function calculateFPS() {
 
 // Update the FPS counter on the page
 function updateFPSCounter() {
-    // document.getElementById('fps').innerText = `FPS: ${Math.round(fps)}`;
+    document.getElementById('fps').innerText = `FPS: ${Math.round(fps)}`;
 }
 
 // Animation function
@@ -474,11 +480,9 @@ function animate(time) {
             data[i].static = lilypad_frogs[i]/num_frogs*100;
         }
     }
-    // console.log(data[0]);
     // Update the bar plot
     // Update Y scale domain
     y.domain([0, d3.max(data.map(d => Math.max(d.interactive, d.static)))]).nice();
-    // console.log(y);
 
     // Update scales
     svg.select(".y.axis")
@@ -497,7 +501,6 @@ function animate(time) {
         .duration(100)
         .attr("y", d => y(d.interactive))
         .attr("height", d => height - y(d.interactive));
-    // console.log(data);
 
     // Calculate and display FPS
     calculateFPS();
@@ -516,7 +519,7 @@ const height = 300 - margin.top - margin.bottom;
 const svg = d3.select("#barPlotSVG")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // Sample data
@@ -544,19 +547,19 @@ const y = d3.scaleLinear()
 
 // Append the static bars
 const staticBars = svg.selectAll(".bar-static")
-.data(data)
-.enter().append("rect")
-.attr("class", "bar-static")
-.attr("x", (d, i) => x0(i) + x1('static'))
-.attr("y", d => y(d.static))
-.attr("fill", z_to_color(beta_to_z(global_beta)))
-.attr("height", d => height - y(d.static))
-.attr("width", x1.bandwidth());
+    .data(data)
+    .enter().append("rect")
+    .attr("class", "bar-static")
+    .attr("x", (d, i) => x0(i) + x1('static'))
+    .attr("y", d => y(d.static))
+    .attr("fill", z_to_color(beta_to_z(global_beta)))
+    .attr("height", d => height - y(d.static))
+    .attr("width", x1.bandwidth());
 
 // Append the interactive bars
 const interactiveBars = svg.selectAll(".interactive-bar")
-  .data(data)
-  .enter().append("rect")
+    .data(data)
+    .enter().append("rect")
     .attr("class", "bar interactive-bar")
     .attr("x", (d, i) => x0(i) + x1('interactive'))
     .attr("y", d => y(d.interactive))
@@ -603,22 +606,41 @@ var legendData = [
  { label: "% frogs", color: z_to_color(beta_to_z(global_beta)) }
 ];
 
-legend.selectAll("rect")
- .data(legendData)
- .enter().append("rect")
- .attr("x", 0)
- .attr("y", (d, i) => i * 20)
- .attr("width", 18)
- .attr("height", 18)
- .style("fill", d => d.color);
+// Define dimensions and opacity for the background rectangle
+const legendItemHeight = 20;
+const legendItemWidth = 80; // Adjust this based on your text widths
+const legendPadding = 5;
+const backgroundColor = "gray";
+const backgroundOpacity = 0.2;
+
+// Append background rectangle
+legend.append("rect")
+    .attr("x", -legendPadding)
+    .attr("y", -legendPadding)
+    .attr("width", legendItemWidth + 2 * legendPadding)
+    .attr("height", (legendData.length * legendItemHeight) + 2 * legendPadding)
+    .style("fill", backgroundColor)
+    .style("opacity", backgroundOpacity);
+
+legend.selectAll("rect.color")
+    .data(legendData)
+    .enter().append("rect")
+    .attr("class", "color")
+    .attr("x", 0)
+    .attr("y", (d, i) => i * legendItemHeight)
+    .attr("width", 18)
+    .attr("height", 18)
+    .style("fill", d => d.color);
 
 legend.selectAll("text")
- .data(legendData)
- .enter().append("text")
- .attr("x", 24)
- .attr("y", (d, i) => i * 20 + 9)
- .attr("dy", ".35em")
- .text(d => d.label);
+    .data(legendData)
+    .enter().append("text")
+    .attr("x", 24)
+    .attr("y", (d, i) => i * legendItemHeight + 9)
+    .attr("dy", ".35em")
+    .text(d => d.label);
+
+ 
 
 
 // GUI
@@ -651,10 +673,10 @@ document.getElementById('frogZSlider').onchange = function() {
     });
     // Change the bar colors
     staticBars.data(data).attr("fill", z_to_color(beta_to_z(global_beta)));
-    legendData[1].color = z_to_color(beta_to_z(global_beta));
-    legend.selectAll("rect")
-    .data(legendData)
-    .style("fill", d => d.color);
+    legendData[1].color = z_to_color(beta_to_z(global_beta)); // Frog color
+    legend.selectAll("rect.color") // Update the color swatch rects
+        .data(legendData)
+        .style("fill", d => d.color);
 }
 
 // Update the frogCount indicator
@@ -675,12 +697,12 @@ document.getElementById('frogCountSlider').addEventListener('input', (event) => 
     // Change size
     
     if(num_frogs < 5){
-        global_frog_size = 20;
+        global_frog_size = 25;
     }else{
         if(num_frogs < 10){
-            global_frog_size = 15;
+            global_frog_size = 20;
         }else{
-            global_frog_size = 10;
+            global_frog_size = 15;
         }
     }
     

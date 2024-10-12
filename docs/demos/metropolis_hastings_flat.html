@@ -188,16 +188,19 @@ window.Quarto = {
 <ul>
 <li>Doesn’t give a flip</li>
 <li>Red</li>
+<li>Hot</li>
 </ul>
 <p>Next, we have <em>exploiter frog</em> (also known as <em>greedy frog</em>):</p>
 <ul>
 <li>Wants flies, now</li>
 <li>Blue</li>
+<li>Cold</li>
 </ul>
 <p>Finally, our most complicated frog will be <em>sampler frog</em>:</p>
 <ul>
 <li>Wants flies, most of the time (!)</li>
 <li>Green</li>
+<li>Just right</li>
 </ul>
 <p>In the Metropolis-Hastings algorithm, in order to sample from a distribution proportional to <span class="math inline">\(P(x)\)</span>, a proposed move from a “state” <span class="math inline">\(x\)</span> to some new state <span class="math inline">\(x'\)</span> will be “accepted” with probability <span class="math display">\[P_{\text{accept}}(x \rightarrow x') = \min\left(1,\frac{P(x)}{P(x')}\right).\]</span> (really we should be sure our proposals are symmetric, but we won’t worry about that in this demonstration).</p>
 <p>What is going on with our frogs is that there is a</p>
@@ -213,13 +216,32 @@ Z(1) &amp;= \int P(A | \vec{\theta}) P(\vec{\theta}) d \theta = P(A), \\
 Z(0) &amp;= \int P(\theta) d\theta = 1
 \end{align*}
 \]</span></p>
-<p>Key terms/concepts:</p>
+<p>TODO:</p>
 <ul>
-<li>Simulated annealing is generally a useful way to improve convergence.</li>
+<li>Switch the frogs to a raster render to improve efficiency Implement as an svg with a background color that can be changed along with a png on top that handles the hard outline and eyes, and the blush and shading as opacity layers.</li>
+<li>Make an annealing option that cools down all of the frogs at once (implement as an annealing speed slider)</li>
+<li>Reset accumulation histogram when changing beta</li>
+<li>Snap the inverse temperature slier around beta = 1 (unless annealing)</li>
+<li>Create an asset of spins arranging in order to explain the temperature and tempering idea</li>
+<li>Add left/right buttons in the top left in order to flip through examples (disable these in the blog post) [Add the ability to highlight these buttons]</li>
+<li>Examples (include a list in the demo page, designed to be written in a more technical way to describe what is going on likely for those who have already seen this stuff before. Link to the blog post for a more pedagogical explanation.)
+<ul>
+<li>Single red frog [triangle]</li>
+<li>Many red frogs, high simulation speed</li>
+<li>Single blue frog</li>
+<li>Many blue frogs, high simulation speed</li>
+<li>Single green frog</li>
+<li>Many green frogs, high simulation speed</li>
+<li>Many red frogs, high speed [line]</li>
+<li>Blue frogs, high speed</li>
+<li>Green frogs, high speed (introduce the idea of mixing time)</li>
+<li>Simulated annealing, medium speed (start on red, cool down)</li>
+<li>Simulated annealing, fast speed</li>
+</ul></li>
 </ul>
 <div class="column-screen">
 <div>
-<iframe align="middle" frameborder="0" height="1000px" scrolling="yes" src="../../demos_code/demos/metropolis_hastings_flat/metropolis_hastings.html" width="100%"></iframe>
+<iframe align="middle" frameborder="0" height="1000px" scrolling="no" src="../../demos_code/demos/metropolis_hastings_flat/metropolis_hastings.html" width="100%" min-width="600px;"></iframe>
 </div>
 </div>
 
