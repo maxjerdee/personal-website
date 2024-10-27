@@ -1,0 +1,50 @@
+---
+title: "Race and speculative fiction"
+description: "Unpacking the language and narrative structure  used by black and white authors of speculative fiction."
+categories:
+    - Natural language processing
+date: last-modified
+---
+
+This note is on explorations in speculative fiction in collaboration with Nyla Jones and Matt Lyons at the 2024 [SFI Complex Systems Summer School](https://www.santafe.edu/engage/learn/programs/sfi-complex-systems-summer-school). 
+
+Our group has been interested in understanding how to merge qualitative and quantitative methods to better understand works of speculative fiction. Particularly, we are interested in the power and use of this medium to warp the systems the authors observe.
+
+## word2vec and semantic space
+In order to quantitatively analyze a massive volume of text, we must 
+
+At a high level, the model has the task to predict the next word in a sentence. 
+
+Notably, since these mdoels place words into a vector space, we gain the curious ability to add and subtract words from each other. This produces some funny looking equations like 
+$$
+w(\text{king}) + (w(\text{man}) - w(\text{woman})) = w(\text{queen}).
+$$
+
+Notably, the actual form of $w(\text{word})$ depends on the particular data that the model was trained on. This is a very useful feature as it allows us to compare the semantic landscape of the same word within the works of a certain subset of authors. In particular, this allows for 
+
+The nice thing about these models, as opposed to a large language model is that the large language models are well, large, and require an enormous amount of data to draw conclusions from. They also require a large amount of time and resources to train. In contrast, a relatively simple model like word2vec may be trained and reflect a smaller data set. In our analysis, we are particularly interested in the associations made in works of speculative fiction. Still, the size of the data set must be somewhat large. Indeed, the model must learn the whole english language from the set of works it is given. 
+
+### Data sets
+In this work, we have a number of useful data sets. 
+
+Although we have not (yet) labeled the gender and race of the authors in our large science fiction data set, the authors of the corpus likely skew heavily white and male. Therefore the associations made within the data set are an aggregate representation of the. 
+
+We have separately placed the 
+[Tableau by Nyla Jones](https://public.tableau.com/app/profile/nyla.jones/viz/specficfigures/Dashboard5) 
+
+For one, we have the work of 
+
+With more resources, we would be interested in labeling the full data set of works of speculative fiction in order to understand the types of associations made by authors. 
+
+
+### Semantic space
+To explore the nature of the semantic space.
+
+
+### Semantic atoms
+Although the underlying semantic vector space used by the model is continuous, we might often desire to split the semantic space into discrete "atoms" of meaning that are loci in semantic space. (Cite) proposed an interesting Bayesian methods to go about this, and thankfully provided code (link), 
+
+## Narrative network analysis
+
+- Link to the repo that contains the code used in order to perform this analysis
+

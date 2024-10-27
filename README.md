@@ -4,7 +4,7 @@ Hosted at [maxjerdee.com](https://www.maxjerdee.com/)
 
 Built with the [quarto framework](https://quarto.org/)
 
-Special categories for the blog posts are roughly supposed to be:
+Special categories for the notes posts are roughly supposed to be:
 Paper explainer: informal explanation of a paper that we have put out, ideally accompanied by some sort of video explaination
 Demo explainer: explanation of some technical details behind the inner workings of a demo
 

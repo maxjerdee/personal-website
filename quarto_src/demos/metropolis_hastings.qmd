@@ -1,7 +1,7 @@
 ---
 title: "MCMC"
 description: "Explore Monte Carlo methods with hopping frogs"
-image: "../assets/images/blog/metropolis_hastings/Teaser.png"
+image: "../assets/images/notes/metropolis_hastings/Teaser.png"
 ---
 
 Monte Carlo algorithms are often used to explore probability distributions. Particularly, the Metropolis-Hastings algorithm is an extremely widely used technique for sampling from distributions. In this story, there are a few frog characters to familiarize ourselves with. 

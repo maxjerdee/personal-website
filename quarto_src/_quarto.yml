@@ -16,8 +16,8 @@ website:
         text: Papers
       - href: demos.qmd
         text: Demos
-      - href: blog.qmd
-        text: Blog
+      - href: notes.qmd
+        text: Notes
       - href: CV.qmd
         text: CV
 

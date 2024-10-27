@@ -55,8 +55,8 @@ TODO:
 - Reset accumulation histogram when changing beta
 - Snap the inverse temperature slier around beta = 1 (unless annealing)
 - Create an asset of spins arranging in order to explain the temperature and tempering idea
-- Add left/right buttons in the top left in order to flip through examples (disable these in the blog post) [Add the ability to highlight these buttons]
-- Examples (include a list in the demo page, designed to be written in a more technical way to describe what is going on likely for those who have already seen this stuff before. Link to the blog post for a more pedagogical explanation.)
+- Add left/right buttons in the top left in order to flip through examples (disable these in the notes post) [Add the ability to highlight these buttons]
+- Examples (include a list in the demo page, designed to be written in a more technical way to describe what is going on likely for those who have already seen this stuff before. Link to the notes post for a more pedagogical explanation.)
     - Single red frog [triangle]
     - Many red frogs, high simulation speed
     - Single blue frog

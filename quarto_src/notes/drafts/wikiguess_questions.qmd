@@ -1,0 +1,10 @@
+---
+title: "Generating Fermi problems"
+description: "How can we automatically generate interesting estimation problems?"
+categories:
+  - Demo explainer
+  - Natural language processing
+date: last-modified
+---
+
+- Go into the details of how we can take the 
