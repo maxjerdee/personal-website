@@ -1,0 +1,19 @@
+---
+title: "LLM skills"
+description: "Revisiting some of the assumptions behind."
+categories:
+    - Natural language processing
+date: last-modified
+---
+
+This note is on explorations in speculative fiction in collaboration with () at the 2024 [SFI Complex Systems Summer School](https://www.santafe.edu/engage/learn/programs/sfi-complex-systems-summer-school). 
+
+## Large Language Models
+
+
+### Effective skills
+
+
+### Semantic atoms
+
+

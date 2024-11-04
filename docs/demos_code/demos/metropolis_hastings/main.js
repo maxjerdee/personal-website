@@ -506,7 +506,7 @@ const margin = { top: 20, right: 30, bottom: 40, left: 40 };
 const width = 650 - margin.left - margin.right;
 const height = 400 - margin.top - margin.bottom;
 
-const svg = d3.select("#barPlot")
+const svg = d3.select("#barPlotSVG")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -693,8 +693,12 @@ const frogToggle = document.getElementById('frogToggle');
 frogToggle.addEventListener('change', (event) => {
     if (event.target.checked) {
         accumulating_count = true;
-    } else {
+        document.getElementById('accumulatedFrogCount').style.fontWeight = 'bold';
+        document.getElementById('currentFrogCount').style.fontWeight = 'normal';
+    }else{
         accumulating_count = false;
+        document.getElementById('accumulatedFrogCount').style.fontWeight = 'normal';
+        document.getElementById('currentFrogCount').style.fontWeight = 'bold';
         // This will also clear the accumulated counts
         for(let i = 0; i < lilypad_props.num_lilypads; i++){
             accumulated_count[i] = 0;

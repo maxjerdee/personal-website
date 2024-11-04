@@ -1,29 +1,40 @@
-<!-- <meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<script src="../../libs/d3.v4.min.js"></script>
-<script src="../../libs/d3-scale-chromatic.v1.min.js"></script>
-<script src="../../libs/d3-color.v1.min.js"></script>
-<script src="../../libs/simple_plot.js"></script>
-<script src="../../libs/widget.v3.4.js"></script>
-<link rel="stylesheet" type="text/css" href="gui.css">
-<link rel="stylesheet" type="text/css" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metropolis Hastings</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-  <button id="changeColorButton">Change Color</button>
-    <div id="all_container">
-        <div id="simulation"> </div>
-        <div id="analysis"> 
-            <svg id="barPlot"></svg>
+    <div id="all-container">
+        <div id="simulation-container" style="width: 600px;">
+            <div id="fps"></div>
+            <div id="simulation"></div>
+            <div id="barPlot">
+                <div id="barPlotTitle">
+                    <div class="toggle-container">
+                        <div class="barPlotTitleText" id="currentFrogCount" style="font-weight: bold;">Current Frog Count</div>
+                        <label class="switch">
+                            <input type="checkbox" id="frogToggle">
+                            <span class="slider-switch"></span>
+                        </label>
+                        <div class="barPlotTitleText" id="accumulatedFrogCount">Accumulated Frog Count</div>
+                    </div>
+                </div>
+                <svg id="barPlotSVG"></svg>
+            </div>
         </div>
-        <div id="controls"> 
+        <div id="controls" style="min-width: 300px; max-width: 600px; flex-grow: 1;"> 
             <div>
                 <div class="slider-title">Inverse Temperature</div>
                 <div class="slider-container">
                     <div class="label" style="left: 0;">&#946; = 0</div>
                     <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitRed.svg" alt="Red Frog" class="left-frog">
                     <div class="slider-wrapper">
-                        <div class="slider-value" id="sliderValue1">0</div>
-                        <input type="range" id="frogSlider1" min="0" max="1" step="0.001" value="0">
+                        <div class="slider-value" id="frogBeta">β = 0.00</div>
+                        <input type="range" id="frogZSlider" min="0" max="1" step="0.001" value="0">
                     </div>
                     <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitBlue.svg" alt="Blue Frog" class="right-frog">
                     <div class="label" style="right: 0;">&#946; = &infin;</div>
@@ -34,8 +45,8 @@
                 <div class="slider-container">
                     <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog" class="left-frog">
                     <div class="slider-wrapper">
-                        <div class="slider-value" id="sliderValue2">1</div>
-                        <input type="range" id="frogSlider2" min="1" max="20" value="1">
+                        <div class="slider-value" id="frogCount">1</div>
+                        <input type="range" id="frogCountSlider" min="1" max="20" value="1">
                     </div>
                     <div class="frogs">
                         <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
@@ -55,106 +66,13 @@
                 <div class="slider-container">
                     <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog" class="left-frog">
                     <div class="slider-wrapper">
-                        <div class="slider-value" id="sliderValue3">1</div>
-                        <input type="range" id="frogSlider3" min="1" max="20" value="1">
+                        <input type="range" id="simulationSpeedSlider" min="1" max="20" value="1">
                     </div>
                     <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogLeapGreen.svg" alt="Green Leap Frog" class="right-frog">
                 </div>
             </div>
-            <div>
-                <div class="slider-title">Frog Count Mode</div>
-                <div class="toggle-container">
-                    <div>Current Frog Count</div>
-                    <label class="switch">
-                        <input type="checkbox" id="frogToggle">
-                        <span class="slider-switch"></span>
-                    </label>
-                    <div>Accumulated Frog Count</div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div>
-            <i>Developed by <a href="https://www.maxjerdee.com">Max Jerdee</a>, art by Vellia Zhou.
-            </i>
-        </div>    
-    </div>
-    <script src="main.js"></script>
-    
-</body> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive and Static Bars with D3.js</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-</head>
-<body>
-
-    <div id="fps"></div>
-    <div id="simulation"></div>
-    <svg id="barPlot"></svg>
-    <div id="controls" width="300px"> 
-        <div>
-            <div class="slider-title">Inverse Temperature</div>
-            <div class="slider-container">
-                <div class="label" style="left: 0;">&#946; = 0</div>
-                <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitRed.svg" alt="Red Frog" class="left-frog">
-                <div class="slider-wrapper">
-                    <div class="slider-value" id="frogBeta">β = 0.00</div>
-                    <input type="range" id="frogZSlider" min="0" max="1" step="0.001" value="0">
-                </div>
-                <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitBlue.svg" alt="Blue Frog" class="right-frog">
-                <div class="label" style="right: 0;">&#946; = &infin;</div>
-            </div>
-        </div>
-        <div>
-            <div class="slider-title">Number of Frogs</div>
-            <div class="slider-container">
-                <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog" class="left-frog">
-                <div class="slider-wrapper">
-                    <div class="slider-value" id="frogCount">1</div>
-                    <input type="range" id="frogCountSlider" min="1" max="20" value="1">
-                </div>
-                <div class="frogs">
-                    <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
-                    <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
-                    <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
-                    <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
-                    <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
-                    <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
-                    <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
-                    <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
-                    <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="slider-title">Simulation Speed</div>
-            <div class="slider-container">
-                <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog" class="left-frog">
-                <div class="slider-wrapper">
-                    <input type="range" id="simulationSpeedSlider" min="1" max="20" value="1">
-                </div>
-                <img src="../../../assets/images/notes/metropolis_hastings/frog/FrogLeapGreen.svg" alt="Green Leap Frog" class="right-frog">
-            </div>
-        </div>
-        <div>
-            <div class="slider-title">Frog Count Mode</div>
-            <div class="toggle-container">
-                <div>Current Frog Count</div>
-                <label class="switch">
-                    <input type="checkbox" id="frogToggle">
-                    <span class="slider-switch"></span>
-                </label>
-                <div>Accumulated Frog Count</div>
-            </div>
         </div>
     </div>
-    <br>
     <div>
         <i>Developed by <a href="https://www.maxjerdee.com">Max Jerdee</a>, art by Vellia Zhou.
         </i>

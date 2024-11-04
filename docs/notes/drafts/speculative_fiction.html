@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-10-27">
+<meta name="dcterms.date" content="2024-10-28">
 <meta name="description" content="Unpacking the language and narrative structure used by black and white authors of speculative fiction.">
 
-<title>Max Jerdee - Race and speculative fiction</title>
+<title>Max Jerdee - Race, gender, and speculative fiction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -174,7 +174,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Race and speculative fiction</h1>
+<h1 class="title">Race, gender, and speculative fiction</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Natural language processing</div>
   </div>
@@ -193,7 +193,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 27, 2024</p>
+      <p class="date">October 28, 2024</p>
     </div>
   </div>
   
@@ -209,7 +209,7 @@ window.Quarto = {
 <p>Our group has been interested in understanding how to merge qualitative and quantitative methods to better understand works of speculative fiction. Particularly, we are interested in the power and use of this medium to warp the systems the authors observe.</p>
 <section id="word2vec-and-semantic-space" class="level2">
 <h2 class="anchored" data-anchor-id="word2vec-and-semantic-space">word2vec and semantic space</h2>
-<p>In order to quantitatively analyze a massive volume of text, we must</p>
+<p>A common workhorse of natural langauge processing are word embedding strategies which take the</p>
 <p>At a high level, the model has the task to predict the next word in a sentence.</p>
 <p>Notably, since these mdoels place words into a vector space, we gain the curious ability to add and subtract words from each other. This produces some funny looking equations like <span class="math display">\[
 w(\text{king}) + (w(\text{man}) - w(\text{woman})) = w(\text{queen}).
@@ -219,6 +219,11 @@ w(\text{king}) + (w(\text{man}) - w(\text{woman})) = w(\text{queen}).
 <section id="data-sets" class="level3">
 <h3 class="anchored" data-anchor-id="data-sets">Data sets</h3>
 <p>In this work, we have a number of useful data sets.</p>
+<p>In order to understand the structure of semantic space, we have trained a word2vec model on the <a href="https://github.com/nschaetti/SFGram-dataset">SFGram dataset</a> of over 1000 public domain science-fiction works. This data set includes information on the gender and year of publication of each book.</p>
+<ul>
+<li>Include histograms of the dates of publication and the gender balance within the full data set.</li>
+</ul>
+<p>As such, we may aggregrate the</p>
 <p>Although we have not (yet) labeled the gender and race of the authors in our large science fiction data set, the authors of the corpus likely skew heavily white and male. Therefore the associations made within the data set are an aggregate representation of the.</p>
 <p>We have separately placed the <a href="https://public.tableau.com/app/profile/nyla.jones/viz/specficfigures/Dashboard5">Tableau by Nyla Jones</a></p>
 <p>For one, we have the work of</p>
@@ -226,7 +231,7 @@ w(\text{king}) + (w(\text{man}) - w(\text{woman})) = w(\text{queen}).
 </section>
 <section id="semantic-space" class="level3">
 <h3 class="anchored" data-anchor-id="semantic-space">Semantic space</h3>
-<p>To explore the nature of the semantic space.</p>
+<p>To explore the nature of the semantic space within the full data set.</p>
 </section>
 <section id="semantic-atoms" class="level3">
 <h3 class="anchored" data-anchor-id="semantic-atoms">Semantic atoms</h3>

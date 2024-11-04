@@ -4,47 +4,31 @@ description: "Explore Monte Carlo methods with hopping frogs"
 image: "../assets/images/notes/metropolis_hastings/Teaser.png"
 ---
 
+This demo is based upon Figure 12.1 from John Miller's book [A Crude Look at the Whole](https://www.complexityexplorer.org/explore/resources/668-a-crude-look-at-the-whole).
+
 Monte Carlo algorithms are often used to explore probability distributions. Particularly, the Metropolis-Hastings algorithm is an extremely widely used technique for sampling from distributions. In this story, there are a few frog characters to familiarize ourselves with. 
 
 First up, explorer frog:
 
-- Doesn't give a flip
 - Red
+- Doesn't care about flies, wanders to any lilypad.
 
 Next, we have *exploiter frog* (also known as *greedy frog*):
 
-- Wants flies, now
 - Blue
+- Wants flies, now.
 
 Finally, our most complicated frog will be *sampler frog*:
 
-- Wants flies, most of the time (!)
 - Green
-  
+- Wants flies, most of the time (!)
+
 In the Metropolis-Hastings algorithm, in order to sample from a distribution proportional to $P(x)$, a proposed move from a "state" $x$ to some new state $x'$ will be "accepted" with probability 
 $$P_{\text{accept}}(x \rightarrow x') = \min\left(1,\frac{P(x)}{P(x')}\right).$$ 
-(really we should be sure our proposals are symmetric, but we won't worry about that in this demonstration).
+(really we should be sure our proposals are symmetric, but we won't worry about that in this demonstration). 
 
-What is going on with our frogs is that there is a 
+In this analogy, the states $x$ are the different lilypads, and the probability $P(x)$ is the number of flies at each lilypad. The frog characters then correspond to the behavior of this Monte Carlo algorithm at different values of $\beta$. Below, you can tinker with these parameters to explore how the distribution of frogs is related to the distribution of flies depending on the $\beta$ parameter.
 
-So, generally by using parallel tempering method we can quite generically improve the convergence performance of Monte Carlo methods, and therefore the efficiency of our posterior inference. 
-
-A nice side-effect of this, however, is the ability to leverage a technique known as "calorimetry" in the Physics community for computing the free energy of a system, and as "thermodynamic integration" within the statistics community. 
-
-Suppose that we have a general model where the 
-
-The fundamental identity that will come in handy is that if we define the partition function at an arbitrary $\beta$ as 
-
-$$ Z(\beta) = \int P(A|\vec{\theta})^\beta P(\vec{\theta}) d \theta$$
-
-so that notably we have that the Bayesian evidence is obtained at $\beta = 1$:
-
-$$ Z(1) = \int P(A | \vec{\theta}) P(\vec{\theta}) d \theta = P(A), \qquad Z(0) = \int P(\theta) d\theta = 1$$
-
-Key terms/concepts:
-
-- Simulated annealing is generally a useful way to improve convergence. 
- height="1050px" width="1000px"
  
 ```{=html}
 <div>

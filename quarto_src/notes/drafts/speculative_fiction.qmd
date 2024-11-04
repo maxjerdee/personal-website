@@ -1,6 +1,6 @@
 ---
-title: "Race and speculative fiction"
-description: "Unpacking the language and narrative structure  used by black and white authors of speculative fiction."
+title: "Race, gender, and speculative fiction"
+description: "Unpacking the language and narrative structure used by black and white authors of speculative fiction."
 categories:
     - Natural language processing
 date: last-modified
@@ -11,9 +11,9 @@ This note is on explorations in speculative fiction in collaboration with Nyla J
 Our group has been interested in understanding how to merge qualitative and quantitative methods to better understand works of speculative fiction. Particularly, we are interested in the power and use of this medium to warp the systems the authors observe.
 
 ## word2vec and semantic space
-In order to quantitatively analyze a massive volume of text, we must 
+A common workhorse of natural langauge processing are word embedding strategies which take the 
 
-At a high level, the model has the task to predict the next word in a sentence. 
+At a high level, the model has the task to predict the next word in a sentence.
 
 Notably, since these mdoels place words into a vector space, we gain the curious ability to add and subtract words from each other. This produces some funny looking equations like 
 $$
@@ -27,6 +27,12 @@ The nice thing about these models, as opposed to a large language model is that 
 ### Data sets
 In this work, we have a number of useful data sets. 
 
+In order to understand the structure of semantic space, we have trained a word2vec model on the [SFGram dataset](https://github.com/nschaetti/SFGram-dataset) of over 1000 public domain science-fiction works. This data set includes information on the gender and year of publication of each book. 
+
+- Include histograms of the dates of publication and the gender balance within the full data set. 
+
+As such, we may aggregrate the 
+
 Although we have not (yet) labeled the gender and race of the authors in our large science fiction data set, the authors of the corpus likely skew heavily white and male. Therefore the associations made within the data set are an aggregate representation of the. 
 
 We have separately placed the 
@@ -38,7 +44,7 @@ With more resources, we would be interested in labeling the full data set of wor
 
 
 ### Semantic space
-To explore the nature of the semantic space.
+To explore the nature of the semantic space within the full data set.
 
 
 ### Semantic atoms

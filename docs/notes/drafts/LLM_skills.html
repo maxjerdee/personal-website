@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Explore Monte Carlo methods with hopping frogs">
+<meta name="dcterms.date" content="2024-10-28">
+<meta name="description" content="Revisiting some of the assumptions behind.">
 
-<title>Max Jerdee - MCMC</title>
+<title>Max Jerdee - LLM skills</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,25 +25,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/images/icon.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/images/icon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,37 +72,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -111,7 +83,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Max Jerdee</span>
     </a>
   </div>
@@ -122,23 +94,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../research.html"> 
+    <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../papers.html"> 
+    <a class="nav-link" href="../../papers.html"> 
 <span class="menu-text">Papers</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../demos.html"> 
+    <a class="nav-link" href="../../demos.html"> 
 <span class="menu-text">Demos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../notes.html"> 
+    <a class="nav-link" href="../../notes.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../CV.html"> 
+    <a class="nav-link" href="../../CV.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -154,19 +126,32 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#large-language-models" id="toc-large-language-models" class="nav-link active" data-scroll-target="#large-language-models">Large Language Models</a>
+  <ul class="collapse">
+  <li><a href="#effective-skills" id="toc-effective-skills" class="nav-link" data-scroll-target="#effective-skills">Effective skills</a></li>
+  <li><a href="#semantic-atoms" id="toc-semantic-atoms" class="nav-link" data-scroll-target="#semantic-atoms">Semantic atoms</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MCMC</h1>
-</div>
+<h1 class="title">LLM skills</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Natural language processing</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    Explore Monte Carlo methods with hopping frogs
+    Revisiting some of the assumptions behind.
   </div>
 </div>
 
@@ -174,6 +159,12 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 28, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -183,30 +174,18 @@ window.Quarto = {
 </header>
 
 
-<p>This demo is based upon Figure 12.1 from John Miller’s book <a href="https://www.complexityexplorer.org/explore/resources/668-a-crude-look-at-the-whole">A Crude Look at the Whole</a>.</p>
-<p>Monte Carlo algorithms are often used to explore probability distributions. Particularly, the Metropolis-Hastings algorithm is an extremely widely used technique for sampling from distributions. In this story, there are a few frog characters to familiarize ourselves with.</p>
-<p>First up, explorer frog:</p>
-<ul>
-<li>Red</li>
-<li>Doesn’t care about flies, wanders to any lilypad.</li>
-</ul>
-<p>Next, we have <em>exploiter frog</em> (also known as <em>greedy frog</em>):</p>
-<ul>
-<li>Blue</li>
-<li>Wants flies, now.</li>
-</ul>
-<p>Finally, our most complicated frog will be <em>sampler frog</em>:</p>
-<ul>
-<li>Green</li>
-<li>Wants flies, most of the time (!)</li>
-</ul>
-<p>In the Metropolis-Hastings algorithm, in order to sample from a distribution proportional to <span class="math inline">\(P(x)\)</span>, a proposed move from a “state” <span class="math inline">\(x\)</span> to some new state <span class="math inline">\(x'\)</span> will be “accepted” with probability <span class="math display">\[P_{\text{accept}}(x \rightarrow x') = \min\left(1,\frac{P(x)}{P(x')}\right).\]</span> (really we should be sure our proposals are symmetric, but we won’t worry about that in this demonstration).</p>
-<p>In this analogy, the states <span class="math inline">\(x\)</span> are the different lilypads, and the probability <span class="math inline">\(P(x)\)</span> is the number of flies at each lilypad. The frog characters then correspond to the behavior of this Monte Carlo algorithm at different values of <span class="math inline">\(\beta\)</span>. Below, you can tinker with these parameters to explore how the distribution of frogs is related to the distribution of flies depending on the <span class="math inline">\(\beta\)</span> parameter.</p>
-<div>
-<iframe align="middle" frameborder="0" scrolling="yes" src="../../demos_code/demos/metropolis_hastings/metropolis_hastings.html" onload="this.width=screen.width;this.height=screen.height;"></iframe>
-</div>
+<p>This note is on explorations in speculative fiction in collaboration with () at the 2024 <a href="https://www.santafe.edu/engage/learn/programs/sfi-complex-systems-summer-school">SFI Complex Systems Summer School</a>.</p>
+<section id="large-language-models" class="level2">
+<h2 class="anchored" data-anchor-id="large-language-models">Large Language Models</h2>
+<section id="effective-skills" class="level3">
+<h3 class="anchored" data-anchor-id="effective-skills">Effective skills</h3>
+</section>
+<section id="semantic-atoms" class="level3">
+<h3 class="anchored" data-anchor-id="semantic-atoms">Semantic atoms</h3>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
