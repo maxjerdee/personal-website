@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Make music with Conway’s game of life">
 
-<title>Max Jerdee - CV</title>
+<title>Max Jerdee - Game of life</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +24,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/images/icon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/images/icon.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Max Jerdee</span>
     </a>
   </div>
@@ -92,23 +93,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link" href="../research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./papers.html"> 
+    <a class="nav-link" href="../papers.html"> 
 <span class="menu-text">Papers</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./demos.html"> 
+    <a class="nav-link" href="../demos.html"> 
 <span class="menu-text">Demos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./notes.html"> 
+    <a class="nav-link" href="../notes.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./cv.html" aria-current="page"> 
+    <a class="nav-link" href="../CV.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -131,9 +132,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CV</h1>
+<h1 class="title">Game of life</h1>
 </div>
 
+<div>
+  <div class="description">
+    Make music with Conway’s game of life
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -148,7 +154,27 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<embed src="assets/pdf/CV.pdf" width="800px" height="1000px">
+<!-- Grid of buttons -->
+<div id="grid"></div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js"></script>
+<script src="https://cdn.rawgit.com/mudcube/MIDI.js/master/inc/shim/Base64.js"></script>
+
+<!-- Custom code --> 
+<link rel="stylesheet" href="../assets/css/game_of_life.css">
+<script src="../assets/js/game_of_life.js"></script> 
+
+<p>Conway’s game of life is a compact, elegant example of how simple principles can generate complex behaviors. The “game” is played on a 2-dimensional grid, and loosely simulates changes in the population of a species over space and time. Each grid square may either be “alive” or “dead” at each time interval. Only if a grid cell has between 3 and 5 of its 8 neighbors alive will it be alive and happy on the next turn, otherwise it will die of either under- or over-crowding. From this simple rule alone, very complicated behavior can be observed. In this demo we simulate this game of life and play sounds when each of the grid cells is alive. We also mirror our simulation on a Novation Launchpad, an 8 x 8 grid of buttons that can light up with colors. We hope that by creating a unified physical, auditory, and visual experience we have an engaging mode to play with this toy example of how complexity can emerge.</p>
+<p>This demo made during the 2024 <a href="https://www.santafe.edu/engage/learn/programs/sfi-complex-systems-summer-school">SFI Complex Systems Summer School</a> as part of the <a href="https://maxjerdee.github.io/CSSS-arts/">Art and Complexity Collective</a>.</p>
+<p>If you plug in a <a href="https://us.novationmusic.com/products/launchpad-mini-mk3">Novation Mini [MK3]</a>, you can interact with this demonstration live. That is also what the request to “reprogram your MIDI devices” is about, otherwise you can select “Block” and simply click on the buttons within the browser.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/images/MIDI_permissions.png" class="img-fluid figure-img" style="width:3in"></p>
+<figcaption>Example of asking for permissions, unless you are plugging in a Launchpad can select to Block</figcaption>
+</figure>
+</div>
 
 
 

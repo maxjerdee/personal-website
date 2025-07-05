@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-10-08">
+<meta name="description" content="Any model will ‘fit’ data, how can we sort out which ones to trust?">
 
-<title>Max Jerdee - CV</title>
+<title>Max Jerdee - Bayesian model selection</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/images/icon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/images/icon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -81,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Max Jerdee</span>
     </a>
   </div>
@@ -92,23 +94,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./papers.html"> 
+    <a class="nav-link" href="../../papers.html"> 
 <span class="menu-text">Papers</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./demos.html"> 
+    <a class="nav-link" href="../../demos.html"> 
 <span class="menu-text">Demos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./notes.html"> 
+    <a class="nav-link" href="../../notes.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./cv.html" aria-current="page"> 
+    <a class="nav-link" href="../../CV.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -131,14 +133,28 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CV</h1>
-</div>
+<h1 class="title">Bayesian model selection</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Model selection</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Any model will ‘fit’ data, how can we sort out which ones to trust?
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 8, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -148,7 +164,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<embed src="assets/pdf/CV.pdf" width="800px" height="1000px">
+<p>Suppose that we have two models. There is a</p>
+<ul>
+<li><p>Structure this around the demonstration for curves through points and the coin flipping example.</p></li>
+<li><p>Discuss many of the possible ways that one can perform model selection. Frame that the way that I often prefer to do this is with the Bayesian evidence, and can talk about various different ways that this can be approximated.</p></li>
+<li><p>Variational methods.</p></li>
+<li><p>WAIC (weighted AIC?)</p></li>
+<li><p>BIC, AIC</p></li>
+<li><p>Sampling based:</p></li>
+<li><p>Cross-validation methods (LOO), need to understand this. Equivalence with the calculation of the marginal likelihood</p></li>
+<li><p>PSIS-LOO (gold standard)</p></li>
+<li><p>Chib’s method (need to understand this better, but it looks like this can be applied when we are doing Gibbs sampling and know the absolute form of the posterior conditioned on some other latent variable), TI</p></li>
+</ul>
 
 
 

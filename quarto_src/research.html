@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Max Jerdee - CV</title>
+<title>Max Jerdee - Research interests</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link active" href="./research.html" aria-current="page"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
@@ -108,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./cv.html" aria-current="page"> 
+    <a class="nav-link" href="./CV.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -124,14 +124,24 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#community-detection" id="toc-community-detection" class="nav-link active" data-scroll-target="#community-detection">Community detection</a></li>
+  <li><a href="#hierarchies" id="toc-hierarchies" class="nav-link" data-scroll-target="#hierarchies">Hierarchies</a></li>
+  <li><a href="#scalable-inference" id="toc-scalable-inference" class="nav-link" data-scroll-target="#scalable-inference">Scalable inference</a></li>
+  <li><a href="#asymptotic-understanding" id="toc-asymptotic-understanding" class="nav-link" data-scroll-target="#asymptotic-understanding">Asymptotic understanding</a></li>
+  <li><a href="#implementation-and-outreach" id="toc-implementation-and-outreach" class="nav-link" data-scroll-target="#implementation-and-outreach">Implementation and outreach</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CV</h1>
+<h1 class="title">Research interests</h1>
 </div>
 
 
@@ -148,9 +158,29 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<embed src="assets/pdf/CV.pdf" width="800px" height="1000px">
+<p>My research focuses on the statistical physics of networked systems and aims to understand the regularities and mechanisms underlying observed networks of interactions. Whether examining forces between particles, dominance interactions among animals, or the spread of disease through populations, signatures of emergent complexity such as phase transitions and chaotic dynamics frequently emerge. By studying these phenomena within a unified network science framework, we can address common conceptual and computational challenges. From this interdisciplinary vantage, I seek to leverage tools from statistical physics, information theory, and related fields to enhance our understanding of these complex systems. Many current methods struggle with a tradeoff between realism and statistical rigor. Developing techniques that bridge this tension will advance many scientific applications and inspire new developments in physics.</p>
+<section id="community-detection" class="level2">
+<h2 class="anchored" data-anchor-id="community-detection">Community detection</h2>
+<p>A central problem in network science is community detection: identifying latent groups of network nodes with similar behavior. For instance, a school friend group might be defined as a collection of students who are more frequently connected with each other than with those outside the group. This intuitive definition translates into the stochastic block model (SBM), where the model likelihood represents the probability that a given underlying friend group structure would generate the observed network. By inverting this generative model to perform inference, the SBM identifies the most probable friend groups based on the observed friendships. Although first introduced in this sociological context, the SBM is just a form of Ising model or Potts model. In this correspondence, each site represents a student. If the spin is up, the student belongs to one group; if down, they belong to the other. Just as the ground state configuration of the ferromagnetic Ising model minimizes different-spin neighbors, the best fit to the SBM minimizes unlikely friendships between different groups. Thus, many network inference questions can be recast in physical language and solved with physical tools. The same Monte Carlo algorithms used to find ground states and explore entropically typical configurations can be repurposed to fit network models. I look to refine these methods to extend the application of the stochastic model to settings where it consistently exhibits biases.</p>
+</section>
+<section id="hierarchies" class="level2">
+<h2 class="anchored" data-anchor-id="hierarchies">Hierarchies</h2>
+<p>When players enter a sports tournament, humans attend a high school, or chickens are put in a coop, a hierarchy tends to emerge. This pecking order might be reflected in chess game victories, unreciprocated friendships, or chicken pecks. Over the last century many models have been developed and applied to understand and predict these patterns. In recent work, we have developed a Bayesian model to infer both the order of these hierarchies and notably their degree of inequity. We have found a good deal of variation between these settings. Sports leagues tend to be fairly competitive and unpredictable, while animal hierarchies are very unequal and rigid. On this spectrum, human social hierarchies between friends or institutions tend to fall in the middle. With this ability to measure the degree of social inequality, I hope to more deeply analyze the root causes of social inequality and characterize the types of shapes the distribution of social status can take. What societal factors lead one high school to be more socially stratified than another? What are differences in outcomes among those at the top and bottom of a social hierarchy?</p>
+</section>
+<section id="scalable-inference" class="level2">
+<h2 class="anchored" data-anchor-id="scalable-inference">Scalable inference</h2>
+<p>As network models grow more complex, the demands on the underlying computational tools intensify. Each new model represents a competing hypothesis to explain observed data, making model selection crucial. In semi-supervised cases, where algorithm output is checked against known truths, I develop unbiased information-theoretic measures of similarity to declare winners. In unsupervised settings, ideally I aim to use Bayesian evidence—the probability that a given model generates the observed data—to adjudicate between models. This Bayesian evidence is the free energy of the corresponding physical system, and so we can apply and enhance computational physics techniques to approximate it. As data sets grow larger, Monte Carlo methods for full Bayesian inference become prohibitively expensive, necessitating approximations like mean field methods and belief propagation algorithms. Refining these methods and understanding their asymptotic performance is therefore essential to both the understanding of condensed matter and the rigorous analysis of ever larger data sets.</p>
+</section>
+<section id="asymptotic-understanding" class="level2">
+<h2 class="anchored" data-anchor-id="asymptotic-understanding">Asymptotic understanding</h2>
+<p>Network science often deals with pairwise interactions, represented by n x n adjacency matrices where entries denote interaction strength. Random network models thus are interpretable as random matrix models, whose large n limit can be studied with free probability. For instance, the distribution of eigenvalues of random graphs with independent and identical entries famously converges to a semicircle. This control is leveraged to derive the SBM phase transition mentioned earlier. This program has been extremely successful, but many questions in network science now involve hypergraph data, which models higher-order interactions such as among triplets of nodes. These are represented by tensors instead of matrices, necessitating fundamental progress in random tensor theory.</p>
+</section>
+<section id="implementation-and-outreach" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-and-outreach">Implementation and outreach</h2>
+<p>Holistically, my research goals encompass refining these tools and ensuring their effective application. I am particularly interested in developing online interactive materials to communicate and package these ideas. This effort not only increases visibility of our methodological advances but also enhances educational accessibility and engagement with science for broader audiences.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
