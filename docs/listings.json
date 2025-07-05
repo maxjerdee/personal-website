@@ -13,6 +13,8 @@
   },
   {
     "listing": "/notes.html",
-    "items": []
+    "items": [
+      "/notes/2025/statistical_inference.html"
+    ]
   }
 ]

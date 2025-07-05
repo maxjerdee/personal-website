@@ -18,7 +18,7 @@ website:
         text: Demos
       - href: notes.qmd
         text: Notes
-      - href: CV.qmd
+      - href: CV.html
         text: CV
 
 format:

@@ -81,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -168,7 +168,7 @@ window.Quarto = {
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./CV.qmd"> 
+    <a class="nav-link" href="./CV.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -185,7 +185,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Inference">Inference <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -215,7 +215,36 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-
+<div class="quarto-post image-right" data-index="0" data-categories="Inference" data-listing-date-sort="1751727588000" data-listing-file-modified-sort="1751727588835" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2611">
+<div class="thumbnail">
+<p><a href="./notes/2025/statistical_inference.html" class="no-external"></a></p><a href="./notes/2025/statistical_inference.html" class="no-external">
+<p><img src="./assets/images/notes/statistical_inference/coin-flip-perspectives.svg" class="thumbnail-image"></p>
+</a><p><a href="./notes/2025/statistical_inference.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./notes/2025/statistical_inference.html" class="no-external">Statistical inference review</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./notes/2025/statistical_inference.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Inference'); return false;">
+Inference
+</div>
+</div>
+<div class="listing-description">
+<a href="./notes/2025/statistical_inference.html" class="no-external">Quick primer on Bayesian inference and model selection.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./notes/2025/statistical_inference.html" class="no-external">
+<div class="listing-date">
+Jul 5, 2025
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items

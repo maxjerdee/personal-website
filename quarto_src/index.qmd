@@ -12,7 +12,7 @@ about:
     - text: "{{< iconify academicons google-scholar >}} Scholar"
       href: https://scholar.google.com/citations?user=t13Mib4AAAAJ&hl=en
     - text: "{{< iconify carbon document >}} CV"
-      href: CV.qmd
+      href: cv.html
 ---
 
 I am a Physics PhD student at the University of Michigan advised by Prof. [Mark Newman](https://websites.umich.edu/~mejn/) and affiliated with the [Center for the Study of Complex Systems](https://lsa.umich.edu/cscs). 
