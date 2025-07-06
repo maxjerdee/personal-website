@@ -339,6 +339,6 @@ Nested models are a particularly useful way to select between models, and are a 
 model then generalize it within this Bayesian framework. By doing this
 we can check both whether this generalization is warranted and, if so,
 measure the size of the new effect, just like we infer $p$ in the biased
-coin model. For example in this paper with Mark Newman [@JN24], we had applied these methods to directly compare Bradley-Terry models against minimum violation ranking by constructing a general model that includes both possibilities as special cases. By stating and incorporating our prior expectations into the
+coin model. For example in work [@JN24] with Mark Newman we had applied these methods to directly compare Bradley-Terry models against minimum violation ranking by constructing a general model that includes both possibilities as special cases. By stating and incorporating our prior expectations into the
 inference process, a Bayesian framework enables us to handle uncertainty
 and validate our models in a graceful manner.

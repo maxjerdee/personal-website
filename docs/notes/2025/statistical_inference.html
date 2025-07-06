@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-05">
+<meta name="dcterms.date" content="2025-07-06">
 <meta name="description" content="Quick primer on Bayesian inference and model selection.">
 
 <title>Max Jerdee - Statistical inference review</title>
@@ -211,7 +211,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 5, 2025</p>
+      <p class="date">July 6, 2025</p>
     </div>
   </div>
   
@@ -295,7 +295,7 @@ P(\overbrace{\text{H},...,\text{T}}^{n_\text{H} \text{ heads}}|p) = p^{n_\text{H
 <section id="network-science" class="level2">
 <h2 class="anchored" data-anchor-id="network-science">Network science</h2>
 <p>In network science, this Bayesian approach is particularly powerful for model selection and parameter inference. For example, when analyzing the structure of a network, we might compare a simple random graph model (e.g., Erdős–Rényi) against a more complex description like the configuration model. The model evidence naturally weighs the goodness-of-fit against the complexity of the model and penalizes models whose extra flexibility only hampers their explanatory power.</p>
-<p>Nested models are a particularly useful way to select between models, and are a central trick in much of my work. In each example we start with a simple model then generalize it within this Bayesian framework. By doing this we can check both whether this generalization is warranted and, if so, measure the size of the new effect, just like we infer&nbsp;<span class="math inline">\(p\)</span> in the biased coin model. For example in this paper with Mark Newman <span class="citation" data-cites="JN24">(<a href="#ref-JN24" role="doc-biblioref">Jerdee and Newman 2024</a>)</span>, we had applied these methods to directly compare Bradley-Terry models against minimum violation ranking by constructing a general model that includes both possibilities as special cases. By stating and incorporating our prior expectations into the inference process, a Bayesian framework enables us to handle uncertainty and validate our models in a graceful manner.</p>
+<p>Nested models are a particularly useful way to select between models, and are a central trick in much of my work. In each example we start with a simple model then generalize it within this Bayesian framework. By doing this we can check both whether this generalization is warranted and, if so, measure the size of the new effect, just like we infer&nbsp;<span class="math inline">\(p\)</span> in the biased coin model. For example in work <span class="citation" data-cites="JN24">(<a href="#ref-JN24" role="doc-biblioref">Jerdee and Newman 2024</a>)</span> with Mark Newman we had applied these methods to directly compare Bradley-Terry models against minimum violation ranking by constructing a general model that includes both possibilities as special cases. By stating and incorporating our prior expectations into the inference process, a Bayesian framework enables us to handle uncertainty and validate our models in a graceful manner.</p>
 
 
 
