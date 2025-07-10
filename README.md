@@ -30,6 +30,8 @@ pdfs will also render in a strange way, we can convert them either to raster ima
 /mnt/c/Program\ Files/Inkscape/bin/inkscape.exe --export-type="svg" coin-flip-fair.pdf
 ```
 
+We will also need to manually redo the cross-references.
+TODO: write a script that automatically adjusts the .md file output by pandoc into the .qmd format with the correct front matter and cross-references. 
 
 Once the note is ready, we can move it to the `quarto_src/notes/YEAR` directory.
 

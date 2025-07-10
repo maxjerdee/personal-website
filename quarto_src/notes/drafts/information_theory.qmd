@@ -1,22 +1,23 @@
 ---
 title: "Information theory review"
-description: "Quick primer on information theory"
+description: "Basics of information theory: Shannon and Kolmogorov"
 categories:
   - Information theory
 date: last-modified
+bibliography: ../../assets/LaTeX/references.bib
+assets-folder: "../../assets/images/notes/information_theory"
+image: ../../assets/images/notes/information_theory/coin-flip-perspectives.pdf
+format:
+  pdf:
+    include-in-header:
+      - file: ../../assets/LaTeX/preamble.tex
 ---
 
-Information theory
-==================
-
-In the previous section we discussed how a physical perspective on
-statistics naturally leads to concepts like entropy and algorithms for
-exploring configuration spaces. In this section we discuss an
-information theoretic perspective which abstractly considers the
-sequence of coin flips as a message to be transmitted, allowing us to
+In this note we informally discuss the foundations of information theory from Shannon entropy to Kolmogorov complexity. These concepts allow us to
 reckon with the inherent complexity of the data observed in a general
-sense.
+sense, underpinning much of my research. The review is adapted from my PhD thesis.
 
+## Encoding 
 Central to information theory is a thought experiment aiming to *encode*
 a message as efficiently as possible. Suppose we would like to transmit
 to another party the results of our earlier experiment of 10 coin flips
@@ -37,8 +38,9 @@ determine the efficiency of our transmission we measure the length of
 our binary string in *bits*. In this case our encoding used 10 digits
 (bits) to transmit the message, one for each flip. A schematic of this
 encoding framework is given in
-Figure [\[fig:coin-flip-perspectives\]](#fig:coin-flip-perspectives){reference-type="ref"
-reference="fig:coin-flip-perspectives"}c.
+Figure [1](#fig:coin-flip-perspectives).  
+
+![Encoding coin flips as a binary string]({{< meta assets-folder >}}/coin-flip-perspectives.pdf){#fig:coin-flip-perspectives}
 
 This association of digits to outcomes is quite a natural encoding of
 two-sided coin flips. In a more general setting, however, we will need
@@ -64,7 +66,7 @@ Any such prefix-free binary code can be usefully represented as a binary
 tree whose leaves each correspond to a character (or \"symbol\") being
 transmitted. The codeword associated to each symbol is then represented
 by the path from the root of the tree down to that symbol.
-Figure [1](#fig:encoding-examples){reference-type="ref"
+Figure [2](#fig:encoding-examples){reference-type="ref"
 reference="fig:encoding-examples"}a shows an example of such a tree used
 to encode the five characters. Following the tree paths this
 \"balanced\" encoding represents the characters
@@ -81,8 +83,9 @@ tree down to the appropriate node. The Huffman code is able to produce a
 shorter overall message than the balanced code by representing the
 common letter \"E\" with a short string \"0\" despite representing the
 uncommon letters \"N\" and \"S\" with longer
-strings.](max_dissertation//chapters//figures//chp1/encoding-examples.pdf){#fig:encoding-examples}
+strings.]({{< meta assets-folder >}}/encoding-examples.pdf){#fig:encoding-examples}
 
+## Encoding efficiently
 Now, a key goal of information theory is not only to successfully
 transmit a message but also to do so using as few bits as possible. This
 objective can be seen as a formalization of Occam's razor, the
@@ -129,7 +132,7 @@ reference="eq:krafts-inequality"}.
 *Huffman codes* strike this balance and provably minimize the message
 length by assigning short codewords to frequent symbols while saturating
 Kraft's inequality.
-Figure [1](#fig:encoding-examples){reference-type="ref"
+Figure [2](#fig:encoding-examples){reference-type="ref"
 reference="fig:encoding-examples"}b contains an example of a Huffman
 code for our application. The code shortens the codeword for \"E\" from
 2 to 1 bit while lengthening the codewords for \"N\" and \"S\" from 3 to
@@ -152,6 +155,7 @@ with probability $p = 5/11$, and is so assigned a string of
 length $1 \approx \log_2(11/5)$ while the character \"S\" appears at the
 ratio $1/11$ and is encoded using $4 \approx \log_2(11)$ bits.
 
+## Shannon entropy
 In most contexts we consider, symbol probabilities are small and
 codeword lengths are long. In this regime we can approximate lengths
 as $\ell_r = -\log_2(p_r)$, which would in fact be the optimal choices
@@ -203,6 +207,8 @@ to certain constraints we expect the system to provide. For example, a
 Gaussian distribution can be motivated as the maximum entropy
 distribution of a real random variable of a fixed mean and variance.
 
+
+## Misspecification and KL-divergence
 Returning to encodings, to obtain the entropy we had considered the
 total message length of a Huffman code optimized to send that particular
 message. However in many contexts we do not *a priori* know what
@@ -246,6 +252,7 @@ description length. This motivates the *minimum description length*
 (MDL) principle, which prefers models whose corresponding encodings
 across realistic data sets are as small as possible.
 
+## Statistical perspective
 As an application, suppose that we would like to select the appropriate
 value of a parameter $\vec{\theta}$ for a
 model $P(\vec{x}|\vec{\theta})$. For each choice of parameter the
@@ -302,6 +309,7 @@ By interpreting models as encodings of data we can motivate many of the
 inference and model selection principles. These connections highlight
 the duality between the compression and modeling of a data set.
 
+## Kolmogorov complexity
 To this point, we have considered the Shannon entropy of *probability
 distributions*. However, much of this thesis focuses on a subtly
 different notion of the complexity of *objects*. Shannon entropy
@@ -379,7 +387,7 @@ many possible models $M \in \mathcal{M}$, we roughly consider the
 information cost $$\begin{aligned}
     K(\vec{x}) \sim \text{min}_{M \in \mathcal{M}} H_{M}(\vec{x}).\end{aligned}$$
 Of course in this pursuit we cannot consider models too finely attuned
-to a particular data set, although for our purposes we considering
+to a particular data set, although for our purposes we consider
 rather generic simple models. We can only hope to ever approximate the
 Kolmogorov complexity in this sense, although as we find models with
 shorter distribution length we can (roughly) obtain tighter upper bounds
