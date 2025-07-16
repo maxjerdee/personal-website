@@ -1,9 +1,10 @@
 ---
-title: "Statistical physics review"
+title: "Statistical physics"
 description: "Foundations of statistical physics from energy to entropy, and their links to model inference"
 categories:
   - Physics
   - Inference
+  - Review
 date: 07/14/25
 bibliography: ../../assets/LaTeX/references.bib
 assets-folder: "../../assets/images/notes/statistical_physics"

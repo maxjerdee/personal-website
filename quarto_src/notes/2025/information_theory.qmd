@@ -1,8 +1,9 @@
 ---
-title: "Information theory review"
+title: "Information theory"
 description: "Basics of information theory: Shannon and Kolmogorov"
 categories:
   - Information theory
+  - Review
 date: 07/15/25
 bibliography: ../../assets/LaTeX/references.bib
 assets-folder: "../../assets/images/notes/information_theory"
@@ -244,9 +245,7 @@ distribution $Q(\boldsymbol{x})$ we can write the Huffman code length (or
 $$\begin{aligned}
     H(\boldsymbol{x}) = -\log Q(\boldsymbol{x}),\end{aligned}$$
 :::
-which we can compare
-to the Hamiltonian in
-[Eq. @eq-energy-posterior-relation]. If we use this model encoding
+which we can compare to the relation $H(\boldsymbol{x}) = - \log P(\boldsymbol{x})$ between system energy and model probability discussed [here](../2025/statistical_physics.html). If we use this model encoding
 on a stream of observations whose true distribution is $P(\boldsymbol{x})$, the
 average description length decomposes as 
 

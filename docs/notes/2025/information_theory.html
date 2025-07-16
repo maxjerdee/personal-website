@@ -9,7 +9,7 @@
 <meta name="dcterms.date" content="2025-07-15">
 <meta name="description" content="Basics of information theory: Shannon and Kolmogorov">
 
-<title>Max Jerdee - Information theory review</title>
+<title>Max Jerdee - Information theory</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -173,9 +173,10 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Information theory review</h1>
+<h1 class="title">Information theory</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Information theory</div>
+    <div class="quarto-category">Review</div>
   </div>
   </div>
 
@@ -296,7 +297,7 @@ S[P] = -\int P(\boldsymbol{x}) \log_2 P(\boldsymbol{x}) d\boldsymbol{x}. \end{al
 <p><span class="math display">\[\begin{aligned}
     H(\boldsymbol{x}) = -\log Q(\boldsymbol{x}),\end{aligned}\]</span></p>
 </div>
-<p>which we can compare to the Hamiltonian in <strong>?@eq-energy-posterior-relation</strong>. If we use this model encoding on a stream of observations whose true distribution is&nbsp;<span class="math inline">\(P(\boldsymbol{x})\)</span>, the average description length decomposes as</p>
+<p>which we can compare to the relation <span class="math inline">\(H(\boldsymbol{x}) = - \log P(\boldsymbol{x})\)</span> between system energy and model probability discussed <a href="../2025/statistical_physics.html">here</a>. If we use this model encoding on a stream of observations whose true distribution is&nbsp;<span class="math inline">\(P(\boldsymbol{x})\)</span>, the average description length decomposes as</p>
 <div style="overflow-x:auto;overflow-y:hidden;">
 <p><span class="math display">\[\begin{aligned}
     \sum_{\boldsymbol{x}} P(\boldsymbol{x}) H(\boldsymbol{x}) &amp;= -\sum_{\boldsymbol{x}} P(\boldsymbol{x})\log P(\boldsymbol{x}) + \sum_{\boldsymbol{x}} P(\boldsymbol{x})\log \frac{P(\boldsymbol{x})}{Q(\boldsymbol{x})} \nonumber \\

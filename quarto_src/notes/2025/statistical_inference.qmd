@@ -1,8 +1,9 @@
 ---
-title: "Statistical inference review"
+title: "Statistical inference"
 description: "Quick primer on Bayesian inference, model selection, and validation"
 categories:
     - Inference
+    - Review
 date: 07/11/2025
 bibliography: ../../assets/LaTeX/references.bib
 assets-folder: "../../assets/images/notes/statistical_inference"

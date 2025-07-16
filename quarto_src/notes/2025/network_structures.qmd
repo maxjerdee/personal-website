@@ -2,7 +2,7 @@
 title: "Network structures"
 description: "An introduction to networks and the group and hierarchy structures they reveal"
 categories:
-  - Network science
+  - Review
 date: 07/16/25
 bibliography: ../../assets/LaTeX/references.bib
 assets-folder: "../../assets/images/notes/network_structures"
