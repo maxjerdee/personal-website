@@ -4,19 +4,19 @@ title: "Research interests"
 
 **My research leverages tools from physics, statistics, and diverse disciplines to model networks and enhance our understanding of the complex systems they represent. By modeling mechanisms, we can probe rich structures like groups and hierarchies in a wide variety of networks. My work looks to not only provide explanations for these observed patterns but also to justify and validate those inferences. By refining these methods, I ultimately aim to tighten the connection between mathematical models and qualitative, interpretable theories of system behavior.**
 
-### Community Detection  
+### Community detection  
 In real-world networks we often find communities — groups of nodes which interact with each other more frequently than with nodes outside their group. Common examples include friend groups, functional neuronal groups, or ecological niches. Despite their ubiquity, network data does not often come to us already labeled with this group structure; it must be algorithmically inferred from the network alone. I work on refining and evaluating methods to find such groups in networks, especially in situations where usual models struggle.
 
 ### Hierarchies  
 When we observe directed relationships such as dominance interactions among animals or humans, the directions of faculty hiring among universities, or wins and losses in games and sports, hierarchies routinely emerge. I use Bayesian models to not only find the order of these hierarchies, but also how unequal they are. For example, animal hierarchies are generally much stricter than those in sports or schools. By measuring effects like social inequality, I hope to better understand what drives these differences and how they affect people at the top and bottom.
 
-### Scalable Inference  
+### Scalable inference  
 As our models get more complicated, analysis gets harder. I'm interested in developing computational tools—like Monte Carlo methods and belief propagation—to efficiently compare models and estimate which ones best explain real network data, even for huge datasets.
 
-### Asymptotic Understanding  
+### Asymptotic understanding  
 Many network problems boil down to large, random matrices—which physics has great tools for analyzing. These networks, however, can only capture *dyadic* interactions between pairs of nodes. "Hypergraphs" that capture higher order interactions are described by random tensors instead. I aim to better understand the behavior of these large random tensors, and its implications for network science and physics at large.
 
-### Implementation and Outreach  
+### Implementation and outreach  
 Overall, I aim to not only advance these methods, but also make them accessible. I’m especially interested in creating interactive online resources to share our findings and make network science more approachable to everyone. 
 
 ---

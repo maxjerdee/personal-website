@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 468 159.73">
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 279.18 159.73">
   <!-- Generator: Adobe Illustrator 29.5.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 141)  -->
   <defs>
     <style>
@@ -12,516 +12,480 @@
       }
 
       .st2 {
-        fill: #ed2024;
-      }
-
-      .st2, .st3, .st4, .st5, .st6, .st7, .st8 {
-        font-size: 10.91px;
-      }
-
-      .st2, .st4, .st5, .st6, .st7, .st8 {
-        font-family: TeXGyrePagellaX-Regular, 'TeXGyrePagellaX Regular';
-      }
-
-      .st9 {
-        clip-path: url(#clippath-6);
-      }
-
-      .st10 {
-        clip-path: url(#clippath-7);
-      }
-
-      .st11 {
-        clip-path: url(#clippath-17);
-      }
-
-      .st3 {
-        font-family: 'NewPXMI_gnu', NewPXMI;
-      }
-
-      .st12 {
-        clip-path: url(#clippath-31);
-      }
-
-      .st13 {
-        clip-path: url(#clippath-15);
-      }
-
-      .st14 {
-        clip-path: url(#clippath-33);
-      }
-
-      .st15 {
-        clip-path: url(#clippath-18);
-      }
-
-      .st16 {
-        clip-path: url(#clippath-4);
-      }
-
-      .st17 {
-        clip-path: url(#clippath-22);
-      }
-
-      .st18 {
-        clip-path: url(#clippath-23);
-      }
-
-      .st4 {
-        fill: #3953a4;
-      }
-
-      .st19 {
-        clip-path: url(#clippath-9);
-      }
-
-      .st20 {
-        clip-path: url(#clippath-10);
-      }
-
-      .st21 {
-        clip-path: url(#clippath-25);
-      }
-
-      .st22 {
-        clip-path: url(#clippath-27);
-      }
-
-      .st23 {
-        clip-path: url(#clippath-11);
-      }
-
-      .st24, .st25 {
-        fill: none;
-      }
-
-      .st26 {
-        clip-path: url(#clippath-28);
-      }
-
-      .st6 {
         fill: #bf7f3f;
       }
 
-      .st27 {
-        clip-path: url(#clippath-1);
+      .st3 {
+        clip-path: url(#clippath-6);
       }
 
-      .st28 {
-        letter-spacing: .25em;
+      .st4 {
+        clip-path: url(#clippath-7);
       }
 
-      .st29 {
-        clip-path: url(#clippath-5);
+      .st5 {
+        clip-path: url(#clippath-17);
       }
 
-      .st30 {
-        clip-path: url(#clippath-20);
-      }
-
-      .st31 {
-        clip-path: url(#clippath-8);
-      }
-
-      .st32 {
-        clip-path: url(#clippath-3);
-      }
-
-      .st33 {
-        clip-path: url(#clippath-26);
-      }
-
-      .st34 {
-        clip-path: url(#clippath-12);
-      }
-
-      .st35 {
-        clip-path: url(#clippath-14);
-      }
-
-      .st36 {
-        clip-path: url(#clippath-30);
-      }
-
-      .st37 {
-        clip-path: url(#clippath-19);
-      }
-
-      .st38 {
-        clip-path: url(#clippath-32);
+      .st6 {
+        clip-path: url(#clippath-31);
       }
 
       .st7 {
-        fill: gray;
-      }
-
-      .st39 {
-        clip-path: url(#clippath-16);
-      }
-
-      .st40 {
-        clip-path: url(#clippath-2);
-      }
-
-      .st41 {
-        clip-path: url(#clippath-29);
-      }
-
-      .st25 {
-        opacity: .7;
-        stroke: #231f20;
-        stroke-miterlimit: 10;
-      }
-
-      .st42 {
-        clip-path: url(#clippath-13);
+        clip-path: url(#clippath-15);
       }
 
       .st8 {
+        clip-path: url(#clippath-33);
+      }
+
+      .st9 {
+        clip-path: url(#clippath-18);
+      }
+
+      .st10 {
+        clip-path: url(#clippath-4);
+      }
+
+      .st11 {
+        fill: gray;
+      }
+
+      .st12 {
+        clip-path: url(#clippath-22);
+      }
+
+      .st13 {
+        clip-path: url(#clippath-23);
+      }
+
+      .st14 {
+        fill: #ed2024;
+      }
+
+      .st15 {
+        clip-path: url(#clippath-9);
+      }
+
+      .st16 {
+        clip-path: url(#clippath-10);
+      }
+
+      .st17 {
+        clip-path: url(#clippath-25);
+      }
+
+      .st18 {
+        clip-path: url(#clippath-27);
+      }
+
+      .st19 {
+        fill: #2c292a;
+      }
+
+      .st20 {
         fill: #6abd45;
       }
 
-      .st43 {
+      .st21 {
+        clip-path: url(#clippath-11);
+      }
+
+      .st22 {
+        fill: none;
+      }
+
+      .st23 {
+        fill: #3e3e3f;
+      }
+
+      .st24 {
+        clip-path: url(#clippath-28);
+      }
+
+      .st25 {
+        clip-path: url(#clippath-1);
+      }
+
+      .st26 {
+        clip-path: url(#clippath-5);
+      }
+
+      .st27 {
+        clip-path: url(#clippath-20);
+      }
+
+      .st28 {
+        clip-path: url(#clippath-8);
+      }
+
+      .st29 {
+        clip-path: url(#clippath-3);
+      }
+
+      .st30 {
+        clip-path: url(#clippath-26);
+      }
+
+      .st31 {
+        clip-path: url(#clippath-12);
+      }
+
+      .st32 {
+        clip-path: url(#clippath-14);
+      }
+
+      .st33 {
+        clip-path: url(#clippath-30);
+      }
+
+      .st34 {
+        clip-path: url(#clippath-19);
+      }
+
+      .st35 {
+        clip-path: url(#clippath-32);
+      }
+
+      .st36 {
+        fill: #6d6e71;
+      }
+
+      .st37 {
+        clip-path: url(#clippath-16);
+      }
+
+      .st38 {
+        clip-path: url(#clippath-2);
+      }
+
+      .st39 {
+        clip-path: url(#clippath-29);
+      }
+
+      .st40 {
+        clip-path: url(#clippath-13);
+      }
+
+      .st41 {
         clip-path: url(#clippath-24);
       }
 
-      .st44 {
+      .st42 {
         clip-path: url(#clippath);
       }
 
-      .st45 {
-        letter-spacing: .25em;
+      .st43 {
+        fill: #3953a4;
       }
     </style>
     <clipPath id="clippath">
-      <rect class="st24" x="272.77" y="35.45" width="8.66" height="9.69"/>
+      <polyline class="st22" points="179.4 35.45 188.06 35.45 188.06 45.14 179.4 45.14 179.4 35.45"/>
     </clipPath>
     <clipPath id="clippath-1">
-      <rect class="st24" x="285.77" y="52.97" width="8.66" height="9.69"/>
+      <polyline class="st22" points="192.4 52.97 201.06 52.97 201.06 62.66 192.4 62.66 192.4 52.97"/>
     </clipPath>
     <clipPath id="clippath-2">
-      <rect class="st24" x="275.38" y="15.5" width="7.45" height="9.6"/>
+      <polyline class="st22" points="182 15.5 189.45 15.5 189.45 25.1 182 25.1 182 15.5"/>
     </clipPath>
     <clipPath id="clippath-3">
-      <rect class="st24" x="297.38" y="15.45" width="7.45" height="9.69"/>
+      <polyline class="st22" points="204 15.45 211.45 15.45 211.45 25.14 204 25.14 204 15.45"/>
     </clipPath>
     <clipPath id="clippath-4">
-      <rect class="st24" x="288.38" y="33.5" width="7.45" height="9.6"/>
+      <polyline class="st22" points="195 33.5 202.45 33.5 202.45 43.1 195 43.1 195 33.5"/>
     </clipPath>
     <clipPath id="clippath-5">
-      <rect class="st24" x="310.38" y="33.45" width="7.45" height="9.69"/>
+      <polyline class="st22" points="217 33.45 224.45 33.45 224.45 43.14 217 43.14 217 33.45"/>
     </clipPath>
     <clipPath id="clippath-6">
-      <rect class="st24" x="298.17" y="71.42" width="9.87" height="9.75"/>
+      <polyline class="st22" points="204.79 71.42 214.66 71.42 214.66 81.17 204.79 81.17 204.79 71.42"/>
     </clipPath>
     <clipPath id="clippath-7">
-      <rect class="st24" x="301.38" y="51.5" width="7.45" height="9.6"/>
+      <polyline class="st22" points="208 51.5 215.45 51.5 215.45 61.1 208 61.1 208 51.5"/>
     </clipPath>
     <clipPath id="clippath-8">
-      <rect class="st24" x="323.38" y="51.45" width="7.45" height="9.69"/>
+      <polyline class="st22" points="230 51.45 237.45 51.45 237.45 61.14 230 61.14 230 51.45"/>
     </clipPath>
     <clipPath id="clippath-9">
-      <rect class="st24" x="310.57" y="89.36" width="11.06" height="9.87"/>
+      <polyline class="st22" points="217.2 89.36 228.26 89.36 228.26 99.23 217.2 99.23 217.2 89.36"/>
     </clipPath>
     <clipPath id="clippath-10">
-      <rect class="st24" x="314.38" y="69.5" width="7.45" height="9.6"/>
+      <polyline class="st22" points="221 69.5 228.45 69.5 228.45 79.1 221 79.1 221 69.5"/>
     </clipPath>
     <clipPath id="clippath-11">
-      <rect class="st24" x="336.38" y="69.45" width="7.45" height="9.69"/>
+      <polyline class="st22" points="243 69.45 250.45 69.45 250.45 79.14 243 79.14 243 69.45"/>
     </clipPath>
     <clipPath id="clippath-12">
-      <rect class="st24" x="339.24" y="89.36" width="7.72" height="9.87"/>
+      <polyline class="st22" points="245.87 89.36 253.59 89.36 253.59 99.23 245.87 99.23 245.87 89.36"/>
     </clipPath>
     <clipPath id="clippath-13">
-      <rect class="st24" x="110.77" y="63.45" width="8.66" height="9.69"/>
+      <polyline class="st22" points="17.4 63.45 26.06 63.45 26.06 73.14 17.4 73.14 17.4 63.45"/>
     </clipPath>
     <clipPath id="clippath-14">
-      <rect class="st24" x="130.38" y="25.5" width="7.45" height="9.6"/>
+      <polyline class="st22" points="37 25.5 44.45 25.5 44.45 35.1 37 35.1 37 25.5"/>
     </clipPath>
     <clipPath id="clippath-15">
-      <rect class="st24" x="169.38" y="25.45" width="7.45" height="9.69"/>
+      <polyline class="st22" points="76 25.45 83.45 25.45 83.45 35.14 76 35.14 76 25.45"/>
     </clipPath>
     <clipPath id="clippath-16">
-      <rect class="st24" x="163.38" y="43.5" width="7.45" height="9.6"/>
+      <polyline class="st22" points="70 43.5 77.45 43.5 77.45 53.1 70 53.1 70 43.5"/>
     </clipPath>
     <clipPath id="clippath-17">
-      <rect class="st24" x="185.38" y="43.45" width="7.45" height="9.69"/>
+      <polyline class="st22" points="92 43.45 99.45 43.45 99.45 53.14 92 53.14 92 43.45"/>
     </clipPath>
     <clipPath id="clippath-18">
-      <rect class="st24" x="113.38" y="43.5" width="7.45" height="9.6"/>
+      <polyline class="st22" points="20 43.5 27.45 43.5 27.45 53.1 20 53.1 20 43.5"/>
     </clipPath>
     <clipPath id="clippath-19">
-      <rect class="st24" x="135.38" y="43.45" width="7.45" height="9.69"/>
+      <polyline class="st22" points="42 43.45 49.45 43.45 49.45 53.14 42 53.14 42 43.45"/>
     </clipPath>
     <clipPath id="clippath-20">
-      <rect class="st24" x="172.57" y="82.36" width="11.06" height="9.87"/>
+      <polyline class="st22" points="79.2 82.36 90.26 82.36 90.26 92.23 79.2 92.23 79.2 82.36"/>
     </clipPath>
     <clipPath id="clippath-21">
-      <rect class="st24" x="176.38" y="61.5" width="7.45" height="9.6"/>
+      <polyline class="st22" points="83 61.5 90.45 61.5 90.45 71.1 83 71.1 83 61.5"/>
     </clipPath>
     <clipPath id="clippath-22">
-      <rect class="st24" x="198.38" y="61.45" width="7.45" height="9.69"/>
+      <polyline class="st22" points="105 61.45 112.45 61.45 112.45 71.14 105 71.14 105 61.45"/>
     </clipPath>
     <clipPath id="clippath-23">
-      <rect class="st24" x="201.24" y="82.36" width="7.72" height="9.87"/>
+      <polyline class="st22" points="107.87 82.36 115.59 82.36 115.59 92.23 107.87 92.23 107.87 82.36"/>
     </clipPath>
     <clipPath id="clippath-24">
-      <rect class="st24" x="136.77" y="63.45" width="8.66" height="9.69"/>
+      <polyline class="st22" points="43.4 63.45 52.06 63.45 52.06 73.14 43.4 73.14 43.4 63.45"/>
     </clipPath>
     <clipPath id="clippath-25">
-      <rect class="st24" x="160.17" y="63.42" width="9.87" height="9.75"/>
+      <polyline class="st22" points="66.79 63.42 76.66 63.42 76.66 73.17 66.79 73.17 66.79 63.42"/>
     </clipPath>
     <clipPath id="clippath-26">
-      <rect class="st24" x="245.1" y="115.55" width="127.45" height="24.7"/>
+      <polyline class="st22" points="151.73 115.55 279.18 115.55 279.18 140.25 151.73 140.25 151.73 115.55"/>
     </clipPath>
     <clipPath id="clippath-27">
-      <rect class="st24" x="93.37" y="115.55" width="132.9" height="24.7"/>
+      <polyline class="st22" points="0 115.55 132.9 115.55 132.9 140.25 0 140.25 0 115.55"/>
     </clipPath>
     <clipPath id="clippath-28">
-      <rect class="st24" x="142.47" y="108.8" width="33.02" height="10.2"/>
+      <polyline class="st22" points="49.1 108.8 82.12 108.8 82.12 119 49.1 119 49.1 108.8"/>
     </clipPath>
     <clipPath id="clippath-29">
-      <rect class="st24" x="291.47" y="108.8" width="33.02" height="10.2"/>
+      <polyline class="st22" points="198.1 108.8 231.12 108.8 231.12 119 198.1 119 198.1 108.8"/>
     </clipPath>
     <clipPath id="clippath-30">
-      <rect class="st24" x="123.36" y="-.2" width="71.24" height="10.2"/>
+      <polyline class="st22" points="29.99 -.2 101.23 -.2 101.23 10 29.99 10 29.99 -.2"/>
     </clipPath>
     <clipPath id="clippath-31">
-      <rect class="st24" x="271.36" y="-.2" width="71.24" height="10.2"/>
+      <polyline class="st22" points="177.99 -.2 249.23 -.2 249.23 10 177.99 10 177.99 -.2"/>
     </clipPath>
     <clipPath id="clippath-32">
-      <rect class="st24" x="232.1" y="110" width="9.76" height="7.8"/>
+      <polyline class="st22" points="138.73 110 148.49 110 148.49 117.8 138.73 117.8 138.73 110"/>
     </clipPath>
     <clipPath id="clippath-33">
-      <rect class="st24" x="151.63" y="148.73" width="14.71" height="12.33"/>
+      <polyline class="st22" points="58.25 148.73 72.96 148.73 72.96 161.06 58.25 161.06 58.25 148.73"/>
     </clipPath>
     <clipPath id="clippath-34">
-      <rect class="st24" x="301.34" y="148.73" width="15.29" height="12.33"/>
+      <polyline class="st22" points="207.96 148.73 223.25 148.73 223.25 161.06 207.96 161.06 207.96 148.73"/>
     </clipPath>
   </defs>
-  <g>
-    <g id="LaTeX2AI">
-      <g class="st44">
-        <text class="st2" transform="translate(273.77 44.09)"><tspan x="0" y="0">E</tspan></text>
-      </g>
-    </g>
-    <g id="LaTeX2AI1" data-name="LaTeX2AI">
-      <g class="st27">
-        <text class="st8" transform="translate(286.77 61.61)"><tspan x="0" y="0">L</tspan></text>
-      </g>
-    </g>
-    <line class="st25" x1="303.54" y1="32.82" x2="289.98" y2="14.25"/>
-    <line class="st25" x1="276.96" y1="32.82" x2="290.51" y2="14.25"/>
-    <g id="LaTeX2AI2" data-name="LaTeX2AI">
-      <g class="st40">
-        <text class="st5" transform="translate(276.37 23.87)"><tspan x="0" y="0">0</tspan></text>
-      </g>
-    </g>
-    <g id="LaTeX2AI3" data-name="LaTeX2AI">
-      <g class="st32">
-        <text class="st5" transform="translate(298.37 24.09)"><tspan x="0" y="0">1</tspan></text>
-      </g>
-    </g>
-    <line class="st25" x1="316.54" y1="50.82" x2="302.98" y2="32.25"/>
-    <line class="st25" x1="289.96" y1="50.82" x2="303.51" y2="32.25"/>
-    <g id="LaTeX2AI4" data-name="LaTeX2AI">
-      <g class="st16">
-        <text class="st5" transform="translate(289.37 41.87)"><tspan x="0" y="0">0</tspan></text>
-      </g>
-    </g>
-    <g id="LaTeX2AI5" data-name="LaTeX2AI">
-      <g class="st29">
-        <text class="st5" transform="translate(311.37 42.09)"><tspan x="0" y="0">1</tspan></text>
-      </g>
-    </g>
-    <g id="LaTeX2AI6" data-name="LaTeX2AI">
-      <g class="st9">
-        <text class="st4" transform="translate(299.16 80.06)"><tspan x="0" y="0">V</tspan></text>
-      </g>
-    </g>
-    <line class="st25" x1="329.54" y1="68.82" x2="315.98" y2="50.25"/>
-    <line class="st25" x1="302.96" y1="68.82" x2="316.51" y2="50.25"/>
-    <g id="LaTeX2AI7" data-name="LaTeX2AI">
-      <g class="st10">
-        <text class="st5" transform="translate(302.37 59.87)"><tspan x="0" y="0">0</tspan></text>
-      </g>
-    </g>
-    <g id="LaTeX2AI8" data-name="LaTeX2AI">
-      <g class="st31">
-        <text class="st5" transform="translate(324.37 60.09)"><tspan x="0" y="0">1</tspan></text>
-      </g>
-    </g>
-    <g id="LaTeX2AI9" data-name="LaTeX2AI">
-      <g class="st19">
-        <text class="st6" transform="translate(311.57 98)"><tspan x="0" y="0">N</tspan></text>
-      </g>
-    </g>
-    <line class="st25" x1="342.54" y1="86.82" x2="328.98" y2="68.25"/>
-    <line class="st25" x1="315.96" y1="86.82" x2="329.51" y2="68.25"/>
-    <g id="LaTeX2AI10" data-name="LaTeX2AI">
-      <g class="st20">
-        <text class="st5" transform="translate(315.37 77.87)"><tspan x="0" y="0">0</tspan></text>
-      </g>
-    </g>
-    <g id="LaTeX2AI11" data-name="LaTeX2AI">
-      <g class="st23">
-        <text class="st5" transform="translate(337.37 78.09)"><tspan x="0" y="0">1</tspan></text>
-      </g>
-    </g>
-    <g id="LaTeX2AI12" data-name="LaTeX2AI">
-      <g class="st34">
-        <text class="st7" transform="translate(340.24 98)"><tspan x="0" y="0">S</tspan></text>
-      </g>
-    </g>
+  <g class="st42">
+    <path class="st14" d="M186.63,42.3h-.38l-.05.37c-.07.47-.21.81-.36.86-.23.08-1.03.13-2.01.13-.57,0-.76-.02-1.08-.09v-3.05l1.75-.03c.48,0,.69.04.76.4.04.24.05.64.05.64h.33c-.02-.4-.03-.81-.03-1.21,0-.43.01-.84.03-1.27h-.33s0,.36-.05.57c-.09.37-.29.41-.76.41-.55,0-1.27-.01-1.75-.04v-2.91c.34-.08.52-.09,1.28-.09.62,0,1.23.05,1.58.15.26.08.29.12.29.37v.71h.38c0-.65.05-1.18.17-1.66l-1.35-.03c-.84.02-1.69.03-2.53.03-.64,0-1.3-.01-1.94-.03v.33l.52.03c.5.03.56.12.56.98v4.9c0,.86-.04.94-.56.98l-.39.03v.33c.45-.02.89-.03,1.34-.03.84,0,1.69.01,2.53.03l1.82-.03c0-.63.07-1.22.17-1.79Z"/>
   </g>
-  <g id="LaTeX2AI13" data-name="LaTeX2AI">
-    <g class="st42">
-      <text class="st2" transform="translate(111.77 72.09)"><tspan x="0" y="0">E</tspan></text>
-    </g>
+  <g class="st25">
+    <path class="st20" d="M199.78,59.73h-.35l-.13.55c-.1.43-.17.65-.24.71-.14.12-1.09.2-2.39.2-.39,0-.64-.02-.93-.09v-5.7c0-.86.05-.95.56-.98l.52-.03v-.33c-.53.02-1.07.03-1.6.03s-1.06-.01-1.59-.03v.33l.52.03c.5.03.56.12.56.98v5.17c0,.32-.1.56-.27.64l-.34.17v.25c.36-.02.72-.03,1.08-.03.85,0,1.69.03,2.54.03.46,0,.35,0,1.83-.03.08-.47.12-.82.23-1.88Z"/>
   </g>
-  <line class="st25" x1="178.54" y1="42.82" x2="152.7" y2="24.25"/>
-  <line class="st25" x1="127.87" y1="42.82" x2="153.71" y2="24.25"/>
-  <g id="LaTeX2AI14" data-name="LaTeX2AI">
-    <g class="st35">
-      <text class="st5" transform="translate(131.37 33.87)"><tspan x="0" y="0">0</tspan></text>
-    </g>
+  <path class="st36" d="M197.49,14.61l-.62.85,12.42,17.02.12-.09.32-.43.14.1.14-.1.32.43.21.15.03-.02-13.08-17.91M196.42,14.39l-.21.15.05.07.16-.22M197.01,13.95l-.14.1.46.33-.32-.43"/>
+  <path class="st36" d="M196.25,14.61l-13.08,17.91.81.59,12.89-17.65-.62-.85M197.33,14.39l.16.22.05-.07-.21-.15M196.73,13.95l-.32.43.46-.33-.14-.1"/>
+  <polyline class="st23" points="196.87 14.05 196.42 14.39 196.25 14.61 196.87 15.46 197.49 14.61 197.33 14.39 196.87 14.05"/>
+  <g class="st38">
+    <path d="M187.15,20.42c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM188.07,19.87c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
   </g>
-  <g id="LaTeX2AI15" data-name="LaTeX2AI">
-    <g class="st13">
-      <text class="st5" transform="translate(170.37 34.09)"><tspan x="0" y="0">1</tspan></text>
-    </g>
+  <g class="st29">
+    <path d="M209.56,24.12v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
   </g>
-  <line class="st25" x1="191.54" y1="60.82" x2="177.98" y2="42.25"/>
-  <line class="st25" x1="164.96" y1="60.82" x2="178.51" y2="42.25"/>
-  <g id="LaTeX2AI16" data-name="LaTeX2AI">
-    <g class="st39">
-      <text class="st5" transform="translate(164.37 51.87)"><tspan x="0" y="0">0</tspan></text>
-    </g>
+  <polyline class="st23" points="210.01 31.95 209.87 32.05 210.33 32.39 210.01 31.95"/>
+  <polyline class="st36" points="209.3 32.48 209.21 32.54 209.25 32.61 209.33 32.51 209.3 32.48"/>
+  <polyline class="st23" points="209.42 32.39 209.3 32.48 209.33 32.51 209.42 32.39"/>
+  <polyline class="st36" points="210.49 32.61 209.87 33.46 222.3 50.48 222.42 50.39 222.73 49.95 222.87 50.05 223.01 49.95 223.33 50.39 223.54 50.54 223.57 50.52 210.49 32.61"/>
+  <polyline class="st23" points="209.73 31.95 209.42 32.39 209.87 32.05 209.73 31.95"/>
+  <polyline class="st36" points="210.54 32.54 210.48 32.59 210.49 32.61 210.54 32.54 210.54 32.54"/>
+  <polyline class="st23" points="210.33 32.39 210.48 32.59 210.54 32.54 210.33 32.39"/>
+  <polyline class="st36" points="209.25 32.61 196.18 50.52 196.99 51.11 209.87 33.46 209.25 32.61"/>
+  <polyline class="st23" points="209.33 32.51 209.25 32.61 209.87 33.46 210.49 32.61 210.48 32.59 209.76 33.11 209.33 32.51"/>
+  <polyline class="st19" points="209.87 32.05 209.42 32.39 209.33 32.51 209.76 33.11 210.48 32.59 210.33 32.39 209.87 32.05"/>
+  <g class="st10">
+    <path d="M200.15,38.42c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM201.07,37.87c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
   </g>
-  <g id="LaTeX2AI17" data-name="LaTeX2AI">
-    <g class="st11">
-      <text class="st5" transform="translate(186.37 52.09)"><tspan x="0" y="0">1</tspan></text>
-    </g>
+  <g class="st26">
+    <path d="M222.56,42.12v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
   </g>
-  <line class="st25" x1="141.54" y1="60.82" x2="127.98" y2="42.25"/>
-  <line class="st25" x1="114.96" y1="60.82" x2="128.51" y2="42.25"/>
-  <g id="LaTeX2AI18" data-name="LaTeX2AI">
-    <g class="st15">
-      <text class="st5" transform="translate(114.37 51.87)"><tspan x="0" y="0">0</tspan></text>
-    </g>
+  <g class="st3">
+    <path class="st43" d="M213.49,72.83v-.33c-.39.02-.79.03-1.18.03s-.79-.01-1.18-.03v.33l.57.03c.26.01.37.15.37.35,0,.1-.03.23-.09.36l-2,5.16-2.15-5.53v-.09c-.01-.12.09-.24.33-.25l.61-.03v-.33c-.48.02-.97.03-1.45.03s-.97-.01-1.45-.03v.33l.39.03c.23.02.35.13.48.45l2.05,5.04c.34.83.47,1.21.63,1.8h.55c.21-.68.34-1.04.7-1.91l1.9-4.59c.25-.6.39-.76.59-.79l.33-.03Z"/>
   </g>
-  <g id="LaTeX2AI19" data-name="LaTeX2AI">
-    <g class="st37">
-      <text class="st5" transform="translate(136.37 52.09)"><tspan x="0" y="0">1</tspan></text>
-    </g>
+  <polyline class="st23" points="223.01 49.95 222.87 50.05 223.33 50.39 223.01 49.95"/>
+  <polyline class="st36" points="222.3 50.48 222.21 50.54 222.25 50.61 222.33 50.51 222.3 50.48"/>
+  <polyline class="st23" points="222.42 50.39 222.3 50.48 222.33 50.51 222.42 50.39"/>
+  <polyline class="st36" points="223.49 50.61 222.87 51.46 235.3 68.48 235.42 68.39 235.73 67.95 235.87 68.05 236.01 67.95 236.33 68.39 236.54 68.54 236.57 68.52 223.49 50.61"/>
+  <polyline class="st23" points="222.73 49.95 222.42 50.39 222.87 50.05 222.73 49.95"/>
+  <polyline class="st36" points="223.54 50.54 223.48 50.59 223.49 50.61 223.54 50.54 223.54 50.54"/>
+  <polyline class="st23" points="223.33 50.39 223.48 50.59 223.54 50.54 223.33 50.39"/>
+  <polyline class="st36" points="222.25 50.61 209.18 68.52 209.99 69.11 222.87 51.46 222.25 50.61"/>
+  <polyline class="st23" points="222.33 50.51 222.25 50.61 222.87 51.46 223.49 50.61 223.48 50.59 222.76 51.11 222.33 50.51"/>
+  <polyline class="st19" points="222.87 50.05 222.42 50.39 222.33 50.51 222.76 51.11 223.48 50.59 223.33 50.39 222.87 50.05"/>
+  <g class="st4">
+    <path d="M213.15,56.42c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM214.07,55.87c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
   </g>
-  <g id="LaTeX2AI20" data-name="LaTeX2AI">
-    <g class="st30">
-      <text class="st6" transform="translate(173.57 91)"><tspan x="0" y="0">N</tspan></text>
-    </g>
+  <g class="st28">
+    <path d="M235.56,60.12v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
   </g>
-  <line class="st25" x1="204.54" y1="78.82" x2="190.98" y2="60.25"/>
-  <line class="st25" x1="177.96" y1="78.82" x2="191.51" y2="60.25"/>
-  <g id="LaTeX2AI21" data-name="LaTeX2AI">
-    <g class="st1">
-      <text class="st5" transform="translate(177.37 69.87)"><tspan x="0" y="0">0</tspan></text>
-    </g>
+  <g class="st15">
+    <path class="st2" d="M227.06,90.78v-.33c-.44.02-.87.03-1.31.03s-.84-.01-1.27-.03v.33l.48.03c.5.03.56.13.56.98v5.14l-5.25-6.48s-.36.03-.59.03c-.51,0-1.31-.03-1.31-.03v.33l.48.03c.5.03.56.13.56.98v4.9c0,.85-.05.95-.56.98l-.48.03v.33c.43-.02.84-.03,1.27-.03s.87.01,1.31.03v-.33l-.48-.03c-.5-.03-.56-.13-.56-.98v-5.05l5.16,6.4.98.17c0-.11-.03-.29-.03-.4v-6.02c0-.85.05-.95.56-.98l.48-.03Z"/>
   </g>
-  <g id="LaTeX2AI22" data-name="LaTeX2AI">
-    <g class="st17">
-      <text class="st5" transform="translate(199.37 70.09)"><tspan x="0" y="0">1</tspan></text>
-    </g>
+  <polyline class="st23" points="236.01 67.95 235.87 68.05 236.33 68.39 236.01 67.95"/>
+  <polyline class="st36" points="235.3 68.48 235.21 68.54 235.25 68.61 235.33 68.51 235.3 68.48"/>
+  <polyline class="st23" points="235.42 68.39 235.3 68.48 235.33 68.51 235.42 68.39"/>
+  <polyline class="st36" points="236.49 68.61 235.87 69.46 248.76 87.11 249.57 86.52 236.49 68.61"/>
+  <polyline class="st23" points="235.73 67.95 235.42 68.39 235.87 68.05 235.73 67.95"/>
+  <polyline class="st36" points="236.54 68.54 236.48 68.59 236.49 68.61 236.54 68.54 236.54 68.54"/>
+  <polyline class="st23" points="236.33 68.39 236.48 68.59 236.54 68.54 236.33 68.39"/>
+  <polyline class="st36" points="235.25 68.61 222.18 86.52 222.99 87.11 235.87 69.46 235.25 68.61"/>
+  <polyline class="st23" points="235.33 68.51 235.25 68.61 235.87 69.46 236.49 68.61 236.48 68.59 235.76 69.11 235.33 68.51"/>
+  <polyline class="st19" points="235.87 68.05 235.42 68.39 235.33 68.51 235.76 69.11 236.48 68.59 236.33 68.39 235.87 68.05"/>
+  <g class="st16">
+    <path d="M226.15,74.42c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM227.07,73.87c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
   </g>
-  <g id="LaTeX2AI23" data-name="LaTeX2AI">
-    <g class="st18">
-      <text class="st7" transform="translate(202.24 91)"><tspan x="0" y="0">S</tspan></text>
-    </g>
+  <g class="st21">
+    <path d="M248.56,78.12v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
   </g>
-  <g id="LaTeX2AI24" data-name="LaTeX2AI">
-    <g class="st43">
-      <text class="st8" transform="translate(137.77 72.09)"><tspan x="0" y="0">L</tspan></text>
-    </g>
+  <g class="st31">
+    <path class="st11" d="M249.08,98.22c1.9,0,3.27-.83,3.27-2.77,0-.49-.15-.8-.45-1.07-.38-.36-.84-.55-2.06-.71-1.33-.17-1.8-.53-1.8-1.37,0-.92.69-1.57,1.65-1.57.43,0,.83.09,1.12.25.36.19.48.35.51.67l.07.62h.35c0-.58.04-.95.15-1.54-.87-.35-1.36-.46-1.96-.46-1.63,0-2.8,1.03-2.8,2.45,0,.53.14.93.46,1.22.37.34.87.51,1.93.65.84.12,1.22.25,1.51.49.28.24.41.55.41.96,0,.98-.82,1.69-1.95,1.69-.87,0-1.72-.43-1.78-.87l-.09-.73h-.35c.01.2.01.37.01.44,0,.5-.02.74-.09,1.23.62.27,1.25.41,1.89.41Z"/>
   </g>
-  <g id="LaTeX2AI25" data-name="LaTeX2AI">
-    <g class="st21">
-      <text class="st4" transform="translate(161.16 72.06)"><tspan x="0" y="0">V</tspan></text>
-    </g>
+  <g class="st40">
+    <path class="st14" d="M24.63,70.3h-.38l-.05.37c-.07.47-.21.81-.36.86-.23.08-1.03.13-2.01.13-.57,0-.76-.02-1.08-.09v-3.05l1.75-.03c.48,0,.69.04.76.4.04.24.05.64.05.64h.33c-.02-.4-.03-.81-.03-1.21,0-.43.01-.84.03-1.27h-.33s0,.36-.05.57c-.09.37-.29.41-.76.41-.55,0-1.27-.01-1.75-.04v-2.91c.34-.08.52-.09,1.28-.09.62,0,1.23.05,1.58.15.26.08.29.12.29.37v.71h.38c0-.65.05-1.18.17-1.66l-1.35-.03c-.84.02-1.69.03-2.53.03-.64,0-1.3-.01-1.94-.03v.33l.52.03c.5.03.56.12.56.98v4.9c0,.86-.04.94-.56.98l-.39.03v.33c.45-.02.89-.03,1.34-.03.84,0,1.69.01,2.53.03l1.82-.03c0-.63.07-1.22.17-1.79Z"/>
   </g>
-  <g id="LaTeX2AI26" data-name="LaTeX2AI">
-    <g class="st33">
-      <path d="M252.63,126.11c-2.11,0-4.96.08-6.24,1.8-.08.1-.21.3-.3.3-.03,0-.06-.02-.06-.07,0-.1.09-.29.11-.33,1.03-1.94,3.21-2.73,7.14-2.73h.01v1.03h-.67Z"/>
-      <path d="M252.51,126.11v-1.03h2.41v1.03h-2.41ZM254.21,126.11v-1.03h2.41v1.03h-2.41ZM255.9,126.11v-1.03h2.41v1.03h-2.41ZM257.6,126.11v-1.03h2.41v1.03h-2.41ZM259.3,126.11v-1.03h2.41v1.03h-2.41ZM260.99,126.11v-1.03h2.41v1.03h-2.41ZM262.69,126.11v-1.03h2.41v1.03h-2.41ZM264.38,126.11v-1.03h2.41v1.03h-2.41ZM266.08,126.11v-1.03h2.41v1.03h-2.41ZM267.78,126.11v-1.03h2.41v1.03h-2.41ZM269.46,126.11v-1.03h2.41v1.03h-2.41ZM271.16,126.11v-1.03h2.41v1.03h-2.41ZM272.85,126.11v-1.03h2.41v1.03h-2.41ZM274.55,126.11v-1.03h2.41v1.03h-2.41ZM276.25,126.11v-1.03h2.41v1.03h-2.41ZM277.94,126.11v-1.03h2.41v1.03h-2.41ZM279.64,126.11v-1.03h2.41v1.03h-2.41ZM281.34,126.11v-1.03h2.41v1.03h-2.41ZM283.03,126.11v-1.03h2.41v1.03h-2.41ZM284.73,126.11v-1.03h2.41v1.03h-2.41ZM286.42,126.11v-1.03h2.41v1.03h-2.41ZM288.12,126.11v-1.03h2.41v1.03h-2.41ZM289.82,126.11v-1.03h2.41v1.03h-2.41ZM291.51,126.11v-1.03h2.41v1.03h-2.41ZM293.21,126.11v-1.03h2.41v1.03h-2.41ZM294.91,126.11v-1.03h2.41v1.03h-2.41ZM296.6,126.11v-1.03h2.41v1.03h-2.41ZM298.3,126.11v-1.03h2.41v1.03h-2.41ZM299.99,126.11v-1.03h2.41v1.03h-2.41Z"/>
-      <path d="M308.77,123.37c-1.03,1.94-3.21,2.73-7.14,2.73h-.01v-1.03h.67c2.11,0,4.96-.08,6.24-1.8.08-.1.21-.3.3-.3.03,0,.06.02.06.07,0,.1-.09.29-.11.33ZM316.02,126.11c-3.93,0-6.1-.79-7.14-2.73-.02-.05-.11-.23-.11-.33,0-.05.02-.07.06-.07.09,0,.22.2.3.3,1.28,1.72,4.12,1.8,6.24,1.8h.67v1.03h-.01Z"/>
-      <path d="M315.24,126.11v-1.03h2.41v1.03h-2.41ZM316.94,126.11v-1.03h2.41v1.03h-2.41ZM318.63,126.11v-1.03h2.41v1.03h-2.41ZM320.33,126.11v-1.03h2.41v1.03h-2.41ZM322.03,126.11v-1.03h2.41v1.03h-2.41ZM323.71,126.11v-1.03h2.41v1.03h-2.41ZM325.41,126.11v-1.03h2.41v1.03h-2.41ZM327.1,126.11v-1.03h2.41v1.03h-2.41ZM328.8,126.11v-1.03h2.41v1.03h-2.41ZM330.5,126.11v-1.03h2.41v1.03h-2.41ZM332.19,126.11v-1.03h2.41v1.03h-2.41ZM333.89,126.11v-1.03h2.41v1.03h-2.41ZM335.59,126.11v-1.03h2.41v1.03h-2.41ZM337.28,126.11v-1.03h2.41v1.03h-2.41ZM338.98,126.11v-1.03h2.41v1.03h-2.41ZM340.67,126.11v-1.03h2.41v1.03h-2.41ZM342.37,126.11v-1.03h2.41v1.03h-2.41ZM344.07,126.11v-1.03h2.41v1.03h-2.41ZM345.76,126.11v-1.03h2.41v1.03h-2.41ZM347.46,126.11v-1.03h2.41v1.03h-2.41ZM349.15,126.11v-1.03h2.41v1.03h-2.41ZM350.85,126.11v-1.03h2.41v1.03h-2.41ZM352.55,126.11v-1.03h2.41v1.03h-2.41ZM354.23,126.11v-1.03h2.41v1.03h-2.41ZM355.93,126.11v-1.03h2.41v1.03h-2.41ZM357.63,126.11v-1.03h2.41v1.03h-2.41ZM359.32,126.11v-1.03h2.41v1.03h-2.41ZM361.02,126.11v-1.03h2.41v1.03h-2.41ZM362.71,126.11v-1.03h2.41v1.03h-2.41Z"/>
-      <path d="M371.55,128.21c-.09,0-.22-.2-.3-.3-1.28-1.72-4.12-1.8-6.24-1.8h-.67v-1.03h.01c3.93,0,6.1.79,7.14,2.73.02.05.11.23.11.33,0,.05-.02.07-.06.07Z"/>
-      <text class="st2" transform="translate(246.1 139.02)"><tspan x="0" y="0">0</tspan></text>
-      <text class="st8" transform="translate(251.55 139.02)"><tspan x="0" y="0">10</tspan></text>
-      <text class="st2" transform="translate(262.46 139.02)"><tspan x="0" y="0">0</tspan></text>
-      <text class="st4" transform="translate(267.91 139.02)"><tspan x="0" y="0">110</tspan></text>
-      <text class="st2" transform="translate(284.28 139.02)"><tspan x="0" y="0">0</tspan></text>
-      <text class="st6" transform="translate(289.73 139.02)"><tspan x="0" y="0">1110</tspan></text>
-      <text class="st2" transform="translate(311.55 139.02)"><tspan x="0" y="0">0</tspan></text>
-      <text class="st8" transform="translate(317.01 139.02)"><tspan x="0" y="0">10</tspan></text>
-      <text class="st4" transform="translate(327.92 139.02)"><tspan x="0" y="0">110</tspan></text>
-      <text class="st2" transform="translate(344.28 139.02)"><tspan x="0" y="0">0</tspan></text>
-      <text class="st7" transform="translate(349.73 139.02)"><tspan x="0" y="0">1111</tspan></text>
-    </g>
+  <path class="st36" d="M85.23,42.24l.11.14.09.07.03-.05-.23-.17M60.5,24.47l.13.18-.8.57,24.35,17.49.08-.11-.05-.07.21-.15.32-.43.14.1.04-.03-24.42-17.55M59.62,23.84l-.45.63.67-.48-.21-.15"/>
+  <path class="st36" d="M34.62,42.11l-.42.3.06.09.15-.11.2-.28M59.16,24.47l-24.38,17.52.09.06.14-.1.32.43.21.15-.05.07.05.07,24.29-17.45-.8-.57.13-.18M60.04,23.84l-.21.15.67.48-.45-.63"/>
+  <polyline class="st23" points="59.83 23.99 59.16 24.47 59.03 24.65 59.83 25.23 60.63 24.65 60.5 24.47 59.83 23.99"/>
+  <g class="st32">
+    <path d="M42.15,30.42c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM43.07,29.87c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
   </g>
-  <g id="LaTeX2AI27" data-name="LaTeX2AI">
-    <g class="st22">
-      <path d="M100.91,126.11c-2.11,0-4.96.08-6.24,1.8-.08.1-.21.3-.3.3-.03,0-.06-.02-.06-.07,0-.1.09-.29.11-.33,1.03-1.94,3.21-2.73,7.14-2.73h.01v1.03h-.67Z"/>
-      <path d="M101.3,126.11v-1.03h2.41v1.03h-2.41ZM103,126.11v-1.03h2.41v1.03h-2.41ZM104.69,126.11v-1.03h2.41v1.03h-2.41ZM106.39,126.11v-1.03h2.41v1.03h-2.41ZM108.08,126.11v-1.03h2.41v1.03h-2.41ZM109.78,126.11v-1.03h2.41v1.03h-2.41ZM111.48,126.11v-1.03h2.41v1.03h-2.41ZM113.17,126.11v-1.03h2.41v1.03h-2.41ZM114.87,126.11v-1.03h2.41v1.03h-2.41ZM116.57,126.11v-1.03h2.41v1.03h-2.41ZM118.26,126.11v-1.03h2.41v1.03h-2.41ZM119.96,126.11v-1.03h2.41v1.03h-2.41ZM121.64,126.11v-1.03h2.41v1.03h-2.41ZM123.34,126.11v-1.03h2.41v1.03h-2.41ZM125.04,126.11v-1.03h2.41v1.03h-2.41ZM126.73,126.11v-1.03h2.41v1.03h-2.41ZM128.43,126.11v-1.03h2.41v1.03h-2.41ZM130.13,126.11v-1.03h2.41v1.03h-2.41ZM131.82,126.11v-1.03h2.41v1.03h-2.41ZM133.52,126.11v-1.03h2.41v1.03h-2.41ZM135.21,126.11v-1.03h2.41v1.03h-2.41ZM136.91,126.11v-1.03h2.41v1.03h-2.41ZM138.61,126.11v-1.03h2.41v1.03h-2.41ZM140.3,126.11v-1.03h2.41v1.03h-2.41ZM142,126.11v-1.03h2.41v1.03h-2.41ZM143.7,126.11v-1.03h2.41v1.03h-2.41ZM145.39,126.11v-1.03h2.41v1.03h-2.41ZM147.09,126.11v-1.03h2.41v1.03h-2.41ZM148.78,126.11v-1.03h2.41v1.03h-2.41ZM150.48,126.11v-1.03h2.41v1.03h-2.41Z"/>
-      <path d="M159.77,123.37c-1.03,1.94-3.21,2.73-7.14,2.73h-.01v-1.03h.67c2.11,0,4.96-.08,6.24-1.8.08-.1.21-.3.3-.3.03,0,.06.02.06.07,0,.1-.09.29-.11.33ZM167.02,126.11c-3.93,0-6.1-.79-7.14-2.73-.02-.05-.11-.23-.11-.33,0-.05.02-.07.06-.07.09,0,.22.2.3.3,1.28,1.72,4.12,1.8,6.24,1.8h.67v1.03h-.01Z"/>
-      <path d="M166.76,126.11v-1.03h2.41v1.03h-2.41ZM168.46,126.11v-1.03h2.41v1.03h-2.41ZM170.14,126.11v-1.03h2.41v1.03h-2.41ZM171.84,126.11v-1.03h2.41v1.03h-2.41ZM173.54,126.11v-1.03h2.41v1.03h-2.41ZM175.23,126.11v-1.03h2.41v1.03h-2.41ZM176.93,126.11v-1.03h2.41v1.03h-2.41ZM178.62,126.11v-1.03h2.41v1.03h-2.41ZM180.32,126.11v-1.03h2.41v1.03h-2.41ZM182.02,126.11v-1.03h2.41v1.03h-2.41ZM183.71,126.11v-1.03h2.41v1.03h-2.41ZM185.41,126.11v-1.03h2.41v1.03h-2.41ZM187.11,126.11v-1.03h2.41v1.03h-2.41ZM188.8,126.11v-1.03h2.41v1.03h-2.41ZM190.5,126.11v-1.03h2.41v1.03h-2.41ZM192.19,126.11v-1.03h2.41v1.03h-2.41ZM193.89,126.11v-1.03h2.41v1.03h-2.41ZM195.59,126.11v-1.03h2.41v1.03h-2.41ZM197.28,126.11v-1.03h2.41v1.03h-2.41ZM198.98,126.11v-1.03h2.41v1.03h-2.41ZM200.66,126.11v-1.03h2.41v1.03h-2.41ZM202.36,126.11v-1.03h2.41v1.03h-2.41ZM204.06,126.11v-1.03h2.41v1.03h-2.41ZM205.75,126.11v-1.03h2.41v1.03h-2.41ZM207.45,126.11v-1.03h2.41v1.03h-2.41ZM209.15,126.11v-1.03h2.41v1.03h-2.41ZM210.84,126.11v-1.03h2.41v1.03h-2.41ZM212.54,126.11v-1.03h2.41v1.03h-2.41ZM214.23,126.11v-1.03h2.41v1.03h-2.41ZM215.93,126.11v-1.03h2.41v1.03h-2.41Z"/>
-      <path d="M225.28,128.21c-.09,0-.22-.2-.3-.3-1.28-1.72-4.12-1.8-6.24-1.8h-.67v-1.03h.01c3.93,0,6.1.79,7.14,2.73.02.05.11.23.11.33,0,.05-.02.07-.06.07Z"/>
-      <text class="st2" transform="translate(94.37 139.02)"><tspan x="0" y="0">00</tspan></text>
-      <text class="st8" transform="translate(105.28 139.02)"><tspan x="0" y="0">01</tspan></text>
-      <text class="st2" transform="translate(116.19 139.02)"><tspan x="0" y="0">00</tspan></text>
-      <text class="st4" transform="translate(127.1 139.02)"><tspan x="0" y="0">10</tspan></text>
-      <text class="st2" transform="translate(138.01 139.02)"><tspan x="0" y="0">00</tspan></text>
-      <text class="st6" transform="translate(148.92 139.02)"><tspan x="0" y="0">110</tspan></text>
-      <text class="st2" transform="translate(165.28 139.02)"><tspan x="0" y="0">00</tspan></text>
-      <text class="st8" transform="translate(176.19 139.02)"><tspan x="0" y="0">01</tspan></text>
-      <text class="st4" transform="translate(187.1 139.02)"><tspan x="0" y="0">10</tspan></text>
-      <text class="st2" transform="translate(198.01 139.02)"><tspan x="0" y="0">00</tspan></text>
-      <text class="st7" transform="translate(208.92 139.02)"><tspan x="0" y="0">111</tspan></text>
-    </g>
+  <g class="st7">
+    <path d="M81.56,34.12v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
   </g>
-  <g id="LaTeX2AI28" data-name="LaTeX2AI">
-    <g class="st26">
-      <text class="st5" transform="translate(143.47 117.77)"><tspan x="0" y="0">24</tspan></text>
-      <text class="st5" transform="translate(157.11 117.77)"><tspan x="0" y="0">bits</tspan></text>
-    </g>
+  <polyline class="st36" points="85.01 41.95 84.92 42.02 85.23 42.24 85.01 41.95"/>
+  <path class="st23" d="M84.42,42.39l-.21.15.05.07.16-.22M84.92,42.02l-.04.03.46.33-.11-.14-.31-.22"/>
+  <polyline class="st36" points="85.49 42.61 84.87 43.46 97.3 60.48 97.42 60.39 97.73 59.95 97.87 60.05 98.01 59.95 98.33 60.39 98.54 60.54 98.57 60.52 85.49 42.61"/>
+  <polyline class="st23" points="84.73 41.95 84.42 42.39 84.87 42.05 84.73 41.95"/>
+  <polyline class="st36" points="85.42 42.46 85.4 42.49 85.49 42.61 85.54 42.54 85.42 42.46"/>
+  <polyline class="st23" points="85.33 42.39 85.4 42.49 85.42 42.46 85.33 42.39"/>
+  <polyline class="st36" points="84.17 42.72 71.18 60.52 71.99 61.11 84.87 43.46 84.51 42.96 84.17 42.72"/>
+  <polyline class="st23" points="84.25 42.61 84.17 42.72 84.51 42.96 84.25 42.61"/>
+  <polyline class="st23" points="85.4 42.49 84.87 43.22 84.51 42.96 84.87 43.46 85.49 42.61 85.4 42.49"/>
+  <polyline class="st19" points="84.87 42.05 84.42 42.39 84.25 42.61 84.51 42.96 84.87 43.22 85.4 42.49 85.33 42.39 84.87 42.05"/>
+  <g class="st37">
+    <path d="M75.15,48.42c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM76.07,47.87c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
   </g>
-  <g id="LaTeX2AI29" data-name="LaTeX2AI">
-    <g class="st41">
-      <text class="st5" transform="translate(292.47 117.77)"><tspan x="0" y="0">23</tspan></text>
-      <text class="st5" transform="translate(306.11 117.77)"><tspan x="0" y="0">bits</tspan></text>
-    </g>
+  <g class="st5">
+    <path d="M97.56,52.12v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
   </g>
-  <g id="LaTeX2AI30" data-name="LaTeX2AI">
-    <g class="st36">
-      <text class="st5" transform="translate(124.36 8.77)"><tspan x="0" y="0">Balance</tspan><tspan class="st28" x="35.41" y="0">d</tspan><tspan x="44.29" y="0">code</tspan></text>
-    </g>
+  <polyline class="st23" points="35.01 41.95 34.87 42.05 35.33 42.39 35.01 41.95"/>
+  <polyline class="st36" points="34.27 42.5 34.21 42.54 34.25 42.61 34.3 42.55 34.27 42.5"/>
+  <polyline class="st23" points="34.42 42.39 34.27 42.5 34.3 42.55 34.42 42.39"/>
+  <polyline class="st36" points="35.54 42.68 35.33 42.83 34.87 43.46 47.76 61.11 48.57 60.52 35.54 42.68"/>
+  <polyline class="st23" points="35.49 42.61 35.33 42.83 35.54 42.68 35.49 42.61"/>
+  <polyline class="st36" points="34.73 41.95 34.62 42.11 34.79 41.99 34.73 41.95"/>
+  <path class="st23" d="M35.33,42.39l.16.22.05-.07-.21-.15M34.79,41.99l-.17.12-.2.28.46-.33-.09-.06"/>
+  <polyline class="st36" points="34.25 42.61 21.18 60.52 21.99 61.11 34.87 43.46 34.25 42.61"/>
+  <polyline class="st23" points="34.3 42.55 34.25 42.61 34.87 43.46 35.33 42.83 34.79 43.22 34.3 42.55"/>
+  <polyline class="st19" points="34.87 42.05 34.42 42.39 34.3 42.55 34.79 43.22 35.33 42.83 35.49 42.61 35.33 42.39 34.87 42.05"/>
+  <g class="st9">
+    <path d="M25.15,48.42c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM26.07,47.87c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
   </g>
-  <g id="LaTeX2AI31" data-name="LaTeX2AI">
-    <g class="st12">
-      <text class="st5" transform="translate(272.36 8.77)"><tspan x="0" y="0">Huﬀma</tspan><tspan class="st45" x="33.84" y="0">n</tspan><tspan x="42.62" y="0">code</tspan></text>
-    </g>
+  <g class="st34">
+    <path d="M47.56,52.12v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
   </g>
-  <g id="LaTeX2AI32" data-name="LaTeX2AI">
-    <g class="st38">
-      <text class="st3" transform="translate(233.33 116.8)"><tspan x="0" y="0">&gt;</tspan></text>
-    </g>
+  <g class="st27">
+    <path class="st2" d="M89.06,83.78v-.33c-.44.02-.87.03-1.31.03s-.84-.01-1.27-.03v.33l.48.03c.5.03.56.13.56.98v5.14l-5.25-6.48s-.36.03-.59.03c-.51,0-1.31-.03-1.31-.03v.33l.48.03c.5.03.56.13.56.98v4.9c0,.85-.05.95-.56.98l-.48.03v.33c.43-.02.84-.03,1.27-.03s.87.01,1.31.03v-.33l-.48-.03c-.5-.03-.56-.13-.56-.98v-5.05l5.16,6.4.98.17c0-.11-.03-.29-.03-.4v-6.02c0-.85.05-.95.56-.98l.48-.03Z"/>
   </g>
-  <g id="LaTeX2AI33" data-name="LaTeX2AI">
-    <g class="st14">
-      <text class="st5" transform="translate(152.62 157.7)"><tspan x="0" y="0">(a)</tspan></text>
-    </g>
+  <polyline class="st23" points="98.01 59.95 97.87 60.05 98.33 60.39 98.01 59.95"/>
+  <polyline class="st36" points="97.3 60.48 97.21 60.54 97.25 60.61 97.33 60.51 97.3 60.48"/>
+  <polyline class="st23" points="97.42 60.39 97.3 60.48 97.33 60.51 97.42 60.39"/>
+  <polyline class="st36" points="98.49 60.61 97.87 61.46 110.76 79.11 111.57 78.52 98.49 60.61"/>
+  <polyline class="st23" points="97.73 59.95 97.42 60.39 97.87 60.05 97.73 59.95"/>
+  <polyline class="st36" points="98.54 60.54 98.48 60.59 98.49 60.61 98.54 60.54 98.54 60.54"/>
+  <polyline class="st23" points="98.33 60.39 98.48 60.59 98.54 60.54 98.33 60.39"/>
+  <polyline class="st36" points="97.25 60.61 84.18 78.52 84.99 79.11 97.87 61.46 97.25 60.61"/>
+  <polyline class="st23" points="97.33 60.51 97.25 60.61 97.87 61.46 98.49 60.61 98.48 60.59 97.76 61.11 97.33 60.51"/>
+  <polyline class="st19" points="97.87 60.05 97.42 60.39 97.33 60.51 97.76 61.11 98.48 60.59 98.33 60.39 97.87 60.05"/>
+  <g class="st1">
+    <path d="M88.15,66.42c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM89.07,65.87c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
   </g>
-  <g id="LaTeX2AI34" data-name="LaTeX2AI">
-    <g class="st0">
-      <text class="st5" transform="translate(302.33 157.7)"><tspan x="0" y="0">(b)</tspan></text>
-    </g>
+  <g class="st12">
+    <path d="M110.56,70.12v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
+  </g>
+  <g class="st13">
+    <path class="st11" d="M111.08,91.22c1.9,0,3.27-.83,3.27-2.77,0-.49-.15-.8-.45-1.07-.38-.36-.84-.55-2.06-.71-1.33-.17-1.8-.53-1.8-1.37,0-.92.69-1.57,1.65-1.57.43,0,.83.09,1.12.25.36.19.48.35.51.67l.07.62h.35c0-.58.04-.95.15-1.54-.87-.35-1.36-.46-1.96-.46-1.63,0-2.8,1.03-2.8,2.45,0,.53.14.93.46,1.22.37.34.87.51,1.93.65.84.12,1.22.25,1.51.49.28.24.41.55.41.96,0,.98-.82,1.69-1.95,1.69-.87,0-1.72-.43-1.78-.87l-.09-.73h-.35c.01.2.01.37.01.44,0,.5-.02.74-.09,1.23.62.27,1.25.41,1.89.41Z"/>
+  </g>
+  <g class="st41">
+    <path class="st20" d="M50.78,70.21h-.35l-.13.55c-.1.43-.17.65-.24.71-.14.12-1.09.2-2.39.2-.39,0-.64-.02-.93-.09v-5.7c0-.86.05-.95.56-.98l.52-.03v-.33c-.53.02-1.07.03-1.6.03s-1.06-.01-1.59-.03v.33l.52.03c.5.03.56.12.56.98v5.17c0,.32-.1.56-.27.64l-.34.17v.25c.36-.02.72-.03,1.08-.03.85,0,1.69.03,2.54.03.46,0,.35,0,1.83-.03.08-.47.12-.82.23-1.88Z"/>
+  </g>
+  <g class="st17">
+    <path class="st43" d="M75.49,64.83v-.33c-.39.02-.79.03-1.18.03s-.79-.01-1.18-.03v.33l.57.03c.26.01.37.15.37.35,0,.1-.03.23-.09.36l-2,5.16-2.15-5.53v-.09c-.01-.12.09-.24.33-.25l.61-.03v-.33c-.48.02-.97.03-1.45.03s-.97-.01-1.45-.03v.33l.39.03c.23.02.35.13.48.45l2.05,5.04c.34.83.47,1.21.63,1.8h.55c.21-.68.34-1.04.7-1.91l1.9-4.59c.25-.6.39-.76.59-.79l.33-.03Z"/>
+  </g>
+  <g class="st30">
+    <path d="M159.93,126.11v-1.03h-.01c-3.93,0-6.1.79-7.14,2.73-.02.05-.11.23-.11.33l.06.07c.09,0,.22-.2.3-.3,1.28-1.72,4.12-1.8,6.24-1.8h.67Z"/>
+    <path d="M209.02,126.11v-1.03h-2.41v1.03h2.41ZM207.33,126.11v-1.03h-2.41v1.03h2.41ZM205.63,126.11v-1.03h-2.41v1.03h2.41ZM203.95,126.11v-1.03h-2.41v1.03h2.41ZM202.25,126.11v-1.03h-2.41v1.03h2.41ZM200.55,126.11v-1.03h-2.41v1.03h2.41ZM198.86,126.11v-1.03h-2.41v1.03h2.41ZM197.16,126.11v-1.03h-2.41v1.03h2.41ZM195.46,126.11v-1.03h-2.41v1.03h2.41ZM193.77,126.11v-1.03h-2.41v1.03h2.41ZM192.07,126.11v-1.03h-2.41v1.03h2.41ZM190.38,126.11v-1.03h-2.41v1.03h2.41ZM188.68,126.11v-1.03h-2.41v1.03h2.41ZM186.98,126.11v-1.03h-2.41v1.03h2.41ZM185.29,126.11v-1.03h-2.41v1.03h2.41ZM183.59,126.11v-1.03h-2.41v1.03h2.41ZM181.89,126.11v-1.03h-2.41v1.03h2.41ZM180.2,126.11v-1.03h-2.41v1.03h2.41ZM178.5,126.11v-1.03h-2.41v1.03h2.41ZM176.81,126.11v-1.03h-2.41v1.03h2.41ZM175.11,126.11v-1.03h-2.41v1.03h2.41ZM173.41,126.11v-1.03h-2.41v1.03h2.41ZM171.73,126.11v-1.03h-2.41v1.03h2.41ZM170.03,126.11v-1.03h-2.41v1.03h2.41ZM168.34,126.11v-1.03h-2.41v1.03h2.41ZM166.64,126.11v-1.03h-2.41v1.03h2.41ZM164.94,126.11v-1.03h-2.41v1.03h2.41ZM163.25,126.11v-1.03h-2.41v1.03h2.41ZM161.55,126.11v-1.03h-2.41v1.03h2.41Z"/>
+    <path d="M222.65,126.11v-1.03h-.67c-2.11,0-4.96-.08-6.24-1.8-.08-.1-.21-.3-.3-.3l-.06.07c0,.1.09.29.11.33,1.03,1.94,3.21,2.73,7.14,2.73h.01ZM215.51,123.04l-.06-.07c-.09,0-.22.2-.3.3-1.28,1.72-4.12,1.8-6.24,1.8h-.67v1.03h.01c3.93,0,6.1-.79,7.14-2.73.02-.05.11-.23.11-.33Z"/>
+    <path d="M271.75,126.11v-1.03h-2.41v1.03h2.41ZM270.06,126.11v-1.03h-2.41v1.03h2.41ZM268.36,126.11v-1.03h-2.41v1.03h2.41ZM266.67,126.11v-1.03h-2.41v1.03h2.41ZM264.97,126.11v-1.03h-2.41v1.03h2.41ZM263.27,126.11v-1.03h-2.41v1.03h2.41ZM261.58,126.11v-1.03h-2.41v1.03h2.41ZM259.88,126.11v-1.03h-2.41v1.03h2.41ZM258.18,126.11v-1.03h-2.41v1.03h2.41ZM256.5,126.11v-1.03h-2.41v1.03h2.41ZM254.8,126.11v-1.03h-2.41v1.03h2.41ZM253.11,126.11v-1.03h-2.41v1.03h2.41ZM251.41,126.11v-1.03h-2.41v1.03h2.41ZM249.71,126.11v-1.03h-2.41v1.03h2.41ZM248.02,126.11v-1.03h-2.41v1.03h2.41ZM246.32,126.11v-1.03h-2.41v1.03h2.41ZM244.63,126.11v-1.03h-2.41v1.03h2.41ZM242.93,126.11v-1.03h-2.41v1.03h2.41ZM241.23,126.11v-1.03h-2.41v1.03h2.41ZM239.54,126.11v-1.03h-2.41v1.03h2.41ZM237.84,126.11v-1.03h-2.41v1.03h2.41ZM236.14,126.11v-1.03h-2.41v1.03h2.41ZM234.45,126.11v-1.03h-2.41v1.03h2.41ZM232.75,126.11v-1.03h-2.41v1.03h2.41ZM231.06,126.11v-1.03h-2.41v1.03h2.41ZM229.36,126.11v-1.03h-2.41v1.03h2.41ZM227.66,126.11v-1.03h-2.41v1.03h2.41ZM225.98,126.11v-1.03h-2.41v1.03h2.41ZM224.28,126.11v-1.03h-2.41v1.03h2.41Z"/>
+    <path d="M278.23,128.14c0-.1-.09-.29-.11-.33-1.03-1.94-3.21-2.73-7.14-2.73h-.01v1.03h.67c2.11,0,4.96.08,6.24,1.8.08.1.21.3.3.3l.06-.07Z"/>
+    <path class="st14" d="M156.88,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM157.79,135.02c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
+    <path class="st20" d="M167.79,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM168.7,135.02c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM162.74,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
+    <path class="st14" d="M173.24,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM174.16,135.02c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
+    <path class="st43" d="M189.61,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM190.52,135.02c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM184.55,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03ZM179.1,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
+    <path class="st14" d="M195.06,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM195.98,135.02c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
+    <path class="st2" d="M216.88,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM217.79,135.02c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM211.83,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03ZM206.37,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03ZM200.92,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
+    <path class="st14" d="M222.33,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM223.25,135.02c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
+    <path class="st20" d="M233.24,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM234.16,135.02c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM228.19,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
+    <path class="st43" d="M249.61,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM250.52,135.02c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM244.55,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03ZM239.1,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
+    <path class="st14" d="M255.06,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM255.98,135.02c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
+    <path class="st11" d="M277.28,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03ZM271.83,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03ZM266.37,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03ZM260.92,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
+  </g>
+  <g class="st18">
+    <path d="M8.2,126.11v-1.03h-.01c-3.93,0-6.1.79-7.14,2.73-.02.05-.11.23-.11.33l.06.07c.09,0,.22-.2.3-.3,1.28-1.72,4.12-1.8,6.24-1.8h.67Z"/>
+    <path d="M59.51,126.11v-1.03h-2.41v1.03h2.41ZM57.81,126.11v-1.03h-2.41v1.03h2.41ZM56.13,126.11v-1.03h-2.41v1.03h2.41ZM54.43,126.11v-1.03h-2.41v1.03h2.41ZM52.74,126.11v-1.03h-2.41v1.03h2.41ZM51.04,126.11v-1.03h-2.41v1.03h2.41ZM49.34,126.11v-1.03h-2.41v1.03h2.41ZM47.65,126.11v-1.03h-2.41v1.03h2.41ZM45.95,126.11v-1.03h-2.41v1.03h2.41ZM44.25,126.11v-1.03h-2.41v1.03h2.41ZM42.56,126.11v-1.03h-2.41v1.03h2.41ZM40.86,126.11v-1.03h-2.41v1.03h2.41ZM39.17,126.11v-1.03h-2.41v1.03h2.41ZM37.47,126.11v-1.03h-2.41v1.03h2.41ZM35.77,126.11v-1.03h-2.41v1.03h2.41ZM34.08,126.11v-1.03h-2.41v1.03h2.41ZM32.38,126.11v-1.03h-2.41v1.03h2.41ZM30.68,126.11v-1.03h-2.41v1.03h2.41ZM28.99,126.11v-1.03h-2.41v1.03h2.41ZM27.29,126.11v-1.03h-2.41v1.03h2.41ZM25.61,126.11v-1.03h-2.41v1.03h2.41ZM23.91,126.11v-1.03h-2.41v1.03h2.41ZM22.21,126.11v-1.03h-2.41v1.03h2.41ZM20.52,126.11v-1.03h-2.41v1.03h2.41ZM18.82,126.11v-1.03h-2.41v1.03h2.41ZM17.12,126.11v-1.03h-2.41v1.03h2.41ZM15.43,126.11v-1.03h-2.41v1.03h2.41ZM13.73,126.11v-1.03h-2.41v1.03h2.41ZM12.04,126.11v-1.03h-2.41v1.03h2.41ZM10.34,126.11v-1.03h-2.41v1.03h2.41Z"/>
+    <path d="M73.65,126.11v-1.03h-.67c-2.11,0-4.96-.08-6.24-1.8-.08-.1-.21-.3-.3-.3l-.06.07c0,.1.09.29.11.33,1.03,1.94,3.21,2.73,7.14,2.73h.01ZM66.51,123.04l-.06-.07c-.09,0-.22.2-.3.3-1.28,1.72-4.12,1.8-6.24,1.8h-.67v1.03h.01c3.93,0,6.1-.79,7.14-2.73.02-.05.11-.23.11-.33Z"/>
+    <path d="M124.97,126.11v-1.03h-2.41v1.03h2.41ZM123.27,126.11v-1.03h-2.41v1.03h2.41ZM121.58,126.11v-1.03h-2.41v1.03h2.41ZM119.88,126.11v-1.03h-2.41v1.03h2.41ZM118.19,126.11v-1.03h-2.41v1.03h2.41ZM116.49,126.11v-1.03h-2.41v1.03h2.41ZM114.79,126.11v-1.03h-2.41v1.03h2.41ZM113.1,126.11v-1.03h-2.41v1.03h2.41ZM111.4,126.11v-1.03h-2.41v1.03h2.41ZM109.7,126.11v-1.03h-2.41v1.03h2.41ZM108.01,126.11v-1.03h-2.41v1.03h2.41ZM106.31,126.11v-1.03h-2.41v1.03h2.41ZM104.62,126.11v-1.03h-2.41v1.03h2.41ZM102.92,126.11v-1.03h-2.41v1.03h2.41ZM101.22,126.11v-1.03h-2.41v1.03h2.41ZM99.54,126.11v-1.03h-2.41v1.03h2.41ZM97.84,126.11v-1.03h-2.41v1.03h2.41ZM96.15,126.11v-1.03h-2.41v1.03h2.41ZM94.45,126.11v-1.03h-2.41v1.03h2.41ZM92.75,126.11v-1.03h-2.41v1.03h2.41ZM91.06,126.11v-1.03h-2.41v1.03h2.41ZM89.36,126.11v-1.03h-2.41v1.03h2.41ZM87.66,126.11v-1.03h-2.41v1.03h2.41ZM85.97,126.11v-1.03h-2.41v1.03h2.41ZM84.27,126.11v-1.03h-2.41v1.03h2.41ZM82.58,126.11v-1.03h-2.41v1.03h2.41ZM80.88,126.11v-1.03h-2.41v1.03h2.41ZM79.18,126.11v-1.03h-2.41v1.03h2.41ZM77.49,126.11v-1.03h-2.41v1.03h2.41ZM75.79,126.11v-1.03h-2.41v1.03h2.41Z"/>
+    <path d="M131.96,128.14c0-.1-.09-.29-.11-.33-1.03-1.94-3.21-2.73-7.14-2.73h-.01v1.03h.67c2.11,0,4.96.08,6.24,1.8.08.1.21.3.3.3l.06-.07Z"/>
+    <path class="st14" d="M10.61,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM11.52,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM5.15,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM6.07,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
+    <path class="st20" d="M21.92,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03ZM16.06,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM16.98,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
+    <path class="st14" d="M32.43,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM33.34,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM26.97,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM27.89,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
+    <path class="st43" d="M43.33,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM44.25,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM38.28,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
+    <path class="st14" d="M54.24,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM55.16,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM48.79,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM49.71,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
+    <path class="st2" d="M70.61,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM71.52,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM65.56,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03ZM60.1,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
+    <path class="st14" d="M81.52,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM82.43,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM76.06,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM76.98,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
+    <path class="st20" d="M92.83,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03ZM86.97,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM87.89,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
+    <path class="st43" d="M103.33,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM104.25,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM98.28,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
+    <path class="st14" d="M114.24,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM115.16,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21ZM108.79,135.57c0,2.32-.41,3.28-1.42,3.28-1.06,0-1.51-1.1-1.51-3.76,0-2.3.4-3.21,1.44-3.21s1.48,1.07,1.48,3.69ZM109.71,135.03c0-2.39-.71-3.52-2.2-3.52-1.69,0-2.55,1.34-2.55,3.98,0,1.28.23,2.38.61,2.91.38.53.99.84,1.67.84,1.65,0,2.48-1.42,2.48-4.21Z"/>
+    <path class="st11" d="M131.01,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03ZM125.56,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03ZM120.1,139.05v-.33l-.57-.03c-.6-.03-.71-.15-.71-.72v-6.47l-.15-.05c-.71.37-1.48.7-2.48,1.05l.08.47h.11c.48-.22.96-.44,1.44-.64.07,0,.09.1.09.36v5.29c0,.57-.12.69-.71.72l-.61.03v.33c.6-.02,1.2-.03,1.8-.03.57,0,1.15.01,1.71.03Z"/>
+  </g>
+  <g class="st24">
+    <path d="M58.6,115.09h-2.35l2.35-3.84v3.84ZM60.7,117.8v-.33l-.52-.03c-.53-.03-.65-.17-.65-.83v-.82c.64,0,.87.01,1.18.04v-.77s-.53.03-.88.03h-.29v-1.52c0-1.94.02-2.88.08-3.33l-.13-.05-.81.29-3.09,5.05.12.25h2.91v.82c0,.65-.12.81-.65.83l-.68.03v.33c.59-.02,1.17-.03,1.76-.03.56,0,1.11.01,1.67.03ZM55.2,117.8c-.02-.23-.02-.34-.02-.49,0-.14,0-.25.02-.49l-3.77.11,1.99-2.11c1.06-1.12,1.39-1.72,1.39-2.54,0-1.25-.85-2.03-2.24-2.03-.79,0-1.32.22-1.85.76l-.19,1.48h.32l.14-.5c.17-.63.57-.91,1.3-.91.94,0,1.54.59,1.54,1.52,0,.82-.46,1.63-1.69,2.93l-1.85,1.97v.28c.81-.02,1.63-.03,2.43-.03s1.67.01,2.5.03Z"/>
+    <path d="M80.76,116.15c0-.34-.09-.59-.31-.81-.28-.28-.64-.4-1.6-.59-.89-.17-1.19-.39-1.19-.89,0-.55.38-.85,1.05-.85.73,0,1.29.38,1.29.89v.25h.31c.01-.63.02-.89.05-1.23-.58-.2-.97-.27-1.42-.27-1.27,0-2.04.6-2.04,1.58,0,.52.24.89.74,1.12.29.13.87.31,1.61.47.49.11.7.34.7.75,0,.59-.55,1-1.32,1s-1.36-.38-1.36-.93v-.45h-.33c0,.75-.03,1.08-.12,1.52.57.19.99.26,1.49.26,1.43,0,2.44-.76,2.44-1.83ZM76.42,113.01l-1.49.07v-.41c0-.46.03-.85.12-1.55l-.13-.12c-.26.16-.59.31-.93.41.03.33.04.53.04.86v.76l-.85.38v.23l.83-.04v3.14c0,.81.36,1.16,1.2,1.16.25,0,.51-.05.58-.13l.52-.58-.14-.19c-.27.15-.44.21-.64.21-.43,0-.6-.22-.6-.75v-2.86h1.4l.1-.59ZM71.9,110.82c0-.32-.22-.55-.53-.55-.34,0-.56.22-.56.55s.22.55.55.55.55-.22.55-.55ZM72.72,117.8v-.33l-.5-.03c-.37-.02-.4-.1-.4-.79v-3.96l-.1-.04c-.56.23-1.12.38-1.7.45v.31h.4c.44,0,.48.08.48.8v2.45c0,.69-.03.76-.4.79l-.5.03v.33c.46-.02.91-.03,1.36-.03s.91.01,1.36.03ZM68.33,115.27c0,1.22-.65,2.07-1.58,2.07-.57,0-1.37-.35-1.37-.59v-2.35c0-.15.11-.35.28-.55.31-.32.73-.5,1.18-.5.92,0,1.49.74,1.49,1.91ZM69.27,114.82c0-1.27-.82-2.17-1.97-2.17-.51,0-1.05.2-1.33.48l-.6.61v-3.81l-.1-.09c-.48.19-.84.27-1.7.4v.31h.61c.2,0,.27.12.27.45v5.1c0,.68-.01.97-.09,1.73l.17.07.44-.39c.44.28.83.39,1.41.39.43,0,.71-.08.94-.24l1.09-.79c.48-.35.86-1.25.86-2.05Z"/>
+  </g>
+  <g class="st39">
+    <path d="M209.59,115.32c0-.52-.22-.98-.61-1.25-.27-.2-.52-.28-1.07-.38.87-.68,1.2-1.18,1.2-1.82,0-.97-.81-1.61-2.02-1.61-.74,0-1.23.21-1.76.73l-.32,1.35h.34l.2-.61c.12-.37.81-.74,1.37-.74.71,0,1.29.58,1.29,1.27,0,.82-.64,1.51-1.42,1.51l-.51-.03-.13.58.08.07c.41-.19.62-.24.92-.24.91,0,1.43.58,1.43,1.57,0,1.11-.67,1.84-1.68,1.84-.5,0-.95-.16-1.28-.47-.26-.24-.4-.49-.61-1.08l-.29.11c.23.67.32,1.06.38,1.6.58.2,1.06.28,1.46.28,1.32,0,3.03-1.15,3.03-2.66ZM204.2,117.8c-.02-.23-.02-.34-.02-.49,0-.14,0-.25.02-.49l-3.77.11,1.99-2.11c1.06-1.12,1.39-1.72,1.39-2.54,0-1.25-.85-2.03-2.24-2.03-.79,0-1.32.22-1.85.76l-.19,1.48h.32l.14-.5c.17-.63.57-.91,1.3-.91.94,0,1.54.59,1.54,1.52,0,.82-.46,1.63-1.69,2.93l-1.85,1.97v.28c.81-.02,1.63-.03,2.43-.03s1.67.01,2.5.03Z"/>
+    <path d="M229.76,116.15c0-.34-.09-.59-.31-.81-.28-.28-.64-.4-1.6-.59-.89-.17-1.19-.39-1.19-.89,0-.55.38-.85,1.05-.85.73,0,1.29.38,1.29.89v.25h.31c.01-.63.02-.89.05-1.23-.58-.2-.97-.27-1.42-.27-1.27,0-2.04.6-2.04,1.58,0,.52.24.89.74,1.12.29.13.87.31,1.61.47.49.11.7.34.7.75,0,.59-.55,1-1.32,1s-1.36-.38-1.36-.93v-.45h-.33c0,.75-.03,1.08-.12,1.52.57.19.99.26,1.49.26,1.43,0,2.44-.76,2.44-1.83ZM225.42,113.01l-1.49.07v-.41c0-.46.03-.85.12-1.55l-.13-.12c-.26.16-.59.31-.93.41.03.33.04.53.04.86v.76l-.85.38v.23l.83-.04v3.14c0,.81.36,1.16,1.2,1.16.25,0,.51-.05.58-.13l.52-.58-.14-.19c-.27.15-.44.21-.64.21-.43,0-.6-.22-.6-.75v-2.86h1.4l.1-.59ZM220.9,110.82c0-.32-.22-.55-.53-.55-.34,0-.56.22-.56.55s.22.55.55.55.55-.22.55-.55ZM221.72,117.8v-.33l-.5-.03c-.37-.02-.4-.1-.4-.79v-3.96l-.1-.04c-.56.23-1.12.38-1.7.45v.31h.4c.44,0,.48.08.48.8v2.45c0,.69-.03.76-.4.79l-.5.03v.33c.46-.02.91-.03,1.36-.03s.91.01,1.36.03ZM217.33,115.27c0,1.22-.65,2.07-1.58,2.07-.57,0-1.37-.35-1.37-.59v-2.35c0-.15.11-.35.28-.55.31-.32.73-.5,1.18-.5.92,0,1.49.74,1.49,1.91ZM218.27,114.82c0-1.27-.82-2.17-1.97-2.17-.51,0-1.05.2-1.33.48l-.6.61v-3.81l-.1-.09c-.48.19-.84.27-1.7.4v.31h.61c.2,0,.27.12.27.45v5.1c0,.68-.01.97-.09,1.73l.17.07.44-.39c.44.28.83.39,1.41.39.43,0,.71-.08.94-.24l1.09-.79c.48-.35.86-1.25.86-2.05Z"/>
+  </g>
+  <g class="st33">
+    <path d="M98.93,5.85l-1.22.03c-.5,0-.79-.01-1.37-.07,0-.51.04-.75.19-1.04.23-.48.7-.77,1.22-.77.36,0,.64.14.84.44.24.36.35.68.35,1.41ZM99.9,5.72c0-1.25-.81-2.07-2.03-2.07-.4,0-.87.14-1.32.4-.89.51-1.25,1.19-1.25,2.32,0,.69.15,1.28.46,1.69.43.58,1.17.92,1.99.92.4,0,.81-.09,1.25-.28.29-.12.52-.26.57-.33l.22-.37-.14-.11c-.7.41-.95.51-1.42.51-.71,0-1.3-.32-1.6-.85-.21-.36-.28-.67-.31-1.3h1.59c.75,0,1.22-.03,1.97-.15.01-.15.02-.25.02-.38ZM92.84,6.36c0,.71-.02.82-.16,1.07-.31.51-.84.85-1.35.85-.96,0-1.65-.93-1.65-2.23,0-1.19.59-1.89,1.57-1.89.41,0,.85.14,1.23.4.23.15.36.29.36.38v1.41ZM94.66,8.8v-.33l-.5-.03c-.37-.02-.4-.1-.4-.79V.93l-.1-.09c-.48.19-.84.27-1.7.4v.31h.61c.2,0,.27.12.27.45v2c-.61-.26-.92-.35-1.3-.35-.29,0-.56.07-.83.21l-.96.5c-.62.33-1.03,1.12-1.03,2.05,0,.87.29,1.59.83,2.03.37.32.88.46,1.59.46.22,0,.47-.04.52-.09l1.21-1.01-.05,1c.28-.02.56-.03.84-.03.33,0,.67.01.99.03ZM86.98,6.59c0,1.25-.56,2.04-1.44,2.04-1.07,0-1.79-1.05-1.79-2.6,0-1.31.52-2.02,1.48-2.02s1.75,1.09,1.75,2.57ZM88,6.18c0-1.47-1.07-2.53-2.56-2.53-1.59,0-2.69,1.12-2.69,2.75,0,1.54.97,2.59,2.38,2.59,1.68,0,2.88-1.17,2.88-2.8ZM82.05,8.27l-.11-.16c-.4.22-.75.32-1.15.32-1.21,0-2.01-.94-2.01-2.38,0-1.17.55-1.82,1.53-1.82.48,0,1,.22,1.2.49l.08.67h.31c0-.5.05-.95.15-1.34-.44-.26-.82-.38-1.27-.38-.52,0-1.13.21-1.79.62-.76.48-1.17,1.24-1.17,2.2,0,1.47,1.04,2.51,2.5,2.51.57,0,1.39-.21,1.49-.37l.23-.35ZM72.65,6.36c0,.71-.02.82-.16,1.07-.31.51-.84.85-1.35.85-.96,0-1.65-.93-1.65-2.23,0-1.19.59-1.89,1.57-1.89.41,0,.85.14,1.23.4.23.15.36.29.36.38v1.41ZM74.47,8.8v-.33l-.5-.03c-.37-.02-.4-.1-.4-.79V.93l-.1-.09c-.48.19-.84.27-1.7.4v.31h.61c.2,0,.27.12.27.45v2c-.61-.26-.92-.35-1.3-.35-.29,0-.56.07-.83.21l-.96.5c-.62.33-1.03,1.12-1.03,2.05,0,.87.29,1.59.83,2.03.37.32.88.46,1.59.46.22,0,.47-.04.52-.09l1.21-1.01-.05,1c.28-.02.56-.03.84-.03.33,0,.67.01.99.03ZM66.84,5.85l-1.22.03c-.5,0-.79-.01-1.37-.07,0-.51.04-.75.19-1.04.23-.48.7-.77,1.22-.77.36,0,.64.14.84.44.24.36.35.68.35,1.41ZM67.81,5.72c0-1.25-.81-2.07-2.03-2.07-.4,0-.87.14-1.32.4-.89.51-1.25,1.19-1.25,2.32,0,.69.15,1.28.46,1.69.43.58,1.17.92,1.99.92.4,0,.81-.09,1.25-.28.29-.12.52-.26.57-.33l.22-.37-.14-.11c-.7.41-.95.51-1.42.51-.71,0-1.3-.32-1.6-.85-.21-.36-.28-.67-.31-1.3h1.59c.75,0,1.22-.03,1.97-.15.01-.15.02-.25.02-.38ZM62.59,8.27l-.11-.16c-.4.22-.75.32-1.15.32-1.21,0-2.01-.94-2.01-2.38,0-1.17.55-1.82,1.53-1.82.48,0,1,.22,1.2.49l.08.67h.31c0-.5.05-.95.15-1.34-.44-.26-.82-.38-1.27-.38-.52,0-1.13.21-1.79.62-.76.48-1.17,1.24-1.17,2.2,0,1.47,1.04,2.51,2.5,2.51.57,0,1.39-.21,1.49-.37l.23-.35ZM57.97,8.8v-.33l-.45-.03c-.37-.02-.4-.09-.4-.79v-2.11c0-1.28-.6-1.9-1.82-1.9-.4,0-.63.08-.86.27l-.83.72v-.95l-.1-.04c-.56.23-1.12.38-1.7.45v.31h.4c.44,0,.48.08.48.8v2.45c0,.69-.03.76-.4.79l-.49.03v.33c.45-.02.91-.03,1.35-.03s.91.01,1.35.03v-.33l-.49-.03c-.37-.02-.4-.1-.4-.79v-2.31c0-.49.72-1.03,1.39-1.03.73,0,1.21.55,1.21,1.39v3.1c.28-.02.58-.03.86-.03.31,0,.6.01.91.03ZM49.81,7.41c-.32.45-1,.86-1.43.86s-.82-.4-.82-.87c0-.4.22-.79.55-.99.27-.16.87-.32,1.7-.44v1.44ZM51.42,8.8v-.33l-.43-.02c-.26-.01-.31-.1-.31-.63v-2c0-1.59-.46-2.17-1.72-2.17-.47,0-.91.12-1.32.37l-.58.35v.71l.28.08.14-.34c.22-.51.34-.59.84-.59,1.03,0,1.45.4,1.48,1.4l-1.08.2c-1.48.27-2.11.79-2.11,1.73,0,.85.51,1.34,1.37,1.34.2,0,.38-.03.46-.09l1.35-.94-.05.93c.28-.02.57-.03.85-.03s.53.01.81.03ZM46.06,8.8v-.33l-.5-.03c-.37-.02-.4-.1-.4-.79V.93l-.1-.09c-.48.19-.84.27-1.7.4v.31h.61c.2,0,.27.12.27.45v5.65c0,.69-.03.76-.4.79l-.5.03v.33c.46-.02.91-.03,1.36-.03s.91.01,1.36.03ZM41.19,7.41c-.32.45-1,.86-1.43.86s-.82-.4-.82-.87c0-.4.22-.79.55-.99.27-.16.87-.32,1.7-.44v1.44ZM42.79,8.8v-.33l-.43-.02c-.26-.01-.31-.1-.31-.63v-2c0-1.59-.46-2.17-1.72-2.17-.47,0-.91.12-1.32.37l-.58.35v.71l.28.08.14-.34c.22-.51.34-.59.84-.59,1.03,0,1.45.4,1.48,1.4l-1.08.2c-1.48.27-2.11.79-2.11,1.73,0,.85.51,1.34,1.37,1.34.2,0,.38-.03.46-.09l1.35-.94-.05.93c.28-.02.57-.03.85-.03s.53.01.81.03ZM35.82,2.95c0,.95-.65,1.46-1.9,1.46-.19,0-.33,0-.67-.02V1.74c.28-.07.53-.09.88-.09,1.17,0,1.68.39,1.68,1.3ZM36.15,6.5c0,1.16-.75,1.84-2.05,1.84-.32,0-.57-.02-.84-.09v-3.44c.43-.02.52-.02.73-.02,1.47,0,2.16.53,2.16,1.7ZM37.27,6.28c0-.56-.22-1-.63-1.3-.41-.31-.79-.4-1.63-.47.53-.11.79-.21,1.09-.41.52-.36.8-.83.8-1.4,0-.96-.63-1.48-1.95-1.48-.65,0-1.3.03-1.95.03-.58,0-1.15-.01-1.72-.03v.33l.39.03c.51.04.56.12.56.98v5.17c0,.4-.09.65-.24.71l-.28.11v.25c.39-.02.8-.03,1.19-.03.45,0,.91.03,1.35.03.81,0,1.52-.2,2.01-.56.64-.46,1.03-1.2,1.03-1.96Z"/>
+  </g>
+  <g class="st6">
+    <path d="M246.92,5.85l-1.22.03c-.5,0-.78-.01-1.37-.07,0-.51.04-.75.19-1.04.23-.48.7-.77,1.22-.77.36,0,.64.14.84.44.24.36.35.68.35,1.41ZM247.89,5.72c0-1.25-.81-2.07-2.03-2.07-.4,0-.87.14-1.32.4-.89.51-1.25,1.19-1.25,2.32,0,.69.15,1.28.46,1.69.43.58,1.17.92,1.98.92.4,0,.81-.09,1.25-.28.29-.12.52-.26.57-.33l.22-.37-.14-.11c-.7.41-.95.51-1.42.51-.71,0-1.3-.32-1.6-.85-.21-.36-.28-.67-.31-1.3h1.59c.75,0,1.22-.03,1.97-.15.01-.15.02-.25.02-.38ZM240.84,6.36c0,.71-.02.82-.16,1.07-.31.51-.84.85-1.35.85-.96,0-1.65-.93-1.65-2.23,0-1.19.59-1.89,1.57-1.89.41,0,.85.14,1.23.4.23.15.36.29.36.38v1.41ZM242.66,8.8v-.33l-.5-.03c-.37-.02-.4-.1-.4-.79V.93l-.1-.09c-.48.19-.84.27-1.7.4v.31h.61c.2,0,.27.12.27.45v2c-.61-.26-.92-.35-1.3-.35-.29,0-.56.07-.83.21l-.96.5c-.62.33-1.02,1.12-1.02,2.05,0,.87.29,1.59.83,2.03.37.32.88.46,1.59.46.22,0,.47-.04.52-.09l1.21-1.01-.05,1c.28-.02.56-.03.84-.03.33,0,.66.01.99.03ZM234.99,6.59c0,1.25-.56,2.04-1.44,2.04-1.07,0-1.79-1.05-1.79-2.6,0-1.31.52-2.02,1.48-2.02s1.74,1.09,1.74,2.57ZM236,6.18c0-1.47-1.07-2.53-2.56-2.53-1.59,0-2.69,1.12-2.69,2.75,0,1.54.97,2.59,2.38,2.59,1.68,0,2.88-1.17,2.88-2.8ZM230.06,8.27l-.11-.16c-.4.22-.75.32-1.14.32-1.21,0-2.01-.94-2.01-2.38,0-1.17.55-1.82,1.53-1.82.48,0,1,.22,1.2.49l.08.67h.31c0-.5.05-.95.15-1.34-.44-.26-.82-.38-1.26-.38-.52,0-1.13.21-1.79.62-.76.48-1.17,1.24-1.17,2.2,0,1.47,1.04,2.51,2.5,2.51.57,0,1.38-.21,1.49-.37l.23-.35ZM222.73,8.8v-.33l-.45-.03c-.37-.02-.4-.09-.4-.79v-2.11c0-1.28-.6-1.9-1.82-1.9-.4,0-.63.08-.86.27l-.83.72v-.95l-.1-.04c-.56.23-1.12.38-1.7.45v.31h.4c.44,0,.48.08.48.8v2.45c0,.69-.03.76-.4.79l-.49.03v.33c.45-.02.9-.03,1.35-.03s.9.01,1.35.03v-.33l-.49-.03c-.37-.02-.4-.1-.4-.79v-2.31c0-.49.72-1.03,1.38-1.03.73,0,1.21.55,1.21,1.39v3.1c.28-.02.58-.03.86-.03.31,0,.6.01.9.03ZM214.57,7.41c-.32.45-1,.86-1.43.86s-.82-.4-.82-.87c0-.4.22-.79.55-.99.27-.16.87-.32,1.7-.44v1.44ZM216.18,8.8v-.33l-.43-.02c-.26-.01-.31-.1-.31-.63v-2c0-1.59-.46-2.17-1.72-2.17-.47,0-.9.12-1.32.37l-.58.35v.71l.28.08.14-.34c.22-.51.34-.59.84-.59,1.02,0,1.45.4,1.48,1.4l-1.08.2c-1.48.27-2.1.79-2.1,1.73,0,.85.51,1.34,1.37,1.34.2,0,.38-.03.46-.09l1.35-.94-.05.93c.28-.02.57-.03.85-.03s.53.01.81.03ZM210.89,8.8v-.33l-.51-.03c-.37-.02-.4-.1-.4-.79v-2.25c0-1.08-.63-1.76-1.64-1.76-.38,0-.7.1-.89.27l-.83.74c-.35-.72-.8-1.01-1.55-1.01-.4,0-.71.1-.9.27l-.75.7v-.93l-.1-.04c-.56.23-1.12.38-1.7.45v.31h.4c.44,0,.48.08.48.8v2.45c0,.69-.03.76-.4.79l-.5.03v.33c.46-.02.93-.03,1.38-.03s.86.01,1.3.03v-.33l-.46-.03c-.37-.02-.4-.1-.4-.79v-2.31c0-.49.72-1.03,1.37-1.03.59,0,.99.56.99,1.39v1.95c0,.69-.03.76-.4.79l-.5.03v.33c.46-.02.9-.03,1.36-.03s.9.01,1.36.03v-.33l-.5-.03c-.37-.02-.4-.1-.4-.79v-2.31c0-.49.72-1.03,1.37-1.03.59,0,.99.56.99,1.39v3.1c.28-.02.58-.03.86-.03.33,0,.64.01.97.03ZM201.5,1.79v-.84c-.22-.09-.35-.12-.51-.12-.34,0-.71.17-.96.46l-.63.72c-.32.36-.46.85-.46,1.57v.46h-2.25v-.93c0-1.27.14-1.56.76-1.56.29,0,.49.08.75.31l.13-.07v-.84c-.22-.09-.35-.12-.51-.12-.34,0-.71.17-.96.46l-.63.72c-.32.36-.46.85-.46,1.57v.46l-.75.34v.24l.75-.04v3.09c0,.69-.03.76-.4.79l-.5.03v.33c.46-.02.9-.03,1.36-.03s.9.01,1.36.03v-.33l-.5-.03c-.37-.02-.4-.1-.4-.79v-3.09h2.25v3.09c0,.69-.03.76-.4.79l-.5.03v.33c.46-.02.9-.03,1.36-.03s.9.01,1.36.03v-.33l-.5-.03c-.37-.02-.4-.1-.4-.79v-3.09h1.35l.08-.58-1.43.04v-.93c0-1.27.14-1.56.76-1.56.29,0,.49.08.75.31l.13-.07ZM194.39,8.8v-.33l-.45-.03c-.37-.02-.4-.09-.4-.79v-3.96l-.1-.04c-.56.23-1.12.38-1.7.45v.31h.4c.44,0,.48.08.48.8v1.78c0,.24-.15.55-.4.8-.31.31-.65.46-1.08.46-.38,0-.69-.12-.86-.33-.15-.17-.23-.51-.23-.99v-3.22l-.1-.04c-.56.23-1.12.38-1.7.45v.31h.4c.44,0,.48.08.48.8v1.83c0,.76.07,1.1.26,1.37.24.33.65.49,1.28.49.49,0,.93-.15,1.22-.43l.73-.68c0,.32-.01.49-.04,1,.31-.02.6-.03.9-.03s.6.01.9.03ZM187.81,8.8v-.33l-.52-.03c-.5-.03-.56-.12-.56-.98V2.56c0-.86.05-.95.56-.98l.52-.03v-.33c-.53.02-1.07.03-1.6.03s-1.06-.01-1.59-.03v.33l.52.03c.5.03.56.12.56.98v1.94c-.23.01-.46.02-.9.02h-2.55c-.45,0-.69-.01-.9-.02v-1.94c0-.86.05-.95.56-.98l.52-.03v-.33c-.53.02-1.07.03-1.6.03s-1.06-.01-1.59-.03v.33l.52.03c.5.03.56.12.56.98v4.9c0,.86-.05.95-.56.98l-.52.03v.33c.53-.02,1.06-.03,1.59-.03s1.07.01,1.6.03v-.33l-.52-.03c-.5-.03-.56-.12-.56-.98v-2.43c.29-.02.47-.02.9-.02h2.55c.44,0,.61,0,.9.02v2.43c0,.86-.05.95-.56.98l-.52.03v.33c.53-.02,1.06-.03,1.59-.03s1.07.01,1.6.03Z"/>
+  </g>
+  <g class="st35">
+    <polygon points="146.54 113.97 146.54 113.74 140.66 110.97 140.66 111.61 145.44 113.85 140.66 116.09 140.66 116.74 146.54 113.97"/>
+  </g>
+  <g class="st8">
+    <path d="M71.32,154.81c0-.84-.14-1.61-.43-2.35-.41-1.06-.86-1.66-2-2.68l-.21.28c.8.94,1.09,1.45,1.36,2.35.22.71.33,1.48.33,2.39s-.11,1.76-.34,2.54c-.28.98-.57,1.51-1.35,2.48l.21.23c.75-.71,1.07-1.07,1.41-1.6.67-1.06,1.01-2.32,1.01-3.63ZM66.42,156.35c-.32.45-1,.86-1.43.86s-.82-.4-.82-.87c0-.4.22-.79.55-.99.27-.16.87-.32,1.7-.44v1.44ZM68.02,157.73v-.33l-.43-.02c-.26-.01-.31-.1-.31-.63v-2c0-1.59-.46-2.17-1.72-2.17-.47,0-.91.12-1.32.37l-.58.35v.71l.28.08.14-.34c.22-.51.34-.59.84-.59,1.03,0,1.45.4,1.48,1.4l-1.08.2c-1.48.27-2.11.79-2.11,1.73,0,.85.51,1.34,1.37,1.34.2,0,.38-.03.46-.09l1.35-.94-.05.93c.28-.02.57-.03.85-.03s.53.01.81.03ZM62.53,159.82c-.79-.97-1.07-1.49-1.35-2.48-.23-.79-.34-1.61-.34-2.54s.1-1.68.32-2.39c.27-.91.58-1.42,1.37-2.35l-.21-.28c-1.13,1.01-1.58,1.61-2,2.68-.28.73-.43,1.51-.43,2.33,0,1.17.27,2.27.8,3.25.38.73.73,1.16,1.63,2l.21-.23Z"/>
+  </g>
+  <g class="st0">
+    <path d="M221.6,154.81c0-.84-.14-1.61-.43-2.35-.41-1.06-.86-1.66-2-2.68l-.21.28c.8.94,1.09,1.45,1.36,2.35.22.71.33,1.48.33,2.39s-.11,1.76-.34,2.54c-.28.98-.57,1.51-1.35,2.48l.21.23c.75-.71,1.07-1.07,1.41-1.6.67-1.06,1.01-2.32,1.01-3.63ZM217.19,155.2c0,1.22-.65,2.07-1.58,2.07-.57,0-1.37-.35-1.37-.59v-2.35c0-.15.11-.35.28-.55.31-.32.73-.5,1.18-.5.92,0,1.49.74,1.49,1.91ZM218.14,154.75c0-1.27-.82-2.17-1.97-2.17-.51,0-1.05.2-1.33.48l-.6.61v-3.81l-.1-.09c-.48.19-.84.27-1.7.4v.31h.61c.2,0,.27.12.27.45v5.1c0,.68-.01.97-.09,1.73l.17.07.44-.39c.44.28.83.39,1.41.39.43,0,.71-.08.94-.24l1.09-.79c.48-.35.86-1.25.86-2.05ZM212.24,159.82c-.79-.97-1.07-1.49-1.35-2.48-.23-.79-.34-1.61-.34-2.54s.1-1.68.32-2.39c.27-.91.58-1.42,1.37-2.35l-.21-.28c-1.13,1.01-1.58,1.61-2,2.68-.28.73-.43,1.51-.43,2.33,0,1.17.27,2.27.8,3.25.38.73.73,1.16,1.63,2l.21-.23Z"/>
   </g>
 </svg>

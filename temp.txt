@@ -1,0 +1,89 @@
+pandoc --verbose
+  to: html
+  output-file: statistical_inference.html
+  standalone: true
+  title-prefix: Max Jerdee
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  css:
+    - ../../styles.css
+  toc: true
+
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  theme:
+    light: flatly
+    dark: darkly
+  draft: false
+  sidebar:
+    style: docked
+  title: Statistical inference review
+  description: Quick primer on Bayesian inference and model selection.
+  categories:
+    - Inference
+  date: last-modified
+  bibliography:
+    - ../../assets/LaTeX/references.bib
+  assets-folder: ../../assets/images/notes/statistical_inference
+  image: ../../assets/images/notes/statistical_inference/coin-flip-perspectives.svg     
+  html:
+    include-in-header:
+      - file: ../../assets/LaTeX/preamble.tex
+      - ../../assets/LaTeX/preamble.tex
+      - '\usepackage{bm}'
+  header-includes:
+    - ../../assets/LaTeX/preamble.tex
+  page-layout: article
+
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/template.patched from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/template.patched
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/metadata.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/metadata.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/styles.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/styles.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-block.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/title-metadata.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/_title-meta-author.html
+[INFO] Loaded /tmp/quarto-session5a645019/41a42857/a8ae9ba9/toc.html from /tmp/quarto-session5a645019/41a42857/a8ae9ba9/toc.html
+[INFO] Running filter /home/mjerdee/opt/quarto-1.4.555/share/filters/main.lua
+[INFO] Completed filter /home/mjerdee/opt/quarto-1.4.555/share/filters/main.lua in 390 ms
+[INFO] Running filter citeproc
+[INFO] Loaded ../../assets/LaTeX/references.bib from ../../assets/LaTeX/references.bib
+[INFO] Completed filter citeproc in 250 ms
+[INFO] Not rendering RawInline (Format "tex") "\\usepackage{bm}"
+Output created: ../../../docs/notes/2025/statistical_inference.html

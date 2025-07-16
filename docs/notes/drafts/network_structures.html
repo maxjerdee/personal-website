@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Max Jerdee</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/images/icon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Max Jerdee</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../papers.html"> 
+<span class="menu-text">Papers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../demos.html"> 
+<span class="menu-text">Demos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../notes.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec:networks" id="toc-sec:networks" class="nav-link active" data-scroll-target="#sec\:networks">Networks and complex systems</a>
+  <ul class="collapse">
+  <li><a href="#representing-network-data" id="toc-representing-network-data" class="nav-link" data-scroll-target="#representing-network-data">Representing network data</a></li>
+  <li><a href="#sec:group-structure" id="toc-sec:group-structure" class="nav-link" data-scroll-target="#sec\:group-structure">Group structure</a></li>
+  <li><a href="#sec:hierarchy-structure" id="toc-sec:hierarchy-structure" class="nav-link" data-scroll-target="#sec\:hierarchy-structure">Hierarchy structure</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="sec:networks" class="level1">
+<h1>Networks and complex systems</h1>
+<p>Networks are often used to represent complex systems composed of many parts, such as individual people, animals, or atoms. Their study focuses on the nature and structure of interactions between these components. Just as a universe of only non-interacting particles would be a lifeless soup, a collection of people who never interact is boring and unrealistic to study. The network of interactions between the many pieces makes the system “complex.”</p>
+<section id="representing-network-data" class="level2">
+<h2 class="anchored" data-anchor-id="representing-network-data">Representing network data</h2>
+<p>In a network (or "graph") these components are abstractly represented as <em>nodes</em> ("vertices") and the interactions are represented as <em>edges</em>, lines that connect interacting nodes with each other. This simple framework is flexible enough to span a rich variety of applications and data under various interpretations of the nodes and edges.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="max_dissertation//chapters//figures//chp1/orangutan-network.pdf" class="img-fluid"></p>
+<figcaption>Network of interactions observed by Setia&nbsp;&nbsp;<span class="citation" data-cites="SV07">[@SV07]</span> among <span class="math inline">\(n = 6\)</span> orangutans represented (a) as a graph and (b) as an adjacency matrix&nbsp;<span class="math inline">\(\mat{A}\)</span>. (c) The node degrees&nbsp;<span class="math inline">\(\vec{k}\)</span>, the number of interactions of each orangutan.</figcaption>
+</figure>
+</div>
+<p>An example network is given in Figure&nbsp;<a href="#fig:orangutan-network" data-reference-type="ref" data-reference="fig:orangutan-network">1</a>a. There the colored nodes represent 6 Indonesian flanged male orangutans who are connected by an edge if a vocalization between them was observed in a study by Setia&nbsp;&nbsp;<span class="citation" data-cites="SV07">[@SV07]</span>. As reflected in the graph, 5 of the 6 orangutans form a <em>clique</em> of nodes that each interact with each other while the remaining ape represented in red interfaced with only the orange and magenta orangutans.</p>
+<p>Such a network on&nbsp;<span class="math inline">\(n\)</span> nodes is often alternatively represented by a <span class="math inline">\(n \times n\)</span> <em>adjacency matrix</em>&nbsp;<span class="math inline">\(\mat{A}\)</span>, whose entry&nbsp;<span class="math inline">\(A_{ij}\)</span> for&nbsp;<span class="math inline">\(i,j = 1,...,n\)</span> is equal to <span class="math inline">\(1\)</span> if nodes&nbsp;<span class="math inline">\(i\)</span> and&nbsp;<span class="math inline">\(j\)</span> interact and&nbsp;<span class="math inline">\(0\)</span> otherwise. Figure&nbsp;<a href="#fig:orangutan-network" data-reference-type="ref" data-reference="fig:orangutan-network">1</a>b shows the orangutan network in this format with the rows and columns labeled by the orangutan they reference. This matrix and its properties naturally convey information about the network. For example the vector&nbsp;<span class="math inline">\(\vec{k}\)</span> of row (or column) sums of the adjacency matrix <span class="math display">\[\begin{aligned}
+    k_i = \sum_{j=1}^n A_{ij}, \qquad i = 1,...,n,\end{aligned}\]</span> gives the <em>degree</em> of each node, the total number of edges connected to it.</p>
+<p>These degrees of our apes are given in Figure&nbsp;<a href="#fig:orangutan-network" data-reference-type="ref" data-reference="fig:orangutan-network">1</a>c.&nbsp;The red orangutan is the only node with degree 2, while the orange and magenta orangutans have degree 5 as they both connect to every other orangutan. This simple measure of counting connections captures a sense of <em>centrality</em> within the network as certain orangutans appear more disposed to interact than others. This sort of variation in the degrees is typical of real networks, particularly within large data sets. We further discuss how the distribution of the degrees can be modeled and interpreted in Section&nbsp;<a href="#sec:configuration-model" data-reference-type="ref" data-reference="sec:configuration-model">[sec:configuration-model]</a>.</p>
+<p>The edges in Figure&nbsp;<a href="#fig:orangutan-network" data-reference-type="ref" data-reference="fig:orangutan-network">1</a> are bidirectional since they symmetrically represent whether any interaction occurred between a pair of orangutans. The network is therefore an <em>undirected</em> graph and has a symmetric adjacency matrix. Although such undirected graphs are very common, and the focus of much of this thesis, many systems possess asymmetric interactions. In fact, in their observations Setia&nbsp;&nbsp;not only recorded whether a pair interacted but also which orangutan was dominant over the other from their pattern of vocalizations. We can add this layer of information to the network by converting it to a <em>directed</em> graph, where each edge is now represented by an arrow that points from the dominant "winner" of the interaction to the submissive "loser."</p>
+<p>The original network of Fig.&nbsp;<a href="#fig:orangutan-network" data-reference-type="ref" data-reference="fig:orangutan-network">1</a> is also a <em>simple</em> graph as interactions are binary – two nodes either do or do not connect and no node connects to itself. However some pairs of orangutans interacted more than once over the course of the study, a feature we can represent with a <em>multigraph</em> where nodes can connect with more than one edge and <em>self-edges</em> can connect a node to itself. Although self-edges are not present in the orangutan context, such self-interactions arise in other settings. In a food web of predation among species, for example, cannibalism within a species is represented with a self-edge.</p>
+<p>By incorporating these generalizations, the network of Figure&nbsp;<a href="#fig:orangutan-multigraph" data-reference-type="ref" data-reference="fig:orangutan-multigraph">2</a>a represents the full detail of the data set of Setia&nbsp;&nbsp;<span class="citation" data-cites="SV07">[@SV07]</span>. Where the original network of Figure&nbsp;<a href="#fig:orangutan-network" data-reference-type="ref" data-reference="fig:orangutan-network">1</a> represents <em>if</em> a pair of orangutans interact, this new network gives fuller context as to the <em>nature</em> of the interactions. The adjacency matrix in Figure&nbsp;<a href="#fig:orangutan-multigraph" data-reference-type="ref" data-reference="fig:orangutan-multigraph">2</a>b is no longer a symmetric binary matrix as&nbsp;<span class="math inline">\(A_{ij}\)</span> now represents the number of directed edges from node&nbsp;<span class="math inline">\(i\)</span> to node&nbsp;<span class="math inline">\(j\)</span>. This asymmetry generates two distinct notions of degree. Figure&nbsp;<a href="#fig:orangutan-multigraph" data-reference-type="ref" data-reference="fig:orangutan-multigraph">2</a>c contains the row sums of the matrix, the <em>out-degrees</em>&nbsp;<span class="math inline">\(\vec{k}^{\text{out}}\)</span>, that indicate the number of edges pointing away from a given node, in this case the number of times each orangutan had a dominant interaction. In Figure&nbsp;<a href="#fig:orangutan-multigraph" data-reference-type="ref" data-reference="fig:orangutan-multigraph">2</a>d the column sums of the matrix give the <em>in-degrees</em>&nbsp;<span class="math inline">\(\vec{k}^{\text{in}}\)</span>, the count of edges pointing towards each node, the number of times each orangutan had a submissive interaction. The directions of the data and resulting degrees give further insight to the social world of the orangutans. For example the magenta orangutan has&nbsp;<span class="math inline">\(k_i^{\text{out}} = 9, k_i^{\text{in}} = 0\)</span> and so was dominant in each of his 9 interactions, suggesting that he holds a prime position in the orangutans’ social hierarchy.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="max_dissertation//chapters//figures//chp1/orangutan-multigraph.pdf" class="img-fluid"></p>
+<figcaption>Directed multigraph of dominance interactions observed among <span class="math inline">\(n = 6\)</span> orangutans&nbsp;<span class="citation" data-cites="SV07">[@SV07]</span> represented (a) as a graph and (b) as an adjacency matrix&nbsp;<span class="math inline">\(\mat{A}\)</span>. (c) The out-degrees&nbsp;<span class="math inline">\(\vec{k}^{\text{out}}\)</span> and (d) the in-degrees&nbsp;<span class="math inline">\(\vec{k}^{\text{in}}\)</span> are also given, respectively counting the number of times each orangutan exhibits a dominant or submissive interaction.</figcaption>
+</figure>
+</div>
+<p>Further adornments of networks are often made to represent further detail. In a trade network each edge could carry a continuous weight that reports trade volume between two countries, an example of a <em>weighted graph</em> represented by a continuous adjacency matrix&nbsp;<span class="citation" data-cites="DNAL15">[@DNAL15]</span>. Edges can also be differentiated by their type, for example friendships in a social network may be associated to different contexts like work, hobbies, or social media forming a <em>multilayer</em> network of connections between people&nbsp;<span class="citation" data-cites="CGZ13 Kivela14">[@CGZ13; @Kivela14]</span>.</p>
+<p>Higher-order interactions between triplets and larger groups of nodes may be also be represented either as hypergraphs or bipartite networks, although they are beyond our present scope. In this thesis we focus on interactions between only pairs of nodes, so-called <em>dyadic interactions</em>. In fact most of this thesis focuses only on the nature of the simple, undirected networks exemplified by Figure&nbsp;<a href="#fig:orangutan-network" data-reference-type="ref" data-reference="fig:orangutan-network">1</a>. Only in Section&nbsp;<a href="#chp:hierarchies" data-reference-type="ref" data-reference="chp:hierarchies">[chp:hierarchies]</a> do we consider directions of edges and the patterns they reveal.</p>
+<p>Although adding increasingly descriptive context and metadata to networks helps to paint a fuller picture of any particular application, by stripping systems down to a simple pattern of interactions it is possible to treat them within a unified language of network science and understand similarities and differences between them. In this thesis we focus on two common structures found in networks across contexts, group and hierarchical structure.</p>
+</section>
+<section id="sec:group-structure" class="level2">
+<h2 class="anchored" data-anchor-id="sec:group-structure">Group structure</h2>
+<p>The nodes that make up a network often possess distinct group identities. Animals are distinguished by species, atoms differ by atomic number, and students belong to various clubs and social groups. These group labels may then influence the interactions among the nodes as, for example, students are often friends with others in the same school club. Figure&nbsp;<a href="#fig:community-examples" data-reference-type="ref" data-reference="fig:community-examples">3</a> gives four examples of real networks where the color of each node indicates which group it belongs to. In each system these group affiliations guide the pattern of connections as nodes of the same group share the same structural role.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="max_dissertation//chapters//figures//chp1/community-examples.pdf" class="img-fluid"></p>
+<figcaption>Four examples of community structure in networks. (a) American football matches among Division IA colleges in the 2000 regular season&nbsp;<span class="citation" data-cites="GN02">[@GN02]</span>. Most matches occur within the labeled "conferences" that the teams belong to. (b) Network of political books frequently copurchased on Amazon.com near the 2004 U.S. presidential election labeled by political lean. (c) Network of characters in Shakespeare’s <em>Romeo and Juliet</em> where edge thickness indicates frequency of interaction. The house each character belongs to in the work, Montague or Capulet, is highlighted. (d) Bipartite network of plant-pollinator interactions&nbsp;<span class="citation" data-cites="BMM09">[@BMM09]</span></figcaption>
+</figure>
+</div>
+<p>. <span id="fig:community-examples" label="fig:community-examples">[fig:community-examples]</span></p>
+<p>Figure&nbsp;<a href="#fig:community-examples" data-reference-type="ref" data-reference="fig:community-examples">3</a>a contains a network of&nbsp;<span class="math inline">\(616\)</span> American football matches played among&nbsp;<span class="math inline">\(115\)</span> Division IA colleges in the 2000 regular season&nbsp;<span class="citation" data-cites="GN02">[@GN02]</span>. Each year these football teams group into conferences that agree to play a certain number of matches, often 8, against other teams in the same conference. While matches out-of-conference are permitted, they occur more rarely as they are organized on an ad hoc basis from year to year. The conference system thus gives teams an <em>assortative</em> preference to play teams of the same group. Over the course of the season the network of matches then carries a clear signature of the conferences that inform them.</p>
+<p>Similarly assortative structure is found in Figure&nbsp;<a href="#fig:community-examples" data-reference-type="ref" data-reference="fig:community-examples">3</a>b, a network of&nbsp;<span class="math inline">\(105\)</span> political books frequently copurchased on Amazon.com near the 2004 U.S. presidential election. Here the books are colored by the political lean of their content, characterized by V. Krebs in unpublished work. Books of the same political bent are typically purchased together, either both liberal or both conservative. Rarely does someone order both a conservative and liberal book in the data set. In this case the observed assortative structure is not imposed by a collective agreement like the football conference system but rather emerges from individual decisions as an effect of systemic political polarization.</p>
+<p>In networks of social ties, people and animals often organize into tightly knit <em>communities</em> that prefer to interact amongst themselves. Figure&nbsp;<a href="#fig:community-examples" data-reference-type="ref" data-reference="fig:community-examples">3</a>c contains a (fictional) example of such a network among characters in Shakespeare’s <em>Romeo and Juliet</em>. Character interactions, defined as subsequent appearances in the same scene, form the edges of this multigraph, where the edge thickness reflects the frequency of the interaction. In the play most characters belong to one of two groups, either Romeo’s House of Montague or Juliet’s House of Capulet. Interactions between characters are indeed mostly contained within each house. The narrative, however, revolves around the titular exception to this pattern. Later in this thesis we will observe similar patterns of communities across social networks and quantify the extent to which their group boundaries are crossed.</p>
+<p>Not all group structures are assortative in this manner. In fact many network data sets are&nbsp;<em>bipartite</em>, meaning they consist of two groups of nodes that never interact within their own group, only with the opposite group: a fully <em>disassortative</em> structure. Figure&nbsp;<a href="#fig:community-examples" data-reference-type="ref" data-reference="fig:community-examples">3</a>d gives an example of a bipartite plant-pollinator network. In it 13 species of Brazilian oil-flowers are connected to which of 13 species of pollinators visited them over the course of a study by Berezza&nbsp;&nbsp;<span class="citation" data-cites="BMM09">[@BMM09]</span>. In this setting the nodes are naturally sorted by their role as either a plant or a pollinator. Being a bipartite network, all interactions occur only between a plant and a pollinator, never directly between two plants or two pollinators.</p>
+<p>In these examples and beyond networks possess a variety of group structures, distinguished both in the number of groups present and how those groups inform the pattern of interactions. In the four examples of Figure&nbsp;<a href="#fig:community-examples" data-reference-type="ref" data-reference="fig:community-examples">3</a>, group identities can be gleaned from context outside the network of interactions. However in many contexts only the pattern of connections is known, although nodes may still meaningfully belong to groups that influence that structure.</p>
+<p>In this setting a key task of network science is <em>community detection</em>, to analyze a network and identify if group structure exists, identify the groups, and characterize their structural relationships. A variety of approaches have been developed for this task, including novel methods discussed in Section&nbsp;<a href="#chp:group-structure" data-reference-type="ref" data-reference="chp:group-structure">[chp:group-structure]</a> of this thesis. The groups inferred from the network can then be interpreted in their own right or compared to known group labels. In Section&nbsp;<a href="#chp:information" data-reference-type="ref" data-reference="chp:information">[chp:information]</a> we will discuss and refine how the difference between these inferred and true groups can be quantified.</p>
+</section>
+<section id="sec:hierarchy-structure" class="level2">
+<h2 class="anchored" data-anchor-id="sec:hierarchy-structure">Hierarchy structure</h2>
+<p>As in our orangutan example, network interactions are often directed. Edges in a directed graph variously run from a source to a target, a winner to a loser, a leader to a follower. Across a system these asymmetries often follow a coherent direction within a hierarchy of the nodes. In a sports context this may be a hierarchy of skill where a more skilled player is likely to prevail over a less skilled opponent. In social settings "dominance interactions" tend to be won by the higher status individual. In Figure&nbsp;<a href="#fig:hierarchy-examples" data-reference-type="ref" data-reference="fig:hierarchy-examples">4</a>, four examples of such directed networks are given. In each case the hierarchy of the nodes is plotted along the vertical axis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="max_dissertation//chapters//figures//chp1/hierarchy-examples.pdf" class="img-fluid"></p>
+<figcaption>Four examples of hierarchy structure in networks. (a) American football matches played in the 2022 Big Ten conference football season&nbsp;<span class="citation" data-cites="Football22">[@Football22]</span>. The hierarchical structure is represented vertically, with better teams located higher. Arrows run from the winner to the loser of a match, colored green if the higher ranked team wins, red if the lower ranked team wins. (b) Consumer preferences between pairs of sodas&nbsp;<span class="citation" data-cites="DAK00">[@DAK00]</span>. (c) Observed dominance interactions (pecks) among 11 chickens&nbsp;<span class="citation" data-cites="MA34">[@MA34]</span>. (d) Unreciprocated friendship nominations among 20 high school students&nbsp;<span class="citation" data-cites="AddHealth">[@AddHealth]</span>.</figcaption>
+</figure>
+</div>
+<p>Figure&nbsp;<a href="#fig:hierarchy-examples" data-reference-type="ref" data-reference="fig:hierarchy-examples">4</a>a contains football matches played within the 2022 Big Ten football conference&nbsp;<span class="citation" data-cites="Football22">[@Football22]</span>. Each arrow points from the winner to the loser of a match, information that was suppressed in the undirected Figure&nbsp;<a href="#fig:community-examples" data-reference-type="ref" data-reference="fig:community-examples">3</a>a. The University of Michigan was undefeated in this (carefully chosen) season as indicated by all arrows pointing away from its node and by its position at the top of the football hierarchy. In this case placement on the hierarchy is meant to reflect strength in the game of football, and we would expect that better teams win more often than lower ranked ones. Particularly we may assume that the outcome of any given match is driven by the difference in skill between the participating teams. Although the teams and fans are generally aware of these relative strengths, there is not a "true" hierarchy to refer to like the conference group structure. The positions in the hierarchy must instead be deduced from the observed matches.</p>
+<p>There are many ways to determine a hierarchy from the match outcomes. Collegiate football formalizes this inference through an annual poll of team coaches to determine the highest ranked teams who may then advance to the post-season playoff bracket. In Figure&nbsp;<a href="#fig:hierarchy-examples" data-reference-type="ref" data-reference="fig:hierarchy-examples">4</a>a, the vertical hierarchy is instead arranged in order to maximize the number of times the higher ranked team wins (the 57 green arrows) and minimize the upset victories (the 7 red arrows). The other networks of Figure&nbsp;<a href="#fig:hierarchy-examples" data-reference-type="ref" data-reference="fig:hierarchy-examples">4</a> are likewise arranged to minimize such <em>violations</em> of their hierarchies. We discuss other methods for arriving at such a ranking in Section&nbsp;<a href="#sec:BT-model" data-reference-type="ref" data-reference="sec:BT-model">[sec:BT-model]</a>.</p>
+<p>The presence of upsets means that the data does not fully respect the hierarchy. One might hope that there is some other ordering of the teams that is fully coherent, lacking any such upsets, but the intransitivity of the results prevents this. In the football example Minnesota beat Nebraska, Nebraska beat Iowa, and Iowa beat Minnesota in a rock-paper-scissors arrangement. One of these three matches would therefore be recorded as an "upset" under any ordering of the teams. In fact any ordering of this season will have at least 7 upsets as in the ordering plotted in the figure. This tension between the hierarchy and the realized results is analogous to how not all edges lie within the groups of Figure&nbsp;<a href="#fig:community-examples" data-reference-type="ref" data-reference="fig:community-examples">3</a>. The degree to which the outcomes conform to a hierarchy gives insight to its strictness.</p>
+<p>Many of the models used to describe hierarchies were initially developed and are often used in the world of sports, yet similar concepts can be applied to understand status and quality in other contexts. Figure&nbsp;<a href="#fig:hierarchy-examples" data-reference-type="ref" data-reference="fig:hierarchy-examples">4</a>b shows a hierarchy of 8 different flavored sodas. In this network wins indicate if most assessors surveyed by Duineveld&nbsp;&nbsp;prefer one soda over another in a <em>paired comparison</em> study&nbsp;<span class="citation" data-cites="DAK00">[@DAK00]</span>. Again no total ordering of the sodas is possible as the revealed preferences are not strictly transitive, although there are certain sodas that generally fare better in these comparisons. Such surveys and inferences are often used to make sense of A/B testing of various types of products and establish the aggregate consensus of quality and preferences. These methods are similarly used in reinforcement learning to assess and tune large language model outputs based upon human preferences&nbsp;<span class="citation" data-cites="CLBMLA17">[@CLBMLA17]</span>.</p>
+<p>Turning to animals, the social hierarchy of a flock of 11 Brown Leghorn chickens is plotted in Figure&nbsp;<a href="#fig:hierarchy-examples" data-reference-type="ref" data-reference="fig:hierarchy-examples">4</a>c&nbsp;<span class="citation" data-cites="MA34">[@MA34]</span>. Here the arrows represent when one chicken pecks another but is not pecked in return, taken as a sign of dominance. The chickens organize into a pecking order where the higher chicken tends to peck the lower chicken on the ladder. This animal behavior research is in fact the source of the phrase "pecking order" colloquially used to refer to all sorts of hierarchies. In this flock of 11, the chicken at the bottom of the pecking order is pecked by all above it while there is more competition and ambiguity at the top.</p>
+<p>Figure&nbsp;<a href="#fig:hierarchy-examples" data-reference-type="ref" data-reference="fig:hierarchy-examples">4</a>d shows a similar social hierarchy, now of surveyed friendship nominations among 20 students of a small U.S. high school&nbsp;<span class="citation" data-cites="AddHealth">[@AddHealth]</span>. Although we may think of friendship as a two-way street, this reciprocity is not always borne out in survey data. Often student A names student B as their friend but student B does not name student A back. We can interpret this as a "win" for student B in the social hierarchy, and that they are likely of higher social status than student A. In the school of this figure a clear hierarchy emerges where higher status students consistently dominate the lower ranked students in this manner.</p>
+<p>Each of the directed network representations in Figure&nbsp;<a href="#fig:community-examples" data-reference-type="ref" data-reference="fig:community-examples">3</a> foregoes further context unique to each setting. The football match network, for example, neglects idiosyncratic details like player injuries or home-field advantages that can influence the outcome of any given match. Such events, however, do not have a clear analog within, say, the pecking order of chickens. By reducing the systems down to a directed pattern of "wins" and "losses," we can directly compare them to each other. In Chapter&nbsp;<a href="#chp:hierarchies" data-reference-type="ref" data-reference="chp:hierarchies">[chp:hierarchies]</a> of this thesis we discuss how this framework enables us to observe how the nature and strength of these hierarchies differ across settings.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

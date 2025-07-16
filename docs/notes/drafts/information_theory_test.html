@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Max Jerdee</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/images/icon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Max Jerdee</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../papers.html"> 
+<span class="menu-text">Papers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../demos.html"> 
+<span class="menu-text">Demos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../notes.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<p>In the previous section we discussed how a physical perspective on statistics naturally leads to concepts like entropy and algorithms for exploring configuration spaces. In this section we discuss an information theoretic perspective which abstractly considers the sequence of coin flips as a message to be transmitted, allowing us to reckon with the inherent complexity of the data observed in a general sense.</p>
+<p>Central to information theory is a thought experiment aiming to <em>encode</em> a message as efficiently as possible. Suppose we would like to transmit to another party the results of our earlier experiment of 10 coin flips as the message "HHTTHTTHTT." Suppose further that we are restricted in this communication to use a&nbsp;<em>binary channel</em> which can only send a binary sequence of 0’s and 1’s of our choosing. We would then like the receiver on the other end of the channel to be able to decode our binary transmission back into our original message.</p>
+<p>Just as we represented the sequence as a physical state vector in the last section, we may now encode these coin flips as the binary string "1100100100" where the digit "1" represents heads and "0" represents tails. This correspondence between meanings and binary strings is known as a <em>codebook</em>. So long as we and the receiver agree on the nature of the encoding, the receiver can use the codebook to decode the binary string back into the original message of outcomes. To determine the efficiency of our transmission we measure the length of our binary string in <em>bits</em>. In this case our encoding used 10 digits (bits) to transmit the message, one for each flip. A schematic of this encoding framework is given in Figure&nbsp;<a href="#fig:coin-flip-perspectives" data-reference-type="ref" data-reference="fig:coin-flip-perspectives">[fig:coin-flip-perspectives]</a>c.</p>
+<p>This association of digits to outcomes is a natural encoding of two-sided coin flips. In a more general setting, however, we will need to be more creative in our transmission. Suppose we would instead like to send the message "ELEVENELVES" as a binary string. Since this string contains 5 distinct characters, we can no longer encode the message by assigning each character its own binary digit. Some characters must be represented by a <em>codeword</em> of multiple binary digits. If we are not careful, however, this can render our message ambiguous. If we assign "E" to the codeword "0" and "L" to the codeword "00," the binary message "00" could decode into either "EE" or "L."</p>
+<p>To avoid this polysemy, we can ensure that our transmission is uniquely decodable by using a <em>prefix-free</em> (or "instantaneous") code. If no codeword in our codebook is a prefix of another codeword, as the receiver reads the message from left to right the divisions between the codewords will always be clear. Our earlier example was not prefix-free as the codeword "0" is a prefix of the codeword "00," leading to the double meaning.</p>
+<p>Any such prefix-free binary code can be usefully represented as a binary tree whose leaves each correspond to a character (or "symbol") being transmitted. The codeword associated to each symbol is then represented by the path from the root of the tree down to that symbol. <a href="#fig-encoding-examples" class="quarto-xref">Figure&nbsp;1</a>a shows an example of such a tree used to encode the five characters. Following the tree paths this "balanced" encoding represents the characters {"E",&nbsp;"L",&nbsp;"V",&nbsp;"N",&nbsp;"S"} with the codewords {"00",&nbsp;"01",&nbsp;"10",&nbsp;"110",&nbsp;"111"} respectively. With this codebook we can then encode the phrase "ELEVENELVES" into pictured binary string of length 24 bits and ensure that it uniquely decodes back into our desired dispatch.</p>
+<div id="fig-encoding-examples" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-encoding-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="?meta:assets-folder/encoding-examples.svg" class="img-fluid figure-img" style="width:4.653in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-encoding-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Examples of an (a) balanced code and (b) optimized Huffman code to convert the phrase "ELEVENELVES" into a binary string. The string associated to each letter is denoted by the path from the top of the tree down to the appropriate node. The Huffman code is able to produce a shorter overall message than the balanced code by representing the common letter "E" with a short string "0" despite representing the uncommon letters "N" and "S" with longer strings.
+</figcaption>
+</figure>
+</div>
+<p>Now, a key goal of information theory is not only to successfully transmit a message but also to do so using as few bits as possible. This objective can be seen as a formalization of Occam’s razor, the scientific principle that favors the simplest possible answer to a question. In this analogy, transmitting our binary string effectively "explains" to the receiver the data we have observed, making a shorter transmission a more succinct explanation. If we understand predictable patterns in our observations, we can exploit them to construct a more efficient encodings. There is a fundamental duality between <em>compression</em> and modeling, as in this context, to compress is to understand.</p>
+<p>In this spirit we can look for patterns in our message to try and come up with a clever way to shorten our encoding. The phrase "ELEVENELVES" has a rather lopsided distribution of characters at 5 E’s, 2 L’s, 2 V’s, 1 N, and 1 S. Some of our codewords are therefore being used in the transmission much more frequently than others. If symbol&nbsp;<span class="math inline">\(r = 1,...,q\)</span> of the&nbsp;<span class="math inline">\(q\)</span> symbols appears&nbsp;<span class="math inline">\(n_r\)</span> times in our message as a codeword of length&nbsp;<span class="math inline">\(\ell_r\)</span>, the total message length is</p>
+<p>:::{style=“overflow-x:auto;overflow-y:hidden;”} <span class="math display">\[\begin{aligned}
+    \sum_{r=1}^q n_r \ell_r. \label{eq:message-length}\end{aligned}\]</span> ::: To shorten the overall message we would therefore like the codewords to be as short as possible and to prioritize shortening frequently occurring symbols. In our original encoding the symbol "E" is transmitted with the codeword "00" at a cost of two bits apiece. Since "E" appears so frequently in the message it may be wise to instead represent it with a shorter codeword like "0" and save 5 bits in our total transmission.</p>
+<pre><code> Yet this choice has a cost. If we assign \"0\" to represent \"E\" none
+ of the other four characters can be represented with a codeword that
+ begins with a \"1\" or else the code would no longer be prefix-free.
+ When shortening one codeword we must necessarily lengthen other
+ codewords. This tradeoff is the content of *Kraft's inequality*, which
+ states that the codeword lengths of any prefix-free code must satisfy
+
+
+ :::{style="overflow-x:auto;overflow-y:hidden;"}
+ $$\begin{aligned}
+     \sum_{r=1}^q 2^{-\ell_r} \leq 1, \label{eq:krafts-inequality}\end{aligned}$$
+     :::
+
+     considering the fraction of the binary tree each codeword occupies.
+     Given the frequencies&nbsp;$n_r$ at which each symbol appears, we would like
+     to select codeword lengths that minimize the total message length
+     [Eq. @eq-message-length] subject to the prefix-free constraint
+     [Eq. @eq-krafts-inequality].</code></pre>
+<p><em>Huffman codes</em> strike this balance and provably minimize the message length by assigning short codewords to frequent symbols while saturating Kraft’s inequality. <a href="#fig-encoding-examples" class="quarto-xref">Figure&nbsp;1</a>b contains an example of a Huffman code for our application. The code shortens the codeword for "E" from 2 to 1 bit while lengthening the codewords for "N" and "S" from 3 to 4 bits. Since "E" appears much more frequently than "N" and "S," this change shortens the overall message from 24 to 23 bits. By adapting the encoding to the nature of the data, the Huffman code achieves a more parsimonious representation of the message.</p>
+<p>More generally given a frequency distribution&nbsp;<span class="math inline">\(\{n_r\}\)</span> of symbols one can always construct a Huffman code with a simple recursive algorithm. The resulting optimal codeword lengths&nbsp;<span class="math inline">\(\{\ell_r\}\)</span> follow a predictable pattern. If a symbol appears at a fraction&nbsp;<span class="math inline">\(p_r = \frac{n_r}{n}\)</span> among the <span class="math inline">\(n\)</span> total symbols, the length of its associated codeword satisfies</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+      -\log_2(p_r) \leq \ell_r &lt; -\log_2(p_r) + 1.\end{aligned}\]</span></p>
+</div>
+<p>Frequent symbols with high probability&nbsp;<span class="math inline">\(p_r\)</span> are thus assigned small codewords as&nbsp;<span class="math inline">\(-\log_2(p_r)\)</span> is small while infrequent symbols use longer codewords. In our "ELEVENELVES" example, the character "E" appears with probability <span class="math inline">\(p = 5/11\)</span>, and is so assigned a string of length&nbsp;<span class="math inline">\(1 \approx \log_2(11/5)\)</span> while the character "S" appears at the ratio&nbsp;<span class="math inline">\(1/11\)</span> and is encoded using&nbsp;<span class="math inline">\(4 \approx \log_2(11)\)</span> bits.</p>
+<p>In most contexts we consider, symbol probabilities are small and codeword lengths are long. In this regime we can approximate lengths as&nbsp;<span class="math inline">\(\ell_r = -\log_2(p_r)\)</span>, which would in fact be the optimal choices if the lengths could be non-integral numbers of bits. Using these optimal codeword lengths, the minimum message length per symbol is</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    S[\{p_r\}] = \frac{1}{n} \sum_{r=1}^q n_r \ell_r = -\sum_{r=1}^q p_r \log_2 p_r, \label{eq:shannon-entropy-discrete}\end{aligned}\]</span></p>
+</div>
+<p>known as the <em>Shannon entropy</em> (or simply "entropy") of the distribution&nbsp;<span class="math inline">\(\{p_r\}\)</span>. For continuous distributions&nbsp;<span class="math inline">\(P(\boldsymbol{x})\)</span> this entropy generalizes to</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+S[P] = -\int P(\boldsymbol{x}) \log_2 P(\boldsymbol{x}) d\boldsymbol{x}. \label{eq:shannon-entropy-continuous}\end{aligned}\]</span></p>
+</div>
+<p>By providing an information theoretic lower bound on transmission, the Shannon entropy captures the inherent information content of a probability distribution that no amount of clever encoding tricks can overcome.</p>
+<p>We can make contact between this information-theoretic entropy and the physical entropy described in Section&nbsp;<a href="#app:statistical-physics" data-reference-type="ref" data-reference="app:statistical-physics">[app:statistical-physics]</a>. There the microcanonical ensemble is the uniform distribution&nbsp;<span class="math inline">\(P(\boldsymbol{s}) = \frac{1}{\Omega}\)</span> over all possible configurations that conserve the total energy. The Shannon entropy <strong>?@eq-shannon-entropy-discrete</strong> then agrees which the microcanonical entropy <span class="math inline">\(S = \log \Omega\)</span> of Eq.&nbsp;<a href="#eq:S-log-Omega" data-reference-type="eqref" data-reference="eq:S-log-Omega">[eq:S-log-Omega]</a>. From this perspective, a macrostate with high physical entropy is one where a large amount of information is required to specify which of the many possible microstates it represents.</p>
+<p>We also note that the uniform distribution has the highest entropy among all possible distributions&nbsp;<span class="math inline">\(\{p_r\}\)</span> on&nbsp;<span class="math inline">\(q\)</span> objects. By the convexity of the logarithm,</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    S[\{p_r\}] = -\sum_{r=1}^q p_r \log p_r \leq -\sum_{r=1}^q \frac{1}{q} \log \left(\frac{1}{q}\right) = \log q.\end{aligned}\]</span></p>
+</div>
+<p>This observation gives another motivation for the microcanonical ensemble: the <em>maximum-entropy</em> distribution over possible configurations. Since the entropy measures how structured, how compressible, a probability distribution is, this maximum-entropy distribution is structureless and maximally agnostic: a reasonable properties of an equilibrium distribution where any initial structure is thermalized away.</p>
+<p>The canonical ensemble&nbsp;<span class="math inline">\(P(\boldsymbol{s}) \propto e^{-\beta H(\boldsymbol{s})}\)</span> can likewise be motivated as a maximum entropy distribution with a given average energy, which determines the choice of&nbsp;<span class="math inline">\(\beta\)</span>. When designing priors for Bayesian inference, we will frequently appeal to this minimally assumptive principle and choose maximum-entropy priors subject to certain constraints we expect the system to provide. For example, a Gaussian distribution can be motivated as the maximum entropy distribution of a real random variable of a fixed mean and variance.</p>
+<p>Returning to encodings, to obtain the entropy we had considered the total message length of a Huffman code optimized to send that particular message. If we believe that the symbols will be distributed with probabilities&nbsp;<span class="math inline">\(\{q_r\}\)</span> we should optimize our Huffman code accordingly to have code lengths&nbsp;<span class="math inline">\(\ell_r = -\log q_r\)</span>. However in many contexts we do not <em>a priori</em> know what distribution of symbols to expect. We may assume a distribution&nbsp;<span class="math inline">\(\{q_r\}\)</span> that is not borne out in practice. If the symbols we must transmit have true probabilities&nbsp;<span class="math inline">\(\{p_r\}\)</span> the average code length becomes</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    \sum_r p_r (-\log q_r).\end{aligned}\]</span></p>
+</div>
+<p>Had we used code lengths&nbsp;<span class="math inline">\(-\log p_r\)</span> attuned to the true distribution, this would give the Shannon lower bound. Since the our encoding is <em>misspecified</em> it will instead require a larger number of bits to transmit. The shortfall between the two, the extra cost we incur, is known as the <em>Kullback-Leibler (KL) divergence</em> between the true distribution&nbsp;<span class="math inline">\(\{p_r\}\)</span> and our assumption&nbsp;<span class="math inline">\(\{q_r\}\)</span>:</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    D_{\text{KL}}(\{p_r\}||\{q_r\}) &amp;= \left(\sum_{k=1}^q p_r (-\log q_r) \right) - \left(\sum_{k=1}^q p_r (-\log p_r) \right) \nonumber \\
+    &amp;= \sum_{k=1}^q p_r \log \frac{p_r}{q_r} \geq 0.\end{aligned}\]</span></p>
+</div>
+<p>This story repeats when modeling data. Given a model with distribution&nbsp;<span class="math inline">\(Q(\boldsymbol{x})\)</span> we can write the Huffman code length (or <em>description length</em>) of an observation&nbsp;<span class="math inline">\(\boldsymbol{x}\)</span> as</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    H(\boldsymbol{x}) = -\log Q(\boldsymbol{x}),\end{aligned}\]</span></p>
+</div>
+<p>which we can compare to the Hamiltonian in Eq.&nbsp;<a href="#eq:energy-posterior-relation" data-reference-type="eqref" data-reference="eq:energy-posterior-relation">[eq:energy-posterior-relation]</a>. If we use this model encoding on a stream of observations whose true distribution is&nbsp;<span class="math inline">\(P(\boldsymbol{x})\)</span>, the average description length decomposes as</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    \sum_{\boldsymbol{x}} P(\boldsymbol{x}) H(\boldsymbol{x}) &amp;= -\sum_{\boldsymbol{x}} P(\boldsymbol{x})\log P(\boldsymbol{x}) + \sum_{\boldsymbol{x}} P(\boldsymbol{x})\log \frac{P(\boldsymbol{x})}{Q(\boldsymbol{x})} \nonumber \\
+    &amp;= \underbrace{S[P]}_{\text{entropy}} +  \underbrace{D_{\text{KL}}(P||Q)}_{\text{cross-entropy}}\end{aligned}\]</span></p>
+</div>
+<p>into the inherent entropy of the data and the <em>cross-entropy</em> cost of our model misspecification. As we model the random process&nbsp;<span class="math inline">\(P(\boldsymbol{x})\)</span> our average description length can never fall below the entropic lower bound, but any description length above this point is evidence of the failure of our model to match reality. While it is relatively straightforward to measure this average description length in practice, deducing what fraction of it is due to the entropy or the cross-entropy is a hard problem. When comparing the average description lengths of two models on the same stream of data, however, we can confidently attribute their difference to a difference in the cross-entropies and prefer the model with the smaller average description length. This motivates the <em>minimum description length</em> (MDL) principle, which prefers models whose corresponding encodings across realistic data sets are as small as possible.</p>
+<p>As an application, suppose that we would like to select the appropriate value of a parameter&nbsp;<span class="math inline">\(\boldsymbol{\theta}\)</span> for a model&nbsp;<span class="math inline">\(P(\boldsymbol{x}|\boldsymbol{\theta})\)</span>. For each choice of parameter, the corresponding model description length is simply the minus log-likelihood&nbsp;<span class="math inline">\(H(\boldsymbol{x}|\boldsymbol{\theta}) = -\log P(\boldsymbol{x}|\boldsymbol{\theta})\)</span>. Choosing the model that minimizes the description length therefore amounts to finding the maximum-likelihood estimate of the parameter as</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    \text{argmin}_{\boldsymbol{\theta}} H(\boldsymbol{x}|\boldsymbol{\theta}) = \text{argmax}_{\boldsymbol{\theta}} P(\boldsymbol{x}|\boldsymbol{\theta}).\end{aligned}\]</span></p>
+</div>
+<p>As discussed in Section&nbsp;<a href="#app:statistical-inference" data-reference-type="ref" data-reference="app:statistical-inference">[app:statistical-inference]</a>, however, this maximum likelihood estimation is prone to overfitting. This approach is also problematic from an information-theoretic perspective. In our optimization of the transmission we have neglected the cost of transmitting the parameter&nbsp;<span class="math inline">\(\boldsymbol{\theta}\)</span> itself. In the Bayesian context this parameter will be distributed according to a prior&nbsp;<span class="math inline">\(P(\boldsymbol{\theta})\)</span> that corresponds to its own encoding</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    H(\boldsymbol{\theta}) = -\log P(\boldsymbol{\theta}). \label{eq:H-log-P-information}\end{aligned}\]</span></p>
+</div>
+<p>If we consider the total information cost of this now two stage process of first transmitting the parameter&nbsp;<span class="math inline">\(\boldsymbol{\theta}\)</span> and then the data&nbsp;<span class="math inline">\(\boldsymbol{x}\)</span> given that parameter, we recover Bayesian <em>maximum a posteriori</em> (MAP) estimation</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    \text{argmin}_{\boldsymbol{\theta}} \left[H(\boldsymbol{x}|\boldsymbol{\theta}) + H(\boldsymbol{\theta})\right] &amp;= \text{argmax}_{\boldsymbol{\theta}} P(\boldsymbol{x}|\boldsymbol{\theta})P(\boldsymbol{\theta})  \nonumber \\
+    &amp;= \text{argmax}_{\boldsymbol{\theta}} P(\boldsymbol{\theta}|\boldsymbol{x}). \label{eq:MAP-information}\end{aligned}\]</span></p>
+</div>
+<p>As seen earlier, the maximum likelihood and MAP estimates of a parameter often differ considerably, particularly when a relatively small amount of data is available. In Section&nbsp;<a href="#sec:reduced-mutual-information-paper" data-reference-type="ref" data-reference="sec:reduced-mutual-information-paper">[sec:reduced-mutual-information-paper]</a> on the applications of information theory to network science we will again encounter situations where neglecting certain terms of the transmission process leads to wildly different results.</p>
+<p>After the two stage transmission process of <strong>?@eq-MAP-information</strong> we transmit to the receiver both the data of interest&nbsp;<span class="math inline">\(\boldsymbol{x}\)</span> and the best-fit parameter&nbsp;<span class="math inline">\(\boldsymbol{\theta}\)</span> used. When assessing model performance, however, knowledge of the the parameter is often redundant to the data. We can instead holistically evaluate model performance using the Bayesian evidence, the probability that a model generates a particular data&nbsp;<span class="math inline">\(\boldsymbol{x}\)</span> summed over all possible parameters</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P(\boldsymbol{x}) = \int P(\boldsymbol{x}|\boldsymbol{\theta})P(\boldsymbol{\theta}).\end{aligned}\]</span></p>
+</div>
+<p>The description length of the integrated model is then</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    H(\boldsymbol{x}) = -\log P(\boldsymbol{x}).\end{aligned}\]</span></p>
+</div>
+<p>Therefore we can motivate model selection that chooses model with higher Bayesian evidence, as when computing Bayes factors, as selecting the model that more efficiently compresses the data integrated over its latent parameters. These connections highlight the duality between the compression and modeling of a data set.</p>
+<p>To this point, we have considered the Shannon entropy of <em>probability distributions</em>. However, much of this thesis focuses on a subtly different notion of the complexity of <em>objects</em>. Shannon entropy quantifies the complexity of a probability distribution without regard to the specific objects within that distribution. For instance, suppose that we want to transmit one of two messages: the full text of <em>Dune</em> by Frank Hebert or <em>It</em> by Stephen King. While each book’s content is undoubtedly "complex," our current framework would allow us to "transmit" them with minimal information cost. If we define an encoding where "0" represents the text of <em>Dune</em> and "1" stands for <em>It</em>, we could send a single "0" to transmit the entirety of <em>Dune</em>. This setup might suggest that the inherent information cost of <em>Dune</em>’s content is just one bit, which is clearly an unreasonable conclusion.</p>
+<p>The problem is that we have overlooked the information cost required to establish the codebooks. If the receiver is unaware of our coding scheme, we must first communicate the full text that each binary digit corresponds to before our transmission. Once this scheme is established, we can indeed send our choice of book with a single bit repeatedly at low cost. However, the initial information cost of creating the codebook is much higher. Shannon entropy measures the information needed to transmit objects drawn from a probability distribution, not the complexity of the objects themselves.</p>
+<p>To broach the information content of an object, we should instead turn to the <em>Kolmogorov complexity</em>. Certain objects and outcomes appear to be inherently more complicated than others. For example a sequence of coin flips "HHHHHHHHHH" is easy to describe as "10 heads in a row." Even if the sequence was 1000 heads, the outcome would not be much more complex to describe. On the other hand, the pattern of coin flips "HHTTHTTHTT" we observed appears to be more complicated to describe. However, even in this case the coin flips we observed are simply the first 10 digits of&nbsp;<span class="math inline">\(\pi = 11.00100100..._2\)</span> in binary: a concise, if unusual, explanation. Yet if we are presented with a truly "random" string of coin flips, there is little hope for such an efficient description of the outcomes. The Kolmogorov complexity is meant to capture the difference between these settings and fundamentally measure how structured a given data set is.</p>
+<p>Roughly speaking, the Kolmogorov complexity&nbsp;<span class="math inline">\(K(\boldsymbol{x})\)</span> can be understood as the length of the shortest computer program that would output the object (typically string) in question. In our earlier examples, this program might be "output 10 heads" or "first 10 digits of <span class="math inline">\(\pi_2\)</span>" in pseudocode. In our earlier example of books, the full texts may be compressed with a technique like the Lempel-Ziv-Welch algorithm used in the <code>.gif</code> file format. The "program" in this case would consist of a description of the LZW algorithm, followed by the compressed file. The total program size, and so complexity will still be fairly large as some fraction of the original length of the book, but is much greater than the single bit we had used to transmit it in a probabilistic sense.</p>
+<p>The "computer program<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>" in the definition of the Kolmogorov complexity is vague enough to accommodate any possible valid encoding or explanation of a string. For example, we can consider the Huffman encoding of the data&nbsp;<span class="math inline">\(\boldsymbol{x}\)</span> generated by a model&nbsp;<span class="math inline">\(M\)</span>. We can imagine a computer program which consists of a description of the model&nbsp;<span class="math inline">\(M\)</span> itself, then provides the Huffman code as a binary string of length&nbsp;<span class="math inline">\(H_M(\boldsymbol{x})\)</span> that can be decoded with knowledge of the model. When the data set is large, we typically neglect the constant overhead required to describe the model and this framework and roughly say that an encoding of length&nbsp;<span class="math inline">\(H_M(\boldsymbol{x})\)</span> is possible for the data&nbsp;<span class="math inline">\(\boldsymbol{x}\)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>From this perspective each model can be viewed as a competing encoding of the data, each of which provides an upper bound on the inherent complexity. If we have a basket of candidate models&nbsp;<span class="math inline">\(M \in \mathcal{M}\)</span>, we can then loosely approximate the "true" information cost of&nbsp;<span class="math inline">\(\boldsymbol{x}\)</span> as the minimum</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    K(\boldsymbol{x}) \sim \text{min}_{M \in \mathcal{M}} H_{M}(\boldsymbol{x}).\end{aligned}\]</span></p>
+</div>
+<p>The higher the model evidence the shorter the description length, yielding a tighter upper bound on the true cost.</p>
+<p>Despite this relative improvement, it is not possible to conclusively show that our approximation is particularly close to the truth. There may always be clever encoding out there that transmits the data far more efficiently than the models we consider. To show that&nbsp;<span class="math inline">\(K(\boldsymbol{x})\)</span> is above some value&nbsp;<span class="math inline">\(n\)</span>, we would need to check the outputs of all possible programs of length less than or equal to&nbsp;<span class="math inline">\(n\)</span>, an uncomputable task. For example, we may not recognize our initial sequence of coin flips&nbsp;"HHTTHTTHTT" as the first 10 digits of&nbsp;<span class="math inline">\(\pi = 11.00100100..._2\)</span> in binary, a more concise explanation that our models.</p>
+<p>Although we cannot find the perfect encoding, nor the perfect model, we can strive for a better understanding of systems and their complexity in this information-theoretic framework.</p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>More formally a universal Turing machine.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>In this pursuit we cannot consider models too finely attuned to a particular data set, or else we can no longer neglect the cost to specify the model itself.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
