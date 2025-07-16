@@ -16,14 +16,14 @@ image: ../../assets/images/notes/statistical_physics/statistical-physics.svg
 
 In this note we review the fundamentals of equilibrium statistical mechanics and their application to statistical modeling. We demonstrate how concepts of probability and inference can be usefully cast in the language of physics and energy. By leveraging this correspondence, we can import analytic and computational tools from physics to tackle statistical questions. 
 
-Throughout the note we reference the statistical setting of flipping independent, biased coins, each with probability $p$ of landing heads. As discussed in this [note](../2025/statistical_inference.html), the likelihood of observing a sequence $\boldsymbol{s}$ with $n_H$ heads out of $n$ flips is
+We ground our exploration in the simple statistical setting of independent flips of a coin with probability $p$ of landing heads. As discussed in this [note](../2025/statistical_inference.html), the model likelihood of observing a sequence $\boldsymbol{s}$ with $n_H$ heads out of $n$ flips is
 
 :::{style="overflow-x:auto;overflow-y:hidden;"}
 $$\begin{aligned}
     P(\boldsymbol{s}|p) = p^{n_H}(1-p)^{n - n_H}. \end{aligned}$$ {#eq-coin-flip-likelihood}
 :::
 
-We define an physical model equivalent to this statistical one and  explore how a perspective motivates alternative types of models and inference techniques. The presentation here is adapted from my PhD thesis, alongside reviews of [statistical inference](../2025/statistical_inference.html) and [information theory](../2025/information_theory.html)   
+We define an physical model equivalent to this statistical one and explore how this physical perspective motivates alternative types of models and inference techniques. The presentation here is adapted from my PhD thesis, alongside reviews of [statistical inference](../2025/statistical_inference.html) and [information theory](../2025/information_theory.html)   
 
 ## Energy and its conservation
 
