@@ -423,7 +423,7 @@ we can evaluate the likelihood
 
 :::{style="overflow-x:auto;overflow-y:hidden;"}
 $$\begin{aligned}
-P(\boldsymbol{s}^{\text{test}}|\hat{p}_{\text{MAP}}^{\text{train}}) = \left(\frac{n_H^{\text{train}} + 20}{n^{\text{train}} + 40}\right)^{n_H^{\text{test}}}\left(\frac{n_T^{\text{train}} + 20}{n^{\text{train}} + 40}\right)^{n_T^{\text{test}}}. \label{eq:log-likelihood-cross-validation}\end{aligned}$$
+P(\boldsymbol{s}^{\text{test}}|\hat{p}_{\text{MAP}}^{\text{train}}) = \left(\frac{n_H^{\text{train}} + 20}{n^{\text{train}} + 40}\right)^{n_H^{\text{test}}}\left(\frac{n_T^{\text{train}} + 20}{n^{\text{train}} + 40}\right)^{n_T^{\text{test}}}. \end{aligned}$$ {#eq-log-likelihood-cross-validation}
 :::
 
 This serves as a measure of the model's out-of-sample predictive
@@ -454,7 +454,7 @@ log likelihood or posterior predictive as
 $$\begin{aligned}
     \langle H(\boldsymbol{s}^{\text{test}}|\hat{p}_{\text{MAP}}^{\text{train}})\rangle_{\boldsymbol{s}^{\text{test}},\boldsymbol{s}^{\text{train}}} &= \langle -\log P(\boldsymbol{s}^{\text{test}}|\hat{p}_{\text{MAP}}^{\text{train}})\rangle_{\boldsymbol{s}^{\text{test}},\boldsymbol{s}^{\text{train}}},
     \nonumber \\
-    \langle H(\boldsymbol{s}^{\text{test}}|\boldsymbol{s}^{\text{train}})\rangle_{\boldsymbol{s}^{\text{test}},\boldsymbol{s}^{\text{train}}} &= \langle -\log P(\boldsymbol{s}^{\text{test}}|\boldsymbol{s}^{\text{train}})\rangle_{\boldsymbol{s}^{\text{test}},\boldsymbol{s}^{\text{train}}}, \label{eq:log-posterior-predictive-cross-validation}\end{aligned}$$
+    \langle H(\boldsymbol{s}^{\text{test}}|\boldsymbol{s}^{\text{train}})\rangle_{\boldsymbol{s}^{\text{test}},\boldsymbol{s}^{\text{train}}} &= \langle -\log P(\boldsymbol{s}^{\text{test}}|\boldsymbol{s}^{\text{train}})\rangle_{\boldsymbol{s}^{\text{test}},\boldsymbol{s}^{\text{train}}}, \end{aligned}$$ {#eq-log-posterior-predictive-cross-validation}
 :::
 
 where the results are averaged over many possible validation

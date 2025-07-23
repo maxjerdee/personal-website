@@ -8,6 +8,7 @@ project:
 website:
   title: "Max Jerdee"
   favicon: assets/images/icon.svg
+  google-analytics: "G-SY1YC6MMLM"
   navbar:
     left:
       - href: research.qmd

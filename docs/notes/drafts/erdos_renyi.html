@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-07-17">
+<meta name="description" content="Defining and using the Erdős–Rényi random graph in its many formulations">
+
+<title>Max Jerdee - Erdős–Rényi random graph</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/images/icon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SY1YC6MMLM"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Max Jerdee</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../papers.html"> 
+<span class="menu-text">Papers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../demos.html"> 
+<span class="menu-text">Demos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../notes.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-simple-erdősrényi-model" id="toc-the-simple-erdősrényi-model" class="nav-link active" data-scroll-target="#the-simple-erdősrényi-model">The simple Erdős–Rényi model</a></li>
+  <li><a href="#connectivity-and-the-giant-component" id="toc-connectivity-and-the-giant-component" class="nav-link" data-scroll-target="#connectivity-and-the-giant-component">Connectivity and the giant component</a></li>
+  <li><a href="#microcanonical-formulation" id="toc-microcanonical-formulation" class="nav-link" data-scroll-target="#microcanonical-formulation">Microcanonical formulation</a></li>
+  <li><a href="#multigraph-model" id="toc-multigraph-model" class="nav-link" data-scroll-target="#multigraph-model">Multigraph model</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Erdős–Rényi random graph</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Review</div>
+    <div class="quarto-category">Inference</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Defining and using the Erdős–Rényi random graph in its many formulations
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 17, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="the-simple-erdősrényi-model" class="level2">
+<h2 class="anchored" data-anchor-id="the-simple-erdősrényi-model">The simple Erdős–Rényi model</h2>
+<p>We begin our exploration with the Erdős–Rényi&nbsp;(or "flat") random graph model. This simple model serves as the basis of the more detailed structural models we later consider. Although first studied by Solomonoff and Rapoport&nbsp;<span class="citation" data-cites="SR51">(<a href="#ref-SR51" role="doc-biblioref">Solomonoff and Rapoport 1951</a>)</span>, the model is most closely associated with the work of Erdős and Rényi&nbsp;<span class="citation" data-cites="ER59">(<a href="#ref-ER59" role="doc-biblioref">Erdős and Rényi 1959</a>)</span>, after whom it is named. In their foundational work, both collaborations showed that despite its simplicity the Erdős–Rényi&nbsp;model captures key properties observed in real networks.</p>
+<p>The Erdős–Rényi&nbsp;model is often defined over <em>simple graphs</em>, characterized by binary adjacency matrix entries&nbsp;<span class="math inline">\(A_{ij} \in \{0,1\}\)</span>. In the <em>canonical</em> model, denoted as&nbsp;<span class="math inline">\(G(n,p)\)</span>, there is a fixed probability&nbsp;<span class="math inline">\(p \in [0,1]\)</span> that an edge exists between any of the&nbsp;<span class="math inline">\(\binom{n}{2}\)</span> possible pairs of distinct nodes. Statistically, each entry follows an independent Bernoulli distribution, akin to flipping&nbsp;<span class="math inline">\(\binom{n}{2}\)</span> independent biased coins, where the probability&nbsp;<span class="math inline">\(p\)</span> of heads represents the existence of an edge. Collecting these chances, the model <em>likelihood</em> of generating a full network&nbsp;<span class="math inline">\(\boldsymbol{A}\)</span> given a choice of parameter&nbsp;<span class="math inline">\(p\)</span> is</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-ER-simple-canonical-likelihood"><span class="math display">\[\begin{aligned}
+    P(\boldsymbol{A}|p) = \prod_{i &lt; j} p^{A_{ij}}(1-p)^{1 - A_{ij}} = p^m (1-p)^{\binom{n}{2} - m}. \end{aligned} \tag{1}\]</span></span></p>
+</div>
+<p>When applying this model, we infer the latent parameter&nbsp;<span class="math inline">\(p\)</span> from our observation&nbsp;<span class="math inline">\(\boldsymbol{A}\)</span>. A common <em>frequentist</em> approach is to identify the parameter value that maximizes the model likelihood of the data. This optimum is known as the <em>maximum-likelihood</em> (ML) estimate</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-ER-p-estimate"><span class="math display">\[\begin{aligned}
+    \hat{p}_{\text{ML}} = \frac{m}{\binom{n}{2}} \approx \frac{2m}{n^2}. \end{aligned} \tag{2}\]</span></span></p>
+</div>
+<p>This value, equal to the empirical <em>density</em> of the network, provides insight into the network’s formation and can be extrapolated to make predictions about future observations.</p>
+<p>In certain contexts, however, this maximum-likelihood estimate can be misleading. Especially when we observe a small amount of data, there is an inherent ambiguity about the "true" parameter value. Many possible values of&nbsp;<span class="math inline">\(p\)</span> could have generated the network&nbsp;<span class="math inline">\(\boldsymbol{A}\)</span>, yet we can only draw conclusions from the single observation. Reporting only the point estimate&nbsp;<span class="math inline">\(\hat{p}_{\text{ML}}\)</span> may not represent the full range of possible parameter values.</p>
+<p>To incorporate this uncertainty, we adopt a <em>Bayesian</em> approach throughout this thesis. Instead of focusing on a single point estimate, this framework represents our belief about likely parameter values as a distribution over&nbsp;<span class="math inline">\(p\)</span>. To implement this, we first define a <em>prior</em> distribution that contains our initial assumptions of reasonable parameter values before observing any data. For our purposes, we use a uniform, <em>maximum-entropy</em> prior over the interval,&nbsp;<span class="math inline">\(P(p) = 1\)</span>. This choice is as agnostic as possible, treating each potential value of&nbsp;<span class="math inline">\(p\)</span> as equally plausible before considering the data.</p>
+<p>Using Bayes’ law, we then calculate the <em>posterior</em> distribution of likely parameter values given our observed network</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-ER-posterior"><span class="math display">\[\begin{aligned}
+    P(p|\boldsymbol{A}) &amp;= \frac{P(\boldsymbol{A}|p)P(p)}{P(\boldsymbol{A})} \nonumber\\
+    &amp;= \left[\binom{n}{2} + 1\right]\binom{\binom{n}{2}}{m} p^m (1-p)^{\binom{n}{2} - m}. \end{aligned} \tag{3}\]</span></span></p>
+</div>
+<p>Here, the distribution is normalized by the <em>model evidence</em></p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-ER-evidence-canonical"><span class="math display">\[\begin{aligned}
+    P(\boldsymbol{A}) &amp;= \int P(\boldsymbol{A}|p)P(p) dp \nonumber\\
+    &amp;= \frac{1}{\binom{n}{2} + 1}\binom{\binom{n}{2}}{m}^{-1}, \end{aligned} \tag{4}\]</span></span></p>
+</div>
+<p>an important quantity we will return to later this section. In this model, the posterior&nbsp;<span class="math inline">\(P(p|\boldsymbol{A})\)</span> is maximized at the same value as the likelihood,&nbsp;<span class="math inline">\(\hat{p}_{\text{MAP}} = \hat{p}_{\text{ML}}\)</span>, but the width of the posterior distribution reflects the certainty of our inference.</p>
+<p>For instance, we can apply this Bayesian model to a real social network of 2218 friendships among 324 Facebook profiles&nbsp;<span class="citation" data-cites="BSB12">(<a href="#ref-BSB12" role="doc-biblioref">Blagus, Šubelj, and Bajec 2012</a>)</span> illustrated in <a href="#fig-facebook-friends-example" class="quarto-xref">Figure&nbsp;1</a>a. <a href="#fig-facebook-friends-example" class="quarto-xref">Figure&nbsp;1</a>b displays the posterior distribution&nbsp;<span class="math inline">\(P(p|\boldsymbol{A})\)</span> from <a href="#eq-ER-posterior" class="quarto-xref">Eq.&nbsp;3</a> for this network, showing likely values of the connection probability&nbsp;<span class="math inline">\(p\)</span>. Since this is a large data set, the posterior is tightly peaked around its maximum,&nbsp;<span class="math inline">\(\hat{p}_{\text{MAP}} \approx 0.042\)</span>, although nearby values of the parameter are not entirely excluded. As more data is gathered, this posterior naturally narrows as we become increasingly confident in our inference — a concept further demonstrated in Figure&nbsp;<a href="#fig:coin-flip-inference" data-reference-type="ref" data-reference="fig:coin-flip-inference">[fig:coin-flip-inference]</a>.</p>
+<div id="fig-facebook-friends-example" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-facebook-friends-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../assets/images/notes/erdos_renyi/facebook-friends-example.svg" class="img-fluid figure-img" style="width:6.73283in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-facebook-friends-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: (a) A social network of friendships among Facebook profiles&nbsp;<span class="citation" data-cites="BSB12">(<a href="#ref-BSB12" role="doc-biblioref">Blagus, Šubelj, and Bajec 2012</a>)</span>. A path of 6 edges, highlighted in red, connecting the leftmost and rightmost nodes. (b) Posterior distribution&nbsp;<span class="math inline">\(P(p|\boldsymbol{A})\)</span> of the connection probability&nbsp;<span class="math inline">\(p\)</span> for this network in the Erdős–Rényi&nbsp;model. The MAP estimate&nbsp;<span class="math inline">\(\hat{p}_{\text{MAP}} \approx 0.042\)</span> is marked by the vertical line.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="connectivity-and-the-giant-component" class="level2">
+<h2 class="anchored" data-anchor-id="connectivity-and-the-giant-component">Connectivity and the giant component</h2>
+<p>The average degree of this network is <span class="math inline">\(c = \langle k \rangle \approx 13.7\)</span>, meaning each profile, on average, is friends with just a small fraction of the&nbsp;<span class="math inline">\(n = 324\)</span> potential nodes. This behavior is typical of large networks, where the number of connections of each node&nbsp;<span class="math inline">\(c\)</span> tends to stay constant as the number of nodes&nbsp;<span class="math inline">\(n\)</span> grows. For example, an individual is likely to maintain roughly the same number of friendships whether they live in a town of ten thousand of a city of ten million. In most contexts it is neither realistic nor sustainable for the mean degree to grow proportionally with the size of the network indefinitely.</p>
+<p>In large networks this bound also implies that the probability&nbsp;<span class="math inline">\(p\)</span> of any specific pair of nodes being connected must be very small. In the Erdős–Rényi&nbsp;model, the average degree is</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    c = p(n-1)\end{aligned}\]</span></p>
+</div>
+<p>since each node is connected by an average of&nbsp;<span class="math inline">\(p\)</span> edges to each of the&nbsp;<span class="math inline">\(n-1\)</span> other nodes. Therefore in the <em>constant degree</em> limit <span class="math inline">\(c \sim O(1)\)</span>, the probability&nbsp;<span class="math inline">\(p\)</span> decreases as&nbsp;<span class="math inline">\(p \sim O(1/n)\)</span>. As this connection probability approaches 0, we refer to this as a <em>sparse</em> limit, contrasting with <em>dense</em> graphs that retain a markedly positive density&nbsp;<span class="math inline">\(p\)</span> even in a large system.</p>
+<p>Within this realistic regime, the Erdős–Rényi&nbsp;random graph helps to explain the global connectedness observed in real networks. In the sparse Facebook network depicted in Fig.&nbsp;<a href="#fig:facebook-friends-example" data-reference-type="ref" data-reference="fig:facebook-friends-example">1</a>a, even though the probability&nbsp;<span class="math inline">\(p \approx 0.04\)</span> of a direct connection is small, a path of friendships connecting any two profiles can still be found. The figure highlights a path spanning six friendships between the leftmost and rightmost nodes. Even in very large networks, where each node connects to a vanishingly small fraction of the others, it is often possible to trace a (surprisingly short) path between any two nodes. This phenomenon is famously echoed in the "six degrees of separation" notion popularized by Stanley Milgram’s small world experiment, which suggests that any two people can be linked by six social connections&nbsp;<span class="citation" data-cites="Milgram67 Watts99b">(<a href="#ref-Milgram67" role="doc-biblioref">Milgram 1967</a>; <a href="#ref-Watts99b" role="doc-biblioref">Watts 1999</a>)</span>. Although this is not strictly true empirically (e.g.&nbsp;some pairs in our Facebook network require seven connections), the spirit tends to hold in social data.</p>
+<p>In network language, a path of links between two people indicates that they belong to the same <em>connected component</em> of nodes. In a general graph, not all nodes need to be connected to each other in this manner. For example, some individuals live in communities that are entirely isolated from the rest of the world. In such cases, the nodes of a network may split into multiple connected components. Typically, however, one of these components will encompass the majority of the nodes, as most individuals can indeed connect to most others. This prominent sub-network is known as the <em>giant connected component</em> and is a feature of most realistic networks.</p>
+<p>The common emergence of a giant component can be understood through the Erdős–Rényi&nbsp;random graph model. As illustrated in <a href="#fig-giant-component" class="quarto-xref">Figure&nbsp;2</a>, when a network has very few edges they are each isolated, and the connected components are single nodes or edges (represented by different colors in the figure). As additional edges are added, these smaller connected components begin to coalesce into a single giant component which ultimately connects nearly every node in the network.</p>
+<div id="fig-giant-component" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-giant-component-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../assets/images/notes/erdos_renyi/giant-component.svg" class="img-fluid figure-img" style="width:7.079in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-giant-component-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Samples of an Erdős–Rényi&nbsp;random graph on&nbsp;<span class="math inline">\(n = 50\)</span> vertices at edge probabilities&nbsp;<span class="math inline">\(p = 0.004, 0.02, 0.1\)</span> corresponding to average degrees <span class="math inline">\(c = 0.2, 1, 5\)</span>. Nodes are colored by the connected component they belong to. The middle panel shows the emergence of the giant component at the transition point&nbsp;<span class="math inline">\(c = 1\)</span>.
+</figcaption>
+</figure>
+</div>
+<p>Between these extremes, the Erdős–Rényi&nbsp;random graph undergoes a <em>phase transition</em> at average degree&nbsp;<span class="math inline">\(c = 1\)</span>. When&nbsp;<span class="math inline">\(c &lt; 1\)</span>, the connected components tend to be small and isolated, of size&nbsp;<span class="math inline">\(O(1)\)</span> in the large <span class="math inline">\(n\)</span> limit. As&nbsp;<span class="math inline">\(c\)</span> surpasses 1, a giant component suddenly emerges, forming a connected component that grows extensively as&nbsp;<span class="math inline">\(O(n)\)</span> with the size of the network and so contains a persistent fraction of all nodes&nbsp;<span class="citation" data-cites="SR51">(<a href="#ref-SR51" role="doc-biblioref">Solomonoff and Rapoport 1951</a>)</span>.</p>
+<p>Once the giant component appears it is also quite easy to traverse. The maximum number of steps needed to connect any pair of nodes, known as the <em>diameter</em>, grows slowly as&nbsp;<span class="math inline">\(O(\log n)\)</span>, reflecting the small-world phenomenon&nbsp;<span class="citation" data-cites="ER59">(<a href="#ref-ER59" role="doc-biblioref">Erdős and Rényi 1959</a>)</span>. Despite its simplicity, the Erdős–Rényi&nbsp;model effectively captures and explains the connectivity properties observed in real complex systems.</p>
+<p>Although the Erdős–Rényi&nbsp;random graph reflects this common global property, we often seek a more comprehensive measure of how well the model captures the full details of the network. To evaluate this, we use the model evidence (or "marginal likelihood")&nbsp;<span class="math inline">\(P(\boldsymbol{A}) = \int P(\boldsymbol{A}|p)P(p)dp\)</span> of <a href="#eq-ER-evidence-canonical" class="quarto-xref">Eq.&nbsp;4</a>. This represents the total probability that the random graph could generate the network&nbsp;<span class="math inline">\(\boldsymbol{A}\)</span>, integrated over all possible values of the unknown parameter&nbsp;<span class="math inline">\(p\)</span>. By integrating out this uncertainty, the model can be interpreted as a <em>nonparametric</em> distribution&nbsp;<span class="math inline">\(P(\boldsymbol{A})\)</span> over all possible networks we could observe.</p>
+<p>Model evidence serves as a natural criterion for model assessment. When comparing two models, we prefer the one with the higher evidence as it is more likely to reproduce our observation. Alternatively, as discussed in Appendix&nbsp;<a href="#app:information-theory" data-reference-type="ref" data-reference="app:information-theory">[app:information-theory]</a>, the distribution&nbsp;<span class="math inline">\(P(\boldsymbol{A})\)</span> corresponds to an encoding of the network, compressing its information content into a binary string of length&nbsp;<span class="math inline">\(H(\boldsymbol{A}) = -\log_2 P(\boldsymbol{A})\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>The model with the higher evidence&nbsp;<span class="math inline">\(P(\boldsymbol{A})\)</span> will thus have a shorter <em>description length</em>&nbsp;<span class="math inline">\(H(\boldsymbol{A})\)</span>, and yield a more efficient, parsimonious compression. When modeling, we can therefore equivalently pursue models with higher evidences or shorter description lengths of our observations. For the Erdős–Rényi&nbsp;model, the description length is</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    H(\boldsymbol{A}) &amp;= -\log P(\boldsymbol{A}) \nonumber\\
+    &amp;= \log \left[\binom{n}{2} + 1\right] + \log \binom{\binom{n}{2}}{m},\end{aligned}\]</span></p>
+</div>
+<p>resulting in a&nbsp;<span class="math inline">\(H(\boldsymbol{A}) \approx 13249.6\)</span> bit compression of the network of Facebook friends. In later sections, we will observe how more realistic network models can more efficiently compress real networks as they incorporate aspects of their structure beyond the overall density.</p>
+</section>
+<section id="microcanonical-formulation" class="level2">
+<h2 class="anchored" data-anchor-id="microcanonical-formulation">Microcanonical formulation</h2>
+<p>The form of the model evidence in <a href="#eq-ER-evidence-canonical" class="quarto-xref">Eq.&nbsp;4</a> also suggests an alternative <em>microcanonical</em> formulation of the model<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. In this telling, known as&nbsp;<span class="math inline">\(G(n,m)\)</span>, the network is uniformly distributed among all simple graphs with&nbsp;<span class="math inline">\(n\)</span> nodes and&nbsp;<span class="math inline">\(m\)</span> edges. Given the number of ways that the&nbsp;<span class="math inline">\(m\)</span> indistinguishable edges can be arranged among the&nbsp;<span class="math inline">\(\binom{n}{2}\)</span> potential node pairs, the probability of any specific configuration is</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P(\boldsymbol{A}|m) = \binom{\binom{n}{2}}{m}^{-1}.\end{aligned}\]</span></p>
+</div>
+<p>Here, the global number of edges&nbsp;<span class="math inline">\(m\)</span> replaces the local probability&nbsp;<span class="math inline">\(p\)</span> as the key parameter. Since&nbsp;<span class="math inline">\(m\)</span> can be any integer from 0 to a maximum of&nbsp;<span class="math inline">\(\binom{n}{2}\)</span> when all possible pairs are connected, we can again adopt a uniform prior over the possibilities</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P(m) = \frac{1}{\binom{n}{2} + 1}.\end{aligned}\]</span></p>
+</div>
+<p>Together these distributions give the same model evidence as the canonical model,</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P(\boldsymbol{A}) = P(\boldsymbol{A}|m)P(m) = \frac{1}{\binom{n}{2} + 1}\binom{\binom{n}{2}}{m}^{-1}.\end{aligned}\]</span></p>
+</div>
+<p>Thus, we can describe the formation of any network through two ultimately equivalent Erdős–Rényi&nbsp;stories. Canonically, a connection probability&nbsp;<span class="math inline">\(p\)</span> is first randomly chosen, then each edge independently appears with this probability. Microcanonically, the total number of edges&nbsp;<span class="math inline">\(m\)</span> is first randomly set, then the&nbsp;<span class="math inline">\(m\)</span> edges are collectively shuffled among their possible positions.</p>
+</section>
+<section id="multigraph-model" class="level2">
+<h2 class="anchored" data-anchor-id="multigraph-model">Multigraph model</h2>
+<p>Throughout this thesis, we describe many other network models using these equivalent formulations, each offering a unique perspective on the network formation process. In the canonical view, a network’s structure emerges from many small, independent decisions. In contrast, the microcanonical framework describes network formation as governed by one or more global constraints.</p>
+<p>Depending on the context, either formulation may be more appropriate. Certain networks are designed under strict microcanonical constraints. For example, during a sports season, there is typically a fixed total number of games played, but the specific matchups among teams are shuffled. Microcanonical models are also commonly used as <em>null hypotheses</em>, allowing networks to be compared against variants that share certain observed properties but are otherwise randomized. Outside these applications, this thesis primarily presents models from a canonical perspective. This picture aligns with the view of complex systems as decentralized and self-organizing, where emergent structures result from local interactions rather than predefined global constraints.</p>
+<p>Beyond the simple graphs we have discussed thus far, we will also consider a variant of the Erdős–Rényi&nbsp;model defined over multigraphs in this thesis. This adaptation accommodates scenarios where pairs of nodes are joined by multiple edges or where nodes connect to themselves. This version of the model is not only more flexible than the simple graph model but also more analytically tractable, a useful base for the more complex network models we will build.</p>
+<p>In this generalized model, the off-diagonal entries of the adjacency matrix are each independently sampled from a <em>Poisson distribution</em> with expectation&nbsp;<span class="math inline">\(\rho\)</span>, rather than a Bernoulli distribution with expectation&nbsp;<span class="math inline">\(p\)</span>. The Poisson distribution admits all non-negative integers&nbsp;<span class="math inline">\(A_{ij} \in \{0,1,...\}\)</span> rather than only binary values. Here, the parameter&nbsp;<span class="math inline">\(\rho \geq 0\)</span> sets the <em>density</em> of the graph as the typical number of edges between each pair of nodes.</p>
+<p>Self-edges, now present in the model, lead to non-zero diagonal elements&nbsp;<span class="math inline">\(A_{ii}\)</span> equal to twice the number of edges connecting node&nbsp;<span class="math inline">\(i\)</span> to itself. This convention ensures that the row sums&nbsp;<span class="math inline">\(\boldsymbol{k}\)</span> of the adjacency matrix equal the vertex degrees. We model the number of self-edges&nbsp;<span class="math inline">\(A_{ii}/2\)</span> as a Poisson distribution with expectation&nbsp;<span class="math inline">\(\rho/2\)</span>, ensuring the diagonal elements&nbsp;<span class="math inline">\(A_{ii}\)</span> are even while all matrix entries share the expectation&nbsp;<span class="math inline">\(\rho\)</span>. Collecting these assumptions, the multigraph likelihood is then</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-ER-multigraph-canonical"><span class="math display">\[\begin{aligned}
+    P(\boldsymbol{A}|\rho) &amp;= \prod_{i&lt;j} \frac{\rho^{A_{ij}}e^{-\rho}}{A_{ij}!} \prod_i \frac{(\rho/2)^{A_{ii}/2}e^{-\rho/2}}{(A_{ii}/2)!}\nonumber\\
+    &amp;= \frac{\rho^m e^{-\rho n^2/2}}{\prod_{i&lt;j}A_{ij}! \prod_i A_{ii}!!}, \end{aligned} \tag{5}\]</span></span></p>
+</div>
+<p>where the double factorial&nbsp;<span class="math inline">\((2x)!! = 2^xx!\)</span>.</p>
+<p>In the common sparse setting, where the density&nbsp;<span class="math inline">\(\rho \rightarrow 0\)</span>, the multigraph model reduces to the simple graph model since it becomes exponentially unlikely to observe more than a single edge between any pair of nodes. Specifically, by setting&nbsp;<span class="math inline">\(\rho = \frac{n}{n - 1} p\)</span> (adjusted for self-edges), the multigraph likelihood <a href="#eq-ER-multigraph-canonical" class="quarto-xref">Eq.&nbsp;5</a> approximates the simple graph likelihood <a href="#eq-ER-simple-canonical-likelihood" class="quarto-xref">Eq.&nbsp;1</a> as</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P(\boldsymbol{A}|\rho) = P(\boldsymbol{A}|p) + O(p^2)\end{aligned}\]</span></p>
+</div>
+<p>to leading order in this limit. This approximation allows us to use the more computationally manageable multigraph model in sparse settings, even for networks known to be simple. Consequently, the Erdős–Rényi&nbsp;multigraph shares the giant component and connectivity properties previously discussed in the sparse, constant degree limit<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p>To complete the description of the multigraph model, we must adopt a prior for the density&nbsp;<span class="math inline">\(\rho\)</span>. Unlike the probability&nbsp;<span class="math inline">\(p \in [0,1]\)</span>, the density&nbsp;<span class="math inline">\(\rho\)</span> can assume any non-negative value. As it is unbounded, a traditional maximum entropy prior is undefined over the infinite range. Instead, we maximize the entropy under the constraint that the expected value is 1, resulting in an exponential prior<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-P-rho"><span class="math display">\[\begin{aligned}
+    P(\rho) = e^{-\rho}. \end{aligned} \tag{6}\]</span></span></p>
+</div>
+<p>From this choice, the posterior distribution of&nbsp;<span class="math inline">\(\rho\)</span> is</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P(\rho|\boldsymbol{A}) &amp;= \frac{P(\boldsymbol{A}|\rho)P(\rho)}{P(\boldsymbol{A})} \\
+    &amp;=\frac{\rho^m e^{-\rho (n^2/2 + 1)}(n^2/2 + 1)^{m+1}}{m!}.\end{aligned}\]</span></p>
+</div>
+<p>The peak of this distribution defines the MAP estimate of&nbsp;<span class="math inline">\(\rho\)</span></p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-ER-multigraph-p-MAP"><span class="math display">\[\begin{aligned}
+    \hat{\rho}_{\text{MAP}} = \frac{2m}{n^2 + 2}. \end{aligned} \tag{7}\]</span></span></p>
+</div>
+<p>Note that this value is slightly less than the empirical density <a href="#eq-ER-p-estimate" class="quarto-xref">Eq.&nbsp;2</a>, reflecting the influence of the prior towards smaller values.</p>
+<p>The Bayesian evidence of the model is found by integrating over the density,</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-ER-multigraph-microcanonical"><span class="math display">\[\begin{aligned}
+    P(\boldsymbol{A}) &amp;=  \int P(\boldsymbol{A}|\rho)P(\rho) d\rho \nonumber\\
+    &amp;= {\underbrace{\frac{1}{(n^2/2)^m} \frac{m!}{\prod_{i&lt;j}A_{ij}! \prod_i A_i!!}}_{\text{multinomial}}} \&gt; { \underbrace{\frac{(n^2/2)^m}{(n^2/2 + 1)^{m + 1}}}_{
+    \text{geometric}}}  \\
+    &amp;= P(\boldsymbol{A}|m)P(m), \nonumber\end{aligned} \tag{8}\]</span></span></p>
+</div>
+<p>here organized to illustrate its microcanonical interpretation. The number of edges&nbsp;<span class="math inline">\(m\)</span> is first distributed geometrically, then those edges are multinomially distributed among possible node pairs.</p>
+<p>The description length of the Facebook friends network in the multigraph model is then&nbsp;<span class="math inline">\(H(\boldsymbol{A}) = -\log P(\boldsymbol{A}) = 13333.1\)</span>, slightly more than the description length&nbsp;<span class="math inline">\(H(\boldsymbol{A}) = 13249.6\)</span> in the simple graph model. Although the simple Erdős–Rényi&nbsp;model compresses the friends network more efficiently due to its restriction to simple networks, we typically prefer the multigraph model in these sparse cases for its ease and flexibility.</p>
+<p>We can further use this model to predict which nodes would likely connect to each other in future observations of the network. In the Erdős–Rényi&nbsp;model, only the parameter&nbsp;<span class="math inline">\(\rho\)</span> is used to make predictions. Given an inference of this density from a network, we can predict that a further observation will share the same density. In many contexts, however, we might anticipate that the predicted data will exhibit a different density than our initial observation.</p>
+<p>This is especially relevant in a <em>cross-validation</em> context, one where the observed data is randomly divided into a training set&nbsp;<span class="math inline">\(\boldsymbol{A}^{\text{train}}\)</span> and testing set&nbsp;<span class="math inline">\(\boldsymbol{A}^{\text{test}}\)</span> such that&nbsp;<span class="math inline">\(\boldsymbol{A}^{\text{train}} + \boldsymbol{A}^{\text{test}} = \boldsymbol{A}\)</span>. In these tests, the model is often trained on&nbsp;80% of the data and tested on the remaining&nbsp;20%. If we infer that the training data has density&nbsp;<span class="math inline">\(\rho^{\text{train}}\)</span>, we can then assume that the testing data only has a quarter the density, setting&nbsp;<span class="math inline">\(\rho^{\text{test}} = f \rho^{\text{train}}\)</span> with&nbsp;<span class="math inline">\(f = 0.25\)</span>.</p>
+<p>Under this assumption, we can then define a posterior-predictive distribution that accounts for all possible values of the density we could infer, factoring in the ratio&nbsp;<span class="math inline">\(f\)</span> between the training and testing data,</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+         P(\boldsymbol{A}^{\text{test}}|\boldsymbol{A}^{\text{train}},f) &amp;= \int P(\boldsymbol{A}^{\text{test}}|\rho^{\text{test}}) P(\rho^{\text{train}} | \boldsymbol{A}^{\text{train}}) d \rho^{\text{train}} \nonumber \\
+    &amp;= \int P(\boldsymbol{A}^{\text{test}}|f \rho) P(\rho | \boldsymbol{A}^{\text{train}}) d \rho \nonumber \\
+    &amp;= \frac{(m^{\text{train}}+m^{\text{test}})!}{m^{\text{train}}!\prod_{i&lt;j}A_{ij}!\prod_i A_{ii}!!} \frac{f^{m^{\text{test}}}(n^2/2+1)^{m^{\text{train}}+1}}{((1+f)n^2/2 + 1)^{m^{\text{train}} + m^{\text{test}} + 1}}.
+\end{aligned}\]</span></p>
+</div>
+<p>As in this example, the posterior-predictive can be quite complicated. For the other models we discuss, the predictive is detailed in Appendix&nbsp;<a href="#app:posterior-predictive-general" data-reference-type="ref" data-reference="app:posterior-predictive-general">[app:posterior-predictive-general]</a>. By averaging results over many cross-validation splits, we then obtain an alternative perspective on the model’s performance, specifically how well it can reconstruct the full data set from partial observations. In our network of friendships, we can compute that on average the <em>minus log posterior-predictive</em> is</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+     H(\boldsymbol{A}^{\text{test}}|\boldsymbol{A}^{\text{train}},f) = -\log P(\boldsymbol{A}^{\text{test}}|\boldsymbol{A}^{\text{train}},f) \approx 3670.2,
+\end{aligned}\]</span></p>
+</div>
+<p>indicating how effectively the model can extrapolate the network.</p>
+<p>As shown in Appendix&nbsp;<a href="#app:prediction-and-validation" data-reference-type="ref" data-reference="app:prediction-and-validation">[app:prediction-and-validation]</a>, suitably interpreted this measure of predictive power is very similar to the model evidence criterion, although subtle differences exist between the two. When assessing models on real network data we will report both these statistics in this thesis.</p>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-BSB12" class="csl-entry" role="listitem">
+Blagus, Neli, Lovro Šubelj, and Marko Bajec. 2012. <span>“Self-Similar Scaling of Density in Complex Real-World Networks.”</span> <em>Physica A: Statistical Mechanics and Its Applications</em> 391 (8): 2794–2802.
+</div>
+<div id="ref-ER59" class="csl-entry" role="listitem">
+Erdős, Paul, and Alfréd Rényi. 1959. <span>“On Random Graphs.”</span> <em>Publicationes Mathematicae</em> 6: 290–97.
+</div>
+<div id="ref-Milgram67" class="csl-entry" role="listitem">
+Milgram, Stanley. 1967. <span>“The Small World Problem.”</span> <em>Psychology Today</em> 2: 60–67.
+</div>
+<div id="ref-SR51" class="csl-entry" role="listitem">
+Solomonoff, R., and A. Rapoport. 1951. <span>“Connectivity of Random Nets.”</span> <em>Bulletin of Mathematical Biophysics</em> 13: 107–17.
+</div>
+<div id="ref-Watts99b" class="csl-entry" role="listitem">
+Watts, Duncan J. 1999. <span>“Networks, Dynamics, and the Small World Phenomenon.”</span> <em>Ajs</em> 105: 493–592.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Throughout this thesis, information will be reported in bits (base 2), though the choice of logarithm base only changes results by a constant factor.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>The canonical and microcanonical designations of these models come from the corresponding ensembles over configuration space in equilibrium statistical physics. See Appendix&nbsp;<a href="#app:statistical-physics" data-reference-type="ref" data-reference="app:statistical-physics">[app:statistical-physics]</a> for more details.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Solomonoff and Rapoport&nbsp;<span class="citation" data-cites="SR51">(<a href="#ref-SR51" role="doc-biblioref">Solomonoff and Rapoport 1951</a>)</span> initially demonstrated these properties in the multigraph version of the model, while Erdős and Rényi&nbsp;<span class="citation" data-cites="ER59">(<a href="#ref-ER59" role="doc-biblioref">Erdős and Rényi 1959</a>)</span> considered the microcanonical <span class="math inline">\(G(n,m)\)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This is analogous to how the Boltzmann distribution in Eq.&nbsp;<a href="#eq:boltzmann-distribution" data-reference-type="eqref" data-reference="eq:boltzmann-distribution">[eq:boltzmann-distribution]</a> maximizes entropy under the average energy constraint.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

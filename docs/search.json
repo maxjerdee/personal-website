@@ -256,7 +256,7 @@
     "href": "notes/2025/network_structures.html",
     "title": "Network structures",
     "section": "",
-    "text": "Networks are often used to represent complex systems composed of many parts, such as individual people, animals, or atoms. Their study focuses on the nature and structure of interactions between these components. Just as a universe of only non-interacting particles would be a lifeless soup, a collection of people who never interact is boring and unrealistic to study. The network of interactions between the many pieces makes the system “complex.” This introduction to networks is adapted from my PhD thesis, and demonstrates examples of these emergent structures."
+    "text": "Networks are often used to represent complex systems composed of many parts, such as individual people, animals, or atoms. Their study focuses on the nature and structure of interactions between these components. Just as a universe of only non-interacting particles would be a lifeless soup, a collection of people who never interact is boring and unrealistic to study. The network of interactions between the many pieces makes the system “complex.”\nThis note gives examples of emergent structures found in these networks, and the presentation is adapted from my PhD thesis."
   },
   {
     "objectID": "notes/2025/network_structures.html#representing-network-data",

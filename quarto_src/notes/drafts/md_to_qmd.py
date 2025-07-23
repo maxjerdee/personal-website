@@ -49,13 +49,21 @@ from svgpathtools import svg2paths, Path
 
 # preamble = ""
 
-input_file = "stochastic_block_model.md"
-output_file = "stochastic_block_model.qmd"
-figures_dir = "../../assets/images/notes/stochastic_block_model"
+# input_file = "stochastic_block_model.md"
+# output_file = "stochastic_block_model.qmd"
+# figures_dir = "../../assets/images/notes/stochastic_block_model"
+
+# preamble = ""
+
+input_file = "erdos_renyi.md"
+output_file = "erdos_renyi.qmd"
+figures_dir = "../../assets/images/notes/erdos_renyi"
 
 preamble = ""
 
 px_per_inch = 60  # Assuming 60 DPI for conversion
+
+# Compute the pixels per inch squared
 
 # Read the input file
 with open(input_file, 'r', encoding='utf-8') as file:

@@ -6,9 +6,7 @@ categories:
 date: last-modified
 ---
 
-Suppose that we have two models. There is a 
-
-- Structure this around the demonstration for curves through points and the coin flipping example. 
+Review a variety of other ways that people perform model selection around statistics, and what these approaches look like from a Bayesian persepctive. 
 
 - Discuss many of the possible ways that one can perform model selection. Frame that the way that I often prefer to do this is with the Bayesian evidence, and can talk about various different ways that this can be approximated. 
 - Variational methods. 
