@@ -1,0 +1,14 @@
+---
+title: "M & M machine"
+description: "Looking for patterns in candy machine pulls"
+date: last-modified
+---
+
+- Include the data from the pulls (credit Conrad, Gabriela, and the other person who took the data). Incude the picture of the machine, is there a picture of the data collection process?
+
+- Mention how this can be used as a pedagogical example of statistics and prediction. 
+
+- Show the frequency analysis
+
+- Build a statistical model for the distribution over time
+

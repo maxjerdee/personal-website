@@ -1,0 +1,13 @@
+---
+title: "Newton's cradle"
+description: "How many ways can Newton's cradle bounce? [Answer]"
+categories:
+  - Physics
+date: last-modified
+---
+
+- Link to the simulation demo for Newton's cradle
+- Define what we mean by a "way of bouncing", a particular sequence of clicks between the balls
+- Mention other effects that we could include
+- Talk about chaos and non-linear dynamics -> so the ultimate conclusion is that really there are an infinite number of possibilities.
+

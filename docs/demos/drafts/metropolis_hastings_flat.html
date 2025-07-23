@@ -8,7 +8,7 @@
 
 <meta name="description" content="Explore Monte Carlo methods with hopping frogs">
 
-<title>Max Jerdee - MCMC</title>
+<title>Max Jerdee - MCMC Flat</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +70,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SY1YC6MMLM"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
+</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -138,7 +147,7 @@ window.Quarto = {
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../CV.html"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -157,11 +166,11 @@ window.Quarto = {
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MCMC</h1>
+<h1 class="title">MCMC Flat</h1>
 </div>
 
 <div>
@@ -184,20 +193,23 @@ window.Quarto = {
 
 
 <p>Monte Carlo algorithms are often used to explore probability distributions. Particularly, the Metropolis-Hastings algorithm is an extremely widely used technique for sampling from distributions. In this story, there are a few frog characters to familiarize ourselves with.</p>
-<p>First up, explorer frog:</p>
+<p>First up, <em>explorer frog</em>:</p>
 <ul>
 <li>Doesn’t give a flip</li>
 <li>Red</li>
+<li>Hot</li>
 </ul>
 <p>Next, we have <em>exploiter frog</em> (also known as <em>greedy frog</em>):</p>
 <ul>
 <li>Wants flies, now</li>
 <li>Blue</li>
+<li>Cold</li>
 </ul>
 <p>Finally, our most complicated frog will be <em>sampler frog</em>:</p>
 <ul>
 <li>Wants flies, most of the time (!)</li>
 <li>Green</li>
+<li>Just right</li>
 </ul>
 <p>In the Metropolis-Hastings algorithm, in order to sample from a distribution proportional to <span class="math inline">\(P(x)\)</span>, a proposed move from a “state” <span class="math inline">\(x\)</span> to some new state <span class="math inline">\(x'\)</span> will be “accepted” with probability <span class="math display">\[P_{\text{accept}}(x \rightarrow x') = \min\left(1,\frac{P(x)}{P(x')}\right).\]</span> (really we should be sure our proposals are symmetric, but we won’t worry about that in this demonstration).</p>
 <p>What is going on with our frogs is that there is a</p>
@@ -205,15 +217,41 @@ window.Quarto = {
 <p>A nice side-effect of this, however, is the ability to leverage a technique known as “calorimetry” in the Physics community for computing the free energy of a system, and as “thermodynamic integration” within the statistis community.</p>
 <p>Suppose that we have a general model where the</p>
 <p>The fundamental identity that will come in handy is that if we define the partition function at an arbitrary <span class="math inline">\(\beta\)</span> as</p>
-<p><span class="math display">\[ Z(\beta) = \int P(A|\vec{\theta})P(\vec{\theta})^\beta d \theta\]</span></p>
+<p><span class="math display">\[ Z(\beta) = \int P(A|\vec{\theta})^\beta P(\vec{\theta}) d \theta\]</span></p>
 <p>so that notably we have that the Bayesian evidence is obtained at <span class="math inline">\(\beta = 1\)</span>:</p>
-<p><span class="math display">\[ Z(1) = \int P(A | \vec{\theta}) P(\vec{\theta}) d \theta = P(A), \qquad Z(0) = \int P(\theta) d\theta = 1\]</span></p>
-<p>Key terms/concepts:</p>
+<p><span class="math display">\[
+\begin{align*}
+Z(1) &amp;= \int P(A | \vec{\theta}) P(\vec{\theta}) d \theta = P(A), \\
+Z(0) &amp;= \int P(\theta) d\theta = 1
+\end{align*}
+\]</span></p>
+<p>TODO:</p>
 <ul>
-<li>Simulated annealing is generally a useful way to improve convergence.</li>
+<li>Switch the frogs to a raster render to improve efficiency Implement as an svg with a background color that can be changed along with a png on top that handles the hard outline and eyes, and the blush and shading as opacity layers.</li>
+<li>Make an annealing option that cools down all of the frogs at once (implement as an annealing speed slider)</li>
+<li>Reset accumulation histogram when changing beta</li>
+<li>Snap the inverse temperature slier around beta = 1 (unless annealing)</li>
+<li>Create an asset of spins arranging in order to explain the temperature and tempering idea</li>
+<li>Add left/right buttons in the top left in order to flip through examples (disable these in the notes post) [Add the ability to highlight these buttons]</li>
+<li>Examples (include a list in the demo page, designed to be written in a more technical way to describe what is going on likely for those who have already seen this stuff before. Link to the notes post for a more pedagogical explanation.)
+<ul>
+<li>Single red frog [triangle]</li>
+<li>Many red frogs, high simulation speed</li>
+<li>Single blue frog</li>
+<li>Many blue frogs, high simulation speed</li>
+<li>Single green frog</li>
+<li>Many green frogs, high simulation speed</li>
+<li>Many red frogs, high speed [line]</li>
+<li>Blue frogs, high speed</li>
+<li>Green frogs, high speed (introduce the idea of mixing time)</li>
+<li>Simulated annealing, medium speed (start on red, cool down)</li>
+<li>Simulated annealing, fast speed</li>
+</ul></li>
 </ul>
+<div class="column-screen">
 <div>
-<iframe align="middle" frameborder="0" height="1050" scrolling="yes" src="../../demos_code/demos/metropolis_hastings_flat/metropolis_hastings.html" width="1000px"></iframe>
+<iframe align="middle" frameborder="0" height="1000px" scrolling="no" src="../../demos_code/demos/metropolis_hastings_flat/metropolis_hastings.html" width="100%" min-width="600px;"></iframe>
+</div>
 </div>
 
 

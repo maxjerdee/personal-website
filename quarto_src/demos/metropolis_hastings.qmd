@@ -1,7 +1,7 @@
 ---
 title: "MCMC"
 description: "Explore Monte Carlo methods with hopping frogs"
-image: "../assets/images/notes/metropolis_hastings/Teaser.png"
+image: "../assets/images/notes/metropolis_hastings/thumbnail.png"
 ---
 
 This demo is based upon Figure 12.1 from John Miller's book [A Crude Look at the Whole](https://www.complexityexplorer.org/explore/resources/668-a-crude-look-at-the-whole).

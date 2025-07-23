@@ -1,6 +1,7 @@
 ---
 title: "Game of life"
 description: "Make music with Conway's game of life"
+image: "../assets/images/demos/game_of_life/thumbnail.png"
 format: html
 ---
 
