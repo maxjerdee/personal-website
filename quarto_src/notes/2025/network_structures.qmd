@@ -20,7 +20,7 @@ unrealistic to study. The network of interactions between the many
 pieces makes the system "complex." 
 
 This note gives examples of emergent structures found in these networks, 
-and the presentation is adapted from my PhD thesis.
+and the presentation is adapted from my [PhD thesis](../2025/thesis.html).
 
 ## Representing network data
 
@@ -31,7 +31,7 @@ simple framework is flexible enough to span a rich variety of
 applications and data under various interpretations of the nodes and
 edges.
 
-![Network of interactions observed by Setia  [@SV07] among $n = 6$
+![Network of interactions observed by Setia *et al.* [@SV07] among $n = 6$
 orangutans represented (a) as a graph and (b) as an adjacency
 matrix $\boldsymbol{A}$. (c) The node degrees $\boldsymbol{k}$, the number of
 interactions of each
@@ -40,7 +40,7 @@ orangutan.]({{< meta assets-folder >}}/orangutan-network.svg){#fig-orangutan-net
 An example network is given in
 [Figure @fig-orangutan-network]a. There the colored nodes represent 6
 Indonesian flanged male orangutans who are connected by an edge if a
-vocalization between them was observed in a study by Setia  [@SV07]. As
+vocalization between them was observed in a study by Setia *et al.* [@SV07]. As
 reflected in the graph, 5 of the 6 orangutans form a *clique* of nodes
 that each interact with each other while the remaining ape represented
 in red interfaced with only the orange and magenta orangutans.
@@ -80,7 +80,7 @@ symmetrically represent whether any interaction occurred between a pair
 of orangutans. The network is therefore an *undirected* graph and has a
 symmetric adjacency matrix. Although such undirected graphs are very
 common, and the focus of much work, many systems possess
-asymmetric interactions. In fact, in their observations Setia  not only
+asymmetric interactions. In fact, in their observations Setia *et al.* not only
 recorded whether a pair interacted but also which orangutan was dominant
 over the other from their pattern of vocalizations. We can add this
 layer of information to the network by converting it to a *directed*
@@ -101,7 +101,7 @@ cannibalism within a species is represented with a self-edge.
 
 By incorporating these generalizations, the network of
 [Figure @fig-orangutan-multigraph]a represents the full detail of the
-data set of Setia  [@SV07]. Where the original network of
+data set of Setia *et al.* [@SV07]. Where the original network of
 [Figure @fig-orangutan-network] represents *if* a pair of orangutans
 interact, this new network gives fuller context as to the *nature* of
 the interactions. The adjacency matrix in
@@ -214,7 +214,7 @@ group: a fully *disassortative* structure.
 [Figure @fig-community-examples]d gives an example of a bipartite
 plant-pollinator network. In it 13 species of Brazilian oil-flowers are
 connected to which of 13 species of pollinators visited them over the
-course of a study by Berezza  [@BMM09]. In this setting the nodes are
+course of a study by Berezza *et al.* [@BMM09]. In this setting the nodes are
 naturally sorted by their role as either a plant or a pollinator. Being
 a bipartite network, all interactions occur only between a plant and a
 pollinator, never directly between two plants or two pollinators.

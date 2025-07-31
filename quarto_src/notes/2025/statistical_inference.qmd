@@ -12,7 +12,7 @@ image: ../../assets/images/notes/statistical_inference/coin-flip-perspectives.sv
 #     - file: ../../assets/LaTeX/preamble.tex
 ---
 
-In this note we review the basics of statistical inference using simple toy models for flipping a coin. The ideas we review, like Bayesian inference and model selection, are widely used in network science to understand more complex systems. The presentation here is adapted from my PhD thesis, alongside reviews of [statistical physics](../2025/statistical_physics.html) and [information theory](../2025/information_theory.html).   
+In this note we review the basics of statistical inference using simple toy models for flipping a coin. The ideas we review, like Bayesian inference and model selection, are widely used in network science to understand more complex systems. The presentation here is adapted from my [PhD thesis](../2025/thesis.html), alongside reviews of [statistical physics](../2025/statistical_physics.html) and [information theory](../2025/information_theory.html).   
 
 ## A fair coin
 

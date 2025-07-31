@@ -23,7 +23,7 @@ $$\begin{aligned}
     P(\boldsymbol{s}|p) = p^{n_H}(1-p)^{n - n_H}. \end{aligned}$$ {#eq-coin-flip-likelihood}
 :::
 
-We define an physical model equivalent to this statistical one and explore how this physical perspective motivates alternative types of models and inference techniques. The presentation here is adapted from my PhD thesis, alongside reviews of [statistical inference](../2025/statistical_inference.html) and [information theory](../2025/information_theory.html)   
+We define an physical model equivalent to this statistical one and explore how this physical perspective motivates alternative types of models and inference techniques. The presentation here is adapted from my [PhD thesis](../2025/thesis.html), alongside reviews of [statistical inference](../2025/statistical_inference.html) and [information theory](../2025/information_theory.html)   
 
 ## Energy and its conservation
 
