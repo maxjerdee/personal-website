@@ -4,6 +4,8 @@ title: "Research interests"
 
 **My research leverages tools from physics, statistics, and diverse disciplines to model networks and enhance our understanding of the complex systems they represent. By modeling mechanisms, we can probe rich structures like groups and hierarchies in a wide variety of networks. My work looks to not only provide explanations for these observed patterns but also to justify and validate those inferences. By refining these methods, I ultimately aim to tighten the connection between mathematical models and qualitative, interpretable theories of system behavior.**
 
+Many of these threads are summarized and reviewed in my [PhD thesis](notes/2025/thesis.html).
+
 ### Community detection  
 In real-world networks we often find communities — groups of nodes which interact with each other more frequently than with nodes outside their group. Common examples include friend groups, functional neuronal groups, or ecological niches. Despite their ubiquity, network data does not often come to us already labeled with this group structure; it must be algorithmically inferred from the network alone. I work on refining and evaluating methods to find such groups in networks, especially in situations where usual models struggle.
 
