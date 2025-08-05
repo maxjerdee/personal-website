@@ -305,6 +305,6 @@
     "href": "code.html",
     "title": "Code",
     "section": "",
-    "text": "Packaged research code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nclustering-mi\n\n\n\npython\n\n\n\nMutual information between clusterings of the same objects\n\n\n\n\n\n\n\n\n\n\n\n\n\npairwise-ranking\n\n\n\npython\n\n\n\nInfer rankings and their depth\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Packaged research code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnetgroups\n\n\n\npython\n\n\nc++\n\n\n\nInfer network group structure\n\n\n\n\n\n\n\n\n\n\n\n\n\nmargin-matrices\n\n\n\npython\n\n\nc++\n\n\n\nCount and sample matrices with given margins\n\n\n\n\n\n\n\n\n\n\n\n\n\nclustering-mi\n\n\n\npython\n\n\n\nMutual information between clusterings of the same objects\n\n\n\n\n\n\n\n\n\n\n\n\n\npairwise-ranking\n\n\n\npython\n\n\n\nInfer rankings and their depth\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
