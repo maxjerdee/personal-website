@@ -12,12 +12,12 @@ listing:
     #   image: "assets/images/code/margin-matrices/thumbnail.png"
     #   description: "Count and sample matrices with given margins"
     #   categories: [python, c++]
-    - path: https://clustering-mi.readthedocs.io/en/stable/
+    - path: https://github.com/maxjerdee/clustering-mi # https://clustering-mi.readthedocs.io/en/stable/
       title: "clustering-mi"
       image: "assets/images/code/clustering-mi/thumbnail.png"
       description: "Mutual information between clusterings of the same objects"
       categories: [python]
-    - path: https://pairwise-ranking.readthedocs.io/en/latest/
+    - path: https://github.com/maxjerdee/pairwise-ranking # https://pairwise-ranking.readthedocs.io/en/latest/
       title: "pairwise-ranking"
       image: "assets/images/code/pairwise-ranking/thumbnail.png"
       description: "Infer rankings and their depth"
