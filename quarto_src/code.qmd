@@ -2,16 +2,6 @@
 title: "Code"
 listing:
   contents: 
-    # - path: https://netgroups.readthedocs.io/en/stable/
-    #   title: "netgroups"
-    #   image: "assets/images/code/netgroups/thumbnail.png"
-    #   description: "Infer network group structure"
-    #   categories: [python, c++]
-    # - path: https://margin-matrices.readthedocs.io/en/stable/
-    #   title: "margin-matrices"
-    #   image: "assets/images/code/margin-matrices/thumbnail.png"
-    #   description: "Count and sample matrices with given margins"
-    #   categories: [python, c++]
     - path: https://github.com/maxjerdee/clustering-mi # https://clustering-mi.readthedocs.io/en/stable/
       title: "clustering-mi"
       image: "assets/images/code/clustering-mi/thumbnail.png"
