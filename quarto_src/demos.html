@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Max Jerdee - Notes</title>
+<title>Max Jerdee - Demos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -173,11 +173,11 @@ window.Quarto = {
 <span class="menu-text">Code</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./demos.html"> 
+    <a class="nav-link active" href="./demos.html" aria-current="page"> 
 <span class="menu-text">Demos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./notes.html" aria-current="page"> 
+    <a class="nav-link" href="./notes.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
@@ -198,13 +198,13 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Inference">Inference <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Information theory">Information theory <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Physics">Physics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Review">Review <span class="quarto-category-count">(5)</span></div></div></div>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notes</h1>
+<h1 class="title">Demos</h1>
 </div>
 
 
@@ -221,180 +221,122 @@ window.Quarto = {
 </header>
 
 
-<p>Text-based ramblings</p>
+<p>Assorted projects I have worked on, generally try to explore a neat idea in an interactive way.</p>
 
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Review" data-listing-date-sort="1752638400000" data-listing-file-modified-sort="1753990107135" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2632">
-<div class="thumbnail">
-<p><a href="./notes/2025/network_structures.html" class="no-external"></a></p><a href="./notes/2025/network_structures.html" class="no-external">
-<p><img src="./assets/images/notes/network_structures/thumbnail.svg" class="thumbnail-image"></p>
-</a><p><a href="./notes/2025/network_structures.html" class="no-external"></a></p>
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1753289171266" data-listing-reading-time-sort="2" data-listing-word-count-sort="249">
+<a href="./demos/chaos_sampler.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./assets/images/demos/chaos_sampler/lorentz_explainer.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chaos sampler
+</h5>
+<div class="card-text listing-description">
+Use a chaotic system to chop up beat samples
 </div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./notes/2025/network_structures.html" class="no-external">Network structures</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./notes/2025/network_structures.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
-Review
-</div>
-</div>
-<div class="listing-description">
-<a href="./notes/2025/network_structures.html" class="no-external">An introduction to networks and the group and hierarchy structures they reveal</a>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
 </div>
 </div>
-<div class="metadata">
-<a href="./notes/2025/network_structures.html" class="no-external">
-<div class="listing-date">
-Jul 16, 2025
+</div>
 </div>
 </a>
 </div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1753288678775" data-listing-reading-time-sort="2" data-listing-word-count-sort="261">
+<a href="./demos/game_of_life.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./assets/images/demos/game_of_life/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Game of life
+</h5>
+<div class="card-text listing-description">
+Make music with Conway’s game of life
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Information theory,Review" data-listing-date-sort="1752552000000" data-listing-file-modified-sort="1753990103983" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3029">
-<div class="thumbnail">
-<p><a href="./notes/2025/information_theory.html" class="no-external"></a></p><a href="./notes/2025/information_theory.html" class="no-external">
-<p><img src="./assets/images/notes/information_theory/coin-flip-perspectives.svg" class="thumbnail-image"></p>
-</a><p><a href="./notes/2025/information_theory.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./notes/2025/information_theory.html" class="no-external">Information theory</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./notes/2025/information_theory.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Information theory'); return false;">
-Information theory
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
-Review
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
 </div>
 </div>
-<div class="listing-description">
-<a href="./notes/2025/information_theory.html" class="no-external">Basics of information theory: Shannon and Kolmogorov</a>
 </div>
-</div>
-<div class="metadata">
-<a href="./notes/2025/information_theory.html" class="no-external">
-<div class="listing-date">
-Jul 15, 2025
 </div>
 </a>
 </div>
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1753288652453" data-listing-reading-time-sort="2" data-listing-word-count-sort="220">
+<a href="./demos/metropolis_hastings.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./assets/images/notes/metropolis_hastings/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+MCMC
+</h5>
+<div class="card-text listing-description">
+Explore Monte Carlo methods with hopping frogs
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Physics,Inference,Review" data-listing-date-sort="1752465600000" data-listing-file-modified-sort="1753990111733" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3572">
-<div class="thumbnail">
-<p><a href="./notes/2025/statistical_physics.html" class="no-external"></a></p><a href="./notes/2025/statistical_physics.html" class="no-external">
-<p><img src="./assets/images/notes/statistical_physics/statistical-physics.svg" class="thumbnail-image"></p>
-</a><p><a href="./notes/2025/statistical_physics.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./notes/2025/statistical_physics.html" class="no-external">Statistical physics</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./notes/2025/statistical_physics.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Physics'); return false;">
-Physics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Inference'); return false;">
-Inference
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
-Review
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
 </div>
 </div>
-<div class="listing-description">
-<a href="./notes/2025/statistical_physics.html" class="no-external">Foundations of statistical physics from energy to entropy, and their links to model inference</a>
 </div>
-</div>
-<div class="metadata">
-<a href="./notes/2025/statistical_physics.html" class="no-external">
-<div class="listing-date">
-Jul 14, 2025
 </div>
 </a>
 </div>
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1753289137635" data-listing-reading-time-sort="1" data-listing-word-count-sort="114">
+<a href="./demos/relativity.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./assets/images/demos/relativity/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Special relativity
+</h5>
+<div class="card-text listing-description">
+Use your phone to observe how much your time slows down as you move around
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Inference,Review" data-listing-date-sort="1752206400000" data-listing-file-modified-sort="1753990109628" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4036">
-<div class="thumbnail">
-<p><a href="./notes/2025/statistical_inference.html" class="no-external"></a></p><a href="./notes/2025/statistical_inference.html" class="no-external">
-<p><img src="./assets/images/notes/statistical_inference/coin-flip-perspectives.svg" class="thumbnail-image"></p>
-</a><p><a href="./notes/2025/statistical_inference.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./notes/2025/statistical_inference.html" class="no-external">Statistical inference</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./notes/2025/statistical_inference.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Inference'); return false;">
-Inference
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
-Review
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
 </div>
 </div>
-<div class="listing-description">
-<a href="./notes/2025/statistical_inference.html" class="no-external">Quick primer on Bayesian inference, model selection, and validation</a>
 </div>
-</div>
-<div class="metadata">
-<a href="./notes/2025/statistical_inference.html" class="no-external">
-<div class="listing-date">
-Jul 11, 2025
 </div>
 </a>
 </div>
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1753288589101" data-listing-reading-time-sort="1" data-listing-word-count-sort="56">
+<a href="./demos/wikiguess.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./assets/images/demos/wikiguess/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+WikiGuess
+</h5>
+<div class="card-text listing-description">
+Compete with friends to estimate numbers from Wikipedia
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="Inference,Information theory,Review" data-listing-date-sort="1752120000000" data-listing-file-modified-sort="1753989987207" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="19">
-<div class="thumbnail">
-<p><a href="./notes/2025/thesis.html" class="no-external"></a></p><a href="./notes/2025/thesis.html" class="no-external">
-<p><img src="./assets/images/notes/thesis/thumbnail.png" class="thumbnail-image"></p>
-</a><p><a href="./notes/2025/thesis.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./notes/2025/thesis.html" class="no-external">PhD Thesis</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./notes/2025/thesis.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Inference'); return false;">
-Inference
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Information theory'); return false;">
-Information theory
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
-Review
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
 </div>
 </div>
-<div class="listing-description">
-<a href="./notes/2025/thesis.html" class="no-external">Inference and Information in Network Structure</a>
 </div>
-</div>
-<div class="metadata">
-<a href="./notes/2025/thesis.html" class="no-external">
-<div class="listing-date">
-Jul 10, 2025
 </div>
 </a>
-</div>
 </div>
 </div>
 <div class="listing-no-matching d-none">

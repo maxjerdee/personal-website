@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-07-11">
+<meta name="description" content="Quick primer on Bayesian inference, model selection, and validation">
+
+<title>Max Jerdee - Statistical inference</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/images/icon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SY1YC6MMLM"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Max Jerdee</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../papers.html"> 
+<span class="menu-text">Papers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../code.html"> 
+<span class="menu-text">Code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../demos.html"> 
+<span class="menu-text">Demos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../notes.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#a-fair-coin" id="toc-a-fair-coin" class="nav-link active" data-scroll-target="#a-fair-coin">A fair coin</a></li>
+  <li><a href="#a-biased-coin" id="toc-a-biased-coin" class="nav-link" data-scroll-target="#a-biased-coin">A biased coin</a></li>
+  <li><a href="#bayesian-inference" id="toc-bayesian-inference" class="nav-link" data-scroll-target="#bayesian-inference">Bayesian inference</a></li>
+  <li><a href="#bayesian-evidence" id="toc-bayesian-evidence" class="nav-link" data-scroll-target="#bayesian-evidence">Bayesian evidence</a></li>
+  <li><a href="#prediction-and-validation" id="toc-prediction-and-validation" class="nav-link" data-scroll-target="#prediction-and-validation">Prediction and validation</a></li>
+  <li><a href="#network-science" id="toc-network-science" class="nav-link" data-scroll-target="#network-science">Network science</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Statistical inference</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Inference</div>
+    <div class="quarto-category">Review</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Quick primer on Bayesian inference, model selection, and validation
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 11, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this note we review the basics of statistical inference using simple toy models for flipping a coin. The ideas we review, like Bayesian inference and model selection, are widely used in network science to understand more complex systems. The presentation here is adapted from my <a href="../2025/thesis.html">PhD thesis</a>, alongside reviews of <a href="../2025/statistical_physics.html">statistical physics</a> and <a href="../2025/information_theory.html">information theory</a>.</p>
+<section id="a-fair-coin" class="level2">
+<h2 class="anchored" data-anchor-id="a-fair-coin">A fair coin</h2>
+<p>Suppose we perform a simple experiment and record whether a two-sided coin lands "heads" or "tails" over&nbsp;<span class="math inline">\(n\)</span> flips. Before the experiment begins we might hypothesize that we hold a fair coin: that all coin flips are independent and result in heads with probability&nbsp;<span class="math inline">\(p = 0.5\)</span> and tails with probability&nbsp;<span class="math inline">\(1 - p = 0.5\)</span>. This natural assumption defines a <em>model</em> by assigning a <em>likelihood</em> of observing any particular sequence of heads and tails over the&nbsp;<span class="math inline">\(n\)</span> trials</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-coin-flip-fair-likelihood"><span class="math display">\[
+\begin{aligned}
+    P(\overbrace{\text{H},...,\text{T}}^{n \text{ flips}}|p = 0.5) = \frac{1}{2^n}. \end{aligned}
+\tag{1}\]</span></span></p>
+</div>
+<p>Although all possible sequences of&nbsp;<span class="math inline">\(n\)</span> outcomes are equally likely to appear under this model, certain observations may lead us to doubt our initial hypothesis. Suppose every coin flip we observe lands on heads. Although a single heads does not raise suspicion, 10 heads in a row start to be quite surprising at a probability of&nbsp;<span class="math inline">\(\sim 0.1\%\)</span>. And after 100 fair heads in a row we may start to question our place in the universe. The question arises: how many heads should we observe before abandoning our initial conjecture? And if the coin is not fair, what is its nature? Statistics provides many frameworks for approaching these questions.</p>
+<p>In the <em>frequentist</em> approach our initial assumption of fairness is called a <em>null model</em> (or "null hypothesis") which our experiment may then "reject." In this picture we define a <em>test statistic</em> that captures some surprising aspect of our observed data, in this case the unusually large number of heads&nbsp;<span class="math inline">\(n_H = n\)</span> observed. We then compute the likelihood that the null model could produce a result with a test statistic at least as extreme as that observed, known as the <em>p-value</em>. If this p-value is small it is unlikely the null model alone could generate an observation similar to ours. This improbability suggests our model is lacking and serves as grounds to "reject" it in favor of some alternative model more likely to have produced our observation.</p>
+<p>In linear regression, these p-values are often reported to reject the possibility of a slope of 0, of no relation between two variables. In network science, simple null models are likewise used to demonstrate that some observed structural feature like community or hierarchy requires a richer model to reproduce.</p>
+<p>For a fair coin the probability of observing&nbsp;<span class="math inline">\(n_H\)</span> heads out of&nbsp;<span class="math inline">\(n\)</span> trials is given by the binomial distribution <span class="math display">\[\begin{aligned}
+    P(n_H|p = 0.5) = \frac{1}{2^n} \binom{n}{n_H}.\end{aligned}\]</span> The p-value, the chance of observing some number of heads&nbsp;<span class="math inline">\(n_H'\)</span> greater than or equal to&nbsp;<span class="math inline">\(n_H\)</span>, is then</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P(n_H' \geq n_H|p = 0.5) = \frac{1}{2^n} \sum_{n_H' \geq n_H} \binom{n}{n_H'}.\end{aligned}
+\]</span></p>
+</div>
+<p>As shown in <a href="#fig-coin-flip-fair" class="quarto-xref">Figure&nbsp;1</a>, over 10 fair coin flips we expect an average of 5 heads in this model although small fluctuations such as 4 or 6 heads are also common. More lopsided outcomes are increasingly unlikely, so that the p-values of observing larger&nbsp;<span class="math inline">\(n_H\)</span> approach zero.</p>
+<div id="fig-coin-flip-fair" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coin-flip-fair-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../assets/images/notes/statistical_inference/coin-flip-fair.svg" class="img-fluid figure-img" style="width:4in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coin-flip-fair-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Distribution of the number of heads&nbsp;<span class="math inline">\(n_H\)</span> observed over &nbsp;<span class="math inline">\(n = 10\)</span> flips of a fair coin and the resulting p-value probabilities of observing at least&nbsp;<span class="math inline">\(n_H\)</span> heads. The region where the p-value is less than 0.05 is plotted in gray, a threshold to reject the null hypothesis of a fair coin.
+</figcaption>
+</figure>
+</div>
+<p>A smaller p-value yields a more <em>statistically significant</em> rejection of the null hypothesis. A threshold of&nbsp;<span class="math inline">\(P &lt; 0.05\)</span> is often used as a minimum standard, in which case we would reject the hypothesis of a fair coin in our experiment if 9 or 10 of the coin flips land heads. This demarcation at <span class="math inline">\(0.05\)</span> is arbitrary; however small there is always some chance that a genuine fair coin produced an observation as unusual as the one made. We would expect to obtain a p-value less than 0.05 and so reject the model in 1 of 20 experiments conducted with even a truly fair coin. The choice of p-value threshold reflects a tolerance for this possibility that our rejection is the result of chance rather than a genuine signal.</p>
+</section>
+<section id="a-biased-coin" class="level2">
+<h2 class="anchored" data-anchor-id="a-biased-coin">A biased coin</h2>
+<p>If such significance testing has led us to doubt that the coin is fair, we may consider an alternative hypothesis. We could instead model a biased coin whose flips are still independent but land heads with some fixed probability&nbsp;<span class="math inline">\(p \in [0,1]\)</span> and tails with probability&nbsp;<span class="math inline">\(1 - p\)</span>. Under this assumption the likelihood of a sequence with&nbsp;<span class="math inline">\(n_\text{H}\)</span> heads and&nbsp;<span class="math inline">\(n_\text{T} = n - n_\text{H}\)</span> tails is</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-coin-flip-likelihood"><span class="math display">\[\begin{aligned}
+P(\overbrace{\text{H},...,\text{T}}^{n_\text{H} \text{ heads}}|p) = p^{n_\text{H}}(1-p)^{n - n_\text{H}}. \end{aligned} \tag{2}\]</span></span></p>
+</div>
+<p>This defines a <em>nested model</em> by generalizing the fair coin as the special case&nbsp;<span class="math inline">\(p = 0.5\)</span>. Thus the original fair coin model can be directly compared against other choices of the <em>parameter</em>&nbsp;<span class="math inline">\(p\)</span> which each represent possible coins of varying levels of bias towards landing heads or tails. Before the experiment begins we imagine all these coins are possible and aim to <em>infer</em> the "true" value of&nbsp;<span class="math inline">\(p\)</span> realized by our coin based on the observations.</p>
+<p>To apply this model suppose that after 10 trials we observe a sequence</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-coin-flip-observations"><span class="math display">\[\begin{aligned}
+    (\text{H}, \text{H}, \text{T}, \text{T}, \text{H}, \text{T}, \text{T}, \text{H}, \text{T}, \text{T}), \end{aligned} \tag{3}\]</span></span></p>
+</div>
+<p>now a mixture of&nbsp;<span class="math inline">\(n_\text{H} = 4\)</span> heads and&nbsp;<span class="math inline">\(n_{\text{T}} = 6\)</span> tails. We fit the model likelihood <a href="#eq-coin-flip-likelihood" class="quarto-xref">Eq.&nbsp;2</a> to this data by finding the value of&nbsp;<span class="math inline">\(p\)</span> which would maximize the probability that our observed sequence occurred. For this model this is simply equal to the observed fraction of heads</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    \hat{p}_{\text{ML}} = \frac{n_\text{H}}{n}\end{aligned}\]</span></p>
+</div>
+<p>where the "ML" subscript indicates that this is the <em>maximum likelihood</em> estimate of&nbsp;<span class="math inline">\(p\)</span>. Our sequence of observations <a href="#eq-coin-flip-observations" class="quarto-xref">Eq.&nbsp;3</a> gives the estimate&nbsp;<span class="math inline">\(\hat{p}_{\text{ML}} = 0.4\)</span>.</p>
+<p>Although this&nbsp;<span class="math inline">\(\hat{p}_{\text{ML}}\)</span> is the single parameter value most likely to have generated our observations, it is unclear how seriously we should take the estimate. If the coin was in fact fair,&nbsp;<span class="math inline">\(p = 0.5\)</span>, the slight imbalance towards tails we observe could very well be a random fluctuation in our small sample size as seen in <a href="#fig-coin-flip-fair" class="quarto-xref">Figure&nbsp;1</a>. In our earlier language the p-value is not small enough to warrant rejecting the null hypothesis of a fair coin. To conclude that the one "true" value of&nbsp;<span class="math inline">\(p\)</span> is 0.4, for example to predict that 400 of the next 1000 flips will be heads, would likely&nbsp;<em>overfit</em> the data. As a more extreme example if we only observe a single coin flip which happens to land heads, the maximum likelihood estimate would conclude that&nbsp;<span class="math inline">\(\hat{p}_{\text{ML}} = 1\)</span> and thus that the coin will always land heads. There should be uncertainty in our conclusions, particularly when they are based on such little evidence.</p>
+</section>
+<section id="bayesian-inference" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-inference">Bayesian inference</h2>
+<p>By adopting a <em>Bayesian</em> perspective we can naturally represent this uncertainty in our inferences. In this framework we critically never exclude the possibility of any potential parameter value. Rather we infer from the data that some parameter values are more probable than others. At each stage of the experiment we represent our&nbsp;<em>belief</em> of likely values as a distribution over all possibilities rather than a single best-fit point.</p>
+<p>Before considering the data we define a&nbsp;<em>prior distribution</em> (or "prior") over the parameters that reflects our initial assumptions. Depending on the context of our experiment we may have quite different expectations that will rightfully influence the conclusions we draw. For example if we use a standard legal tender coin we may hesitate to conclude that the coin is notably biased, even after observing 10 heads in a row. However, if the flips instead involve either a hypothetical or peculiar-looking coin there may be more room for doubt. The form of the prior distribution precisely specifies our initial assumptions.</p>
+<p>For our example we will adopt a prior assumption that the coin is likely to be fair or approximately fair. Although a physical coin could conceivably be as biased as&nbsp;<span class="math inline">\(p = 0.4\)</span>, we expect a balanced&nbsp;<span class="math inline">\(p = 0.5\)</span> to be far more likely. To represent this we define a prior distribution over possible&nbsp;<span class="math inline">\(p\)</span> peaked at&nbsp;<span class="math inline">\(p = 0.5\)</span>, particularly a beta distribution&nbsp;<span class="math inline">\(p \sim B(20,20)\)</span></p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-coin-flip-P-p"><span class="math display">\[\begin{aligned}
+    P(p) = \frac{41!}{20!20!} p^{20}(1-p)^{20}, \end{aligned} \tag{4}\]</span></span></p>
+</div>
+<p>plotted in <a href="#fig-coin-flip-inference" class="quarto-xref">Figure&nbsp;2</a>c.&nbsp;This particular form of the prior and the number 20 are arbitrarily chosen for this example, although they represent a reasonable assumption for this scenario.</p>
+<div id="fig-coin-flip-inference" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coin-flip-inference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../assets/images/notes/statistical_inference/coin-flip-inference.svg" class="img-fluid figure-img" style="width:6in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coin-flip-inference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: (a) Posterior distributions of the parameter&nbsp;<span class="math inline">\(p\)</span> after observing 0 coin flips (a.k.a. prior distribution), 10, and 100 coin flips. In each experiment&nbsp;40% of trials are heads, a ratio marked by the vertical line in each plot. The posterior distributions are proportional to the product of the likelihood (b) and prior (c) over&nbsp;<span class="math inline">\(p\)</span>. As more observations are made the posterior is increasingly informed by the model likelihood.
+</figcaption>
+</figure>
+</div>
+<p>As we observe coin flips we update these prior beliefs to reflect new data and arrive at a new <em>posterior</em> distribution of likely parameter values. Using Bayes’ law this posterior distribution is proportional to the product of the model likelihood and the initial prior distribution as</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-bayes-law-prop"><span class="math display">\[\begin{aligned}
+    P(p|\text{H},...,\text{T}) \propto P(\text{H},...,\text{T}|p)P(p). \end{aligned} \tag{5}\]</span></span></p>
+</div>
+<p>This form ensures that when no data is observed the posterior distribution is equal to the prior assumption&nbsp;<span class="math inline">\(P(p)\)</span>. As flips are recorded the influence of the prior distribution wanes as the posterior is dominated by the model likelihood&nbsp;<span class="math inline">\(P(\text{H},...,\text{T}|p)\)</span>. <a href="#fig-coin-flip-inference" class="quarto-xref">Figure&nbsp;2</a> demonstrates this shift in the posterior distribution (a) from the prior (c) to the likelihood (b) after making 0, 10, and 100 observations at a ratio of 40% heads. As more observations are made with an empirical probability of&nbsp;<span class="math inline">\(p = 0.4\)</span>, our posterior distribution becomes increasingly concentrated around that belief. We must however observe sufficient evidence to overcome the strength of our initial assumptions before coming to that conclusion with certainty.</p>
+<p>The width and form of the posterior distribution gives a full picture of the uncertainty of our the inference. Although the posterior distribution in <a href="#fig-coin-flip-inference" class="quarto-xref">Figure&nbsp;2</a>a is tightly concentrated around a probability&nbsp;<span class="math inline">\(p \sim 0.4\)</span> after observing 100 flips, we retain some ambiguity if the parameter might deviate slightly from that peak. Nonetheless it is often useful to report the single choice of parameter most favored by the posterior distribution, known as the <em>maximum a posteriori</em> (MAP) estimate. For our example and choice of prior <a href="#eq-coin-flip-P-p" class="quarto-xref">Eq.&nbsp;4</a> this is</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-coin-flip-p-MAP"><span class="math display">\[\begin{aligned}
+    \hat{p}_{\text{MAP}} = \frac{n_H + 20}{n + 40}. \end{aligned} \tag{6}\]</span></span></p>
+</div>
+<p>The earlier interplay between the prior and likelihood is present in this estimate. When no coin flips are observed we obtain the prior assumption&nbsp;<span class="math inline">\(\hat{p}_{\text{MAP}} = 0.5\)</span>. As the number of observations&nbsp;<span class="math inline">\(n\)</span> increases, this Bayesian estimate approaches the frequentist maximum likelihood estimate, <span class="math inline">\(\hat{p}_{\text{MAP}} \rightarrow \frac{n_H}{n} = \hat{p}_{\text{ML}}\)</span>.</p>
+</section>
+<section id="bayesian-evidence" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-evidence">Bayesian evidence</h2>
+<p>To complete Bayes’ law and fully specify the posterior distribution we normalize <a href="#eq-bayes-law-prop" class="quarto-xref">Eq.&nbsp;5</a> as</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-bayes-law"><span class="math display">\[\begin{aligned}
+    P(p|\text{H},...,\text{T}) &amp;= \frac{P(\text{H},...,\text{T}|p)P(p)}{P(\text{H},...,\text{T})} \end{aligned} \tag{7}\]</span></span></p>
+</div>
+<p>where</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P(\text{H},...,\text{T}) = \int_0^1 P(\text{H},...,\text{T}|p)P(p) dp\end{aligned}\]</span></p>
+</div>
+<p>is the <em>evidence</em> (or "marginal likelihood") of the model. This evidence can be interpreted as the probability of arriving at the observations&nbsp;<span class="math inline">\(\text{H},...,\text{T}\)</span> through the two stage process of first choosing a parameter&nbsp;<span class="math inline">\(p\)</span> from the prior&nbsp;<span class="math inline">\(P(p)\)</span> then generating the data from the model likelihood&nbsp;<span class="math inline">\(P(\text{H},...,\text{T}|p)\)</span>. By integrating over all possible parameters&nbsp;<span class="math inline">\(p\)</span>, the Bayesian evidence is equal to the total probability that a model generates the observed data from our prior assumptions. A cartoon of this generative process is given in <a href="#fig-bayesian-evidence" class="quarto-xref">Figure&nbsp;3</a>.</p>
+<div id="fig-bayesian-evidence" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bayesian-evidence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../assets/images/notes/statistical_inference/bayesian-evidence.svg" class="img-fluid figure-img" style="width:7in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bayesian-evidence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Schematic of the full generative process of the fair and biased coin models. A parameter value <span class="math inline">\(p\)</span> is first drawn from the appropriate prior <span class="math inline">\(P(p)\)</span>, represented by the thicknesses of the top gray arrows to example parameter values <span class="math inline">\(p = 0.4, 0.5,\)</span> and <span class="math inline">\(0.6\)</span>. This choice of parameter then generates the observed data according to the model likelihood <span class="math inline">\(P(\text{H},...,\text{T}|p)\)</span>, represented by the weights of the colored arrows to the example observations of all tails, a mixture, and all heads. Lastly we compute the model evidence of each observation by summing over all generative paths leading to that outcome. For some data the fair model performs better while for others the biased coin is preferred.
+</figcaption>
+</figure>
+</div>
+<p>This is a useful interpretation for comparing competing models of a data set to perform <em>model selection</em>. A model with higher Bayesian evidence is more likely to have produced the observed data, and therefore has reason to be preferred. As an application we can compare the strict fair coin model described in <a href="#eq-coin-flip-fair-likelihood" class="quarto-xref">Eq.&nbsp;1</a> to the Bayesian model with the more permissive prior <a href="#eq-coin-flip-P-p" class="quarto-xref">Eq.&nbsp;4</a> on the observations&nbsp;<a href="#eq-coin-flip-observations" class="quarto-xref">Eq.&nbsp;3</a> of 4 out of 10 heads. The fair coin model assumes that the coin is exactly fair regardless of the observed evidence, an assumption that can be represented with a Dirac delta function prior</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P_{\text{fair}}(p) &amp;= \delta(p - 0.5).\end{aligned}\]</span></p>
+</div>
+<p>In this case integrating over the prior simply evaluates at&nbsp;<span class="math inline">\(p = 0.5\)</span> to give the model evidence</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P_{\text{fair}}(\text{H},...,\text{T}) &amp;= \int_0^1 P(\text{H},...,\text{T}|p)P_{\text{fair}}(p) dp \\
+    &amp;= \frac{1}{2^n} \approx 0.097\%\end{aligned}\]</span></p>
+</div>
+<p>that the fair coin model would generate our sequence. In comparison the model evidence with the prior <a href="#eq-coin-flip-P-p" class="quarto-xref">Eq.&nbsp;4</a> is</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P_{\text{gen}}(\text{H},...,\text{T}) &amp;= \int_0^1 P(\text{H},...,\text{T}|p)P(p) dp \\
+    &amp;= \frac{41!(20+n_H)!(20+n_T)!}{(41 + n)!20!20!} \\
+    &amp;\approx 0.091\%,\end{aligned}\]</span></p>
+</div>
+<p>and so this more general model is overall (slightly) less likely to have generated our observations. The ratio of such evidences is known as the <em>Bayes factor</em> between two models. Here the ratio</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    \frac{P_{\text{gen}}(\overbrace{\text{H},...,\text{T}}^{10 \text{ flips}})}{P_{\text{fair}}(\text{H},...,\text{T})} \approx 0.93\end{aligned}\]</span></p>
+</div>
+<p>less than 1 indicates that the more complex model is not justified over the fair coin. Note that the Bayesian evidence has naturally penalized over-parametrization. Although the choice of parameter&nbsp;<span class="math inline">\(p = 0.4\)</span> does a better job than the fair coin in isolation, it has a higher model likelihood, this peak must be weighed against all possible other values of the parameter which in this case offset that advantage.</p>
+<p>Had we instead observed 40 heads out of 100 flips, the Bayes factor flips to</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-coin-flip-bayes-factor"><span class="math display">\[\begin{aligned}
+    \frac{P_{\text{gen}}(\overbrace{\text{H},...,\text{T}}^{100 \text{ flips}})}{P_{\text{fair}}(\text{H},...,\text{T})} \approx 2.25 \end{aligned} \tag{8}\]</span></span></p>
+</div>
+<p>as the more flexible model is now preferred in the presence of increased evidence that the coin is not quite fair. Depending on the particular data set being considered we may prefer one model or the other.</p>
+<p>In fact, given two models&nbsp;<span class="math inline">\(M_1\)</span> and&nbsp;<span class="math inline">\(M_2\)</span>, there will always be data sets that prefer one model over the other. No model can be strictly better than another across all possible observations. To see this, consider the Bayesian evidences&nbsp;<span class="math inline">\(P_1(\boldsymbol{s})\)</span> and&nbsp;<span class="math inline">\(P_2(\boldsymbol{s})\)</span> of the two models. Both of these are normalized distributions over the possible observations that a model can generate. If we suppose that the Bayesian evidence&nbsp;<span class="math inline">\(P_1(\boldsymbol{s})\)</span> is greater than&nbsp;<span class="math inline">\(P_2(\boldsymbol{s})\)</span> for all observations&nbsp;<span class="math inline">\(\boldsymbol{s}\)</span>, both distributions can not be simultaneously normalized to 1 as</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    1 = \sum_{\boldsymbol{s}} P_1(\boldsymbol{s}) &gt; \sum_{\boldsymbol{s}} P_2(\boldsymbol{s}) \not= 1.\end{aligned}\]</span></p>
+</div>
+<p>There therefore exists both an observation&nbsp;<span class="math inline">\(\boldsymbol{s}_1\)</span> that favors model 1 and an observation&nbsp;<span class="math inline">\(\boldsymbol{s}_2\)</span> that favors model 2. In this spirit, this inherent trade-off is sometimes known as the "no free lunch" theorem&nbsp;<span class="citation" data-cites="PLC17">(<a href="#ref-PLC17" role="doc-biblioref">Peel, Larremore, and Clauset 2017</a>)</span>. When building models and performing model selection between them, we hope that "realistic data sets" fall within the preferred domain of our models.</p>
+<p>When considering a data set, we can also compute Bayes factors like <a href="#eq-coin-flip-bayes-factor" class="quarto-xref">Eq.&nbsp;8</a> by taking advantage of the nested structure of our model. Since the general model is equivalent to the fair coin model at the value&nbsp;<span class="math inline">\(p = 0.5\)</span>, the Bayes factor can be written in terms of the posterior distribution at that value. Explicitly we have</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P(p = 0.5|\text{H},...,\text{T}) &amp;= \frac{P(\text{H},...,\text{T}|p = 0.5)P(p = 0.5)}{P(\text{H},...,\text{T})} \\
+    &amp;= \frac{P_{\text{fair}}(\text{H},...,\text{T})}{P_{\text{gen}}(\text{H},...,\text{T})}.\end{aligned}
+\]</span></p>
+</div>
+<p>Because of this, if our posterior distribution in the general model is meaningfully peaked at&nbsp;<span class="math inline">\(p = 0.5\)</span>, the evidence of the fair coin is greater than that of the general coin. If the posterior excludes&nbsp;<span class="math inline">\(p = 0.5\)</span>, the reverse is true.</p>
+<p>This formulation is useful since it is often difficult in practice to compute the absolute Bayesian evidence of a model as it involves integrating over the high dimensional space of all possible parameter values. If we define a nested model, however, we can approximate the posterior distribution using Monte Carlo methods as demoed <a href="../../demos/metropolis_hastings.html">here</a> relatively easily and so compute these Bayes factors to compare models.</p>
+</section>
+<section id="prediction-and-validation" class="level2">
+<h2 class="anchored" data-anchor-id="prediction-and-validation">Prediction and validation</h2>
+<p>The Bayesian evidence offers a perspective on <em>unsupervised</em> machine learning tasks, where we aim to understand a data set in isolation without guidance or predefined outcomes. As the probability that the model generates a given observation, the evidence measures the quality of our model in a manner intrinsic to the data itself.</p>
+<p>Often, however, we may be interested in applying our model and its inferences beyond the scope of the initial data set. One application is to <em>predict</em> future events; for example, in a college football network of match outcomes, we might predict the winner between two teams that did not compete during the regular season. Additionally, we may <em>validate</em> our inferences against expert knowledge or existing context in a <em>supervised</em> setting, or compare the outputs of different models applied to the same data set. These practical purposes often fall under the umbrella of machine learning, which offers many methods to address these questions.</p>
+<p>If we assume that the same mechanisms that generated our observed data also inform unobserved outcomes, we can leverage our model inferences to make predictions. For example, if we observe a coin and are convinced it is fair, we may predict that future flips of the coin will land heads and tails with equal probability. This extrapolation may or may not be accurate. In machine learning terminology, we initially <em>fit</em> the model to the "training" data and then assess the quality of the resulting predictions using a "testing" data set.</p>
+<div id="fig-cross-validation" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cross-validation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../assets/images/notes/statistical_inference/cross-validation.svg" class="img-fluid figure-img" style="width:3in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cross-validation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Schematic of cross-validation for the coin flip example.
+</figcaption>
+</figure>
+</div>
+<p>In our coin flip example, we may split the sequence&nbsp;<span class="math inline">\(\boldsymbol{s}\)</span> we observe into a training set&nbsp;<span class="math inline">\(\boldsymbol{s}^{\text{train}}\)</span> of&nbsp;<span class="math inline">\(n^{\text{train}}\)</span> flips and testing set&nbsp;<span class="math inline">\(\boldsymbol{s}^{\text{test}}\)</span> of&nbsp;<span class="math inline">\(n^{\text{test}}\)</span> flips. <a href="#fig-cross-validation" class="quarto-xref">Figure&nbsp;4</a> provides a schematic of this <em>cross-validation</em> set up. After fitting the model to the training data we obtain the posterior distribution of the probability&nbsp;<span class="math inline">\(p\)</span>, represented as <span class="math inline">\(P(p|\boldsymbol{s}^{\text{train}})\)</span>, which is maximized by the best fit</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    \hat{p}_{\text{MAP}}^{\text{train}} = \frac{n_H^{\text{train}} + 20}{n^{\text{train}} + 40}\end{aligned}\]</span></p>
+</div>
+<p>as in <a href="#eq-coin-flip-p-MAP" class="quarto-xref">Eq.&nbsp;6</a>. Assuming the withheld testing data&nbsp;<span class="math inline">\(\boldsymbol{s}^{\text{test}}\)</span> is governed by the same parameter&nbsp;<span class="math inline">\(\hat{p}_{\text{MAP}}^{\text{train}}\)</span> as the <em>training</em> data, we can evaluate the likelihood <a href="#eq-coin-flip-likelihood" class="quarto-xref">Eq.&nbsp;2</a> on the <em>testing</em> data</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-log-likelihood-cross-validation"><span class="math display">\[\begin{aligned}
+P(\boldsymbol{s}^{\text{test}}|\hat{p}_{\text{MAP}}^{\text{train}}) = \left(\frac{n_H^{\text{train}} + 20}{n^{\text{train}} + 40}\right)^{n_H^{\text{test}}}\left(\frac{n_T^{\text{train}} + 20}{n^{\text{train}} + 40}\right)^{n_T^{\text{test}}}. \end{aligned} \tag{9}\]</span></span></p>
+</div>
+<p>This serves as a measure of the model’s out-of-sample predictive performance.</p>
+<p>While most cross-validation tests use the single best parameter, we can instead use the full posterior distribution of possible parameters to compute the <em>posterior predictive</em></p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P(\boldsymbol{s}^{\text{test}}|\boldsymbol{s}^{\text{train}}) &amp;= \int P(\boldsymbol{s}^{\text{test}}|p)P(p|\boldsymbol{s}^{\text{train}}) dp \nonumber \\
+    &amp;= \frac{(n^{\text{train}} + 41)!(n_H + 20)!(n_T + 20)!}{(n + 41)!(n_H^{\text{train}} + 20)!(n_H^{\text{train}} + 20)!}.\end{aligned}\]</span></p>
+</div>
+<p>This distribution is equal to the probability that the model generates the data&nbsp;<span class="math inline">\(\boldsymbol{s}^{\text{test}}\)</span> conditioned on it also generating&nbsp;<span class="math inline">\(\boldsymbol{s}^{\text{train}}\)</span>.</p>
+<p>In a cross validation context, the initial data set&nbsp;<span class="math inline">\(\boldsymbol{s}\)</span> is randomly split into the training and testing data sets, often at a 80/20 ratio. The predictive performance of the model is quantified using either the likelihood or posterior predictive. In keeping with the <a href="../2025/information_theory.html">information-theoretic interpretation</a>, we typically report the negative log likelihood or posterior predictive as</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-log-posterior-predictive-cross-validation"><span class="math display">\[\begin{aligned}
+    \langle H(\boldsymbol{s}^{\text{test}}|\hat{p}_{\text{MAP}}^{\text{train}})\rangle_{\boldsymbol{s}^{\text{test}},\boldsymbol{s}^{\text{train}}} &amp;= \langle -\log P(\boldsymbol{s}^{\text{test}}|\hat{p}_{\text{MAP}}^{\text{train}})\rangle_{\boldsymbol{s}^{\text{test}},\boldsymbol{s}^{\text{train}}},
+    \nonumber \\
+    \langle H(\boldsymbol{s}^{\text{test}}|\boldsymbol{s}^{\text{train}})\rangle_{\boldsymbol{s}^{\text{test}},\boldsymbol{s}^{\text{train}}} &amp;= \langle -\log P(\boldsymbol{s}^{\text{test}}|\boldsymbol{s}^{\text{train}})\rangle_{\boldsymbol{s}^{\text{test}},\boldsymbol{s}^{\text{train}}}, \end{aligned} \tag{10}\]</span></span></p>
+</div>
+<p>where the results are averaged over many possible validation splits&nbsp;<span class="math inline">\(\boldsymbol{s}^{\text{train}},\boldsymbol{s}^{\text{test}}\)</span>. In practice the likelihood and posterior predictive can give different results, but we will generally prefer to use the latter to evaluate the full posterior of possible parameter values.</p>
+<p>The Bayesian evidence can also be viewed as a measure of predictive performance, averaged over various data splits. We can write out our data set&nbsp;<span class="math inline">\(\boldsymbol{s}\)</span> as the sequence of coin flips&nbsp;<span class="math inline">\(s_1,...,s_n\)</span>. Bayesian evidence is the probability that the model generates this entire sequence. Meanwhile, the posterior predictive is the probability that the model generates some new piece of data given what it has already generated. By sampling the posterior predictive one coin flip at a time, we can therefore <em>sequentially</em> generate the full sequence.</p>
+<p>We start by sampling the first flip&nbsp;<span class="math inline">\(s_1\)</span>, which is equally likely <em>a priori</em> to be heads or tails. This outcome informs the next coin flip, drawn according to the posterior predictive&nbsp;<span class="math inline">\(P(s_2|s_1)\)</span>. This repeats until the final coin is predicted using all preceding results using&nbsp;<span class="math inline">\(P(s_n|s_{n-1},...,s_1)\)</span>. By definition of the posterior predictive, the overall probability of generating any given sequence of observations must then equal the Bayesian evidence as</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    P(\boldsymbol{s}) &amp;= P(s_n,s_{n-1},...,s_1) \nonumber \\
+    &amp;= P(s_n|s_{n-1},...,s_1)...P(s_2|s_1)P(s_1).\end{aligned}\]</span></p>
+</div>
+<p>From the logarithm of this equation, the description length of the data is the sum over the log-posterior-predictives at each step:</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    H(\boldsymbol{s}) = H(s_n|s_{n-1},...,s_1) + ... + H(s_2|s_1) + H(s_1).\end{aligned}\]</span></p>
+</div>
+<p>This relationship holds regardless of the order in which the coin flips are considered. Therefore, the normalized description length is also equal to a suitably defined average</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{aligned}
+    \frac{1}{n}H(\boldsymbol{s}) = \langle H(s_i|\boldsymbol{s}^{\text{train}})\rangle_{i,\boldsymbol{s}^{\text{train}}}\end{aligned}\]</span></p>
+</div>
+<p>over all possible subsets of training data and choices of single withheld test point&nbsp;<span class="math inline">\(s_i\)</span>&nbsp;<span class="citation" data-cites="FH20">(<a href="#ref-FH20" role="doc-biblioref">Fong and Holmes 2020</a>)</span>.</p>
+<p>We can thus use the Bayesian evidence not only as an information theoretic measure for model selection, but also as an indicator of overall predictive power. However, cross-validation results quantified using the log-likelihood <a href="#eq-log-likelihood-cross-validation" class="quarto-xref">Eq.&nbsp;9</a> and log-posterior-predictive <a href="#eq-log-posterior-predictive-cross-validation" class="quarto-xref">Eq.&nbsp;10</a> provide subtly different information about model performance, and are more common in much of the machine learning literature.</p>
+<p>Beyond prediction, we would often like to assess the quality of the inferred parameters directly. If we know from an artificial or empirical context that a parameter truly has a certain value, how does our inferred value compare? One way to establish such a "true" parameter value is in a <em>synthetic</em> test where we first draw a true value of the parameter&nbsp;<span class="math inline">\(p^{\text{true}}\)</span> from the prior&nbsp;<span class="math inline">\(P(p)\)</span>. We then sample an artificial data set&nbsp;<span class="math inline">\(\boldsymbol{s}\)</span> from the model likelihood&nbsp;<span class="math inline">\(P(\boldsymbol{s}|p^{\text{true}})\)</span>. Based solely on the resulting data&nbsp;<span class="math inline">\(\boldsymbol{s}\)</span>, we then infer the parameter&nbsp;<span class="math inline">\(p\)</span> and compare it to the underlying&nbsp;<span class="math inline">\(p^{\text{true}}\)</span>.</p>
+<p>In this Bayesian setting, the posterior&nbsp;<span class="math inline">\(P(p|\boldsymbol{s})\)</span> is by definition precisely the distribution of the parameters&nbsp;<span class="math inline">\(p\)</span> that could have resulted in the observation&nbsp;<span class="math inline">\(\boldsymbol{s}\)</span>. Thus, the full posterior distribution gives a complete and optimal description of the truth. Compared to this benchmark, synthetic tests provide valuable test cases to understand deviations in the inferences. For example, we can examine how inferences differ when models are misspecified and do not align with the actual generative process. Understanding this robustness is crucial when applying models to real data, where they very likely do not match the real generative process.</p>
+<p>Even when we consider the posterior of the true model, we may observe how point estimate summaries differ from the true value. Depending on how we quantify the distance between the inference&nbsp;<span class="math inline">\(\hat{p}\)</span> and the truth&nbsp;<span class="math inline">\(p^{\text{true}}\)</span>, different point estimates may be appropriate. If we define success as only when we get the parameter exactly right (using a "one-hot" metric), we should report the MAP estimate since it maximizes this posterior probability. However, if we aim to minimize the squared error (<span class="math inline">\(\ell_2\)</span> metric) of our inference, we should report the expected a posteriori (EAP) value, which provides the least squares estimate over the posterior. Thus even in the idealized scenario where the data is generated by model, our choice of metric over the parameters influences how we should summarize the inference, either with the mode or the mean of the posterior.</p>
+<p>While we can optimize our point estimates accordingly, the posterior distribution can often be highly dispersed or even multimodal. This means that, given the data, multiple parameter values may fit equally well. The true parameter could reside at any of these peaks, meaning that no single point estimate can reliably be close to the truth. Many inference problems undergo a transition between a noisy regime where it is not possible to consistently identify the generating parameters to a data-rich regime where it becomes feasible. <!-- Section [\[sec:SBM\]](#sec:SBM){reference-type="ref"
+reference="sec:SBM"} discusses such an example in the context of finding
+group structures in networks, which corresponds to the phase transition
+of the Ising model at its critical temperature. --></p>
+<!-- In this thesis, we will employ synthetic tests, cross-validation, and
+parameter metrics to better understand the performance of our network
+models. Applying these validation frameworks to networks presents unique
+challenges. For instance, when examining the group structure of a
+network, we need to evaluate the quality of group identity parameters.
+Unlike the real probability $p$ of coin flips, there is no inherent
+notion of \"distance\" or \"mean\" among group labelings, which are
+categorical variables, to facilitate comparison.
+
+In Chapter [\[chp:information\]](#chp:information){reference-type="ref"
+reference="chp:information"} we discuss information-theoretic measures
+to assess the similarity between two such clusterings of the same set of
+objects. We then apply this measure in synthetic tests to observe the
+relative performance of commonly used algorithms to recover the ground
+truth groups used to generate the network. In this picture we also
+observe regimes or types of group structure where all algorithms
+struggle to recover the truth.
+
+The projects considered in this work involve ideas borrowed from the
+disciplines discussed in all of these Appendices, often in ways that do
+not cleanly separate into a single category. In
+Figure [\[fig:network-perspectives\]](#fig:network-perspectives){reference-type="ref"
+reference="fig:network-perspectives"} we have illustrated schematics of
+these applications across the thesis. -->
+</section>
+<section id="network-science" class="level2">
+<h2 class="anchored" data-anchor-id="network-science">Network science</h2>
+<p>In network science, this Bayesian approach is particularly powerful for model selection and parameter inference. For example, when analyzing the structure of a network, we might compare a simple random graph model (e.g., Erdős–Rényi) against a more complex description like the configuration model. The model evidence naturally weighs the goodness-of-fit against the complexity of the model and penalizes models whose extra flexibility only hampers their explanatory power.</p>
+<p>Nested models are a particularly useful way to select between models, and are a central trick in much of my research. In each application we start with a simple model then generalize it within this Bayesian framework. By doing this we can check both whether this generalization is warranted and, if so, measure the size of the new effect, just like we infer&nbsp;<span class="math inline">\(p\)</span> in the biased coin model. For example in work <span class="citation" data-cites="JN24">(<a href="#ref-JN24" role="doc-biblioref">Jerdee and Newman 2024</a>)</span> with Mark Newman we had applied these methods to directly compare Bradley-Terry models against minimum violation ranking by constructing a general model that includes both possibilities as special cases. By stating and incorporating our prior expectations into the inference process, a Bayesian framework enables us to handle uncertainty and validate our models in a graceful manner.</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-FH20" class="csl-entry" role="listitem">
+Fong, Edwin, and Chris C. Holmes. 2020. <span>“On the Marginal Likelihood and Cross-Validation.”</span> <em>Biometrika</em> 107 (2): 489–96.
+</div>
+<div id="ref-JN24" class="csl-entry" role="listitem">
+Jerdee, Maximilian, and M. E. J. Newman. 2024. <span>“Luck, Skill, and Depth of Competition in Games and Social Hierarchies.”</span> <em>Science Advances</em> 10 (45): eadn2654.
+</div>
+<div id="ref-PLC17" class="csl-entry" role="listitem">
+Peel, Leto, Daniel B. Larremore, and Aaron Clauset. 2017. <span>“The Ground Truth about Metadata and Community Detection in Networks.”</span> <em>Science Advances</em> 3: e1602548.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Max Jerdee - Notes</title>
+<title>Max Jerdee - Research interests</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./assets/images/icon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SY1YC6MMLM"></script>
 
 <script type="text/javascript">
@@ -110,35 +79,6 @@ gtag('js', new Date());
 gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -161,7 +101,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link active" href="./research.html" aria-current="page"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
@@ -177,7 +117,7 @@ window.Quarto = {
 <span class="menu-text">Demos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./notes.html" aria-current="page"> 
+    <a class="nav-link" href="./notes.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
@@ -197,14 +137,24 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Inference">Inference <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Information theory">Information theory <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Physics">Physics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Review">Review <span class="quarto-category-count">(5)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#community-detection" id="toc-community-detection" class="nav-link active" data-scroll-target="#community-detection">Community detection</a></li>
+  <li><a href="#hierarchies" id="toc-hierarchies" class="nav-link" data-scroll-target="#hierarchies">Hierarchies</a></li>
+  <li><a href="#scalable-inference" id="toc-scalable-inference" class="nav-link" data-scroll-target="#scalable-inference">Scalable inference</a></li>
+  <li><a href="#asymptotic-understanding" id="toc-asymptotic-understanding" class="nav-link" data-scroll-target="#asymptotic-understanding">Asymptotic understanding</a></li>
+  <li><a href="#implementation-and-outreach" id="toc-implementation-and-outreach" class="nav-link" data-scroll-target="#implementation-and-outreach">Implementation and outreach</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notes</h1>
+<h1 class="title">Research interests</h1>
 </div>
 
 
@@ -221,186 +171,33 @@ window.Quarto = {
 </header>
 
 
-<p>Text-based ramblings</p>
+<p><strong>My research leverages tools from physics, statistics, and diverse disciplines to model networks and enhance our understanding of the complex systems they represent. By modeling mechanisms, we can probe rich structures like groups and hierarchies in a wide variety of networks. My work looks to not only provide explanations for these observed patterns but also to justify and validate those inferences. By refining these methods, I ultimately aim to tighten the connection between mathematical models and qualitative, interpretable theories of system behavior.</strong></p>
+<p>Many of these threads are summarized and reviewed in my <a href="notes/2025/thesis.html">PhD thesis</a>.</p>
+<section id="community-detection" class="level3">
+<h3 class="anchored" data-anchor-id="community-detection">Community detection</h3>
+<p>In real-world networks we often find communities — groups of nodes which interact with each other more frequently than with nodes outside their group. Common examples include friend groups, functional neuronal groups, or ecological niches. Despite their ubiquity, network data does not often come to us already labeled with this group structure; it must be algorithmically inferred from the network alone. I work on refining and evaluating methods to find such groups in networks, especially in situations where usual models struggle.</p>
+</section>
+<section id="hierarchies" class="level3">
+<h3 class="anchored" data-anchor-id="hierarchies">Hierarchies</h3>
+<p>When we observe directed relationships such as dominance interactions among animals or humans, the directions of faculty hiring among universities, or wins and losses in games and sports, hierarchies routinely emerge. I use Bayesian models to not only find the order of these hierarchies, but also how unequal they are. For example, animal hierarchies are generally much stricter than those in sports or schools. By measuring effects like social inequality, I hope to better understand what drives these differences and how they affect people at the top and bottom.</p>
+</section>
+<section id="scalable-inference" class="level3">
+<h3 class="anchored" data-anchor-id="scalable-inference">Scalable inference</h3>
+<p>As our models get more complicated, analysis gets harder. I’m interested in developing computational tools—like Monte Carlo methods and belief propagation—to efficiently compare models and estimate which ones best explain real network data, even for huge datasets.</p>
+</section>
+<section id="asymptotic-understanding" class="level3">
+<h3 class="anchored" data-anchor-id="asymptotic-understanding">Asymptotic understanding</h3>
+<p>Many network problems boil down to large, random matrices—which physics has great tools for analyzing. These networks, however, can only capture <em>dyadic</em> interactions between pairs of nodes. “Hypergraphs” that capture higher order interactions are described by random tensors instead. I aim to better understand the behavior of these large random tensors, and its implications for network science and physics at large.</p>
+</section>
+<section id="implementation-and-outreach" class="level3">
+<h3 class="anchored" data-anchor-id="implementation-and-outreach">Implementation and outreach</h3>
+<p>Overall, I aim to not only advance these methods, but also make them accessible. I’m especially interested in creating interactive online resources to share our findings and make network science more approachable to everyone.</p>
+<hr>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Review" data-listing-date-sort="1752638400000" data-listing-file-modified-sort="1753990107135" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2632">
-<div class="thumbnail">
-<p><a href="./notes/2025/network_structures.html" class="no-external"></a></p><a href="./notes/2025/network_structures.html" class="no-external">
-<p><img src="./assets/images/notes/network_structures/thumbnail.svg" class="thumbnail-image"></p>
-</a><p><a href="./notes/2025/network_structures.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./notes/2025/network_structures.html" class="no-external">Network structures</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./notes/2025/network_structures.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
-Review
-</div>
-</div>
-<div class="listing-description">
-<a href="./notes/2025/network_structures.html" class="no-external">An introduction to networks and the group and hierarchy structures they reveal</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./notes/2025/network_structures.html" class="no-external">
-<div class="listing-date">
-Jul 16, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Information theory,Review" data-listing-date-sort="1752552000000" data-listing-file-modified-sort="1753990103983" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3029">
-<div class="thumbnail">
-<p><a href="./notes/2025/information_theory.html" class="no-external"></a></p><a href="./notes/2025/information_theory.html" class="no-external">
-<p><img src="./assets/images/notes/information_theory/coin-flip-perspectives.svg" class="thumbnail-image"></p>
-</a><p><a href="./notes/2025/information_theory.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./notes/2025/information_theory.html" class="no-external">Information theory</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./notes/2025/information_theory.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Information theory'); return false;">
-Information theory
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
-Review
-</div>
-</div>
-<div class="listing-description">
-<a href="./notes/2025/information_theory.html" class="no-external">Basics of information theory: Shannon and Kolmogorov</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./notes/2025/information_theory.html" class="no-external">
-<div class="listing-date">
-Jul 15, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Physics,Inference,Review" data-listing-date-sort="1752465600000" data-listing-file-modified-sort="1753990111733" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3572">
-<div class="thumbnail">
-<p><a href="./notes/2025/statistical_physics.html" class="no-external"></a></p><a href="./notes/2025/statistical_physics.html" class="no-external">
-<p><img src="./assets/images/notes/statistical_physics/statistical-physics.svg" class="thumbnail-image"></p>
-</a><p><a href="./notes/2025/statistical_physics.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./notes/2025/statistical_physics.html" class="no-external">Statistical physics</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./notes/2025/statistical_physics.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Physics'); return false;">
-Physics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Inference'); return false;">
-Inference
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
-Review
-</div>
-</div>
-<div class="listing-description">
-<a href="./notes/2025/statistical_physics.html" class="no-external">Foundations of statistical physics from energy to entropy, and their links to model inference</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./notes/2025/statistical_physics.html" class="no-external">
-<div class="listing-date">
-Jul 14, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Inference,Review" data-listing-date-sort="1752206400000" data-listing-file-modified-sort="1753990109628" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4036">
-<div class="thumbnail">
-<p><a href="./notes/2025/statistical_inference.html" class="no-external"></a></p><a href="./notes/2025/statistical_inference.html" class="no-external">
-<p><img src="./assets/images/notes/statistical_inference/coin-flip-perspectives.svg" class="thumbnail-image"></p>
-</a><p><a href="./notes/2025/statistical_inference.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./notes/2025/statistical_inference.html" class="no-external">Statistical inference</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./notes/2025/statistical_inference.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Inference'); return false;">
-Inference
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
-Review
-</div>
-</div>
-<div class="listing-description">
-<a href="./notes/2025/statistical_inference.html" class="no-external">Quick primer on Bayesian inference, model selection, and validation</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./notes/2025/statistical_inference.html" class="no-external">
-<div class="listing-date">
-Jul 11, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Inference,Information theory,Review" data-listing-date-sort="1752120000000" data-listing-file-modified-sort="1753989987207" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="19">
-<div class="thumbnail">
-<p><a href="./notes/2025/thesis.html" class="no-external"></a></p><a href="./notes/2025/thesis.html" class="no-external">
-<p><img src="./assets/images/notes/thesis/thumbnail.png" class="thumbnail-image"></p>
-</a><p><a href="./notes/2025/thesis.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./notes/2025/thesis.html" class="no-external">PhD Thesis</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./notes/2025/thesis.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Inference'); return false;">
-Inference
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Information theory'); return false;">
-Information theory
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
-Review
-</div>
-</div>
-<div class="listing-description">
-<a href="./notes/2025/thesis.html" class="no-external">Inference and Information in Network Structure</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./notes/2025/thesis.html" class="no-external">
-<div class="listing-date">
-Jul 10, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

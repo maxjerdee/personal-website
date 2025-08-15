@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-10-06">
-<meta name="description" content="What the mutual information is, some of its variants and where it is used">
 
-<title>Max Jerdee - Understanding mutual information</title>
+<title>Max Jerdee - Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,25 +23,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../assets/images/icon.svg" rel="icon" type="image/svg+xml">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./assets/images/icon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SY1YC6MMLM"></script>
 
 <script type="text/javascript">
@@ -81,8 +110,37 @@ gtag('js', new Date());
 gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -92,7 +150,7 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Max Jerdee</span>
     </a>
   </div>
@@ -103,23 +161,27 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../research.html"> 
+    <a class="nav-link" href="./research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../papers.html"> 
+    <a class="nav-link" href="./papers.html"> 
 <span class="menu-text">Papers</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../demos.html"> 
+    <a class="nav-link" href="./code.html"> 
+<span class="menu-text">Code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./demos.html"> 
 <span class="menu-text">Demos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../notes.html"> 
+    <a class="nav-link active" href="./notes.html" aria-current="page"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv.html"> 
+    <a class="nav-link" href="./cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -136,36 +198,20 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Inference">Inference <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Information theory">Information theory <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Physics">Physics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Review">Review <span class="quarto-category-count">(5)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Understanding mutual information</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Community detection</div>
-    <div class="quarto-category">Information theory</div>
-    <div class="quarto-category">Model selection</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    What the mutual information is, some of its variants and where it is used
-  </div>
+<h1 class="title">Notes</h1>
 </div>
+
 
 
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 6, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -175,15 +221,186 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 </header>
 
 
-<p>Mutual information is a similarity measure often used to compare the output of two clusterings of the same set of objects. For example, we could be given a set of people</p>
-<ul>
-<li>Base this off of that Northeastern talk:</li>
-<li>Go through how we can understand the correspondence between probability and information.</li>
-</ul>
+<p>Text-based ramblings</p>
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Review" data-listing-date-sort="1752638400000" data-listing-file-modified-sort="1753990107135" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2632">
+<div class="thumbnail">
+<p><a href="./notes/2025/network_structures.html" class="no-external"></a></p><a href="./notes/2025/network_structures.html" class="no-external">
+<p><img src="./assets/images/notes/network_structures/thumbnail.svg" class="thumbnail-image"></p>
+</a><p><a href="./notes/2025/network_structures.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./notes/2025/network_structures.html" class="no-external">Network structures</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./notes/2025/network_structures.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
+Review
+</div>
+</div>
+<div class="listing-description">
+<a href="./notes/2025/network_structures.html" class="no-external">An introduction to networks and the group and hierarchy structures they reveal</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./notes/2025/network_structures.html" class="no-external">
+<div class="listing-date">
+Jul 16, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Information theory,Review" data-listing-date-sort="1752552000000" data-listing-file-modified-sort="1753990103983" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3029">
+<div class="thumbnail">
+<p><a href="./notes/2025/information_theory.html" class="no-external"></a></p><a href="./notes/2025/information_theory.html" class="no-external">
+<p><img src="./assets/images/notes/information_theory/coin-flip-perspectives.svg" class="thumbnail-image"></p>
+</a><p><a href="./notes/2025/information_theory.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./notes/2025/information_theory.html" class="no-external">Information theory</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./notes/2025/information_theory.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Information theory'); return false;">
+Information theory
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
+Review
+</div>
+</div>
+<div class="listing-description">
+<a href="./notes/2025/information_theory.html" class="no-external">Basics of information theory: Shannon and Kolmogorov</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./notes/2025/information_theory.html" class="no-external">
+<div class="listing-date">
+Jul 15, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="Physics,Inference,Review" data-listing-date-sort="1752465600000" data-listing-file-modified-sort="1753990111733" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3572">
+<div class="thumbnail">
+<p><a href="./notes/2025/statistical_physics.html" class="no-external"></a></p><a href="./notes/2025/statistical_physics.html" class="no-external">
+<p><img src="./assets/images/notes/statistical_physics/statistical-physics.svg" class="thumbnail-image"></p>
+</a><p><a href="./notes/2025/statistical_physics.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./notes/2025/statistical_physics.html" class="no-external">Statistical physics</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./notes/2025/statistical_physics.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Physics'); return false;">
+Physics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Inference'); return false;">
+Inference
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
+Review
+</div>
+</div>
+<div class="listing-description">
+<a href="./notes/2025/statistical_physics.html" class="no-external">Foundations of statistical physics from energy to entropy, and their links to model inference</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./notes/2025/statistical_physics.html" class="no-external">
+<div class="listing-date">
+Jul 14, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="Inference,Review" data-listing-date-sort="1752206400000" data-listing-file-modified-sort="1753990109628" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4036">
+<div class="thumbnail">
+<p><a href="./notes/2025/statistical_inference.html" class="no-external"></a></p><a href="./notes/2025/statistical_inference.html" class="no-external">
+<p><img src="./assets/images/notes/statistical_inference/coin-flip-perspectives.svg" class="thumbnail-image"></p>
+</a><p><a href="./notes/2025/statistical_inference.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./notes/2025/statistical_inference.html" class="no-external">Statistical inference</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./notes/2025/statistical_inference.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Inference'); return false;">
+Inference
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
+Review
+</div>
+</div>
+<div class="listing-description">
+<a href="./notes/2025/statistical_inference.html" class="no-external">Quick primer on Bayesian inference, model selection, and validation</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./notes/2025/statistical_inference.html" class="no-external">
+<div class="listing-date">
+Jul 11, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="Inference,Information theory,Review" data-listing-date-sort="1752120000000" data-listing-file-modified-sort="1753989987207" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="19">
+<div class="thumbnail">
+<p><a href="./notes/2025/thesis.html" class="no-external"></a></p><a href="./notes/2025/thesis.html" class="no-external">
+<p><img src="./assets/images/notes/thesis/thumbnail.png" class="thumbnail-image"></p>
+</a><p><a href="./notes/2025/thesis.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./notes/2025/thesis.html" class="no-external">PhD Thesis</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./notes/2025/thesis.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Inference'); return false;">
+Inference
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Information theory'); return false;">
+Information theory
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Review'); return false;">
+Review
+</div>
+</div>
+<div class="listing-description">
+<a href="./notes/2025/thesis.html" class="no-external">Inference and Information in Network Structure</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./notes/2025/thesis.html" class="no-external">
+<div class="listing-date">
+Jul 10, 2025
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
