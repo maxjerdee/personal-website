@@ -21,7 +21,7 @@ website:
         text: Demos
       - href: notes.qmd
         text: Notes
-      - href: cv.html
+      - href: assets/pdf/CV.pdf
         text: CV
 
 format:

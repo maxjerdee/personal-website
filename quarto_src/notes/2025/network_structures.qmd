@@ -20,7 +20,7 @@ unrealistic to study. The network of interactions between the many
 pieces makes the system "complex." 
 
 This note gives examples of emergent structures found in these networks, 
-and the presentation is adapted from my [PhD thesis](../2025/thesis.html).
+and the presentation is adapted from my [PhD thesis](../../assets/pdf/Thesis.pdf).
 
 ## Representing network data
 

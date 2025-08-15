@@ -14,7 +14,7 @@ image: ../../assets/images/notes/information_theory/coin-flip-perspectives.svg
  
 In this note we informally discuss the foundations of information theory from Shannon entropy to Kolmogorov complexity. These concepts allow us to
 reckon with the inherent complexity of the data observed in a general
-sense, underpinning much of my research. The presentation is adapted from my [PhD thesis](../2025/thesis.html), alongside reviews of [statistical inference](../2025/statistical_inference.html) and [physics](../2025/statistical_physics.html).
+sense, underpinning much of my research. The presentation is adapted from my [PhD thesis](../../assets/pdf/Thesis.pdf), alongside reviews of [statistical inference](../2025/statistical_inference.html) and [physics](../2025/statistical_physics.html).
 
 ## Encoding 
 Central to information theory is a thought experiment aiming to *encode*

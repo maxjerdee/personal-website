@@ -1,8 +1,0 @@
----
-title: "CV"
----
-
-```{=html}
-<embed src="assets/pdf/CV.pdf" width="800px" height="1000px" />
-```
-

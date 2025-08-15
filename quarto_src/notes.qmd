@@ -4,7 +4,17 @@ listing:
     sort: "date desc"
     type: default
     categories: true
-    contents: notes
+    contents: 
+        - notes
+        - path: assets/pdf/Thesis.pdf
+          title: "PhD Thesis"
+          description: "Inference and Information in Network Structure"
+          categories:
+            - Inference
+            - Information theory
+            - Review
+          date: 07/10/25
+          image: assets/images/notes/thesis/thumbnail.png
 ---
 
 Text-based ramblings
