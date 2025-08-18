@@ -12,7 +12,7 @@ about:
     - text: "{{< iconify academicons google-scholar >}} Scholar"
       href: https://scholar.google.com/citations?user=t13Mib4AAAAJ&hl=en
     - text: "{{< iconify carbon document >}} CV"
-      href: assets/pdf/Thesis.pdf
+      href: assets/pdf/CV.pdf
 ---
 
 I am a Physics PhD student at the University of Michigan advised by Prof. [Mark Newman](https://websites.umich.edu/~mejn/) and affiliated with the [Center for the Study of Complex Systems](https://lsa.umich.edu/cscs). I will be starting as an Omidyar Postdoctoral Fellow at the [Santa Fe Institute](https://www.santafe.edu/) in Fall 2025.
