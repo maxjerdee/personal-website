@@ -1,0 +1,111 @@
+---
+title: "Behind this website"
+description: "Walkthrough to set up a Quarto website like this one."
+categories:
+  - Coding
+date: 08/18/25
+assets-folder: "../../assets/images/notes/personal_website"
+image: ../../assets/images/notes/personal_website/thumbnail.png
+# include-in-header:
+#     - file: ../../assets/LaTeX/preamble.tex
+---
+
+This note was developed with the help of [Bhaskar Kumawat](https://www.kumawatb.com/) for a professional development workshop at the University of Michigan. [This repository](https://github.com/maxjerdee/website-example) is a template for developing your own personal academic website using the [quarto framework](https://quarto.org/). I've found the framework to be fun to work with to build out my own personal website ([maxjerdee.com](https://www.maxjerdee.com)).
+
+After following these steps you should have a basic website that looks [like this](https://maxjerdee.github.io/website-example/) which you can then further customize and expand. 
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- You have a [GitHub account](https://github.com/join).
+    Test this by signing in to your account [here](https://github.com/login).
+- You have [Git](https://git-scm.com/) installed on your computer.
+    Test this by opening your terminal and running `git --version`. You should also be able to push and pull files between your local machine and GitHub, either on the command line using SSH or with a tool like GitHub desktop.
+- You have [Quarto](https://quarto.org/docs/get-started/) installed on your computer.
+    Test this by opening your terminal and running `quarto --version`.
+
+### Steps
+
+1. **Fork this repository to make a version of this code on your own GitHub account**
+
+![]({{< meta assets-folder >}}/fork.png){width=100 fig-align="center"}
+
+- Note that at this stage you can rename the repository it to something like "personal-website" although this will slightly change the following commands. If you do not have GitHub Pro, you will need to keep the repository public. 
+
+2. **Clone the repository onto your local machine**
+- Open your terminal and run `git clone https://github.com/YOUR_USERNAME/website-example.git` to download a coppy of your forked repository. This URL should match what is found from the green "Code" button on your forked repository page. (Alternatively use GitHub desktop for this step)
+
+![]({{< meta assets-folder >}}/clone.png){width=300 fig-align="center"}
+
+- Navigate into the repository folder run `cd website-example` in the terminal.
+
+3. **Locally check the website**
+- Run `quarto preview` inside the `website-example` directory to render the website locally. This will open a browser window with the website, which you can edit and refresh to see changes. You maybe need to manually copy the given link, which will look like `http://localhost:6040` (numbers will be randomized). Keep this terminal window open while you work on the website, when changes are made they will update in real-time.
+
+![]({{< meta assets-folder >}}/preview.png){width=500 fig-align="center"}
+
+4. **Customize the website content in any text editor (VS code is convenient)**
+ - Edit the `index.qmd` file to include your own name, short description, and other personal information. 
+ - Edit the `papers.qmd` to reflect your publications or preprints (can also delete this tab by changing the `_quarto.yml` file)
+ - Edit `research.qmd` to include your research interests and projects.
+ - Change `assets/CV.pdf` to a pdf of your own CV. 
+ - Play around with the overall theme and layout by changing the `template: solana` in `index.qmd` and `theme: cosmo` in `_quarto.yml` to different options.
+
+5. **Push your edits to your GitHub repository**
+- Open your terminal and run `git add .` to stage your changes.
+- Run `git commit -m "Update website content"` to commit your changes.
+- Run `git push` to push your changes to your GitHub repository. (May need to enter credentials)
+- (This can also be done using GitHub desktop).
+
+6. **Host using GitHub pages**
+- Click on Settings
+
+![]({{< meta assets-folder >}}/settings.png){width=500 fig-align="center"}
+
+- Click on Pages
+
+![]({{< meta assets-folder >}}/pages.png){width=300 fig-align="center"}
+
+- Select the "master" branch, then the "docs" folder, and click "Save" to tell GitHub where the HTML files can be found
+
+![]({{< meta assets-folder >}}/docs.png){width=400 fig-align="center"}
+
+- Can check the "Actions" tab to see the job where GitHub renders the Quarto markdown files into HTML. Once the deployment is complete a green checkmark will appear (typically less than a minute)
+
+![]({{< meta assets-folder >}}/actions.png){width=400 fig-align="center"}
+
+- After the website has been rendered, back on the Pages tab we can find a link to the website
+
+![]({{< meta assets-folder >}}/hosted.png){width=500 fig-align="center"}
+
+7. **(Optional) Host on a custom domain**
+- Check that your desired domain name is available, and purchase it from a DNS registrar. (For example [Cloudflare](https://www.cloudflare.com/products/registrar/).)
+
+- Enter the domain into the Settings > Pages tab 
+
+![]({{< meta assets-folder >}}/domain.png){width=300 fig-align="center"}
+
+- In the DNS settings of your domain registrar, create a type "CNAME" record that points to `YOUR_USERNAME.github.io`
+
+- In order for your apex domain (e.g. yourdomain.com) to work, you will need to create four type "A" records that point to the IP addresses `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`. Your overall records under "DNS settings" should look like this (in this example the GitHub account `maxjerdee` is using the custom domain `wikifermi.com`):
+
+![]({{< meta assets-folder >}}/DNS.png){width=300 fig-align="center"}
+
+8. **(Optional) Remove these instructions**
+- Delete the `README_images` folder from your forked repository.
+- Edit this README. Can replace the file with something like:
+
+```
+## Your Name's personal website
+
+Hosted at [yourdomain.com](https://www.yourdomain.com/)
+
+Built with the [quarto framework](https://quarto.org/)
+```
+
+(This will not be seen by those that visit your website anyway).
+
+9. **(Optional) Add more!**
+- Can add a blog, or other tabs about other aspects of your work/life. Here are example repositories behind the personal websites of the authors of this note: [Max Jerdee](https://github.com/maxjerdee/personal-website) and [Bhaskar Kumawat](https://github.com/aVeryStrangeLoop/aVeryStrangeLoop.github.io).
+
