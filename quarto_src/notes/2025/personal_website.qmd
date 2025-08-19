@@ -27,7 +27,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Steps
 
-1. **Fork this repository to make a version of this code on your own GitHub account**
+1. **Fork [this repository](https://github.com/maxjerdee/website-example) to make a version of this code on your own GitHub account**
 
 ![]({{< meta assets-folder >}}/fork.png){width=100 fig-align="center"}
 
