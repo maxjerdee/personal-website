@@ -1,0 +1,22 @@
+---
+title: "Bias of mutual information"
+description: "Context for *Normalized mutual information is a biased measure for classification and community detection*"
+categories:
+  - Information Theory
+  - Paper Explainer
+date: 11/9/25
+assets-folder: "../../assets/images/notes/mutual_information_bias"
+image: ../../assets/images/notes/mutual_information_bias/thumbnail.pdf
+# include-in-header:
+#     - file: ../../assets/LaTeX/preamble.tex
+---
+
+This post gives some context for a [paper](https://arxiv.org/abs/2307.01282) written in collaboration with Mark Newman and Alec Kirkley.
+
+Science offers many models, each encoding their own theory and understanding of how the world works. Out of this infinite space of possible explanations, we often judge the best theories by how closely their predictions match our observations. If one weather model predicts 3 inches of snow while another predicts 10 inches, a day with 2 inches of snow would favor the first model although both were not quite right. When comparing numbers like these, the difference between the predicted and observed quantities is a simple and effective measure of performance. 
+
+Yet in other scenarios, the appropriate measure of quality is less clear. Suppose we wanted to predict which social club a student belonged to based upon their network of friendships, or predict the type of disease someone is suffering from given their symptoms^[In “supervised" contexts these may be examples of “classification” problems rather than “clustering” ones, since the algorithms are aware of the possible groups and predict which of the known groups a person belongs to. The clusterings of this paper arise in an “unsupervised” setting where the model is not told what the true options are and instead comes up with the categories from scratch.]. In these cases, the truth is a clustering of objects into distinct labelled groups, and algorithms can make mistakes in a wider variety of ways. Suppose that one method always identifies when people are diabetic but cannot distinguish between the type I and type II variants of the disease, while another model can correctly distinguish the types but fails to identify the entire ailment 10% of the time. Which algorithm does a “better job" overall?
+
+[Information theory](../2025/information_theory.html) helps us make sense of these situations. In an abstract sense, we ask which model is more informative of the truth, which requires less additional information to correct its predictions? In this framing, the mutual information is widely used as a measure of such similarity. Algorithms that share a high mutual information with the truth do a better job. Unfortunately, this typical measure suffers from a number of biases in its judgements. For one, if an algorithm finds too many groups — if it invented further “type III” and “type IV” diabetes in the earlier example — the mutual information will erroneously give it a high score^[[Type III](https://newsnetwork.mayoclinic.org/discussion/researchers-link-alzheimers-gene-to-type-iii-diabetes/) diabetes is already an accepted term, and Type IV might be soon.]. Secondly, when the measure is normalized to run from 0 to 1, a further bias towards artificially simple algorithms appears. Our work demonstrates these biases in real examples and introduces a version of the mutual information that can correct both of these issues.
+
+By ensuring that the yardstick by which much of science progresses is not skewed or biased, we improve the rigor and reliability of findings across many applications.
