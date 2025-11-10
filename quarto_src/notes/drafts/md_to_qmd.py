@@ -6,6 +6,10 @@
 # Before running, load all of the referenced figures as .svg files into the figure directory.
 # Replace .pdf extensions with .svg in the markdown file.
 
+# Next, redefine any macros used in the .tex file into LaTeX that Quarto can understand.
+# Manually change equation labels, Ex: \label{eq:BT-win-probability} -> {#eq-BT-win-probability}
+# But put the new label outside the equation block.
+
 import re
 import os
 from svgpathtools import svg2paths, Path
@@ -55,9 +59,15 @@ from svgpathtools import svg2paths, Path
 
 # preamble = ""
 
-input_file = "erdos_renyi.md"
-output_file = "erdos_renyi.qmd"
-figures_dir = "../../assets/images/notes/erdos_renyi"
+# input_file = "erdos_renyi.md"
+# output_file = "erdos_renyi.qmd"
+# figures_dir = "../../assets/images/notes/erdos_renyi"
+
+# preamble = ""
+
+input_file = "depth_of_hierarchies.md"
+output_file = "depth_of_hierarchies.qmd"
+figures_dir = "../../assets/images/notes/depth_of_hierarchies"
 
 preamble = ""
 

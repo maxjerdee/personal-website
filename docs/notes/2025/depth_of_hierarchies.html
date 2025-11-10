@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-09">
-<meta name="description" content="Context for Normalized mutual information is a biased measure for classification and community detection">
+<meta name="dcterms.date" content="2025-11-03">
+<meta name="description" content="Context for Luck, skill, and depth of competition in games and social hierarchies">
 
-<title>Bias of mutual information – Max Jerdee</title>
+<title>Depth of hierarchies – Max Jerdee</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -85,6 +105,35 @@ gtag('js', new Date());
 gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -306,8 +355,17 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#minimum-violation-ranking" id="toc-minimum-violation-ranking" class="nav-link" data-scroll-target="#minimum-violation-ranking">Minimum Violation Ranking</a></li>
+  <li><a href="#the-bradley-terry-model" id="toc-the-bradley-terry-model" class="nav-link" data-scroll-target="#the-bradley-terry-model">The Bradley-Terry model</a></li>
+  <li><a href="#depth-and-bayesian-inference" id="toc-depth-and-bayesian-inference" class="nav-link" data-scroll-target="#depth-and-bayesian-inference">Depth and Bayesian inference</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -315,16 +373,16 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bias of mutual information</h1>
+<h1 class="title">Depth of hierarchies</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Information Theory</div>
+    <div class="quarto-category">Inference</div>
     <div class="quarto-category">Paper Explainer</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Context for <em>Normalized mutual information is a biased measure for classification and community detection</em>
+    Context for <em>Luck, skill, and depth of competition in games and social hierarchies</em>
   </div>
 </div>
 
@@ -335,7 +393,7 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 9, 2025</p>
+      <p class="date">November 3, 2025</p>
     </div>
   </div>
   
@@ -347,21 +405,156 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 </header>
 
 
-<p>This post gives some context for a <a href="https://arxiv.org/abs/2307.01282">paper</a> written in collaboration with Mark Newman and Alec Kirkley.</p>
-<p>Science offers many models, each encoding their own theory and understanding of how the world works. Out of this infinite space of possible explanations, we often judge the best theories by how closely their predictions match our observations. If one weather model predicts 3 inches of snow while another predicts 10 inches, a day with 2 inches of snow would favor the first model although both were not quite right. When comparing numbers like these, the difference between the predicted and observed quantities is a simple and effective measure of performance.</p>
-<p>Yet in other scenarios, the appropriate measure of quality is less clear. Suppose we wanted to predict which social club a student belonged to based upon their network of friendships, or predict the type of disease someone is suffering from given their symptoms<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. In these cases, the truth is a <em>clustering</em> of objects into distinct labelled groups, and algorithms can make mistakes in a wider variety of ways. Suppose that one method always identifies when people are diabetic but cannot distinguish between the type I and type II variants of the disease, while another model can correctly distinguish the types but fails to identify the entire ailment 10% of the time. Which algorithm does a “better job” overall?</p>
-<p><a href="../2025/information_theory.html">Information theory</a> helps us make sense of these situations. In an abstract sense, we ask which model is more informative of the truth, which requires less additional information to correct its predictions? In this framing, the <em>mutual information</em> is widely used as a measure of such similarity. Algorithms that share a high mutual information with the truth do a better job. Unfortunately, this typical measure suffers from a number of biases in its judgements. For one, if an algorithm finds too many groups — if it invented further “type III” and “type IV” diabetes in the earlier example — the mutual information will erroneously give it a high score<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Secondly, when the measure is normalized to run from 0 to 1, a further bias towards artificially simple algorithms appears. Our work demonstrates these biases in real examples and introduces a version of the mutual information that can correct both of these issues.</p>
-<p>By ensuring that the yardstick by which much of science progresses is not skewed or biased, we improve the rigor and reliability of findings across many applications.</p>
-<p>Check out <a href="https://arxiv.org/abs/2307.01282">our paper</a> for the full details, and our implementation of the measure <a href="https://github.com/maxjerdee/clustering-mi">here</a>.</p>
+<p>This post gives some context for a <a href="https://www.science.org/doi/10.1126/sciadv.adn2654">paper</a> written in collaboration with Mark Newman. The presentation here is adapted from my <a href="../2025/thesis.html">PhD thesis</a>.</p>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>When players enter a sports tournament, students attend a high school, or chickens are placed in a coop, hierarchies tend to emerge (along with those who study them). This pecking order can be reflected in chess game victories, unreciprocated friendships, or chicken pecks. Across these <a href="../2025/network_structures.html#hierarchy-structure">examples</a>, we would like to infer the rankings of the participants and predict the outcomes of unobserved matches. In this work we introduce a model that allows us to not only find positions within such a hierarchy but also to measure how strict, how unequal that hierarchy is. Across the contexts we consider we find sports are relatively egalitarian as matches could typically go either way, while animal hierarchies follow a much stricter, predictable order. The examples of human social hierarchies we consider, from patterns of friendship to faculty hiring, tend to fall between these extremes.</p>
+</section>
+<section id="minimum-violation-ranking" class="level2">
+<h2 class="anchored" data-anchor-id="minimum-violation-ranking">Minimum Violation Ranking</h2>
+<p>Before describing our full model, we begin with a simpler definition of hierarchies. Many observers of these systems, especially in sports, may come to their own, often quite different conclusions about the appropriate ranking of the competitors. Out of these possibilities, it is useful to have a consistent benchmark for what constitutes a "good" or "fair" ranking given the results.</p>
+<p>A natural starting point is to ask that a ranking is consistent with the observations in the following sense: the favorite, the higher ranked player, should typically win the match. To analyze a ranking in this way, we first specify it as vector&nbsp;<span class="math inline">\(\boldsymbol{s}\)</span> where player&nbsp;<span class="math inline">\(i\)</span> is assigned score&nbsp;<span class="math inline">\(s_i\)</span>, and player&nbsp;<span class="math inline">\(i\)</span> is considered better than player&nbsp;<span class="math inline">\(j\)</span> in the ranking if they have a higher score,&nbsp;<span class="math inline">\(s_i &gt; s_j\)</span>. In this notation, we can then count up the number of times that the favorite indeed wins as</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{align}
+    m_{\text{win}}(\boldsymbol{A},\boldsymbol{s}) = \sum_{ij} A_{ij} \mathbf{1} \{s_i &gt; s_j\}
+\end{align}\]</span></p>
+</div>
+<p>where the adjacency matrix entry&nbsp;<span class="math inline">\(A_{ij}\)</span> counts the number of times player <span class="math inline">\(i\)</span> beats player <span class="math inline">\(j\)</span>.</p>
+<p>In lieu of a known rating of the participants, we can then define a ranking by maximizing the number of times the favorite indeed wins as</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{align}
+    \boldsymbol{s}* = \text{argmax}_{\boldsymbol{s}} m_{\text{win}}(\boldsymbol{A},\boldsymbol{s}).
+\end{align}\]</span></p>
+</div>
+<p>This strategy is known as <em>minimum violation ranking</em> since it is equivalent to minimizing the number of upset wins, or "violations" of the ranking.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It is computationally demanding to find the true optimal ranking in this sense, and heuristic algorithms are often employed&nbsp;<span class="citation" data-cites="CCP23">(<a href="#ref-CCP23" role="doc-biblioref">Cavallaro, Cutello, and Pavone 2023</a>)</span>. In <a href="#fig-MVR" class="quarto-xref">Figure&nbsp;1</a>a we use this method to rank the football teams within the 2022 season Big Ten conference <span class="citation" data-cites="Football22">(<a href="#ref-Football22" role="doc-biblioref"><span>“College Football Records,”</span> n.d.</a>)</span> based upon the wins and losses amongst them. Although no perfectly consistent ranking is possible, when we vertically arrange the 14 teams according to the minimum violation ranking <span class="math inline">\(m_{\text{win}} = 57\)</span> of the&nbsp;<span class="math inline">\(m = 64\)</span> total matches are won by the favored team (highlighted in green).</p>
+<div id="fig-MVR" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-MVR-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../assets/images/notes/depth_of_hierarchies/MVR.svg" class="img-fluid figure-img" style="width:8.74485in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-MVR-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: College football matches played in the 2022 Big Ten conference football season. (a) Arrows represent that one team beat another, teams are vertically arranged to minimize the number of upset victories (in red). (b) Arrows indicate that one team hosts another. Teams are vertically positioned to minimize ranking violations. (c) The number of times the favorite "wins" in each context, beating or hosting, are compared against 10,000 simulations where outcomes are sampled as fair coin flips.
+</figcaption>
+</figure>
+</div>
+<p>We can also use the number of favorite wins&nbsp;<span class="math inline">\(m_{\text{win}}\)</span> as a test statistic to establish the presence of a hierarchy in a <a href="../2025/statistical_inference.html#a-fair-coin">significance test</a>. As a null hypothesis, we use a "fair coin" model that either team is equally likely to prevail in any given match regardless of their ranking, each outcome might as well be a flip of a coin. In this null model, the favorite team wins half the time for an average of&nbsp;<span class="math inline">\(m_{\text{win}} = 32\)</span>. However due to random fluctuations the favorites may happen to accumulate more wins than expected.</p>
+<p>In <a href="#fig-MVR" class="quarto-xref">Figure&nbsp;1</a>c we perform 10,000 simulations of the null model, of flipping a coin to decide each match, and find that not once did the favorite win more than&nbsp;<span class="math inline">\(m_{\text{win}} = 47\)</span> matches. Since this is far from the number~<span class="math inline">\(m_{\text{win}} = 57\)</span> we observe in the football hierarchy, we can reject the fair coin model and conclude that genuine gaps in skill are driving the match outcomes.</p>
+<p>In <a href="#fig-MVR" class="quarto-xref">Figure&nbsp;1</a>b we plot another network of the very same matches within the conference, but now where a "win" indicates that one team hosted the other rather than beat them. Intuitively we might expect this interaction to not be strongly driven by a hierarchy among the teams, but rather be more akin to the coin flip model. Yet, if again identify the minimum violations ranking, we can construct an ordering of the teams where the favorite wins&nbsp;<span class="math inline">\(m_{\text{win}} = 45\)</span> times. Returning to the significance testing, in only 8 of the 10,000 simulations did random flips generate more favorite wins than this mark for a p-value <span class="math inline">\(P &lt; 0.001\)</span>. In isolation this would be seen as very strong evidence of our found hierarchy, although since this ranking is chosen among&nbsp;<span class="math inline">\(14! = 87178291200\)</span> possible orderings, the low p-value may not be as impressive as it first appears.</p>
+</section>
+<section id="the-bradley-terry-model" class="level2">
+<h2 class="anchored" data-anchor-id="the-bradley-terry-model">The Bradley-Terry model</h2>
+<p>In order to establish that a hierarchy is present in a more intrinsic manner, and to make predictions (e.g.&nbsp;who will win the next game?) we turn to generative models that assign a probability to each potential outcome of the matches. Particularly, we consider the Bradley-Terry model, named after the work of R. Bradley and M. Terry who described it in 1952&nbsp;<span class="citation" data-cites="BT52">(<a href="#ref-BT52" role="doc-biblioref">Bradley and Terry 1952</a>)</span>, although it was (unknown to them) first introduced much earlier, by Zermelo in 1929&nbsp;<span class="citation" data-cites="Zermelo29">(<a href="#ref-Zermelo29" role="doc-biblioref">Zermelo 1929</a>)</span>. In the model, the probability&nbsp;<span class="math inline">\(p_{ij}\)</span> that node&nbsp;<span class="math inline">\(i\)</span> beats node&nbsp;<span class="math inline">\(j\)</span> is assumed to depend upon the difference&nbsp;<span class="math inline">\(s_i - s_j\)</span> between their scores. Specifically, the win probability is taken to be a logistic sigmoid function of this difference as</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span id="eq-BT-win-probability"><span class="math display">\[\begin{align}
+    p_{ij} = \frac{1}{1 + e^{-(s_i - s_j)}}.
+\end{align} \tag{1}\]</span></span></p>
+</div>
+<div id="fig-BT-curve" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-BT-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../assets/images/notes/depth_of_hierarchies/BT-curve.svg" class="img-fluid figure-img" style="width:8.30098in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BT-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Win probability&nbsp;<span class="math inline">\(p_{ij}\)</span> as a function of score difference&nbsp;<span class="math inline">\(s_i - s_j\)</span> in the Bradley-Terry model as in <a href="#eq-BT-win-probability" class="quarto-xref">Eq.&nbsp;1</a>.
+</figcaption>
+</figure>
+</div>
+<p>This function, plotted in <a href="#fig-BT-curve" class="quarto-xref">Figure&nbsp;2</a>, has a number of intuitive properties. If the two participants are evenly matched,&nbsp;<span class="math inline">\(s_i = s_j\)</span>,&nbsp;<span class="math inline">\(p_{ij} = 1/2\)</span> and each competitor is equally likely to prevail. If node&nbsp;<span class="math inline">\(i\)</span> is considerably better than node&nbsp;<span class="math inline">\(j\)</span>,&nbsp;<span class="math inline">\(s_i \gg s_j\)</span>, they are very likely to win as&nbsp;<span class="math inline">\(p_{ij} \rightarrow 1\)</span>. Conversely if they are thoroughly outmatched and&nbsp;<span class="math inline">\(s_i \ll s_j\)</span>, node&nbsp;<span class="math inline">\(i\)</span> is unlikely to win as&nbsp;<span class="math inline">\(p_{ij} \rightarrow 0\)</span>. This <em>score function</em> also critically assigns a behavioral meaning to a particular score differential. If node&nbsp;<span class="math inline">\(i\)</span> is one "unit" above node&nbsp;<span class="math inline">\(j\)</span> in the hierarchy, they will win with probability</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{align}
+    p_{ij} = \frac{1}{1 + e^{-1}} \approx 0.731.
+\end{align}\]</span></p>
+</div>
+<p>This gap then defines the meaning of a "tier" or "level" of skill differential, a difference that leads the favorite to win roughly 70-75% of the time.</p>
+<p>Compiling these win probabilities across all of the matches then yields the Bradley-Terry model likelihood</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{align}
+    P(\boldsymbol{A}|\boldsymbol{s}) = \prod_{ij} p_{ij}^{A_{ij}} = \prod_{ij} \left(\frac{1}{1 + e^{-(s_i - s_j)}}\right)^{A_{ij}}.
+\end{align}\]</span></p>
+</div>
+<p>In most treatments of the Bradley-Terry model, we then find the values of the scores that maximize this likelihood of generating the data that we observe. These <em>maximum-likelihood</em> values, however, are generally prone to <a href="../2025/statistical_inference.html#a-biased-coin">overfitting</a>. If a given team (such as the University of Michigan) finishes undefeated, the model assigns them an infinite maximum-likelihood score, effectively suggesting they always had a 100% chance of winning against any opponent, past or future — an extrapolation that could make even the most ardent fan blush.</p>
+</section>
+<section id="depth-and-bayesian-inference" class="level2">
+<h2 class="anchored" data-anchor-id="depth-and-bayesian-inference">Depth and Bayesian inference</h2>
+<p>To address this is issue we consider a Bayesian treatment of the Bradley-Terry model. This perspective naturally allows us to not only quantify the uncertainty in our inferences but also measure the nature of these hierarchies. For this we introduce a <em>prior distribution</em> that reflects our expectation about the overall distribution of strengths within the hierarchy. Particularly, on each score&nbsp;<span class="math inline">\(s_i\)</span> we introduce an independent Gaussian prior of width&nbsp;<span class="math inline">\(\beta/\sqrt{2}\)</span> for parameter&nbsp;<span class="math inline">\(\beta &gt; 0\)</span>,</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{align}
+    P(\boldsymbol{s}|\beta) = \prod_{i=1}^n \frac{1}{\beta\sqrt{\pi}} e^{-s^2/\beta^2}. \label{eq:P-s-given-beta}
+\end{align}\]</span></p>
+</div>
+<p>This choice is made so that the distribution of the <em>differences</em> in scores&nbsp;<span class="math inline">\(s_i - s_j\)</span> follow a Gaussian distribution of width&nbsp;<span class="math inline">\(\beta\)</span>. The&nbsp;<span class="math inline">\(\beta\)</span> parameter therefore controls the typical difference in score between two random players. Given the meaning of one unit of score difference, <span class="math inline">\(\beta\)</span> counts how many layers of skill or status are present in the hierarchy between the typical pair. With this interpretation, we define this parameter in our work as the <em>depth of competition</em>&nbsp;<span class="citation" data-cites="JN24">(<a href="#ref-JN24" role="doc-biblioref">Jerdee and Newman 2024</a>)</span>.</p>
+<div id="fig-BT-generation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-BT-generation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../assets/images/notes/depth_of_hierarchies/BT-generation.svg" class="img-fluid figure-img" style="width:8.85584in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BT-generation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Example generative process for the Bradley-Terry model of hierarchies. (a) The depth&nbsp;<span class="math inline">\(\beta\)</span> is first fixed, then the scores&nbsp;<span class="math inline">\(\boldsymbol{s}\)</span> are sampled from a Gaussian of that width, represented by the vertical distribution with width&nbsp;<span class="math inline">\(\beta = 3\)</span>. The differences of these scores then inform who wins each match, where the higher score participant is favored. (b) This same process starting with a depth of&nbsp;<span class="math inline">\(\beta = 1\)</span>. This smaller depth leads to smaller differences in scores and so more upset wins, colored in red.
+</figcaption>
+</figure>
+</div>
+<p>Starting with a half-Cauchy prior <span class="math inline">\(P(\beta)\)</span> over the depth, <a href="#fig-BT-generation" class="quarto-xref">Figure&nbsp;3</a> demonstrates the full generative process in the Bradley-Terry model.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <a href="#fig-BT-generation" class="quarto-xref">Figure&nbsp;3</a>a shows an example where the depth&nbsp;<span class="math inline">\(\beta = 3\)</span> is relatively high. Since the typical difference between scores is large, most matches are won by the favorite. In contrast, <a href="#fig-BT-generation" class="quarto-xref">Figure&nbsp;3</a>b illustrates a lower depth of&nbsp;<span class="math inline">\(\beta = 1\)</span> where the now smaller score differences lead to more upsets – violations of the ranking. From this perspective we also notice that if the depth is&nbsp;<span class="math inline">\(\beta = 0\)</span> all of the scores must be the same and so all matches are even, recovering the fair coin null model considered earlier.</p>
+<p>Given a network&nbsp;<span class="math inline">\(\boldsymbol{A}\)</span> we can then take Markov Chain Monte Carlo (<a href="../2025/statistical_physics.html#markov-chain-monte-carlo">MCMC</a>) samples from the posterior distribution of potential values for the scores&nbsp;<span class="math inline">\(\boldsymbol{s}\)</span> and the depth&nbsp;<span class="math inline">\(\beta\)</span>,</p>
+<div style="overflow-x:auto;overflow-y:hidden;">
+<p><span class="math display">\[\begin{align}
+    P(\boldsymbol{s}, \beta|\boldsymbol{A}) = \frac{P(\boldsymbol{A}|\boldsymbol{s})P(\boldsymbol{s}|\beta)P(\beta)}{P(\boldsymbol{A})}.
+\end{align}\]</span></p>
+</div>
+<p>In <a href="#fig-BT-posteriors" class="quarto-xref">Figure&nbsp;4</a> the resulting posterior distributions of the depth for the football victories and football hosting data sets are plotted. For the pattern of victories, we can infer a depth of&nbsp;<span class="math inline">\(\hat{\beta}_{\text{MAP}} \approx 1.9\)</span> within the conference, indicating that there are roughly 2 levels of play between a random pair of teams. Particularly, the victories posterior clearly excludes the case&nbsp;<span class="math inline">\(\beta = 0\)</span>, indicating strong evidence for the hierarchy over the fair coin model. On the other hand, the pattern of hosting among the teams favors a depth of 0, indicating that hierarchical structure is not present and that the fair coin model is more appropriate.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div id="fig-BT-posteriors" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-BT-posteriors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../assets/images/notes/depth_of_hierarchies/BT-posteriors.svg" class="img-fluid figure-img" style="width:8.16855in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BT-posteriors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Posterior distribution of the depth&nbsp;<span class="math inline">\(\beta\)</span> inferred by the general Bradley-Terry in the football victories and football hosting data sets. There is strong evidence of a hierarchical structure among the pattern of victories, while the pattern of hosting does not exclude the possibility that outcomes are fully random, highlighted at&nbsp;<span class="math inline">\(\beta = 0\)</span>.
+</figcaption>
+</figure>
+</div>
+<p>In <a href="https://www.science.org/doi/10.1126/sciadv.adn2654">our paper</a>, we discuss how this model can be further generalized to model a "luck" component of hierarchies where upsets are possible even between competitors of very different status. This generalization also includes the minimum violation ranking originally considered in this section, allowing for a direct comparison of the two ranking methods. In that chapter we also infer the depths of a variety of different data sets, ranging from sports and games to human and animal social hierarchies. <a href="#fig-depth-comparison" class="quarto-xref">Figure&nbsp;5</a> summarizes these results.</p>
+<div id="fig-depth-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-depth-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../assets/images/notes/depth_of_hierarchies/depth-comparison.svg" class="img-fluid figure-img" style="width:9.28353in">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-depth-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Depths of hierarchies inferred by our model across various applications. A depth of&nbsp;<span class="math inline">\(\beta = 0\)</span> corresponds to outcomes determined by fair coin flips while higher values of&nbsp;<span class="math inline">\(\beta\)</span> indicate deeper, stricter hierarchies. Full posterior distributions of&nbsp;<span class="math inline">\(\beta\)</span> for these cases are given in <a href="https://www.science.org/doi/10.1126/sciadv.adn2654">our paper</a>.
+</figcaption>
+</figure>
+</div>
+<p>The sports and games we consider in <a href="#fig-depth-comparison" class="quarto-xref">Figure&nbsp;5</a> – highlighted in red – vary in their depth yet tend to have a low&nbsp;<span class="math inline">\(\beta\)</span> compared to other contexts. Human social hierarchies (in green), such as patterns of friendships or of faculty hiring between universities, have a deeper, steeper hierarchy than these sports. And more than both these cases, we find that the animal social hierarchies (in blue) are very strict, with exceedingly large&nbsp;<span class="math inline">\(\beta\)</span> values in some cases. Although the model does not know the source of a given network, whether it represents sports matches, human or animal interactions, it consistently categories the examples by measuring the depth of each context. With this ability to measure properties like the inequality in a hierarchy in hand, we can start to speculate and investigate what factors lead to these contrasting effects. For example, sports leagues are designed to be competitive for entertainment value, whereas social hierarchies are subject to no such incentives. By considering all of these applications within a unified model we can draw comparisons between them.</p>
+<p>By simply extending this near century-old model using Bayesian techniques, we have been able to both better understand positions within hierarchies and to measure the depth of these hierarchies: how those differences in rank translate to differences in behaviors and outcomes depending on the setting.</p>
 
 
 
+</section>
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-BT52" class="csl-entry" role="listitem">
+Bradley, R. A., and M. E. Terry. 1952. <span>“Rank Analysis of Incomplete Block Designs: <span>I</span>. <span>T</span>he Method of Paired Comparisons.”</span> <em>Biometrika</em> 39: 324–45.
+</div>
+<div id="ref-CCP23" class="csl-entry" role="listitem">
+Cavallaro, Claudia, Vincenzo Cutello, and Mario Pavone. 2023. <span>“Effective Heuristics for Finding Small Minimal Feedback Arc Set Even for Large Graphs.”</span> In <em>itaDATA</em>.
+</div>
+<div id="ref-Football22" class="csl-entry" role="listitem">
+<span>“College Football Records.”</span> n.d. <span><a href="https://www.sports-reference.com/cfb/">URL</a></span>.
+</div>
+<div id="ref-JN24" class="csl-entry" role="listitem">
+Jerdee, Maximilian, and M. E. J. Newman. 2024. <span>“Luck, Skill, and Depth of Competition in Games and Social Hierarchies.”</span> <em>Science Advances</em> 10 (45): eadn2654.
+</div>
+<div id="ref-Newman06b" class="csl-entry" role="listitem">
+Newman, M. E. J. 2006. <span>“Modularity and Community Structure in Networks.”</span> <em>Pnas</em> 103: 8577–82.
+</div>
+<div id="ref-Zermelo29" class="csl-entry" role="listitem">
+Zermelo, Ernst. 1929. <span>“Die <span>B</span>erechnung Der <span>T</span>urnier-<span>E</span>rgebnisse Als Ein <span>M</span>aximumproblem Der <span>W</span>ahrscheinlichkeitsrechnung.”</span> <em>Mathematische Zeitschrift</em> 29: 436–60.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>In “supervised” contexts these may be examples of “classification” problems rather than “clustering” ones, since the algorithms are aware of the possible groups and predict which of the known groups a person belongs to. The clusterings of this paper arise in an “unsupervised” setting where the model is not told what the true options are and instead comes up with the categories from scratch.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p><a href="https://newsnetwork.mayoclinic.org/discussion/researchers-link-alzheimers-gene-to-type-iii-diabetes/">Type III</a> diabetes is already an accepted term, and Type IV might be soon.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Identifying hierarchy as the optimum of an objective is similar to how the modularity is often maximized to identify group structure <span class="citation" data-cites="Newman06b">(<a href="#ref-Newman06b" role="doc-biblioref">Newman 2006</a>)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>We use a Half-cauchy prior <span class="math inline">\(P(\beta) = \frac{8}{\pi(\beta^2 + 16)}\)</span> of width 4, although the form of this single choice does not influence the overall results nearly as much as the prior over the scores which impacts each player individually.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>We can also support these conclusions through direct computations of the description length and predictive power of each model for each data set. (See Chapter 1.2.4 of my <a href="../2025/thesis.html">PhD thesis</a>)<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

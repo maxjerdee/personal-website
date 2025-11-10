@@ -21,4 +21,4 @@ Yet in other scenarios, the appropriate measure of quality is less clear. Suppos
 
 By ensuring that the yardstick by which much of science progresses is not skewed or biased, we improve the rigor and reliability of findings across many applications. 
 
-Check out [our paper](https://arxiv.org/abs/2307.01282) for the full details, and can use our measure as implemented [here](https://github.com/maxjerdee/clustering-mi).
+Check out [our paper](https://arxiv.org/abs/2307.01282) for the full details, and our implementation of the measure [here](https://github.com/maxjerdee/clustering-mi).
