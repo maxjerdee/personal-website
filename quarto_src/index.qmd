@@ -5,7 +5,7 @@ about:
   image: ../assets/images/profile_alt_square.jpg
   links:
     - text: "{{< iconify ic outline-email >}} Email"
-      href: mailto:mjerdee@umich.edu
+      href: mailto:mjerdee@santafe.edu
     - icon: github
       text: Github
       href: https://github.com/maxjerdee
