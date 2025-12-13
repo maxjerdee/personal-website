@@ -6,7 +6,7 @@ categories:
   - Paper Explainer
 date: 11/9/25
 assets-folder: "../../assets/images/notes/mutual_information_bias"
-image: ../../assets/images/notes/mutual_information_bias/thumbnail.pdf
+image: ../../assets/images/notes/mutual_information_bias/thumbnail.svg
 # include-in-header:
 #     - file: ../../assets/LaTeX/preamble.tex
 ---
