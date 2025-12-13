@@ -1,8 +1,8 @@
 ---
 title: "Behind this website"
-description: "Walkthrough to set up a Quarto website like this one."
+description: "Walkthrough to set up a Quarto website like this one"
 categories:
-  - Coding
+  - Code
 date: 08/18/25
 assets-folder: "../../assets/images/notes/personal_website"
 image: ../../assets/images/notes/personal_website/thumbnail.png
