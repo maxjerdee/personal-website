@@ -15,6 +15,4 @@ about:
       href: assets/pdf/CV.pdf
 ---
 
-I am a Physics PhD student at the University of Michigan advised by Prof. [Mark Newman](https://websites.umich.edu/~mejn/) and affiliated with the [Center for the Study of Complex Systems](https://lsa.umich.edu/cscs). I will be starting as an Omidyar Postdoctoral Fellow at the [Santa Fe Institute](https://www.santafe.edu/) in Fall 2025.
-
-I enjoy researching topics between physics, networks, and statistics ([more info here](research.qmd)) and building somewhat educational tools and games ([check them out](demos.qmd)).
+I am an Omidyar Postdoctoral Fellow at the [Santa Fe Institute](https://www.santafe.edu/). I enjoy researching topics between physics, networks, and statistics ([more info here](research.qmd)) and building somewhat educational tools and games ([check them out](demos.qmd)).
