@@ -4,6 +4,7 @@ project:
   resources:
   - "./assets"
   - "./demos_code"
+  - "CNAME"
 
 website:
   title: "Max Jerdee"
