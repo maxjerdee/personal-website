@@ -2,8 +2,8 @@
 title: "Bias of mutual information"
 description: "Context for *Normalized mutual information is a biased measure for classification and community detection*"
 categories:
-  - Information Theory
-  - Paper Explainer
+  - Information theory
+  - Paper explainer
 date: 11/9/25
 assets-folder: "../../assets/images/notes/mutual_information_bias"
 image: ../../assets/images/notes/mutual_information_bias/thumbnail.svg

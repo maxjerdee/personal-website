@@ -3,7 +3,7 @@ title: "Depth of hierarchies"
 description: "Context for *Luck, skill, and depth of competition in games and social hierarchies*"
 categories:
   - Inference
-  - Paper Explainer
+  - Paper explainer
 date: 11/3/25
 bibliography: ../../assets/LaTeX/references.bib
 assets-folder: "../../assets/images/notes/depth_of_hierarchies"
