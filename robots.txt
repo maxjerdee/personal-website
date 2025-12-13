@@ -1,1 +1,1 @@
-Sitemap: https://maxjerdee.github.io/personal-website/sitemap.xml
+Sitemap: https://www.maxjerdee.com/sitemap.xml
