@@ -1,9 +1,0 @@
----
-title: "Demos"
-listing:
-  type: grid
-  contents:
-    - "demos/*.qmd"
----
-
-Assorted projects I have worked on, generally try to explore a neat idea in an interactive way
