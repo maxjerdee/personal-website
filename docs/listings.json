@@ -12,10 +12,6 @@
     ]
   },
   {
-    "listing": "/code.html",
-    "items": []
-  },
-  {
     "listing": "/demos.html",
     "items": [
       "/demos/chaos_sampler.html",
@@ -24,5 +20,9 @@
       "/demos/relativity.html",
       "/demos/wikiguess.html"
     ]
+  },
+  {
+    "listing": "/code.html",
+    "items": []
   }
 ]

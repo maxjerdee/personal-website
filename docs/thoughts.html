@@ -346,8 +346,8 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
   <ul class="collapse">
   <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a>
   <ul class="collapse">
-  <li><a href="#development-details-mostly-for-my-own-reference" id="toc-development-details-mostly-for-my-own-reference" class="nav-link" data-scroll-target="#development-details-mostly-for-my-own-reference">Development details (mostly for my own reference)</a></li>
-  <li><a href="#adding-notes" id="toc-adding-notes" class="nav-link" data-scroll-target="#adding-notes">Adding notes</a></li>
+  <li><a href="#development-details" id="toc-development-details" class="nav-link" data-scroll-target="#development-details">Development Details</a></li>
+  <li><a href="#adding-notes" id="toc-adding-notes" class="nav-link" data-scroll-target="#adding-notes">Adding Notes</a></li>
   <li><a href="#adding-demos" id="toc-adding-demos" class="nav-link" data-scroll-target="#adding-demos">Adding demos</a></li>
   </ul></li>
   </ul></li>
@@ -366,23 +366,43 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 <p>This is a rough TODO list/notepad for development for the site.</p>
 <section id="notes" class="level2">
 <h2 class="anchored" data-anchor-id="notes">Notes</h2>
-<p>Text-based ramblings that can cover a range of possible uses. They are also tagged with categores as: - <code>Paper explainer</code>: informal explanation of a paper that we have put out, ideally accompanied by some sort of video explaination - <code>Demo explainer</code>: explanation of some technical details behind the inner workings of a demo - <code>Review</code>: a review of a field or introduction (these are what most of the spin-off posts from my thesis are) - <code>Physics</code> - <code>Information theory</code> - <code>Inference</code></p>
-<p>Special categories for the notes posts are roughly supposed to be: Paper explainer: informal explanation of a paper that we have put out, ideally accompanied by some sort of video explaination Demo explainer: explanation of some technical details behind the inner workings of a demo Review: a review of a field or introduction (these are what most of the spin-off posts from my thesis are)</p>
+<p>Text-based ramblings that can cover a range of possible uses. They are tagged with the following categories:</p>
+<ul>
+<li><code>Paper explainer</code>: Informal explanation of a paper that we have published, ideally accompanied by a video explanation.</li>
+<li><code>Demo explainer</code>: Explanation of some technical details behind the inner workings of a demo.</li>
+<li><code>Review</code>: A review of a field or introduction (these are mostly spin-off posts from my thesis).</li>
+<li><code>Physics</code></li>
+<li><code>Information theory</code></li>
+<li><code>Inference</code></li>
+</ul>
 <p>Otherwise I imagine that most of the posts will be explanations of some idea that comes up in my research or something I am generally curious about that has the developed demos embedded within the explanations.</p>
-<section id="development-details-mostly-for-my-own-reference" class="level3">
-<h3 class="anchored" data-anchor-id="development-details-mostly-for-my-own-reference">Development details (mostly for my own reference)</h3>
-<p>In order to run the site locally, you will need to have quarto installed. You can install it by following the instructions at <a href="https://quarto.org/docs/get-started/">quarto.org/docs/get-started/</a>. To run the site locally, you can use the following command:</p>
+<section id="development-details" class="level3">
+<h3 class="anchored" data-anchor-id="development-details">Development Details</h3>
+<p>In order to run the site locally, you will need to have Quarto installed. You can install it by following the instructions at <a href="https://quarto.org/docs/get-started/">quarto.org/docs/get-started/</a>.</p>
+<p>To run the site locally, use the following command in the <code>quarto_src</code> directory:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>in the <code>quarto_src</code> directory. This will start a local serve and give a link to view the site in your browser.</p>
-<p>In order to build and host the site, run <code>quarto render</code> in the <code>quarto_src</code> directory. This will build the site and output it to the <code>docs</code> directory, which is where GitHub Pages will serve the site from. Then push to the <code>main</code> branch of the repository. GitHub Pages will automatically build and host the site from the <code>docs</code> directory.</p>
+<p>This will start a local server and provide a link to view the site in your browser.</p>
+<p>To build and host the site, run the following command in the <code>quarto_src</code> directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will build the site and output it to the <code>docs</code> directory, which is where GitHub Pages will serve from. Then push to the <code>main</code> branch of the repository. GitHub Pages will automatically build and host the site from the <code>docs</code> directory.</p>
 </section>
 <section id="adding-notes" class="level3">
-<h3 class="anchored" data-anchor-id="adding-notes">Adding notes</h3>
-<p>To create a new note, we should start by creating a new Quarto markdown file (.qmd) in the <code>quarto_src/notes/drafts</code> directory. The file should have a title and a date in the front matter, as well as a category. The category should be one of the following: <code>paper-explainer</code>, <code>demo-explainer</code>, or <code>general</code>. The file should also have a description in the front matter, which will be used to generate the summary for the note. We can also generate an initial note using pandoc from say a TeX file as <code>pandoc -s myfile.tex -o myfile.md</code> and then edit the resulting file to add the front matter and any additional content we want to include. We will need to add an <code>assets-folder</code> to the front matter then reference any images using that folder, for example: <code>?meta:assets-folder/image.png</code>.</p>
-<p>pdfs will also render in a strange way, we can convert them either to raster images or another vector format like svg. This can be done using for example inkscape as</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/mnt/c/Program\ Files/Inkscape/bin/inkscape.exe</span> <span class="at">--export-type</span><span class="op">=</span><span class="st">"svg"</span> coin-flip-fair.pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>We will also need to manually redo the cross-references. TODO: write a script that automatically adjusts the .md file output by pandoc into the .qmd format with the correct front matter and cross-references.</p>
-<p>Once the note is ready, we can move it to the <code>quarto_src/notes/YEAR</code> directory.</p>
+<h3 class="anchored" data-anchor-id="adding-notes">Adding Notes</h3>
+<p>To create a new note, start by creating a new Quarto markdown file (<code>.qmd</code>) in the <code>quarto_src/notes/drafts</code> directory. The file should include:</p>
+<ul>
+<li>A title and date in the front matter</li>
+<li>A category (one of: <code>paper-explainer</code>, <code>demo-explainer</code>, or <code>general</code>)</li>
+<li>A description in the front matter (used for the summary)</li>
+</ul>
+<p>You can generate an initial note from a TeX file using pandoc:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> myfile.tex <span class="at">-o</span> myfile.md</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then edit the resulting file to add the front matter and any additional content. Add an <code>assets-folder</code> to the front matter and reference images using that folder:</p>
+<pre><code>?meta:assets-folder/image.png</code></pre>
+<p>PDFs will render strangely and should be converted to raster images or vector formats like SVG. This can be done using Inkscape:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/mnt/c/Program\ Files/Inkscape/bin/inkscape.exe</span> <span class="at">--export-type</span><span class="op">=</span><span class="st">"svg"</span> coin-flip-fair.pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You will also need to manually redo the cross-references.</p>
+<p><strong>TODO</strong>: Write a script that automatically adjusts the <code>.md</code> file output by pandoc into the <code>.qmd</code> format with the correct front matter and cross-references.</p>
+<p>Once the note is ready, move it to the <code>quarto_src/notes/YEAR</code> directory.</p>
 </section>
 <section id="adding-demos" class="level3">
 <h3 class="anchored" data-anchor-id="adding-demos">Adding demos</h3>
