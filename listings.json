@@ -1,19 +1,5 @@
 [
   {
-    "listing": "/demos.html",
-    "items": [
-      "/demos/chaos_sampler.html",
-      "/demos/game_of_life.html",
-      "/demos/metropolis_hastings.html",
-      "/demos/relativity.html",
-      "/demos/wikiguess.html"
-    ]
-  },
-  {
-    "listing": "/code.html",
-    "items": []
-  },
-  {
     "listing": "/notes.html",
     "items": [
       "/notes/2025/mutual_information_bias.html",
@@ -23,6 +9,20 @@
       "/notes/2025/information_theory.html",
       "/notes/2025/statistical_physics.html",
       "/notes/2025/statistical_inference.html"
+    ]
+  },
+  {
+    "listing": "/code.html",
+    "items": []
+  },
+  {
+    "listing": "/demos.html",
+    "items": [
+      "/demos/chaos_sampler.html",
+      "/demos/game_of_life.html",
+      "/demos/metropolis_hastings.html",
+      "/demos/relativity.html",
+      "/demos/wikiguess.html"
     ]
   }
 ]
