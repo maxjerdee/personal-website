@@ -1,0 +1,67 @@
+---
+title: "Network explorer"
+description: "Load and explore network graphs interactively"
+image: "../assets/images/demos/network_explorer/thumbnail.svg"
+format: html
+---
+
+```{=html}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../assets/css/network_explorer.css">
+
+<!-- Example selector -->
+<div class="ne-selector-row">
+  <label class="ne-selector-label" for="ne-example-select">Load example:</label>
+  <select id="ne-example-select" class="form-select form-select-sm">
+    <option value="karate"    selected>Karate Club — force (34 nodes, 2 communities)</option>
+    <option value="florentine">Florentine Families — anchored (15 nodes, marriages)</option>
+    <option value="pollinator">Plant–Pollinator — bipartite (22 nodes)</option>
+    <option value="chickens"  >Chicken Pecking Order — hierarchy (11 nodes, directed)</option>
+    <option value="orangutan" >Orangutan Dominance — anchored (6 nodes, directed, weighted)</option>
+    <option value="les_mis"   >Les Misérables — force (58 nodes, weighted)</option>
+  </select>
+  <span class="ne-or">or</span>
+</div>
+
+<!-- File upload -->
+<div id="ne-upload-zone">
+  <div class="ne-upload-icon">⬆</div>
+  <p>Drop a <code>.gml</code> file here, or <label for="ne-file-input">browse</label></p>
+  <input type="file" id="ne-file-input" accept=".gml,.txt">
+</div>
+
+<div id="ne-stats"></div>
+<div id="ne-error"></div>
+
+<!-- Viewer shell (always in DOM) -->
+<div id="ne-viewer" style="display:none">
+  <div class="ne-tab-strip">
+    <button class="ne-tab-btn active" data-tab="graph">Graph</button>
+    <button class="ne-tab-btn" data-tab="matrix">Matrix</button>
+  </div>
+  <div id="ne-graph-pane" style="position:relative">
+    <svg id="ne-svg"></svg>
+    <button id="ne-reset-zoom" class="btn btn-sm btn-outline-secondary">Reset view</button>
+    <div id="ne-info-panel">
+      <span class="nip-hint">Hover or click a node for details</span>
+    </div>
+  </div>
+  <div id="ne-matrix-pane"></div>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="../assets/js/network_explorer.js"></script>
+```
+
+Loads any network in [GML format](https://en.wikipedia.org/wiki/Graph_Modelling_Language). Six example networks are included, each demonstrating a different layout mode:
+
+| Layout | Behavior |
+|---|---|
+| **force** | Free simulation — nodes settle by charge + edge tension |
+| **anchored** | Nodes have specified home positions and drift back after release |
+| **bipartite** | Two-column layout from `group 0` / `group 1`; strong column anchoring |
+| **hierarchy** | Vertical ordering by `value` (rank); strong vertical, free horizontal |
+
+**Controls:** drag nodes to reposition · scroll/pinch to zoom · hover to see neighbors · click to pin · click background to release · Matrix tab shows the adjacency matrix (≤ 60 nodes).
+
+**GML attributes recognised:** `label`, `x`/`y` (anchor positions), `color` (hex), `group` (integer, auto-colored), `value` (rank for hierarchy). Edge `weight` scales stroke width. Top-level `directed 1` enables arrowheads. Top-level `layout "anchored"` (or `bipartite`, `hierarchy`) sets the mode.

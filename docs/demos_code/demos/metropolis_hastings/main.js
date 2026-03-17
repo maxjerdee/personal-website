@@ -25,8 +25,8 @@ const frog_props = {
     animation_translations_reject: [0.0166667, 0.0333333, 0.05, 0.0666667, 0.0833333, 0.1, 0.116667, 0.133333, 0.15, 0.166667, 0.183333, 0.2, 0.216667, 0.233333, 0.25, 0.266667, 0.283333, 0.3, 0.316667, 0.333333, 0.35, 0.366667, 0.358333, 0.341667, 0.325, 0.308333, 0.291667, 0.275, 0.258333, 0.241667, 0.225, 0.208333, 0.191667, 0.175, 0.158333, 0.141667, 0.125, 0.108333, 0.0916667, 0.075, 0.0583333, 0.0416667, 0.025, 0.00833333, 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,0.],
     animation_leaping_reject: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 
-    leaping_path: '../../../assets/images/notes/metropolis_hastings/frog/FrogLeap.svg',
-    sitting_path: '../../../assets/images/notes/metropolis_hastings/frog/FrogSit.svg',
+    leaping_path: '/assets/images/notes/metropolis_hastings/frog/FrogLeap.svg',
+    sitting_path: '/assets/images/notes/metropolis_hastings/frog/FrogSit.svg',
 
     beta_0_color: '#c72f25', // Color of the explorer frog // Dark: #ad2920
     beta_1_color: '#739056', // Color of the sampler frog // Dark: #647d4b
@@ -34,13 +34,13 @@ const frog_props = {
 }
 
 const lilypad_props = {
-    path: '../../../assets/images/notes/metropolis_hastings/Lilypad.png',
+    path: '/assets/images/notes/metropolis_hastings/Lilypad.png',
     radius: 50, // In pixels, used to constrain the frog offsets
     num_lilypads: 3,
 }
 
 const fly_props = {
-    paths: ['../../../assets/images/notes/metropolis_hastings/fly/Fly_1.svg', '../../../assets/images/notes/metropolis_hastings/fly/Fly_2.svg', '../../../assets/images/notes/metropolis_hastings/fly/Fly_3.svg', '../../../assets/images/notes/metropolis_hastings/fly/Fly_4.svg', '../../../assets/images/notes/metropolis_hastings/fly/Fly_5.svg'],
+    paths: ['/assets/images/notes/metropolis_hastings/fly/Fly_1.svg', '/assets/images/notes/metropolis_hastings/fly/Fly_2.svg', '/assets/images/notes/metropolis_hastings/fly/Fly_3.svg', '/assets/images/notes/metropolis_hastings/fly/Fly_4.svg', '/assets/images/notes/metropolis_hastings/fly/Fly_5.svg'],
 
 }
 
@@ -506,9 +506,14 @@ const margin = { top: 20, right: 30, bottom: 40, left: 40 };
 const width = 650 - margin.left - margin.right;
 const height = 400 - margin.top - margin.bottom;
 
+const svgW = width + margin.left + margin.right;
+const svgH = height + margin.top + margin.bottom;
+
 const svg = d3.select("#barPlotSVG")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", svgW)
+    .attr("height", svgH)
+    .attr("viewBox", `0 0 ${svgW} ${svgH}`)
+    .attr("preserveAspectRatio", "xMidYMid meet")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 

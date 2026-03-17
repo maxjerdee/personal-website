@@ -1,139 +1,88 @@
-body {
+/* All selectors scoped under .mh-demo so they don't conflict with the
+   host page's Bootstrap styles when the demo is embedded directly. */
+
+.mh-demo {
   font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
-.bar {
-  fill: gray;
-  /* cursor: pointer; */
+.mh-demo *, .mh-demo *::before, .mh-demo *::after {
+  box-sizing: inherit;
 }
-.bar:hover {
-  /* fill: darkblue; */
-}
-.static-bar {
-  fill: lightgray;
-}
-.arrow {
-  cursor: pointer;
-  fill: black;
-  stroke: none;
-}
-.arrow:hover {
-  fill: darkred;
-}
-.slider-container {
+
+/* ── Top-level flex layout ─────────────────────────────────────────────────── */
+.mh-demo #all-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
 }
-.toggle-container {
+
+.mh-demo #simulation-container {
+  flex: 1 1 300px;
+  min-width: 0;
+  max-width: 600px;
+}
+
+.mh-demo #controls {
+  flex: 1 1 280px;
+  min-width: 0;
+  max-width: 600px;
+  padding-top: 8px;
+}
+
+/* ── Canvas: renders at 600×500 internally, scales visually ────────────────── */
+.mh-demo #simulation canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Bar chart SVG: scales via viewBox ─────────────────────────────────────── */
+.mh-demo #barPlotSVG {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  display: block;
+}
+
+.mh-demo .bar        { fill: gray; }
+.mh-demo .static-bar { fill: lightgray; }
+.mh-demo .arrow      { cursor: pointer; fill: black; stroke: none; }
+.mh-demo .arrow:hover { fill: darkred; }
+
+/* ── Toggle switch row ─────────────────────────────────────────────────────── */
+.mh-demo .toggle-container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 0px auto -20px auto;
+  margin: 0 auto -20px auto;
   position: relative;
 }
-.slider-container img, .slider-container .frogs, .toggle-container label {
-  width: 70px;
-  height: auto;
+.mh-demo .barPlotTitleText {
+  margin: 0 10px;
+  font-size: 14px;
 }
-.slider-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: calc(100% - 140px); /* Adjust width to accommodate images */
-  margin: 0;
-}
-input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 10px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-}
-input[type="range"]:hover {
-  opacity: 1;
-}
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 50px;
-  height: 50px;
-  background: url('../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg') no-repeat center;
-  background-size: contain;
-  cursor: pointer;
-}
-input[type="range"]::-ms-thumb {
-  appearance: none;
-  width: 50px;
-  height: 50px;
-  background: url('../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg') no-repeat center;
-  background-size: contain;
-  cursor: pointer;
-}
-input[type="range"]::-moz-range-thumb {
-  width: 50px;
-  height: 50px;
-  background: url('../../../assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg') no-repeat center;
-  background-size: contain;
-  cursor: pointer;
-}
-.slider-value {
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-}
-.frogs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
-  width: 70px; /* Adjust as needed to fit the grid */
-}
-.frogs img {
-  width: 20px; /* Adjust size to make them smaller */
-  height: auto;
-}
-.label {
-  position: absolute;
-  top: -25px;
-  width: 70px;
-  text-align: center;
-  font-weight: bold;
-}
-.slider-title {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-.switch {
+
+/* Toggle pill */
+.mh-demo .mh-switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
+  flex-shrink: 0;
 }
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.slider-switch {
+.mh-demo .mh-switch input { opacity: 0; width: 0; height: 0; }
+.mh-demo .slider-switch {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background-color: #ccc;
   border-radius: 34px;
   transition: 0.4s;
 }
-.slider-switch:before {
+.mh-demo .slider-switch::before {
   position: absolute;
   content: "";
   height: 26px;
@@ -144,18 +93,118 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   transition: 0.4s;
 }
-input:checked + .slider-switch {
-  background-color: #2196F3;
+.mh-demo input:checked + .slider-switch { background-color: #2196F3; }
+.mh-demo input:checked + .slider-switch::before { transform: translateX(26px); }
+
+/* ── Sliders ───────────────────────────────────────────────────────────────── */
+.mh-demo .slider-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 28px;
 }
-input:checked + .slider-switch:before {
-  transform: translateX(26px);
-}
-#all-container {
+.mh-demo .slider-container {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
 }
-.barPlotTitleText {
-  margin: 0px 10px;
+.mh-demo .slider-container .left-frog,
+.mh-demo .slider-container .right-frog {
+  width: 60px;
+  height: auto;
+  flex-shrink: 0;
+}
+.mh-demo .slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin: 0 6px;
+}
+.mh-demo input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  border: none;
+  border-radius: 5px;
+}
+.mh-demo input[type="range"]:hover { opacity: 1; }
+.mh-demo input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 46px;
+  height: 46px;
+  background: url('/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg') no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+.mh-demo input[type="range"]::-moz-range-thumb {
+  width: 46px;
+  height: 46px;
+  background: url('/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg') no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+}
+.mh-demo .slider-value {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  white-space: nowrap;
+  font-size: 14px;
+}
+.mh-demo .mh-param-label {
+  position: absolute;
+  top: -24px;
+  width: 60px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* ── Frog count grid ───────────────────────────────────────────────────────── */
+.mh-demo .frogs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  width: 60px;
+  flex-shrink: 0;
+}
+.mh-demo .frogs img {
+  width: 18px;
+  height: auto;
+}
+
+/* ── FPS + credit ──────────────────────────────────────────────────────────── */
+.mh-demo #fps {
+  font-size: 11px;
+  color: #bbb;
+  text-align: right;
+  height: 16px;
+}
+.mh-demo .mh-credit {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #888;
+}
+
+/* ── Mobile ────────────────────────────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .mh-demo #simulation-container { max-width: 100%; }
+  .mh-demo #controls             { max-width: 100%; padding-top: 0; }
+  .mh-demo .slider-container .left-frog,
+  .mh-demo .slider-container .right-frog { width: 44px; }
+  .mh-demo .frogs { width: 44px; }
+  .mh-demo .frogs img { width: 14px; }
+  .mh-demo .mh-param-label { font-size: 11px; width: 50px; }
 }

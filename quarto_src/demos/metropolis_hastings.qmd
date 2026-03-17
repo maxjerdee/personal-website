@@ -29,9 +29,79 @@ $$P_{\text{accept}}(x \rightarrow x') = \min\left(1,\frac{P(x)}{P(x')}\right).$$
 
 In this analogy, the states $x$ are the different lilypads, and the probability $P(x)$ is the number of flies at each lilypad. The frog characters then correspond to the behavior of this Monte Carlo algorithm at different values of $\beta$. Below, you can tinker with these parameters to explore how the distribution of frogs is related to the distribution of flies depending on the $\beta$ parameter.
 
- 
+
 ```{=html}
-<div>
-<iframe align="middle" frameborder="0" scrolling="yes" src="../../demos_code/demos/metropolis_hastings/metropolis_hastings.html" onload="this.width=screen.width;this.height=screen.height;"></iframe>
+<link rel="stylesheet" type="text/css" href="../demos_code/demos/metropolis_hastings/main.css">
+<div class="mh-demo">
+    <div id="all-container">
+        <div id="simulation-container">
+            <div id="fps"></div>
+            <div id="simulation"></div>
+            <div id="barPlot">
+                <div id="barPlotTitle">
+                    <div class="toggle-container">
+                        <div class="barPlotTitleText" id="currentFrogCount" style="font-weight: bold;">Current Frog Count</div>
+                        <label class="mh-switch">
+                            <input type="checkbox" id="frogToggle">
+                            <span class="slider-switch"></span>
+                        </label>
+                        <div class="barPlotTitleText" id="accumulatedFrogCount">Accumulated Frog Count</div>
+                    </div>
+                </div>
+                <svg id="barPlotSVG"></svg>
+            </div>
+        </div>
+        <div id="controls">
+            <div>
+                <div class="slider-title">Inverse Temperature</div>
+                <div class="slider-container">
+                    <div class="mh-param-label" style="left: 0;">&#946; = 0</div>
+                    <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitRed.svg" alt="Red Frog" class="left-frog">
+                    <div class="slider-wrapper">
+                        <div class="slider-value" id="frogBeta">β = 0.00</div>
+                        <input type="range" id="frogZSlider" min="0" max="1" step="0.001" value="0">
+                    </div>
+                    <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitBlue.svg" alt="Blue Frog" class="right-frog">
+                    <div class="mh-param-label" style="right: 0;">&#946; = &infin;</div>
+                </div>
+            </div>
+            <div>
+                <div class="slider-title">Number of Frogs</div>
+                <div class="slider-container">
+                    <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog" class="left-frog">
+                    <div class="slider-wrapper">
+                        <div class="slider-value" id="frogCount">1</div>
+                        <input type="range" id="frogCountSlider" min="1" max="20" value="1">
+                    </div>
+                    <div class="frogs">
+                        <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
+                        <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
+                        <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
+                        <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
+                        <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
+                        <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
+                        <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
+                        <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
+                        <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="slider-title">Simulation Speed</div>
+                <div class="slider-container">
+                    <img src="/assets/images/notes/metropolis_hastings/frog/FrogSitGreen.svg" alt="Green Frog" class="left-frog">
+                    <div class="slider-wrapper">
+                        <input type="range" id="simulationSpeedSlider" min="1" max="20" value="1">
+                    </div>
+                    <img src="/assets/images/notes/metropolis_hastings/frog/FrogLeapGreen.svg" alt="Green Leap Frog" class="right-frog">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mh-credit">
+        <i>Developed by <a href="https://www.maxjerdee.com">Max Jerdee</a>, art by Vellia Zhou.</i>
+    </div>
 </div>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="../demos_code/demos/metropolis_hastings/main.js"></script>
 ```

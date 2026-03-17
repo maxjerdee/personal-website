@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Load and explore network graphs interactively">
 
-<title>Demos – Max Jerdee</title>
+<title>Network explorer – Max Jerdee</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,31 +24,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/images/icon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9eba827c03a25f87387b0d684d0d1449.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-a79e04359f6cf4a1d16769d03103769f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-9eba827c03a25f87387b0d684d0d1449.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/images/icon.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9eba827c03a25f87387b0d684d0d1449.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a79e04359f6cf4a1d16769d03103769f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-9eba827c03a25f87387b0d684d0d1449.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,35 +74,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SY1YC6MMLM"></script>
 
 <script type="text/javascript">
@@ -114,37 +84,8 @@ gtag('js', new Date());
 gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -316,7 +257,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Max Jerdee</span>
     </a>
   </div>
@@ -327,27 +268,27 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link" href="../research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./papers.html"> 
+    <a class="nav-link" href="../papers.html"> 
 <span class="menu-text">Papers</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./code.html"> 
+    <a class="nav-link" href="../code.html"> 
 <span class="menu-text">Code</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./demos.html" aria-current="page"> 
+    <a class="nav-link" href="../demos.html"> 
 <span class="menu-text">Demos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./notes.html"> 
+    <a class="nav-link" href="../notes.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./assets/pdf/CV.pdf"> 
+    <a class="nav-link" href="../assets/pdf/CV.pdf"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -371,9 +312,14 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Demos</h1>
+<h1 class="title">Network explorer</h1>
 </div>
 
+<div>
+  <div class="description">
+    Load and explore network graphs interactively
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -388,121 +334,88 @@ window.Quarto = {
 </header>
 
 
-<p>Assorted projects I have worked on, generally try to explore a neat idea in an interactive way</p>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/network_explorer.css">
+
+<!-- Example selector -->
+<div class="ne-selector-row">
+  <label class="ne-selector-label" for="ne-example-select">Load example:</label>
+  <select id="ne-example-select" class="form-select form-select-sm">
+    <option value="karate" selected="">Karate Club — force (34 nodes, 2 communities)</option>
+    <option value="florentine">Florentine Families — anchored (15 nodes, marriages)</option>
+    <option value="pollinator">Plant–Pollinator — bipartite (22 nodes)</option>
+    <option value="chickens">Chicken Pecking Order — hierarchy (11 nodes, directed)</option>
+    <option value="orangutan">Orangutan Dominance — anchored (6 nodes, directed, weighted)</option>
+    <option value="les_mis">Les Misérables — force (58 nodes, weighted)</option>
+  </select>
+  <span class="ne-or">or</span>
+</div>
+
+<!-- File upload -->
+<div id="ne-upload-zone">
+  <div class="ne-upload-icon">⬆</div>
+  <p>Drop a <code>.gml</code> file here, or <label for="ne-file-input">browse</label></p>
+  <input type="file" id="ne-file-input" accept=".gml,.txt">
+</div>
+
+<div id="ne-stats"></div>
+<div id="ne-error"></div>
+
+<!-- Viewer shell (always in DOM) -->
+<div id="ne-viewer" style="display:none">
+  <div class="ne-tab-strip">
+    <button class="ne-tab-btn active" data-tab="graph">Graph</button>
+    <button class="ne-tab-btn" data-tab="matrix">Matrix</button>
+  </div>
+  <div id="ne-graph-pane" style="position:relative">
+    <svg id="ne-svg"></svg>
+    <button id="ne-reset-zoom" class="btn btn-sm btn-outline-secondary">Reset view</button>
+    <div id="ne-info-panel">
+      <span class="nip-hint">Hover or click a node for details</span>
+    </div>
+  </div>
+  <div id="ne-matrix-pane"></div>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="../assets/js/network_explorer.js"></script>
+<p>Loads any network in <a href="https://en.wikipedia.org/wiki/Graph_Modelling_Language">GML format</a>. Six example networks are included, each demonstrating a different layout mode:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layout</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>force</strong></td>
+<td>Free simulation — nodes settle by charge + edge tension</td>
+</tr>
+<tr class="even">
+<td><strong>anchored</strong></td>
+<td>Nodes have specified home positions and drift back after release</td>
+</tr>
+<tr class="odd">
+<td><strong>bipartite</strong></td>
+<td>Two-column layout from <code>group 0</code> / <code>group 1</code>; strong column anchoring</td>
+</tr>
+<tr class="even">
+<td><strong>hierarchy</strong></td>
+<td>Vertical ordering by <code>value</code> (rank); strong vertical, free horizontal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Controls:</strong> drag nodes to reposition · scroll/pinch to zoom · hover to see neighbors · click to pin · click background to release · Matrix tab shows the adjacency matrix (≤ 60 nodes).</p>
+<p><strong>GML attributes recognised:</strong> <code>label</code>, <code>x</code>/<code>y</code> (anchor positions), <code>color</code> (hex), <code>group</code> (integer, auto-colored), <code>value</code> (rank for hierarchy). Edge <code>weight</code> scales stroke width. Top-level <code>directed 1</code> enables arrowheads. Top-level <code>layout "anchored"</code> (or <code>bipartite</code>, <code>hierarchy</code>) sets the mode.</p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1765656370747" data-listing-reading-time-sort="2" data-listing-word-count-sort="249">
-<a href="./demos/chaos_sampler.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./assets/images/demos/chaos_sampler/lorentz_explainer.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Chaos sampler
-</h5>
-<div class="card-text listing-description delink">
-<p>Use a chaotic system to chop up beat samples</p>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1765656370868" data-listing-reading-time-sort="2" data-listing-word-count-sort="261">
-<a href="./demos/game_of_life.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./assets/images/demos/game_of_life/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Game of life
-</h5>
-<div class="card-text listing-description delink">
-<p>Make music with Conway’s game of life</p>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1773709630876" data-listing-reading-time-sort="8" data-listing-word-count-sort="1542">
-<a href="./demos/metropolis_hastings.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./assets/images/notes/metropolis_hastings/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-MCMC
-</h5>
-<div class="card-text listing-description delink">
-<p>Explore Monte Carlo methods with hopping frogs</p>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1765656370886" data-listing-reading-time-sort="1" data-listing-word-count-sort="114">
-<a href="./demos/relativity.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./assets/images/demos/relativity/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Special relativity
-</h5>
-<div class="card-text listing-description delink">
-<p>Use your phone to observe how much your time slows down as you move around</p>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1765656370900" data-listing-reading-time-sort="1" data-listing-word-count-sort="56">
-<a href="./demos/wikiguess.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./assets/images/demos/wikiguess/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-WikiGuess
-</h5>
-<div class="card-text listing-description delink">
-<p>Compete with friends to estimate numbers from Wikipedia</p>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
