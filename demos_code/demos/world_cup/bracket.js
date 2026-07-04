@@ -55,7 +55,7 @@
   let defaultPathEls = [];
   let PROJECTED_MODE  = false;
   let PROJECTED_FILLS = new Set();  // slot keys filled by projected mode
-  let ACTIVE_MATRIX   = 'pele';     // 'pele' | 'matches'
+  let ACTIVE_MATRIX   = 'ds_pele';  // 'ds' | 'ds_pele' | 'pele'
 
   // ── Entry ────────────────────────────────────────────────────────────────
   async function init() {
@@ -67,7 +67,7 @@
       return;
     }
     // Default active matrix
-    DATA.pairwise_ko = DATA.pairwise_ko_pele ?? DATA.pairwise_ko;
+    DATA.pairwise_ko = DATA.pairwise_ko_ds_pele ?? DATA.pairwise_ko;
 
     document.getElementById('last-updated').textContent =
       'Predictions as of ' + new Date(DATA.generated_at).toUTCString();
@@ -480,9 +480,9 @@
 
   function switchMatrix(key) {
     ACTIVE_MATRIX = key;
-    DATA.pairwise_ko = key === 'pele'
-      ? (DATA.pairwise_ko_pele ?? DATA.pairwise_ko)
-      : (DATA.pairwise_ko_matches ?? DATA.pairwise_ko_pele ?? DATA.pairwise_ko);
+    if (key === 'ds')         DATA.pairwise_ko = DATA.pairwise_ko_ds      ?? DATA.pairwise_ko;
+    else if (key === 'ds_pele') DATA.pairwise_ko = DATA.pairwise_ko_ds_pele ?? DATA.pairwise_ko;
+    else                        DATA.pairwise_ko = DATA.pairwise_ko_pele    ?? DATA.pairwise_ko;
     if (PROJECTED_MODE) { clearProjected(); applyProjected(); }
     refreshAllProbs();
   }
