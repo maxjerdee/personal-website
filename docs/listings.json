@@ -12,6 +12,10 @@
     ]
   },
   {
+    "listing": "/code.html",
+    "items": []
+  },
+  {
     "listing": "/demos.html",
     "items": [
       "/demos/chaos_sampler.html",
@@ -21,9 +25,5 @@
       "/demos/wikiguess.html",
       "/demos/world_cup.html"
     ]
-  },
-  {
-    "listing": "/code.html",
-    "items": []
   }
 ]
