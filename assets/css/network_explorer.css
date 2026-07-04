@@ -184,3 +184,56 @@
 .ne-matrix thead th { position: sticky; top: 0; z-index: 1; }
 .ne-matrix tbody th { position: sticky; left: 0; z-index: 1; text-align: left; }
 .ne-matrix td.nz { background: #fff3cd; font-weight: 600; color: #7a5900; }
+
+/* ── Embedded figure viewers (class-based, for multi-instance use) ────────── */
+.ne-fig-wrap {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  margin: 1.2em 0;
+}
+.ne-fig-graph { position: relative; }
+.ne-fig-svg {
+  display: block;
+  width: 100%;
+  background: #fcfcfc;
+  cursor: grab;
+}
+.ne-fig-svg:active { cursor: grabbing; }
+.ne-fig-ip {
+  padding: 8px 16px;
+  background: #1a1a2e;
+  color: #9aa5be;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 11px;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.ne-fig-ip .nip-label { color: #e8eaf0; font-weight: 700; }
+.ne-fig-ip .nip-deg   { color: #7baaf7; }
+.ne-fig-ip .nip-nb    { color: #7d8ba3; }
+.ne-fig-ip .nip-hint  { opacity: 0.45; font-style: italic; }
+.ne-fig-stat {
+  padding: 4px 12px;
+  background: #f1f3f4;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 11px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.ne-fig-select-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.ne-fig-select-row label { font-size: 13px; color: #555; white-space: nowrap; }
+.ne-fig-select-row select { max-width: 380px; font-size: 13px; }

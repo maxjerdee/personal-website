@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MH Buffet Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app-container">
+    <div id="canvas-wrapper">
+      <canvas id="main-canvas"></canvas>
+    </div>
+
+    <div id="controls-panel">
+
+      <div class="control-row presets-row">
+        <span class="control-label-title">Target Distribution</span>
+        <div class="preset-buttons">
+          <button class="preset-btn active" data-preset="uniform">Uniform</button>
+          <button class="preset-btn" data-preset="unimodal">Unimodal</button>
+          <button class="preset-btn" data-preset="bimodal">Bimodal</button>
+          <button class="preset-btn" data-preset="skewed">Skewed</button>
+        </div>
+      </div>
+
+      <div class="sliders-grid">
+        <div class="slider-group">
+          <div class="slider-label">
+            <span class="slider-name">Inverse Temperature</span>
+            <span class="slider-val" id="beta-val">β = 1.0</span>
+          </div>
+          <input type="range" id="beta-slider" min="0.1" max="5.0" step="0.1" value="1.0">
+          <div class="slider-hints"><span>Random</span><span>Greedy</span></div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span class="slider-name">Number of Walkers</span>
+            <span class="slider-val" id="walkers-val">3</span>
+          </div>
+          <input type="range" id="walkers-slider" min="1" max="20" step="1" value="3">
+          <div class="slider-hints"><span>1</span><span>20</span></div>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span class="slider-name">Speed</span>
+            <span class="slider-val" id="speed-val">Medium</span>
+          </div>
+          <input type="range" id="speed-slider" min="1" max="7" step="1" value="4">
+          <div class="slider-hints"><span>Slow</span><span>Fast</span></div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button id="play-pause-btn" class="action-btn primary-btn">&#9646;&#9646; Pause</button>
+        <button id="reset-btn" class="action-btn secondary-btn">&#8635; Reset</button>
+        <span id="step-counter" class="step-counter">Steps: 0</span>
+      </div>
+
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

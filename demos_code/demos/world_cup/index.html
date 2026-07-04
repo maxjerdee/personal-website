@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Cup 2026 — Bracket</title>
+  <link rel="stylesheet" href="bracket.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>World Cup 2026</h1>
+    <p>Bayesian Bradley-Terry predictions · hover a team to see their path · click to advance</p>
+    <p id="last-updated"></p>
+    <div id="controls">
+      <button id="reset-btn">Reset bracket</button>
+      <label id="projected-label">
+        <input type="checkbox" id="projected-checkbox"> Projected
+      </label>
+      <div id="model-toggle">
+        <label><input type="radio" name="model" value="pele" checked> <a href="https://www.natesilver.net/p/pele-international-football-rankings-soccer-ratings-projections" target="_blank" style="color:inherit;">PELE</a>-adjusted</label>
+        <label><input type="radio" name="model" value="matches"> Matches only</label>
+      </div>
+    </div>
+  </header>
+
+  <div id="bracket-outer">
+    <div id="round-labels-row"></div>
+    <div id="bracket">
+      <!-- team boxes and SVG connector lines injected by bracket.js -->
+
+      <!-- Champion center panel (always in DOM, positioned by JS) -->
+      <div id="center-panel">
+        <p id="center-hint" style="font-size:0.62rem;color:#ccc;text-align:center;line-height:1.5;">
+          Hover a team<br>to see their path
+        </p>
+        <div id="center-team-flag"></div>
+        <div id="center-team-name"></div>
+        <div id="center-prob-label" style="display:none;font-size:0.55rem;letter-spacing:.1em;text-transform:uppercase;color:#bbb;margin-top:8px;">
+          Chance of winning
+        </div>
+        <div id="center-prob-value"></div>
+      </div>
+    </div>
+  </div>
+
+  <p id="error" style="color:#e63946;margin-top:16px;font-size:0.85rem;"></p>
+  <p style="font-size:0.65rem;color:#ccc;margin-top:24px;text-align:center;">
+    Bracket layout inspired by
+    <a href="https://projects.fivethirtyeight.com/2019-march-madness-predictions/" target="_blank"
+       style="color:#bbb;">FiveThirtyEight March Madness</a>
+  </p>
+</div>
+<script src="bracket.js"></script>
+</body>
+</html>

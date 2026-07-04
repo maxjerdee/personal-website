@@ -1,0 +1,284 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #f6f6f6;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+#app {
+  padding: 16px 16px 32px;
+  overflow-x: auto;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+header h1 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+header p {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 4px;
+}
+#last-updated {
+  font-size: 0.72rem;
+  color: #aaa;
+  margin-top: 2px;
+}
+
+/* ── Round labels ──────────────────────────────────────────────────────── */
+#round-labels-row {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 6px;
+  /* width set by JS */
+}
+.round-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #bbb;
+  text-align: center;
+  flex-shrink: 0;
+  /* width set by JS */
+}
+.round-label-center {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #bbb;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ── Bracket container ─────────────────────────────────────────────────── */
+#bracket-outer {
+  display: inline-block;
+  vertical-align: top;
+}
+#bracket {
+  position: relative;
+}
+
+/* ── Team boxes ──────────────────────────────────────────────────────────  */
+.team-box {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: #fff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 3px;
+  padding: 0 6px 0 5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: opacity 0.15s, border-color 0.15s, box-shadow 0.15s;
+  user-select: none;
+}
+.team-box.tbd {
+  background: #f8f8f8;
+  cursor: default;
+}
+.team-flag {
+  font-size: 0.75rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.team-name {
+  font-size: 0.63rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+  max-width: 68px;
+}
+.tbd-text {
+  color: #ccc;
+  font-style: italic;
+}
+.team-win-prob {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: #999;
+  background: rgba(255,255,255,0.85);
+  padding-left: 2px;
+}
+
+/* Thin probability bar along the bottom of each box */
+.prob-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  border-radius: 0 0 2px 2px;
+  transition: width 0.3s;
+}
+
+/* ── Hover states ────────────────────────────────────────────────────────  */
+.team-box.dimmed {
+  opacity: 0.2;
+}
+.team-box.highlighted {
+  border-color: #e63946;
+  box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.18);
+  z-index: 2;
+}
+.team-box.highlighted .team-win-prob {
+  color: #e63946;
+}
+
+/* ── Projected picks ─────────────────────────────────────────────────────  */
+.team-box.projected {
+  background: #fffbeb;
+  border-color: #f59e0b;
+  border-style: dashed;
+}
+.team-box.projected .team-win-prob { color: #d97706; }
+
+/* ── Controls row ────────────────────────────────────────────────────────  */
+#controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+#model-toggle {
+  display: flex;
+  gap: 8px;
+  font-size: 0.68rem;
+  color: #666;
+}
+#model-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+}
+#projected-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  color: #d97706;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ── Center champion panel ───────────────────────────────────────────────  */
+#center-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  padding-bottom: 80px;
+}
+#center-hint {
+  font-size: 0.56rem;
+  color: #ccc;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+#center-team-flag {
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: opacity 0.2s;
+}
+#center-team-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-top: 2px;
+  color: #111;
+  transition: opacity 0.2s;
+  min-height: 1em;
+}
+#center-prob-label {
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-top: 4px;
+}
+#center-prob-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #e63946;
+  line-height: 1;
+  transition: opacity 0.2s;
+}
+
+/* ── Prob labels along highlighted path ─────────────────────────────────  */
+.path-prob-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  fill: #e63946;
+  pointer-events: none;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+
+/* ── SVG connector lines ─────────────────────────────────────────────────  */
+.conn-base { stroke: #e0e0e0; stroke-width: 1.5; fill: none; }
+.conn-hl   { stroke: #e63946; fill: none; }
+
+/* Click-to-advance states */
+.team-box.user-winner {
+  border-left: 3px solid #333;
+}
+.team-box.user-loser .team-name {
+  text-decoration: line-through;
+  color: #ccc;
+}
+.team-box.user-loser .team-win-prob {
+  color: #ddd;
+}
+
+/* Flag images */
+.team-flag-img {
+  width: 16px;
+  height: 12px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+/* Reset button */
+#reset-btn {
+  margin-top: 8px;
+  padding: 4px 14px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #888;
+  background: transparent;
+  border: 1.5px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+#reset-btn:hover {
+  color: #e63946;
+  border-color: #e63946;
+}
