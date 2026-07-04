@@ -3,6 +3,7 @@ title: "Demos"
 listing:
   type: grid
   contents:
+    - demos/world_cup.qmd
     - demos/wikiguess.qmd
     - demos/game_of_life.qmd
     - demos/relativity.qmd

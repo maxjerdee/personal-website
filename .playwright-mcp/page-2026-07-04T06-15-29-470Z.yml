@@ -1,0 +1,92 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - heading "FIFA World Cup 2026" [level=1] [ref=e4]
+    - paragraph [ref=e5]: Knockout bracket · hover a team to see their path · click to advance
+    - paragraph [ref=e6]: Predictions as of Sat, 04 Jul 2026 00:00:00 GMT
+    - button "Reset bracket" [ref=e7] [cursor=pointer]
+  - generic [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]: Round of 16
+      - generic [ref=e11]: Quarter-finals
+      - generic [ref=e12]: Semi-finals
+      - generic [ref=e13]: Champion
+      - generic [ref=e14]: Semi-finals
+      - generic [ref=e15]: Quarter-finals
+      - generic [ref=e16]: Round of 16
+    - generic [ref=e17]:
+      - generic:
+        - paragraph:
+          - text: Hover a team
+          - text: to see their path
+      - img
+      - generic [ref=e18] [cursor=pointer]:
+        - generic [ref=e19]: Canada
+        - generic [ref=e20]: 0%
+      - generic [ref=e21] [cursor=pointer]:
+        - generic [ref=e22]: Morocco
+        - generic [ref=e23]: 0%
+      - generic [ref=e25] [cursor=pointer]:
+        - generic [ref=e26]: Paraguay
+        - generic [ref=e27]: 0%
+      - generic [ref=e28] [cursor=pointer]:
+        - generic [ref=e29]: France
+        - generic [ref=e30]: 43%
+      - generic [ref=e32] [cursor=pointer]:
+        - generic [ref=e33]: Brazil
+        - generic [ref=e34]: 16%
+      - generic [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: Norway
+        - generic [ref=e38]: 0%
+      - generic [ref=e39] [cursor=pointer]:
+        - generic [ref=e40]: Mexico
+        - generic [ref=e41]: 0%
+      - generic [ref=e42] [cursor=pointer]:
+        - generic [ref=e43]: England
+        - generic [ref=e44]: 6%
+      - generic [ref=e47]: TBD
+      - generic [ref=e48] [cursor=pointer]:
+        - generic [ref=e49]: France
+        - generic [ref=e50]: 43%
+      - generic [ref=e52] [cursor=pointer]:
+        - generic [ref=e53]: Brazil
+        - generic [ref=e54]: 16%
+      - generic [ref=e57]: TBD
+      - generic [ref=e59]: TBD
+      - generic [ref=e61]: TBD
+      - generic [ref=e63]: TBD
+      - generic [ref=e64] [cursor=pointer]:
+        - generic [ref=e65]: Spain
+        - generic [ref=e66]: 6%
+      - generic [ref=e68] [cursor=pointer]:
+        - generic [ref=e69]: Portugal
+        - generic [ref=e70]: 3%
+      - generic [ref=e72] [cursor=pointer]:
+        - generic [ref=e73]: USA
+        - generic [ref=e74]: 0%
+      - generic [ref=e76] [cursor=pointer]:
+        - generic [ref=e77]: Belgium
+        - generic [ref=e78]: 3%
+      - generic [ref=e80] [cursor=pointer]:
+        - generic [ref=e81]: Australia
+        - generic [ref=e82]: 0%
+      - generic [ref=e83] [cursor=pointer]:
+        - generic [ref=e84]: Argentina
+        - generic [ref=e85]: 20%
+      - generic [ref=e87] [cursor=pointer]:
+        - generic [ref=e88]: Colombia
+        - generic [ref=e89]: 1%
+      - generic [ref=e91] [cursor=pointer]:
+        - generic [ref=e92]: Switzerland
+        - generic [ref=e93]: 0%
+      - generic [ref=e95]: TBD
+      - generic [ref=e97]: TBD
+      - generic [ref=e99]: TBD
+      - generic [ref=e101]: TBD
+      - generic [ref=e103]: TBD
+      - generic [ref=e105]: TBD
+      - generic [ref=e107]: TBD
+  - paragraph
+  - paragraph [ref=e108]:
+    - text: Bracket layout inspired by
+    - link "FiveThirtyEight March Madness" [ref=e109] [cursor=pointer]:
+      - /url: https://projects.fivethirtyeight.com/2019-march-madness-predictions/

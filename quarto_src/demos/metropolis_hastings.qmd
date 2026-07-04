@@ -99,7 +99,7 @@ In this analogy, the states $x$ are the different lilypads, and the probability 
         </div>
     </div>
     <div class="mh-credit">
-        <i>Developed by <a href="https://www.maxjerdee.com">Max Jerdee</a>, art by Vellia Zhou.</i>
+        <i>Developed by <a href="https://www.maxjerdee.com">Max Jerdee</a>, art by Vellia Zhou MD.</i>
     </div>
 </div>
 <script src="https://d3js.org/d3.v7.min.js"></script>

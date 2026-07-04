@@ -1,0 +1,17 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - heading "FIFA World Cup 2026" [level=1] [ref=e4]
+    - paragraph [ref=e5]: Knockout bracket · hover a team to see their path · click to advance
+    - paragraph [ref=e6]: Predictions as of Sat, 04 Jul 2026 17:42:42 GMT
+    - button "Reset bracket" [ref=e7] [cursor=pointer]
+  - generic:
+    - generic:
+      - generic:
+        - paragraph:
+          - text: Hover a team
+          - text: to see their path
+  - paragraph
+  - paragraph [ref=e8]:
+    - text: Bracket layout inspired by
+    - link "FiveThirtyEight March Madness" [ref=e9] [cursor=pointer]:
+      - /url: https://projects.fivethirtyeight.com/2019-march-madness-predictions/

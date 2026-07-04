@@ -1,0 +1,2 @@
+[      48ms] TypeError: Cannot read properties of null (reading 'addEventListener')
+    at HTMLDocument.init (http://localhost:8765/bracket.js:78:50)

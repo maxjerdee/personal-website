@@ -126,6 +126,8 @@ class NetworkViewer {
     this.pinnedNode = null;
     this.gcm = buildGroupColorMap(this.graph.nodes);
     this._uid = Math.random().toString(36).slice(2, 7);
+    this._svgSel = options.svgSel || '#ne-svg';
+    this._infoPanelSel = options.infoPanelSel || '#ne-info-panel';
 
     this._computeDegrees();
     this._tagParallel();
@@ -244,7 +246,7 @@ class NetworkViewer {
   // ── SVG setup ───────────────────────────────────────────────────────────────
 
   _initSVG() {
-    const svg = d3.select('#ne-svg').attr('viewBox', `0 0 ${W} ${H}`).attr('height', H);
+    const svg = d3.select(this._svgSel).attr('viewBox', `0 0 ${W} ${H}`).attr('height', H);
     this._svg = svg;
     svg.selectAll('*').remove();
     svg.on('.zoom', null).on('click.unpin', null);
@@ -463,14 +465,17 @@ class NetworkViewer {
     const deg = this.graph.directed
       ? `out: ${d.outdegree} &nbsp;·&nbsp; in: ${d.indegree}`
       : `degree: ${d.degree}`;
-    document.getElementById('ne-info-panel').innerHTML =
+    const panel = document.querySelector(this._infoPanelSel);
+    if (!panel) return;
+    panel.innerHTML =
       `<span class="nip-label">${d.label}</span>` +
       `<span class="nip-deg">${deg}</span>` +
       (names.length ? `<span class="nip-nb">neighbors: ${names.join(', ')}</span>` : '');
   }
   _clearPanel() {
-    document.getElementById('ne-info-panel').innerHTML =
-      '<span class="nip-hint">Hover or click a node for details</span>';
+    const panel = document.querySelector(this._infoPanelSel);
+    if (!panel) return;
+    panel.innerHTML = '<span class="nip-hint">Hover or click a node for details</span>';
   }
 
   // ── Matrix ───────────────────────────────────────────────────────────────────
@@ -857,6 +862,9 @@ function loadGraph(ex, filename) {
 }
 
 function initExplorer() {
+  // Only run on the standalone explorer demo page
+  if (!document.getElementById('ne-example-select')) return;
+
   // Wire tabs (once, not per-viewer)
   document.querySelector('.ne-tab-strip').addEventListener('click', e => {
     const btn = e.target.closest('.ne-tab-btn');

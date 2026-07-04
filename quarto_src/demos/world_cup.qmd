@@ -1,0 +1,15 @@
+---
+title: "World Cup 2026"
+description: "Predictions with Bayesian Bradley-Terry model"
+image: "../assets/images/demos/world_cup/thumbnail.png"
+---
+
+::: {.column-screen}
+```{=html}
+<div>
+<iframe align="middle" frameborder="0" height="620px" scrolling="no"
+  src="../../demos_code/demos/world_cup/index.html"
+  width="100%" style="min-width:900px;"></iframe>
+</div>
+```
+:::

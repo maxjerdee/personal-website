@@ -1,0 +1,84 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - heading "FIFA World Cup 2026" [level=1] [ref=e4]
+    - paragraph [ref=e5]: Knockout bracket · hover a team to see their path · click to advance
+    - paragraph [ref=e6]: Predictions as of Fri, 03 Jul 2026 12:00:00 GMT
+    - button "Reset bracket" [ref=e7] [cursor=pointer]
+  - generic [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]: Round of 16
+      - generic [ref=e11]: Quarter-finals
+      - generic [ref=e12]: Semi-finals
+      - generic [ref=e13]: Champion
+      - generic [ref=e14]: Semi-finals
+      - generic [ref=e15]: Quarter-finals
+      - generic [ref=e16]: Round of 16
+    - generic [ref=e17]:
+      - generic:
+        - paragraph:
+          - text: Hover a team
+          - text: to see their path
+      - img
+      - generic [ref=e18] [cursor=pointer]:
+        - generic [ref=e19]: Canada
+        - generic [ref=e20]: 0%
+      - generic [ref=e21] [cursor=pointer]:
+        - generic [ref=e22]: Morocco
+        - generic [ref=e23]: 0%
+      - generic [ref=e25] [cursor=pointer]:
+        - generic [ref=e26]: Paraguay
+        - generic [ref=e27]: 0%
+      - generic [ref=e28] [cursor=pointer]:
+        - generic [ref=e29]: France
+        - generic [ref=e30]: 43%
+      - generic [ref=e32] [cursor=pointer]:
+        - generic [ref=e33]: Brazil
+        - generic [ref=e34]: 13%
+      - generic [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: Norway
+        - generic [ref=e38]: 1%
+      - generic [ref=e40] [cursor=pointer]:
+        - generic [ref=e41]: Mexico
+        - generic [ref=e42]: 0%
+      - generic [ref=e44] [cursor=pointer]:
+        - generic [ref=e45]: England
+        - generic [ref=e46]: 8%
+      - generic [ref=e49]: TBD
+      - generic [ref=e51]: TBD
+      - generic [ref=e53]: TBD
+      - generic [ref=e55]: TBD
+      - generic [ref=e57]: TBD
+      - generic [ref=e59]: TBD
+      - generic [ref=e61]: TBD
+      - generic [ref=e62] [cursor=pointer]:
+        - generic [ref=e63]: Portugal
+        - generic [ref=e64]: 4%
+      - generic [ref=e66] [cursor=pointer]:
+        - generic [ref=e67]: Spain
+        - generic [ref=e68]: 7%
+      - generic [ref=e70] [cursor=pointer]:
+        - generic [ref=e71]: USA
+        - generic [ref=e72]: 0%
+      - generic [ref=e74] [cursor=pointer]:
+        - generic [ref=e75]: Belgium
+        - generic [ref=e76]: 3%
+      - generic [ref=e78] [cursor=pointer]:
+        - generic [ref=e79]: Australia
+        - generic [ref=e80]: 0%
+      - generic [ref=e81] [cursor=pointer]:
+        - generic [ref=e82]: Argentina
+        - generic [ref=e83]: 20%
+      - generic [ref=e85] [cursor=pointer]:
+        - generic [ref=e86]: Colombia
+        - generic [ref=e87]: 1%
+      - generic [ref=e89] [cursor=pointer]:
+        - generic [ref=e90]: Switzerland
+        - generic [ref=e91]: 0%
+      - generic [ref=e93]: TBD
+      - generic [ref=e95]: TBD
+      - generic [ref=e97]: TBD
+      - generic [ref=e99]: TBD
+      - generic [ref=e101]: TBD
+      - generic [ref=e103]: TBD
+      - generic [ref=e105]: TBD
+  - paragraph

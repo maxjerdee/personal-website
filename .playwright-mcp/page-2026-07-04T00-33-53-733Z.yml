@@ -1,0 +1,318 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: https://web.archive.org/web/20230314203124/https://fivethirtyeight.com/
+        - img [ref=e6]
+      - link [ref=e7] [cursor=pointer]:
+        - /url: https://web.archive.org/web/20230314203124/https://abcnews.go.com/
+        - img [ref=e8]
+  - main [ref=e11]:
+    - generic [ref=e14]:
+      - heading "2023 March Madness Predictions" [level=1] [ref=e15]
+      - heading "Game schedule, in-game win probabilities and chances of advancing, updating live." [level=2] [ref=e16]
+      - paragraph [ref=e17]:
+        - text: "See also:"
+        - link "How To Fill Out Your Men's Bracket Like A Pro" [ref=e18] [cursor=pointer]:
+          - /url: https://web.archive.org/web/20230314203124/https://fivethirtyeight.com/features/how-to-fill-out-your-mens-ncaa-tournament-bracket-like-a-pro/
+        - link "How To Fill Out Your Women’s Bracket Like A Pro" [ref=e19] [cursor=pointer]:
+          - /url: https://web.archive.org/web/20230314203124/https://fivethirtyeight.com/features/keep-an-eye-on-these-teams-when-filling-out-your-womens-ncaa-tournament-bracket/
+        - link "College Basketball Storylines You Should Know" [ref=e20] [cursor=pointer]:
+          - /url: https://web.archive.org/web/20230314203124/https://fivethirtyeight.com/features/the-college-basketball-storylines-you-should-know-before-march-madness/
+    - generic [ref=e22]:
+      - generic [ref=e24] [cursor=pointer]: Men
+      - generic [ref=e26] [cursor=pointer]: Women
+    - generic [ref=e27]:
+      - combobox [ref=e30] [cursor=pointer]:
+        - option "March 14 (play-in)" [selected]
+        - option "March 15 (play-in)"
+        - option "March 16 (1st round)"
+        - option "March 17 (1st round)"
+        - option "March 18 (2nd round)" [disabled]
+        - option "March 19 (2nd round)" [disabled]
+        - option "March 23 (Sweet 16)" [disabled]
+        - option "March 24 (Sweet 16)" [disabled]
+        - option "March 25 (Elite Eight)" [disabled]
+        - option "March 26 (Elite Eight)" [disabled]
+        - option "April 1 (Final Four)" [disabled]
+        - option "April 3 (championship)" [disabled]
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - table [ref=e34]:
+            - rowgroup [ref=e35]:
+              - row "6:40 p.m. EDT | truTV Score Win Prob." [ref=e36]:
+                - columnheader "6:40 p.m. EDT | truTV" [ref=e37]:
+                  - link "6:40 p.m. EDT | truTV" [ref=e38] [cursor=pointer]:
+                    - /url: https://web.archive.org/web/20230314192303/http://espn.go.com/mens-college-basketball/game?gameId=401522117
+                - columnheader "Score" [ref=e39]
+                - columnheader "Win Prob." [ref=e40]
+          - table [ref=e42]:
+            - rowgroup [ref=e43]:
+              - row "TX A&M-CC16 — 54%" [ref=e44]:
+                - cell [ref=e45]:
+                  - img [ref=e47]
+                - cell "TX A&M-CC16" [ref=e48]
+                - cell "—" [ref=e49]
+                - cell "54%" [ref=e50]
+              - row "SE Mo. St.16 — 46%" [ref=e51]:
+                - cell [ref=e52]:
+                  - img [ref=e54]
+                - cell "SE Mo. St.16" [ref=e55]
+                - cell "—" [ref=e56]
+                - cell "46%" [ref=e57]
+        - generic [ref=e58]:
+          - table [ref=e59]:
+            - rowgroup [ref=e60]:
+              - row "9:10 p.m. EDT | truTV Score Win Prob." [ref=e61]:
+                - columnheader "9:10 p.m. EDT | truTV" [ref=e62]:
+                  - link "9:10 p.m. EDT | truTV" [ref=e63] [cursor=pointer]:
+                    - /url: https://web.archive.org/web/20230314192303/http://espn.go.com/mens-college-basketball/game?gameId=401522116
+                - columnheader "Score" [ref=e64]
+                - columnheader "Win Prob." [ref=e65]
+          - table [ref=e67]:
+            - rowgroup [ref=e68]:
+              - row "Miss. State11 — 57%" [ref=e69]:
+                - cell [ref=e70]:
+                  - img [ref=e72]
+                - cell "Miss. State11" [ref=e73]
+                - cell "—" [ref=e74]
+                - cell "57%" [ref=e75]
+              - row "Pittsburgh11 — 43%" [ref=e76]:
+                - cell [ref=e77]:
+                  - img [ref=e79]
+                - cell "Pittsburgh11" [ref=e80]
+                - cell "—" [ref=e81]
+                - cell "43%" [ref=e82]
+    - generic [ref=e83]:
+      - generic [ref=e84]: Round-by-round probabilities
+      - generic [ref=e86]:
+        - generic [ref=e88] [cursor=pointer]: Bracket
+        - generic [ref=e90] [cursor=pointer]: Table
+    - generic [ref=e92]:
+      - generic: Hover to see each team’s path to the championship.
+      - generic:
+        - generic: Click to advance a team in the bracket.
+      - generic:
+        - generic:
+          - generic:
+            - img
+      - img [ref=e94]:
+        - generic [ref=e95]:
+          - generic [ref=e96]: South
+          - generic [ref=e97]: Midwest
+          - generic [ref=e98]: East
+          - generic [ref=e99]: West
+          - generic [ref=e100]: 1ST ROUND
+          - generic [ref=e101]: 1ST ROUND
+          - generic [ref=e102]: 2ND ROUND
+          - generic [ref=e103]: 2ND ROUND
+          - generic [ref=e104]: SWEET 16
+          - generic [ref=e105]: SWEET 16
+          - generic [ref=e106]: ELITE EIGHT
+          - generic [ref=e107]: ELITE EIGHT
+          - generic [ref=e108]: FINAL FOUR
+          - generic [ref=e109]: FINAL FOUR
+          - generic [ref=e110]: CHAMPIONSHIP
+          - generic [ref=e113] [cursor=pointer]: TX A&M-CC
+          - generic [ref=e114] [cursor=pointer]: SE Mo. St.
+          - generic [ref=e115]: 54%
+          - generic [ref=e118] [cursor=pointer]: TXSO
+          - generic [ref=e119] [cursor=pointer]: F. Dickinson
+          - generic [ref=e120]: 57%
+          - generic [ref=e123] [cursor=pointer]: Miss. State
+          - generic [ref=e124] [cursor=pointer]: Pittsburgh
+          - generic [ref=e125]: 57%
+          - generic [ref=e128] [cursor=pointer]: Arizona St.
+          - generic [ref=e129] [cursor=pointer]: Nevada
+          - generic [ref=e130]: 54%
+          - generic [ref=e256]:
+            - generic [ref=e257]:
+              - generic [ref=e258] [cursor=pointer]: 22%
+              - generic [ref=e259] [cursor=pointer]: CHANCE OF
+              - generic [ref=e260] [cursor=pointer]: WINNING
+              - generic [ref=e261] [cursor=pointer]: TOURNAMENT
+            - generic [ref=e263] [cursor=pointer]: 31%
+            - generic [ref=e265] [cursor=pointer]: 41%
+            - generic [ref=e267] [cursor=pointer]: 59%
+            - generic [ref=e269] [cursor=pointer]: 74%
+            - generic [ref=e271] [cursor=pointer]: 97%
+            - generic [ref=e274] [cursor=pointer]: Houston
+            - generic [ref=e277] [cursor=pointer]: N. Kentucky
+            - generic [ref=e280] [cursor=pointer]: Iowa
+            - generic [ref=e283] [cursor=pointer]: Auburn
+            - generic [ref=e286] [cursor=pointer]: Miami
+            - generic [ref=e289] [cursor=pointer]: Drake
+            - generic [ref=e292] [cursor=pointer]: Indiana
+            - generic [ref=e295] [cursor=pointer]: Kent State
+            - generic [ref=e298] [cursor=pointer]: Iowa State
+            - generic [ref=e301] [cursor=pointer]: MSU/PITT
+            - generic [ref=e304] [cursor=pointer]: Xavier
+            - generic [ref=e307] [cursor=pointer]: Kenn. State
+            - generic [ref=e310] [cursor=pointer]: Texas A&M
+            - generic [ref=e313] [cursor=pointer]: Penn State
+            - generic [ref=e316] [cursor=pointer]: Texas
+            - generic [ref=e319] [cursor=pointer]: Colgate
+            - generic [ref=e321] [cursor=pointer]: 22%
+            - generic [ref=e324] [cursor=pointer]: Kansas
+            - generic [ref=e327] [cursor=pointer]: Howard
+            - generic [ref=e330] [cursor=pointer]: Arkansas
+            - generic [ref=e333] [cursor=pointer]: Illinois
+            - generic [ref=e336] [cursor=pointer]: St. Mary's
+            - generic [ref=e339] [cursor=pointer]: VCU
+            - generic [ref=e342] [cursor=pointer]: UConn
+            - generic [ref=e345] [cursor=pointer]: Iona
+            - generic [ref=e347] [cursor=pointer]: 38%
+            - generic [ref=e349] [cursor=pointer]: 64%
+            - generic [ref=e352] [cursor=pointer]: TCU
+            - generic [ref=e355] [cursor=pointer]: ASU/NEV
+            - generic [ref=e357] [cursor=pointer]: 92%
+            - generic [ref=e360] [cursor=pointer]: Gonzaga
+            - generic [ref=e363] [cursor=pointer]: Gr. Canyon
+            - generic [ref=e366] [cursor=pointer]: N'western
+            - generic [ref=e369] [cursor=pointer]: Boise State
+            - generic [ref=e372] [cursor=pointer]: UCLA
+            - generic [ref=e375] [cursor=pointer]: UNC-Ash.
+            - generic [ref=e377] [cursor=pointer]: 30%
+            - generic [ref=e379] [cursor=pointer]: 45%
+            - generic [ref=e381] [cursor=pointer]: 65%
+            - generic [ref=e383] [cursor=pointer]: 82%
+            - generic [ref=e385] [cursor=pointer]: 99%
+            - generic [ref=e388] [cursor=pointer]: Alabama
+            - generic [ref=e391] [cursor=pointer]: AMCC/SEMO
+            - generic [ref=e394] [cursor=pointer]: Maryland
+            - generic [ref=e397] [cursor=pointer]: W. Virginia
+            - generic [ref=e400] [cursor=pointer]: SDSU
+            - generic [ref=e403] [cursor=pointer]: Charleston
+            - generic [ref=e406] [cursor=pointer]: Virginia
+            - generic [ref=e409] [cursor=pointer]: Furman
+            - generic [ref=e412] [cursor=pointer]: Creighton
+            - generic [ref=e415] [cursor=pointer]: NC State
+            - generic [ref=e418] [cursor=pointer]: Baylor
+            - generic [ref=e421] [cursor=pointer]: UCSB
+            - generic [ref=e424] [cursor=pointer]: Missouri
+            - generic [ref=e427] [cursor=pointer]: Utah State
+            - generic [ref=e430] [cursor=pointer]: Arizona
+            - generic [ref=e433] [cursor=pointer]: Princeton
+            - generic [ref=e435] [cursor=pointer]: 25%
+            - generic [ref=e437] [cursor=pointer]: 41%
+            - generic [ref=e439] [cursor=pointer]: 69%
+            - generic [ref=e441] [cursor=pointer]: 98%
+            - generic [ref=e444] [cursor=pointer]: Purdue
+            - generic [ref=e447] [cursor=pointer]: TXSO/FDU
+            - generic [ref=e450] [cursor=pointer]: Memphis
+            - generic [ref=e453] [cursor=pointer]: Florida Atl.
+            - generic [ref=e456] [cursor=pointer]: Duke
+            - generic [ref=e459] [cursor=pointer]: Oral Roberts
+            - generic [ref=e462] [cursor=pointer]: Tennessee
+            - generic [ref=e465] [cursor=pointer]: La.-Lafayette
+            - generic [ref=e468] [cursor=pointer]: Kentucky
+            - generic [ref=e471] [cursor=pointer]: Providence
+            - generic [ref=e474] [cursor=pointer]: Kansas State
+            - generic [ref=e477] [cursor=pointer]: Montana St.
+            - generic [ref=e480] [cursor=pointer]: Michigan St.
+            - generic [ref=e483] [cursor=pointer]: USC
+            - generic [ref=e486] [cursor=pointer]: Marquette
+            - generic [ref=e489] [cursor=pointer]: Vermont
+    - generic [ref=e617]:
+      - generic [ref=e618]: "Forecast:"
+      - generic [ref=e619] [cursor=pointer]:
+        - combobox [ref=e620]:
+          - option "Current" [selected]
+          - option "Pre-tournament"
+          - option "March 14 (play-in)" [disabled]
+          - option "March 15 (play-in)" [disabled]
+          - option "March 16 (1st round)" [disabled]
+          - option "March 17 (1st round)" [disabled]
+          - option "March 18 (2nd round)" [disabled]
+          - option "March 19 (2nd round)" [disabled]
+          - option "March 23 (Sweet 16)" [disabled]
+          - option "March 24 (Sweet 16)" [disabled]
+          - option "March 25 (Elite Eight)" [disabled]
+          - option "March 26 (Elite Eight)" [disabled]
+          - option "April 1 (Final Four)" [disabled]
+        - generic: ▼
+      - text: ▼
+    - generic [ref=e622]:
+      - generic [ref=e623]:
+        - paragraph [ref=e624]:
+          - link "How this works »" [ref=e625] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314203124/https://fivethirtyeight.com/features/how-our-march-madness-predictions-work-2/
+        - paragraph [ref=e626]:
+          - text: Brackets originally published March 12.
+          - link "Download forecast data" [ref=e627] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314203124/https://projects.fivethirtyeight.com/march-madness-api/2023/fivethirtyeight_ncaa_forecasts.csv
+          - text: .
+      - paragraph [ref=e629]:
+        - text: Design and development by
+        - link "Jay Boice" [ref=e630] [cursor=pointer]:
+          - /url: https://web.archive.org/web/20230314203124/https://fivethirtyeight.com/contributors/jay-boice/
+        - text: . Statistical models by
+        - link "Nate Silver" [ref=e631] [cursor=pointer]:
+          - /url: https://web.archive.org/web/20230314203124/https://fivethirtyeight.com/contributors/nate-silver/
+        - text: and
+        - link "Jay Boice" [ref=e632] [cursor=pointer]:
+          - /url: https://web.archive.org/web/20230314203124/https://fivethirtyeight.com/contributors/jay-boice/
+        - text: .
+  - heading [level=3] [ref=e634] [cursor=pointer]: Comments
+  - contentinfo [ref=e636]:
+    - generic [ref=e638]:
+      - generic [ref=e639]: Get more FiveThirtyEight
+      - list [ref=e641]:
+        - listitem [ref=e642]:
+          - link "Store" [ref=e643] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314201932/https://cottonbureau.com/stores/fivethirtyeight#/shop
+        - listitem [ref=e644]:
+          - link "Newsletter" [ref=e645] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314201932/https://fivethirtyeight.com/newsletter/
+        - listitem [ref=e646]:
+          - link "Twitter" [ref=e647] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314201932/https://twitter.com/fivethirtyeight
+        - listitem [ref=e648]:
+          - link "Facebook" [ref=e649] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314201932/https://www.facebook.com/fivethirtyeight
+        - listitem [ref=e650]:
+          - link "Data" [ref=e651] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314201932/https://data.fivethirtyeight.com/
+        - listitem [ref=e652]:
+          - link "RSS" [ref=e653] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314201932/https://fivethirtyeight.com/datalab/fear-not-readers-we-have-rss-feeds/
+      - list [ref=e655]:
+        - listitem [ref=e656]:
+          - link "About Us" [ref=e657] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314201932/https://fivethirtyeight.com/about-us/
+        - listitem [ref=e658]:
+          - link "Jobs" [ref=e659] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314201932/https://fivethirtyeight.com/tag/fivethirtyeight-jobs/
+        - listitem [ref=e660]:
+          - link "Masthead" [ref=e661] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314201932/https://fivethirtyeight.com/masthead/
+        - listitem [ref=e662]:
+          - link "Pitch FiveThirtyEight" [ref=e663] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314201932/https://fivethirtyeight.com/how-to-pitch-fivethirtyeight/
+        - listitem [ref=e664]:
+          - link "Advertise With Us" [ref=e665] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314201932/https://disneyadsales.com/our-brands/abc-news/
+        - listitem [ref=e666]:
+          - link "About Nielsen Measurement" [ref=e667] [cursor=pointer]:
+            - /url: https://web.archive.org/web/20230314201932/http://priv-policy.imrworldwide.com/priv/browser/us/en/optout.html
+      - generic [ref=e668]:
+        - list [ref=e669]:
+          - listitem [ref=e670]:
+            - link "Terms of Use" [ref=e671] [cursor=pointer]:
+              - /url: https://web.archive.org/web/20230314201932/https://disneytermsofuse.com/
+          - listitem [ref=e672]:
+            - link "Privacy Policy" [ref=e673] [cursor=pointer]:
+              - /url: https://web.archive.org/web/20230314201932/https://disneyprivacycenter.com/
+          - listitem [ref=e674]:
+            - link "Do Not Sell My Personal Information" [ref=e675] [cursor=pointer]:
+              - /url: https://web.archive.org/web/20230314201932/https://privacy.thewaltdisneycompany.com/en/dnsmi/
+          - listitem [ref=e676]:
+            - link "Your US State Privacy Rights" [ref=e677] [cursor=pointer]:
+              - /url: https://web.archive.org/web/20230314201932/https://privacy.thewaltdisneycompany.com/en/current-privacy-policy/your-us-privacy-rights/
+          - listitem [ref=e678]:
+            - link "Children's Online Privacy Policy" [ref=e679] [cursor=pointer]:
+              - /url: https://web.archive.org/web/20230314201932/https://disneyprivacycenter.com/kids-privacy-policy/english/
+          - listitem [ref=e680]:
+            - link "Interest-Based Ads" [ref=e681] [cursor=pointer]:
+              - /url: https://web.archive.org/web/20230314201932/https://preferences-mgr.truste.com/?type=abcnews&affiliateId=11&cid=clicksource_4380645_footer_interestbasedads
+        - paragraph [ref=e682]: © 2023 ABC News Internet Ventures. All rights reserved.

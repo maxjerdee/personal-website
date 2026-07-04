@@ -1,0 +1,103 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - heading "FIFA World Cup 2026" [level=1] [ref=e4]
+    - paragraph [ref=e5]: Knockout bracket · hover a team to see their path and advancement probabilities
+    - paragraph [ref=e6]: Predictions as of Fri, 03 Jul 2026 12:00:00 GMT
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e9]: Round of 16
+      - generic [ref=e10]: Quarter-finals
+      - generic [ref=e11]: Semi-finals
+      - generic [ref=e12]: Champion
+      - generic [ref=e13]: Semi-finals
+      - generic [ref=e14]: Quarter-finals
+      - generic [ref=e15]: Round of 16
+    - generic [ref=e16]:
+      - generic:
+        - generic: 🇧🇷
+        - generic: Brazil
+        - generic: Chance of winning
+        - generic: 14%
+      - img:
+        - generic: 72%
+        - generic: 48%
+        - generic: 28%
+      - generic [ref=e17] [cursor=pointer]:
+        - generic [ref=e18]: 🇨🇦
+        - generic [ref=e19]: Canada
+        - generic [ref=e20]: 1%
+      - generic [ref=e22] [cursor=pointer]:
+        - generic [ref=e23]: 🇲🇦
+        - generic [ref=e24]: Morocco
+        - generic [ref=e25]: 2%
+      - generic [ref=e27] [cursor=pointer]:
+        - generic [ref=e28]: 🇵🇾
+        - generic [ref=e29]: Paraguay
+        - generic [ref=e30]: 1%
+      - generic [ref=e32] [cursor=pointer]:
+        - generic [ref=e33]: 🇫🇷
+        - generic [ref=e34]: France
+        - generic [ref=e35]: 22%
+      - generic [ref=e37] [cursor=pointer]:
+        - generic [ref=e38]: 🇧🇷
+        - generic [ref=e39]: Brazil
+        - generic [ref=e40]: 14%
+      - generic [ref=e42] [cursor=pointer]:
+        - generic [ref=e43]: 🇳🇴
+        - generic [ref=e44]: Norway
+        - generic [ref=e45]: 4%
+      - generic [ref=e47] [cursor=pointer]:
+        - generic [ref=e48]: 🇲🇽
+        - generic [ref=e49]: Mexico
+        - generic [ref=e50]: 2%
+      - generic [ref=e52] [cursor=pointer]:
+        - generic [ref=e53]: 🏴󠁧󠁢󠁥󠁮󠁧󠁿
+        - generic [ref=e54]: England
+        - generic [ref=e55]: 10%
+      - generic [ref=e58]: TBD
+      - generic [ref=e60]: TBD
+      - generic [ref=e62]: TBD
+      - generic [ref=e64]: TBD
+      - generic [ref=e66]: TBD
+      - generic [ref=e68]: TBD
+      - generic [ref=e70]: TBD
+      - generic [ref=e71] [cursor=pointer]:
+        - generic [ref=e72]: 🇵🇹
+        - generic [ref=e73]: Portugal
+        - generic [ref=e74]: 7%
+      - generic [ref=e76] [cursor=pointer]:
+        - generic [ref=e77]: 🇪🇸
+        - generic [ref=e78]: Spain
+        - generic [ref=e79]: 9%
+      - generic [ref=e81] [cursor=pointer]:
+        - generic [ref=e82]: 🇺🇸
+        - generic [ref=e83]: USA
+        - generic [ref=e84]: 3%
+      - generic [ref=e86] [cursor=pointer]:
+        - generic [ref=e87]: 🇧🇪
+        - generic [ref=e88]: Belgium
+        - generic [ref=e89]: 6%
+      - generic [ref=e91] [cursor=pointer]:
+        - generic [ref=e92]: 🇦🇺
+        - generic [ref=e93]: Australia
+        - generic [ref=e94]: 1%
+      - generic [ref=e96] [cursor=pointer]:
+        - generic [ref=e97]: 🇦🇷
+        - generic [ref=e98]: Argentina
+        - generic [ref=e99]: 12%
+      - generic [ref=e101] [cursor=pointer]:
+        - generic [ref=e102]: 🇨🇴
+        - generic [ref=e103]: Colombia
+        - generic [ref=e104]: 3%
+      - generic [ref=e106] [cursor=pointer]:
+        - generic [ref=e107]: 🇨🇭
+        - generic [ref=e108]: Switzerland
+        - generic [ref=e109]: 1%
+      - generic [ref=e112]: TBD
+      - generic [ref=e114]: TBD
+      - generic [ref=e116]: TBD
+      - generic [ref=e118]: TBD
+      - generic [ref=e120]: TBD
+      - generic [ref=e122]: TBD
+      - generic [ref=e124]: TBD
+  - paragraph

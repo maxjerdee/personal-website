@@ -1,0 +1,12 @@
+---
+title: "Metropolis-Hastings Buffet"
+description: "Learn the Metropolis-Hastings algorithm through a buffet table analogy"
+---
+
+::: {.column-screen}
+```{=html}
+<div>
+<iframe align="middle" frameborder="0" height="800px" scrolling="no" src="../../demos_code/demos/mh_buffet/index.html" width="100%" min-width="600px;"></iframe>
+</div>
+```
+:::

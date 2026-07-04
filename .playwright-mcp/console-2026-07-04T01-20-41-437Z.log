@@ -1,0 +1,2 @@
+[     151ms] [ERROR] Error: <line> attribute x2: Expected length, "NaN". @ http://localhost:8765/bracket.js:444
+[     151ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8765/favicon.ico:0

@@ -1,0 +1,4 @@
+[      64ms] [ERROR] Error: <line> attribute x2: Expected length, "NaN". @ http://localhost:8765/bracket.js:444
+[   65981ms] [ERROR] Error: <line> attribute x2: Expected length, "NaN". @ http://localhost:8765/bracket.js:444
+[   65981ms] [ERROR] Error: <rect> attribute x: Expected length, "NaN". @ http://localhost:8765/bracket.js:453
+[   65981ms] [ERROR] Error: <text> attribute x: Expected length, "NaN". @ http://localhost:8765/bracket.js:460
