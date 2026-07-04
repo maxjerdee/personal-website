@@ -10,6 +10,9 @@ body {
 #app {
   padding: 16px 16px 32px;
   overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ── Header ─────────────────────────────────────────────────────────────── */
@@ -132,7 +135,7 @@ header p {
 
 /* ── Hover states ────────────────────────────────────────────────────────  */
 .team-box.dimmed {
-  opacity: 0.2;
+  opacity: 0.35;
 }
 .team-box.highlighted {
   border-color: #e63946;
@@ -191,7 +194,7 @@ header p {
   justify-content: center;
   text-align: center;
   pointer-events: none;
-  padding-bottom: 80px;
+  padding-bottom: 110px;
 }
 #center-hint {
   font-size: 0.56rem;

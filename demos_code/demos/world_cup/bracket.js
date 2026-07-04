@@ -52,6 +52,7 @@
   let LIVE_PROBS    = {};   // teamName → { R16, QF, SF, F, W }
   let activeTeam    = null;
   let hlEls         = [];
+  let defaultPathEls = [];
   let PROJECTED_MODE  = false;
   let PROJECTED_FILLS = new Set();  // slot keys filled by projected mode
   let ACTIVE_MATRIX   = 'pele';     // 'pele' | 'matches'
@@ -167,7 +168,7 @@
     svg.id = 'conn-svg';
     svg.setAttribute('width', totalW);
     svg.setAttribute('height', bracketH);
-    svg.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;';
+    svg.style.cssText = 'position:absolute;top:0;left:0;pointer-events:none;z-index:1;';
     bracket.appendChild(svg);
 
     const b = DATA.bracket;
@@ -567,6 +568,39 @@
       }
     }
     if (activeTeam) updateCenter(activeTeam);
+    drawDefaultPath();
+  }
+
+  function clearDefaultPath() {
+    defaultPathEls.forEach(e => { if (e._bg) e._bg.remove(); e.remove(); });
+    defaultPathEls = [];
+    document.querySelectorAll('.team-box').forEach(el => {
+      el.classList.remove('dimmed', 'highlighted');
+      el.style.borderColor = '';
+      el.style.boxShadow   = '';
+    });
+    resetCenter();
+  }
+
+  function drawDefaultPath() {
+    clearDefaultPath();
+    if (activeTeam) return;
+    const entry = Object.entries(LIVE_PROBS)
+      .reduce((best, [n, p]) => (!best || p.W > best[1].W) ? [n, p] : best, null);
+    if (!entry) return;
+    const [name] = entry;
+    const teamColor = getTeamColor(name);
+    (BOXES[name] || []).forEach(({ el }) => {
+      el.classList.add('highlighted');
+      el.style.borderColor = teamColor;
+      el.style.boxShadow   = `0 0 0 2px ${teamColor}30`;
+    });
+    updateCenter(name);
+    const prevHl = hlEls;
+    hlEls = [];
+    drawTeamPath(name);
+    defaultPathEls = hlEls;
+    hlEls = prevHl;
   }
 
   // ── Auto-apply known results ───────────────────────────────────────────────
@@ -607,7 +641,10 @@
   // ── Hover interaction ─────────────────────────────────────────────────────
   function onHover(name) {
     if (activeTeam === name) return;
-    onLeave();
+    clearDefaultPath();
+    defaultPathEls = [];
+    hlEls.forEach(e => { if (e._bg) e._bg.remove(); e.remove(); });
+    hlEls = [];
     activeTeam = name;
     document.getElementById('conn-svg').style.zIndex = 3;
     document.querySelectorAll('.team-box[data-team]').forEach(el => {
@@ -626,15 +663,10 @@
   function onLeave() {
     if (!activeTeam) return;
     activeTeam = null;
-    document.getElementById('conn-svg').style.zIndex = '';
-    document.querySelectorAll('.team-box').forEach(el => {
-      el.classList.remove('dimmed', 'highlighted');
-      el.style.borderColor = '';
-      el.style.boxShadow   = '';
-    });
+    document.getElementById('conn-svg').style.zIndex = '1';
     hlEls.forEach(e => { if (e._bg) e._bg.remove(); e.remove(); });
     hlEls = [];
-    resetCenter();
+    drawDefaultPath();
   }
 
   // ── Path drawing ──────────────────────────────────────────────────────────
@@ -662,7 +694,7 @@
       { ri: LAYOUT.nSideRounds - 1, mi: 0, pi: 0, probAfter: 'W' },
     ];
 
-    const probs     = LIVE_PROBS[name] || DATA.teams[name].probs;
+    const probs    = LIVE_PROBS[name] || DATA.teams[name].probs;
     const teamColor = getTeamColor(name);
 
     for (let i = 0; i < path.length - 1; i++) {
