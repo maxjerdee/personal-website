@@ -337,6 +337,7 @@
         clearDownstreamPicks(side, 0, mi);
       }
     }
+    applyKnownResults();
     if (PROJECTED_MODE) applyProjected();
     refreshAllProbs();
   }
@@ -378,6 +379,7 @@
   // ── Projected mode ────────────────────────────────────────────────────────
 
   function applyProjected() {
+    const finalists = {};
     for (const side of ['left', 'right']) {
       const { nPerSide, nSideRounds } = LAYOUT;
       const finRi = nSideRounds - 1;
@@ -436,11 +438,21 @@
         const key = `${side}_${finRi}_0_0`;
         const div = SLOT_ELS[key];
         if (div && !div.dataset.team) promoteToSlotProjected(side, finRi, 0, 0, sfWinner);
+        finalists[side] = sfWinner;
       }
+    }
+
+    // Compute and display projected champion
+    const { left: teamA, right: teamB } = finalists;
+    if (teamA && teamB && !activeTeam) {
+      const p = DATA.pairwise_ko?.[teamA]?.[teamB] ?? 0.5;
+      const champion = p >= 0.5 ? teamA : teamB;
+      updateCenter(champion);
     }
   }
 
   function clearProjected() {
+    if (!activeTeam) drawDefaultPath();
     for (const key of PROJECTED_FILLS) {
       const parts = key.split('_');
       // key format: side_ri_mi_pos  (side may be 'left' or 'right' — both single-word)
