@@ -36,6 +36,7 @@
     'Canada':      '#D52B1E',
     'Paraguay':    '#0038A8',
     'Australia':   '#FFCD00',
+    'Egypt':       '#CE1126',
   };
 
   function getTeamColor(name) {
