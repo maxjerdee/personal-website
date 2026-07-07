@@ -1,5 +1,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html, body {
+  overflow-x: hidden; /* route horizontal swipes to inner scroll containers */
+}
+
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background: #f6f6f6;
@@ -66,8 +70,10 @@ header p {
 /* ── Bracket scroll wrapper ────────────────────────────────────────────── */
 #bracket-scroll {
   width: 100%;
+  min-width: 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
 /* ── Bracket container ─────────────────────────────────────────────────── */
