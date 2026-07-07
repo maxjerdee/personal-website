@@ -94,6 +94,45 @@
     buildBracket();
     applyKnownResults();
     refreshAllProbs();
+    applyResponsiveLayout();
+
+    window.addEventListener('resize', applyResponsiveLayout);
+
+    // Tap outside any team box to clear highlighted path on touch devices
+    document.addEventListener('click', () => { if (activeTeam) onLeave(); });
+  }
+
+  // Wide screen  → full size, centered via margin:auto
+  // Medium screen → zoom to fit width, still fills container
+  // Small screen  → no zoom, left-aligned, scrollable
+  const MIN_SCROLL_WIDTH = 520;
+
+  function applyResponsiveLayout() {
+    const outer   = document.getElementById('bracket-outer');
+    const wrapper = document.getElementById('bracket-scroll');
+    if (!outer || !wrapper) return;
+
+    const available = wrapper.clientWidth;
+    const totalW    = LAYOUT.totalW;
+
+    if (available >= totalW) {
+      // Full size — center via margin:auto
+      outer.style.zoom       = '';
+      outer.style.marginLeft = 'auto';
+      outer.style.marginRight= 'auto';
+    } else if (available >= MIN_SCROLL_WIDTH) {
+      // Scale to fit — zoom affects layout so no scrollbar, fills width
+      const scale = available / totalW;
+      outer.style.zoom       = scale;
+      outer.style.marginLeft = '0';
+      outer.style.marginRight= '0';
+    } else {
+      // Too small — left-align and let it scroll
+      outer.style.zoom       = '';
+      outer.style.marginLeft = '0';
+      outer.style.marginRight= '0';
+      wrapper.scrollLeft = (wrapper.scrollWidth - wrapper.clientWidth) / 2;
+    }
   }
 
   // ── Layout math ──────────────────────────────────────────────────────────
@@ -229,7 +268,14 @@
       fillBoxContent(div, name);
       div.onmouseenter = () => onHover(name);
       div.onmouseleave = onLeave;
-      div.onclick = (e) => { e.stopPropagation(); onClickAdvance(name, side, roundIdx, matchIdx); };
+      div.onclick = (e) => {
+        e.stopPropagation();
+        if (window.matchMedia('(pointer: coarse)').matches && activeTeam !== name) {
+          onHover(name);
+        } else {
+          onClickAdvance(name, side, roundIdx, matchIdx);
+        }
+      };
       if (!BOXES[name]) BOXES[name] = [];
       BOXES[name].push({ el: div, roundKey, roundIdx, side, matchIdx, pos });
     }
@@ -355,7 +401,14 @@
     div.style.cursor  = 'pointer';
     div.onmouseenter  = () => onHover(name);
     div.onmouseleave  = onLeave;
-    div.onclick       = (e) => { e.stopPropagation(); onClickAdvance(name, side, ri, mi); };
+    div.onclick       = (e) => {
+      e.stopPropagation();
+      if (window.matchMedia('(pointer: coarse)').matches && activeTeam !== name) {
+        onHover(name);
+      } else {
+        onClickAdvance(name, side, ri, mi);
+      }
+    };
     if (!BOXES[name]) BOXES[name] = [];
     BOXES[name].push({ el: div, roundKey: 'PICK', roundIdx: ri, side, matchIdx: mi, pos });
   }
@@ -710,7 +763,16 @@
     const probs    = LIVE_PROBS[name] || DATA.teams[name].probs;
     const teamColor = getTeamColor(name);
 
+    // Skip segments for rounds the team has already won
+    let startIdx = 0;
     for (let i = 0; i < path.length - 1; i++) {
+      const cur = path[i];
+      const pickKey = `${side}_${cur.ri}_${cur.mi}`;
+      if (USER_PICKS[pickKey] === name) startIdx = i + 1;
+      else break;
+    }
+
+    for (let i = startIdx; i < path.length - 1; i++) {
       const cur  = path[i];
       const next = path[i + 1];
       const curY      = teamY(cur.ri, cur.mi, cur.pi);

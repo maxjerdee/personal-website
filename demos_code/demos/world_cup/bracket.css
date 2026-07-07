@@ -9,7 +9,6 @@ body {
 
 #app {
   padding: 16px 16px 32px;
-  overflow-x: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,10 +63,18 @@ header p {
   flex-shrink: 0;
 }
 
+/* ── Bracket scroll wrapper ────────────────────────────────────────────── */
+#bracket-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* ── Bracket container ─────────────────────────────────────────────────── */
 #bracket-outer {
-  display: inline-block;
-  vertical-align: top;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
 }
 #bracket {
   position: relative;
@@ -264,6 +271,23 @@ header p {
   object-fit: contain;
   flex-shrink: 0;
   border-radius: 1px;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────  */
+@media (max-width: 600px) {
+  #app {
+    padding: 10px 8px 24px;
+  }
+  header h1 {
+    font-size: 1.1rem;
+  }
+  header p, #last-updated {
+    font-size: 0.68rem;
+  }
+  #controls {
+    gap: 8px;
+    font-size: 0.65rem;
+  }
 }
 
 /* Reset button */
