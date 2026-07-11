@@ -1,24 +1,19 @@
-/* bracket.js — generic tournament bracket visualisation
- * Reads predictions.json and renders a FiveThirtyEight-style bracket.
- * Hover over any team to see their path highlighted with round-by-round
- * advancement probabilities. Click a team to advance them; probabilities
- * update analytically via the pairwise KO matrix in predictions.json.
- */
+/* bracket.js — generic tournament bracket visualisation */
 
 (() => {
   'use strict';
 
   // ── Layout config ────────────────────────────────────────────────────────
   const C = {
-    slotH:   36,
-    teamH:   25,
-    teamW:   120,
-    colGap:  22,
+    slotH:   30,
+    teamH:   22,
+    teamW:   108,
+    colGap:  18,
     centerW: 130,
   };
   C.colW = C.teamW + C.colGap;
 
-  // ── Team colours (primary kit / flag colour) ──────────────────────────────
+  // ── Team colours ──────────────────────────────────────────────────────────
   const TEAM_COLORS = {
     'France':      '#002395',
     'Brazil':      '#009C3B',
@@ -37,26 +32,49 @@
     'Paraguay':    '#0038A8',
     'Australia':   '#FFCD00',
     'Egypt':       '#CE1126',
+    'Germany':     '#1a1a1a',
+    'Netherlands': '#FF6600',
+    'Japan':       '#003087',
+    'Sweden':      '#006AA7',
+    'Ecuador':     '#FFD100',
+    'DR Congo':    '#007FFF',
+    'Senegal':     '#00853F',
+    'Bosnia & Herz.': '#002395',
+    'Austria':     '#ED2939',
+    'Croatia':     '#FF0000',
+    'Algeria':     '#006233',
+    'South Africa':'#007A4D',
+    'Ivory Coast': '#F77F00',
+    'Cape Verde':  '#003893',
+    'Ghana':       '#006B3F',
   };
 
-  function getTeamColor(name) {
-    return TEAM_COLORS[name] ?? '#888';
-  }
+  function getTeamColor(name) { return TEAM_COLORS[name] ?? '#888'; }
 
   // ── State ────────────────────────────────────────────────────────────────
   let DATA          = null;
   let LAYOUT        = {};
-  let BOXES         = {};   // teamName → [{ el, roundKey, roundIdx, side, matchIdx, pos }]
-  let SLOT_ELS      = {};   // `${side}_${ri}_${mi}_${pos}` → div element
-  let USER_PICKS    = {};   // `${side}_${ri}_${mi}` → team name
-  let TEAM_POS      = {};   // teamName → { side, r16Mi }
-  let LIVE_PROBS    = {};   // teamName → { R16, QF, SF, F, W }
+  let BOXES         = {};
+  let SLOT_ELS      = {};
+  let USER_PICKS    = {};
+  let TEAM_POS      = {};
+  let LIVE_PROBS    = {};
   let activeTeam    = null;
   let hlEls         = [];
   let defaultPathEls = [];
   let PROJECTED_MODE  = false;
-  let PROJECTED_FILLS = new Set();  // slot keys filled by projected mode
-  let ACTIVE_MATRIX   = 'ds_pele';  // 'ds' | 'ds_pele' | 'pele'
+  let RANDOM_MODE     = false;
+  let PROJECTED_FILLS = new Set();
+  let RANDOM_FILLS    = new Set();
+  let ACTIVE_MATRIX   = 'ds_pele';
+
+  let LIVE_MATRICES     = null;
+  let SNAP_MATRICES     = null;  // non-null when a historical snapshot is active
+  let LIVE_BRACKET      = null;
+  let HISTORY           = null;
+  let SELECTED_SNAP     = -1;
+  let CHOSEN_CHAMPION   = null;
+  let PROJECTION_CENTER = null;
 
   // ── Entry ────────────────────────────────────────────────────────────────
   async function init() {
@@ -67,8 +85,14 @@
         'Could not load predictions.json — ' + e.message;
       return;
     }
-    // Default active matrix
     DATA.pairwise_ko = DATA.pairwise_ko_ds_pele ?? DATA.pairwise_ko;
+    LIVE_BRACKET  = DATA.bracket;
+    LIVE_MATRICES = {
+      ds_pele: DATA.pairwise_ko_ds_pele,
+      pele:    DATA.pairwise_ko_pele,
+      ds:      DATA.pairwise_ko_ds,
+      matches: DATA.pairwise_ko_matches,
+    };
 
     document.getElementById('last-updated').textContent =
       'Predictions as of ' + new Date(DATA.generated_at).toUTCString();
@@ -76,17 +100,65 @@
     document.querySelector('header h1').textContent = DATA.tournament;
 
     document.getElementById('reset-btn').addEventListener('click', resetAllPicks);
+    document.getElementById('random-btn').addEventListener('click', simulateRandom);
 
-    document.getElementById('projected-checkbox').addEventListener('change', e => {
-      PROJECTED_MODE = e.target.checked;
-      if (PROJECTED_MODE) applyProjected();
-      else clearProjected();
+    document.getElementById('projected-btn').addEventListener('click', () => {
+      if (PROJECTED_MODE) {
+        clearProjected();
+        clearRandom();
+        PROJECTED_MODE = false;
+        document.getElementById('projected-btn').classList.remove('active');
+        refreshAllProbs();
+      } else {
+        clearRandom();
+        PROJECTED_MODE = true;
+        document.getElementById('projected-btn').classList.add('active');
+        applyProjected();
+        refreshAllProbs();
+      }
     });
 
-    document.querySelectorAll('input[name="model"]').forEach(radio => {
-      radio.addEventListener('change', e => {
-        switchMatrix(e.target.value);
-      });
+    try {
+      HISTORY = await fetch('predictions_history.json').then(r => r.json());
+    } catch (_) { HISTORY = null; }
+    buildForecastDropdown();
+
+    // Custom dropdown: forecast
+    document.getElementById('forecast-display').addEventListener('click', e => {
+      e.stopPropagation();
+      const panel = document.getElementById('forecast-panel');
+      const isOpen = !panel.hasAttribute('hidden');
+      closeAllCsels();
+      if (!isOpen) panel.removeAttribute('hidden');
+    });
+    document.getElementById('forecast-panel').addEventListener('click', e => {
+      const opt = e.target.closest('.csel-opt');
+      if (!opt) return;
+      const val = parseInt(opt.dataset.val, 10);
+      document.querySelectorAll('#forecast-panel .csel-opt').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      document.getElementById('forecast-display').textContent = opt.textContent;
+      document.getElementById('forecast-panel').setAttribute('hidden', '');
+      switchForecast(val);
+    });
+
+    // Custom dropdown: model
+    document.getElementById('model-display').addEventListener('click', e => {
+      e.stopPropagation();
+      if (document.getElementById('model-ctrl').classList.contains('disabled')) return;
+      const panel = document.getElementById('model-panel');
+      const isOpen = !panel.hasAttribute('hidden');
+      closeAllCsels();
+      if (!isOpen) panel.removeAttribute('hidden');
+    });
+    document.getElementById('model-panel').addEventListener('click', e => {
+      const opt = e.target.closest('.csel-opt');
+      if (!opt) return;
+      document.querySelectorAll('#model-panel .csel-opt').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      document.getElementById('model-display').textContent = opt.textContent;
+      document.getElementById('model-panel').setAttribute('hidden', '');
+      switchMatrix(opt.dataset.val);
     });
 
     computeLayout();
@@ -97,56 +169,97 @@
     applyResponsiveLayout();
 
     window.addEventListener('resize', applyResponsiveLayout);
-
-    // Tap outside any team box to clear highlighted path on touch devices
-    document.addEventListener('click', () => { if (activeTeam) onLeave(); });
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.csel')) closeAllCsels();
+      if (activeTeam) onLeave();
+    });
   }
 
-  // Wide screen  → full size, centered via margin:auto
-  // Medium screen → zoom to fit width, still fills container
-  // Small screen  → no zoom, left-aligned, scrollable
+  // ── Forecast / model custom dropdowns ────────────────────────────────────
+  function closeAllCsels() {
+    document.querySelectorAll('.csel-panel').forEach(p => p.setAttribute('hidden', ''));
+  }
+
+  function buildForecastDropdown() {
+    const panel = document.getElementById('forecast-panel');
+    if (!HISTORY?.snapshots?.length) return;
+    [...HISTORY.snapshots].reverse().forEach((snap, revIdx) => {
+      const origIdx = HISTORY.snapshots.length - 1 - revIdx;
+      const opt = document.createElement('div');
+      opt.className = 'csel-opt';
+      opt.dataset.val = origIdx;
+      opt.textContent = snap.label.replace(/^Before\s+/i, '');
+      panel.appendChild(opt);
+    });
+  }
+
+  function switchForecast(idx) {
+    SELECTED_SNAP = idx;
+
+    // Reset all picks and mode state first
+    clearProjected();
+    clearRandom();
+    PROJECTED_MODE = false;
+    document.getElementById('projected-btn').classList.remove('active');
+    const { nPerSide } = LAYOUT;
+    for (const side of ['left', 'right'])
+      for (let mi = 0; mi < nPerSide; mi++)
+        clearDownstreamPicks(side, 0, mi);
+
+    if (idx === -1) {
+      SNAP_MATRICES = null;
+      DATA.pairwise_ko = LIVE_MATRICES[ACTIVE_MATRIX] ?? DATA.pairwise_ko;
+      DATA.bracket = LIVE_BRACKET;
+      document.getElementById('model-ctrl').classList.remove('disabled');
+    } else {
+      const snap = HISTORY.snapshots[idx];
+      SNAP_MATRICES = {
+        ds_pele: snap.pairwise_ko_ds_pele ?? snap.pairwise_ko,
+        pele:    snap.pairwise_ko_pele    ?? snap.pairwise_ko,
+        ds:      snap.pairwise_ko_ds      ?? snap.pairwise_ko,
+        matches: snap.pairwise_ko_matches ?? snap.pairwise_ko,
+      };
+      DATA.pairwise_ko = SNAP_MATRICES[ACTIVE_MATRIX] ?? snap.pairwise_ko;
+      DATA.bracket = snap.bracket;
+      const hasVariants = snap.pairwise_ko_pele && Object.keys(snap.pairwise_ko_pele).length > 0;
+      document.getElementById('model-ctrl').classList.toggle('disabled', !hasVariants);
+    }
+
+    applyKnownResults();
+    refreshAllProbs();
+  }
+
+  // ── Responsive layout ─────────────────────────────────────────────────────
   const MIN_SCROLL_WIDTH = 520;
 
   function applyResponsiveLayout() {
     const outer   = document.getElementById('bracket-outer');
     const wrapper = document.getElementById('bracket-scroll');
     if (!outer || !wrapper) return;
-
     const available = wrapper.clientWidth;
     const totalW    = LAYOUT.totalW;
-
     if (available >= totalW) {
-      // Full size — center via margin:auto
-      outer.style.zoom       = '';
-      outer.style.marginLeft = 'auto';
-      outer.style.marginRight= 'auto';
+      outer.style.zoom = ''; outer.style.marginLeft = 'auto'; outer.style.marginRight = 'auto';
     } else if (available >= MIN_SCROLL_WIDTH) {
-      // Scale to fit — zoom affects layout so no scrollbar, fills width
-      const scale = available / totalW;
-      outer.style.zoom       = scale;
-      outer.style.marginLeft = '0';
-      outer.style.marginRight= '0';
+      outer.style.zoom = available / totalW; outer.style.marginLeft = '0'; outer.style.marginRight = '0';
     } else {
-      // Too small — left-align and let it scroll
-      outer.style.zoom       = '';
-      outer.style.marginLeft = '0';
-      outer.style.marginRight= '0';
+      outer.style.zoom = ''; outer.style.marginLeft = '0'; outer.style.marginRight = '0';
       wrapper.scrollLeft = (wrapper.scrollWidth - wrapper.clientWidth) / 2;
     }
   }
 
   // ── Layout math ──────────────────────────────────────────────────────────
   function computeLayout() {
-    const r16 = DATA.bracket.R16;
-    const nR16 = r16.length;
-    const nPerSide = nR16 / 2;
+    const r32 = DATA.bracket.R32;
+    const nR32 = r32.length;
+    const nPerSide = nR32 / 2;
     const nSlots = nPerSide * 2;
     const nSideRounds = Math.log2(nPerSide) + 2;
     const bracketH = nSlots * C.slotH;
     const leftW    = nSideRounds * C.colW;
     const centerW  = C.centerW;
     const totalW   = leftW * 2 + centerW;
-    LAYOUT = { nR16, nPerSide, nSlots, nSideRounds, bracketH, leftW, centerW, totalW };
+    LAYOUT = { nR32, nPerSide, nSlots, nSideRounds, bracketH, leftW, centerW, totalW };
   }
 
   function teamY(roundIdx, matchIdxInSide, pos) {
@@ -166,7 +279,7 @@
     const row = document.getElementById('round-labels-row');
     const { totalW, nSideRounds } = LAYOUT;
     const labels = DATA.round_labels;
-    const roundKeys = ['R16', 'QF', 'SF', 'F'];
+    const roundKeys = ['R32', 'R16', 'QF', 'SF', 'F'];
 
     for (let ri = 0; ri < nSideRounds - 1; ri++) {
       const span = document.createElement('div');
@@ -199,7 +312,7 @@
 
   // ── Build bracket ─────────────────────────────────────────────────────────
   function buildBracket() {
-    const { bracketH, leftW, totalW } = LAYOUT;
+    const { bracketH, totalW } = LAYOUT;
     const bracket = document.getElementById('bracket');
     bracket.style.width  = totalW + 'px';
     bracket.style.height = bracketH + 'px';
@@ -216,23 +329,23 @@
 
     drawBaseConnectors(svg, b, nPerSide);
 
-    renderSide('left',  b.R16.slice(0, nPerSide), b.QF.slice(0, nPerSide / 2), b.SF.slice(0, 1), bracket);
-    renderSide('right', b.R16.slice(nPerSide),    b.QF.slice(nPerSide / 2),    b.SF.slice(1),    bracket);
+    renderSide('left',  b.R32.slice(0, nPerSide), b.R16.slice(0, nPerSide/2), b.QF.slice(0, nPerSide/4), b.SF.slice(0, 1), bracket);
+    renderSide('right', b.R32.slice(nPerSide),    b.R16.slice(nPerSide/2),    b.QF.slice(nPerSide/4),    b.SF.slice(1),    bracket);
 
     drawFinalistToCenter(svg);
     buildCenterPanel(bracket);
 
-    const { nPerSide: nps } = LAYOUT;
-    b.R16.forEach((match, idx) => {
-      const side  = idx < nps ? 'left' : 'right';
-      const r16Mi = idx < nps ? idx : idx - nps;
-      if (match.team_a) TEAM_POS[match.team_a] = { side, r16Mi };
-      if (match.team_b) TEAM_POS[match.team_b] = { side, r16Mi };
+    b.R32.forEach((match, idx) => {
+      const side  = idx < nPerSide ? 'left' : 'right';
+      const r32Mi = idx < nPerSide ? idx : idx - nPerSide;
+      if (match.team_a) TEAM_POS[match.team_a] = { side, r32Mi };
+      if (match.team_b) TEAM_POS[match.team_b] = { side, r32Mi };
     });
   }
 
-  function renderSide(side, r16Matches, qfMatches, sfMatches, bracket) {
+  function renderSide(side, r32Matches, r16Matches, qfMatches, sfMatches, bracket) {
     const rounds = [
+      { key: 'R32', matches: r32Matches },
       { key: 'R16', matches: r16Matches },
       { key: 'QF',  matches: qfMatches  },
       { key: 'SF',  matches: sfMatches  },
@@ -251,7 +364,6 @@
   function addTeamBox(name, roundKey, side, matchIdx, pos, roundIdx, bracket) {
     const x = teamX(roundIdx, side);
     const y = teamY(roundIdx, matchIdx, pos);
-
     const div = document.createElement('div');
     div.className = 'team-box' + (name ? '' : ' tbd');
     div.dataset.team  = name || '';
@@ -261,7 +373,6 @@
     div.style.top    = (y - C.teamH / 2) + 'px';
     div.style.width  = C.teamW + 'px';
     div.style.height = C.teamH + 'px';
-
     if (!name) {
       div.innerHTML = '<span class="team-name tbd-text">TBD</span>';
     } else {
@@ -270,16 +381,12 @@
       div.onmouseleave = onLeave;
       div.onclick = (e) => {
         e.stopPropagation();
-        if (window.matchMedia('(pointer: coarse)').matches && activeTeam !== name) {
-          onHover(name);
-        } else {
-          onClickAdvance(name, side, roundIdx, matchIdx);
-        }
+        if (window.matchMedia('(pointer: coarse)').matches && activeTeam !== name) onHover(name);
+        else onClickAdvance(name, side, roundIdx, matchIdx);
       };
       if (!BOXES[name]) BOXES[name] = [];
       BOXES[name].push({ el: div, roundKey, roundIdx, side, matchIdx, pos });
     }
-
     SLOT_ELS[`${side}_${roundIdx}_${matchIdx}_${pos}`] = div;
     bracket.appendChild(div);
   }
@@ -287,13 +394,14 @@
   // ── Base connector lines ──────────────────────────────────────────────────
   function drawBaseConnectors(svg, b, nPerSide) {
     const sides = {
-      left:  { r16: b.R16.slice(0, nPerSide), qf: b.QF.slice(0, nPerSide/2), sf: b.SF.slice(0,1) },
-      right: { r16: b.R16.slice(nPerSide),    qf: b.QF.slice(nPerSide/2),    sf: b.SF.slice(1)   },
+      left:  { r32: b.R32.slice(0, nPerSide), r16: b.R16.slice(0, nPerSide/2), qf: b.QF.slice(0, nPerSide/4), sf: b.SF.slice(0,1) },
+      right: { r32: b.R32.slice(nPerSide),    r16: b.R16.slice(nPerSide/2),    qf: b.QF.slice(nPerSide/4),    sf: b.SF.slice(1)   },
     };
     ['left','right'].forEach(side => {
-      [{ ri:0, matches: sides[side].r16 },
-       { ri:1, matches: sides[side].qf  },
-       { ri:2, matches: sides[side].sf  }].forEach(({ ri, matches }) => {
+      [{ ri:0, matches: sides[side].r32 },
+       { ri:1, matches: sides[side].r16 },
+       { ri:2, matches: sides[side].qf  },
+       { ri:3, matches: sides[side].sf  }].forEach(({ ri, matches }) => {
         matches.forEach((_, mi) => drawMatchConnector(svg, ri, mi, side, 'conn-base'));
       });
     });
@@ -306,13 +414,9 @@
     const bx = teamX(ri, side);
     let edgeX, midX, nextEdgeX;
     if (side === 'left') {
-      edgeX     = bx + C.teamW;
-      midX      = edgeX + C.colGap / 2;
-      nextEdgeX = bx + C.colW;
+      edgeX = bx + C.teamW; midX = edgeX + C.colGap / 2; nextEdgeX = bx + C.colW;
     } else {
-      edgeX     = bx;
-      midX      = edgeX - C.colGap / 2;
-      nextEdgeX = bx - C.colGap;
+      edgeX = bx; midX = edgeX - C.colGap / 2; nextEdgeX = bx - C.colGap;
     }
     svgLine(svg, edgeX, topY, midX, topY, cls);
     svgLine(svg, edgeX, botY, midX, botY, cls);
@@ -328,21 +432,18 @@
     svgLine(svg, teamX(finRi, 'right'), midY, leftW + centerW, midY, 'conn-base');
   }
 
-  // ── Center panel ──────────────────────────────────────────────────────────
   function buildCenterPanel(bracket) {
     const { leftW, centerW, bracketH } = LAYOUT;
     const panel = document.getElementById('center-panel');
-    panel.style.left   = leftW + 'px';
-    panel.style.width  = centerW + 'px';
-    panel.style.top    = '0';
-    panel.style.height = bracketH + 'px';
+    panel.style.left = leftW + 'px'; panel.style.width = centerW + 'px';
+    panel.style.top = '0'; panel.style.height = bracketH + 'px';
   }
 
   // ── Click-to-advance ──────────────────────────────────────────────────────
   function onClickAdvance(name, side, ri, mi) {
     const pickKey = `${side}_${ri}_${mi}`;
     if (USER_PICKS[pickKey] === name) return;
-    if (PROJECTED_MODE) { clearProjected(); }
+    if (PROJECTED_MODE) clearProjected();
     clearDownstreamPicks(side, ri, mi);
     USER_PICKS[pickKey] = name;
     for (const p of [0, 1]) {
@@ -351,10 +452,9 @@
       div.classList.toggle('user-winner', div.dataset.team === name);
       div.classList.toggle('user-loser',  div.dataset.team !== name);
     }
-    const nextRi  = ri + 1;
-    const nextMi  = Math.floor(mi / 2);
-    const nextPos = mi % 2;
+    const nextRi = ri + 1, nextMi = Math.floor(mi / 2), nextPos = mi % 2;
     if (nextRi < LAYOUT.nSideRounds) promoteToSlot(side, nextRi, nextMi, nextPos, name);
+    else CHOSEN_CHAMPION = name; // finalist slot → pick as champion
     if (PROJECTED_MODE) applyProjected();
     refreshAllProbs();
   }
@@ -367,9 +467,7 @@
       const div = SLOT_ELS[`${side}_${ri}_${mi}_${p}`];
       if (div) div.classList.remove('user-winner', 'user-loser');
     }
-    const nextRi  = ri + 1;
-    const nextMi  = Math.floor(mi / 2);
-    const nextPos = mi % 2;
+    const nextRi = ri + 1, nextMi = Math.floor(mi / 2), nextPos = mi % 2;
     if (nextRi < LAYOUT.nSideRounds) {
       clearDownstreamPicks(side, nextRi, nextMi);
       resetSlotToTBD(side, nextRi, nextMi, nextPos);
@@ -378,14 +476,121 @@
 
   function resetAllPicks() {
     clearProjected();
+    clearRandom();
+    PROJECTED_MODE = false;
+    document.getElementById('projected-btn').classList.remove('active');
+    CHOSEN_CHAMPION = null;
     const { nPerSide } = LAYOUT;
-    for (const side of ['left', 'right']) {
-      for (let mi = 0; mi < nPerSide; mi++) {
+    for (const side of ['left', 'right'])
+      for (let mi = 0; mi < nPerSide; mi++)
         clearDownstreamPicks(side, 0, mi);
+    applyKnownResults();
+    refreshAllProbs();
+  }
+
+  // ── Random outcome simulation ─────────────────────────────────────────────
+  function setCenterChampBox(cls) {
+    const box = document.getElementById('center-champion-box');
+    box.classList.remove('projected-champ', 'random-champ');
+    if (cls) box.classList.add(cls);
+  }
+
+  function clearRandom() {
+    PROJECTION_CENTER = null;
+    for (const key of RANDOM_FILLS) {
+      const parts = key.split('_');
+      resetSlotToTBD(parts[0], +parts[1], +parts[2], +parts[3]);
+    }
+    RANDOM_FILLS.clear();
+    RANDOM_MODE = false;
+    document.getElementById('random-btn').classList.remove('active');
+    setCenterChampBox(null);
+  }
+
+  function promoteToSlotRandom(side, ri, mi, pos, name) {
+    const key = `${side}_${ri}_${mi}_${pos}`;
+    const div = SLOT_ELS[key];
+    if (!div || div.dataset.team) return;
+    const prev = div.dataset.team;
+    if (prev && BOXES[prev]) BOXES[prev] = BOXES[prev].filter(b => b.el !== div);
+    div.dataset.team = name;
+    div.classList.remove('tbd'); div.classList.add('random');
+    fillBoxContent(div, name);
+    div.style.cursor = 'pointer';
+    div.onmouseenter = () => onHover(name);
+    div.onmouseleave = onLeave;
+    div.onclick = (e) => {
+      e.stopPropagation();
+      clearRandom();
+      onClickAdvance(name, side, ri, mi);
+    };
+    if (!BOXES[name]) BOXES[name] = [];
+    BOXES[name].push({ el: div, roundKey: 'RANDOM', roundIdx: ri, side, matchIdx: mi, pos });
+    RANDOM_FILLS.add(key);
+  }
+
+  function simulateRandom() {
+    clearRandom();
+    clearProjected();
+    PROJECTED_MODE = false;
+    document.getElementById('projected-btn').classList.remove('active');
+
+    // Works like applyProjected() but samples winners randomly instead of taking most likely
+    const { nPerSide, nSideRounds } = LAYOUT;
+    const finRi = nSideRounds - 1;
+    const finalists = {};
+
+    for (const side of ['left', 'right']) {
+      const roundWinners = [];
+      const r0 = [];
+      for (let mi = 0; mi < nPerSide; mi++) {
+        const pickKey = `${side}_0_${mi}`;
+        if (USER_PICKS[pickKey]) { r0.push(USER_PICKS[pickKey]); continue; }
+        const match = getR32Match(side, mi);
+        const ta = match?.team_a, tb = match?.team_b;
+        if (ta && tb) { const p = DATA.pairwise_ko?.[ta]?.[tb] ?? 0.5; r0.push(Math.random() < p ? ta : tb); }
+        else r0.push(ta || tb || null);
+      }
+      roundWinners[0] = r0;
+
+      for (let ri = 1; ri < finRi; ri++) {
+        const prev = roundWinners[ri - 1];
+        const nMatches = Math.floor(prev.length / 2);
+        const cur = [];
+        for (let mi = 0; mi < nMatches; mi++) {
+          const teamA = prev[mi * 2], teamB = prev[mi * 2 + 1];
+          for (const [pos, team] of [[0, teamA], [1, teamB]]) {
+            if (!team) continue;
+            const div = SLOT_ELS[`${side}_${ri}_${mi}_${pos}`];
+            if (div && !div.dataset.team) promoteToSlotRandom(side, ri, mi, pos, team);
+          }
+          const pickKey = `${side}_${ri}_${mi}`;
+          if (USER_PICKS[pickKey]) { cur.push(USER_PICKS[pickKey]); continue; }
+          if (teamA && teamB) { const p = DATA.pairwise_ko?.[teamA]?.[teamB] ?? 0.5; cur.push(Math.random() < p ? teamA : teamB); }
+          else cur.push(teamA || teamB || null);
+        }
+        roundWinners[ri] = cur;
+      }
+
+      const sfWinner = roundWinners[finRi - 1]?.[0];
+      if (sfWinner) {
+        const div = SLOT_ELS[`${side}_${finRi}_0_0`];
+        if (div && !div.dataset.team) promoteToSlotRandom(side, finRi, 0, 0, sfWinner);
+        finalists[side] = sfWinner;
       }
     }
-    applyKnownResults();
-    if (PROJECTED_MODE) applyProjected();
+
+    const { left: teamA, right: teamB } = finalists;
+    if (teamA && teamB) {
+      const p = DATA.pairwise_ko?.[teamA]?.[teamB] ?? 0.5;
+      const champion = Math.random() < p ? teamA : teamB;
+      PROJECTION_CENTER = champion;
+      if (!activeTeam) updateCenter(champion);
+      setCenterChampBox('random-champ');
+    }
+
+    RANDOM_MODE = true;
+    document.getElementById('random-btn').classList.add('active');
     refreshAllProbs();
   }
 
@@ -398,16 +603,13 @@
     div.dataset.team = name;
     div.classList.remove('tbd', 'user-winner', 'user-loser', 'projected');
     fillBoxContent(div, name);
-    div.style.cursor  = 'pointer';
-    div.onmouseenter  = () => onHover(name);
-    div.onmouseleave  = onLeave;
-    div.onclick       = (e) => {
+    div.style.cursor = 'pointer';
+    div.onmouseenter = () => onHover(name);
+    div.onmouseleave = onLeave;
+    div.onclick = (e) => {
       e.stopPropagation();
-      if (window.matchMedia('(pointer: coarse)').matches && activeTeam !== name) {
-        onHover(name);
-      } else {
-        onClickAdvance(name, side, ri, mi);
-      }
+      if (window.matchMedia('(pointer: coarse)').matches && activeTeam !== name) onHover(name);
+      else onClickAdvance(name, side, ri, mi);
     };
     if (!BOXES[name]) BOXES[name] = [];
     BOXES[name].push({ el: div, roundKey: 'PICK', roundIdx: ri, side, matchIdx: mi, pos });
@@ -420,25 +622,22 @@
     const prev = div.dataset.team;
     if (prev && BOXES[prev]) BOXES[prev] = BOXES[prev].filter(b => b.el !== div);
     PROJECTED_FILLS.delete(key);
-    div.dataset.team  = '';
+    RANDOM_FILLS.delete(key);
+    if (prev === CHOSEN_CHAMPION) CHOSEN_CHAMPION = null;
+    div.dataset.team = '';
     div.classList.add('tbd');
-    div.classList.remove('user-winner', 'user-loser', 'projected');
-    div.innerHTML     = '<span class="team-name tbd-text">TBD</span>';
-    div.style.cursor  = 'default';
-    div.onmouseenter  = null;
-    div.onmouseleave  = null;
-    div.onclick       = null;
+    div.classList.remove('user-winner', 'user-loser', 'projected', 'random');
+    div.innerHTML = '<span class="team-name tbd-text">TBD</span>';
+    div.style.cursor = 'default';
+    div.onmouseenter = null; div.onmouseleave = null; div.onclick = null;
   }
 
   // ── Projected mode ────────────────────────────────────────────────────────
-
   function applyProjected() {
     const finalists = {};
     for (const side of ['left', 'right']) {
       const { nPerSide, nSideRounds } = LAYOUT;
       const finRi = nSideRounds - 1;
-
-      // Compute projected R16 winners (already filled in boxes, just pick favorites)
       const roundWinners = [];
       const r0 = [];
       for (let mi = 0; mi < nPerSide; mi++) {
@@ -446,47 +645,32 @@
         if (USER_PICKS[pickKey]) {
           r0.push(USER_PICKS[pickKey]);
         } else {
-          const match = getR16Match(side, mi);
+          const match = getR32Match(side, mi);
           const ta = match?.team_a, tb = match?.team_b;
-          if (ta && tb) {
-            r0.push((DATA.pairwise_ko?.[ta]?.[tb] ?? 0.5) >= 0.5 ? ta : tb);
-          } else {
-            r0.push(ta || tb || null);
-          }
+          if (ta && tb) r0.push((DATA.pairwise_ko?.[ta]?.[tb] ?? 0.5) >= 0.5 ? ta : tb);
+          else r0.push(ta || tb || null);
         }
       }
       roundWinners[0] = r0;
-
-      // Fill QF, SF slots; compute projected winners at each level
       for (let ri = 1; ri < finRi; ri++) {
         const prev = roundWinners[ri - 1];
         const nMatches = Math.floor(prev.length / 2);
         const cur = [];
         for (let mi = 0; mi < nMatches; mi++) {
-          const teamA = prev[mi * 2];
-          const teamB = prev[mi * 2 + 1];
-          // Fill the two team boxes for this match slot
+          const teamA = prev[mi * 2], teamB = prev[mi * 2 + 1];
           for (const [pos, team] of [[0, teamA], [1, teamB]]) {
             if (!team) continue;
             const key = `${side}_${ri}_${mi}_${pos}`;
             const div = SLOT_ELS[key];
             if (div && !div.dataset.team) promoteToSlotProjected(side, ri, mi, pos, team);
           }
-          // Projected winner
           const pickKey = `${side}_${ri}_${mi}`;
-          if (USER_PICKS[pickKey]) {
-            cur.push(USER_PICKS[pickKey]);
-          } else if (teamA && teamB) {
-            const p = DATA.pairwise_ko?.[teamA]?.[teamB] ?? 0.5;
-            cur.push(p >= 0.5 ? teamA : teamB);
-          } else {
-            cur.push(teamA || teamB || null);
-          }
+          if (USER_PICKS[pickKey]) cur.push(USER_PICKS[pickKey]);
+          else if (teamA && teamB) cur.push((DATA.pairwise_ko?.[teamA]?.[teamB] ?? 0.5) >= 0.5 ? teamA : teamB);
+          else cur.push(teamA || teamB || null);
         }
         roundWinners[ri] = cur;
       }
-
-      // Fill finalist slot with projected SF winner
       const sfWinner = roundWinners[finRi - 1]?.[0];
       if (sfWinner) {
         const key = `${side}_${finRi}_0_0`;
@@ -495,25 +679,25 @@
         finalists[side] = sfWinner;
       }
     }
-
-    // Compute and display projected champion
     const { left: teamA, right: teamB } = finalists;
-    if (teamA && teamB && !activeTeam) {
+    if (teamA && teamB) {
       const p = DATA.pairwise_ko?.[teamA]?.[teamB] ?? 0.5;
       const champion = p >= 0.5 ? teamA : teamB;
-      updateCenter(champion);
+      PROJECTION_CENTER = champion;
+      if (!activeTeam) updateCenter(champion);
+      setCenterChampBox('projected-champ');
     }
   }
 
   function clearProjected() {
+    PROJECTION_CENTER = null;
     if (!activeTeam) drawDefaultPath();
     for (const key of PROJECTED_FILLS) {
       const parts = key.split('_');
-      // key format: side_ri_mi_pos  (side may be 'left' or 'right' — both single-word)
-      const side = parts[0], ri = +parts[1], mi = +parts[2], pos = +parts[3];
-      resetSlotToTBD(side, ri, mi, pos);
+      resetSlotToTBD(parts[0], +parts[1], +parts[2], +parts[3]);
     }
     PROJECTED_FILLS.clear();
+    setCenterChampBox(null);
   }
 
   function promoteToSlotProjected(side, ri, mi, pos, name) {
@@ -523,17 +707,15 @@
     const prev = div.dataset.team;
     if (prev && BOXES[prev]) BOXES[prev] = BOXES[prev].filter(b => b.el !== div);
     div.dataset.team = name;
-    div.classList.remove('tbd');
-    div.classList.add('projected');
+    div.classList.remove('tbd'); div.classList.add('projected');
     fillBoxContent(div, name);
-    div.style.cursor  = 'pointer';
-    div.onmouseenter  = () => onHover(name);
-    div.onmouseleave  = onLeave;
-    div.onclick       = (e) => {
+    div.style.cursor = 'pointer';
+    div.onmouseenter = () => onHover(name);
+    div.onmouseleave = onLeave;
+    div.onclick = (e) => {
       e.stopPropagation();
-      // Convert projected pick to user pick: clear projected first
       clearProjected();
-      document.getElementById('projected-checkbox').checked = false;
+      document.getElementById('projected-btn').classList.remove('active');
       PROJECTED_MODE = false;
       onClickAdvance(name, side, ri, mi);
     };
@@ -542,13 +724,11 @@
     PROJECTED_FILLS.add(key);
   }
 
-  // ── Model switch ──────────────────────────────────────────────────────────
-
+  // ── Model / forecast switch ───────────────────────────────────────────────
   function switchMatrix(key) {
     ACTIVE_MATRIX = key;
-    if (key === 'ds')         DATA.pairwise_ko = DATA.pairwise_ko_ds      ?? DATA.pairwise_ko;
-    else if (key === 'ds_pele') DATA.pairwise_ko = DATA.pairwise_ko_ds_pele ?? DATA.pairwise_ko;
-    else                        DATA.pairwise_ko = DATA.pairwise_ko_pele    ?? DATA.pairwise_ko;
+    const matrices = SNAP_MATRICES ?? LIVE_MATRICES;
+    DATA.pairwise_ko = matrices[key] ?? DATA.pairwise_ko;
     if (PROJECTED_MODE) { clearProjected(); applyProjected(); }
     refreshAllProbs();
   }
@@ -566,30 +746,69 @@
       `<span class="team-name">${name}</span>` +
       `<span class="team-win-prob">${pct(w)}</span>`;
     const bar = document.createElement('div');
-    bar.className        = 'prob-bar';
-    bar.style.width      = (w * 100).toFixed(1) + '%';
+    bar.className = 'prob-bar';
+    bar.style.width = (w * 100).toFixed(1) + '%';
     bar.style.background = getTeamColor(name);
     div.appendChild(bar);
   }
 
-  // ── Conditional probability engine ────────────────────────────────────────
-
-  function getR16Match(side, mi) {
+  // ── Known results ─────────────────────────────────────────────────────────
+  function applyKnownResults() {
     const { nPerSide } = LAYOUT;
-    return DATA.bracket.R16[side === 'left' ? mi : nPerSide + mi];
+    const roundMeta = {
+      R32: { ri: 0, perSide: nPerSide },
+      R16: { ri: 1, perSide: nPerSide / 2 },
+      QF:  { ri: 2, perSide: nPerSide / 4 },
+      SF:  { ri: 3, perSide: 1 },
+    };
+    for (const [roundKey, { ri, perSide }] of Object.entries(roundMeta)) {
+      const fixtures = DATA.bracket[roundKey] || [];
+      fixtures.forEach((match, idx) => {
+        if (!match.winner) return;
+        const side = idx < perSide ? 'left' : 'right';
+        const mi   = idx < perSide ? idx : idx - perSide;
+        USER_PICKS[`${side}_${ri}_${mi}`] = match.winner;
+        for (const pos of [0, 1]) {
+          const div = SLOT_ELS[`${side}_${ri}_${mi}_${pos}`];
+          if (!div || !div.dataset.team) continue;
+          div.classList.toggle('user-winner', div.dataset.team === match.winner);
+          div.classList.toggle('user-loser',  div.dataset.team !== match.winner);
+        }
+        const nextRi = ri + 1, nextMi = Math.floor(mi / 2), nextPos = mi % 2;
+        if (nextRi < LAYOUT.nSideRounds) promoteToSlot(side, nextRi, nextMi, nextPos, match.winner);
+      });
+    }
+    // Mark eliminated teams as crossed-out in ALL their bracket slots
+    markAllEliminatedBoxes();
+  }
+
+  // After known results are applied, any team with user-loser on any box
+  // is definitively eliminated — mark all their boxes as loser.
+  function markAllEliminatedBoxes() {
+    for (const [, boxes] of Object.entries(BOXES)) {
+      if (!boxes.some(b => b.el.classList.contains('user-loser'))) continue;
+      for (const { el } of boxes) {
+        el.classList.add('user-loser');
+        el.classList.remove('user-winner');
+      }
+    }
+  }
+
+  // ── Conditional probability engine ────────────────────────────────────────
+  function getR32Match(side, mi) {
+    const { nPerSide } = LAYOUT;
+    return DATA.bracket.R32[side === 'left' ? mi : nPerSide + mi];
   }
 
   function matchWinnerDist(side, ri, mi) {
     const pickKey = `${side}_${ri}_${mi}`;
     if (USER_PICKS[pickKey]) return { [USER_PICKS[pickKey]]: 1.0 };
-
     if (ri === 0) {
-      const match = getR16Match(side, mi);
+      const match = getR32Match(side, mi);
       if (!match?.team_a || !match?.team_b) return {};
       const p = DATA.pairwise_ko?.[match.team_a]?.[match.team_b] ?? 0.5;
       return { [match.team_a]: p, [match.team_b]: 1 - p };
     }
-
     const topDist = matchWinnerDist(side, ri - 1, mi * 2);
     const botDist = matchWinnerDist(side, ri - 1, mi * 2 + 1);
     const result  = {};
@@ -603,26 +822,24 @@
     return result;
   }
 
-  function computeTeamProbs(name, side, r16Mi) {
-    const qfMi      = Math.floor(r16Mi / 2);
+  function computeTeamProbs(name, side, r32Mi) {
+    const r16Mi = Math.floor(r32Mi / 2);
+    const qfMi  = Math.floor(r16Mi / 2);
     const otherSide = side === 'left' ? 'right' : 'left';
-
-    const p_qf = matchWinnerDist(side, 0, r16Mi)[name] ?? 0;
-    const p_sf = matchWinnerDist(side, 1, qfMi)[name]  ?? 0;
-    const p_f  = matchWinnerDist(side, 2, 0)[name]     ?? 0;
-
-    const finalDist = matchWinnerDist(otherSide, 2, 0);
+    const p_r16 = matchWinnerDist(side, 0, r32Mi)[name] ?? 0;
+    const p_qf  = matchWinnerDist(side, 1, r16Mi)[name] ?? 0;
+    const p_sf  = matchWinnerDist(side, 2, qfMi)[name]  ?? 0;
+    const p_f   = matchWinnerDist(side, 3, 0)[name]     ?? 0;
+    const finalDist = matchWinnerDist(otherSide, 3, 0);
     const p_w = p_f * Object.entries(finalDist).reduce(
       (s, [opp, p]) => s + p * (DATA.pairwise_ko?.[name]?.[opp] ?? 0.5), 0
     );
-
-    return { R16: 1.0, QF: p_qf, SF: p_sf, F: p_f, W: p_w };
+    return { R32: 1.0, R16: p_r16, QF: p_qf, SF: p_sf, F: p_f, W: CHOSEN_CHAMPION === name ? 1.0 : p_w };
   }
 
   function refreshAllProbs() {
-    for (const [name, pos] of Object.entries(TEAM_POS)) {
-      LIVE_PROBS[name] = computeTeamProbs(name, pos.side, pos.r16Mi);
-    }
+    for (const [name, pos] of Object.entries(TEAM_POS))
+      LIVE_PROBS[name] = computeTeamProbs(name, pos.side, pos.r32Mi);
     for (const [name, boxes] of Object.entries(BOXES)) {
       const w = LIVE_PROBS[name]?.W;
       if (w == null) continue;
@@ -642,8 +859,7 @@
     defaultPathEls = [];
     document.querySelectorAll('.team-box').forEach(el => {
       el.classList.remove('dimmed', 'highlighted');
-      el.style.borderColor = '';
-      el.style.boxShadow   = '';
+      el.style.borderColor = ''; el.style.boxShadow = '';
     });
     resetCenter();
   }
@@ -651,64 +867,35 @@
   function drawDefaultPath() {
     clearDefaultPath();
     if (activeTeam) return;
-    const entry = Object.entries(LIVE_PROBS)
-      .reduce((best, [n, p]) => (!best || p.W > best[1].W) ? [n, p] : best, null);
-    if (!entry) return;
-    const [name] = entry;
+    if (PROJECTED_MODE || RANDOM_MODE) {
+      if (PROJECTION_CENTER) updateCenter(PROJECTION_CENTER);
+      return;
+    }
+    let name;
+    if (CHOSEN_CHAMPION && LIVE_PROBS[CHOSEN_CHAMPION]) {
+      name = CHOSEN_CHAMPION;
+    } else {
+      const entry = Object.entries(LIVE_PROBS)
+        .reduce((best, [n, p]) => (!best || p.W > best[1].W) ? [n, p] : best, null);
+      if (!entry) return;
+      name = entry[0];
+    }
     const teamColor = getTeamColor(name);
     (BOXES[name] || []).forEach(({ el }) => {
       el.classList.add('highlighted');
       el.style.borderColor = teamColor;
-      el.style.boxShadow   = `0 0 0 2px ${teamColor}30`;
+      el.style.boxShadow = `0 0 0 2px ${teamColor}30`;
     });
     updateCenter(name);
-    const prevHl = hlEls;
-    hlEls = [];
+    const prevHl = hlEls; hlEls = [];
     drawTeamPath(name);
-    defaultPathEls = hlEls;
-    hlEls = prevHl;
-  }
-
-  // ── Auto-apply known results ───────────────────────────────────────────────
-  function applyKnownResults() {
-    const { nPerSide } = LAYOUT;
-    const roundMeta = {
-      R16: { ri: 0, perSide: nPerSide },
-      QF:  { ri: 1, perSide: nPerSide / 2 },
-      SF:  { ri: 2, perSide: 1 },
-    };
-    for (const [roundKey, { ri, perSide }] of Object.entries(roundMeta)) {
-      const fixtures = DATA.bracket[roundKey] || [];
-      fixtures.forEach((match, idx) => {
-        if (!match.winner) return;
-        const side = idx < perSide ? 'left' : 'right';
-        const mi   = idx < perSide ? idx : idx - perSide;
-        const pickKey = `${side}_${ri}_${mi}`;
-
-        USER_PICKS[pickKey] = match.winner;
-
-        for (const pos of [0, 1]) {
-          const div = SLOT_ELS[`${side}_${ri}_${mi}_${pos}`];
-          if (!div || !div.dataset.team) continue;
-          div.classList.toggle('user-winner', div.dataset.team === match.winner);
-          div.classList.toggle('user-loser',  div.dataset.team !== match.winner);
-        }
-
-        const nextRi  = ri + 1;
-        const nextMi  = Math.floor(mi / 2);
-        const nextPos = mi % 2;
-        if (nextRi < LAYOUT.nSideRounds) {
-          promoteToSlot(side, nextRi, nextMi, nextPos, match.winner);
-        }
-      });
-    }
+    defaultPathEls = hlEls; hlEls = prevHl;
   }
 
   // ── Hover interaction ─────────────────────────────────────────────────────
   function onHover(name) {
     if (activeTeam === name) return;
-    clearDefaultPath();
-    defaultPathEls = [];
+    clearDefaultPath(); defaultPathEls = [];
     hlEls.forEach(e => { if (e._bg) e._bg.remove(); e.remove(); });
     hlEls = [];
     activeTeam = name;
@@ -720,7 +907,7 @@
     (BOXES[name] || []).forEach(({ el }) => {
       el.classList.add('highlighted');
       el.style.borderColor = teamColor;
-      el.style.boxShadow   = `0 0 0 2px ${teamColor}30`;
+      el.style.boxShadow = `0 0 0 2px ${teamColor}30`;
     });
     drawTeamPath(name);
     updateCenter(name);
@@ -739,42 +926,39 @@
   function drawTeamPath(name) {
     const svg = document.getElementById('conn-svg');
     if (!DATA.teams[name]) return;
-
     const { nPerSide, bracketH, leftW, centerW } = LAYOUT;
-    const r16 = DATA.bracket.R16;
-    const r16Idx = r16.findIndex(m => m.team_a === name || m.team_b === name);
-    if (r16Idx < 0) return;
-
-    const side    = r16Idx < nPerSide ? 'left' : 'right';
+    const r32 = DATA.bracket.R32;
+    const r32Idx = r32.findIndex(m => m.team_a === name || m.team_b === name);
+    if (r32Idx < 0) return;
+    const side    = r32Idx < nPerSide ? 'left' : 'right';
     const isRight = side === 'right';
-    const r16Mi   = isRight ? r16Idx - nPerSide : r16Idx;
-    const r16Pos  = r16[r16Idx].team_a === name ? 0 : 1;
+    const r32Mi   = isRight ? r32Idx - nPerSide : r32Idx;
+    const r32Pos  = r32[r32Idx].team_a === name ? 0 : 1;
+    const r16Mi   = Math.floor(r32Mi / 2);
+    const r16Pos  = r32Mi % 2;
     const qfMi    = Math.floor(r16Mi / 2);
     const qfPos   = r16Mi % 2;
     const sfPos   = qfMi;
-
     const path = [
-      { ri: 0, mi: r16Mi, pi: r16Pos, probAfter: 'QF' },
-      { ri: 1, mi: qfMi,  pi: qfPos,  probAfter: 'SF' },
-      { ri: 2, mi: 0,     pi: sfPos,  probAfter: 'F'  },
+      { ri: 0, mi: r32Mi, pi: r32Pos, probAfter: 'R16' },
+      { ri: 1, mi: r16Mi, pi: r16Pos, probAfter: 'QF'  },
+      { ri: 2, mi: qfMi,  pi: qfPos,  probAfter: 'SF'  },
+      { ri: 3, mi: 0,     pi: sfPos,  probAfter: 'F'   },
       { ri: LAYOUT.nSideRounds - 1, mi: 0, pi: 0, probAfter: 'W' },
     ];
-
-    const probs    = LIVE_PROBS[name] || DATA.teams[name].probs;
+    const probs = LIVE_PROBS[name] || DATA.teams[name].probs;
     const teamColor = getTeamColor(name);
 
     // Skip segments for rounds the team has already won
     let startIdx = 0;
     for (let i = 0; i < path.length - 1; i++) {
       const cur = path[i];
-      const pickKey = `${side}_${cur.ri}_${cur.mi}`;
-      if (USER_PICKS[pickKey] === name) startIdx = i + 1;
+      if (USER_PICKS[`${side}_${cur.ri}_${cur.mi}`] === name) startIdx = i + 1;
       else break;
     }
 
     for (let i = startIdx; i < path.length - 1; i++) {
-      const cur  = path[i];
-      const next = path[i + 1];
+      const cur = path[i], next = path[i + 1];
       const curY      = teamY(cur.ri, cur.mi, cur.pi);
       const matchTopY = teamY(cur.ri, cur.mi, 0);
       const matchBotY = teamY(cur.ri, cur.mi, 1);
@@ -783,20 +967,14 @@
       const bx = teamX(cur.ri, side);
       let edgeX, midX, nextEdgeX;
       if (!isRight) {
-        edgeX     = bx + C.teamW;
-        midX      = edgeX + C.colGap / 2;
-        nextEdgeX = bx + C.colW;
+        edgeX = bx + C.teamW; midX = edgeX + C.colGap / 2; nextEdgeX = bx + C.colW;
       } else {
-        edgeX     = bx;
-        midX      = edgeX - C.colGap / 2;
-        nextEdgeX = bx - C.colGap;
+        edgeX = bx; midX = edgeX - C.colGap / 2; nextEdgeX = bx - C.colGap;
       }
       const sw = probToStroke(probs[cur.probAfter]);
-
       let d = `M ${edgeX} ${curY} H ${midX} V ${midY} H ${nextEdgeX}`;
       if (Math.abs(midY - nextY) > 0.5) d += ` V ${nextY}`;
       hlEls.push(svgPathHL(svg, d, sw, teamColor));
-
       const prob = probs[cur.probAfter];
       if (prob !== undefined) {
         const labelX = (midX + nextEdgeX) / 2;
@@ -805,7 +983,6 @@
         hlEls.push(t);
       }
     }
-
     const finRi = LAYOUT.nSideRounds - 1;
     const finX  = teamX(finRi, side);
     const finY  = bracketH / 2;
@@ -814,7 +991,7 @@
     hlEls.push(svgPathHL(svg, `M ${finEdgeX} ${finY} H ${centerEdgeX}`, probToStroke(probs.W), teamColor));
   }
 
-  // ── Center panel updates ──────────────────────────────────────────────────
+  // ── Center panel ──────────────────────────────────────────────────────────
   function updateCenter(name) {
     const td = DATA.teams[name];
     if (!td) return;
@@ -822,75 +999,55 @@
     document.getElementById('center-hint').style.display = 'none';
     document.getElementById('center-team-flag').innerHTML =
       td.iso ? `<img src="https://flagcdn.com/40x30/${td.iso}.png" alt="">` : (td.flag ?? '');
-    document.getElementById('center-team-name').textContent  = name;
+    document.getElementById('center-team-name').textContent = name;
     const probEl = document.getElementById('center-prob-value');
-    probEl.textContent = pct(w);
-    probEl.style.color = getTeamColor(name);
+    probEl.textContent = pct(w); probEl.style.color = getTeamColor(name);
     document.getElementById('center-prob-label').style.display = '';
   }
   function resetCenter() {
     document.getElementById('center-hint').style.display = '';
     document.getElementById('center-team-flag').innerHTML = '';
-    document.getElementById('center-team-name').textContent  = '';
+    document.getElementById('center-team-name').textContent = '';
     const probEl = document.getElementById('center-prob-value');
-    probEl.textContent = '';
-    probEl.style.color = '';
+    probEl.textContent = ''; probEl.style.color = '';
     document.getElementById('center-prob-label').style.display = 'none';
   }
 
   // ── SVG helpers ───────────────────────────────────────────────────────────
   const NS = 'http://www.w3.org/2000/svg';
 
-  function svgLine(svg, x1, y1, x2, y2, cls, sw) {
+  function svgLine(svg, x1, y1, x2, y2, cls) {
     const el = document.createElementNS(NS, 'line');
     el.setAttribute('x1', x1); el.setAttribute('y1', y1);
     el.setAttribute('x2', x2); el.setAttribute('y2', y2);
     el.setAttribute('class', cls);
-    if (sw != null) el.style.strokeWidth = sw + 'px';
-    svg.appendChild(el);
-    return el;
+    svg.appendChild(el); return el;
   }
 
   function svgPathHL(svg, d, sw, color) {
     const el = document.createElementNS(NS, 'path');
-    el.setAttribute('d', d);
-    el.setAttribute('class', 'conn-hl');
-    el.setAttribute('stroke-linejoin', 'round');
-    el.setAttribute('stroke-linecap', 'round');
-    el.style.strokeWidth = sw + 'px';
-    el.style.stroke      = color;
-    svg.appendChild(el);
-    return el;
+    el.setAttribute('d', d); el.setAttribute('class', 'conn-hl');
+    el.setAttribute('stroke-linejoin', 'round'); el.setAttribute('stroke-linecap', 'round');
+    el.style.strokeWidth = sw + 'px'; el.style.stroke = color;
+    svg.appendChild(el); return el;
   }
 
   function svgText(svg, x, y, text, cls) {
     const bg = document.createElementNS(NS, 'rect');
     const tw = text.length * 5.5 + 8;
     bg.setAttribute('x', x - tw / 2); bg.setAttribute('y', y - 8);
-    bg.setAttribute('width', tw);     bg.setAttribute('height', 14);
-    bg.setAttribute('rx', 3);
-    bg.setAttribute('fill', '#fff');
+    bg.setAttribute('width', tw); bg.setAttribute('height', 14);
+    bg.setAttribute('rx', 3); bg.setAttribute('fill', '#fff');
     svg.appendChild(bg);
     const el = document.createElementNS(NS, 'text');
     el.setAttribute('x', x); el.setAttribute('y', y);
-    el.setAttribute('class', cls);
-    el.textContent = text;
-    svg.appendChild(el);
-    el._bg = bg;
-    return el;
+    el.setAttribute('class', cls); el.textContent = text;
+    svg.appendChild(el); el._bg = bg; return el;
   }
 
-  // ── Utilities ─────────────────────────────────────────────────────────────
-  function pct(v) {
-    if (v == null) return '';
-    return Math.round(v * 100) + '%';
-  }
+  function pct(v) { return v == null ? '' : Math.round(v * 100) + '%'; }
+  function probToStroke(p) { return 1 + 8 * (p ?? 0); }
 
-  function probToStroke(p) {
-    return 1 + 8 * (p ?? 0);
-  }
-
-  // ── Boot ──────────────────────────────────────────────────────────────────
   if (document.readyState === 'loading')
     document.addEventListener('DOMContentLoaded', init);
   else
