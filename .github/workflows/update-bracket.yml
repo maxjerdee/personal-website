@@ -1,0 +1,88 @@
+name: Update bracket predictions
+
+on:
+  workflow_dispatch:
+    inputs:
+      refit:
+        description: 'Full Stan refit? (slow, ~20 min). Default: no-refit, just re-fetch results.'
+        type: boolean
+        default: false
+      demo:
+        description: 'Demo folder name under quarto_src/demos_code/demos/'
+        type: string
+        default: 'world_cup'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('quarto_src/demos_code/demos/${{ github.event.inputs.demo }}/pipeline/requirements.txt') }}
+          restore-keys: pip-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: |
+          pip install -r quarto_src/demos_code/demos/${{ github.event.inputs.demo }}/pipeline/requirements.txt
+
+      - name: Cache Stan model compilation
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/httpstan
+          key: httpstan-${{ runner.os }}-${{ hashFiles('quarto_src/demos_code/demos/${{ github.event.inputs.demo }}/pipeline/stan_model.py') }}
+          restore-keys: httpstan-${{ runner.os }}-
+
+      - name: Restore posterior cache
+        uses: actions/cache@v4
+        with:
+          path: quarto_src/demos_code/demos/${{ github.event.inputs.demo }}/pipeline/data/posterior_cache.pkl
+          key: posterior-${{ runner.os }}-${{ github.event.inputs.demo }}-${{ github.sha }}
+          restore-keys: posterior-${{ runner.os }}-${{ github.event.inputs.demo }}-
+
+      - name: Restore matches-only posterior cache
+        uses: actions/cache@v4
+        with:
+          path: quarto_src/demos_code/demos/${{ github.event.inputs.demo }}/pipeline/data/posterior_pele_cache.pkl
+          key: posterior-pele-${{ runner.os }}-${{ github.event.inputs.demo }}-${{ github.sha }}
+          restore-keys: posterior-pele-${{ runner.os }}-${{ github.event.inputs.demo }}-
+
+      - name: Run pipeline
+        run: |
+          DEMO=quarto_src/demos_code/demos/${{ github.event.inputs.demo }}
+          REFIT_FLAG=${{ github.event.inputs.refit == 'true' && '' || '--no-refit' }}
+          python "$DEMO/pipeline/run_pipeline.py" --force-fetch $REFIT_FLAG
+
+      - name: Sync predictions to docs/
+        run: |
+          DEMO=${{ github.event.inputs.demo }}
+          SRC=quarto_src/demos_code/demos/$DEMO
+          DST=docs/demos_code/demos/$DEMO
+          mkdir -p "$DST"
+          cp "$SRC/predictions.json"         "$DST/predictions.json"
+          cp "$SRC/predictions_history.json" "$DST/predictions_history.json"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            quarto_src/demos_code/demos/${{ github.event.inputs.demo }}/predictions.json \
+            quarto_src/demos_code/demos/${{ github.event.inputs.demo }}/predictions_history.json \
+            docs/demos_code/demos/${{ github.event.inputs.demo }}/predictions.json \
+            docs/demos_code/demos/${{ github.event.inputs.demo }}/predictions_history.json
+          git diff --cached --quiet && echo "No changes to commit." || \
+            git commit -m "auto: update ${{ github.event.inputs.demo }} predictions [$(date -u +%Y-%m-%dT%H:%M:%SZ)]"
+          git push
