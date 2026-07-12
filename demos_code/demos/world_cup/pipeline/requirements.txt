@@ -1,0 +1,6 @@
+httpstan
+pystan
+numpy
+pandas
+requests
+directedstructure
