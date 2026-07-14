@@ -62,7 +62,11 @@ jobs:
       - name: Run pipeline
         run: |
           DEMO=quarto_src/demos_code/demos/${{ github.event.inputs.demo }}
-          REFIT_FLAG=${{ github.event.inputs.refit == 'true' && '' || '--no-refit' }}
+          if [ "${{ github.event.inputs.refit }}" = "true" ]; then
+            REFIT_FLAG=""
+          else
+            REFIT_FLAG="--no-refit"
+          fi
           python "$DEMO/pipeline/run_pipeline.py" --force-fetch $REFIT_FLAG
 
       - name: Sync predictions to docs/
