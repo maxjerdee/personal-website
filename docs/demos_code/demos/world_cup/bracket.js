@@ -10,6 +10,8 @@
     teamW:   108,
     colGap:  18,
     centerW: 130,
+    stemH:         28,   // upward T stem height in projection view
+    stemHComplete: 60,   // taller T stem in the complete/finished view
   };
   C.colW = C.teamW + C.colGap;
 
@@ -66,7 +68,7 @@
   let RANDOM_MODE     = false;
   let PROJECTED_FILLS = new Set();
   let RANDOM_FILLS    = new Set();
-  let ACTIVE_MATRIX   = 'ds_pele';
+  let ACTIVE_MATRIX   = 'ds';
 
   let LIVE_MATRICES     = null;
   let SNAP_MATRICES     = null;  // non-null when a historical snapshot is active
@@ -85,14 +87,16 @@
         'Could not load predictions.json — ' + e.message;
       return;
     }
-    DATA.pairwise_ko = DATA.pairwise_ko_ds_pele ?? DATA.pairwise_ko;
     LIVE_BRACKET  = DATA.bracket;
     LIVE_MATRICES = {
       ds_pele: DATA.pairwise_ko_ds_pele,
       pele:    DATA.pairwise_ko_pele,
       ds:      DATA.pairwise_ko_ds,
-      matches: DATA.pairwise_ko_matches,
+      // fall back to basic BT (original pairwise_ko) when matches-only matrix isn't in the file
+      matches: DATA.pairwise_ko_matches ?? DATA.pairwise_ko,
     };
+    // Default active matrix: grouped hierarchy (ds), falling back to basic BT
+    DATA.pairwise_ko = DATA.pairwise_ko_ds ?? DATA.pairwise_ko;
 
     document.getElementById('last-updated').textContent =
       'Predictions as of ' + new Date(DATA.generated_at).toUTCString();
@@ -116,6 +120,7 @@
         applyProjected();
         refreshAllProbs();
       }
+      applyOutcomeIndicators();
     });
 
     try {
@@ -161,11 +166,30 @@
       switchMatrix(opt.dataset.val);
     });
 
+    // Default to first snapshot (Before Round of 32).
+    // Pre-set DATA.bracket before buildBracket() so slots are created with
+    // snapshot teams (no winners), not the complete live bracket.
+    const defaultSnap = HISTORY?.snapshots?.[0];
+    if (defaultSnap) {
+      DATA.bracket = defaultSnap.bracket;
+      const displayText = defaultSnap.label.replace(/^Before\s+/i, '');
+      document.getElementById('forecast-display').textContent = displayText;
+      document.querySelectorAll('#forecast-panel .csel-opt').forEach(o => {
+        o.classList.toggle('selected', parseInt(o.dataset.val, 10) === 0);
+      });
+    }
+
     computeLayout();
     buildRoundLabels();
     buildBracket();
-    applyKnownResults();
-    refreshAllProbs();
+
+    if (defaultSnap) {
+      switchForecast(0);
+    } else {
+      applyKnownResults();
+      refreshAllProbs();
+      applyOutcomeIndicators();
+    }
     applyResponsiveLayout();
 
     window.addEventListener('resize', applyResponsiveLayout);
@@ -210,7 +234,10 @@
       SNAP_MATRICES = null;
       DATA.pairwise_ko = LIVE_MATRICES[ACTIVE_MATRIX] ?? DATA.pairwise_ko;
       DATA.bracket = LIVE_BRACKET;
-      document.getElementById('model-ctrl').classList.remove('disabled');
+      // Enable model selector when ds and matches matrices are distinct
+      const liveHasVariants = !!(LIVE_MATRICES.ds && LIVE_MATRICES.matches &&
+                                  LIVE_MATRICES.ds !== LIVE_MATRICES.matches);
+      document.getElementById('model-ctrl').classList.toggle('disabled', !liveHasVariants);
     } else {
       const snap = HISTORY.snapshots[idx];
       SNAP_MATRICES = {
@@ -221,12 +248,23 @@
       };
       DATA.pairwise_ko = SNAP_MATRICES[ACTIVE_MATRIX] ?? snap.pairwise_ko;
       DATA.bracket = snap.bracket;
-      const hasVariants = snap.pairwise_ko_pele && Object.keys(snap.pairwise_ko_pele).length > 0;
-      document.getElementById('model-ctrl').classList.toggle('disabled', !hasVariants);
+      const snapHasVariants = snap.pairwise_ko_ds && snap.pairwise_ko_matches &&
+                              Object.keys(snap.pairwise_ko_matches).length > 0;
+      const liveHasVariants = !!(LIVE_MATRICES.ds && LIVE_MATRICES.matches &&
+                                  LIVE_MATRICES.ds !== LIVE_MATRICES.matches);
+      document.getElementById('model-ctrl').classList.toggle('disabled', !(snapHasVariants || liveHasVariants));
     }
 
+    if (idx >= 0) {
+      PROJECTED_MODE = true;
+      document.getElementById('projected-btn').classList.add('active');
+    }
     applyKnownResults();
     refreshAllProbs();
+    if (idx >= 0) {
+      applyProjected();
+    }
+    applyOutcomeIndicators();
   }
 
   // ── Responsive layout ─────────────────────────────────────────────────────
@@ -426,10 +464,14 @@
 
   function drawFinalistToCenter(svg) {
     const { leftW, centerW, bracketH, nSideRounds } = LAYOUT;
-    const midY  = bracketH / 2;
-    const finRi = nSideRounds - 1;
-    svgLine(svg, teamX(finRi, 'left') + C.teamW, midY, leftW, midY, 'conn-base');
-    svgLine(svg, teamX(finRi, 'right'), midY, leftW + centerW, midY, 'conn-base');
+    const midY   = bracketH / 2;
+    const finRi  = nSideRounds - 1;
+    const cx     = leftW + centerW / 2;
+    // Horizontal bar connecting both finalist boxes through center
+    svgLine(svg, teamX(finRi, 'left') + C.teamW, midY, teamX(finRi, 'right'), midY, 'conn-base');
+    // Vertical stem rising from T junction toward champion display
+    const stemLine = svgLine(svg, cx, midY, cx, midY - C.stemH, 'conn-base');
+    stemLine.id = 'final-stem-line';
   }
 
   function buildCenterPanel(bracket) {
@@ -437,6 +479,8 @@
     const panel = document.getElementById('center-panel');
     panel.style.left = leftW + 'px'; panel.style.width = centerW + 'px';
     panel.style.top = '0'; panel.style.height = bracketH + 'px';
+    // Default (non-complete): center content well above the T-stem; updated by applyKnownResults
+    panel.style.paddingBottom = (2 * (C.stemH + 72)) + 'px';
   }
 
   // ── Click-to-advance ──────────────────────────────────────────────────────
@@ -486,6 +530,7 @@
         clearDownstreamPicks(side, 0, mi);
     applyKnownResults();
     refreshAllProbs();
+    applyOutcomeIndicators();
   }
 
   // ── Random outcome simulation ─────────────────────────────────────────────
@@ -592,6 +637,7 @@
     RANDOM_MODE = true;
     document.getElementById('random-btn').classList.add('active');
     refreshAllProbs();
+    clearOutcomeIndicators();
   }
 
   function promoteToSlot(side, ri, mi, pos, name) {
@@ -727,10 +773,14 @@
   // ── Model / forecast switch ───────────────────────────────────────────────
   function switchMatrix(key) {
     ACTIVE_MATRIX = key;
-    const matrices = SNAP_MATRICES ?? LIVE_MATRICES;
+    // Prefer snap matrices when they have distinct variants; fall back to live matrices
+    const snapDs = SNAP_MATRICES?.ds, snapMatches = SNAP_MATRICES?.matches;
+    const snapHasVariants = snapDs && snapMatches && snapDs !== snapMatches;
+    const matrices = (SNAP_MATRICES && snapHasVariants) ? SNAP_MATRICES : LIVE_MATRICES;
     DATA.pairwise_ko = matrices[key] ?? DATA.pairwise_ko;
     if (PROJECTED_MODE) { clearProjected(); applyProjected(); }
     refreshAllProbs();
+    applyOutcomeIndicators();
   }
 
   // ── Box content ───────────────────────────────────────────────────────────
@@ -778,6 +828,36 @@
         if (nextRi < LAYOUT.nSideRounds) promoteToSlot(side, nextRi, nextMi, nextPos, match.winner);
       });
     }
+    // Final (F): set champion and mark finalist slots
+    const fMatch = DATA.bracket.F?.[0];
+    if (fMatch?.winner) {
+      const finRi = LAYOUT.nSideRounds - 1;
+      const loser = fMatch.winner === fMatch.team_a ? fMatch.team_b : fMatch.team_a;
+      CHOSEN_CHAMPION = fMatch.winner;
+      for (const side of ['left', 'right']) {
+        const div = SLOT_ELS[`${side}_${finRi}_0_0`];
+        if (!div || !div.dataset.team) continue;
+        div.classList.toggle('user-winner', div.dataset.team === fMatch.winner);
+        div.classList.toggle('user-loser',  div.dataset.team === loser);
+      }
+    }
+    // Center panel padding and T stem: taller in complete view (no overlap with path highlights)
+    const { bracketH } = LAYOUT;
+    // "over" = live tournament is complete, not just that this bracket has a final result
+    const over = SELECTED_SNAP < 0 && !!LIVE_BRACKET?.F?.[0]?.winner;
+    const activeStemH = over ? C.stemHComplete : C.stemH;
+    const pb = over ? 2 * (C.stemHComplete + 24) : 2 * (C.stemH + 72);
+    document.getElementById('center-panel').style.paddingBottom = pb + 'px';
+    const stemLine = document.getElementById('final-stem-line');
+    if (stemLine) stemLine.setAttribute('y2', bracketH / 2 - activeStemH);
+    // Complete view: hide interactive controls and hover instruction; don't dim losers
+    document.getElementById('controls').style.display    = over ? 'none' : '';
+    document.getElementById('center-hint').style.display = over ? 'none' : '';
+    document.getElementById('header-subtitle').textContent = over
+      ? 'Final results'
+      : 'Predictions based only on match outcomes · hover a team to see their path · click to advance';
+    document.getElementById('last-updated').style.display = over ? 'none' : '';
+    document.body.classList.toggle('tournament-over', over);
     // Mark eliminated teams as crossed-out in ALL their bracket slots
     markAllEliminatedBoxes();
   }
@@ -800,9 +880,23 @@
     return DATA.bracket.R32[side === 'left' ? mi : nPerSide + mi];
   }
 
+  // Return the known winner for (side, ri, mi) from DATA.bracket, or null.
+  // nPerSide >> ri = number of fixtures per side in round ri.
+  function _knownWinner(side, ri, mi) {
+    const { nPerSide } = LAYOUT;
+    const rndKeys = ['R32', 'R16', 'QF', 'SF'];
+    if (ri >= rndKeys.length) return null;
+    const nps = nPerSide >> ri;
+    const idx = side === 'left' ? mi : nps + mi;
+    return DATA.bracket?.[rndKeys[ri]]?.[idx]?.winner ?? null;
+  }
+
   function matchWinnerDist(side, ri, mi) {
     const pickKey = `${side}_${ri}_${mi}`;
     if (USER_PICKS[pickKey]) return { [USER_PICKS[pickKey]]: 1.0 };
+    // Short-circuit for known bracket results — winner has probability 1
+    const known = _knownWinner(side, ri, mi);
+    if (known) return { [known]: 1.0 };
     if (ri === 0) {
       const match = getR32Match(side, mi);
       if (!match?.team_a || !match?.team_b) return {};
@@ -838,6 +932,7 @@
   }
 
   function refreshAllProbs() {
+    const tournamentOver = SELECTED_SNAP < 0 && !!LIVE_BRACKET?.F?.[0]?.winner;
     for (const [name, pos] of Object.entries(TEAM_POS))
       LIVE_PROBS[name] = computeTeamProbs(name, pos.side, pos.r32Mi);
     for (const [name, boxes] of Object.entries(BOXES)) {
@@ -846,12 +941,149 @@
       for (const { el } of boxes) {
         const probEl = el.querySelector('.team-win-prob');
         const barEl  = el.querySelector('.prob-bar');
-        if (probEl) probEl.textContent = pct(w);
-        if (barEl)  { barEl.style.width = (w * 100).toFixed(1) + '%'; barEl.style.background = getTeamColor(name); }
+        if (probEl) probEl.textContent = tournamentOver ? '' : pct(w);
+        if (barEl)  { barEl.style.width = tournamentOver ? '0' : (w * 100).toFixed(1) + '%'; barEl.style.background = getTeamColor(name); }
       }
     }
     if (activeTeam) updateCenter(activeTeam);
     drawDefaultPath();
+  }
+
+  // ── Outcome indicators (✓/✗ badges at bracket junctures) ───────────────────
+
+  // Return the pairwise matrix from BEFORE a given round started, so badges
+  // reflect out-of-sample predictions rather than a model trained on the result.
+  // Round → snapshot index: R32→0, R16→1, QF→2, SF→3, F→4.
+  function _preRoundMatrix(roundKey) {
+    const idx = { R32: 0, R16: 1, QF: 2, SF: 3, F: 4 }[roundKey];
+    if (idx === undefined || !HISTORY?.snapshots?.[idx]) return DATA.pairwise_ko;
+    const snap = HISTORY.snapshots[idx];
+    return snap[`pairwise_ko_${ACTIVE_MATRIX}`] ?? snap.pairwise_ko ?? DATA.pairwise_ko;
+  }
+
+  function applyOutcomeIndicators() {
+    clearOutcomeIndicators();
+    const tournamentOver = SELECTED_SNAP < 0 && !!LIVE_BRACKET?.F?.[0]?.winner;
+    // Badges only in snapshot projected view or when tournament is fully complete
+    const showBadges = tournamentOver || (SELECTED_SNAP >= 0 && PROJECTED_MODE && !RANDOM_MODE);
+    if (!showBadges) return;
+    const { nPerSide, nSideRounds, leftW, bracketH } = LAYOUT;
+    const bracket = document.getElementById('bracket');
+    // Deduplicate: prevent two loops from placing a badge at the same juncture
+    const badgedJunctures = new Set();
+    const addJunctureBadgeOnce = (cx, cy, isCorrect, opacity) => {
+      const key = `${Math.round(cx)}_${Math.round(cy)}`;
+      if (badgedJunctures.has(key)) return;
+      badgedJunctures.add(key);
+      addJunctureBadge(bracket, cx, cy, isCorrect, opacity);
+    };
+
+    // R32/R16/QF/SF: one badge per match, placed at the V-connector juncture.
+    // p is taken from the pre-round snapshot so badges reflect out-of-sample predictions:
+    // ✓ = model correctly predicted the winner (p >= 0.5), opacity = p
+    // ✗ = upset (model favoured the loser), opacity = p(favoured loser)
+    const roundMeta = {
+      R32: { ri: 0, perSide: nPerSide },
+      R16: { ri: 1, perSide: nPerSide / 2 },
+      QF:  { ri: 2, perSide: nPerSide / 4 },
+      SF:  { ri: 3, perSide: 1 },
+    };
+    for (const [roundKey, { ri, perSide }] of Object.entries(roundMeta)) {
+      const matrix = _preRoundMatrix(roundKey);
+      (DATA.bracket[roundKey] || []).forEach((match, idx) => {
+        if (!match.winner) return;
+        const loser = match.winner === match.team_a ? match.team_b : match.team_a;
+        if (!loser) return;
+        const p    = matrix?.[match.winner]?.[loser] ?? 0.5;
+        const side = idx < perSide ? 'left' : 'right';
+        const mi   = idx < perSide ? idx : idx - perSide;
+        // Juncture = midpoint of the match connector (where the two arms converge)
+        const bx   = teamX(ri, side);
+        const midX = side === 'left' ? bx + C.teamW + C.colGap / 2
+                                     : bx - C.colGap / 2;
+        const midY = (teamY(ri, mi, 0) + teamY(ri, mi, 1)) / 2;
+        const correct = p >= 0.5;
+        addJunctureBadgeOnce(midX, midY, correct, correct ? p : 1 - p);
+      });
+    }
+
+    // Final: badge at the T-junction (center of horizontal bar)
+    const fMatch = DATA.bracket.F?.[0];
+    if (fMatch?.winner) {
+      const loser   = fMatch.winner === fMatch.team_a ? fMatch.team_b : fMatch.team_a;
+      const matrix  = _preRoundMatrix('F');
+      const p       = matrix?.[fMatch.winner]?.[loser] ?? 0.5;
+      const correct = p >= 0.5;
+      const { centerW } = LAYOUT;
+      addJunctureBadgeOnce(leftW + centerW / 2, bracketH / 2,
+                           correct, correct ? p : 1 - p);
+    }
+
+    if (SELECTED_SNAP >= 0) {
+      const { centerW } = LAYOUT;
+
+      // Projected juncture badges: rounds completed after the snapshot
+      // Badge at the V-connector where model projected a winner vs what actually happened
+      const projRoundMeta = {
+        R32: { ri: 0, perSide: nPerSide },
+        R16: { ri: 1, perSide: nPerSide / 2 },
+        QF:  { ri: 2, perSide: nPerSide / 4 },
+        SF:  { ri: 3, perSide: 1 },
+      };
+      for (const [roundKey, { ri, perSide }] of Object.entries(projRoundMeta)) {
+        (LIVE_BRACKET[roundKey] || []).forEach((liveMatch, idx) => {
+          if (!liveMatch.winner) return;
+          const snapMatch = (DATA.bracket[roundKey] || [])[idx];
+          if (snapMatch?.winner) return; // already covered by known-results badges above
+          const side = idx < perSide ? 'left' : 'right';
+          const mi   = idx < perSide ? idx : idx - perSide;
+          // Projected winner = team that was promoted from this slot
+          const nextDiv   = SLOT_ELS[`${side}_${ri + 1}_${Math.floor(mi / 2)}_${mi % 2}`];
+          const projWinner = nextDiv?.dataset.team;
+          if (!projWinner) return;
+          const correct  = projWinner === liveMatch.winner;
+          // Confidence: p(projWinner) from the two teams in the projected slot
+          const ta = SLOT_ELS[`${side}_${ri}_${mi}_0`]?.dataset.team;
+          const tb = SLOT_ELS[`${side}_${ri}_${mi}_1`]?.dataset.team;
+          const projLoser = projWinner === ta ? tb : ta;
+          const p = projLoser ? (DATA.pairwise_ko?.[projWinner]?.[projLoser] ?? 0.5) : 0.5;
+          const bx   = teamX(ri, side);
+          const midX = side === 'left' ? bx + C.teamW + C.colGap / 2 : bx - C.colGap / 2;
+          const midY = (teamY(ri, mi, 0) + teamY(ri, mi, 1)) / 2;
+          addJunctureBadgeOnce(midX, midY, correct, correct ? p : 1 - p);
+        });
+      }
+
+      // Projected Final badge at the T-junction
+      const liveFinal = LIVE_BRACKET.F?.[0];
+      if (liveFinal?.winner && !DATA.bracket.F?.[0]?.winner) {
+        const leftFin  = SLOT_ELS[`left_${nSideRounds - 1}_0_0`]?.dataset.team;
+        const rightFin = SLOT_ELS[`right_${nSideRounds - 1}_0_0`]?.dataset.team;
+        if (leftFin && rightFin) {
+          const p = DATA.pairwise_ko?.[leftFin]?.[rightFin] ?? 0.5;
+          const projWinner = p >= 0.5 ? leftFin : rightFin;
+          const correct    = projWinner === liveFinal.winner;
+          const conf       = Math.max(p, 1 - p);
+          addJunctureBadgeOnce(leftW + centerW / 2, bracketH / 2, correct, conf);
+        }
+      }
+
+    }
+  }
+
+  function addJunctureBadge(container, cx, cy, isCorrect, opacity) {
+    const R = 7;
+    const badge = document.createElement('div');
+    badge.className = 'outcome-badge ' + (isCorrect ? 'outcome-correct' : 'outcome-wrong');
+    badge.style.left    = (cx - R) + 'px';
+    badge.style.top     = (cy - R) + 'px';
+    badge.style.opacity = Math.max(0.2, opacity);
+    badge.textContent   = isCorrect ? '✓' : '✗';
+    container.appendChild(badge);
+  }
+
+  function clearOutcomeIndicators() {
+    document.querySelectorAll('.outcome-badge').forEach(el => el.remove());
   }
 
   function clearDefaultPath() {
@@ -867,6 +1099,10 @@
   function drawDefaultPath() {
     clearDefaultPath();
     if (activeTeam) return;
+    if (SELECTED_SNAP < 0 && LIVE_BRACKET?.F?.[0]?.winner) {
+      if (CHOSEN_CHAMPION) updateCenter(CHOSEN_CHAMPION);  // show winner, no path
+      return;
+    }
     if (PROJECTED_MODE || RANDOM_MODE) {
       if (PROJECTION_CENTER) updateCenter(PROJECTION_CENTER);
       return;
@@ -894,12 +1130,13 @@
 
   // ── Hover interaction ─────────────────────────────────────────────────────
   function onHover(name) {
+    if (SELECTED_SNAP < 0 && LIVE_BRACKET?.F?.[0]?.winner) return;  // complete view: no hover highlights
     if (activeTeam === name) return;
     clearDefaultPath(); defaultPathEls = [];
     hlEls.forEach(e => { if (e._bg) e._bg.remove(); e.remove(); });
     hlEls = [];
     activeTeam = name;
-    document.getElementById('conn-svg').style.zIndex = 3;
+    document.getElementById('conn-svg').style.zIndex = 5;  // above outcome badges (z-index 2)
     document.querySelectorAll('.team-box[data-team]').forEach(el => {
       if (el.dataset.team && el.dataset.team !== name) el.classList.add('dimmed');
     });
@@ -988,7 +1225,10 @@
     const finY  = bracketH / 2;
     const finEdgeX    = isRight ? finX : finX + C.teamW;
     const centerEdgeX = leftW + centerW / 2;
-    hlEls.push(svgPathHL(svg, `M ${finEdgeX} ${finY} H ${centerEdgeX}`, probToStroke(probs.W), teamColor));
+    // Trace horizontal across center gap then up the vertical T-stem
+    hlEls.push(svgPathHL(svg,
+      `M ${finEdgeX} ${finY} H ${centerEdgeX} V ${finY - C.stemH}`,
+      probToStroke(probs.W), teamColor));
   }
 
   // ── Center panel ──────────────────────────────────────────────────────────
@@ -1000,11 +1240,14 @@
     document.getElementById('center-team-flag').innerHTML =
       td.iso ? `<img src="https://flagcdn.com/40x30/${td.iso}.png" alt="">` : (td.flag ?? '');
     document.getElementById('center-team-name').textContent = name;
+    const tournamentOver = SELECTED_SNAP < 0 && !!LIVE_BRACKET?.F?.[0]?.winner;
     const probEl = document.getElementById('center-prob-value');
-    probEl.textContent = pct(w); probEl.style.color = getTeamColor(name);
-    document.getElementById('center-prob-label').style.display = '';
+    probEl.textContent = tournamentOver ? '' : pct(w);
+    probEl.style.color = getTeamColor(name);
+    document.getElementById('center-prob-label').style.display = tournamentOver ? 'none' : '';
   }
   function resetCenter() {
+    if (SELECTED_SNAP < 0 && LIVE_BRACKET?.F?.[0]?.winner) return;  // complete view: keep champion display
     document.getElementById('center-hint').style.display = '';
     document.getElementById('center-team-flag').innerHTML = '';
     document.getElementById('center-team-name').textContent = '';

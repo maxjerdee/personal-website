@@ -234,10 +234,31 @@ header p {
   align-items: center;
   justify-content: center;
   gap: 16px;
+  flex-wrap: wrap;
   padding: 6px 16px;
+}
+body { padding-bottom: 60px; }
+#bottom-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   flex-wrap: wrap;
 }
-body { padding-bottom: 42px; }
+
+/* ── Attribution (fixed just above the bottom bar, same position in all views) */
+#bracket-attribution {
+  position: fixed;
+  bottom: 42px;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  font-size: 0.58rem;
+  color: #ccc;
+  text-align: center;
+  pointer-events: none;
+}
+#bracket-attribution a { color: #bbb; text-decoration: none; pointer-events: auto; }
+#bracket-attribution a:hover { color: #888; }
 .bar-label {
   font-size: 0.67rem;
   color: #999;
@@ -392,12 +413,24 @@ body { padding-bottom: 42px; }
 .team-box.user-winner {
   border-left: 3px solid #333;
 }
+.team-box.user-loser {
+  opacity: 0.55;
+}
 .team-box.user-loser .team-name {
-  text-decoration: line-through;
-  color: #ccc;
+  color: #888;
 }
 .team-box.user-loser .team-win-prob {
-  color: #ddd;
+  color: #aaa;
+}
+/* Complete view: losers display at full opacity (result is history, not elimination) */
+.tournament-over .team-box.user-loser {
+  opacity: 1;
+}
+.tournament-over .team-box.user-loser .team-name {
+  color: inherit;
+}
+.tournament-over .team-box.user-loser .team-win-prob {
+  color: #999;
 }
 
 /* Flag images */
@@ -452,3 +485,20 @@ body { padding-bottom: 42px; }
   background: #dcfce7;
   border-color: #22c55e;
 }
+
+/* ── Outcome indicators ──────────────────────────────────────────────────── */
+/* Juncture badges are appended to #bracket with left/top set by JS */
+.outcome-badge {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  font-size: 8px;
+  line-height: 14px;
+  text-align: center;
+  font-weight: 800;
+  pointer-events: none;
+  z-index: 2;
+}
+.outcome-correct { background: #22c55e; color: #fff; }
+.outcome-wrong   { background: #e63946; color: #fff; }

@@ -3890,4 +3890,76 @@ graph
     outcome "win_home"
     round "QF"
   ]
+  edge
+  [
+    source 30
+    target 16
+    date "2026-07-11"
+    home "Norway"
+    away "England"
+    home_score 1
+    away_score 2
+    outcome "win_away"
+    round "QF"
+  ]
+  edge
+  [
+    source 1
+    target 42
+    date "2026-07-11"
+    home "Argentina"
+    away "Switzerland"
+    home_score 3
+    away_score 1
+    outcome "win_home"
+    round "QF"
+  ]
+  edge
+  [
+    source 17
+    target 40
+    date "2026-07-14"
+    home "France"
+    away "Spain"
+    home_score 0
+    away_score 2
+    outcome "win_away"
+    round "SF"
+  ]
+  edge
+  [
+    source 16
+    target 1
+    date "2026-07-15"
+    home "England"
+    away "Argentina"
+    home_score 1
+    away_score 2
+    outcome "win_away"
+    round "SF"
+  ]
+  edge
+  [
+    source 17
+    target 16
+    date "2026-07-18"
+    home "France"
+    away "England"
+    home_score 4
+    away_score 6
+    outcome "win_away"
+    round "3rd"
+  ]
+  edge
+  [
+    source 40
+    target 1
+    date "2026-07-19"
+    home "Spain"
+    away "Argentina"
+    home_score 1
+    away_score 0
+    outcome "win_home"
+    round "F"
+  ]
 ]

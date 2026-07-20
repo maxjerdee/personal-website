@@ -1,8 +1,17 @@
 ---
 title: "World Cup 2026"
-description: "Predictions with Bayesian Bradley-Terry model"
+description: "Predictions based only on match outcomes"
 image: "../assets/images/demos/world_cup/thumbnail.png"
+title-block-style: none
 ---
+
+```{=html}
+<style>
+  header#title-block-header{display:none}
+  #quarto-content>*{padding-top:0!important;margin-top:0!important}
+  main.content{padding-top:0!important;margin-top:0!important}
+</style>
+```
 
 ::: {.column-screen}
 ```{=html}

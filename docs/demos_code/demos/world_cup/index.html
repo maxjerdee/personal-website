@@ -10,7 +10,7 @@
 <div id="app">
   <header>
     <h1>World Cup 2026</h1>
-    <p>Bayesian Bradley-Terry predictions · hover a team to see their path · click to advance</p>
+    <p id="header-subtitle">Predictions based only on match outcomes · hover a team to see their path · click to advance</p>
     <p id="last-updated"></p>
     <div id="controls">
       <button id="projected-btn">Projected</button>
@@ -40,33 +40,30 @@
   </div>
   </div>
 
+  <p id="bracket-attribution">Bracket layout inspired by <a href="https://web.archive.org/web/20230314203124/https://projects.fivethirtyeight.com/2023-march-madness-predictions/" target="_blank">FiveThirtyEight March Madness</a></p>
+
   <p id="error" style="color:#e63946;margin-top:16px;font-size:0.85rem;"></p>
-  <p style="font-size:0.65rem;color:#ccc;margin-top:24px;margin-bottom:52px;text-align:center;">
-    Bracket layout inspired by
-    <a href="https://web.archive.org/web/20230314203124/https://projects.fivethirtyeight.com/2023-march-madness-predictions/" target="_blank"
-       style="color:#bbb;">FiveThirtyEight March Madness</a>
-  </p>
 </div>
 
 <div id="bottom-bar">
+  <div id="bottom-controls">
   <span class="bar-label">Forecast:</span>
   <div class="csel" id="forecast-ctrl">
-    <div class="csel-display" id="forecast-display">Current</div>
+    <div class="csel-display" id="forecast-display">Complete</div>
     <div class="csel-panel" id="forecast-panel" hidden>
-      <div class="csel-opt selected" data-val="-1">Current</div>
+      <div class="csel-opt selected" data-val="-1">Complete</div>
     </div>
   </div>
   <span class="bar-label">Model:</span>
   <div class="csel" id="model-ctrl">
-    <div class="csel-display" id="model-display">PELE-adj. SBM-BT</div>
+    <div class="csel-display" id="model-display">Grouped hierarchy</div>
     <div class="csel-panel" id="model-panel" hidden>
-      <div class="csel-opt selected" data-val="ds_pele">PELE-adj. SBM-BT</div>
-      <div class="csel-opt" data-val="pele">PELE-adj. BT</div>
-      <div class="csel-opt" data-val="ds">Matches-only SBM-BT</div>
-      <div class="csel-opt" data-val="matches">Matches-only BT</div>
+      <div class="csel-opt selected" data-val="ds">Grouped hierarchy</div>
+      <div class="csel-opt" data-val="matches">Hierarchy only</div>
     </div>
   </div>
   <a id="data-download" class="bar-download" href="wc2026_all_matches.gml" download>Download data</a>
+  </div>
 </div>
 <script src="bracket.js"></script>
 </body>

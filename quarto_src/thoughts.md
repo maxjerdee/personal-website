@@ -1,6 +1,12 @@
 # Thoughts and Notes
 This is a rough TODO list/notepad for development for the site.
 
+Also, unrelated, but I would like to change some things about the Demos page, first
+  Wikiguess should link directly to the site, next I want them ordered as Wikiguess, World
+  Cup 2026, MCMC (which should be renamed Markov chain Monte Carlo), Special Relativity (I
+  would also like this demo to be ported onto my website directly and hosted here rather than
+  wikiguess.io), Game of Life, and finally Chaos Sampler
+
 ## Notes
 
 Text-based ramblings that can cover a range of possible uses. They are tagged with the following categories:
