@@ -2,12 +2,13 @@
 title: "Demos"
 listing:
   type: grid
+  sort: false
   contents:
-    - demos/world_cup.qmd
     - demos/wikiguess.qmd
-    - demos/game_of_life.qmd
-    - demos/relativity.qmd
+    - demos/world_cup.qmd
     - demos/metropolis_hastings.qmd
+    - demos/relativity.qmd
+    - demos/game_of_life.qmd
     - demos/chaos_sampler.qmd
 ---
 

@@ -5,8 +5,10 @@ image: "../assets/images/demos/wikiguess/thumbnail.png"
 format: html
 ---
 
-![](../assets/images/demos/wikiguess/thumbnail.png){width=3in}
+```{=html}
+<script>window.location.replace("https://www.wikiguess.io");</script>
+```
 
-An estimation game where you can guess numbers from all sorts of wikipedia excerpts. You can also play with friends online by creating a room and guessing on the same questions. In making it, there are some interesting questions about what makes a number fun to guess. 
+An estimation game where you can guess numbers from all sorts of Wikipedia excerpts. Play with friends online by creating a room and guessing on the same questions.
 
-[Play here (the multiplayer is still a bit buggy)](https://www.wikiguess.io)
+[Play here](https://www.wikiguess.io)

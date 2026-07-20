@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Dilation</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      color: #212529;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+      padding: 2rem 2rem 1.5rem;
+      max-width: 420px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .subtitle {
+      font-size: 0.85rem;
+      color: #6c757d;
+      margin-bottom: 1.5rem;
+    }
+    #start-btn {
+      display: block;
+      width: 100%;
+      padding: 0.65rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 1.5rem;
+      background: #28a745;
+      color: #fff;
+      transition: background 0.2s;
+    }
+    #start-btn.running { background: #dc3545; }
+    .metrics { display: flex; flex-direction: column; gap: 0.75rem; }
+    .metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.5rem 0.75rem;
+      background: #f1f3f5;
+      border-radius: 8px;
+    }
+    .metric-label { font-size: 0.85rem; color: #495057; }
+    .metric-value {
+      font-size: 1rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      color: #212529;
+    }
+    .metric-unit { font-size: 0.75rem; color: #6c757d; margin-left: 2px; }
+    .permission-note {
+      font-size: 0.75rem;
+      color: #6c757d;
+      margin-top: 1.25rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #1a1a2e; color: #e9ecef; }
+      .card { background: #16213e; box-shadow: 0 2px 16px rgba(0,0,0,0.4); }
+      .metric { background: #0f3460; }
+      .metric-label { color: #adb5bd; }
+      .metric-value { color: #e9ecef; }
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <h1>Time Dilation</h1>
+  <p class="subtitle">Uses your phone's accelerometer to estimate speed and calculate relativistic time dilation.</p>
+
+  <button id="start-btn">Start Tracking</button>
+
+  <div class="metrics">
+    <div class="metric">
+      <span class="metric-label">Total Time</span>
+      <span><span class="metric-value" id="total-time">0</span><span class="metric-unit">s</span></span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">(Estimated) Speed</span>
+      <span><span class="metric-value" id="speed">0</span><span class="metric-unit">m/s</span></span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">Fraction of light speed</span>
+      <span><span class="metric-value" id="beta">0</span><span class="metric-unit">x</span></span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">How much slower is your time?</span>
+      <span><span class="metric-value" id="gamma">1</span><span class="metric-unit">x</span></span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">How much younger are you?</span>
+      <span><span class="metric-value" id="delta-t">0</span><span class="metric-unit">s</span></span>
+    </div>
+  </div>
+
+  <p class="permission-note">This page uses phone accelerometer data to estimate speed of the phone, and then calculates the corresponding time dilation.</p>
+</div>
+
+<script>
+  // Rotation matrix from device orientation (Euler angles)
+  function eulerAngles(a, b, g) {
+    function c(x) { return Math.cos(x * Math.PI / 180); }
+    function s(x) { return Math.sin(x * Math.PI / 180); }
+    return [
+      [c(a)*c(g) - s(a)*s(b)*s(g),  c(g)*s(a) + c(a)*s(b)*s(g), -c(b)*s(g)],
+      [-c(b)*s(a),                   c(a)*c(b),                    s(b)      ],
+      [c(g)*s(a)*s(b) + c(a)*s(g), -c(a)*c(g)*s(b) + s(a)*s(g),  c(b)*c(g) ],
+    ];
+  }
+
+  let rotMat = [[1,0,0],[0,1,0],[0,0,1]];
+  let x_vel = 0, y_vel = 0, z_vel = 0;
+  let eventCount = 0;
+  let floatTime = 0;
+  let eventInterval = 0.02;
+  let cutoffB = 0;
+  let isRunning = false;
+
+  function handleOrientation(e) {
+    rotMat = eulerAngles(e.alpha, e.beta, e.gamma);
+  }
+
+  function handleMotion(e) {
+    const dt = e.interval > 1 ? e.interval / 1000 : e.interval;
+    const ax = e.acceleration;
+    if (!ax) return;
+
+    // Rotate device-frame acceleration into world frame
+    const wx = rotMat[0][0]*ax.x + rotMat[1][0]*ax.y + rotMat[2][0]*ax.z;
+    const wy = rotMat[0][1]*ax.x + rotMat[1][1]*ax.y + rotMat[2][1]*ax.z;
+    const wz = rotMat[0][2]*ax.x + rotMat[1][2]*ax.y + rotMat[2][2]*ax.z;
+
+    eventCount++;
+    document.getElementById('total-time').textContent = (eventCount * dt).toFixed(2);
+
+    // Only integrate velocity after a brief settling period
+    if (eventCount * dt > 0.3) {
+      x_vel += dt * wx;
+      y_vel += dt * wy;
+      z_vel += dt * wz;
+    }
+
+    // Adaptive damping based on horizontal acceleration magnitude
+    const accelXY = Math.sqrt(wx*wx + wy*wy);
+    const tau = 0.1;
+    cutoffB += dt / tau * (accelXY - cutoffB);
+
+    let dampXY = 50, dampZ = 3;
+    if (cutoffB < 0.5)  { dampXY = 5;   dampZ = 3;   }
+    if (cutoffB < 0.35) { dampXY = 1;   dampZ = 0.5; }
+    if (cutoffB < 0.2)  { dampXY = 0.2; dampZ = 0.1; }
+
+    let speed = Math.sqrt(x_vel*x_vel + y_vel*y_vel + z_vel*z_vel);
+    if (speed > 2) { dampXY = 3; dampZ = 1.5; }
+
+    x_vel -= dt / dampXY * x_vel;
+    y_vel -= dt / dampXY * y_vel;
+    z_vel -= dt / dampZ  * z_vel;
+
+    if (speed < 0.03) speed = 0;
+
+    const C = 3e8;
+    const beta = speed / C;
+    const betaScaled = beta * 1e3; // amplified for display (walking speeds)
+
+    document.getElementById('speed').textContent = speed.toFixed(2);
+    document.getElementById('beta').textContent = beta.toFixed(10);
+
+    // γ⁻¹ ≈ 1 - β²/2 (non-relativistic approximation, scaled)
+    const gammaInv = 1 - betaScaled * betaScaled / 2;
+    const gammaStr = gammaInv === 1
+      ? '1.000000000000000'
+      : '0.999999' + gammaInv.toFixed(20).substring(3, 18);
+    document.getElementById('gamma').textContent = gammaStr;
+
+    floatTime += dt * betaScaled * betaScaled / 2;
+    const tStr = floatTime === 0
+      ? '0'
+      : '0.000000' + floatTime.toFixed(20).substring(3, 18);
+    document.getElementById('delta-t').textContent = tStr;
+  }
+
+  const btn = document.getElementById('start-btn');
+  btn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    if (!isRunning) {
+      // iOS 13+ permission
+      if (typeof DeviceMotionEvent !== 'undefined' &&
+          typeof DeviceMotionEvent.requestPermission === 'function') {
+        try { await DeviceMotionEvent.requestPermission(); } catch (_) {}
+      }
+      window.addEventListener('devicemotion', handleMotion);
+      window.addEventListener('deviceorientation', handleOrientation);
+      btn.textContent = 'Stop Tracking';
+      btn.classList.add('running');
+      isRunning = true;
+    } else {
+      window.removeEventListener('devicemotion', handleMotion);
+      window.removeEventListener('deviceorientation', handleOrientation);
+      btn.textContent = 'Start Tracking';
+      btn.classList.remove('running');
+      isRunning = false;
+    }
+  });
+</script>
+</body>
+</html>

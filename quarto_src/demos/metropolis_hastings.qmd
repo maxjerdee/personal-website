@@ -1,5 +1,5 @@
 ---
-title: "MCMC"
+title: "Markov chain Monte Carlo"
 description: "Explore Monte Carlo methods with hopping frogs"
 image: "../assets/images/notes/metropolis_hastings/thumbnail.png"
 ---

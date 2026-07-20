@@ -2,12 +2,25 @@
 title: "Special relativity"
 description: "Use your phone to observe how much your time slows down as you move around"
 image: "../assets/images/demos/relativity/thumbnail.png"
+title-block-style: none
 ---
 
-When you move faster, your personal (relative!) time slows down. This is one of the many suprising consequences of the theory of relativity, that space and time are intwined into a single *spacetime* and that the actions we take in one dimension (moving through space) can impact our trajectory through the other (moving through time). This [demo](https://www.wikiguess.io/demo) uses your phone's accelerometer data in order to estimate your velocity, and so estimate how much your time slows down as you walk around. 
+```{=html}
+<style>
+  header#title-block-header{display:none}
+  #quarto-content>*{padding-top:0!important;margin-top:0!important}
+  main.content{padding-top:0!important;margin-top:0!important}
+</style>
+```
 
-![](../assets/images/demos/relativity/thumbnail.png){width=3in}
+::: {.column-screen}
+```{=html}
+<iframe frameborder="0" height="560px" scrolling="no"
+  src="../../demos_code/demos/relativity/index.html"
+  width="100%"></iframe>
+```
+:::
 
-This demo was built as part of the Fall 2021 [Science Communication Fellows](https://lsa.umich.edu/ummnh/u-m-community/u-m-faculty/science-communication-fellows.html) program at the University of Michigan Museum of Natural History. 
+When you move faster, your personal (relative!) time slows down. This is one of the many surprising consequences of the theory of relativity, that space and time are intwined into a single *spacetime* and that the actions we take in one dimension (moving through space) can impact our trajectory through the other (moving through time). This demo uses your phone's accelerometer data in order to estimate your velocity, and so estimate how much your time slows down as you walk around.
 
-<!--- Should migrate the demo over to this page --->
+This demo was built as part of the Fall 2021 [Science Communication Fellows](https://lsa.umich.edu/ummnh/u-m-community/u-m-faculty/science-communication-fellows.html) program at the University of Michigan Museum of Natural History.
