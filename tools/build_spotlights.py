@@ -37,7 +37,7 @@ import shutil
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-OUT_DIR = ROOT / "quarto_src" / "notes" / "2025"
+OUT_DIR = ROOT / "quarto_src" / "notes" / "drafts"
 # Prose for a network that has left the published set. Kept out of the rendered
 # site, but kept: a network moving back to the workspace is a normal event in
 # this workflow, and it must not cost someone their writing.
@@ -293,7 +293,7 @@ def main(argv: list[str]) -> int:
         elif args.draft or not path.exists():
             is_draft = True
         else:
-            is_draft = re.search(r"^draft:\s*true\s*$",
+            is_draft = re.search(r"^search:\s*false\s*$",
                                  path.read_text(encoding="utf-8"), re.M) is not None
         # Prose for a network that is no longer published would vanish with its
         # section. Networks move back to the workspace by design here, so this is
@@ -319,11 +319,14 @@ def main(argv: list[str]) -> int:
             "  - Spotlight",
             "date: 09/26/26",
         ] + ([
-            # Renders as an empty stub and appears in no listing or search, so
-            # the note can sit in the repo while the prose is still being
-            # written. `QUARTO_PROFILE=drafting quarto preview` shows it;
-            # regenerate with --publish when it is ready.
-            "draft: true",
+            # UNLISTED, not unpublished. These live in notes/drafts/, whose
+            # _metadata.yml sets `draft: true` for everything in it; that would
+            # render an empty stub. `draft: false` overrides it so the page is
+            # built in full and reachable by URL, while notes.qmd excludes it
+            # from the listing and `search: false` keeps it out of search.
+            # Regenerate with --publish to list it.
+            "draft: false",
+            "search: false",
         ] if is_draft else []) + [
             "---",
             "",

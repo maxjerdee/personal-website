@@ -5,7 +5,8 @@ categories:
   - Networks
   - Spotlight
 date: 09/26/26
-draft: true
+draft: false
+search: false
 ---
 
 {{< include ../../assets/html/edgewise-embed.html >}}

@@ -6,6 +6,12 @@ listing:
     categories: true
     contents: 
         - notes
+        # Unlisted-but-published: the network spotlights render in full and are
+        # reachable by URL, but are deliberately absent from this listing while
+        # their prose is being written. They also set `search: false`. Everything
+        # else in notes/drafts/ is a true draft (draft: true from that folder's
+        # _metadata.yml) and renders as an empty stub, so it needs no exclusion.
+        - "!notes/drafts/spotlight_*.qmd"
         - path: assets/pdf/Thesis.pdf
           title: "PhD Thesis"
           description: "Inference and Information in Network Structure"

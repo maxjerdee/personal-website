@@ -5,7 +5,8 @@ categories:
   - Networks
   - Spotlight
 date: 09/26/26
-draft: true
+draft: false
+search: false
 ---
 
 {{< include ../../assets/html/edgewise-embed.html >}}
@@ -18,7 +19,7 @@ Every figure here is live: drag a node, hover for a name, and *Open with control
 
 ```{=html}
 <div class="ew-embed" data-network="karate.gml"
-     data-params="layout=force&colorAttr=faction&sizeAttr=degree&edgeOpacity=0.3&edgeScale=1.3"
+     data-params="layout=force&colorAttr=faction&sizeAttr=degree&edgeOpacity=0.3&edgeScale=0.8"
      data-caption="Karate Club — 34 nodes, 78 edges, undirected"></div>
 ```
 

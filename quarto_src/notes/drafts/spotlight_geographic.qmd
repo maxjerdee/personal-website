@@ -5,7 +5,8 @@ categories:
   - Networks
   - Spotlight
 date: 09/26/26
-draft: true
+draft: false
+search: false
 ---
 
 {{< include ../../assets/html/edgewise-embed.html >}}
@@ -68,7 +69,7 @@ Tokyo subway network: the 9 Tokyo Metro lines and 4 Toei Subway lines (the two o
 
 ```{=html}
 <div class="ew-embed" data-network="europe_power_grid.gml"
-     data-params="layout=map&colorAttr=type&sizeAttr=degree&edgeOpacity=0.55&edgeScale=1.0"
+     data-params="layout=map&colorAttr=voltage&sizeAttr=degree&edgeOpacity=0.55&edgeScale=0.4"
      data-caption="Europe Power Grid — 13478 nodes, 16922 edges, undirected"></div>
 ```
 
