@@ -1,3 +1,11 @@
 .playwright-mcp/
 .DS_Store
 screenshots/
+
+# Output of the drafting profile (make preview). Never published: it contains
+# the full text of draft notes, which docs/ deliberately does not.
+_preview/
+
+# Quarto writes this only under the drafting profile, and it lists every draft
+# page's URL -- committing it would advertise them from the published site.
+docs/notes-listing.json

@@ -1,8 +1,18 @@
-# Local drafting profile: makes `draft: true` pages fully visible, so you can
+# Local drafting profile: makes `draft: true` pages fully visible so you can
 # preview and edit them. Never used by CI -- the workflow renders with no
 # profile set, which is draft-mode: gone.
 #
-#     cd quarto_src && QUARTO_PROFILE=drafting quarto preview
+#     make preview            (from the repo root)
 #
+# It also renders somewhere ELSE. `quarto preview` writes into the project's
+# output directory, so previewing drafts against the default config fills docs/
+# -- the directory that gets committed and published -- with the full text of
+# every unfinished note. Nothing stops you committing that afterwards, and it
+# looks identical to a normal render. Sending this profile's output to
+# _preview/ (gitignored) means the drafting profile physically cannot put draft
+# content where the site is built from.
+project:
+  output-dir: ../_preview
+
 website:
   draft-mode: visible
