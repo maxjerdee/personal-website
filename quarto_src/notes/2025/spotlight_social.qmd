@@ -5,6 +5,7 @@ categories:
   - Networks
   - Spotlight
 date: 09/26/26
+draft: true
 ---
 
 {{< include ../../assets/html/edgewise-embed.html >}}
@@ -74,7 +75,7 @@ Reported friendship network of 329 students in nine classes of a lycee in Marsei
 | | |
 |---|---|
 | **A node** | Character in Les Misérables, colored by narrative group |
-| **An edge** | A—B: A and B appear together in a scene, width ∝ number of shared scenes |
+| **An edge** | Two characters appear together in a scene, width ∝ number of shared scenes |
 
 Knuth, D. E. (1993). The Stanford GraphBase: A Platform for Combinatorial Computing. Addison-Wesley.
 
@@ -99,7 +100,7 @@ Knuth, D. E. (1993). The Stanford GraphBase: A Platform for Combinatorial Comput
 | | |
 |---|---|
 | **A node** | Florentine family, colored by faction |
-| **An edge** | A—B: a marriage tie exists between the two families |
+| **An edge** | A marriage tie between the two families |
 
 Padgett, J. F., & Ansell, C. K. (1993). Robust Action and the Rise of the Medici, 1400-1434. American Journal of Sociology, 98(6), 1259-1319.
 

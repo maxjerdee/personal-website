@@ -8,6 +8,13 @@ project:
 
 website:
   title: "Max Jerdee"
+  # A page with `draft: true` renders as an empty stub and appears in no listing,
+  # navigation or search -- so a half-written note can live in the repo without
+  # being readable on the site. Use `QUARTO_PROFILE=drafting` locally to see and
+  # edit them (see _quarto-drafting.yml). NOT `unlinked`: that publishes the full
+  # text at a guessable URL and only hides the link, which is not the same as
+  # unpublished.
+  draft-mode: gone
   favicon: assets/images/icon.svg
   google-analytics: "G-SY1YC6MMLM"
   navbar:

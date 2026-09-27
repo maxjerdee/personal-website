@@ -1,0 +1,8 @@
+# Local drafting profile: makes `draft: true` pages fully visible, so you can
+# preview and edit them. Never used by CI -- the workflow renders with no
+# profile set, which is draft-mode: gone.
+#
+#     cd quarto_src && QUARTO_PROFILE=drafting quarto preview
+#
+website:
+  draft-mode: visible

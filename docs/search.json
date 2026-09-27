@@ -25,7 +25,7 @@
     "href": "notes.html",
     "title": "Notes",
     "section": "",
-    "text": "Text-based ramblings\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNetwork spotlight: biological\n\n\n\nNetworks\n\nSpotlight\n\n\n\nWho eats whom, who pollinates what, and one animal’s nervous system. Each network as a live figure, with where it came from and what it may be used for.\n\n\n\n\n\nSep 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nNetwork spotlight: economic\n\n\n\nNetworks\n\nSpotlight\n\n\n\nTrade, hiring and travel: networks where the edges move something. Each network as a live figure, with where it came from and what it may be used for.\n\n\n\n\n\nSep 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nNetwork spotlight: geographic\n\n\n\nNetworks\n\nSpotlight\n\n\n\nNetworks with real coordinates, drawn on the map they live on. Each network as a live figure, with where it came from and what it may be used for.\n\n\n\n\n\nSep 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nNetwork spotlight: informational\n\n\n\nNetworks\n\nSpotlight\n\n\n\nThings that refer to, cite, depend on or contain one another. Each network as a live figure, with where it came from and what it may be used for.\n\n\n\n\n\nSep 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nNetwork spotlight: social\n\n\n\nNetworks\n\nSpotlight\n\n\n\nPeople, characters and animals, and the ties between them. Each network as a live figure, with where it came from and what it may be used for.\n\n\n\n\n\nSep 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBias of mutual information\n\n\n\nInformation theory\n\nPaper explainer\n\n\n\nContext for Normalized mutual information is a biased measure for classification and community detection\n\n\n\n\n\nNov 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDepth of hierarchies\n\n\n\nInference\n\nPaper explainer\n\n\n\nContext for Luck, skill, and depth of competition in games and social hierarchies\n\n\n\n\n\nNov 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBehind this website\n\n\n\nCode\n\n\n\nWalkthrough to set up a Quarto website like this one\n\n\n\n\n\nAug 18, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNetwork structures\n\n\n\nReview\n\n\n\nAn introduction to networks and the group and hierarchy structures they reveal\n\n\n\n\n\nJul 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNetwork structures (interactive draft)\n\n\n\nReview\n\n\n\nAn introduction to networks and the group and hierarchy structures they reveal — draft with embedded interactive figures\n\n\n\n\n\nJul 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nInformation theory\n\n\n\nInformation theory\n\nReview\n\n\n\nBasics of information theory: Shannon and Kolmogorov\n\n\n\n\n\nJul 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical physics\n\n\n\nPhysics\n\nInference\n\nReview\n\n\n\nFoundations of statistical physics from energy to entropy, and their links to model inference\n\n\n\n\n\nJul 14, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical inference\n\n\n\nInference\n\nReview\n\n\n\nQuick primer on Bayesian inference, model selection, and validation\n\n\n\n\n\nJul 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nPhD Thesis\n\n\n\nInference\n\nInformation theory\n\nReview\n\n\n\nInference and Information in Network Structure\n\n\n\n\n\nJul 10, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Text-based ramblings\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBias of mutual information\n\n\n\nInformation theory\n\nPaper explainer\n\n\n\nContext for Normalized mutual information is a biased measure for classification and community detection\n\n\n\n\n\nNov 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nDepth of hierarchies\n\n\n\nInference\n\nPaper explainer\n\n\n\nContext for Luck, skill, and depth of competition in games and social hierarchies\n\n\n\n\n\nNov 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBehind this website\n\n\n\nCode\n\n\n\nWalkthrough to set up a Quarto website like this one\n\n\n\n\n\nAug 18, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNetwork structures\n\n\n\nReview\n\n\n\nAn introduction to networks and the group and hierarchy structures they reveal\n\n\n\n\n\nJul 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNetwork structures (interactive draft)\n\n\n\nReview\n\n\n\nAn introduction to networks and the group and hierarchy structures they reveal — draft with embedded interactive figures\n\n\n\n\n\nJul 16, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nInformation theory\n\n\n\nInformation theory\n\nReview\n\n\n\nBasics of information theory: Shannon and Kolmogorov\n\n\n\n\n\nJul 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical physics\n\n\n\nPhysics\n\nInference\n\nReview\n\n\n\nFoundations of statistical physics from energy to entropy, and their links to model inference\n\n\n\n\n\nJul 14, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical inference\n\n\n\nInference\n\nReview\n\n\n\nQuick primer on Bayesian inference, model selection, and validation\n\n\n\n\n\nJul 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nPhD Thesis\n\n\n\nInference\n\nInformation theory\n\nReview\n\n\n\nInference and Information in Network Structure\n\n\n\n\n\nJul 10, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "notes/2025/statistical_inference.html",
@@ -75,69 +75,6 @@
     "title": "Statistical inference",
     "section": "Network science",
     "text": "Network science\nIn network science, this Bayesian approach is particularly powerful for model selection and parameter inference. For example, when analyzing the structure of a network, we might compare a simple random graph model (e.g., Erdős–Rényi) against a more complex description like the configuration model. The model evidence naturally weighs the goodness-of-fit against the complexity of the model and penalizes models whose extra flexibility only hampers their explanatory power.\nNested models are a particularly useful way to select between models, and are a central trick in much of my research. In each application we start with a simple model then generalize it within this Bayesian framework. By doing this we can check both whether this generalization is warranted and, if so, measure the size of the new effect, just like we infer \\(p\\) in the biased coin model. For example in work (Jerdee and Newman 2024) with Mark Newman we had applied these methods to directly compare Bradley-Terry models against minimum violation ranking by constructing a general model that includes both possibilities as special cases. By stating and incorporating our prior expectations into the inference process, a Bayesian framework enables us to handle uncertainty and validate our models in a graceful manner."
-  },
-  {
-    "objectID": "notes/2025/spotlight_informational.html",
-    "href": "notes/2025/spotlight_informational.html",
-    "title": "Network spotlight: informational",
-    "section": "",
-    "text": "Things that refer to, cite, depend on or contain one another.\nEvery figure here is live: drag a node, hover for a name, and Open with controls gives you the same view in a full window with the colouring and layout options exposed. The data, and the script that rebuilds each one from its source, are in the networks repository."
-  },
-  {
-    "objectID": "notes/2025/spotlight_informational.html#polbooks",
-    "href": "notes/2025/spotlight_informational.html#polbooks",
-    "title": "Network spotlight: informational",
-    "section": "Political Books",
-    "text": "Political Books\n\n\n\n\n\n\n\n\nA node\nPolitical book sold on Amazon, colored by political leaning\n\n\nAn edge\nA—B: customers who buy A also frequently buy B\n\n\n\nV. Krebs, unpublished (compiled from Amazon.com co-purchasing data around the 2004 US presidential election). Distributed via M. E. J. Newman’s network data collection and the Netzschleuder network repository.\nValdis Krebs · source · data and build script\nLicence. No licence stated, and none was ever attached – the dataset is “V. Krebs, unpublished”. Redistributed widely in the network-science literature, including from Newman’s own site, so the practice is long established, but there is nothing to point to.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_informational.html#wordnet-vehicle",
-    "href": "notes/2025/spotlight_informational.html#wordnet-vehicle",
-    "title": "Network spotlight: informational",
-    "section": "“Vehicle” WordNet",
-    "text": "“Vehicle” WordNet\n\n\n\n\n\n\n\n\nA node\nA WordNet synset (one sense of a word), colored by how far below “vehicle” it sits\n\n\nAn edge\nA → B: B is a more specific kind of A (e.g. car → convertible)\n\n\n\nWordNet’s hypernym (IS-A) hierarchy under ‘vehicle.n.01’, depth 4: a directed edge parent-&gt;child means the child is a more specific kind of the parent (e.g. car -&gt; convertible). A literal tree – WordNet itself allows a synset more than one hypernym (14 of these 301 genuinely have two or three, e.g. tank is both an armored vehicle and a tracked vehicle), but only the first in-pool one (WordNet’s own listed order) is kept as this synset’s edge, so every node has exactly one parent. depth/height are computed from this kept tree, truncated to depth &lt;=4 by it (not by the wider hyponym search used to find candidates). Source: Princeton WordNet, via NLTK’s corpus interface.\nPrinceton University (WordNet 3.0) · compiled by Max Jerdee · source · data and build script\nLicence. WordNet 3.0 licence (Princeton University): permissive, redistribution permitted with the copyright notice retained and attribution given.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_informational.html#scotus-citations",
-    "href": "notes/2025/spotlight_informational.html#scotus-citations",
-    "title": "Network spotlight: informational",
-    "section": "Supreme Court Citations",
-    "text": "Supreme Court Citations\n\n\n\n\n\n\n\n\nA node\nA majority opinion of the U.S. Supreme Court, placed at the year it was decided and colored by its subject matter\n\n\nAn edge\nA → B: opinion A cites opinion B, so every edge points back in time\n\n\n\nCitations among 250 of the most-cited opinions of the U.S. Supreme Court, from every volume of U.S. Reports. A -&gt; B means opinion A cites opinion B; citations restricted to pairs within the set. The set is the largest connected component of the top 256 by citations received, so every case here cites or is cited by another. Case text and citation extraction: Caselaw Access Project (case.law). Subject-matter classification (issueArea): Supreme Court Database, H. J. Spaeth et al., supremecourtdatabase.org.\nCaselaw Access Project · compiled by Max Jerdee · source · data and build script\nLicence. Public domain. US court opinions carry no copyright, and the Caselaw Access Project states its bulk data is free of restrictions.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_informational.html#journals",
-    "href": "notes/2025/spotlight_informational.html#journals",
-    "title": "Network spotlight: informational",
-    "section": "Journal Citations",
-    "text": "Journal Citations\n\n\n\n\nA node\nJournal, sized by how often it’s cited\n\n\nAn edge\nA → B: A cites B, width ∝ citation count\n\n\n\nCitation data from OpenAlex (openalex.org), 2019-2023 citation window; compiled for edgewise.\nOpenAlex · compiled by Max Jerdee · source · data and build script\nLicence. CC0 1.0. OpenAlex places its data in the public domain.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_economic.html",
-    "href": "notes/2025/spotlight_economic.html",
-    "title": "Network spotlight: economic",
-    "section": "",
-    "text": "Trade, hiring and travel: networks where the edges move something.\nEvery figure here is live: drag a node, hover for a name, and Open with controls gives you the same view in a full window with the colouring and layout options exposed. The data, and the script that rebuilds each one from its source, are in the networks repository."
-  },
-  {
-    "objectID": "notes/2025/spotlight_economic.html#business-depts",
-    "href": "notes/2025/spotlight_economic.html#business-depts",
-    "title": "Network spotlight: economic",
-    "section": "Business School Hiring",
-    "text": "Business School Hiring\n\n\n\n\n\n\n\n\nA node\nUniversity, positioned by its inferred prestige score\n\n\nAn edge\nA → B: B hires a PhD from A, width ∝ number of such hires\n\n\n\nClauset, A., Arbesman, S., & Larremore, D. B. (2015). Systematic inequality and hierarchy in faculty hiring networks. Science Advances, 1(1), e1400005.\nAaron Clauset, Samuel Arbesman, and Daniel B. Larremore · source · data and build script\nLicence. Supplementary data from an open-access Science Advances article; no separate data licence is stated. Cite the paper.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_economic.html#world-trade",
-    "href": "notes/2025/spotlight_economic.html#world-trade",
-    "title": "Network spotlight: economic",
-    "section": "World Food Trade",
-    "text": "World Food Trade\n\n\n\n\nA node\nCountry, colored by region\n\n\nAn edge\nA → B: A exports food to B, width ∝ value traded\n\n\n\nDe Domenico, M., Nicosia, V., Arenas, A., & Latora, V. (2015). Structural reducibility of multilayer networks. Nature Communications, 6, 6864. Underlying data: FAO detailed trade matrix, 2010.\nManlio De Domenico, Vincenzo Nicosia, Alexandre Arenas, and Vito Latora · compiled by Max Jerdee · source · data and build script\nLicence. No explicit licence; released for research use with citation by the authors and redistributed by Netzschleuder (networks.skewed.de), which does serve this dataset – the contrast with Add Health, which it refuses to serve, is the point.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_economic.html#airline-routes",
-    "href": "notes/2025/spotlight_economic.html#airline-routes",
-    "title": "Network spotlight: economic",
-    "section": "Airline Routes",
-    "text": "Airline Routes\n\n\n\n\n\n\n\n\nA node\nAirport, colored by continent, among the 200 busiest worldwide\n\n\nAn edge\nA scheduled airline route between the two airports, width ∝ number of distinct airlines flying it either way\n\n\n\nThe busiest 200 airports worldwide (by total scheduled-route degree) and the routes between them, from OpenFlights’ airports.dat/routes.dat (github.com/jpatokal/openflights), Open Database License. Undirected: OpenFlights’ own routes are directional, but 99.5% of pairs here had a route listed both ways, so direction carried almost no information; edge weight sums the two directions’ distinct-route counts into one (a frequency proxy – the source data has no seat-capacity or passenger-count field). Continent from each airport’s country via the country_converter package.\nOpenFlights (Jani Patokallio and contributors) · compiled by Max Jerdee · source · data and build script\nLicence. Open Database License (ODbL) – attribute OpenFlights and license any publicly-used derivative database under ODbL.\n\n(thoughts to come)"
   },
   {
     "objectID": "notes/2025/personal_website.html",
@@ -369,104 +306,6 @@
     "title": "Network structures (interactive draft)",
     "section": "Hierarchy structure",
     "text": "Hierarchy structure\nAs in our orangutan example, network interactions are often directed. Edges in a directed graph variously run from a source to a target, a winner to a loser, a leader to a follower. Across a system these asymmetries often follow a coherent direction within a hierarchy of the nodes. In a sports context this may be a hierarchy of skill where a more skilled player is likely to prevail over a less skilled opponent. In social settings \"dominance interactions\" tend to be won by the higher status individual. In Figure 4, four examples of such directed networks are given. In each case the hierarchy of the nodes is plotted along the vertical axis.\n\n\n\n\n\n\nFigure 4: Four examples of hierarchy structure in networks. (a) American football matches played in the 2022 Big Ten conference football season (“College Football Records,” n.d.). The hierarchical structure is represented vertically, with better teams located higher. Arrows run from the winner to the loser of a match, colored green if the higher ranked team wins, red if the lower ranked team wins. (b) Consumer preferences between pairs of sodas (Duineveld, Arents, and King 2000). (c) Observed dominance interactions (pecks) among 11 chickens (Masure and Allee 1934). (d) Unreciprocated friendship nominations among 20 high school students (Udry, Bearman, and Harris 1997).\n\n\n\nFigure 4a contains football matches played within the 2022 Big Ten football conference (“College Football Records,” n.d.). Each arrow points from the winner to the loser of a match, information that was suppressed in the undirected Figure 3a. The University of Michigan was undefeated in this (carefully chosen) season as indicated by all arrows pointing away from its node and by its position at the top of the football hierarchy. In this case placement on the hierarchy is meant to reflect strength in the game of football, and we would expect that better teams win more often than lower ranked ones. Particularly we may assume that the outcome of any given match is driven by the difference in skill between the participating teams. Although the teams and fans are generally aware of these relative strengths, there is not a \"true\" hierarchy to refer to like the conference group structure. The positions in the hierarchy must instead be deduced from the observed matches.\nThere are many ways to determine a hierarchy from the match outcomes. Collegiate football formalizes this inference through an annual poll of team coaches to determine the highest ranked teams who may then advance to the post-season playoff bracket. In Figure 4a, the vertical hierarchy is instead arranged in order to maximize the number of times the higher ranked team wins (the 57 green arrows) and minimize the upset victories (the 7 red arrows). The other networks of Figure 4 are likewise arranged to minimize such violations of their hierarchies. \nThe presence of upsets means that the data does not fully respect the hierarchy. One might hope that there is some other ordering of the teams that is fully coherent, lacking any such upsets, but the intransitivity of the results prevents this. In the football example Minnesota beat Nebraska, Nebraska beat Iowa, and Iowa beat Minnesota in a rock-paper-scissors arrangement. One of these three matches would therefore be recorded as an \"upset\" under any ordering of the teams. In fact any ordering of this season will have at least 7 upsets as in the ordering plotted in the figure. This tension between the hierarchy and the realized results is analogous to how not all edges lie within the groups of Figure 3. The degree to which the outcomes conform to a hierarchy gives insight to its strictness.\nMany of the models used to describe hierarchies were initially developed and are often used in the world of sports, yet similar concepts can be applied to understand status and quality in other contexts. Figure 4b shows a hierarchy of 8 different flavored sodas. In this network wins indicate if most assessors surveyed by Duineveld prefer one soda over another in a paired comparison study (Duineveld, Arents, and King 2000). Again no total ordering of the sodas is possible as the revealed preferences are not strictly transitive, although there are certain sodas that generally fare better in these comparisons. Such surveys and inferences are often used to make sense of A/B testing of various types of products and establish the aggregate consensus of quality and preferences. These methods are similarly used in reinforcement learning to assess and tune large language model outputs based upon human preferences (Christiano et al. 2017).\nTurning to animals, the social hierarchy of a flock of 11 Brown Leghorn chickens is plotted in Figure 4c (Masure and Allee 1934). Here the arrows represent when one chicken pecks another but is not pecked in return, taken as a sign of dominance. The chickens organize into a pecking order where the higher chicken tends to peck the lower chicken on the ladder. This animal behavior research is in fact the source of the phrase \"pecking order\" colloquially used to refer to all sorts of hierarchies. In this flock of 11, the chicken at the bottom of the pecking order is pecked by all above it while there is more competition and ambiguity at the top.\n\nFigure 4d shows a similar social hierarchy, now of surveyed friendship nominations among 20 students of a small U.S. high school (Udry, Bearman, and Harris 1997). Although we may think of friendship as a two-way street, this reciprocity is not always borne out in survey data. Often student A names student B as their friend but student B does not name student A back. We can interpret this as a \"win\" for student B in the social hierarchy, and that they are likely of higher social status than student A. In the school of this figure a clear hierarchy emerges where higher status students consistently dominate the lower ranked students in this manner.\nEach of the directed network representations in Figure 3 foregoes further context unique to each setting. The football match network, for example, neglects idiosyncratic details like player injuries or home-field advantages that can influence the outcome of any given match. Such events, however, do not have a clear analog within, say, the pecking order of chickens. By reducing the systems down to a directed pattern of \"wins\" and \"losses,\" we can directly compare them to each other. In (Jerdee and Newman 2024) we discuss how this framework enables us to observe how the nature and strength of these hierarchies differ across settings."
-  },
-  {
-    "objectID": "notes/2025/spotlight_biological.html",
-    "href": "notes/2025/spotlight_biological.html",
-    "title": "Network spotlight: biological",
-    "section": "",
-    "text": "Who eats whom, who pollinates what, and one animal’s nervous system.\nEvery figure here is live: drag a node, hover for a name, and Open with controls gives you the same view in a full window with the colouring and layout options exposed. The data, and the script that rebuilds each one from its source, are in the networks repository."
-  },
-  {
-    "objectID": "notes/2025/spotlight_biological.html#pollinator",
-    "href": "notes/2025/spotlight_biological.html#pollinator",
-    "title": "Network spotlight: biological",
-    "section": "Plant–Pollinator",
-    "text": "Plant–Pollinator\n\n\n\n\n\n\n\n\nA node\nPlant or pollinator species\n\n\nAn edge\nA → B: pollinator A visits plant B, width ∝ number of observed visits\n\n\n\nBezerra, E. L. S., Machado, I. C., & Mello, M. A. R. (2009). Pollination networks of oil-flowers: a tiny world within the smallest of all worlds. Journal of Animal Ecology, 78(5), 1096-1101. Caatinga network (Parque Nacional do Catimbau, Brazil), via the Interaction Web Database, ecologia.ib.usp.br/iwdb.\nElisangela L. S. Bezerra, Isabel C. Machado, and Marco A. R. Mello · source · data and build script\nLicence. No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_biological.html#weddell-sea-foodweb",
-    "href": "notes/2025/spotlight_biological.html#weddell-sea-foodweb",
-    "title": "Network spotlight: biological",
-    "section": "Weddell Sea Food Web",
-    "text": "Weddell Sea Food Web\n\n\n\n\n\n\n\n\nA node\nSpecies, colored by trophic role, positioned by log body mass\n\n\nAn edge\nA → B: A preys on B\n\n\n\nCirtwill, A. R., & Eklof, A. (2018). Feeding environment and other traits shape species’ roles in marine food webs. Ecology Letters, 21(6), 875-884. Data: Dryad doi:10.5061/dryad.1mv20r6. Original food web data from Jacob, U. et al. (2011). The Role of Body Size in Complex Food Webs: A Cold Case. Advances in Ecological Research, 45, 181-223.\nAlyssa R. Cirtwill and Anna Eklof (compilers); original food web data from Jacob et al. (2011) · source · data and build script\nLicence. Deposited on Dryad, whose terms place deposited data under CC0 1.0. Attribution is requested rather than required; cite both papers below.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_biological.html#celegans",
-    "href": "notes/2025/spotlight_biological.html#celegans",
-    "title": "Network spotlight: biological",
-    "section": "C. elegans Connectome",
-    "text": "C. elegans Connectome\n\n\n\n\n\n\n\n\nA node\nNeuron, colored by class (sensory/interneuron/motor), positioned by real soma location\n\n\nAn edge\nA → B: chemical synapse (A signals B) or, when type=electrical, a gap junction, width ∝ synapse count\n\n\n\nC. elegans hermaphrodite neural connectome. Chemical synapses (directed, weighted by synapse count) and electrical gap junctions (edge attribute type=electrical, undirected in practice) from White, Southgate, Thomson and Brenner 1986, curated as white_1986_n2u.csv in openworm/ConnectomeToolbox (MIT license). Neuron class (sensory/interneuron/motor) from the same repo’s Cook et al. 2019-derived classification. Soma position (x/y/z, micrometers) from openworm/CElegansNeuroML’s per-neuron 3D reconstruction, released into the public domain (VirtualWorm project, WormBase/CalTech).\nOpenWorm (ConnectomeToolbox, CElegansNeuroML) · compiled by Max Jerdee · source source · data and build script\nLicence. MIT, from openworm/ConnectomeToolbox, combined with public-domain data from CElegansNeuroML.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_geographic.html",
-    "href": "notes/2025/spotlight_geographic.html",
-    "title": "Network spotlight: geographic",
-    "section": "",
-    "text": "Networks with real coordinates, drawn on the map they live on.\nEvery figure here is live: drag a node, hover for a name, and Open with controls gives you the same view in a full window with the colouring and layout options exposed. The data, and the script that rebuilds each one from its source, are in the networks repository."
-  },
-  {
-    "objectID": "notes/2025/spotlight_geographic.html#chicago",
-    "href": "notes/2025/spotlight_geographic.html#chicago",
-    "title": "Network spotlight: geographic",
-    "section": "Chicago Neighborhoods",
-    "text": "Chicago Neighborhoods\n\n\n\n\n\n\n\n\nA node\nNeighborhood (community area), positioned at its true geographic centroid\n\n\nAn edge\nShares a border with\n\n\n\nCommunity area boundaries and adjacency derived from the City of Chicago Data Portal (Boundaries - Community Areas, dataset igwz-8jzy). Node positions are each area’s true geographic centroid (longitude/latitude); edges connect areas that share a border.\nCity of Chicago · compiled by Max Jerdee · source · data and build script\nLicence. City of Chicago Open Data Portal terms of use; published as open government data.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_geographic.html#tokyo-metro",
-    "href": "notes/2025/spotlight_geographic.html#tokyo-metro",
-    "title": "Network spotlight: geographic",
-    "section": "Tokyo Subway",
-    "text": "Tokyo Subway\n\n\n\n\n\n\n\n\nA node\nStation, positioned at its real coordinates, sized by number of connecting segments\n\n\nAn edge\nTwo stations consecutive on at least one subway line’s own station list, width ∝ real peak-hour weekday trains/hour (both directions, from published timetables)\n\n\n\nTokyo subway network: the 9 Tokyo Metro lines and 4 Toei Subway lines (the two operators that together make up what’s commonly called the Tokyo subway). Stations (real lat/lon) and direct-adjacency edges (two stations connected when consecutive on any line’s own station list, weight = number of lines sharing the segment) – Tokyo subway lines don’t skip-stop, so unlike nyc_subway.gml no express-skip pruning is needed. Edge attributes peak_trains_per_hour/avg_trains_per_hour are real weekday train frequency per segment, summed across every line sharing it, from mini-tokyo-3d’s own bundled published timetables – peak is the busiest single hour, avg is the mean over hours with any service (excludes the overnight shutdown). Source: mini-tokyo-3d’s bundled data (github.com/nagix/mini-tokyo-3d, MIT license), itself derived from Japan’s Public Transportation Open Data Center (odpt.org). Node attribute passengers_2021 (when present) is each station’s daily boarding + alighting count, FY2021 (the most recent year in this download), from MLIT’s nationwide ‘Number of Passengers by Station’ dataset (S12, non-commercial-use license – see nlftp.mlit.go.jp/ksj/other/agreement.html#agree-02), joined by subway line number and Japanese station name; a station on several subway lines takes the max across its lines’ own MLIT entries (see build_tokyo_metro.py for why).\nmini-tokyo-3d (Akihiko Kusanagi); MLIT National Land Numerical Information · compiled by Max Jerdee · source · data and build script\nLicence. Topology MIT (mini-tokyo-3d, via the Public Transportation Open Data Center). The passengers_2021 node attribute is MLIT S12, NON-COMMERCIAL USE ONLY – drop that attribute before any commercial publication.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_geographic.html#europe-power-grid",
-    "href": "notes/2025/spotlight_geographic.html#europe-power-grid",
-    "title": "Network spotlight: geographic",
-    "section": "Europe Power Grid",
-    "text": "Europe Power Grid\n\n\n\n\n\n\n\n\nA node\nSubstation or junction, positioned at its real coordinates\n\n\nAn edge\nHigh-voltage transmission line between two substations\n\n\n\nHigh-voltage transmission grid topology extracted from OpenStreetMap by GridKit. Full Europe extract, largest connected component. Node positions are real substation/junction coordinates; edge weight is the transmission line’s approximate length in km.\nGridKit (Wiegmans, 2016) · compiled by Max Jerdee · source · data and build script\nLicence. Open Database License (ODbL), inherited from OpenStreetMap via GridKit (Zenodo 47317). Attribute OpenStreetMap contributors; a publicly-used derivative database must also be ODbL.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_social.html",
-    "href": "notes/2025/spotlight_social.html",
-    "title": "Network spotlight: social",
-    "section": "",
-    "text": "People, characters and animals, and the ties between them.\nEvery figure here is live: drag a node, hover for a name, and Open with controls gives you the same view in a full window with the colouring and layout options exposed. The data, and the script that rebuilds each one from its source, are in the networks repository."
-  },
-  {
-    "objectID": "notes/2025/spotlight_social.html#karate",
-    "href": "notes/2025/spotlight_social.html#karate",
-    "title": "Network spotlight: social",
-    "section": "Karate Club",
-    "text": "Karate Club\n\n\n\n\n\n\n\n\nA node\nKarate club member, colored by which faction they joined after the club split\n\n\nAn edge\nObserved social tie outside normal club activities\n\n\n\nZachary, W. W. (1977). An information flow model for conflict and fission in small groups. Journal of Anthropological Research, 33(4), 452-473.\nWayne W. Zachary · source · data and build script\nLicence. No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_social.html#friends",
-    "href": "notes/2025/spotlight_social.html#friends",
-    "title": "Network spotlight: social",
-    "section": "Friends",
-    "text": "Friends\n\n\n\n\n\n\n\n\nA node\nStudent, colored by class (nine classes across four subjects)\n\n\nAn edge\nA → B: A named B as a friend in the survey. One-way: a nomination need not be returned\n\n\n\nReported friendship network of 329 students in nine classes of a lycee in Marseille, France, December 2013. A directed edge i-&gt;j means student i named j as a friend in the survey. Collected by the SocioPatterns collaboration alongside wearable-sensor proximity, contact-diary and Facebook networks for the same school; this is the friendship survey. Mastrandrea, R., Fournet, J., & Barrat, A. (2015). Contact Patterns in a High School: A Comparison between Data Collected Using Wearable Sensors, Contact Diaries and Friendship Surveys. PLOS ONE 10(9), e0136497. Node attribute class is a readable name for each of the nine classes, with the original French preparatory-class code kept as class_code (a trailing * marks the selective stream of that subject); field collapses the nine into the four subjects they study.\nSocioPatterns (R. Mastrandrea, J. Fournet, A. Barrat) · compiled by Max Jerdee · source · data and build script\nLicence. Creative Commons Attribution-NonCommercial-ShareAlike 3.0 (CC BY-NC-SA 3.0), as stated by SocioPatterns. Redistribution permitted with attribution; non-commercial; a redistributed derivative must carry the same licence.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_social.html#les-miserables",
-    "href": "notes/2025/spotlight_social.html#les-miserables",
-    "title": "Network spotlight: social",
-    "section": "Les Misérables",
-    "text": "Les Misérables\n\n\n\n\n\n\n\n\nA node\nCharacter in Les Misérables, colored by narrative group\n\n\nAn edge\nA—B: A and B appear together in a scene, width ∝ number of shared scenes\n\n\n\nKnuth, D. E. (1993). The Stanford GraphBase: A Platform for Combinatorial Computing. Addison-Wesley.\nDonald E. Knuth · compiled by Max Jerdee · source · data and build script\nLicence. No licence stated. From Knuth’s Stanford GraphBase, distributed for public use and redistributed very widely (d3, networkx, igraph). Cite the book.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_social.html#florentine",
-    "href": "notes/2025/spotlight_social.html#florentine",
-    "title": "Network spotlight: social",
-    "section": "Florentine Families",
-    "text": "Florentine Families\n\n\n\n\nA node\nFlorentine family, colored by faction\n\n\nAn edge\nA—B: a marriage tie exists between the two families\n\n\n\nPadgett, J. F., & Ansell, C. K. (1993). Robust Action and the Rise of the Medici, 1400-1434. American Journal of Sociology, 98(6), 1259-1319.\nJohn F. Padgett and Christopher K. Ansell · source · data and build script\nLicence. No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.\n\n(thoughts to come)"
-  },
-  {
-    "objectID": "notes/2025/spotlight_social.html#chickens",
-    "href": "notes/2025/spotlight_social.html#chickens",
-    "title": "Network spotlight: social",
-    "section": "Chicken Pecking Order",
-    "text": "Chicken Pecking Order\n\n\n\n\nA node\nHen, positioned by dominance rank\n\n\nAn edge\nA → B: A pecks B (A dominates B)\n\n\n\nMasure, R. H., & Allee, W. C. (1934). The social order in flocks of the common chicken and the pigeon. The Auk, 51(3), 306-327.\nRalph H. Masure and W. C. Allee · source · data and build script\nLicence. No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.\n\n(thoughts to come)"
   },
   {
     "objectID": "notes/2025/statistical_physics.html",

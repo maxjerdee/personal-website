@@ -209,6 +209,10 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--networks-dir", type=pathlib.Path, default=ROOT.parent / "networks")
     ap.add_argument("--force", action="store_true",
                     help="rewrite the generated facts, preserving each THOUGHTS block")
+    ap.add_argument("--publish", action="store_true",
+                    help="drop `draft: true`, so the notes go public on the next render")
+    ap.add_argument("--draft", action="store_true",
+                    help="force `draft: true`, even on a note already published")
     ap.add_argument("--check", action="store_true",
                     help="verify the notes cover exactly the published networks; write nothing")
     args = ap.parse_args(argv[1:])
@@ -282,6 +286,15 @@ def main(argv: list[str]) -> int:
             print(f"  {path.name}: exists, left alone (use --force)")
             continue
         kept = existing_thoughts(path)
+        # Per file, and never inferred from a sibling: with neither flag, a note
+        # keeps the draft state it already has, and a new one starts as a draft.
+        if args.publish:
+            is_draft = False
+        elif args.draft or not path.exists():
+            is_draft = True
+        else:
+            is_draft = re.search(r"^draft:\s*true\s*$",
+                                 path.read_text(encoding="utf-8"), re.M) is not None
         # Prose for a network that is no longer published would vanish with its
         # section. Networks move back to the workspace by design here, so this is
         # a normal event, not an error -- but a silent one would cost writing.
@@ -305,6 +318,13 @@ def main(argv: list[str]) -> int:
             "  - Networks",
             "  - Spotlight",
             "date: 09/26/26",
+        ] + ([
+            # Renders as an empty stub and appears in no listing or search, so
+            # the note can sit in the repo while the prose is still being
+            # written. `QUARTO_PROFILE=drafting quarto preview` shows it;
+            # regenerate with --publish when it is ready.
+            "draft: true",
+        ] if is_draft else []) + [
             "---",
             "",
             "{{< include ../../assets/html/edgewise-embed.html >}}",

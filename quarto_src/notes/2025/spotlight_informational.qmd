@@ -5,6 +5,7 @@ categories:
   - Networks
   - Spotlight
 date: 09/26/26
+draft: true
 ---
 
 {{< include ../../assets/html/edgewise-embed.html >}}
@@ -24,7 +25,7 @@ Every figure here is live: drag a node, hover for a name, and *Open with control
 | | |
 |---|---|
 | **A node** | Political book sold on Amazon, colored by political leaning |
-| **An edge** | A—B: customers who buy A also frequently buy B |
+| **An edge** | Customers who buy one book also frequently buy the other |
 
 V. Krebs, unpublished (compiled from Amazon.com co-purchasing data around the 2004 US presidential election). Distributed via M. E. J. Newman's network data collection and the Netzschleuder network repository.
 

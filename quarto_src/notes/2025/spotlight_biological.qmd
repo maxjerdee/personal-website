@@ -5,6 +5,7 @@ categories:
   - Networks
   - Spotlight
 date: 09/26/26
+draft: true
 ---
 
 {{< include ../../assets/html/edgewise-embed.html >}}
@@ -24,7 +25,7 @@ Every figure here is live: drag a node, hover for a name, and *Open with control
 | | |
 |---|---|
 | **A node** | Plant or pollinator species |
-| **An edge** | A → B: pollinator A visits plant B, width ∝ number of observed visits |
+| **An edge** | A pollinator visits a plant, width ∝ number of observed visits |
 
 Bezerra, E. L. S., Machado, I. C., & Mello, M. A. R. (2009). Pollination networks of oil-flowers: a tiny world within the smallest of all worlds. Journal of Animal Ecology, 78(5), 1096-1101. Caatinga network (Parque Nacional do Catimbau, Brazil), via the Interaction Web Database, ecologia.ib.usp.br/iwdb.
 
