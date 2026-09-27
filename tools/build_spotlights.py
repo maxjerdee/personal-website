@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import argparse
 import collections
+import html
 import json
 import pathlib
 import re
@@ -116,7 +117,16 @@ def counts(p: pathlib.Path) -> tuple[int, int, bool]:
 
 
 def unescape(s: str) -> str:
-    return s.replace("&#62;", ">").replace("&#38;", "&").replace('\\"', '"')
+    """Undo GML's escaping, for text about to be rendered as prose.
+
+    The networks repo keeps every published GML ASCII-only and entity-escaped,
+    so a name with an accent, or an arrow, arrives here as `&#233;` or `&#62;`.
+    This was a hand-written list of the two entities that happened to appear;
+    html.unescape handles the whole set, which matters now that the escaping is
+    systematic rather than incidental -- the next accented author name would
+    otherwise have rendered as its own entity, in public, under their name.
+    """
+    return html.unescape(s).replace('\\"', '"')
 
 
 def params_for(stem: str, entry: dict) -> str:
