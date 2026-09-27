@@ -1,0 +1,44 @@
+{
+  "Heteropterys sp1": {
+    "file": "images/pollinator/heteropterys_sp1.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Heteropterys_chrysophylla_Malpighiaceae.jpg",
+    "sourceTitle": "Heteropterys",
+    "license": "CC BY-SA 3.0",
+    "artist": "BotBN"
+  },
+  "Heteropterys sp2": {
+    "file": "images/pollinator/heteropterys_sp2.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Heteropterys_chrysophylla_Malpighiaceae.jpg",
+    "sourceTitle": "Heteropterys",
+    "license": "CC BY-SA 3.0",
+    "artist": "BotBN"
+  },
+  "Apis mellifera": {
+    "file": "images/pollinator/apis_mellifera.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apis_mellifera_Western_honey_bee.jpg",
+    "sourceTitle": "Western honey bee",
+    "license": "CC BY-SA 2.5",
+    "artist": "Andreas Trepte"
+  },
+  "Centris sp3": {
+    "file": "images/pollinator/centris_sp3.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centris_-_Print_-_Iconographia_Zoologica_-_Special_Collections_University_of_Amsterdam_-_UBAINV0274_045_09_0036.tif",
+    "sourceTitle": "Centris - Print - Iconographia Zoologica - Special Collections University of Amsterdam - UBAINV0274 045 09 0036.tif",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "Centris sp1": {
+    "file": "images/pollinator/centris_sp1.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centris_-_Print_-_Iconographia_Zoologica_-_Special_Collections_University_of_Amsterdam_-_UBAINV0274_045_09_0036.tif",
+    "sourceTitle": "Centris - Print - Iconographia Zoologica - Special Collections University of Amsterdam - UBAINV0274 045 09 0036.tif",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "Xylocopa sp": {
+    "file": "images/pollinator/xylocopa_sp.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Southern_Carpenter_Bee_(Xylocopa_micans)_%E2%99%80_(7995162522).jpg",
+    "sourceTitle": "Carpenter bee",
+    "license": "CC BY-SA 2.0",
+    "artist": "Bob Peterson from North Palm Beach, Florida, Planet Earth!"
+  }
+}

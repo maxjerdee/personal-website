@@ -2,6 +2,11 @@ project:
   type: website
   output-dir: ../docs
   resources:
+  # The vendored explorer, served at /edgewise. A `resources` entry is copied
+  # through verbatim -- Quarto does not render it, so it keeps its own <head>
+  # and gets none of this site's navbar or theme. That is the point: it is a
+  # standalone app, not a page. Refresh it with tools/sync_edgewise.py.
+  - "./edgewise"
   - "./assets"
   - "./demos_code"
   - "CNAME"

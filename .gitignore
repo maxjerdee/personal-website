@@ -9,3 +9,7 @@ _preview/
 # Quarto writes this only under the drafting profile, and it lists every draft
 # page's URL -- committing it would advertise them from the published site.
 docs/notes-listing.json
+
+# Throwaway git worktree and staging dir used by tools/sync_edgewise.py.
+.edgewise-build/
+.edgewise-staged/

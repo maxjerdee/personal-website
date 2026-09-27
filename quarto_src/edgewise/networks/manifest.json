@@ -1,0 +1,526 @@
+[
+  {
+    "file": "karate.gml",
+    "label": "Karate Club",
+    "sublabel": "34 nodes \u00b7 2 groups",
+    "category": "Social",
+    "key": {
+      "node": {
+        "short": "Club member",
+        "full": "Karate club member, colored by which faction they joined after the club split"
+      },
+      "edge": {
+        "short": "Interaction",
+        "full": "Observed social tie outside normal club activities"
+      }
+    },
+    "default": true,
+    "options": {
+      "layout": "force",
+      "colorAttr": "faction",
+      "sizeAttr": "degree",
+      "sizeScale": 2.0,
+      "labelAttr": "none",
+      "edgeScale": 0.8,
+      "edgeOpacity": 0.3,
+      "keyStyle": "graphical"
+    }
+  },
+  {
+    "file": "friends.gml",
+    "label": "Friends",
+    "sublabel": "133 students \u00b7 directed \u00b7 nine classes",
+    "category": "Social",
+    "key": {
+      "node": {
+        "short": "Student",
+        "full": "Student, colored by class (nine classes across four subjects)"
+      },
+      "edge": {
+        "short": "A names B as friend",
+        "full": "A \u2192 B: A named B as a friend in the survey. One-way: a nomination need not be returned"
+      }
+    },
+    "options": {
+      "layout": "community-attract",
+      "colorAttr": "class",
+      "sizeAttr": "degree",
+      "sizeScale": 1.4,
+      "labelAttr": "none",
+      "edgeScale": 0.6,
+      "edgeOpacity": 0.3,
+      "recipColor": true,
+      "communityStrength": 0.26,
+      "keyStyle": "graphical"
+    },
+    "creditMustMention": [
+      "SocioPatterns"
+    ]
+  },
+  {
+    "file": "les_miserables.gml",
+    "label": "Les Mis\u00e9rables",
+    "sublabel": "58 nodes \u00b7 weighted",
+    "category": "Social",
+    "key": {
+      "node": {
+        "short": "Character",
+        "full": "Character in Les Mis\u00e9rables, colored by narrative group"
+      },
+      "edge": {
+        "short": "Co-appearance",
+        "full": "Two characters appear together in a scene, width \u221d number of shared scenes"
+      }
+    },
+    "options": {
+      "layout": "force",
+      "colorAttr": "modularity_community",
+      "sizeAttr": "degree",
+      "sizeScale": 2.0,
+      "labelAttr": "label",
+      "edgeWidth": "weight",
+      "edgeScale": 2.4,
+      "edgeOpacity": 0.7,
+      "keyStyle": "graphical"
+    }
+  },
+  {
+    "file": "business_depts.gml",
+    "label": "Business School Hiring",
+    "sublabel": "112 nodes \u00b7 directed \u00b7 weighted \u00b7 faculty network",
+    "category": "Economic",
+    "key": {
+      "node": {
+        "short": "Institution",
+        "full": "University, positioned by its inferred prestige score"
+      },
+      "edge": {
+        "short": "B hires a PhD from A",
+        "full": "A \u2192 B: B hires a PhD from A, width \u221d number of such hires"
+      }
+    },
+    "options": {
+      "layout": "coord",
+      "colorAttr": "control",
+      "sizeAttr": "degree",
+      "sizeScale": 1.2,
+      "labelAttr": "none",
+      "edgeWidth": "weight",
+      "edgeScale": 0.9,
+      "edgeOpacity": 0.32,
+      "coordYAttr": "bt_score",
+      "keyStyle": "graphical",
+      "geoOutline": "usa"
+    }
+  },
+  {
+    "file": "florentine.gml",
+    "label": "Florentine Families",
+    "sublabel": "15 nodes \u00b7 marriage alliances",
+    "category": "Social",
+    "key": {
+      "node": {
+        "short": "Family",
+        "full": "Florentine family, colored by faction"
+      },
+      "edge": {
+        "short": "Marriage alliance",
+        "full": "A marriage tie between the two families"
+      }
+    },
+    "options": {
+      "layout": "force",
+      "colorAttr": "faction",
+      "sizeScale": 2.0,
+      "labelAttr": "label",
+      "edgeOpacity": 0.233,
+      "keyStyle": "graphical"
+    }
+  },
+  {
+    "file": "polbooks.gml",
+    "label": "Political Books",
+    "sublabel": "105 nodes \u00b7 buying network",
+    "category": "Informational",
+    "key": {
+      "node": {
+        "short": "Book",
+        "full": "Political book sold on Amazon, colored by political leaning"
+      },
+      "edge": {
+        "short": "Co-purchase",
+        "full": "Customers who buy one book also frequently buy the other"
+      }
+    },
+    "options": {
+      "colorAttr": "value",
+      "sizeAttr": "degree",
+      "sizeScale": 2.0,
+      "labelAttr": "none",
+      "edgeScale": 0.8,
+      "edgeOpacity": 0.3,
+      "keyStyle": "graphical"
+    }
+  },
+  {
+    "file": "wordnet_vehicle.gml",
+    "label": "\"Vehicle\" WordNet",
+    "sublabel": "301 synsets \u00b7 directed \u00b7 IS-A hierarchy",
+    "category": "Informational",
+    "key": {
+      "node": {
+        "short": "Word",
+        "full": "A WordNet synset (one sense of a word), colored by how far below \"vehicle\" it sits"
+      },
+      "edge": {
+        "short": "\"A\" is a \"B\"",
+        "full": "A \u2192 B: B is a more specific kind of A (e.g. car \u2192 convertible)"
+      }
+    },
+    "options": {
+      "layout": "radial-tree",
+      "colorAttr": "depth",
+      "sizeAttr": "degree",
+      "sizeScale": 2.0,
+      "labelAttr": "none",
+      "edgeScale": 0.5,
+      "edgeOpacity": 0.4,
+      "keyStyle": "graphical"
+    },
+    "creditMustMention": [
+      "Princeton"
+    ]
+  },
+  {
+    "file": "scotus_citations.gml",
+    "label": "Supreme Court Citations",
+    "sublabel": "250 opinions \u00b7 directed \u00b7 1798\u20131989",
+    "category": "Informational",
+    "key": {
+      "node": {
+        "short": "Opinion",
+        "full": "A majority opinion of the U.S. Supreme Court, placed at the year it was decided and colored by its subject matter"
+      },
+      "edge": {
+        "short": "A cites B",
+        "full": "A \u2192 B: opinion A cites opinion B, so every edge points back in time"
+      }
+    },
+    "options": {
+      "layout": "coord",
+      "colorAttr": "issue_area",
+      "sizeAttr": "degree",
+      "sizeScale": 1.4,
+      "labelAttr": "none",
+      "edgeScale": 0.2,
+      "edgeOpacity": 0.35,
+      "coordXAttr": "year",
+      "coordYAttr": "issue_area",
+      "keyStyle": "graphical"
+    }
+  },
+  {
+    "file": "journals.gml",
+    "label": "Journal Citations",
+    "sublabel": "85 nodes \u00b7 directed \u00b7 2019\u20132023 citations",
+    "category": "Informational",
+    "key": {
+      "node": {
+        "short": "Journal",
+        "full": "Journal, sized by how often it's cited"
+      },
+      "edge": {
+        "short": "A cites B",
+        "full": "A \u2192 B: A cites B, width \u221d citation count"
+      }
+    },
+    "options": {
+      "layout": "coord",
+      "colorAttr": "discipline",
+      "sizeAttr": "cited_by",
+      "sizeScale": 1.4,
+      "labelAttr": "abbrev",
+      "edgeWidth": "weight",
+      "edgeScale": 1.0,
+      "edgeOpacity": 0.12,
+      "coordYAttr": "bt_score",
+      "keyStyle": "graphical"
+    },
+    "modelDefaults": {
+      "edgeIsWin": false,
+      "weightedSBM": true
+    }
+  },
+  {
+    "file": "pollinator.gml",
+    "label": "Plant\u2013Pollinator",
+    "sublabel": "26 nodes \u00b7 bipartite \u00b7 weighted",
+    "category": "Biological",
+    "key": {
+      "node": {
+        "short": "Species",
+        "full": "Plant or pollinator species"
+      },
+      "edge": {
+        "short": "Pollinator visits plant",
+        "full": "A pollinator visits a plant, width \u221d number of observed visits"
+      }
+    },
+    "options": {
+      "layout": "coord",
+      "colorAttr": "role",
+      "sizeAttr": "degree",
+      "sizeScale": 2.0,
+      "labelAttr": "none",
+      "edgeScale": 2.3,
+      "edgeOpacity": 0.35,
+      "coordXAttr": "role",
+      "keyStyle": "graphical",
+      "colorMap": {
+        "Plant": "#59a14f",
+        "Pollinator": "#edc948"
+      }
+    }
+  },
+  {
+    "file": "chickens.gml",
+    "label": "Chicken Pecking Order",
+    "sublabel": "11 nodes \u00b7 directed",
+    "category": "Social",
+    "key": {
+      "node": {
+        "short": "Hen",
+        "full": "Hen, positioned by dominance rank"
+      },
+      "edge": {
+        "short": "A pecks B",
+        "full": "A \u2192 B: A pecks B (A dominates B)"
+      }
+    },
+    "options": {
+      "layout": "coord",
+      "colorAttr": "default",
+      "colorFixed": "#a28444",
+      "sizeAttr": "degree",
+      "sizeScale": 2.0,
+      "labelAttr": "label",
+      "edgeScale": 1.6,
+      "edgeOpacity": 0.233,
+      "coordYAttr": "value",
+      "keyStyle": "graphical"
+    }
+  },
+  {
+    "file": "weddell_sea_foodweb.gml",
+    "label": "Weddell Sea Food Web",
+    "sublabel": "488 nodes \u00b7 directed \u00b7 trophic roles",
+    "category": "Biological",
+    "key": {
+      "node": {
+        "short": "Species",
+        "full": "Species, colored by trophic role, positioned by log body mass"
+      },
+      "edge": {
+        "short": "A preys on B",
+        "full": "A \u2192 B: A preys on B"
+      }
+    },
+    "options": {
+      "layout": "coord",
+      "colorAttr": "trophic_role",
+      "sizeAttr": "degree",
+      "sizeScale": 1.0,
+      "labelAttr": "none",
+      "edgeScale": 0.2,
+      "edgeOpacity": 0.05,
+      "coordYAttr": "log_mass",
+      "keyStyle": "graphical",
+      "hideRecip": true
+    }
+  },
+  {
+    "file": "celegans.gml",
+    "label": "C. elegans Connectome",
+    "sublabel": "180 neurons \u00b7 directed \u00b7 sensory/inter/motor",
+    "category": "Biological",
+    "key": {
+      "node": {
+        "short": "Neuron",
+        "full": "Neuron, colored by class (sensory/interneuron/motor), positioned by real soma location"
+      },
+      "edge": {
+        "short": "A signals B",
+        "full": "A \u2192 B: chemical synapse (A signals B) or, when type=electrical, a gap junction, width \u221d synapse count"
+      }
+    },
+    "options": {
+      "layout": "map",
+      "colorAttr": "neuron_class",
+      "sizeAttr": "degree",
+      "sizeScale": 1.2,
+      "labelAttr": "none",
+      "edgeScale": 0.75,
+      "edgeOpacity": 0.28,
+      "coordXAttr": "soma_y",
+      "coordYAttr": "soma_z",
+      "keyStyle": "graphical",
+      "geoOutline": "celegans"
+    }
+  },
+  {
+    "file": "chicago.gml",
+    "label": "Chicago Neighborhoods",
+    "sublabel": "77 neighborhoods \u00b7 adjacency",
+    "category": "Geographic",
+    "key": {
+      "node": {
+        "short": "Neighborhood",
+        "full": "Neighborhood (community area), positioned at its true geographic centroid"
+      },
+      "edge": {
+        "short": "Shared border",
+        "full": "Shares a border with"
+      }
+    },
+    "options": {
+      "layout": "map",
+      "colorAttr": "side",
+      "sizeScale": 1.4,
+      "labelAttr": "none",
+      "edgeOpacity": 0.4,
+      "keyStyle": "graphical",
+      "geoOutline": "chicago",
+      "lockLayout": true,
+      "categoryOrder": [
+        "Central",
+        "North",
+        "Far North",
+        "Northwest",
+        "West",
+        "South",
+        "Southwest",
+        "Far Southwest",
+        "Far Southeast"
+      ]
+    }
+  },
+  {
+    "file": "tokyo_metro.gml",
+    "label": "Tokyo Subway",
+    "sublabel": "201 stations \u00b7 real ridership \u00b7 real train frequency",
+    "category": "Geographic",
+    "key": {
+      "node": {
+        "short": "Station",
+        "full": "Station, positioned at its real coordinates, sized by number of connecting segments"
+      },
+      "edge": {
+        "short": "Direct line segment",
+        "full": "Two stations consecutive on at least one subway line's own station list, width \u221d real peak-hour weekday trains/hour (both directions, from published timetables)"
+      }
+    },
+    "options": {
+      "layout": "map",
+      "colorAttr": "operator",
+      "sizeAttr": "degree",
+      "sizeScale": 0.8,
+      "labelAttr": "none",
+      "edgeWidth": "peak_trains_per_hour",
+      "edgeScale": 2.3,
+      "edgeOpacity": 0.65,
+      "keyStyle": "graphical",
+      "geoOutline": "tokyo",
+      "lockLayout": true
+    }
+  },
+  {
+    "file": "world_trade.gml",
+    "label": "World Food Trade",
+    "sublabel": "212 nodes \u00b7 directed \u00b7 weighted \u00b7 every trade flow",
+    "category": "Economic",
+    "key": {
+      "node": {
+        "short": "Country",
+        "full": "Country, colored by region"
+      },
+      "edge": {
+        "short": "A exports food to B",
+        "full": "A \u2192 B: A exports food to B, width \u221d value traded"
+      }
+    },
+    "options": {
+      "layout": "map",
+      "colorAttr": "region",
+      "sizeAttr": "degree",
+      "sizeScale": 1.0,
+      "labelAttr": "none",
+      "edgeScale": 1.2,
+      "edgeOpacity": 0.65,
+      "keyStyle": "graphical",
+      "geoOutline": "world",
+      "lockLayout": true
+    }
+  },
+  {
+    "file": "airline_routes.gml",
+    "label": "Airline Routes",
+    "sublabel": "200 airports \u00b7 undirected \u00b7 weighted \u00b7 busiest routes",
+    "category": "Economic",
+    "key": {
+      "node": {
+        "short": "Airport",
+        "full": "Airport, colored by continent, among the 200 busiest worldwide"
+      },
+      "edge": {
+        "short": "Route",
+        "full": "A scheduled airline route between the two airports, width \u221d number of distinct airlines flying it either way"
+      }
+    },
+    "options": {
+      "layout": "map",
+      "colorAttr": "continent",
+      "sizeAttr": "degree",
+      "sizeScale": 1.0,
+      "labelAttr": "none",
+      "edgeScale": 0.6,
+      "edgeOpacity": 0.85,
+      "keyStyle": "graphical",
+      "geoOutline": "world",
+      "lockLayout": true
+    },
+    "creditMustMention": [
+      "OpenFlights"
+    ]
+  },
+  {
+    "file": "europe_power_grid.gml",
+    "label": "Europe Power Grid",
+    "sublabel": "13478 substations \u00b7 high-voltage transmission",
+    "category": "Geographic",
+    "key": {
+      "node": {
+        "short": "Substation",
+        "full": "Substation or junction, positioned at its real coordinates"
+      },
+      "edge": {
+        "short": "Transmission line",
+        "full": "High-voltage transmission line between two substations"
+      }
+    },
+    "options": {
+      "layout": "map",
+      "colorAttr": "voltage",
+      "sizeAttr": "degree",
+      "sizeScale": 0.4,
+      "labelAttr": "none",
+      "edgeScale": 0.4,
+      "edgeOpacity": 0.55,
+      "keyStyle": "graphical",
+      "geoOutline": "europe",
+      "lockLayout": true
+    },
+    "creditMustMention": [
+      "OpenStreetMap"
+    ]
+  }
+]

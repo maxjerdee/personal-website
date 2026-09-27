@@ -20,3 +20,14 @@ than an error, which looks exactly like a broken server. Use `make preview`.
 Publish a spotlight when its prose is ready:
 
     python tools/build_spotlights.py --publish
+
+### Before you commit
+
+`docs/` is the published site and is committed from your machine — CI no longer
+re-renders it, because doing both paid twice for the same output and the two
+renders collided. So:
+
+    make render      # then commit docs/ along with your source change
+
+`make preview` renders to `_preview/` and never touches `docs/`, so previewing
+drafts cannot leave draft content in the published output.

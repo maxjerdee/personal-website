@@ -10,13 +10,14 @@
 QUARTO ?= quarto
 PORT   ?= 4200
 
-.PHONY: preview render render-drafts clean-preview help
+.PHONY: preview render render-drafts clean-preview sync-edgewise help
 
 help:
 	@echo "make preview        # local site WITH drafts visible (port $(PORT))"
 	@echo "make render         # build docs/ as it will be published (drafts hidden)"
 	@echo "make render-drafts  # build docs/ WITH drafts -- do not commit the result"
 	@echo "make clean-preview  # stop any running preview"
+	@echo "make sync-edgewise  # rebuild /edgewise from edgewise origin/main"
 	@echo ""
 	@echo "Override the port with:  make preview PORT=4300"
 
@@ -33,6 +34,11 @@ render:
 # publishable -- run `make render` again before committing.
 render-drafts:
 	cd quarto_src && QUARTO_PROFILE=drafting $(QUARTO) render
+
+# Rebuilds the vendored explorer from edgewise's origin/main, in a throwaway
+# worktree so the shared checkout's uncommitted state cannot reach it.
+sync-edgewise:
+	python3 tools/sync_edgewise.py --apply
 
 clean-preview:
 	-pkill -f "quarto.js preview" 2>/dev/null || true

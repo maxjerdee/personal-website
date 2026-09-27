@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>edgewise — network explorer</title>
+  <!-- Inter: interface chrome (labels, buttons, body copy). JetBrains Mono stays
+       scoped to genuinely tabular/numeric contexts (matrix cells, stat panels,
+       code) -- see :root tokens in network_explorer.css. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <script type="module" crossorigin src="./assets/index-C4JlFUt4.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CDUksw9N.css">
+</head>
+<body>
+
+<header class="nm-header">
+  <button class="nm-mobile-menu-btn" id="nm-mobile-menu-btn" title="Toggle sidebar">☰</button>
+  <span class="nm-header-title">edgewise</span>
+  <span class="nm-header-sub">network explorer</span>
+  <!-- Mobile-only: the right panel (Properties/Node Detail/Search/Filters)
+       has no persistent strip on mobile any more -- it opens only when
+       there's a reason to (a node/edge tap, or this button), so this is
+       the one manual entry point for reaching Search/Filters without
+       first tapping a node. Hidden on desktop, where the panel's own strip
+       is always there. -->
+  <button class="nm-mobile-search-btn" id="nm-mobile-search-btn" title="Search &amp; filters">⌕</button>
+</header>
+
+<div class="nm-app">
+
+  <!-- ── LEFT SIDEBAR ──────────────────────────────────────────── -->
+  <aside class="nm-left-sidebar">
+
+    <!-- Network -->
+    <div class="nm-section open">
+      <button class="nm-sec-hdr" type="button">
+        <span>Network</span>
+        <svg class="nm-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0 5 6 10 0z"/></svg>
+      </button>
+      <div class="nm-sec-body">
+        <div class="nm-field">
+          <label class="nm-label" for="ne-example-select">Example</label>
+          <select id="ne-example-select" class="nm-select"></select>
+          <!-- Rename for pasted/uploaded ("User") networks -- a native
+               <select> can't be edited in place, so the button swaps in a
+               text field over it. -->
+          <input id="ne-network-rename" class="nm-select" type="text" spellcheck="false" autocomplete="off" hidden>
+          <button id="ne-network-rename-btn" class="nm-rename-btn" type="button" title="Rename this network" aria-label="Rename this network" hidden>✎</button>
+        </div>
+
+        <!-- Drop/browse/paste all in one row -- per direct request ("drop,
+             browse, paste should all be options along a single row, not on
+             separate rows"). Smaller than before, and the supported-formats
+             list is now a hover tooltip (title attr) instead of a second
+             always-shown line -- per the earlier direct request ("make the
+             drop region smaller, don't need to show filenames or can on
+             hover or tooltip"). -->
+        <div class="nm-source-row">
+          <div id="ne-upload-zone" class="nm-upload-zone" title="Supported: .gml, .csv, .tsv, .edges, .txt">
+            <span>↑ Drop or <label for="ne-file-input">browse</label></span>
+            <input type="file" id="ne-file-input" accept=".gml,.csv,.tsv,.el,.edgelist,.edges,.txt">
+          </div>
+          <div class="nm-paste-toggle" id="ne-paste-toggle">
+            <span>paste</span>
+            <svg id="ne-paste-chevron" viewBox="0 0 6 10" width="6" height="10" aria-hidden="true"><polyline points="1,1 5,5 1,9"/></svg>
+          </div>
+        </div>
+        <div class="nm-paste-section" id="ne-paste-section">
+          <textarea id="ne-paste-area" class="nm-paste-area" placeholder="Paste GML or edge list…" rows="5" spellcheck="false" autocomplete="off"></textarea>
+          <button id="ne-paste-load" class="nm-btn-sm nm-btn-outline" style="margin-top:4px;width:100%">Load</button>
+        </div>
+
+        <div id="ne-error" class="nm-error"></div>
+      </div>
+    </div>
+
+    <!-- Appearance -->
+    <div class="nm-section open">
+      <button class="nm-sec-hdr" type="button">
+        <span>Appearance</span>
+        <!-- Appears only once something here differs from this network's own
+             saved defaults, so its presence is itself the signal that you have
+             changed something. -->
+        <span id="ne-appearance-reset" class="nm-sec-reset" role="button" tabindex="0"
+              title="Reset appearance to this network's defaults" style="display:none">↺</span>
+        <svg class="nm-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0 5 6 10 0z"/></svg>
+      </button>
+      <div class="nm-sec-body">
+
+        <div class="nm-fg nm-fg-collapsible open">
+          <button class="nm-fg-label nm-fg-toggle" type="button">
+            Nodes
+            <svg class="nm-fg-chevron" viewBox="0 0 10 6" width="8" height="5" aria-hidden="true"><path d="M0 0 5 6 10 0z"/></svg>
+          </button>
+          <div class="nm-fg-body">
+            <div class="nm-field">
+              <label class="nm-label" for="ne-color-attr">Color</label>
+              <select id="ne-color-attr" class="nm-select">
+                <option value="default">Set color</option>
+              </select>
+              <span id="ne-color-fixed-field" style="display:none">
+                <input type="color" id="ne-color-picker" class="nm-color-picker" value="#5b8dd9">
+              </span>
+            </div>
+            <div class="nm-field">
+              <label class="nm-label" for="ne-size-attr">Size</label>
+              <select id="ne-size-attr" class="nm-select">
+                <option value="degree">Degree</option>
+                <option value="uniform">Uniform</option>
+              </select>
+            </div>
+            <div class="nm-field">
+              <label class="nm-label" for="ne-size-scale">Scale</label>
+              <input id="ne-size-scale" type="range" min="0.2" max="2.5" step="0.1" value="1.0"
+                class="nm-range" style="flex:1">
+              <span id="ne-size-scale-val" class="nm-range-val">1.0×</span>
+            </div>
+            <div class="nm-field">
+              <label class="nm-label" for="ne-label-attr">Labels</label>
+              <select id="ne-label-attr" class="nm-select">
+                <option value="none">None</option>
+                <option value="label">Label</option>
+                <option value="id">ID</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="nm-fg nm-fg-collapsible" id="ne-edge-fg">
+          <button class="nm-fg-label nm-fg-toggle" type="button">
+            Edges
+            <svg class="nm-fg-chevron" viewBox="0 0 10 6" width="8" height="5" aria-hidden="true"><path d="M0 0 5 6 10 0z"/></svg>
+          </button>
+          <div class="nm-fg-body">
+            <div class="nm-field">
+              <label class="nm-label" for="ne-edge-width">Width</label>
+              <select id="ne-edge-width" class="nm-select">
+                <option value="weight">By weight</option>
+                <option value="uniform">Uniform</option>
+              </select>
+            </div>
+            <div class="nm-field">
+              <label class="nm-label" for="ne-edge-scale">Scale</label>
+              <input id="ne-edge-scale" type="range" min="0.2" max="3.0" step="0.1" value="1.0"
+                class="nm-range" style="flex:1">
+              <span id="ne-edge-scale-val" class="nm-range-val">1.0×</span>
+            </div>
+            <div class="nm-field">
+              <label class="nm-label" for="ne-edge-opacity">Opacity</label>
+              <input id="ne-edge-opacity" type="range" min="0" max="1" step="0.05" value="0.65"
+                class="nm-range" style="flex:1">
+              <span id="ne-edge-opacity-val" class="nm-range-val">0.65</span>
+            </div>
+            <div class="nm-field nm-field-stack" id="ne-recip-field" style="display:none">
+              <label class="nm-label" for="ne-recip-toggle">Reciprocated</label>
+              <label class="nm-toggle">
+                <input type="checkbox" id="ne-recip-toggle">
+                <span class="nm-toggle-track"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="nm-fg nm-fg-collapsible open">
+          <button class="nm-fg-label nm-fg-toggle" type="button">
+            Layout
+            <svg class="nm-fg-chevron" viewBox="0 0 10 6" width="8" height="5" aria-hidden="true"><path d="M0 0 5 6 10 0z"/></svg>
+          </button>
+          <div class="nm-fg-body">
+            <div class="nm-field">
+              <label class="nm-label" for="ne-layout-select">Method</label>
+              <select id="ne-layout-select" class="nm-select">
+                <option value="force">Force-directed</option>
+                <option value="coord">Coordinates</option>
+                <option value="map">Map</option>
+                <option value="community-attract">Attract colors</option>
+                <option value="radial-tree">Node centered</option>
+              </select>
+              <button id="ne-sim-toggle" class="nm-btn-sm nm-btn-outline" title="Pause simulation">⏸</button>
+            </div>
+            <div class="nm-field" id="ne-comm-strength-field" style="display:none">
+              <label class="nm-label" for="ne-comm-strength">Attract</label>
+              <input id="ne-comm-strength" type="range" min="0.02" max="1.50" step="0.02" value="0.20"
+                class="nm-range" style="flex:1">
+              <span id="ne-comm-strength-val" class="nm-range-val">0.20</span>
+            </div>
+            <div class="nm-field" id="ne-radial-center-field" style="display:none;position:relative">
+              <label class="nm-label" for="ne-radial-center-input">Center</label>
+              <input id="ne-radial-center-input" type="text" class="nm-select" placeholder="Search for a node…" autocomplete="off">
+              <div id="ne-radial-center-results" class="nm-search-results" style="display:none"></div>
+            </div>
+            <div class="nm-field" id="ne-coord-x-field" style="display:none">
+              <label class="nm-label" for="ne-coord-x-attr">X axis</label>
+              <select id="ne-coord-x-attr" class="nm-select">
+                <option value="none">— free —</option>
+              </select>
+            </div>
+            <div class="nm-field" id="ne-coord-y-field" style="display:none">
+              <label class="nm-label" for="ne-coord-y-attr">Y axis</label>
+              <select id="ne-coord-y-attr" class="nm-select">
+                <option value="none">— free —</option>
+              </select>
+            </div>
+            <div class="nm-field" id="ne-pie-attr-field" style="display:none">
+              <label class="nm-label" for="ne-pie-attr">Node pie</label>
+              <select id="ne-pie-attr" class="nm-select">
+                <option value="none">None</option>
+              </select>
+            </div>
+            <!-- Was buried in "Debug" -- a layout-level transform (swaps the
+                 rendered graph for community-level super-nodes), not a debug
+                 switch, so a first-time user running a community model had no
+                 reason to look for it there. Found via a synthetic
+                 first-time-user pass. Hidden until a categorical color
+                 attribute exists to collapse by (see network_explorer.js). -->
+            <div class="nm-field nm-field-stack" id="ne-collapse-field" style="display:none">
+              <label class="nm-label" for="ne-collapse-toggle">Collapse colors</label>
+              <label class="nm-toggle">
+                <input type="checkbox" id="ne-collapse-toggle">
+                <span class="nm-toggle-track"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Analysis -->
+    <div class="nm-section open">
+      <button class="nm-sec-hdr" type="button">
+        <span>Analysis</span>
+        <svg class="nm-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0 5 6 10 0z"/></svg>
+      </button>
+      <div class="nm-sec-body" id="nm-sidebar">
+        <!-- populated by sidebar.js -->
+      </div>
+    </div>
+
+    <!-- Debug -->
+    <div class="nm-section" id="nm-debug-section">
+      <button class="nm-sec-hdr" type="button">
+        <span>Debug</span>
+        <svg class="nm-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0 5 6 10 0z"/></svg>
+      </button>
+      <div class="nm-sec-body">
+        <!-- Lives here, not under Appearance. It was moved out to Appearance
+             once on the reasoning that it styles something the reader sees --
+             but every network sets it from its manifest and it is not a knob
+             anyone is expected to reach for, so it was only crowding the
+             controls that are. -->
+        <div class="nm-field nm-field-stack">
+          <span class="nm-label">Node/edge key style</span>
+          <select id="ne-key-style" class="nm-select" style="width:auto">
+            <option value="off">Off</option>
+            <option value="text">Text</option>
+            <option value="graphical" selected>Graphical</option>
+          </select>
+        </div>
+        <div class="nm-field nm-field-stack">
+          <label class="nm-label" for="nm-debug-live-toggle">Live updates</label>
+          <label class="nm-toggle">
+            <input type="checkbox" id="nm-debug-live-toggle" checked>
+            <span class="nm-toggle-track"></span>
+          </label>
+        </div>
+        <div class="nm-field nm-field-stack">
+          <label class="nm-label" for="nm-debug-networks-toggle">Show debug networks</label>
+          <label class="nm-toggle">
+            <input type="checkbox" id="nm-debug-networks-toggle">
+            <span class="nm-toggle-track"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ── CENTER CANVAS ─────────────────────────────────────────── -->
+  <main class="nm-canvas-area">
+
+    <div id="ne-stats" class="ne-topbar" style="display:none"></div>
+    <div id="ne-key-text" class="ne-key-text" style="display:none"></div>
+
+    <!-- Welcome state (shown before any graph loads) -->
+    <div id="ne-welcome" class="ne-welcome">
+      <div class="ne-welcome-icon">⬡</div>
+      <p>Select an example or upload a GML file to begin</p>
+    </div>
+
+    <!-- Viewer (shown after graph loads) -->
+    <div id="ne-viewer" style="display:none">
+      <div class="ne-tab-strip">
+        <button class="ne-tab-btn active" data-tab="graph">Graph</button>
+        <button class="ne-tab-btn" data-tab="matrix">Matrix</button>
+        <button class="ne-tab-btn" data-tab="data">Data</button>
+        <button class="ne-tab-btn" data-tab="outputs" id="ne-outputs-tab-btn" style="display:none">Outputs</button>
+        <!-- Copy/download whatever the active tab is currently showing --
+             per direct request: "you can always copy or download whatever
+             you are currently looking at in the main panel", replacing the
+             old always-there Export GML/SVG buttons in the Network section
+             (removed) with something tied to the current view, same pattern
+             as the Outputs tab's own Copy/Download CSV. -->
+        <div id="ne-tab-export" class="ne-tab-export"></div>
+      </div>
+
+      <div id="ne-graph-pane" class="ne-graph-pane">
+        <canvas id="ne-map-bg"></canvas>
+        <canvas id="ne-webgl"></canvas>
+        <canvas id="ne-svg"></canvas>
+        <div id="ne-key-graphical" class="ne-key-graphical" style="display:none"></div>
+        <button id="ne-recenter-btn" class="ne-recenter-btn" style="display:none" title="View has drifted from the fitted default">↺ Recenter</button>
+        <!-- Mobile-only zoom rail -- pinch-zoom works but isn't discoverable,
+             and there's no scroll wheel on a phone (see Gephi Lite's own
+             floating tool rail, which this borrows the idea from). Hidden on
+             desktop by network_explorer.css. -->
+        <div class="ne-zoom-rail" id="ne-zoom-rail">
+          <button id="ne-zoom-in" title="Zoom in">+</button>
+          <button id="ne-zoom-out" title="Zoom out">−</button>
+          <button id="ne-zoom-fit" title="Fit to view">⤢</button>
+        </div>
+      </div>
+
+      <div id="ne-matrix-pane"  style="display:none"></div>
+      <div id="ne-data-pane"    style="display:none"></div>
+      <div id="ne-outputs-pane" style="display:none"></div>
+    </div>
+
+  </main>
+
+  <!-- ── RIGHT PANEL ───────────────────────────────────────────── -->
+  <aside class="nm-right-panel" id="nm-right-panel">
+
+    <!-- Thin collapse strip -->
+    <div class="nm-rp-strip">
+      <button class="nm-rp-toggle" id="nm-rp-toggle" title="Toggle panel">▶</button>
+    </div>
+
+    <!-- Scrollable body -->
+    <div class="nm-rp-body" id="nm-rp-body">
+
+      <!-- Mobile-only close -- on mobile the panel is a drawer that opens
+           only for a reason (node/edge tap, or the header search icon), not
+           a persistent strip you can tap to collapse (see network_explorer.css
+           and initMobileNav), so it needs its own explicit close affordance
+           once open. Hidden on desktop, where the strip's own ◀/▶ toggle
+           already does this job. -->
+      <button class="nm-rp-mobile-close" id="nm-rp-mobile-close" title="Close" type="button">✕</button>
+
+      <!-- Properties -- on mobile this is hidden (see network_explorer.css):
+           the topbar strip above the canvas already carries node/edge count
+           and directedness, so a phone doesn't need this fuller stats block
+           by default, only Node/Edge Detail and Search/Filters. Still full
+           on desktop, where there's room and it costs nothing to leave on. -->
+      <div class="nm-section open" id="nm-sec-properties">
+        <button class="nm-sec-hdr" type="button">
+          <span>Properties</span>
+          <svg class="nm-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0 5 6 10 0z"/></svg>
+        </button>
+        <div class="nm-sec-body">
+          <div id="nm-rp-stats">
+            <p class="nm-rp-empty">No network loaded</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Node detail: hidden until something is actually selected/hovered -->
+      <div class="nm-section open" id="nm-sec-node" style="display:none">
+        <button class="nm-sec-hdr" type="button">
+          <span>Node Detail</span>
+          <svg class="nm-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0 5 6 10 0z"/></svg>
+        </button>
+        <div class="nm-sec-body">
+          <div id="nm-rp-node">
+            <p class="nm-rp-empty">Click a node to inspect</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edge detail: hidden until an edge is actually hovered/pinned -->
+      <div class="nm-section open" id="nm-sec-edge" style="display:none">
+        <button class="nm-sec-hdr" type="button">
+          <span>Edge Detail</span>
+          <svg class="nm-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0 5 6 10 0z"/></svg>
+        </button>
+        <div class="nm-sec-body">
+          <div id="nm-rp-edge">
+            <p class="nm-rp-empty">Hover an edge to inspect</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters: hidden when the network has none, and collapsed (no "open")
+           even when it does -- it is a thing you go looking for, not something
+           that should occupy the panel by default -->
+      <div class="nm-section" id="nm-sec-filters" style="display:none">
+        <button class="nm-sec-hdr" type="button">
+          <span>Filters</span>
+          <svg class="nm-chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0 5 6 10 0z"/></svg>
+        </button>
+        <div class="nm-sec-body">
+          <div id="nm-rp-filters">
+            <p class="nm-rp-empty">Load a network to filter</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search: always visible, not an accordion. There is nothing to
+           collapse -- it is one input, and hiding it behind a header costs a
+           click for no space saved. -->
+      <div class="nm-section open nm-section-static">
+        <div class="nm-sec-body">
+          <input id="nm-node-search" class="nm-sb-input" type="text" placeholder="Find node…" style="width:100%;box-sizing:border-box">
+          <div id="nm-search-results" class="nm-search-results"></div>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+</div><!-- .nm-app -->
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+
+<!-- Injected by personal-website/tools/sync_edgewise.py. Not part of edgewise:
+     the explorer is standalone in its own repo, and this is only true of the
+     copy hosted inside maxjerdee.com. -->
+<style>
+  #mj-back {
+    position: fixed; left: 10px; bottom: 8px; z-index: 2147483000;
+    font: 500 12px/1.4 Inter, system-ui, -apple-system, sans-serif;
+    color: #64748b; text-decoration: none; padding: 4px 9px; border-radius: 6px;
+    background: rgba(255,255,255,.82); border: 1px solid rgba(15,23,42,.10);
+    backdrop-filter: blur(4px); transition: color .15s, border-color .15s;
+  }
+  #mj-back:hover { color: #0f172a; border-color: rgba(15,23,42,.28); }
+  @media (prefers-color-scheme: dark) {
+    #mj-back { color: #94a3b8; background: rgba(15,23,42,.72);
+               border-color: rgba(148,163,184,.22); }
+    #mj-back:hover { color: #e2e8f0; }
+  }
+  @media print { #mj-back { display: none; } }
+</style>
+<a id="mj-back" href="/" title="Back to maxjerdee.com">&#8592; Max Jerdee</a>
+</body>
+</html>

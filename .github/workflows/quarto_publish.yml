@@ -1,9 +1,15 @@
+# WHY THIS NO LONGER RUNS ON EVERY PUSH. docs/ is committed, and it was also
+# re-rendered here and committed again by the bot -- so every push to
+# quarto_src/ paid to reproduce a render that was already in the commit, and the
+# two renders then collided, which is where the repeated docs/ merge conflicts
+# came from. The local render is verifiable before it is pushed; this one was
+# not. So rendering is now a manual button, for when a render is needed without
+# a local Quarto.
+#
+# `make render` before committing is what keeps docs/ correct. It is the same
+# command this workflow runs.
 on:
   workflow_dispatch:
-  push:
-    branches: main
-    paths:
-      - 'quarto_src/**'
 
 name: Quarto Publish
 

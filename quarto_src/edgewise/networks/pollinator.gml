@@ -1,0 +1,121 @@
+graph [
+  directed 0
+  licenseId "NOASSERTION"
+  author "Elisangela L. S. Bezerra, Isabel C. Machado, and Marco A. R. Mello"
+  source "https://doi.org/10.1111/j.1365-2656.2009.01567.x"
+  layout "coord"
+  colorAttr "role"
+  sizeAttr "degree"
+  labelAttr "none"
+  edgeScale 2.3
+  edgeOpacity 0.35
+  coordXAttr "role"
+  title "Plant&#8211;Pollinator"
+  sublabel "26 nodes &#183; bipartite &#183; weighted"
+  category "Biological"
+  order 14
+  keyNodeShort "Species"
+  keyNodeFull "Plant or pollinator species"
+  keyEdgeShort "Pollinator visits plant"
+  keyEdgeFull "A pollinator visits a plant, width &#8733; number of observed visits"
+  keyStyle "graphical"
+  colorMap "{&quot;Plant&quot;: &quot;#59a14f&quot;, &quot;Pollinator&quot;: &quot;#edc948&quot;}"
+  sizeScale 2.0
+  node [ id "p1"  label "Diplopterys pubipetala"  group "0"  role "Plant"   x 60  y 448.95 ]
+  node [ id "p2"  label "Byrsonima gardnerana"  group "0"  role "Plant"   x 60  y -153.73 ]
+  node [ id "p3"  label "Banisteriopsis muricata"  group "0"  role "Plant"   x 60  y 175.98 ]
+  node [ id "p4"  label "Heteropterys sp1"  group "0"  role "Plant"   x 60  y 376.97 ]
+  node [ id "p5"  label "Heteropterys sp2"  group "0"  role "Plant"   x 60  y 102.54 ]
+  node [ id "p6"  label "Dicella bracteosa"  group "0"  role "Plant"   x 60  y 580.54 ]
+  node [ id "p7"  label "Carolus chasei"  group "0"  role "Plant"   x 60  y 310.26 ]
+  node [ id "p8"  label "Stigmaphyllon paralias"  group "0"  role "Plant"   x 60  y -217.4 ]
+  node [ id "p9"  label "Banisteriopsis stellaris"  group "0"  role "Plant"   x 60  y -88.77 ]
+  node [ id "p10"  label "Banisteriopsis schizoptera"  group "0"  role "Plant"   x 60  y -25.9 ]
+  node [ id "p11"  label "Stigmaphyllon auriculatum"  group "0"  role "Plant"   x 60  y 245.65 ]
+  node [ id "p12"  label "Stigmaphyllon ciliatum"  group "0"  role "Plant"   x 60  y 515.92 ]
+  node [ id "p13"  label "Janusia anisandra"  group "0"  role "Plant"   x 60  y 37.64 ]
+  node [ id "q1"  label "Centris aenea"  group "1"  role "Pollinator"   x 640  y 514.39 ]
+  node [ id "q2"  label "Centris fuscata"  group "1"  role "Pollinator"   x 640  y -81.93 ]
+  node [ id "q3"  label "Centris caxiensis"  group "1"  role "Pollinator"   x 640  y 136.51 ]
+  node [ id "q4"  label "Centris tarsata"  group "1"  role "Pollinator"   x 640  y -2.46 ]
+  node [ id "q5"  label "Centris flavifrons"  group "1"  role "Pollinator"   x 640  y 325.52 ]
+  node [ id "q6"  label "Centris trigonoides"  group "1"  role "Pollinator"   x 640  y 587.32 ]
+  node [ id "q7"  label "Centris obsoleta"  group "1"  role "Pollinator"   x 640  y 648.71 ]
+  node [ id "q8"  label "Epicharis sp2"  group "1"  role "Pollinator"   x 640  y 204.03 ]
+  node [ id "q9"  label "Apis mellifera"  group "1"  role "Pollinator"   x 640  y 68.61 ]
+  node [ id "q10"  label "Centris sp3"  group "1"  role "Pollinator"   x 640  y 385.8 ]
+  node [ id "q11"  label "Centris sp1"  group "1"  role "Pollinator"   x 640  y 265.41 ]
+  node [ id "q12"  label "Xylocopa sp"  group "1"  role "Pollinator"   x 640  y 445.03 ]
+  node [ id "q13"  label "Xylocopa grisescens"  group "1"  role "Pollinator"   x 640  y -152.34 ]
+  edge [ source "q1"  target "p1"  weight 1368 ]
+  edge [ source "q1"  target "p2"  weight 924 ]
+  edge [ source "q1"  target "p3"  weight 396 ]
+  edge [ source "q1"  target "p4"  weight 764 ]
+  edge [ source "q1"  target "p5"  weight 740 ]
+  edge [ source "q1"  target "p6"  weight 556 ]
+  edge [ source "q1"  target "p7"  weight 604 ]
+  edge [ source "q1"  target "p8"  weight 504 ]
+  edge [ source "q1"  target "p9"  weight 292 ]
+  edge [ source "q1"  target "p10"  weight 228 ]
+  edge [ source "q1"  target "p11"  weight 240 ]
+  edge [ source "q1"  target "p12"  weight 268 ]
+  edge [ source "q1"  target "p13"  weight 188 ]
+  edge [ source "q2"  target "p1"  weight 1364 ]
+  edge [ source "q2"  target "p2"  weight 320 ]
+  edge [ source "q2"  target "p3"  weight 468 ]
+  edge [ source "q2"  target "p4"  weight 680 ]
+  edge [ source "q2"  target "p5"  weight 656 ]
+  edge [ source "q2"  target "p6"  weight 512 ]
+  edge [ source "q2"  target "p7"  weight 452 ]
+  edge [ source "q2"  target "p8"  weight 816 ]
+  edge [ source "q2"  target "p9"  weight 300 ]
+  edge [ source "q2"  target "p10"  weight 224 ]
+  edge [ source "q2"  target "p11"  weight 164 ]
+  edge [ source "q2"  target "p12"  weight 196 ]
+  edge [ source "q2"  target "p13"  weight 244 ]
+  edge [ source "q3"  target "p1"  weight 740 ]
+  edge [ source "q3"  target "p2"  weight 2108 ]
+  edge [ source "q3"  target "p3"  weight 108 ]
+  edge [ source "q3"  target "p4"  weight 528 ]
+  edge [ source "q3"  target "p5"  weight 528 ]
+  edge [ source "q3"  target "p6"  weight 356 ]
+  edge [ source "q3"  target "p7"  weight 432 ]
+  edge [ source "q3"  target "p9"  weight 244 ]
+  edge [ source "q3"  target "p10"  weight 124 ]
+  edge [ source "q3"  target "p11"  weight 68 ]
+  edge [ source "q4"  target "p1"  weight 460 ]
+  edge [ source "q4"  target "p2"  weight 464 ]
+  edge [ source "q4"  target "p3"  weight 140 ]
+  edge [ source "q4"  target "p4"  weight 308 ]
+  edge [ source "q4"  target "p5"  weight 332 ]
+  edge [ source "q4"  target "p6"  weight 132 ]
+  edge [ source "q4"  target "p7"  weight 200 ]
+  edge [ source "q4"  target "p9"  weight 116 ]
+  edge [ source "q4"  target "p10"  weight 120 ]
+  edge [ source "q4"  target "p13"  weight 96 ]
+  edge [ source "q5"  target "p1"  weight 416 ]
+  edge [ source "q5"  target "p2"  weight 284 ]
+  edge [ source "q5"  target "p3"  weight 272 ]
+  edge [ source "q5"  target "p4"  weight 404 ]
+  edge [ source "q5"  target "p6"  weight 524 ]
+  edge [ source "q5"  target "p11"  weight 196 ]
+  edge [ source "q5"  target "p12"  weight 164 ]
+  edge [ source "q6"  target "p1"  weight 256 ]
+  edge [ source "q6"  target "p3"  weight 652 ]
+  edge [ source "q6"  target "p4"  weight 300 ]
+  edge [ source "q6"  target "p5"  weight 324 ]
+  edge [ source "q7"  target "p3"  weight 912 ]
+  edge [ source "q8"  target "p1"  weight 328 ]
+  edge [ source "q8"  target "p3"  weight 364 ]
+  edge [ source "q8"  target "p4"  weight 28 ]
+  edge [ source "q8"  target "p5"  weight 116 ]
+  edge [ source "q9"  target "p1"  weight 364 ]
+  edge [ source "q9"  target "p2"  weight 28 ]
+  edge [ source "q9"  target "p3"  weight 44 ]
+  edge [ source "q9"  target "p5"  weight 116 ]
+  edge [ source "q10"  target "p1"  weight 368 ]
+  edge [ source "q11"  target "p3"  weight 368 ]
+  edge [ source "q12"  target "p3"  weight 164 ]
+  edge [ source "q12"  target "p4"  weight 76 ]
+  edge [ source "q13"  target "p3"  weight 84 ]
+]

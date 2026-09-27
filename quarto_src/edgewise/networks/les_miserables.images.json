@@ -1,0 +1,128 @@
+{
+  "Napoleon": {
+    "file": "images/lesmis/napoleon.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg",
+    "sourceTitle": "Napoleon",
+    "license": "Public domain",
+    "artist": "Jacques-Louis David"
+  },
+  "Javert": {
+    "file": "images/lesmis/javert.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Javert.jpg",
+    "sourceTitle": "Javert",
+    "license": "Public domain",
+    "artist": "Gustave Brion"
+  },
+  "Fantine": {
+    "file": "images/lesmis/fantine.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Margaret_Bernardine_Hall_-_Fantine_-_Google_Art_Project.jpg",
+    "sourceTitle": "Fantine",
+    "license": "Public domain",
+    "artist": "Margaret Bernadine Hall"
+  },
+  "Cosette": {
+    "file": "images/lesmis/cosette.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cosette-sweeping-les-miserables-emile-bayard-1862.jpg",
+    "sourceTitle": "Cosette",
+    "license": "Public domain",
+    "artist": "Émile Bayard"
+  },
+  "Thenardier": {
+    "file": "images/lesmis/thenardier.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Les_Mis%C3%A9rables_-_les_Th%C3%A9nardier.jpg",
+    "sourceTitle": "Thénardiers",
+    "license": "Public domain",
+    "artist": "Gustave Brion"
+  },
+  "Eponine": {
+    "file": "images/lesmis/eponine.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Les_Mis%C3%A9rables_-_Cab_roule_en_anglais.jpg",
+    "sourceTitle": "Éponine",
+    "license": "Public domain",
+    "artist": "Fernand Desmoulin / After Pierre-Georges Jeanniot"
+  },
+  "Gavroche": {
+    "file": "images/lesmis/gavroche.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gavroche_(Les_Mis%C3%A9rables).jpg",
+    "sourceTitle": "Gavroche",
+    "license": "Public domain",
+    "artist": "Émile Bayard"
+  },
+  "Enjolras": {
+    "file": "images/lesmis/enjolras.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Friends_of_the_ABC.jpg",
+    "sourceTitle": "Enjolras",
+    "license": "Public domain",
+    "artist": "Frédéric Théodore Lix"
+  },
+  "Grantaire": {
+    "file": "images/lesmis/grantaire.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Enjolras_fuzilado.jpg",
+    "sourceTitle": "Grantaire",
+    "license": "Public domain",
+    "artist": "Clément Bellenger"
+  },
+  "Claquesous": {
+    "file": "images/lesmis/claquesous.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Patron_minette.jpg",
+    "sourceTitle": "Patron-Minette",
+    "license": "Public domain",
+    "artist": "Pierre-Georges Jeanniot"
+  },
+  "Myriel": {
+    "file": "images/lesmis/myriel.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mgr_Bienvenu_par_Gustave_Brion.jpg",
+    "sourceTitle": "Bishop Myriel",
+    "license": "Public domain",
+    "artist": "Gustave Brion"
+  },
+  "Valjean": {
+    "file": "images/lesmis/valjean.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monsieur_Madeleine_par_Gustave_Brion.jpg",
+    "sourceTitle": "Jean Valjean",
+    "license": "Public domain",
+    "artist": "Gustave Brion"
+  },
+  "MmeThen.": {
+    "file": "images/lesmis/mmethen.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Les_Mis%C3%A9rables_-_les_Th%C3%A9nardier.jpg",
+    "sourceTitle": "Thénardiers",
+    "license": "Public domain",
+    "artist": "Gustave Brion"
+  },
+  "Marius": {
+    "file": "images/lesmis/marius.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gustave_Brion_-_Marius_Pontmercy.jpg",
+    "sourceTitle": "Marius Pontmercy",
+    "license": "Public domain",
+    "artist": "Gustave Brion"
+  },
+  "Champtercier": {
+    "file": "images/lesmis/champtercier.JPG",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Village_Champtercier.JPG",
+    "sourceTitle": "Champtercier",
+    "license": "CC BY 2.5",
+    "artist": "No machine-readable author provided. Mzelle Laure assumed (based on copyright claims)."
+  },
+  "Count": {
+    "file": "images/lesmis/count.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Johan_Erik_Lindh_-_Portrait_of_Carl_Gustaf_Mannerheim_(1797-1854).jpg",
+    "sourceTitle": "Count",
+    "license": "Public domain",
+    "artist": "Johan Erik Lindh"
+  },
+  "Isabeau": {
+    "file": "images/lesmis/isabeau.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maria_Farneti_(1911).jpg",
+    "sourceTitle": "Isabeau",
+    "license": "Public domain",
+    "artist": "https://c2.staticflickr.com/4/3237/3015264262_fb1f50e398.jpg"
+  },
+  "Favourite": {
+    "file": "images/lesmis/favourite.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Count-Duke_of_Olivares.jpg",
+    "sourceTitle": "Favourite",
+    "license": "Public domain",
+    "artist": "Diego Velázquez"
+  }
+}
