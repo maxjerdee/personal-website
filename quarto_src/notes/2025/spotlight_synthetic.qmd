@@ -28,9 +28,9 @@ Every figure here is live: drag a node, hover for a name, and *Open with control
 
 Synthetic sym stochastic block model: n = 1000, q = 30 planted groups, target mean degree c = 5, assortative: most edges fall inside a node's own planted group (lambda = 3). Generated in Mathematica for the ASBM resolution-limit tests; trial file sym_q_30_c_5_lambda_3_t_9.gml.
 
-*[data and build script](https://github.com/maxjerdee/networks/tree/main/networks/sym_q_30_c_5_lambda_3_t_9)*
+*Max Jerdee · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/sym_q_30_c_5_lambda_3_t_9)*
 
-**Licence.** Generated for this repository's own ASBM tests; no third-party data rights apply. Covered by this repository's own licence.
+**Licence.** CC BY 4.0. Made for this repository, so there are no upstream data rights; reuse with attribution to Max Jerdee.
 
 <!-- THOUGHTS:sym_q_30_c_5_lambda_3_t_9 -- your prose goes below; regeneration preserves it -->
 
@@ -53,9 +53,9 @@ Synthetic sym stochastic block model: n = 1000, q = 30 planted groups, target me
 
 Synthetic ring stochastic block model: n = 1000, q = 30 planted groups, target mean degree c = 5, disassortative ring: group r connects almost only to groups r-1 and r+1 (lambda = 0). Generated in Mathematica for the ASBM resolution-limit tests; trial file ring_q_30_c_5_lambda_0_t_1.gml.
 
-*[data and build script](https://github.com/maxjerdee/networks/tree/main/networks/ring_q_30_c_5_lambda_0_t_1)*
+*Max Jerdee · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/ring_q_30_c_5_lambda_0_t_1)*
 
-**Licence.** Generated for this repository's own ASBM tests; no third-party data rights apply. Covered by this repository's own licence.
+**Licence.** CC BY 4.0. Made for this repository, so there are no upstream data rights; reuse with attribution to Max Jerdee.
 
 <!-- THOUGHTS:ring_q_30_c_5_lambda_0_t_1 -- your prose goes below; regeneration preserves it -->
 

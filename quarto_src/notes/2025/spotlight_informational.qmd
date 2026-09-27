@@ -28,7 +28,7 @@ Every figure here is live: drag a node, hover for a name, and *Open with control
 
 V. Krebs, unpublished (compiled from Amazon.com co-purchasing data around the 2004 US presidential election). Distributed via M. E. J. Newman's network data collection and the Netzschleuder network repository.
 
-*[source](https://networks.skewed.de/net/polbooks) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/polbooks)*
+*Valdis Krebs · [source](https://networks.skewed.de/net/polbooks) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/polbooks)*
 
 **Licence.** No licence stated, and none was ever attached -- the dataset is "V. Krebs, unpublished". Redistributed widely in the network-science literature, including from Newman's own site, so the practice is long established, but there is nothing to point to.
 
@@ -53,9 +53,9 @@ V. Krebs, unpublished (compiled from Amazon.com co-purchasing data around the 20
 
 Python 3.10.12's own standard library import graph: a directed edge A->B means module A imports module B at module level, parsed directly from this interpreter's installed stdlib source via the ast module -- no external dataset. Modules that neither import, nor are imported by, any other stdlib module in this set are omitted.
 
-*[data and build script](https://github.com/maxjerdee/networks/tree/main/networks/python_stdlib)*
+*CPython developers (Python standard library) · compiled by Max Jerdee · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/python_stdlib)*
 
-**Licence.** Built for this repository from the CPython standard library's own import graph; module names and import relations only, no code. Covered by this repository's own licence.
+**Licence.** CC BY 4.0 for this compilation. Built for this repository from the CPython standard library's own import graph: module names and import relations only, no code.
 
 <!-- THOUGHTS:python_stdlib -- your prose goes below; regeneration preserves it -->
 
@@ -78,7 +78,7 @@ Python 3.10.12's own standard library import graph: a directed edge A->B means m
 
 WordNet's hypernym (IS-A) hierarchy under 'vehicle.n.01', depth 4: a directed edge parent->child means the child is a more specific kind of the parent (e.g. car -> convertible). A literal tree -- WordNet itself allows a synset more than one hypernym (14 of these 301 genuinely have two or three, e.g. tank is both an armored vehicle and a tracked vehicle), but only the first in-pool one (WordNet's own listed order) is kept as this synset's edge, so every node has exactly one parent. depth/height are computed from this kept tree, truncated to depth <=4 by it (not by the wider hyponym search used to find candidates). Source: Princeton WordNet, via NLTK's corpus interface.
 
-*[source](https://wordnet.princeton.edu/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/wordnet_vehicle)*
+*Princeton University (WordNet 3.0) · compiled by Max Jerdee · [source](https://wordnet.princeton.edu/download) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/wordnet_vehicle)*
 
 **Licence.** WordNet 3.0 licence (Princeton University): permissive, redistribution permitted with the copyright notice retained and attribution given.
 
@@ -103,7 +103,7 @@ WordNet's hypernym (IS-A) hierarchy under 'vehicle.n.01', depth 4: a directed ed
 
 Runtime dependencies among 250 widely-used npm packages, from the public npm registry. A -> B means A lists B in its dependencies. Built by taking the 600 packages with the most dependents, computing the dependency edges among them, and keeping the 250 most connected as an induced subgraph.
 
-*[source](https://registry.npmjs.org/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/npm_deps)*
+*npm registry · compiled by Max Jerdee · [source](https://registry.npmjs.org/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/npm_deps)*
 
 **Licence.** Public package metadata from the npm registry -- package names and dependency relations only, no package contents.
 
@@ -128,7 +128,7 @@ Runtime dependencies among 250 widely-used npm packages, from the public npm reg
 
 Citations among 250 of the most-cited opinions of the U.S. Supreme Court, from every volume of U.S. Reports. A -> B means opinion A cites opinion B; citations restricted to pairs within the set. The set is the largest connected component of the top 256 by citations received, so every case here cites or is cited by another. Case text and citation extraction: Caselaw Access Project (case.law). Subject-matter classification (issueArea): Supreme Court Database, H. J. Spaeth et al., supremecourtdatabase.org.
 
-*[source](https://static.case.law/us/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/scotus_citations)*
+*Caselaw Access Project · compiled by Max Jerdee · [source](https://static.case.law/us/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/scotus_citations)*
 
 **Licence.** Public domain. US court opinions carry no copyright, and the Caselaw Access Project states its bulk data is free of restrictions.
 
@@ -153,7 +153,7 @@ Citations among 250 of the most-cited opinions of the U.S. Supreme Court, from e
 
 Citation data from OpenAlex (openalex.org), 2019-2023 citation window; compiled for edgewise.
 
-*[source](https://openalex.org/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/journals)*
+*OpenAlex · compiled by Max Jerdee · [source](https://openalex.org/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/journals)*
 
 **Licence.** CC0 1.0. OpenAlex places its data in the public domain.
 

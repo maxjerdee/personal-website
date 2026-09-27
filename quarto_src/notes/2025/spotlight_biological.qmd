@@ -28,7 +28,7 @@ Every figure here is live: drag a node, hover for a name, and *Open with control
 
 Bezerra, E. L. S., Machado, I. C., & Mello, M. A. R. (2009). Pollination networks of oil-flowers: a tiny world within the smallest of all worlds. Journal of Animal Ecology, 78(5), 1096-1101. Caatinga network (Parque Nacional do Catimbau, Brazil), via the Interaction Web Database, ecologia.ib.usp.br/iwdb.
 
-*[source](https://doi.org/10.1111/j.1365-2656.2009.01567.x) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/pollinator)*
+*Elisangela L. S. Bezerra, Isabel C. Machado, and Marco A. R. Mello · [source](https://doi.org/10.1111/j.1365-2656.2009.01567.x) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/pollinator)*
 
 **Licence.** No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.
 
@@ -53,7 +53,7 @@ Bezerra, E. L. S., Machado, I. C., & Mello, M. A. R. (2009). Pollination network
 
 Cirtwill, A. R., & Eklof, A. (2018). Feeding environment and other traits shape species' roles in marine food webs. Ecology Letters, 21(6), 875-884. Data: Dryad doi:10.5061/dryad.1mv20r6. Original food web data from Jacob, U. et al. (2011). The Role of Body Size in Complex Food Webs: A Cold Case. Advances in Ecological Research, 45, 181-223.
 
-*[source](https://doi.org/10.5061/dryad.1mv20r6) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/weddell_sea_foodweb)*
+*Alyssa R. Cirtwill and Anna Eklof (compilers); original food web data from Jacob et al. (2011) · [source](https://doi.org/10.5061/dryad.1mv20r6) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/weddell_sea_foodweb)*
 
 **Licence.** Deposited on Dryad, whose terms place deposited data under CC0 1.0. Attribution is requested rather than required; cite both papers below.
 
@@ -78,7 +78,7 @@ Cirtwill, A. R., & Eklof, A. (2018). Feeding environment and other traits shape 
 
 C. elegans hermaphrodite neural connectome. Chemical synapses (directed, weighted by synapse count) and electrical gap junctions (edge attribute type=electrical, undirected in practice) from White, Southgate, Thomson and Brenner 1986, curated as white_1986_n2u.csv in openworm/ConnectomeToolbox (MIT license). Neuron class (sensory/interneuron/motor) from the same repo's Cook et al. 2019-derived classification. Soma position (x/y/z, micrometers) from openworm/CElegansNeuroML's per-neuron 3D reconstruction, released into the public domain (VirtualWorm project, WormBase/CalTech).
 
-*[source](https://github.com/openworm/ConnectomeToolbox) [source](https://github.com/openworm/CElegansNeuroML) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/celegans)*
+*OpenWorm (ConnectomeToolbox, CElegansNeuroML) · compiled by Max Jerdee · [source](https://github.com/openworm/ConnectomeToolbox) [source](https://github.com/openworm/CElegansNeuroML) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/celegans)*
 
 **Licence.** MIT, from openworm/ConnectomeToolbox, combined with public-domain data from CElegansNeuroML.
 

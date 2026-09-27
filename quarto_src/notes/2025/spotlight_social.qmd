@@ -28,7 +28,7 @@ Every figure here is live: drag a node, hover for a name, and *Open with control
 
 Zachary, W. W. (1977). An information flow model for conflict and fission in small groups. Journal of Anthropological Research, 33(4), 452-473.
 
-*[source](https://doi.org/10.1086/jar.33.4.3629752) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/karate)*
+*Wayne W. Zachary · [source](https://networks.skewed.de/net/karate) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/karate)*
 
 **Licence.** No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.
 
@@ -53,9 +53,9 @@ Zachary, W. W. (1977). An information flow model for conflict and fission in sma
 
 Reported friendship network of 329 students in nine classes of a lycee in Marseille, France, December 2013. A directed edge i->j means student i named j as a friend in the survey. Collected by the SocioPatterns collaboration alongside wearable-sensor proximity, contact-diary and Facebook networks for the same school; this is the friendship survey. Mastrandrea, R., Fournet, J., & Barrat, A. (2015). Contact Patterns in a High School: A Comparison between Data Collected Using Wearable Sensors, Contact Diaries and Friendship Surveys. PLOS ONE 10(9), e0136497. Node attribute `class` is a readable name for each of the nine classes, with the original French preparatory-class code kept as `class_code` (a trailing * marks the selective stream of that subject); `field` collapses the nine into the four subjects they study.
 
-*[source](https://www.sociopatterns.org/datasets/high-school-contact-and-friendship-networks/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/friends)*
+*SocioPatterns (R. Mastrandrea, J. Fournet, A. Barrat) · compiled by Max Jerdee · [source](https://www.sociopatterns.org/datasets/high-school-contact-and-friendship-networks/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/friends)*
 
-**Licence.** Creative Commons Attribution-NonCommercial-ShareAlike (CC BY-NC-SA), as stated by SocioPatterns. Redistribution permitted with attribution; non-commercial; a redistributed derivative must carry the same licence.
+**Licence.** Creative Commons Attribution-NonCommercial-ShareAlike 3.0 (CC BY-NC-SA 3.0), as stated by SocioPatterns. Redistribution permitted with attribution; non-commercial; a redistributed derivative must carry the same licence.
 
 <!-- THOUGHTS:friends -- your prose goes below; regeneration preserves it -->
 
@@ -78,7 +78,7 @@ Reported friendship network of 329 students in nine classes of a lycee in Marsei
 
 Declared Facebook friendships among students at the Technical University of Denmark, from the Copenhagen Networks Study -- one of four interaction layers recorded for the same population (the others being Bluetooth proximity, phone calls and text messages). Undirected: a Facebook friendship is mutual by construction. Sapiezynski, P., Stopczynski, A., Lassen, D. D., & Lehmann, S. (2019). Interaction data from the Copenhagen Networks Study. Scientific Data 6, 315. Gender is the only node attribute the study released; there is no class or department.
 
-*[source](https://doi.org/10.6084/m9.figshare.7267433) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/copenhagen_fb)*
+*P. Sapiezynski, A. Stopczynski, D. D. Lassen, S. Lehmann · compiled by Max Jerdee · [source](https://doi.org/10.6084/m9.figshare.7267433) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/copenhagen_fb)*
 
 **Licence.** MIT, as stated on the figshare record. No commercial or share-alike restriction.
 
@@ -103,7 +103,7 @@ Declared Facebook friendships among students at the Technical University of Denm
 
 Knuth, D. E. (1993). The Stanford GraphBase: A Platform for Combinatorial Computing. Addison-Wesley.
 
-*[source](https://www-cs-faculty.stanford.edu/~knuth/sgb.html) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/les_miserables)*
+*Donald E. Knuth · compiled by Max Jerdee · [source](https://www-cs-faculty.stanford.edu/~knuth/sgb.html) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/les_miserables)*
 
 **Licence.** No licence stated. From Knuth's Stanford GraphBase, distributed for public use and redistributed very widely (d3, networkx, igraph). Cite the book.
 
@@ -128,9 +128,9 @@ Knuth, D. E. (1993). The Stanford GraphBase: A Platform for Combinatorial Comput
 
 Character interaction network hand-constructed from Shakespeare's Romeo and Juliet for the edgewise example gallery (not derived from a published network dataset).
 
-*[data and build script](https://github.com/maxjerdee/networks/tree/main/networks/romeo_and_juliet)*
+*Max Jerdee · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/romeo_and_juliet)*
 
-**Licence.** Built for this repository from the play itself; no third-party data rights apply. Covered by this repository's own licence.
+**Licence.** CC BY 4.0. Hand-constructed for this repository from the play itself (public domain), so there are no upstream data rights; reuse with attribution to Max Jerdee.
 
 <!-- THOUGHTS:romeo_and_juliet -- your prose goes below; regeneration preserves it -->
 
@@ -153,7 +153,7 @@ Character interaction network hand-constructed from Shakespeare's Romeo and Juli
 
 Girvan, M., & Newman, M. E. J. (2002). Community structure in social and biological networks. Proceedings of the National Academy of Sciences, 99(12), 7821-7826. Conferences corrected to the 2000 season, and the three conference-championship rematches removed to leave the regular season only, per Evans, T. S. (2010). Clique graphs and overlapping communities. J. Stat. Mech. P12037.
 
-*[source](https://doi.org/10.1073/pnas.122653799) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/football)*
+*Michelle Girvan and Mark E. J. Newman · [source](https://doi.org/10.6084/m9.figshare.93179) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/football)*
 
 **Licence.** No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.
 
@@ -178,7 +178,7 @@ Girvan, M., & Newman, M. E. J. (2002). Community structure in social and biologi
 
 Padgett, J. F., & Ansell, C. K. (1993). Robust Action and the Rise of the Medici, 1400-1434. American Journal of Sociology, 98(6), 1259-1319.
 
-*[source](https://doi.org/10.1086/230190) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/florentine)*
+*John F. Padgett and Christopher K. Ansell · [source](https://doi.org/10.1086/230190) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/florentine)*
 
 **Licence.** No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.
 
@@ -203,7 +203,7 @@ Padgett, J. F., & Ansell, C. K. (1993). Robust Action and the Rise of the Medici
 
 Masure, R. H., & Allee, W. C. (1934). The social order in flocks of the common chicken and the pigeon. The Auk, 51(3), 306-327.
 
-*[source](https://doi.org/10.2307/4077659) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/chickens)*
+*Ralph H. Masure and W. C. Allee · [source](https://doi.org/10.2307/4077659) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/chickens)*
 
 **Licence.** No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.
 

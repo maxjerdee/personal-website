@@ -112,11 +112,22 @@ def section(d: pathlib.Path, entry: dict) -> str:
         L += [unescape(a.get("attribution") or a.get("selfContained")), ""]
 
     bits = []
+    if a.get("author"):
+        # `author` means the creator of the original data, never this repo.
+        bits.append(unescape(a["author"]))
+    # ...and compiledBy is who built this particular file from it, where that was
+    # real work. Absent for a network transcribed as published -- and suppressed
+    # when it is the same person as the author, which is the case for the networks
+    # made here and would otherwise read "Max Jerdee, compiled by Max Jerdee".
+    if a.get("compiledBy") and a.get("compiledBy") != a.get("author"):
+        bits.append(f"compiled by {unescape(a['compiledBy'])}")
     if a.get("source"):
         bits.append(" ".join(f"[source]({u.strip()})" for u in a["source"].split(";")))
     bits.append(f"[data and build script](https://github.com/maxjerdee/networks/tree/main/networks/{stem})")
     L += ["*" + " · ".join(bits) + "*", ""]
     if a.get("license"):
+        # The prose licence, not the SPDX id: a reader needs the terms, and for
+        # several of these the true answer is a sentence, not an identifier.
         L += [f"**Licence.** {unescape(a['license'])}", ""]
 
     L += [BEGIN.format(slug=stem), "", "*(thoughts to come)*", "",

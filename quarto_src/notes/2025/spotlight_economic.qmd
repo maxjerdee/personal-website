@@ -28,7 +28,7 @@ Every figure here is live: drag a node, hover for a name, and *Open with control
 
 Clauset, A., Arbesman, S., & Larremore, D. B. (2015). Systematic inequality and hierarchy in faculty hiring networks. Science Advances, 1(1), e1400005.
 
-*[source](https://doi.org/10.1126/sciadv.1400005) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/business_depts)*
+*Aaron Clauset, Samuel Arbesman, and Daniel B. Larremore · [source](https://networks.skewed.de/net/faculty_hiring) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/business_depts)*
 
 **Licence.** Supplementary data from an open-access Science Advances article; no separate data licence is stated. Cite the paper.
 
@@ -53,7 +53,7 @@ Clauset, A., Arbesman, S., & Larremore, D. B. (2015). Systematic inequality and 
 
 De Domenico, M., Nicosia, V., Arenas, A., & Latora, V. (2015). Structural reducibility of multilayer networks. Nature Communications, 6, 6864.  Underlying data: FAO detailed trade matrix, 2010.
 
-*[source](https://networks.skewed.de/net/fao_trade) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/world_trade)*
+*Manlio De Domenico, Vincenzo Nicosia, Alexandre Arenas, and Vito Latora · compiled by Max Jerdee · [source](https://networks.skewed.de/net/fao_trade) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/world_trade)*
 
 **Licence.** No explicit licence; released for research use with citation by the authors and redistributed by Netzschleuder (networks.skewed.de), which does serve this dataset -- the contrast with Add Health, which it refuses to serve, is the point.
 
@@ -78,7 +78,7 @@ De Domenico, M., Nicosia, V., Arenas, A., & Latora, V. (2015). Structural reduci
 
 The busiest 200 airports worldwide (by total scheduled-route degree) and the routes between them, from OpenFlights' airports.dat/routes.dat (github.com/jpatokal/openflights), Open Database License. Undirected: OpenFlights' own routes are directional, but 99.5% of pairs here had a route listed both ways, so direction carried almost no information; edge weight sums the two directions' distinct-route counts into one (a frequency proxy -- the source data has no seat-capacity or passenger-count field). Continent from each airport's country via the country_converter package.
 
-*[source](https://github.com/jpatokal/openflights) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/airline_routes)*
+*OpenFlights (Jani Patokallio and contributors) · compiled by Max Jerdee · [source](https://github.com/jpatokal/openflights) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/airline_routes)*
 
 **Licence.** Open Database License (ODbL) -- attribute OpenFlights and license any publicly-used derivative database under ODbL.
 
