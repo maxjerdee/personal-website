@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2025-07-16">
-<meta name="description" content="An introduction to networks and the group and hierarchy structures they reveal">
+<meta name="description" content="An introduction to networks and the group and hierarchy structures they reveal — draft with embedded interactive figures">
 
-<title>Network structures – Max Jerdee</title>
+<title>Network structures (interactive draft) – Max Jerdee</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -370,7 +370,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Network structures</h1>
+<h1 class="title">Network structures (interactive draft)</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Review</div>
   </div>
@@ -378,7 +378,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    An introduction to networks and the group and hierarchy structures they reveal
+    An introduction to networks and the group and hierarchy structures they reveal — draft with embedded interactive figures
   </div>
 </div>
 
@@ -401,6 +401,113 @@ window.Quarto = {
 </header>
 
 
+<style>
+/*
+  Embedded edgewise figures: one place that knows where the explorer lives.
+
+  WHY THIS EXISTS. The embeds were written as
+  <iframe src="EDGEWISE_BASE/?embed=1&network=...">, with the base meant to be
+  substituted later. It never was, so five iframes in
+  notes/2025/network_structures_interactive.qmd pointed at a relative path called
+  "EDGEWISE_BASE" and rendered as nothing. A placeholder that has to be replaced
+  by hand in every file is a placeholder that stays.
+
+  Quarto's own var shortcodes are not expanded inside a raw ```{=html} block,
+  which is what every embed has to be, so the substitution happens in the browser.
+
+  NOTE ON THIS COMMENT. It is a CSS comment, not an HTML one. A leading HTML
+  comment block in an included file breaks Quarto's Lua filter in this project
+  ("Cannot get Attr from TypeNil", no file named), which is the same failure that
+  had been silently stopping network_structures_interactive.qmd from rendering at
+  all. Keep documentation inside style/script blocks here.
+
+  HOW TO USE IT. Pull this file into a note once, with a Quarto include shortcode
+  pointing at assets/html/edgewise-embed.html -- see the top of any
+  notes/2025/spotlight_*.qmd for the line. Then write each figure with no URL:
+
+      <div class="ew-embed" data-network="football.gml"
+           data-params="colorAttr=conference&sizeAttr=degree"
+           data-caption="US college football, 2000 season"></div>
+
+  inside a raw html block. Each becomes an iframe plus an "Open with controls"
+  link to the same view with the option panels restored, so a reader who wants to
+  change the colouring can, in a full window, without a second embed.
+
+  MOVING THE EXPLORER is one edit: EDGEWISE_BASE in the script below. While it is
+  empty, every figure renders a visible "not configured" box rather than a blank
+  frame -- the silence that let the original placeholder survive a whole render.
+*/
+
+.ew-embed { margin: 0.5rem 0 1rem; }
+.ew-embed iframe {
+  width: 100%; height: 420px; min-width: 260px; border: 1px solid #d8d8d8;
+  border-radius: 6px; background: #fff; display: block;
+}
+.ew-embed-bar {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 1rem; font-size: 0.82rem; margin-top: 0.35rem; line-height: 1.35;
+}
+.ew-embed-caption { color: #666; }
+.ew-embed-link { white-space: nowrap; }
+.ew-embed-missing {
+  border: 1px dashed #c00; border-radius: 6px; padding: 1rem;
+  font-size: 0.85rem; color: #900; background: #fff6f6;
+}
+/* The frame is a light-themed app; keep it legible on the dark site theme. */
+.quarto-dark .ew-embed iframe { background: #fff; border-color: #444; }
+.quarto-dark .ew-embed-caption { color: #aaa; }
+</style>
+<script>
+(function () {
+  // The deployed explorer. One string, one place. Leave off the trailing slash.
+  const EDGEWISE_BASE = "";
+
+  function render() {
+    for (const el of document.querySelectorAll(".ew-embed")) {
+      if (el.dataset.ewDone) continue;
+      el.dataset.ewDone = "1";
+      const net = el.dataset.network;
+      const params = el.dataset.params || "";
+      const caption = el.dataset.caption || "";
+      if (!net) continue;
+
+      if (!EDGEWISE_BASE) {
+        // Visible, not silent: an unconfigured base is the reason the original
+        // placeholder went unnoticed through a whole render.
+        el.innerHTML = '<div class="ew-embed-missing"><strong>Interactive figure not '
+          + 'configured.</strong> Set <code>EDGEWISE_BASE</code> in '
+          + '<code>assets/html/edgewise-embed.html</code> to the deployed explorer. '
+          + 'This figure would show <code>' + net + '</code>.</div>'
+          + (caption ? '<div class="ew-embed-bar"><span class="ew-embed-caption">'
+              + caption + '</span></div>' : '');
+        continue;
+      }
+
+      const q = "network=" + encodeURIComponent(net) + (params ? "&" + params : "");
+      const frame = document.createElement("iframe");
+      frame.src = EDGEWISE_BASE + "/?embed=1&" + q;
+      frame.setAttribute("loading", "lazy");
+      frame.setAttribute("scrolling", "no");
+      frame.setAttribute("frameborder", "0");
+      frame.setAttribute("title", caption || net);
+      el.appendChild(frame);
+
+      const bar = document.createElement("div");
+      bar.className = "ew-embed-bar";
+      bar.innerHTML = '<span class="ew-embed-caption">' + caption + '</span>'
+        + '<a class="ew-embed-link" target="_blank" rel="noopener noreferrer" href="'
+        + EDGEWISE_BASE + "/?" + q + '">Open with controls &#8599;</a>';
+      el.appendChild(bar);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", render);
+  } else {
+    render();
+  }
+})();
+</script>
 <p>Networks are often used to represent complex systems composed of many parts, such as individual people, animals, or atoms. Their study focuses on the nature and structure of interactions between these components. Just as a universe of only non-interacting particles would be a lifeless soup, a collection of people who never interact is boring and unrealistic to study. The network of interactions between the many pieces makes the system “complex.”</p>
 <p>This note gives examples of emergent structures found in these networks, and the presentation is adapted from my <a href="../../assets/pdf/Thesis.pdf">PhD thesis</a>.</p>
 <section id="representing-network-data" class="level2">
@@ -412,12 +519,12 @@ window.Quarto = {
 <img src="../../assets/images/notes/network_structures/orangutan-network.svg" class="img-fluid figure-img" style="width:5.40567in">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-orangutan-network-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Network of interactions observed by Setia&nbsp;<em>et al.</em>&nbsp;<span class="citation" data-cites="SV07">(<a href="#ref-SV07" role="doc-biblioref">Setia and Schaik 2007</a>)</span> among <span class="math inline">\(n = 6\)</span> orangutans represented (a) as a graph and (b) as an adjacency matrix&nbsp;<span class="math inline">\(\boldsymbol{A}\)</span>. (c) The node degrees&nbsp;<span class="math inline">\(\boldsymbol{k}\)</span>, the number of interactions of each orangutan.
+Figure&nbsp;1: Network of interactions observed by Setia <em>et al.</em> <span class="citation" data-cites="SV07">(<a href="#ref-SV07" role="doc-biblioref">Setia and Schaik 2007</a>)</span> among <span class="math inline">\(n = 6\)</span> orangutans represented (a) as a graph and (b) as an adjacency matrix <span class="math inline">\(\boldsymbol{A}\)</span>. (c) The node degrees <span class="math inline">\(\boldsymbol{k}\)</span>, the number of interactions of each orangutan.
 </figcaption>
 </figure>
 </div>
-<p>An example network is given in <a href="#fig-orangutan-network" class="quarto-xref">Figure&nbsp;1</a>a. There the colored nodes represent 6 Indonesian flanged male orangutans who are connected by an edge if a vocalization between them was observed in a study by Setia&nbsp;<em>et al.</em>&nbsp;<span class="citation" data-cites="SV07">(<a href="#ref-SV07" role="doc-biblioref">Setia and Schaik 2007</a>)</span>. As reflected in the graph, 5 of the 6 orangutans form a <em>clique</em> of nodes that each interact with each other while the remaining ape represented in red interfaced with only the orange and magenta orangutans.</p>
-<p>Such a network on&nbsp;<span class="math inline">\(n\)</span> nodes is often alternatively represented by a <span class="math inline">\(n \times n\)</span> <em>adjacency matrix</em>&nbsp;<span class="math inline">\(\boldsymbol{A}\)</span>, whose entry&nbsp;<span class="math inline">\(A_{ij}\)</span> for&nbsp;<span class="math inline">\(i,j = 1,...,n\)</span> is equal to <span class="math inline">\(1\)</span> if nodes&nbsp;<span class="math inline">\(i\)</span> and&nbsp;<span class="math inline">\(j\)</span> interact and&nbsp;<span class="math inline">\(0\)</span> otherwise. <a href="#fig-orangutan-network" class="quarto-xref">Figure&nbsp;1</a>b shows the orangutan network in this format with the rows and columns labeled by the orangutan they reference. This matrix and its properties naturally convey information about the network. For example the vector&nbsp;<span class="math inline">\(\boldsymbol{k}\)</span> of row (or column) sums of the adjacency matrix</p>
+<p>An example network is given in <a href="#fig-orangutan-network" class="quarto-xref">Figure&nbsp;1</a>a. There the colored nodes represent 6 Indonesian flanged male orangutans who are connected by an edge if a vocalization between them was observed in a study by Setia <em>et al.</em> <span class="citation" data-cites="SV07">(<a href="#ref-SV07" role="doc-biblioref">Setia and Schaik 2007</a>)</span>. As reflected in the graph, 5 of the 6 orangutans form a <em>clique</em> of nodes that each interact with each other while the remaining ape represented in red interfaced with only the orange and magenta orangutans.</p>
+<p>Such a network on <span class="math inline">\(n\)</span> nodes is often alternatively represented by a <span class="math inline">\(n \times n\)</span> <em>adjacency matrix</em> <span class="math inline">\(\boldsymbol{A}\)</span>, whose entry <span class="math inline">\(A_{ij}\)</span> for <span class="math inline">\(i,j = 1,...,n\)</span> is equal to <span class="math inline">\(1\)</span> if nodes <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> interact and <span class="math inline">\(0\)</span> otherwise. <a href="#fig-orangutan-network" class="quarto-xref">Figure&nbsp;1</a>b shows the orangutan network in this format with the rows and columns labeled by the orangutan they reference. This matrix and its properties naturally convey information about the network. For example the vector <span class="math inline">\(\boldsymbol{k}\)</span> of row (or column) sums of the adjacency matrix</p>
 <div style="overflow-x:auto;overflow-y:hidden;">
 <p><span class="math display">\[\begin{aligned}
     k_i = \sum_{j=1}^n A_{ij}, \qquad i = 1,...,n,\end{aligned}\]</span></p>
@@ -425,43 +532,60 @@ Figure&nbsp;1: Network of interactions observed by Setia&nbsp;<em>et al.</em>&nb
 <p>gives the <em>degree</em> of each node, the total number of edges connected to it.</p>
 <p>These degrees of our apes are given in <a href="#fig-orangutan-network" class="quarto-xref">Figure&nbsp;1</a>c.&nbsp;The red orangutan is the only node with degree 2, while the orange and magenta orangutans have degree 5 as they both connect to every other orangutan. This simple measure of counting connections captures a sense of <em>centrality</em> within the network as certain orangutans appear more disposed to interact than others. This sort of variation in the degrees is typical of real networks, particularly within large data sets. <!-- We further discuss how the
 distribution of the degrees can be modeled and interpreted in
-Section [\[sec:configuration-model\]](#sec:configuration-model){reference-type="ref"
+Section [\[sec:configuration-model\]](#sec:configuration-model){reference-type="ref"
 reference="sec:configuration-model"}. --></p>
-<p>The edges in <a href="#fig-orangutan-network" class="quarto-xref">Figure&nbsp;1</a> are bidirectional since they symmetrically represent whether any interaction occurred between a pair of orangutans. The network is therefore an <em>undirected</em> graph and has a symmetric adjacency matrix. Although such undirected graphs are very common, and the focus of much work, many systems possess asymmetric interactions. In fact, in their observations Setia&nbsp;<em>et al.</em>&nbsp;not only recorded whether a pair interacted but also which orangutan was dominant over the other from their pattern of vocalizations. We can add this layer of information to the network by converting it to a <em>directed</em> graph, where each edge is now represented by an arrow that points from the dominant "winner" of the interaction to the submissive "loser."</p>
-<p>The original network of Fig.&nbsp;<a href="#fig:orangutan-network" data-reference-type="ref" data-reference="fig:orangutan-network">1</a> is also a <em>simple</em> graph as interactions are binary – two nodes either do or do not connect and no node connects to itself. However some pairs of orangutans interacted more than once over the course of the study, a feature we can represent with a <em>multigraph</em> where nodes can connect with more than one edge and <em>self-edges</em> can connect a node to itself. Although self-edges are not present in the orangutan context, such self-interactions arise in other settings. In a food web of predation among species, for example, cannibalism within a species is represented with a self-edge.</p>
-<p>By incorporating these generalizations, the network of <a href="#fig-orangutan-multigraph" class="quarto-xref">Figure&nbsp;2</a>a represents the full detail of the data set of Setia&nbsp;<em>et al.</em>&nbsp;<span class="citation" data-cites="SV07">(<a href="#ref-SV07" role="doc-biblioref">Setia and Schaik 2007</a>)</span>. Where the original network of <a href="#fig-orangutan-network" class="quarto-xref">Figure&nbsp;1</a> represents <em>if</em> a pair of orangutans interact, this new network gives fuller context as to the <em>nature</em> of the interactions. The adjacency matrix in <a href="#fig-orangutan-multigraph" class="quarto-xref">Figure&nbsp;2</a>b is no longer a symmetric binary matrix as&nbsp;<span class="math inline">\(A_{ij}\)</span> now represents the number of directed edges from node&nbsp;<span class="math inline">\(i\)</span> to node&nbsp;<span class="math inline">\(j\)</span>. This asymmetry generates two distinct notions of degree. <a href="#fig-orangutan-multigraph" class="quarto-xref">Figure&nbsp;2</a>c contains the row sums of the matrix, the <em>out-degrees</em>&nbsp;<span class="math inline">\(\boldsymbol{k}^{\text{out}}\)</span>, that indicate the number of edges pointing away from a given node, in this case the number of times each orangutan had a dominant interaction. In <a href="#fig-orangutan-multigraph" class="quarto-xref">Figure&nbsp;2</a>d the column sums of the matrix give the <em>in-degrees</em>&nbsp;<span class="math inline">\(\boldsymbol{k}^{\text{in}}\)</span>, the count of edges pointing towards each node, the number of times each orangutan had a submissive interaction. The directions of the data and resulting degrees give further insight to the social world of the orangutans. For example the magenta orangutan has&nbsp;<span class="math inline">\(k_i^{\text{out}} = 9, k_i^{\text{in}} = 0\)</span> and so was dominant in each of his 9 interactions, suggesting that he holds a prime position in the orangutans’ social hierarchy.</p>
+<p>The edges in <a href="#fig-orangutan-network" class="quarto-xref">Figure&nbsp;1</a> are bidirectional since they symmetrically represent whether any interaction occurred between a pair of orangutans. The network is therefore an <em>undirected</em> graph and has a symmetric adjacency matrix. Although such undirected graphs are very common, and the focus of much work, many systems possess asymmetric interactions. In fact, in their observations Setia <em>et al.</em> not only recorded whether a pair interacted but also which orangutan was dominant over the other from their pattern of vocalizations. We can add this layer of information to the network by converting it to a <em>directed</em> graph, where each edge is now represented by an arrow that points from the dominant "winner" of the interaction to the submissive "loser."</p>
+<p>The original network of Fig. <a href="#fig:orangutan-network" data-reference-type="ref" data-reference="fig:orangutan-network">1</a> is also a <em>simple</em> graph as interactions are binary – two nodes either do or do not connect and no node connects to itself. However some pairs of orangutans interacted more than once over the course of the study, a feature we can represent with a <em>multigraph</em> where nodes can connect with more than one edge and <em>self-edges</em> can connect a node to itself. Although self-edges are not present in the orangutan context, such self-interactions arise in other settings. In a food web of predation among species, for example, cannibalism within a species is represented with a self-edge.</p>
+<p>By incorporating these generalizations, the network of <a href="#fig-orangutan-multigraph" class="quarto-xref">Figure&nbsp;2</a>a represents the full detail of the data set of Setia <em>et al.</em> <span class="citation" data-cites="SV07">(<a href="#ref-SV07" role="doc-biblioref">Setia and Schaik 2007</a>)</span>. Where the original network of <a href="#fig-orangutan-network" class="quarto-xref">Figure&nbsp;1</a> represents <em>if</em> a pair of orangutans interact, this new network gives fuller context as to the <em>nature</em> of the interactions. The adjacency matrix in <a href="#fig-orangutan-multigraph" class="quarto-xref">Figure&nbsp;2</a>b is no longer a symmetric binary matrix as <span class="math inline">\(A_{ij}\)</span> now represents the number of directed edges from node <span class="math inline">\(i\)</span> to node <span class="math inline">\(j\)</span>. This asymmetry generates two distinct notions of degree. <a href="#fig-orangutan-multigraph" class="quarto-xref">Figure&nbsp;2</a>c contains the row sums of the matrix, the <em>out-degrees</em> <span class="math inline">\(\boldsymbol{k}^{\text{out}}\)</span>, that indicate the number of edges pointing away from a given node, in this case the number of times each orangutan had a dominant interaction. In <a href="#fig-orangutan-multigraph" class="quarto-xref">Figure&nbsp;2</a>d the column sums of the matrix give the <em>in-degrees</em> <span class="math inline">\(\boldsymbol{k}^{\text{in}}\)</span>, the count of edges pointing towards each node, the number of times each orangutan had a submissive interaction. The directions of the data and resulting degrees give further insight to the social world of the orangutans. For example the magenta orangutan has <span class="math inline">\(k_i^{\text{out}} = 9, k_i^{\text{in}} = 0\)</span> and so was dominant in each of his 9 interactions, suggesting that he holds a prime position in the orangutans’ social hierarchy.</p>
 <div id="fig-orangutan-multigraph" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-orangutan-multigraph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../../assets/images/notes/network_structures/orangutan-multigraph.svg" class="img-fluid figure-img" style="width:6.996in">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-orangutan-multigraph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Directed multigraph of dominance interactions observed among <span class="math inline">\(n = 6\)</span> orangutans&nbsp;<span class="citation" data-cites="SV07">(<a href="#ref-SV07" role="doc-biblioref">Setia and Schaik 2007</a>)</span> represented (a) as a graph and (b) as an adjacency matrix&nbsp;<span class="math inline">\(\boldsymbol{A}\)</span>. (c) The out-degrees&nbsp;<span class="math inline">\(\boldsymbol{k}^{\text{out}}\)</span> and (d) the in-degrees&nbsp;<span class="math inline">\(\boldsymbol{k}^{\text{in}}\)</span> are also given, respectively counting the number of times each orangutan exhibits a dominant or submissive interaction.
+Figure&nbsp;2: Directed multigraph of dominance interactions observed among <span class="math inline">\(n = 6\)</span> orangutans <span class="citation" data-cites="SV07">(<a href="#ref-SV07" role="doc-biblioref">Setia and Schaik 2007</a>)</span> represented (a) as a graph and (b) as an adjacency matrix <span class="math inline">\(\boldsymbol{A}\)</span>. (c) The out-degrees <span class="math inline">\(\boldsymbol{k}^{\text{out}}\)</span> and (d) the in-degrees <span class="math inline">\(\boldsymbol{k}^{\text{in}}\)</span> are also given, respectively counting the number of times each orangutan exhibits a dominant or submissive interaction.
 </figcaption>
 </figure>
 </div>
-<p>Further adornments of networks are often made to represent further detail. In a trade network each edge could carry a continuous weight that reports trade volume between two countries, an example of a <em>weighted graph</em> represented by a continuous adjacency matrix&nbsp;<span class="citation" data-cites="DNAL15">(<a href="#ref-DNAL15" role="doc-biblioref">Domenico et al. 2015</a>)</span>. Edges can also be differentiated by their type, for example friendships in a social network may be associated to different contexts like work, hobbies, or social media forming a <em>multilayer</em> network of connections between people&nbsp;<span class="citation" data-cites="CGZ13 Kivela14">(<a href="#ref-CGZ13" role="doc-biblioref">Cardillo et al. 2013</a>; <a href="#ref-Kivela14" role="doc-biblioref">Kivelä et al. 2014</a>)</span>. Higher-order interactions between triplets and larger groups of nodes may be also be represented either as hypergraphs or bipartite networks.</p>
+<p>Further adornments of networks are often made to represent further detail. In a trade network each edge could carry a continuous weight that reports trade volume between two countries, an example of a <em>weighted graph</em> represented by a continuous adjacency matrix <span class="citation" data-cites="DNAL15">(<a href="#ref-DNAL15" role="doc-biblioref">Domenico et al. 2015</a>)</span>. Edges can also be differentiated by their type, for example friendships in a social network may be associated to different contexts like work, hobbies, or social media forming a <em>multilayer</em> network of connections between people <span class="citation" data-cites="CGZ13 Kivela14">(<a href="#ref-CGZ13" role="doc-biblioref">Cardillo et al. 2013</a>; <a href="#ref-Kivela14" role="doc-biblioref">Kivelä et al. 2014</a>)</span>. Higher-order interactions between triplets and larger groups of nodes may be also be represented either as hypergraphs or bipartite networks.</p>
 <p>Although adding increasingly descriptive context and metadata to networks helps to paint a fuller picture of any particular application, by stripping systems down to a simple pattern of interactions it is possible to treat them within a unified language of network science and understand similarities and differences between them. In this note we focus on two common structures found in networks across contexts, group and hierarchical structure.</p>
 </section>
 <section id="group-structure" class="level2">
 <h2 class="anchored" data-anchor-id="group-structure">Group structure</h2>
-<p>The nodes that make up a network often possess distinct group identities. Animals are distinguished by species, atoms differ by atomic number, and students belong to various clubs and social groups. These group labels may then influence the interactions among the nodes as, for example, students are often friends with others in the same school club. <a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a> gives four examples of real networks where the color of each node indicates which group it belongs to. In each system these group affiliations guide the pattern of connections as nodes of the same group share the same structural role.</p>
+<p>The nodes that make up a network often possess distinct group identities. Animals are distinguished by species, atoms differ by atomic number, and students belong to various clubs and social groups. These group labels may then influence the interactions among the nodes as, for example, students are often friends with others in the same school club. <a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a> gives four examples of real networks where the color of each node indicates which group it belongs to. In each system these group affiliations guide the pattern of connections as nodes of the same group share the same structural role. Each panel below is a live, draggable/zoomable copy of the actual network — not a static picture of it.</p>
 <div id="fig-community-examples" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-community-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../../assets/images/notes/network_structures/community-examples.svg" class="img-fluid figure-img" style="width:7.40467in">
+<div class="grid">
+<div class="g-col-12 g-col-md-6">
+<p><strong>(a)</strong></p>
+<div class="ew-embed" data-network="football.gml" data-params="colorAttr=conference&amp;sizeAttr=degree&amp;labelAttr=label&amp;edgeOpacity=0.3" data-caption="US college football, 2000 season; colour is conference"></div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<p><strong>(b)</strong></p>
+<div class="ew-embed" data-network="polbooks.gml" data-params="colorAttr=value&amp;sizeAttr=degree&amp;edgeOpacity=0.25" data-caption="Political books co-purchased on Amazon; colour is political leaning"></div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<p><strong>(c)</strong></p>
+<div class="ew-embed" data-network="romeo_and_juliet.gml" data-params="colorAttr=house&amp;labelAttr=label&amp;edgeWidth=weight&amp;edgeOpacity=0.65" data-caption="Characters in Romeo and Juliet; colour is house"></div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<p><strong>(d)</strong></p>
+<div class="ew-embed" data-network="pollinator.gml" data-params="layout=coord&amp;coordXAttr=group&amp;colorAttr=group&amp;labelAttr=label&amp;edgeOpacity=0.5" data-caption="Plants and their pollinators, as a bipartite layout"></div>
+</div>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-community-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Four examples of community structure in networks. (a) American football matches among Division IA colleges in the 2000 regular season&nbsp;<span class="citation" data-cites="GN02">(<a href="#ref-GN02" role="doc-biblioref">Girvan and Newman 2002</a>)</span>. Most matches occur within the labeled "conferences" that the teams belong to. (b) Network of political books frequently copurchased on Amazon.com near the 2004 U.S. presidential election labeled by political lean. (c) Network of characters in Shakespeare’s <em>Romeo and Juliet</em> where edge thickness indicates frequency of interaction. The house each character belongs to in the work, Montague or Capulet, is highlighted. (d) Bipartite network of plant-pollinator interactions&nbsp;<span class="citation" data-cites="BMM09">(<a href="#ref-BMM09" role="doc-biblioref">Bezerra, Machado, and Mello 2009</a>)</span>
+Figure&nbsp;3: Four examples of community structure in networks, live and interactive. (a) American football matches among Division IA colleges in the 2000 regular season <span class="citation" data-cites="GN02">(<a href="#ref-GN02" role="doc-biblioref">Girvan and Newman 2002</a>)</span>. Most matches occur within the labeled “conferences” that the teams belong to. (b) Network of political books frequently copurchased on Amazon.com near the 2004 U.S. presidential election labeled by political lean. (c) Network of characters in Shakespeare’s <em>Romeo and Juliet</em> where edge thickness indicates frequency of interaction. The house each character belongs to in the work, Montague or Capulet, is highlighted. (d) Bipartite network of plant-pollinator interactions <span class="citation" data-cites="BMM09">(<a href="#ref-BMM09" role="doc-biblioref">Bezerra, Machado, and Mello 2009</a>)</span>. Drag any node, zoom, or click “View interactive” on any panel to explore it full-screen.
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a>a contains a network of&nbsp;<span class="math inline">\(616\)</span> American football matches played among&nbsp;<span class="math inline">\(115\)</span> Division IA colleges in the 2000 regular season&nbsp;<span class="citation" data-cites="GN02">(<a href="#ref-GN02" role="doc-biblioref">Girvan and Newman 2002</a>)</span>. Each year these football teams group into conferences that agree to play a certain number of matches, often 8, against other teams in the same conference. While matches out-of-conference are permitted, they occur more rarely as they are organized on an ad hoc basis from year to year. The conference system thus gives teams an <em>assortative</em> preference to play teams of the same group. Over the course of the season the network of matches then carries a clear signature of the conferences that inform them.</p>
-<p>Similarly assortative structure is found in <a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a>b, a network of&nbsp;<span class="math inline">\(105\)</span> political books frequently copurchased on Amazon.com near the 2004 U.S. presidential election. Here the books are colored by the political lean of their content, characterized by V. Krebs in unpublished work. Books of the same political bent are typically purchased together, either both liberal or both conservative. Rarely does someone order both a conservative and liberal book in the data set. In this case the observed assortative structure is not imposed by a collective agreement like the football conference system but rather emerges from individual decisions as an effect of systemic political polarization.</p>
+<p><a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a>a contains a network of <span class="math inline">\(616\)</span> American football matches played among <span class="math inline">\(115\)</span> Division IA colleges in the 2000 regular season <span class="citation" data-cites="GN02">(<a href="#ref-GN02" role="doc-biblioref">Girvan and Newman 2002</a>)</span>. Each year these football teams group into conferences that agree to play a certain number of matches, often 8, against other teams in the same conference. While matches out-of-conference are permitted, they occur more rarely as they are organized on an ad hoc basis from year to year. The conference system thus gives teams an <em>assortative</em> preference to play teams of the same group. Over the course of the season the network of matches then carries a clear signature of the conferences that inform them.</p>
+<p>Similarly assortative structure is found in <a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a>b, a network of <span class="math inline">\(105\)</span> political books frequently copurchased on Amazon.com near the 2004 U.S. presidential election. Here the books are colored by the political lean of their content, characterized by V. Krebs in unpublished work. Books of the same political bent are typically purchased together, either both liberal or both conservative. Rarely does someone order both a conservative and liberal book in the data set. In this case the observed assortative structure is not imposed by a collective agreement like the football conference system but rather emerges from individual decisions as an effect of systemic political polarization.</p>
 <p>In networks of social ties, people and animals often organize into tightly knit <em>communities</em> that prefer to interact amongst themselves. <a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a>c contains a (fictional) example of such a network among characters in Shakespeare’s <em>Romeo and Juliet</em>. Character interactions, defined as subsequent appearances in the same scene, form the edges of this multigraph, where the edge thickness reflects the frequency of the interaction. In the play most characters belong to one of two groups, either Romeo’s House of Montague or Juliet’s House of Capulet. Interactions between characters are indeed mostly contained within each house. The narrative, however, revolves around the titular exception to this pattern. <!-- Later in this thesis we
 will observe similar patterns of communities across social networks and
 quantify the extent to which their group boundaries are crossed. --></p>
-<p>Not all group structures are assortative in this manner. In fact many network data sets are&nbsp;<em>bipartite</em>, meaning they consist of two groups of nodes that never interact within their own group, only with the opposite group: a fully <em>disassortative</em> structure. <a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a>d gives an example of a bipartite plant-pollinator network. In it 13 species of Brazilian oil-flowers are connected to which of 13 species of pollinators visited them over the course of a study by Berezza&nbsp;<em>et al.</em>&nbsp;<span class="citation" data-cites="BMM09">(<a href="#ref-BMM09" role="doc-biblioref">Bezerra, Machado, and Mello 2009</a>)</span>. In this setting the nodes are naturally sorted by their role as either a plant or a pollinator. Being a bipartite network, all interactions occur only between a plant and a pollinator, never directly between two plants or two pollinators.</p>
+<p>Not all group structures are assortative in this manner. In fact many network data sets are <em>bipartite</em>, meaning they consist of two groups of nodes that never interact within their own group, only with the opposite group: a fully <em>disassortative</em> structure. <a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a>d gives an example of a bipartite plant-pollinator network. In it 13 species of Brazilian oil-flowers are connected to which of 13 species of pollinators visited them over the course of a study by Berezza <em>et al.</em> <span class="citation" data-cites="BMM09">(<a href="#ref-BMM09" role="doc-biblioref">Bezerra, Machado, and Mello 2009</a>)</span>. In this setting the nodes are naturally sorted by their role as either a plant or a pollinator. Being a bipartite network, all interactions occur only between a plant and a pollinator, never directly between two plants or two pollinators.</p>
 <p>In these examples and beyond networks possess a variety of group structures, distinguished both in the number of groups present and how those groups inform the pattern of interactions. In the four examples of <a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a>, group identities can be gleaned from context outside the network of interactions. However in many contexts only the pattern of connections is known, although nodes may still meaningfully belong to groups that influence that structure.</p>
 <p>In this setting a key task of network science is <em>community detection</em>, to analyze a network and identify if group structure exists, identify the groups, and characterize their structural relationships. A variety of approaches have been developed for this task <span class="citation" data-cites="Newman06b DF89">(<a href="#ref-Newman06b" role="doc-biblioref">Newman 2006</a>; <a href="#ref-DF89" role="doc-biblioref">Dyer and Frieze 1989</a>)</span>. The groups inferred from the network can then be interpreted in their own right or compared to known group labels <span class="citation" data-cites="JKN24">(<a href="#ref-JKN24" role="doc-biblioref">Jerdee, Kirkley, and Newman 2024</a>)</span>.</p>
 </section>
@@ -474,19 +598,27 @@ quantify the extent to which their group boundaries are crossed. --></p>
 <img src="../../assets/images/notes/network_structures/hierarchy-examples.svg" class="img-fluid figure-img" style="width:7.23433in">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hierarchy-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Four examples of hierarchy structure in networks. (a) American football matches played in the 2022 Big Ten conference football season&nbsp;<span class="citation" data-cites="Football22">(<a href="#ref-Football22" role="doc-biblioref"><span>“College Football Records,”</span> n.d.</a>)</span>. The hierarchical structure is represented vertically, with better teams located higher. Arrows run from the winner to the loser of a match, colored green if the higher ranked team wins, red if the lower ranked team wins. (b) Consumer preferences between pairs of sodas&nbsp;<span class="citation" data-cites="DAK00">(<a href="#ref-DAK00" role="doc-biblioref">Duineveld, Arents, and King 2000</a>)</span>. (c) Observed dominance interactions (pecks) among 11 chickens&nbsp;<span class="citation" data-cites="MA34">(<a href="#ref-MA34" role="doc-biblioref">Masure and Allee 1934</a>)</span>. (d) Unreciprocated friendship nominations among 20 high school students&nbsp;<span class="citation" data-cites="AddHealth">(<a href="#ref-AddHealth" role="doc-biblioref">Udry, Bearman, and Harris 1997</a>)</span>.
+Figure&nbsp;4: Four examples of hierarchy structure in networks. (a) American football matches played in the 2022 Big Ten conference football season <span class="citation" data-cites="Football22">(<a href="#ref-Football22" role="doc-biblioref"><span>“College Football Records,”</span> n.d.</a>)</span>. The hierarchical structure is represented vertically, with better teams located higher. Arrows run from the winner to the loser of a match, colored green if the higher ranked team wins, red if the lower ranked team wins. (b) Consumer preferences between pairs of sodas <span class="citation" data-cites="DAK00">(<a href="#ref-DAK00" role="doc-biblioref">Duineveld, Arents, and King 2000</a>)</span>. (c) Observed dominance interactions (pecks) among 11 chickens <span class="citation" data-cites="MA34">(<a href="#ref-MA34" role="doc-biblioref">Masure and Allee 1934</a>)</span>. (d) Unreciprocated friendship nominations among 20 high school students <span class="citation" data-cites="AddHealth">(<a href="#ref-AddHealth" role="doc-biblioref">Udry, Bearman, and Harris 1997</a>)</span>.
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-hierarchy-examples" class="quarto-xref">Figure&nbsp;4</a>a contains football matches played within the 2022 Big Ten football conference&nbsp;<span class="citation" data-cites="Football22">(<a href="#ref-Football22" role="doc-biblioref"><span>“College Football Records,”</span> n.d.</a>)</span>. Each arrow points from the winner to the loser of a match, information that was suppressed in the undirected <a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a>a. The University of Michigan was undefeated in this (carefully chosen) season as indicated by all arrows pointing away from its node and by its position at the top of the football hierarchy. In this case placement on the hierarchy is meant to reflect strength in the game of football, and we would expect that better teams win more often than lower ranked ones. Particularly we may assume that the outcome of any given match is driven by the difference in skill between the participating teams. Although the teams and fans are generally aware of these relative strengths, there is not a "true" hierarchy to refer to like the conference group structure. The positions in the hierarchy must instead be deduced from the observed matches.</p>
+<p><a href="#fig-hierarchy-examples" class="quarto-xref">Figure&nbsp;4</a>a contains football matches played within the 2022 Big Ten football conference <span class="citation" data-cites="Football22">(<a href="#ref-Football22" role="doc-biblioref"><span>“College Football Records,”</span> n.d.</a>)</span>. Each arrow points from the winner to the loser of a match, information that was suppressed in the undirected <a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a>a. The University of Michigan was undefeated in this (carefully chosen) season as indicated by all arrows pointing away from its node and by its position at the top of the football hierarchy. In this case placement on the hierarchy is meant to reflect strength in the game of football, and we would expect that better teams win more often than lower ranked ones. Particularly we may assume that the outcome of any given match is driven by the difference in skill between the participating teams. Although the teams and fans are generally aware of these relative strengths, there is not a "true" hierarchy to refer to like the conference group structure. The positions in the hierarchy must instead be deduced from the observed matches.</p>
 <p>There are many ways to determine a hierarchy from the match outcomes. Collegiate football formalizes this inference through an annual poll of team coaches to determine the highest ranked teams who may then advance to the post-season playoff bracket. In <a href="#fig-hierarchy-examples" class="quarto-xref">Figure&nbsp;4</a>a, the vertical hierarchy is instead arranged in order to maximize the number of times the higher ranked team wins (the 57 green arrows) and minimize the upset victories (the 7 red arrows). The other networks of <a href="#fig-hierarchy-examples" class="quarto-xref">Figure&nbsp;4</a> are likewise arranged to minimize such <em>violations</em> of their hierarchies. <!-- We discuss other methods for
 arriving at such a ranking in
-Section [\[sec:BT-model\]](#sec:BT-model){reference-type="ref"
+Section [\[sec:BT-model\]](#sec:BT-model){reference-type="ref"
 reference="sec:BT-model"}. --></p>
 <p>The presence of upsets means that the data does not fully respect the hierarchy. One might hope that there is some other ordering of the teams that is fully coherent, lacking any such upsets, but the intransitivity of the results prevents this. In the football example Minnesota beat Nebraska, Nebraska beat Iowa, and Iowa beat Minnesota in a rock-paper-scissors arrangement. One of these three matches would therefore be recorded as an "upset" under any ordering of the teams. In fact any ordering of this season will have at least 7 upsets as in the ordering plotted in the figure. This tension between the hierarchy and the realized results is analogous to how not all edges lie within the groups of <a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a>. The degree to which the outcomes conform to a hierarchy gives insight to its strictness.</p>
-<p>Many of the models used to describe hierarchies were initially developed and are often used in the world of sports, yet similar concepts can be applied to understand status and quality in other contexts. <a href="#fig-hierarchy-examples" class="quarto-xref">Figure&nbsp;4</a>b shows a hierarchy of 8 different flavored sodas. In this network wins indicate if most assessors surveyed by Duineveld&nbsp;&nbsp;prefer one soda over another in a <em>paired comparison</em> study&nbsp;<span class="citation" data-cites="DAK00">(<a href="#ref-DAK00" role="doc-biblioref">Duineveld, Arents, and King 2000</a>)</span>. Again no total ordering of the sodas is possible as the revealed preferences are not strictly transitive, although there are certain sodas that generally fare better in these comparisons. Such surveys and inferences are often used to make sense of A/B testing of various types of products and establish the aggregate consensus of quality and preferences. These methods are similarly used in reinforcement learning to assess and tune large language model outputs based upon human preferences&nbsp;<span class="citation" data-cites="CLBMLA17">(<a href="#ref-CLBMLA17" role="doc-biblioref">Christiano et al. 2017</a>)</span>.</p>
-<p>Turning to animals, the social hierarchy of a flock of 11 Brown Leghorn chickens is plotted in <a href="#fig-hierarchy-examples" class="quarto-xref">Figure&nbsp;4</a>c&nbsp;<span class="citation" data-cites="MA34">(<a href="#ref-MA34" role="doc-biblioref">Masure and Allee 1934</a>)</span>. Here the arrows represent when one chicken pecks another but is not pecked in return, taken as a sign of dominance. The chickens organize into a pecking order where the higher chicken tends to peck the lower chicken on the ladder. This animal behavior research is in fact the source of the phrase "pecking order" colloquially used to refer to all sorts of hierarchies. In this flock of 11, the chicken at the bottom of the pecking order is pecked by all above it while there is more competition and ambiguity at the top.</p>
-<p><a href="#fig-hierarchy-examples" class="quarto-xref">Figure&nbsp;4</a>d shows a similar social hierarchy, now of surveyed friendship nominations among 20 students of a small U.S. high school&nbsp;<span class="citation" data-cites="AddHealth">(<a href="#ref-AddHealth" role="doc-biblioref">Udry, Bearman, and Harris 1997</a>)</span>. Although we may think of friendship as a two-way street, this reciprocity is not always borne out in survey data. Often student A names student B as their friend but student B does not name student A back. We can interpret this as a "win" for student B in the social hierarchy, and that they are likely of higher social status than student A. In the school of this figure a clear hierarchy emerges where higher status students consistently dominate the lower ranked students in this manner.</p>
+<p>Many of the models used to describe hierarchies were initially developed and are often used in the world of sports, yet similar concepts can be applied to understand status and quality in other contexts. <a href="#fig-hierarchy-examples" class="quarto-xref">Figure&nbsp;4</a>b shows a hierarchy of 8 different flavored sodas. In this network wins indicate if most assessors surveyed by Duineveld prefer one soda over another in a <em>paired comparison</em> study <span class="citation" data-cites="DAK00">(<a href="#ref-DAK00" role="doc-biblioref">Duineveld, Arents, and King 2000</a>)</span>. Again no total ordering of the sodas is possible as the revealed preferences are not strictly transitive, although there are certain sodas that generally fare better in these comparisons. Such surveys and inferences are often used to make sense of A/B testing of various types of products and establish the aggregate consensus of quality and preferences. These methods are similarly used in reinforcement learning to assess and tune large language model outputs based upon human preferences <span class="citation" data-cites="CLBMLA17">(<a href="#ref-CLBMLA17" role="doc-biblioref">Christiano et al. 2017</a>)</span>.</p>
+<p>Turning to animals, the social hierarchy of a flock of 11 Brown Leghorn chickens is plotted in <a href="#fig-hierarchy-examples" class="quarto-xref">Figure&nbsp;4</a>c <span class="citation" data-cites="MA34">(<a href="#ref-MA34" role="doc-biblioref">Masure and Allee 1934</a>)</span>. Here the arrows represent when one chicken pecks another but is not pecked in return, taken as a sign of dominance. The chickens organize into a pecking order where the higher chicken tends to peck the lower chicken on the ladder. This animal behavior research is in fact the source of the phrase "pecking order" colloquially used to refer to all sorts of hierarchies. In this flock of 11, the chicken at the bottom of the pecking order is pecked by all above it while there is more competition and ambiguity at the top.</p>
+<!-- If you'd like panel (c) live too, this is the ready-to-drop-in embed
+(same treatment as fig-community-examples above), just needs the other
+three panels sorted out first so the figure isn't a static/interactive mix:
+
+<div class="ew-embed" data-network="chickens.gml"
+     data-params="layout=coord&coordYAttr=value&labelAttr=label&edgeOpacity=0.7"
+     data-caption="A flock's pecking order, height by inferred rank"></div>
+-->
+<p><a href="#fig-hierarchy-examples" class="quarto-xref">Figure&nbsp;4</a>d shows a similar social hierarchy, now of surveyed friendship nominations among 20 students of a small U.S. high school <span class="citation" data-cites="AddHealth">(<a href="#ref-AddHealth" role="doc-biblioref">Udry, Bearman, and Harris 1997</a>)</span>. Although we may think of friendship as a two-way street, this reciprocity is not always borne out in survey data. Often student A names student B as their friend but student B does not name student A back. We can interpret this as a "win" for student B in the social hierarchy, and that they are likely of higher social status than student A. In the school of this figure a clear hierarchy emerges where higher status students consistently dominate the lower ranked students in this manner.</p>
 <p>Each of the directed network representations in <a href="#fig-community-examples" class="quarto-xref">Figure&nbsp;3</a> foregoes further context unique to each setting. The football match network, for example, neglects idiosyncratic details like player injuries or home-field advantages that can influence the outcome of any given match. Such events, however, do not have a clear analog within, say, the pecking order of chickens. By reducing the systems down to a directed pattern of "wins" and "losses," we can directly compare them to each other. In <span class="citation" data-cites="JN24">(<a href="#ref-JN24" role="doc-biblioref">Jerdee and Newman 2024</a>)</span> we discuss how this framework enables us to observe how the nature and strength of these hierarchies differ across settings.</p>
 
 

@@ -1,0 +1,89 @@
+---
+title: "Network spotlight: economic"
+description: "Trade, hiring and travel: networks where the edges move something. Each network as a live figure, with where it came from and what it may be used for."
+categories:
+  - Networks
+  - Spotlight
+date: 09/26/26
+---
+
+{{< include ../../assets/html/edgewise-embed.html >}}
+
+Trade, hiring and travel: networks where the edges move something.
+
+Every figure here is live: drag a node, hover for a name, and *Open with controls* gives you the same view in a full window with the colouring and layout options exposed. The data, and the script that rebuilds each one from its source, are in the [`networks`](https://github.com/maxjerdee/networks) repository.
+
+## Business School Hiring {#business-depts}
+
+```{=html}
+<div class="ew-embed" data-network="business_depts.gml"
+     data-params="layout=coord&colorAttr=control&sizeAttr=degree&coordYAttr=bt_score&edgeOpacity=0.32&edgeScale=0.9"
+     data-caption="Business School Hiring — 112 nodes, 3404 edges, directed"></div>
+```
+
+| | |
+|---|---|
+| **A node** | University, positioned by its inferred prestige score |
+| **An edge** | A → B: B hires a PhD from A, width ∝ number of such hires |
+
+Clauset, A., Arbesman, S., & Larremore, D. B. (2015). Systematic inequality and hierarchy in faculty hiring networks. Science Advances, 1(1), e1400005.
+
+*[source](https://doi.org/10.1126/sciadv.1400005) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/business_depts)*
+
+**Licence.** Supplementary data from an open-access Science Advances article; no separate data licence is stated. Cite the paper.
+
+<!-- THOUGHTS:business_depts -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:business_depts -->
+
+## World Food Trade {#world-trade}
+
+```{=html}
+<div class="ew-embed" data-network="world_trade.gml"
+     data-params="layout=map&colorAttr=region&sizeAttr=degree&edgeOpacity=0.65&edgeScale=1.2"
+     data-caption="World Food Trade — 212 nodes, 13338 edges, directed"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Country, colored by region |
+| **An edge** | A → B: A exports food to B, width ∝ value traded |
+
+De Domenico, M., Nicosia, V., Arenas, A., & Latora, V. (2015). Structural reducibility of multilayer networks. Nature Communications, 6, 6864.  Underlying data: FAO detailed trade matrix, 2010.
+
+*[source](https://networks.skewed.de/net/fao_trade) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/world_trade)*
+
+**Licence.** No explicit licence; released for research use with citation by the authors and redistributed by Netzschleuder (networks.skewed.de), which does serve this dataset -- the contrast with Add Health, which it refuses to serve, is the point.
+
+<!-- THOUGHTS:world_trade -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:world_trade -->
+
+## Airline Routes {#airline-routes}
+
+```{=html}
+<div class="ew-embed" data-network="airline_routes.gml"
+     data-params="layout=map&colorAttr=continent&sizeAttr=degree&edgeOpacity=0.85&edgeScale=0.6"
+     data-caption="Airline Routes — 200 nodes, 4364 edges, undirected"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Airport, colored by continent, among the 200 busiest worldwide |
+| **An edge** | A scheduled airline route between the two airports, width ∝ number of distinct airlines flying it either way |
+
+The busiest 200 airports worldwide (by total scheduled-route degree) and the routes between them, from OpenFlights' airports.dat/routes.dat (github.com/jpatokal/openflights), Open Database License. Undirected: OpenFlights' own routes are directional, but 99.5% of pairs here had a route listed both ways, so direction carried almost no information; edge weight sums the two directions' distinct-route counts into one (a frequency proxy -- the source data has no seat-capacity or passenger-count field). Continent from each airport's country via the country_converter package.
+
+*[source](https://github.com/jpatokal/openflights) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/airline_routes)*
+
+**Licence.** Open Database License (ODbL) -- attribute OpenFlights and license any publicly-used derivative database under ODbL.
+
+<!-- THOUGHTS:airline_routes -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:airline_routes -->

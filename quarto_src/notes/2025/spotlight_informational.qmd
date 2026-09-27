@@ -1,0 +1,164 @@
+---
+title: "Network spotlight: informational"
+description: "Things that refer to, cite, depend on or contain one another. Each network as a live figure, with where it came from and what it may be used for."
+categories:
+  - Networks
+  - Spotlight
+date: 09/26/26
+---
+
+{{< include ../../assets/html/edgewise-embed.html >}}
+
+Things that refer to, cite, depend on or contain one another.
+
+Every figure here is live: drag a node, hover for a name, and *Open with controls* gives you the same view in a full window with the colouring and layout options exposed. The data, and the script that rebuilds each one from its source, are in the [`networks`](https://github.com/maxjerdee/networks) repository.
+
+## Political Books {#polbooks}
+
+```{=html}
+<div class="ew-embed" data-network="polbooks.gml"
+     data-params="colorAttr=value&sizeAttr=degree&edgeOpacity=0.3&edgeScale=0.8"
+     data-caption="Political Books — 105 nodes, 441 edges, undirected"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Political book sold on Amazon, colored by political leaning |
+| **An edge** | A—B: customers who buy A also frequently buy B |
+
+V. Krebs, unpublished (compiled from Amazon.com co-purchasing data around the 2004 US presidential election). Distributed via M. E. J. Newman's network data collection and the Netzschleuder network repository.
+
+*[source](https://networks.skewed.de/net/polbooks) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/polbooks)*
+
+**Licence.** No licence stated, and none was ever attached -- the dataset is "V. Krebs, unpublished". Redistributed widely in the network-science literature, including from Newman's own site, so the practice is long established, but there is nothing to point to.
+
+<!-- THOUGHTS:polbooks -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:polbooks -->
+
+## Python Standard Library {#python-stdlib}
+
+```{=html}
+<div class="ew-embed" data-network="python_stdlib.gml"
+     data-params="colorAttr=kind&sizeAttr=in_degree&edgeOpacity=0.25&edgeScale=0.8"
+     data-caption="Python Standard Library — 168 nodes, 737 edges, directed"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Python standard library module or package |
+| **An edge** | A → B: module A imports module B at module level |
+
+Python 3.10.12's own standard library import graph: a directed edge A->B means module A imports module B at module level, parsed directly from this interpreter's installed stdlib source via the ast module -- no external dataset. Modules that neither import, nor are imported by, any other stdlib module in this set are omitted.
+
+*[data and build script](https://github.com/maxjerdee/networks/tree/main/networks/python_stdlib)*
+
+**Licence.** Built for this repository from the CPython standard library's own import graph; module names and import relations only, no code. Covered by this repository's own licence.
+
+<!-- THOUGHTS:python_stdlib -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:python_stdlib -->
+
+## "Vehicle" WordNet {#wordnet-vehicle}
+
+```{=html}
+<div class="ew-embed" data-network="wordnet_vehicle.gml"
+     data-params="layout=radial-tree&colorAttr=depth&sizeAttr=degree&edgeOpacity=0.4&edgeScale=0.5"
+     data-caption=""Vehicle" WordNet — 301 nodes, 300 edges, directed"></div>
+```
+
+| | |
+|---|---|
+| **A node** | A WordNet synset (one sense of a word), colored by how far below "vehicle" it sits |
+| **An edge** | A → B: B is a more specific kind of A (e.g. car → convertible) |
+
+WordNet's hypernym (IS-A) hierarchy under 'vehicle.n.01', depth 4: a directed edge parent->child means the child is a more specific kind of the parent (e.g. car -> convertible). A literal tree -- WordNet itself allows a synset more than one hypernym (14 of these 301 genuinely have two or three, e.g. tank is both an armored vehicle and a tracked vehicle), but only the first in-pool one (WordNet's own listed order) is kept as this synset's edge, so every node has exactly one parent. depth/height are computed from this kept tree, truncated to depth <=4 by it (not by the wider hyponym search used to find candidates). Source: Princeton WordNet, via NLTK's corpus interface.
+
+*[source](https://wordnet.princeton.edu/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/wordnet_vehicle)*
+
+**Licence.** WordNet 3.0 licence (Princeton University): permissive, redistribution permitted with the copyright notice retained and attribution given.
+
+<!-- THOUGHTS:wordnet_vehicle -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:wordnet_vehicle -->
+
+## npm Dependencies {#npm-deps}
+
+```{=html}
+<div class="ew-embed" data-network="npm_deps.gml"
+     data-params="colorAttr=role&sizeAttr=degree&edgeOpacity=0.25&edgeScale=0.8"
+     data-caption="npm Dependencies — 250 nodes, 434 edges, directed"></div>
+```
+
+| | |
+|---|---|
+| **A node** | An npm package, colored by its role here: hub, shared, used once, or consumer |
+| **An edge** | A → B: A lists B in its runtime dependencies, so installing A installs B |
+
+Runtime dependencies among 250 widely-used npm packages, from the public npm registry. A -> B means A lists B in its dependencies. Built by taking the 600 packages with the most dependents, computing the dependency edges among them, and keeping the 250 most connected as an induced subgraph.
+
+*[source](https://registry.npmjs.org/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/npm_deps)*
+
+**Licence.** Public package metadata from the npm registry -- package names and dependency relations only, no package contents.
+
+<!-- THOUGHTS:npm_deps -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:npm_deps -->
+
+## Supreme Court Citations {#scotus-citations}
+
+```{=html}
+<div class="ew-embed" data-network="scotus_citations.gml"
+     data-params="layout=coord&colorAttr=issue_area&sizeAttr=degree&coordXAttr=year&coordYAttr=issue_area&edgeOpacity=0.35&edgeScale=0.2"
+     data-caption="Supreme Court Citations — 250 nodes, 2104 edges, directed"></div>
+```
+
+| | |
+|---|---|
+| **A node** | A majority opinion of the U.S. Supreme Court, placed at the year it was decided and colored by its subject matter |
+| **An edge** | A → B: opinion A cites opinion B, so every edge points back in time |
+
+Citations among 250 of the most-cited opinions of the U.S. Supreme Court, from every volume of U.S. Reports. A -> B means opinion A cites opinion B; citations restricted to pairs within the set. The set is the largest connected component of the top 256 by citations received, so every case here cites or is cited by another. Case text and citation extraction: Caselaw Access Project (case.law). Subject-matter classification (issueArea): Supreme Court Database, H. J. Spaeth et al., supremecourtdatabase.org.
+
+*[source](https://static.case.law/us/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/scotus_citations)*
+
+**Licence.** Public domain. US court opinions carry no copyright, and the Caselaw Access Project states its bulk data is free of restrictions.
+
+<!-- THOUGHTS:scotus_citations -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:scotus_citations -->
+
+## Journal Citations {#journals}
+
+```{=html}
+<div class="ew-embed" data-network="journals.gml"
+     data-params="layout=coord&colorAttr=discipline&sizeAttr=cited_by&labelAttr=abbrev&coordYAttr=bt_score&edgeOpacity=0.12&edgeScale=1.0"
+     data-caption="Journal Citations — 85 nodes, 6184 edges, directed"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Journal, sized by how often it's cited |
+| **An edge** | A → B: A cites B, width ∝ citation count |
+
+Citation data from OpenAlex (openalex.org), 2019-2023 citation window; compiled for edgewise.
+
+*[source](https://openalex.org/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/journals)*
+
+**Licence.** CC0 1.0. OpenAlex places its data in the public domain.
+
+<!-- THOUGHTS:journals -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:journals -->

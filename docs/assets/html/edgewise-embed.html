@@ -1,0 +1,107 @@
+<style>
+/*
+  Embedded edgewise figures: one place that knows where the explorer lives.
+
+  WHY THIS EXISTS. The embeds were written as
+  <iframe src="EDGEWISE_BASE/?embed=1&network=...">, with the base meant to be
+  substituted later. It never was, so five iframes in
+  notes/2025/network_structures_interactive.qmd pointed at a relative path called
+  "EDGEWISE_BASE" and rendered as nothing. A placeholder that has to be replaced
+  by hand in every file is a placeholder that stays.
+
+  Quarto's own var shortcodes are not expanded inside a raw ```{=html} block,
+  which is what every embed has to be, so the substitution happens in the browser.
+
+  NOTE ON THIS COMMENT. It is a CSS comment, not an HTML one. A leading HTML
+  comment block in an included file breaks Quarto's Lua filter in this project
+  ("Cannot get Attr from TypeNil", no file named), which is the same failure that
+  had been silently stopping network_structures_interactive.qmd from rendering at
+  all. Keep documentation inside style/script blocks here.
+
+  HOW TO USE IT. Pull this file into a note once, with a Quarto include shortcode
+  pointing at assets/html/edgewise-embed.html -- see the top of any
+  notes/2025/spotlight_*.qmd for the line. Then write each figure with no URL:
+
+      <div class="ew-embed" data-network="football.gml"
+           data-params="colorAttr=conference&sizeAttr=degree"
+           data-caption="US college football, 2000 season"></div>
+
+  inside a raw html block. Each becomes an iframe plus an "Open with controls"
+  link to the same view with the option panels restored, so a reader who wants to
+  change the colouring can, in a full window, without a second embed.
+
+  MOVING THE EXPLORER is one edit: EDGEWISE_BASE in the script below. While it is
+  empty, every figure renders a visible "not configured" box rather than a blank
+  frame -- the silence that let the original placeholder survive a whole render.
+*/
+
+.ew-embed { margin: 0.5rem 0 1rem; }
+.ew-embed iframe {
+  width: 100%; height: 420px; min-width: 260px; border: 1px solid #d8d8d8;
+  border-radius: 6px; background: #fff; display: block;
+}
+.ew-embed-bar {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 1rem; font-size: 0.82rem; margin-top: 0.35rem; line-height: 1.35;
+}
+.ew-embed-caption { color: #666; }
+.ew-embed-link { white-space: nowrap; }
+.ew-embed-missing {
+  border: 1px dashed #c00; border-radius: 6px; padding: 1rem;
+  font-size: 0.85rem; color: #900; background: #fff6f6;
+}
+/* The frame is a light-themed app; keep it legible on the dark site theme. */
+.quarto-dark .ew-embed iframe { background: #fff; border-color: #444; }
+.quarto-dark .ew-embed-caption { color: #aaa; }
+</style>
+<script>
+(function () {
+  // The deployed explorer. One string, one place. Leave off the trailing slash.
+  const EDGEWISE_BASE = "";
+
+  function render() {
+    for (const el of document.querySelectorAll(".ew-embed")) {
+      if (el.dataset.ewDone) continue;
+      el.dataset.ewDone = "1";
+      const net = el.dataset.network;
+      const params = el.dataset.params || "";
+      const caption = el.dataset.caption || "";
+      if (!net) continue;
+
+      if (!EDGEWISE_BASE) {
+        // Visible, not silent: an unconfigured base is the reason the original
+        // placeholder went unnoticed through a whole render.
+        el.innerHTML = '<div class="ew-embed-missing"><strong>Interactive figure not '
+          + 'configured.</strong> Set <code>EDGEWISE_BASE</code> in '
+          + '<code>assets/html/edgewise-embed.html</code> to the deployed explorer. '
+          + 'This figure would show <code>' + net + '</code>.</div>'
+          + (caption ? '<div class="ew-embed-bar"><span class="ew-embed-caption">'
+              + caption + '</span></div>' : '');
+        continue;
+      }
+
+      const q = "network=" + encodeURIComponent(net) + (params ? "&" + params : "");
+      const frame = document.createElement("iframe");
+      frame.src = EDGEWISE_BASE + "/?embed=1&" + q;
+      frame.setAttribute("loading", "lazy");
+      frame.setAttribute("scrolling", "no");
+      frame.setAttribute("frameborder", "0");
+      frame.setAttribute("title", caption || net);
+      el.appendChild(frame);
+
+      const bar = document.createElement("div");
+      bar.className = "ew-embed-bar";
+      bar.innerHTML = '<span class="ew-embed-caption">' + caption + '</span>'
+        + '<a class="ew-embed-link" target="_blank" rel="noopener noreferrer" href="'
+        + EDGEWISE_BASE + "/?" + q + '">Open with controls &#8599;</a>';
+      el.appendChild(bar);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", render);
+  } else {
+    render();
+  }
+})();
+</script>

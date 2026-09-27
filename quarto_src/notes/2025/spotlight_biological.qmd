@@ -1,0 +1,89 @@
+---
+title: "Network spotlight: biological"
+description: "Who eats whom, who pollinates what, and one animal's nervous system. Each network as a live figure, with where it came from and what it may be used for."
+categories:
+  - Networks
+  - Spotlight
+date: 09/26/26
+---
+
+{{< include ../../assets/html/edgewise-embed.html >}}
+
+Who eats whom, who pollinates what, and one animal's nervous system.
+
+Every figure here is live: drag a node, hover for a name, and *Open with controls* gives you the same view in a full window with the colouring and layout options exposed. The data, and the script that rebuilds each one from its source, are in the [`networks`](https://github.com/maxjerdee/networks) repository.
+
+## Plant–Pollinator {#pollinator}
+
+```{=html}
+<div class="ew-embed" data-network="pollinator.gml"
+     data-params="layout=coord&coordXAttr=group&colorAttr=group&labelAttr=label"
+     data-caption="Plant–Pollinator — 26 nodes, 71 edges, undirected"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Plant or pollinator species |
+| **An edge** | A → B: pollinator A visits plant B, width ∝ number of observed visits |
+
+Bezerra, E. L. S., Machado, I. C., & Mello, M. A. R. (2009). Pollination networks of oil-flowers: a tiny world within the smallest of all worlds. Journal of Animal Ecology, 78(5), 1096-1101. Caatinga network (Parque Nacional do Catimbau, Brazil), via the Interaction Web Database, ecologia.ib.usp.br/iwdb.
+
+*[source](https://doi.org/10.1111/j.1365-2656.2009.01567.x) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/pollinator)*
+
+**Licence.** No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.
+
+<!-- THOUGHTS:pollinator -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:pollinator -->
+
+## Weddell Sea Food Web {#weddell-sea-foodweb}
+
+```{=html}
+<div class="ew-embed" data-network="weddell_sea_foodweb.gml"
+     data-params="layout=coord&colorAttr=trophic_role&sizeAttr=degree&coordYAttr=log_mass&edgeOpacity=0.05&edgeScale=0.2"
+     data-caption="Weddell Sea Food Web — 488 nodes, 15880 edges, directed"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Species, colored by trophic role, positioned by log body mass |
+| **An edge** | A → B: A preys on B |
+
+Cirtwill, A. R., & Eklof, A. (2018). Feeding environment and other traits shape species' roles in marine food webs. Ecology Letters, 21(6), 875-884. Data: Dryad doi:10.5061/dryad.1mv20r6. Original food web data from Jacob, U. et al. (2011). The Role of Body Size in Complex Food Webs: A Cold Case. Advances in Ecological Research, 45, 181-223.
+
+*[source](https://doi.org/10.5061/dryad.1mv20r6) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/weddell_sea_foodweb)*
+
+**Licence.** Deposited on Dryad, whose terms place deposited data under CC0 1.0. Attribution is requested rather than required; cite both papers below.
+
+<!-- THOUGHTS:weddell_sea_foodweb -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:weddell_sea_foodweb -->
+
+## C. elegans Connectome {#celegans}
+
+```{=html}
+<div class="ew-embed" data-network="celegans.gml"
+     data-params="layout=map&colorAttr=neuron_class&sizeAttr=degree&coordXAttr=soma_y&coordYAttr=soma_z&edgeOpacity=0.28&edgeScale=0.75"
+     data-caption="C. elegans Connectome — 180 nodes, 1938 edges, directed"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Neuron, colored by class (sensory/interneuron/motor), positioned by real soma location |
+| **An edge** | A → B: chemical synapse (A signals B) or, when type=electrical, a gap junction, width ∝ synapse count |
+
+C. elegans hermaphrodite neural connectome. Chemical synapses (directed, weighted by synapse count) and electrical gap junctions (edge attribute type=electrical, undirected in practice) from White, Southgate, Thomson and Brenner 1986, curated as white_1986_n2u.csv in openworm/ConnectomeToolbox (MIT license). Neuron class (sensory/interneuron/motor) from the same repo's Cook et al. 2019-derived classification. Soma position (x/y/z, micrometers) from openworm/CElegansNeuroML's per-neuron 3D reconstruction, released into the public domain (VirtualWorm project, WormBase/CalTech).
+
+*[source](https://github.com/openworm/ConnectomeToolbox) [source](https://github.com/openworm/CElegansNeuroML) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/celegans)*
+
+**Licence.** MIT, from openworm/ConnectomeToolbox, combined with public-domain data from CElegansNeuroML.
+
+<!-- THOUGHTS:celegans -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:celegans -->

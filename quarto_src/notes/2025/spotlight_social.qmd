@@ -1,0 +1,214 @@
+---
+title: "Network spotlight: social"
+description: "People, characters and animals, and the ties between them. Each network as a live figure, with where it came from and what it may be used for."
+categories:
+  - Networks
+  - Spotlight
+date: 09/26/26
+---
+
+{{< include ../../assets/html/edgewise-embed.html >}}
+
+People, characters and animals, and the ties between them.
+
+Every figure here is live: drag a node, hover for a name, and *Open with controls* gives you the same view in a full window with the colouring and layout options exposed. The data, and the script that rebuilds each one from its source, are in the [`networks`](https://github.com/maxjerdee/networks) repository.
+
+## Karate Club {#karate}
+
+```{=html}
+<div class="ew-embed" data-network="karate.gml"
+     data-params="colorAttr=faction&sizeAttr=degree&edgeOpacity=0.3&edgeScale=1.3"
+     data-caption="Karate Club — 34 nodes, 78 edges, undirected"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Karate club member, colored by which faction they joined after the club split |
+| **An edge** | Observed social tie outside normal club activities |
+
+Zachary, W. W. (1977). An information flow model for conflict and fission in small groups. Journal of Anthropological Research, 33(4), 452-473.
+
+*[source](https://doi.org/10.1086/jar.33.4.3629752) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/karate)*
+
+**Licence.** No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.
+
+<!-- THOUGHTS:karate -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:karate -->
+
+## Friends {#friends}
+
+```{=html}
+<div class="ew-embed" data-network="friends.gml"
+     data-params="layout=community-attract&colorAttr=class&sizeAttr=degree&edgeOpacity=0.3&edgeScale=0.6"
+     data-caption="Friends — 133 nodes, 665 edges, directed"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Student, colored by class (nine classes across four subjects) |
+| **An edge** | A → B: A named B as a friend in the survey. One-way: a nomination need not be returned |
+
+Reported friendship network of 329 students in nine classes of a lycee in Marseille, France, December 2013. A directed edge i->j means student i named j as a friend in the survey. Collected by the SocioPatterns collaboration alongside wearable-sensor proximity, contact-diary and Facebook networks for the same school; this is the friendship survey. Mastrandrea, R., Fournet, J., & Barrat, A. (2015). Contact Patterns in a High School: A Comparison between Data Collected Using Wearable Sensors, Contact Diaries and Friendship Surveys. PLOS ONE 10(9), e0136497. Node attribute `class` is a readable name for each of the nine classes, with the original French preparatory-class code kept as `class_code` (a trailing * marks the selective stream of that subject); `field` collapses the nine into the four subjects they study.
+
+*[source](https://www.sociopatterns.org/datasets/high-school-contact-and-friendship-networks/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/friends)*
+
+**Licence.** Creative Commons Attribution-NonCommercial-ShareAlike (CC BY-NC-SA), as stated by SocioPatterns. Redistribution permitted with attribution; non-commercial; a redistributed derivative must carry the same licence.
+
+<!-- THOUGHTS:friends -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:friends -->
+
+## Copenhagen Facebook {#copenhagen-fb}
+
+```{=html}
+<div class="ew-embed" data-network="copenhagen_fb.gml"
+     data-params="layout=force&colorAttr=gender&sizeAttr=degree&edgeOpacity=0.12&edgeScale=0.6"
+     data-caption="Copenhagen Facebook — 800 nodes, 6418 edges, undirected"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Student, colored by gender (the only attribute the study released) |
+| **An edge** | A declared Facebook friendship, mutual by construction |
+
+Declared Facebook friendships among students at the Technical University of Denmark, from the Copenhagen Networks Study -- one of four interaction layers recorded for the same population (the others being Bluetooth proximity, phone calls and text messages). Undirected: a Facebook friendship is mutual by construction. Sapiezynski, P., Stopczynski, A., Lassen, D. D., & Lehmann, S. (2019). Interaction data from the Copenhagen Networks Study. Scientific Data 6, 315. Gender is the only node attribute the study released; there is no class or department.
+
+*[source](https://doi.org/10.6084/m9.figshare.7267433) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/copenhagen_fb)*
+
+**Licence.** MIT, as stated on the figshare record. No commercial or share-alike restriction.
+
+<!-- THOUGHTS:copenhagen_fb -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:copenhagen_fb -->
+
+## Les Misérables {#les-miserables}
+
+```{=html}
+<div class="ew-embed" data-network="les_miserables.gml"
+     data-params="colorAttr=modularity_community&sizeAttr=degree&labelAttr=label&edgeOpacity=0.7&edgeScale=2.4"
+     data-caption="Les Misérables — 58 nodes, 168 edges, undirected"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Character in Les Misérables, colored by narrative group |
+| **An edge** | A—B: A and B appear together in a scene, width ∝ number of shared scenes |
+
+Knuth, D. E. (1993). The Stanford GraphBase: A Platform for Combinatorial Computing. Addison-Wesley.
+
+*[source](https://www-cs-faculty.stanford.edu/~knuth/sgb.html) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/les_miserables)*
+
+**Licence.** No licence stated. From Knuth's Stanford GraphBase, distributed for public use and redistributed very widely (d3, networkx, igraph). Cite the book.
+
+<!-- THOUGHTS:les_miserables -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:les_miserables -->
+
+## Romeo and Juliet {#romeo-and-juliet}
+
+```{=html}
+<div class="ew-embed" data-network="romeo_and_juliet.gml"
+     data-params="layout=community-attract&colorAttr=house&labelAttr=label&edgeOpacity=0.5&edgeScale=2.5"
+     data-caption="Romeo and Juliet — 17 nodes, 45 edges, undirected"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Character in Romeo and Juliet, colored by house |
+| **An edge** | A—B: A and B interact in the play |
+
+Character interaction network hand-constructed from Shakespeare's Romeo and Juliet for the edgewise example gallery (not derived from a published network dataset).
+
+*[data and build script](https://github.com/maxjerdee/networks/tree/main/networks/romeo_and_juliet)*
+
+**Licence.** Built for this repository from the play itself; no third-party data rights apply. Covered by this repository's own licence.
+
+<!-- THOUGHTS:romeo_and_juliet -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:romeo_and_juliet -->
+
+## American Football {#football}
+
+```{=html}
+<div class="ew-embed" data-network="football.gml"
+     data-params="colorAttr=conference&sizeAttr=degree&labelAttr=label&edgeOpacity=0.1"
+     data-caption="American Football — 115 nodes, 613 edges, undirected"></div>
+```
+
+| | |
+|---|---|
+| **A node** | US college football team, colored by conference |
+| **An edge** | A—B: A and B play each other in the 2000 regular season |
+
+Girvan, M., & Newman, M. E. J. (2002). Community structure in social and biological networks. Proceedings of the National Academy of Sciences, 99(12), 7821-7826. Conferences corrected to the 2000 season, and the three conference-championship rematches removed to leave the regular season only, per Evans, T. S. (2010). Clique graphs and overlapping communities. J. Stat. Mech. P12037.
+
+*[source](https://doi.org/10.1073/pnas.122653799) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/football)*
+
+**Licence.** No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.
+
+<!-- THOUGHTS:football -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:football -->
+
+## Florentine Families {#florentine}
+
+```{=html}
+<div class="ew-embed" data-network="florentine.gml"
+     data-params="layout=force&colorAttr=faction&labelAttr=label&edgeOpacity=0.233"
+     data-caption="Florentine Families — 15 nodes, 20 edges, undirected"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Florentine family, colored by faction |
+| **An edge** | A—B: a marriage tie exists between the two families |
+
+Padgett, J. F., & Ansell, C. K. (1993). Robust Action and the Rise of the Medici, 1400-1434. American Journal of Sociology, 98(6), 1259-1319.
+
+*[source](https://doi.org/10.1086/230190) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/florentine)*
+
+**Licence.** No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.
+
+<!-- THOUGHTS:florentine -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:florentine -->
+
+## Chicken Pecking Order {#chickens}
+
+```{=html}
+<div class="ew-embed" data-network="chickens.gml"
+     data-params="layout=coord&coordYAttr=value&labelAttr=label&edgeOpacity=0.7"
+     data-caption="Chicken Pecking Order — 11 nodes, 38 edges, directed"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Hen, positioned by dominance rank |
+| **An edge** | A → B: A pecks B (A dominates B) |
+
+Masure, R. H., & Allee, W. C. (1934). The social order in flocks of the common chicken and the pigeon. The Auk, 51(3), 306-327.
+
+*[source](https://doi.org/10.2307/4077659) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/chickens)*
+
+**Licence.** No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.
+
+<!-- THOUGHTS:chickens -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:chickens -->
