@@ -94,8 +94,19 @@ def load_entry(d: pathlib.Path) -> dict | None:
 
 
 def graph_attrs(p: pathlib.Path) -> dict[str, str]:
+    """A network's provenance: the GML header's four short fields, plus the
+    long-form licence and attribution from the folder's attribution.json.
+
+    The paragraphs used to be in the header. They moved out so a data file
+    carries only what has to travel with it -- which makes the spotlight the
+    place the full text is actually read, so it has to be rendered here.
+    """
     head = p.read_text(encoding="utf-8", errors="replace").split("node [", 1)[0]
-    return {k: v for k, v in re.findall(r'^\s*(\w+)\s+"((?:[^"\\]|\\.)*)"', head, re.M)}
+    attrs = {k: v for k, v in re.findall(r'^\s*(\w+)\s+"((?:[^"\\]|\\.)*)"', head, re.M)}
+    rec = p.parent / "attribution.json"
+    if rec.exists():
+        attrs.update(json.loads(rec.read_text(encoding="utf-8")))
+    return attrs
 
 
 def counts(p: pathlib.Path) -> tuple[int, int, bool]:
