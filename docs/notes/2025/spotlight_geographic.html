@@ -310,11 +310,7 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#chicago" id="toc-chicago" class="nav-link active" data-scroll-target="#chicago">Chicago Neighborhoods</a></li>
-  <li><a href="#uk-power-grid" id="toc-uk-power-grid" class="nav-link" data-scroll-target="#uk-power-grid">UK Power Grid</a></li>
-  <li><a href="#london-tube" id="toc-london-tube" class="nav-link" data-scroll-target="#london-tube">London Underground</a></li>
-  <li><a href="#nyc-subway" id="toc-nyc-subway" class="nav-link" data-scroll-target="#nyc-subway">NYC Subway</a></li>
   <li><a href="#tokyo-metro" id="toc-tokyo-metro" class="nav-link" data-scroll-target="#tokyo-metro">Tokyo Subway</a></li>
-  <li><a href="#nyc-subway-ridership" id="toc-nyc-subway-ridership" class="nav-link" data-scroll-target="#nyc-subway-ridership">NYC Subway Ridership</a></li>
   <li><a href="#europe-power-grid" id="toc-europe-power-grid" class="nav-link" data-scroll-target="#europe-power-grid">Europe Power Grid</a></li>
   </ul>
 </nav>
@@ -492,84 +488,6 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 <p><em>(thoughts to come)</em></p>
 <!-- /THOUGHTS:chicago -->
 </section>
-<section id="uk-power-grid" class="level2">
-<h2 class="anchored" data-anchor-id="uk-power-grid">UK Power Grid</h2>
-<div class="ew-embed" data-network="uk_power_grid.gml" data-params="layout=map&amp;colorAttr=type&amp;sizeAttr=degree&amp;edgeOpacity=0.35&amp;edgeScale=0.8" data-caption="UK Power Grid — 627 nodes, 752 edges, undirected"></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>A node</strong></td>
-<td>Substation or junction, positioned at its real coordinates</td>
-</tr>
-<tr class="even">
-<td><strong>An edge</strong></td>
-<td>High-voltage transmission line between two substations</td>
-</tr>
-</tbody>
-</table>
-<p>High-voltage transmission grid topology extracted from OpenStreetMap by GridKit. Filtered to Great Britain (largest connected component). Node positions are real substation/junction coordinates; edge weight is the transmission line’s approximate length in km.</p>
-<p><em>GridKit (Wiegmans, 2016) · compiled by Max Jerdee · <a href="https://zenodo.org/records/47317">source</a> · <a href="https://github.com/maxjerdee/networks/tree/main/networks/uk_power_grid">data and build script</a></em></p>
-<p><strong>Licence.</strong> Open Database License (ODbL), inherited from OpenStreetMap via GridKit (Zenodo 47317). Attribute OpenStreetMap contributors; a publicly-used derivative database must also be ODbL.</p>
-<!-- THOUGHTS:uk_power_grid -- your prose goes below; regeneration preserves it -->
-<p><em>(thoughts to come)</em></p>
-<!-- /THOUGHTS:uk_power_grid -->
-</section>
-<section id="london-tube" class="level2">
-<h2 class="anchored" data-anchor-id="london-tube">London Underground</h2>
-<div class="ew-embed" data-network="london_tube.gml" data-params="layout=map&amp;colorAttr=line&amp;sizeAttr=degree&amp;edgeOpacity=0.7&amp;edgeScale=3" data-caption="London Underground — 272 nodes, 313 edges, undirected"></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>A node</strong></td>
-<td>Station, positioned at its real coordinates</td>
-</tr>
-<tr class="even">
-<td><strong>An edge</strong></td>
-<td>A train runs directly between these two stations (no intermediate stop) on at least one line, width ∝ number of lines sharing the segment</td>
-</tr>
-</tbody>
-</table>
-<p>London Underground network: stations (real lat/lon) and direct line-adjacency edges (two stations connected if a train runs directly between them on any line with no intermediate stop, weight = number of lines sharing that segment). Powered by TfL Open Data (api.tfl.gov.uk); contains OS data (c) Crown copyright and database rights.</p>
-<p><em>Transport for London · compiled by Max Jerdee · <a href="https://api-portal.tfl.gov.uk/">source</a> · <a href="https://github.com/maxjerdee/networks/tree/main/networks/london_tube">data and build script</a></em></p>
-<p><strong>Licence.</strong> Transport for London Open Data licence. TfL prescribes the attribution wording, which is carried verbatim in the attribution attribute; contains OS data (C) Crown copyright and database rights.</p>
-<!-- THOUGHTS:london_tube -- your prose goes below; regeneration preserves it -->
-<p><em>(thoughts to come)</em></p>
-<!-- /THOUGHTS:london_tube -->
-</section>
-<section id="nyc-subway" class="level2">
-<h2 class="anchored" data-anchor-id="nyc-subway">NYC Subway</h2>
-<div class="ew-embed" data-network="nyc_subway.gml" data-params="layout=map&amp;colorAttr=route&amp;sizeAttr=degree&amp;edgeOpacity=0.7&amp;edgeScale=3" data-caption="NYC Subway — 496 nodes, 531 edges, undirected"></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>A node</strong></td>
-<td>Station, positioned at its real coordinates</td>
-</tr>
-<tr class="even">
-<td><strong>An edge</strong></td>
-<td>No other station lies between these two on the track (express skip-stops are pruned, not treated as direct connections), width ∝ number of routes sharing the segment</td>
-</tr>
-</tbody>
-</table>
-<p>NYC Subway network: stations (real lat/lon) and true physical-neighbor edges (two stations connected when no other station lies between them on the track, weight = number of routes sharing that segment) – express-train stop patterns are pruned of the false ‘skip’ edges they’d otherwise create over local-only stations (see prune_express_skips in scripts/build_nyc_subway.py). Source: MTA’s published GTFS static feed (web.mta.info/developers), provided for public use.</p>
-<p><em>Metropolitan Transportation Authority (MTA) · compiled by Max Jerdee · <a href="https://web.mta.info/developers/">source</a> · <a href="https://github.com/maxjerdee/networks/tree/main/networks/nyc_subway">data and build script</a></em></p>
-<p><strong>Licence.</strong> MTA open data (GTFS feeds), provided for public use.</p>
-<!-- THOUGHTS:nyc_subway -- your prose goes below; regeneration preserves it -->
-<p><em>(thoughts to come)</em></p>
-<!-- /THOUGHTS:nyc_subway -->
-</section>
 <section id="tokyo-metro" class="level2">
 <h2 class="anchored" data-anchor-id="tokyo-metro">Tokyo Subway</h2>
 <div class="ew-embed" data-network="tokyo_metro.gml" data-params="layout=map&amp;colorAttr=operator&amp;sizeAttr=degree&amp;edgeOpacity=0.65&amp;edgeScale=2.3" data-caption="Tokyo Subway — 201 nodes, 252 edges, undirected"></div>
@@ -595,32 +513,6 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 <!-- THOUGHTS:tokyo_metro -- your prose goes below; regeneration preserves it -->
 <p><em>(thoughts to come)</em></p>
 <!-- /THOUGHTS:tokyo_metro -->
-</section>
-<section id="nyc-subway-ridership" class="level2">
-<h2 class="anchored" data-anchor-id="nyc-subway-ridership">NYC Subway Ridership</h2>
-<div class="ew-embed" data-network="nyc_subway_ridership.gml" data-params="layout=map&amp;sizeAttr=total_ridership&amp;edgeOpacity=0.15&amp;edgeScale=0.5" data-caption="NYC Subway Ridership — 278 nodes, 2556 edges, directed"></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>A node</strong></td>
-<td>Station complex, positioned at its real coordinates</td>
-</tr>
-<tr class="even">
-<td><strong>An edge</strong></td>
-<td>A → B: estimated riders traveling from A to B, weekday PM peak (5-6pm), width ∝ ridership</td>
-</tr>
-</tbody>
-</table>
-<p>Estimated NYC Subway ridership flow between station complexes, a typical weekday PM-peak hour (Wednesday 5-6pm, June 2024) – NOT the physical track topology (see nyc_subway.gml for that). Edge weight is MTA’s own modeled ‘estimated average ridership’ for that hour, scaled up from OMNY/MetroCard tap data; values below 25 riders/hr are omitted to keep the dominant flows readable. Source: MTA’s Subway Origin-Destination Ridership Estimate dataset, NY Open Data (data.ny.gov, resource jsu2-fbtj), provided for public use.</p>
-<p><em>Metropolitan Transportation Authority (MTA), via New York State Open Data · compiled by Max Jerdee · <a href="https://data.ny.gov/d/jsu2-fbtj">source</a> · <a href="https://github.com/maxjerdee/networks/tree/main/networks/nyc_subway_ridership">data and build script</a></em></p>
-<p><strong>Licence.</strong> MTA open data and NY State Open Data, provided for public use.</p>
-<!-- THOUGHTS:nyc_subway_ridership -- your prose goes below; regeneration preserves it -->
-<p><em>(thoughts to come)</em></p>
-<!-- /THOUGHTS:nyc_subway_ridership -->
 </section>
 <section id="europe-power-grid" class="level2">
 <h2 class="anchored" data-anchor-id="europe-power-grid">Europe Power Grid</h2>

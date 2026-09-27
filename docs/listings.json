@@ -7,7 +7,6 @@
       "/notes/2025/spotlight_geographic.html",
       "/notes/2025/spotlight_informational.html",
       "/notes/2025/spotlight_social.html",
-      "/notes/2025/spotlight_synthetic.html",
       "/notes/2025/mutual_information_bias.html",
       "/notes/2025/depth_of_hierarchies.html",
       "/notes/2025/personal_website.html",
@@ -19,6 +18,10 @@
     ]
   },
   {
+    "listing": "/code.html",
+    "items": []
+  },
+  {
     "listing": "/demos.html",
     "items": [
       "/demos/wikiguess.html",
@@ -28,9 +31,5 @@
       "/demos/game_of_life.html",
       "/demos/chaos_sampler.html"
     ]
-  },
-  {
-    "listing": "/code.html",
-    "items": []
   }
 ]

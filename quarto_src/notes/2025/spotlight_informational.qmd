@@ -38,31 +38,6 @@ V. Krebs, unpublished (compiled from Amazon.com co-purchasing data around the 20
 
 <!-- /THOUGHTS:polbooks -->
 
-## Python Standard Library {#python-stdlib}
-
-```{=html}
-<div class="ew-embed" data-network="python_stdlib.gml"
-     data-params="colorAttr=kind&sizeAttr=in_degree&edgeOpacity=0.25&edgeScale=0.8"
-     data-caption="Python Standard Library — 168 nodes, 737 edges, directed"></div>
-```
-
-| | |
-|---|---|
-| **A node** | Python standard library module or package |
-| **An edge** | A → B: module A imports module B at module level |
-
-Python 3.10.12's own standard library import graph: a directed edge A->B means module A imports module B at module level, parsed directly from this interpreter's installed stdlib source via the ast module -- no external dataset. Modules that neither import, nor are imported by, any other stdlib module in this set are omitted.
-
-*CPython developers (Python standard library) · compiled by Max Jerdee · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/python_stdlib)*
-
-**Licence.** CC BY 4.0 for this compilation. Built for this repository from the CPython standard library's own import graph: module names and import relations only, no code.
-
-<!-- THOUGHTS:python_stdlib -- your prose goes below; regeneration preserves it -->
-
-*(thoughts to come)*
-
-<!-- /THOUGHTS:python_stdlib -->
-
 ## "Vehicle" WordNet {#wordnet-vehicle}
 
 ```{=html}
@@ -87,31 +62,6 @@ WordNet's hypernym (IS-A) hierarchy under 'vehicle.n.01', depth 4: a directed ed
 *(thoughts to come)*
 
 <!-- /THOUGHTS:wordnet_vehicle -->
-
-## npm Dependencies {#npm-deps}
-
-```{=html}
-<div class="ew-embed" data-network="npm_deps.gml"
-     data-params="colorAttr=role&sizeAttr=degree&edgeOpacity=0.25&edgeScale=0.8"
-     data-caption="npm Dependencies — 250 nodes, 434 edges, directed"></div>
-```
-
-| | |
-|---|---|
-| **A node** | An npm package, colored by its role here: hub, shared, used once, or consumer |
-| **An edge** | A → B: A lists B in its runtime dependencies, so installing A installs B |
-
-Runtime dependencies among 250 widely-used npm packages, from the public npm registry. A -> B means A lists B in its dependencies. Built by taking the 600 packages with the most dependents, computing the dependency edges among them, and keeping the 250 most connected as an induced subgraph.
-
-*npm registry · compiled by Max Jerdee · [source](https://registry.npmjs.org/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/npm_deps)*
-
-**Licence.** Public package metadata from the npm registry -- package names and dependency relations only, no package contents.
-
-<!-- THOUGHTS:npm_deps -- your prose goes below; regeneration preserves it -->
-
-*(thoughts to come)*
-
-<!-- /THOUGHTS:npm_deps -->
 
 ## Supreme Court Citations {#scotus-citations}
 

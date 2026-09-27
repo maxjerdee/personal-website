@@ -310,9 +310,7 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#polbooks" id="toc-polbooks" class="nav-link active" data-scroll-target="#polbooks">Political Books</a></li>
-  <li><a href="#python-stdlib" id="toc-python-stdlib" class="nav-link" data-scroll-target="#python-stdlib">Python Standard Library</a></li>
   <li><a href="#wordnet-vehicle" id="toc-wordnet-vehicle" class="nav-link" data-scroll-target="#wordnet-vehicle">“Vehicle” WordNet</a></li>
-  <li><a href="#npm-deps" id="toc-npm-deps" class="nav-link" data-scroll-target="#npm-deps">npm Dependencies</a></li>
   <li><a href="#scotus-citations" id="toc-scotus-citations" class="nav-link" data-scroll-target="#scotus-citations">Supreme Court Citations</a></li>
   <li><a href="#journals" id="toc-journals" class="nav-link" data-scroll-target="#journals">Journal Citations</a></li>
   </ul>
@@ -491,28 +489,6 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 <p><em>(thoughts to come)</em></p>
 <!-- /THOUGHTS:polbooks -->
 </section>
-<section id="python-stdlib" class="level2">
-<h2 class="anchored" data-anchor-id="python-stdlib">Python Standard Library</h2>
-<div class="ew-embed" data-network="python_stdlib.gml" data-params="colorAttr=kind&amp;sizeAttr=in_degree&amp;edgeOpacity=0.25&amp;edgeScale=0.8" data-caption="Python Standard Library — 168 nodes, 737 edges, directed"></div>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><strong>A node</strong></td>
-<td>Python standard library module or package</td>
-</tr>
-<tr class="even">
-<td><strong>An edge</strong></td>
-<td>A → B: module A imports module B at module level</td>
-</tr>
-</tbody>
-</table>
-<p>Python 3.10.12’s own standard library import graph: a directed edge A-&gt;B means module A imports module B at module level, parsed directly from this interpreter’s installed stdlib source via the ast module – no external dataset. Modules that neither import, nor are imported by, any other stdlib module in this set are omitted.</p>
-<p><em>CPython developers (Python standard library) · compiled by Max Jerdee · <a href="https://github.com/maxjerdee/networks/tree/main/networks/python_stdlib">data and build script</a></em></p>
-<p><strong>Licence.</strong> CC BY 4.0 for this compilation. Built for this repository from the CPython standard library’s own import graph: module names and import relations only, no code.</p>
-<!-- THOUGHTS:python_stdlib -- your prose goes below; regeneration preserves it -->
-<p><em>(thoughts to come)</em></p>
-<!-- /THOUGHTS:python_stdlib -->
-</section>
 <section id="wordnet-vehicle" class="level2">
 <h2 class="anchored" data-anchor-id="wordnet-vehicle">“Vehicle” WordNet</h2>
 <div class="ew-embed" data-network="wordnet_vehicle.gml" data-params="layout=radial-tree&amp;colorAttr=depth&amp;sizeAttr=degree&amp;edgeOpacity=0.4&amp;edgeScale=0.5" data-caption="" vehicle"="" wordnet="" —="" 301="" nodes,="" 300="" edges,="" directed"=""></div>
@@ -538,32 +514,6 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 <!-- THOUGHTS:wordnet_vehicle -- your prose goes below; regeneration preserves it -->
 <p><em>(thoughts to come)</em></p>
 <!-- /THOUGHTS:wordnet_vehicle -->
-</section>
-<section id="npm-deps" class="level2">
-<h2 class="anchored" data-anchor-id="npm-deps">npm Dependencies</h2>
-<div class="ew-embed" data-network="npm_deps.gml" data-params="colorAttr=role&amp;sizeAttr=degree&amp;edgeOpacity=0.25&amp;edgeScale=0.8" data-caption="npm Dependencies — 250 nodes, 434 edges, directed"></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>A node</strong></td>
-<td>An npm package, colored by its role here: hub, shared, used once, or consumer</td>
-</tr>
-<tr class="even">
-<td><strong>An edge</strong></td>
-<td>A → B: A lists B in its runtime dependencies, so installing A installs B</td>
-</tr>
-</tbody>
-</table>
-<p>Runtime dependencies among 250 widely-used npm packages, from the public npm registry. A -&gt; B means A lists B in its dependencies. Built by taking the 600 packages with the most dependents, computing the dependency edges among them, and keeping the 250 most connected as an induced subgraph.</p>
-<p><em>npm registry · compiled by Max Jerdee · <a href="https://registry.npmjs.org/">source</a> · <a href="https://github.com/maxjerdee/networks/tree/main/networks/npm_deps">data and build script</a></em></p>
-<p><strong>Licence.</strong> Public package metadata from the npm registry – package names and dependency relations only, no package contents.</p>
-<!-- THOUGHTS:npm_deps -- your prose goes below; regeneration preserves it -->
-<p><em>(thoughts to come)</em></p>
-<!-- /THOUGHTS:npm_deps -->
 </section>
 <section id="scotus-citations" class="level2">
 <h2 class="anchored" data-anchor-id="scotus-citations">Supreme Court Citations</h2>

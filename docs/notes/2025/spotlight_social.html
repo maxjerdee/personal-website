@@ -311,10 +311,7 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
   <ul>
   <li><a href="#karate" id="toc-karate" class="nav-link active" data-scroll-target="#karate">Karate Club</a></li>
   <li><a href="#friends" id="toc-friends" class="nav-link" data-scroll-target="#friends">Friends</a></li>
-  <li><a href="#copenhagen-fb" id="toc-copenhagen-fb" class="nav-link" data-scroll-target="#copenhagen-fb">Copenhagen Facebook</a></li>
   <li><a href="#les-miserables" id="toc-les-miserables" class="nav-link" data-scroll-target="#les-miserables">Les Misérables</a></li>
-  <li><a href="#romeo-and-juliet" id="toc-romeo-and-juliet" class="nav-link" data-scroll-target="#romeo-and-juliet">Romeo and Juliet</a></li>
-  <li><a href="#football" id="toc-football" class="nav-link" data-scroll-target="#football">American Football</a></li>
   <li><a href="#florentine" id="toc-florentine" class="nav-link" data-scroll-target="#florentine">Florentine Families</a></li>
   <li><a href="#chickens" id="toc-chickens" class="nav-link" data-scroll-target="#chickens">Chicken Pecking Order</a></li>
   </ul>
@@ -469,7 +466,7 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 <p>Every figure here is live: drag a node, hover for a name, and <em>Open with controls</em> gives you the same view in a full window with the colouring and layout options exposed. The data, and the script that rebuilds each one from its source, are in the <a href="https://github.com/maxjerdee/networks"><code>networks</code></a> repository.</p>
 <section id="karate" class="level2">
 <h2 class="anchored" data-anchor-id="karate">Karate Club</h2>
-<div class="ew-embed" data-network="karate.gml" data-params="colorAttr=faction&amp;sizeAttr=degree&amp;edgeOpacity=0.3&amp;edgeScale=1.3" data-caption="Karate Club — 34 nodes, 78 edges, undirected"></div>
+<div class="ew-embed" data-network="karate.gml" data-params="layout=force&amp;colorAttr=faction&amp;sizeAttr=degree&amp;edgeOpacity=0.3&amp;edgeScale=1.3" data-caption="Karate Club — 34 nodes, 78 edges, undirected"></div>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -519,35 +516,9 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 <p><em>(thoughts to come)</em></p>
 <!-- /THOUGHTS:friends -->
 </section>
-<section id="copenhagen-fb" class="level2">
-<h2 class="anchored" data-anchor-id="copenhagen-fb">Copenhagen Facebook</h2>
-<div class="ew-embed" data-network="copenhagen_fb.gml" data-params="layout=force&amp;colorAttr=gender&amp;sizeAttr=degree&amp;edgeOpacity=0.12&amp;edgeScale=0.6" data-caption="Copenhagen Facebook — 800 nodes, 6418 edges, undirected"></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>A node</strong></td>
-<td>Student, colored by gender (the only attribute the study released)</td>
-</tr>
-<tr class="even">
-<td><strong>An edge</strong></td>
-<td>A declared Facebook friendship, mutual by construction</td>
-</tr>
-</tbody>
-</table>
-<p>Declared Facebook friendships among students at the Technical University of Denmark, from the Copenhagen Networks Study – one of four interaction layers recorded for the same population (the others being Bluetooth proximity, phone calls and text messages). Undirected: a Facebook friendship is mutual by construction. Sapiezynski, P., Stopczynski, A., Lassen, D. D., &amp; Lehmann, S. (2019). Interaction data from the Copenhagen Networks Study. Scientific Data 6, 315. Gender is the only node attribute the study released; there is no class or department.</p>
-<p><em>P. Sapiezynski, A. Stopczynski, D. D. Lassen, S. Lehmann · compiled by Max Jerdee · <a href="https://doi.org/10.6084/m9.figshare.7267433">source</a> · <a href="https://github.com/maxjerdee/networks/tree/main/networks/copenhagen_fb">data and build script</a></em></p>
-<p><strong>Licence.</strong> MIT, as stated on the figshare record. No commercial or share-alike restriction.</p>
-<!-- THOUGHTS:copenhagen_fb -- your prose goes below; regeneration preserves it -->
-<p><em>(thoughts to come)</em></p>
-<!-- /THOUGHTS:copenhagen_fb -->
-</section>
 <section id="les-miserables" class="level2">
 <h2 class="anchored" data-anchor-id="les-miserables">Les Misérables</h2>
-<div class="ew-embed" data-network="les_miserables.gml" data-params="colorAttr=modularity_community&amp;sizeAttr=degree&amp;labelAttr=label&amp;edgeOpacity=0.7&amp;edgeScale=2.4" data-caption="Les Misérables — 58 nodes, 168 edges, undirected"></div>
+<div class="ew-embed" data-network="les_miserables.gml" data-params="layout=force&amp;colorAttr=modularity_community&amp;sizeAttr=degree&amp;labelAttr=label&amp;edgeOpacity=0.7&amp;edgeScale=2.4" data-caption="Les Misérables — 58 nodes, 168 edges, undirected"></div>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -570,54 +541,6 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 <!-- THOUGHTS:les_miserables -- your prose goes below; regeneration preserves it -->
 <p><em>(thoughts to come)</em></p>
 <!-- /THOUGHTS:les_miserables -->
-</section>
-<section id="romeo-and-juliet" class="level2">
-<h2 class="anchored" data-anchor-id="romeo-and-juliet">Romeo and Juliet</h2>
-<div class="ew-embed" data-network="romeo_and_juliet.gml" data-params="layout=community-attract&amp;colorAttr=house&amp;labelAttr=label&amp;edgeOpacity=0.5&amp;edgeScale=2.5" data-caption="Romeo and Juliet — 17 nodes, 45 edges, undirected"></div>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><strong>A node</strong></td>
-<td>Character in Romeo and Juliet, colored by house</td>
-</tr>
-<tr class="even">
-<td><strong>An edge</strong></td>
-<td>A—B: A and B interact in the play</td>
-</tr>
-</tbody>
-</table>
-<p>Character interaction network hand-constructed from Shakespeare’s Romeo and Juliet for the edgewise example gallery (not derived from a published network dataset).</p>
-<p><em>Max Jerdee · <a href="https://github.com/maxjerdee/networks/tree/main/networks/romeo_and_juliet">data and build script</a></em></p>
-<p><strong>Licence.</strong> CC BY 4.0. Hand-constructed for this repository from the play itself (public domain), so there are no upstream data rights; reuse with attribution to Max Jerdee.</p>
-<!-- THOUGHTS:romeo_and_juliet -- your prose goes below; regeneration preserves it -->
-<p><em>(thoughts to come)</em></p>
-<!-- /THOUGHTS:romeo_and_juliet -->
-</section>
-<section id="football" class="level2">
-<h2 class="anchored" data-anchor-id="football">American Football</h2>
-<div class="ew-embed" data-network="football.gml" data-params="colorAttr=conference&amp;sizeAttr=degree&amp;labelAttr=label&amp;edgeOpacity=0.1" data-caption="American Football — 115 nodes, 613 edges, undirected"></div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>A node</strong></td>
-<td>US college football team, colored by conference</td>
-</tr>
-<tr class="even">
-<td><strong>An edge</strong></td>
-<td>A—B: A and B play each other in the 2000 regular season</td>
-</tr>
-</tbody>
-</table>
-<p>Girvan, M., &amp; Newman, M. E. J. (2002). Community structure in social and biological networks. Proceedings of the National Academy of Sciences, 99(12), 7821-7826. Conferences corrected to the 2000 season, and the three conference-championship rematches removed to leave the regular season only, per Evans, T. S. (2010). Clique graphs and overlapping communities. J. Stat. Mech. P12037.</p>
-<p><em>Michelle Girvan and Mark E. J. Newman · <a href="https://doi.org/10.6084/m9.figshare.93179">source</a> · <a href="https://github.com/maxjerdee/networks/tree/main/networks/football">data and build script</a></em></p>
-<p><strong>Licence.</strong> No licence stated by the source. Published as part of the cited paper, before data licensing was normal, and redistributed widely in the network-science literature since; there is no licence to point to. Cite the paper.</p>
-<!-- THOUGHTS:football -- your prose goes below; regeneration preserves it -->
-<p><em>(thoughts to come)</em></p>
-<!-- /THOUGHTS:football -->
 </section>
 <section id="florentine" class="level2">
 <h2 class="anchored" data-anchor-id="florentine">Florentine Families</h2>

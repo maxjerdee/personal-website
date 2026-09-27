@@ -7,8 +7,15 @@
 One note per category, a section per network, each with an interactive embed and
 the facts about that network: counts, what it is, how it was collected, its rights,
 and where it came from. Those all come from the networks repo -- the GML's own
-graph attributes, its entry.json, its README -- so they cannot drift from the data
-the way a hand-copied summary would.
+graph attributes and catalogue header -- so they cannot drift from the data the
+way a hand-copied summary would.
+
+THE SET IS THE PUBLISHED SET. These notes document exactly the networks in the
+public repo, which is exactly what edgewise ships, so a source link from the
+explorer always resolves. A network still being worked on lives in the private
+workspace repo and has no section here until it graduates. That means a network
+moving back to the workspace REMOVES its section -- see --check and the orphan
+handling below, because losing prose that way would be silent otherwise.
 
 WHAT THIS DOES NOT WRITE. Your thoughts about each network. Every section ends with
 a marked block for them, and `--force` regenerates the facts around those blocks
@@ -25,10 +32,17 @@ import collections
 import json
 import pathlib
 import re
+import shutil
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "quarto_src" / "notes" / "2025"
+# Prose for a network that has left the published set. Kept out of the rendered
+# site, but kept: a network moving back to the workspace is a normal event in
+# this workflow, and it must not cost someone their writing.
+ORPHAN_DIR = ROOT / "tools" / "orphaned_thoughts"
+
+_entry_from_header = None       # set by main() from the networks repo's own parser
 
 BEGIN = "<!-- THOUGHTS:{slug} -- your prose goes below; regeneration preserves it -->"
 END = "<!-- /THOUGHTS:{slug} -->"
@@ -55,6 +69,28 @@ OVERRIDES = {
     "chickens": "layout=coord&coordYAttr=value&labelAttr=label&edgeOpacity=0.7",
     "pollinator": "layout=coord&coordXAttr=group&colorAttr=group&labelAttr=label",
 }
+
+
+def load_gmlheader(src_repo: pathlib.Path):
+    """The networks repo owns the header format; import its parser, don't copy it.
+
+    A second implementation here would be a second thing to keep in step, and the
+    one that silently disagrees is the one nobody notices.
+    """
+    tools = src_repo / "tools"
+    if not (tools / "gmlheader.py").exists():
+        raise SystemExit(f"no gmlheader.py in {tools} -- is --networks-dir right?")
+    sys.path.insert(0, str(tools))
+    from gmlheader import entry_from_header          # noqa: E402
+    return entry_from_header
+
+
+def load_entry(d: pathlib.Path) -> dict | None:
+    """The catalogue entry, from the GML header (entry.json is gone)."""
+    gml = d / f"{d.name}.gml"
+    if not gml.exists():
+        return None
+    return _entry_from_header(gml)
 
 
 def graph_attrs(p: pathlib.Path) -> dict[str, str]:
@@ -152,35 +188,92 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--networks-dir", type=pathlib.Path, default=ROOT.parent / "networks")
     ap.add_argument("--force", action="store_true",
                     help="rewrite the generated facts, preserving each THOUGHTS block")
+    ap.add_argument("--check", action="store_true",
+                    help="verify the notes cover exactly the published networks; write nothing")
     args = ap.parse_args(argv[1:])
 
-    src = (args.networks_dir / "networks").resolve()
+    src_repo = args.networks_dir.resolve()
+    src = (src_repo / "networks").resolve()
     if not src.is_dir():
-        print(f"no networks checkout at {src.parent}")
+        print(f"no networks checkout at {src_repo}")
         return 1
+
+    global _entry_from_header
+    _entry_from_header = load_gmlheader(src_repo)
 
     by_cat = collections.defaultdict(list)
     for d in sorted(p for p in src.iterdir() if p.is_dir()):
-        ej = d / "entry.json"
-        if not ej.exists():
+        e = load_entry(d)
+        if e is None:
             continue
-        e = json.loads(ej.read_text(encoding="utf-8"))
         by_cat[e.get("category", "Other")].append((e.get("order", 999), d, e))
+
+    published = {d.name for items in by_cat.values() for _, d, _ in items}
+    documented = set()
+    for slug, _, _ in CATEGORIES.values():
+        documented |= set(existing_thoughts(OUT_DIR / f"{slug}.qmd"))
+
+    if args.check:
+        # The correspondence the whole arrangement rests on: the notes document
+        # exactly what is published, so a source link from the explorer always
+        # resolves and nothing published is undocumented.
+        missing = sorted(published - documented)
+        extra = sorted(documented - published)
+        for n in missing:
+            print(f"  UNDOCUMENTED {n}: published, but no spotlight section")
+        for n in extra:
+            print(f"  ORPHANED {n}: has a spotlight section but is not published "
+                  "(moved back to the workspace?)")
+        if missing or extra:
+            print(f"\n{len(missing) + len(extra)} mismatch(es). "
+                  "Run without --check to regenerate.")
+            return 1
+        print(f"{len(published)} published networks, all documented, nothing extra.")
+        return 0
 
     unknown = set(by_cat) - set(CATEGORIES)
     if unknown:
         print(f"  ! no spotlight file defined for category/ies: {sorted(unknown)}")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    orphaned: list[str] = []
     for cat, (slug, title, blurb) in CATEGORIES.items():
         items = sorted(by_cat.get(cat, []))
-        if not items:
-            continue
         path = OUT_DIR / f"{slug}.qmd"
+        if not items:
+            # Every network in this category has left the published set. Skipping
+            # would leave the old note in place, still documenting networks that
+            # are no longer published and still linking to folders that 404 --
+            # which is exactly the drift --check exists to catch, so remove it.
+            if path.exists():
+                for slug_, prose in existing_thoughts(path).items():
+                    if prose.strip() and prose.strip() != "*(thoughts to come)*":
+                        ORPHAN_DIR.mkdir(parents=True, exist_ok=True)
+                        out = ORPHAN_DIR / f"{slug_}.md"
+                        out.write_text(
+                            f"# {slug_}\n\nSaved from {path.name} when its whole category left "
+                            f"the published set.\n\n" + prose.strip() + "\n", encoding="utf-8")
+                        orphaned.append(f"{slug_} -> {out.relative_to(ROOT)}")
+                path.unlink()
+                print(f"  {path.name}: removed, no published networks in this category")
+            continue
         if path.exists() and not args.force:
             print(f"  {path.name}: exists, left alone (use --force)")
             continue
         kept = existing_thoughts(path)
+        # Prose for a network that is no longer published would vanish with its
+        # section. Networks move back to the workspace by design here, so this is
+        # a normal event, not an error -- but a silent one would cost writing.
+        for slug, prose in kept.items():
+            if slug in published or not prose.strip() or prose.strip() == "*(thoughts to come)*":
+                continue
+            ORPHAN_DIR.mkdir(parents=True, exist_ok=True)
+            out = ORPHAN_DIR / f"{slug}.md"
+            out.write_text(
+                f"# {slug}\n\nSaved from {path.name} when {slug} left the published set.\n"
+                f"Paste it back into its section if the network is published again.\n\n"
+                + prose.strip() + "\n", encoding="utf-8")
+            orphaned.append(f"{slug} -> {out.relative_to(ROOT)}")
 
         head = [
             "---",
@@ -217,6 +310,11 @@ def main(argv: list[str]) -> int:
         n_kept = sum(1 for _, d, _ in items if d.name in kept)
         print(f"  {path.name}: {len(items)} networks"
               + (f", {n_kept} thoughts block(s) preserved" if n_kept else ""))
+    if orphaned:
+        print(f"\n{len(orphaned)} network(s) left the published set; their prose was saved, "
+              "not deleted:")
+        for o in orphaned:
+            print("  " + o)
     return 0
 
 
