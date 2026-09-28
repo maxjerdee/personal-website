@@ -139,3 +139,28 @@ Masure, R. H., & Allee, W. C. (1934). The social order in flocks of the common c
 *(thoughts to come)*
 
 <!-- /THOUGHTS:chickens -->
+
+## English Football {#english-football}
+
+```{=html}
+<div class="ew-embed" data-network="english-football.gml"
+     data-params="layout=coord&colorAttr=league&sizeAttr=degree&coordXAttr=league&coordYAttr=ds_score&edgeOpacity=0.35&edgeScale=0.5"
+     data-caption="English Football — 426 nodes, 9572 edges, directed"></div>
+```
+
+| | |
+|---|---|
+| **A node** | Football club, colored by league tier |
+| **An edge** | A → B: A beats B (or draws, if marked as a tie), 2024–25 season |
+
+2024-25 English league football (levels 1-8) plus that season's FA Cup, compiled by Max Jerdee from Football Web Pages match grids downloaded 2026-02-19; one edge per game, winner to loser, draws as edges typed "neutral"; teams without a named league removed.
+
+*Football Web Pages (footballwebpages.co.uk) · compiled by Max Jerdee · [source](https://www.footballwebpages.co.uk/) · [data and build script](https://github.com/maxjerdee/networks/tree/main/networks/english-football)*
+
+**Licence.** Match results from Football Web Pages, whose terms state: "All of the information on this site is provided for free. Anybody may use it", provided the use is lawful and does not infringe others' rights (terms last reviewed June 2019; checked unchanged 2026-09-27, https://www.footballwebpages.co.uk/terms-and-conditions). They place no limit on redistribution and ask for no attribution; Football Web Pages is credited as the source regardless.
+
+<!-- THOUGHTS:english-football -- your prose goes below; regeneration preserves it -->
+
+*(thoughts to come)*
+
+<!-- /THOUGHTS:english-football -->

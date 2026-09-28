@@ -94,7 +94,7 @@ Citations among 250 of the most-cited opinions of the U.S. Supreme Court, from e
 
 ```{=html}
 <div class="ew-embed" data-network="journals.gml"
-     data-params="layout=coord&colorAttr=discipline&sizeAttr=cited_by&labelAttr=abbrev&coordYAttr=bt_score&edgeOpacity=0.12&edgeScale=1.0"
+     data-params="layout=static&colorAttr=discipline&sizeAttr=cited_by&labelAttr=abbrev&edgeOpacity=0.12&edgeScale=1.0"
      data-caption="Journal Citations — 85 nodes, 6184 edges, directed"></div>
 ```
 
