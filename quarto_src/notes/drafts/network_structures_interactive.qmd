@@ -567,8 +567,12 @@ function postFootball(g) {
   g.nodes.forEach(n => { n.group = n.value; });
 }
 function postPolbooks(g) {
-  const m = {l: 0, n: 1, c: 2};
-  g.nodes.forEach(n => { n.group = m[n.value] ?? 1; });
+  // The attribute is `politics` (was `value`), and its values are spelled out.
+  // This map used the single letters l/n/c that networks.skewed.de ships, which
+  // our copy has not used for some time -- so every lookup missed and every book
+  // fell through to the `?? 1` default, colouring the whole network one group.
+  const m = {Liberal: 0, Neutral: 1, Conservative: 2};
+  g.nodes.forEach(n => { n.group = m[n.politics] ?? 1; });
 }
 function postRomeo(g) {
   const groupMap = {
