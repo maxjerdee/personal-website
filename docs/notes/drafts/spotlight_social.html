@@ -567,12 +567,16 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 </section>
 <section id="chickens" class="level2">
 <h2 class="anchored" data-anchor-id="chickens">Chicken Pecking Order</h2>
-<div class="ew-embed" data-network="chickens.gml" data-params="layout=coord&amp;coordYAttr=value&amp;labelAttr=label&amp;edgeOpacity=0.7" data-caption="Chicken Pecking Order — 11 nodes, 38 edges, directed"></div>
+<div class="ew-embed" data-network="chickens.gml" data-params="layout=coord&amp;coordYAttr=bt_score&amp;labelAttr=label&amp;edgeOpacity=0.7" data-caption="Chicken Pecking Order — 11 nodes, 38 edges, directed"></div>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <tbody>
 <tr class="odd">
 <td><strong>A node</strong></td>
-<td>Hen, positioned by dominance rank</td>
+<td>Hen, positioned by its Bradley-Terry score (MAP); numbered by that ranking</td>
 </tr>
 <tr class="even">
 <td><strong>An edge</strong></td>
@@ -589,7 +593,7 @@ gtag('config', 'G-SY1YC6MMLM', { 'anonymize_ip': true});
 </section>
 <section id="english-football" class="level2">
 <h2 class="anchored" data-anchor-id="english-football">English Football</h2>
-<div class="ew-embed" data-network="english-football.gml" data-params="layout=coord&amp;colorAttr=league&amp;sizeAttr=degree&amp;coordXAttr=league&amp;coordYAttr=ds_score&amp;edgeOpacity=0.35&amp;edgeScale=0.5" data-caption="English Football — 426 nodes, 9572 edges, directed"></div>
+<div class="ew-embed" data-network="english-football.gml" data-params="layout=coord&amp;colorAttr=tier&amp;sizeAttr=degree&amp;coordXAttr=league&amp;coordYAttr=ds_score&amp;edgeOpacity=0.35&amp;edgeScale=0.5" data-caption="English Football — 426 nodes, 9572 edges, directed"></div>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
