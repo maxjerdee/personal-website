@@ -67,7 +67,10 @@ CATEGORIES = {
 # A sensible interactive view per network: what to colour by, and how to lay it
 # out. Taken from the network's own manifest defaults unless it needs an override.
 OVERRIDES = {
-    "chickens": "layout=coord&coordYAttr=value&labelAttr=label&edgeOpacity=0.7",
+    # bt_score, not the old `value` rank attribute, which the network no longer
+    # carries. The override exists only for the heavier edgeOpacity: at a
+    # figure's size the network's own 0.233 is too faint to follow.
+    "chickens": "layout=coord&coordYAttr=bt_score&labelAttr=label&edgeOpacity=0.7",
     "pollinator": "layout=coord&coordXAttr=group&colorAttr=group&labelAttr=label",
 }
 

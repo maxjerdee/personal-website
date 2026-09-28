@@ -119,13 +119,13 @@ Padgett, J. F., & Ansell, C. K. (1993). Robust Action and the Rise of the Medici
 
 ```{=html}
 <div class="ew-embed" data-network="chickens.gml"
-     data-params="layout=coord&coordYAttr=value&labelAttr=label&edgeOpacity=0.7"
+     data-params="layout=coord&coordYAttr=bt_score&labelAttr=label&edgeOpacity=0.7"
      data-caption="Chicken Pecking Order — 11 nodes, 38 edges, directed"></div>
 ```
 
 | | |
 |---|---|
-| **A node** | Hen, positioned by dominance rank |
+| **A node** | Hen, positioned by its Bradley-Terry score (MAP); numbered by that ranking |
 | **An edge** | A → B: A pecks B (A dominates B) |
 
 Masure, R. H., & Allee, W. C. (1934). The social order in flocks of the common chicken and the pigeon. The Auk, 51(3), 306-327.
@@ -144,7 +144,7 @@ Masure, R. H., & Allee, W. C. (1934). The social order in flocks of the common c
 
 ```{=html}
 <div class="ew-embed" data-network="english-football.gml"
-     data-params="layout=coord&colorAttr=league&sizeAttr=degree&coordXAttr=league&coordYAttr=ds_score&edgeOpacity=0.35&edgeScale=0.5"
+     data-params="layout=coord&colorAttr=tier&sizeAttr=degree&coordXAttr=league&coordYAttr=ds_score&edgeOpacity=0.35&edgeScale=0.5"
      data-caption="English Football — 426 nodes, 9572 edges, directed"></div>
 ```
 

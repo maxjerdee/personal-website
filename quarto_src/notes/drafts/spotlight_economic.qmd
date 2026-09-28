@@ -26,7 +26,7 @@ Every figure here is live: drag a node, hover for a name, and *Open with control
 | | |
 |---|---|
 | **A node** | University, positioned by its inferred prestige score |
-| **An edge** | A → B: B hires a PhD from A, width ∝ number of such hires |
+| **An edge** | A → B: PhD from A hired by B, width ∝ number of such hires |
 
 Clauset, A., Arbesman, S., & Larremore, D. B. (2015). Systematic inequality and hierarchy in faculty hiring networks. Science Advances, 1(1), e1400005.
 
