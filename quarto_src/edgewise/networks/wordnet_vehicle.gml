@@ -18,7 +18,7 @@ graph [
   order 10
   keyNodeShort "Word"
   keyNodeFull "A WordNet synset (one sense of a word), colored by how far below &quot;vehicle&quot; it sits"
-  keyEdgeShort "&quot;A&quot; is a &quot;B&quot;"
+  keyEdgeShort "&quot;B&quot; is a kind of &quot;A&quot;"
   keyEdgeFull "A &#8594; B: B is a more specific kind of A (e.g. car &#8594; convertible)"
   keyStyle "graphical"
   sizeScale 2.0

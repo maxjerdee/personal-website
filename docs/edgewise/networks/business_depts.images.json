@@ -1,0 +1,695 @@
+{
+  "Stanford University": {
+    "file": "images/institutions/stanford_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seal_of_Leland_Stanford_Junior_University.svg",
+    "sourceTitle": "Stanford University",
+    "license": "Public domain",
+    "artist": "Arthur Bridgeman Clark"
+  },
+  "MIT": {
+    "file": "images/institutions/mit.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MIT_2023_red_logo.svg",
+    "sourceTitle": "Massachusetts Institute of Technology",
+    "license": "Public domain",
+    "artist": "Matthew Carter and others, owned by Massachusetts Institute of Technology"
+  },
+  "Harvard University": {
+    "file": "images/institutions/harvard_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harvard_University_coat_of_arms.svg",
+    "sourceTitle": "Harvard University",
+    "license": "Public domain",
+    "artist": "Harvard University"
+  },
+  "UC Berkeley": {
+    "file": "images/institutions/uc_berkeley.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seal_of_University_of_California,_Berkeley.svg",
+    "sourceTitle": "University of California, Berkeley",
+    "license": "Public domain",
+    "artist": "University of California, Berkeley; This SVG file: User:RaphaelQS"
+  },
+  "University of Rochester": {
+    "file": "images/institutions/university_of_rochester.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Rochester_2025_logo_text-only_center.svg",
+    "sourceTitle": "University of Rochester 2025 logo text-only center.svg",
+    "license": "Public domain",
+    "artist": "University of Rochester"
+  },
+  "University of Chicago": {
+    "file": "images/institutions/university_of_chicago.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Chicago_wordmark.svg",
+    "sourceTitle": "University of Chicago wordmark.svg",
+    "license": "Public domain",
+    "artist": "University of Chicago"
+  },
+  "Cornell University": {
+    "file": "images/institutions/cornell_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cornell_University_seal.svg",
+    "sourceTitle": "Cornell University",
+    "license": "Public domain",
+    "artist": "Cornell University.\nThe original uploader was Connormah at English Wikipedia..\n\nLater version(s) were uploaded by Corkythehornetfan, Ɱ, RaphaelQS at English Wikipedia."
+  },
+  "Northwestern University": {
+    "file": "images/institutions/northwestern_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Northwestern_University_seal.svg",
+    "sourceTitle": "Northwestern University",
+    "license": "Public domain",
+    "artist": "Northwestern University"
+  },
+  "University of Michigan": {
+    "file": "images/institutions/university_of_michigan.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seal_of_the_University_of_Michigan.svg",
+    "sourceTitle": "University of Michigan",
+    "license": "Public domain",
+    "artist": "University of Michigan"
+  },
+  "Columbia University": {
+    "file": "images/institutions/columbia_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coat_of_Arms_of_Columbia_University.svg",
+    "sourceTitle": "Columbia University",
+    "license": "CC0",
+    "artist": "Hstoops"
+  },
+  "Yale University": {
+    "file": "images/institutions/yale_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yale_University_Shield_1.svg",
+    "sourceTitle": "Yale University",
+    "license": "Public domain",
+    "artist": "Yale University"
+  },
+  "University of Pennsylvania": {
+    "file": "images/institutions/university_of_pennsylvania.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:UPenn_shield_with_banner.svg",
+    "sourceTitle": "University of Pennsylvania",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "Carnegie Mellon University": {
+    "file": "images/institutions/carnegie_mellon_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carnegie_Mellon_University_wordmark.svg",
+    "sourceTitle": "Carnegie Mellon University wordmark.svg",
+    "license": "Public domain",
+    "artist": "Carnegie Mellon University"
+  },
+  "University of Wisconsin, Madison": {
+    "file": "images/institutions/university_of_wisconsin_madison.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seal_of_the_University_of_Wisconsin.svg",
+    "sourceTitle": "University of Wisconsin–Madison",
+    "license": "Public domain",
+    "artist": "University of Wisconsin-Madison"
+  },
+  "UCLA": {
+    "file": "images/institutions/ucla.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_University_of_California_UCLA.svg",
+    "sourceTitle": "University of California, Los Angeles",
+    "license": "Public domain",
+    "artist": "Original University of California seal: probably Tiffany &amp; Co,; This SVG file: Casecrer"
+  },
+  "New York University": {
+    "file": "images/institutions/new_york_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:New_York_University_Seal.svg",
+    "sourceTitle": "New York University",
+    "license": "Public domain",
+    "artist": "New York University"
+  },
+  "University of Minnesota, Minneapolis": {
+    "file": "images/institutions/university_of_minnesota_minneapolis.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seal_of_the_University_of_Minnesota.svg",
+    "sourceTitle": "University of Minnesota",
+    "license": "Public domain",
+    "artist": "University of Minnesota"
+  },
+  "Duke University": {
+    "file": "images/institutions/duke_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Duke_University_logo.svg",
+    "sourceTitle": "Duke University",
+    "license": "Public domain",
+    "artist": "Duke University, Shep"
+  },
+  "Purdue University": {
+    "file": "images/institutions/purdue_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Purdue_University_system_logo.svg",
+    "sourceTitle": "Purdue University system logo.svg",
+    "license": "Public domain",
+    "artist": "Purdue University"
+  },
+  "Ohio State University": {
+    "file": "images/institutions/ohio_state_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ohio_State_University_horizontal_logo.svg",
+    "sourceTitle": "Ohio State University horizontal logo.svg",
+    "license": "Public domain",
+    "artist": "Ohio State University"
+  },
+  "University of Iowa": {
+    "file": "images/institutions/university_of_iowa.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Iowa_wordmark.svg",
+    "sourceTitle": "University of Iowa",
+    "license": "Public domain",
+    "artist": "University of Iowa"
+  },
+  "University of North Carolina, Chapel Hill": {
+    "file": "images/institutions/university_of_north_carolina_chapel_hill.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_North_Carolina_at_Chapel_Hill_seal.svg",
+    "sourceTitle": "University of North Carolina at Chapel Hill",
+    "license": "Public domain",
+    "artist": "University of North Carolina Chapel Hill"
+  },
+  "Washington University, St. Louis": {
+    "file": "images/institutions/washington_university_st_louis.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Washu_textlogo.png",
+    "sourceTitle": "Washu textlogo.png",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "University of Florida": {
+    "file": "images/institutions/university_of_florida.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Florida_logo.svg",
+    "sourceTitle": "University of Florida logo.svg",
+    "license": "Public domain",
+    "artist": "University of Florida"
+  },
+  "University of Texas, Austin": {
+    "file": "images/institutions/university_of_texas_austin.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Texas_at_Austin_logo.svg",
+    "sourceTitle": "University of Texas at Austin logo.svg",
+    "license": "Public domain",
+    "artist": "University of Texas at Austin"
+  },
+  "University of Pittsburgh": {
+    "file": "images/institutions/university_of_pittsburgh.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Pittsburgh_wordmark.svg",
+    "sourceTitle": "University of Pittsburgh wordmark.svg",
+    "license": "Public domain",
+    "artist": "University of Pittsburgh"
+  },
+  "Pennsylvania State University": {
+    "file": "images/institutions/pennsylvania_state_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Penn_state_university_textlogo.png",
+    "sourceTitle": "Penn state university textlogo.png",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "University of Washington": {
+    "file": "images/institutions/university_of_washington.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Washington_signature.svg",
+    "sourceTitle": "University of Washington signature.svg",
+    "license": "Public domain",
+    "artist": "University of Washington"
+  },
+  "University of Maryland, College Park": {
+    "file": "images/institutions/university_of_maryland_college_park.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Maryland.png",
+    "sourceTitle": "University of Maryland, College Park",
+    "license": "CC BY-SA 4.0",
+    "artist": "Wispeye"
+  },
+  "Georgia Tech": {
+    "file": "images/institutions/georgia_tech.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georgia_Tech_seal.svg",
+    "sourceTitle": "Georgia Tech",
+    "license": "Public domain",
+    "artist": "Georgia Tech/Francis P. Smith"
+  },
+  "University of Colorado, Boulder": {
+    "file": "images/institutions/university_of_colorado_boulder.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seal_of_the_University_of_Colorado.svg",
+    "sourceTitle": "University of Colorado Boulder",
+    "license": "Public domain",
+    "artist": "Board of Regents of the University of Colorado."
+  },
+  "UC Irvine": {
+    "file": "images/institutions/uc_irvine.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_University_of_California_Irvine.svg",
+    "sourceTitle": "University of California, Irvine",
+    "license": "Public domain",
+    "artist": "Original University of California seal: probably Tiffany &amp; Co,; This SVG file: User:Casecrer"
+  },
+  "University of Arizona": {
+    "file": "images/institutions/university_of_arizona.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Arizona_logo.svg",
+    "sourceTitle": "University of Arizona logo.svg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "University of Utah": {
+    "file": "images/institutions/university_of_utah.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Utah_horizontal_logo.svg",
+    "sourceTitle": "University of Utah horizontal logo.svg",
+    "license": "Public domain",
+    "artist": "University of Utah"
+  },
+  "University of Oregon": {
+    "file": "images/institutions/university_of_oregon.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seal_of_the_University_of_Oregon.svg",
+    "sourceTitle": "University of Oregon",
+    "license": "Public domain",
+    "artist": "Matthew Paul Deady"
+  },
+  "University of Southern California": {
+    "file": "images/institutions/university_of_southern_california.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Southern_California_(USC)_seal.svg",
+    "sourceTitle": "University of Southern California",
+    "license": "Public domain",
+    "artist": "University of Southern California"
+  },
+  "University of Texas, Dallas": {
+    "file": "images/institutions/university_of_texas_dallas.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:UT_Dallas_Wordmark_-_-_SVG_Brand_Identity_File.svg",
+    "sourceTitle": "UT Dallas Wordmark - - SVG Brand Identity File.svg",
+    "license": "CC BY-SA 4.0",
+    "artist": "The University of Texas at Dallas"
+  },
+  "University of Virginia": {
+    "file": "images/institutions/university_of_virginia.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Virginia_seal.svg",
+    "sourceTitle": "University of Virginia",
+    "license": "Public domain",
+    "artist": "University of Virginia"
+  },
+  "Boston University": {
+    "file": "images/institutions/boston_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boston_University_seal.svg",
+    "sourceTitle": "Boston University",
+    "license": "Public domain",
+    "artist": "Boston University"
+  },
+  "Texas A&#38;M": {
+    "file": "images/institutions/texas_a_m.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Texas_A&M_University_logo.svg",
+    "sourceTitle": "Texas A&M University logo.svg",
+    "license": "Public domain",
+    "artist": "Texas A&amp;M University"
+  },
+  "Case Western Reserve University": {
+    "file": "images/institutions/case_western_reserve_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CWRU_Two-line_horizontal_logo_Blue.svg",
+    "sourceTitle": "CWRU Two-line horizontal logo Blue.svg",
+    "license": "Public domain",
+    "artist": "Case Western Reserve University"
+  },
+  "UC Davis": {
+    "file": "images/institutions/uc_davis.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_University_of_California_Davis.svg",
+    "sourceTitle": "University of California, Davis",
+    "license": "Public domain",
+    "artist": "Original University of California seal: probably Tiffany &amp; Co,; This SVG file: Casecrer"
+  },
+  "University of Georgia": {
+    "file": "images/institutions/university_of_georgia.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Georgia_seal_1801.svg",
+    "sourceTitle": "University of Georgia",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "Vanderbilt University": {
+    "file": "images/institutions/vanderbilt_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vanderbilt_University_logo.svg",
+    "sourceTitle": "Vanderbilt University logo.svg",
+    "license": "Public domain",
+    "artist": "Vanderbilt University"
+  },
+  "Syracuse University": {
+    "file": "images/institutions/syracuse_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Syracuse_University_wordmark.svg",
+    "sourceTitle": "Syracuse University wordmark.svg",
+    "license": "Public domain",
+    "artist": "Syracuse University"
+  },
+  "Arizona State University": {
+    "file": "images/institutions/arizona_state_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arizona_State_University_logo.svg",
+    "sourceTitle": "Arizona State University logo.svg",
+    "license": "Public domain",
+    "artist": "Arizona State University"
+  },
+  "University of South Carolina": {
+    "file": "images/institutions/university_of_south_carolina.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Usc_logo_simple.svg",
+    "sourceTitle": "Usc logo simple.svg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "Virginia Tech": {
+    "file": "images/institutions/virginia_tech.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Virginia_Tech_logo.svg",
+    "sourceTitle": "Virginia Tech logo.svg",
+    "license": "Public domain",
+    "artist": "Virginia Tech"
+  },
+  "Boston College": {
+    "file": "images/institutions/boston_college.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boston_College_Logotype.svg",
+    "sourceTitle": "Boston College",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "University of Cincinnati": {
+    "file": "images/institutions/university_of_cincinnati.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Cincinnati_seal.svg",
+    "sourceTitle": "University of Cincinnati",
+    "license": "Public domain",
+    "artist": "University of Cincinnati"
+  },
+  "University of Houston": {
+    "file": "images/institutions/university_of_houston.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Houston_logo.svg",
+    "sourceTitle": "University of Houston logo.svg",
+    "license": "Public domain",
+    "artist": "University of Houston"
+  },
+  "Rutgers University": {
+    "file": "images/institutions/rutgers_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rutgers_University_seal.svg",
+    "sourceTitle": "Rutgers University",
+    "license": "Public domain",
+    "artist": "Rutgers, The State University of New Jersey"
+  },
+  "Dartmouth College": {
+    "file": "images/institutions/dartmouth_college.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dartmouth_College_logo.svg",
+    "sourceTitle": "Dartmouth College logo.svg",
+    "license": "Public domain",
+    "artist": "Dartmouth College"
+  },
+  "University of Kentucky": {
+    "file": "images/institutions/university_of_kentucky.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Kentucky_logo.svg",
+    "sourceTitle": "University of Kentucky logo.svg",
+    "license": "Public domain",
+    "artist": "University of Kentucky"
+  },
+  "Rice University": {
+    "file": "images/institutions/rice_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rice_University_Logo.png",
+    "sourceTitle": "Rice University Logo.png",
+    "license": "CC BY-SA 4.0",
+    "artist": "Thiago602"
+  },
+  "Southern Methodist University": {
+    "file": "images/institutions/southern_methodist_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Smu_university_wordmark.svg",
+    "sourceTitle": "Smu university wordmark.svg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "George Washington University": {
+    "file": "images/institutions/george_washington_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:George_Washington_University_wordmark.svg",
+    "sourceTitle": "George Washington University",
+    "license": "Public domain",
+    "artist": "George Washington University"
+  },
+  "University of Alabama, Tuscaloosa": {
+    "file": "images/institutions/university_of_alabama_tuscaloosa.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Alabama_logo.svg",
+    "sourceTitle": "University of Alabama logo.svg",
+    "license": "Public domain",
+    "artist": "University of Alabama"
+  },
+  "Iowa State University": {
+    "file": "images/institutions/iowa_state_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iowa_State_University_wordmark.svg",
+    "sourceTitle": "Iowa State University",
+    "license": "Public domain",
+    "artist": "Iowa State University"
+  },
+  "CUNY Baruch College": {
+    "file": "images/institutions/cuny_baruch_college.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baruch_logo.svg",
+    "sourceTitle": "Baruch logo.svg",
+    "license": "Public domain",
+    "artist": "CUNY Baruch College"
+  },
+  "University of Hawaii, Manoa": {
+    "file": "images/institutions/university_of_hawaii_manoa.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Hawaii_at_Manoa_logo.png",
+    "sourceTitle": "University of Hawaii at Manoa logo.png",
+    "license": "Public domain",
+    "artist": "University of Hawaii at Manoa"
+  },
+  "Georgetown University": {
+    "file": "images/institutions/georgetown_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georgetown_University_seal.svg",
+    "sourceTitle": "Georgetown University",
+    "license": "Public domain",
+    "artist": "Unknown, possibly Justine Douat"
+  },
+  "Drexel University": {
+    "file": "images/institutions/drexel_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Drexel-logo.png",
+    "sourceTitle": "Drexel-logo.png",
+    "license": "CC BY-SA 4.0",
+    "artist": "Bonechiller11"
+  },
+  "University of Notre Dame": {
+    "file": "images/institutions/university_of_notre_dame.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Notre_Dame_seal_(2).svg",
+    "sourceTitle": "University of Notre Dame",
+    "license": "Public domain",
+    "artist": "University of Notre Dame"
+  },
+  "University of Miami": {
+    "file": "images/institutions/university_of_miami.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Miami_logo.svg",
+    "sourceTitle": "University of Miami",
+    "license": "Public domain",
+    "artist": "University of Miami"
+  },
+  "Brigham Young University": {
+    "file": "images/institutions/brigham_young_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brigham_Young_University_medallion.svg",
+    "sourceTitle": "Brigham Young University",
+    "license": "Public domain",
+    "artist": "Brigham Young University"
+  },
+  "Fordham University": {
+    "file": "images/institutions/fordham_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fordham_University_logo_2025.png",
+    "sourceTitle": "Fordham University logo 2025.png",
+    "license": "Public domain",
+    "artist": "Fordham University"
+  },
+  "Santa Clara University": {
+    "file": "images/institutions/santa_clara_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santa_Clara_University_Text_Logo_Stacked.png",
+    "sourceTitle": "Santa Clara University Text Logo Stacked.png",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "Northeastern University": {
+    "file": "images/institutions/northeastern_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:NU_RGB_seal_R.png",
+    "sourceTitle": "Northeastern University",
+    "license": "CC BY-SA 4.0",
+    "artist": "NortheasternUniversityBrand"
+  },
+  "Babson College": {
+    "file": "images/institutions/babson_college.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tomasso_Hall,_Babson_College.jpg",
+    "sourceTitle": "Babson College",
+    "license": "CC BY-SA 4.0",
+    "artist": "Kenneth C. Zirkel"
+  },
+  "Pepperdine University": {
+    "file": "images/institutions/pepperdine_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pepperdine_University_wordmark.svg",
+    "sourceTitle": "Pepperdine University wordmark.svg",
+    "license": "Public domain",
+    "artist": "Pepperdine University."
+  },
+  "Pace University": {
+    "file": "images/institutions/pace_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pace_University_wordmark.svg",
+    "sourceTitle": "Pace University",
+    "license": "Public domain",
+    "artist": "Pace University"
+  },
+  "Hofstra University": {
+    "file": "images/institutions/hofstra_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hofstra_University_logo_stacked.svg",
+    "sourceTitle": "Hofstra University logo stacked.svg",
+    "license": "Public domain",
+    "artist": "Hofstra University"
+  },
+  "Michigan State University": {
+    "file": "images/institutions/michigan_state_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Michigan_State_University_wordmark.svg",
+    "sourceTitle": "Michigan State University wordmark.svg",
+    "license": "Public domain",
+    "artist": "Michigan State University"
+  },
+  "State University of New York, Buffalo": {
+    "file": "images/institutions/state_university_of_new_york_buffalo.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_at_Buffalo_logo.svg",
+    "sourceTitle": "University at Buffalo",
+    "license": "Public domain",
+    "artist": "University at Buffalo"
+  },
+  "University of Massachusetts, Amherst": {
+    "file": "images/institutions/university_of_massachusetts_amherst.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:UMass_Seal_Medium_PMS_202.png",
+    "sourceTitle": "University of Massachusetts Amherst",
+    "license": "Public domain",
+    "artist": "University of Massachusetts Amherst"
+  },
+  "Tulane University": {
+    "file": "images/institutions/tulane_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tulane_University_Logo.svg",
+    "sourceTitle": "Tulane University",
+    "license": "Public domain",
+    "artist": "Tulane University Logo"
+  },
+  "University of Connecticut": {
+    "file": "images/institutions/university_of_connecticut.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Connecticut_logo.svg",
+    "sourceTitle": "University of Connecticut logo.svg",
+    "license": "Public domain",
+    "artist": "University of Connecticut"
+  },
+  "University of Kansas, Lawrence": {
+    "file": "images/institutions/university_of_kansas_lawrence.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Kansas_wordmark.svg",
+    "sourceTitle": "University of Kansas wordmark.svg",
+    "license": "Public domain",
+    "artist": "University of Kansas"
+  },
+  "Temple University": {
+    "file": "images/institutions/temple_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Temple_University_Logo.svg",
+    "sourceTitle": "Temple University Logo.svg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "North Carolina State University": {
+    "file": "images/institutions/north_carolina_state_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:North_Carolina_State_University_logo.svg",
+    "sourceTitle": "North Carolina State University logo.svg",
+    "license": "Public domain",
+    "artist": "North Carolina State University"
+  },
+  "Worcester Polytechnic Institute": {
+    "file": "images/institutions/worcester_polytechnic_institute.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:WPI_wordmark.svg",
+    "sourceTitle": "Worcester Polytechnic Institute",
+    "license": "Public domain",
+    "artist": "Worcester Polytechnic Institute"
+  },
+  "Bentley University": {
+    "file": "images/institutions/bentley_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bentley_Institutional_Seal_Dark_Grey_(1).png",
+    "sourceTitle": "Bentley University",
+    "license": "CC BY-SA 4.0",
+    "artist": "JohnMcElhenny"
+  },
+  "Howard University": {
+    "file": "images/institutions/howard_university.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Howard_university_wordmark.jpg",
+    "sourceTitle": "Howard university wordmark.jpg",
+    "license": "Public domain",
+    "artist": "Howard University"
+  },
+  "Rochester Institute of Technology": {
+    "file": "images/institutions/rochester_institute_of_technology.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rochester_Institute_of_Technology_Seal_(2018).svg",
+    "sourceTitle": "Rochester Institute of Technology",
+    "license": "Public domain",
+    "artist": "Rochester Institute of Technology Marketing Communications"
+  },
+  "Texas Christian University": {
+    "file": "images/institutions/texas_christian_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Texas_Christian_University_wordmark.svg",
+    "sourceTitle": "Texas Christian University wordmark.svg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "Baylor University": {
+    "file": "images/institutions/baylor_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baylor_Seal.png",
+    "sourceTitle": "Baylor Seal.png",
+    "license": "CC BY-SA 3.0",
+    "artist": "264895578"
+  },
+  "Claremont Graduate University": {
+    "file": "images/institutions/claremont_graduate_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_CGU_Seal.png",
+    "sourceTitle": "Claremont Graduate University",
+    "license": "Public domain",
+    "artist": "CGU"
+  },
+  "Miami University, Ohio": {
+    "file": "images/institutions/miami_university_ohio.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miami_University_logo_2021.svg",
+    "sourceTitle": "Miami University logo 2021.svg",
+    "license": "Public domain",
+    "artist": "Miami University"
+  },
+  "State University of New York, Binghamton": {
+    "file": "images/institutions/state_university_of_new_york_binghamton.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Binghamton_University_logo.svg",
+    "sourceTitle": "Binghamton University",
+    "license": "Public domain",
+    "artist": "State University of New York\n\n The SVG code is valid. This  vector image was extracted with Inkscape by v."
+  },
+  "University of Oklahoma": {
+    "file": "images/institutions/university_of_oklahoma.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oklahoma_Sooners_logo.svg",
+    "sourceTitle": "Oklahoma Sooners logo.svg",
+    "license": "Public domain",
+    "artist": "University of Oklahoma"
+  },
+  "University of Missouri, St. Louis": {
+    "file": "images/institutions/university_of_missouri_st_louis.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:UMSL_MSC.png",
+    "sourceTitle": "University of Missouri–St. Louis",
+    "license": "Public domain",
+    "artist": "Tvrtko4"
+  },
+  "University of Denver": {
+    "file": "images/institutions/university_of_denver.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:University_of_Denver_Signature_3.svg",
+    "sourceTitle": "University of Denver Signature 3.svg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "University of Tennessee, Knoxville": {
+    "file": "images/institutions/university_of_tennessee_knoxville.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:UT_Knoxville_logo_2015.svg",
+    "sourceTitle": "UT Knoxville logo 2015.svg",
+    "license": "Public domain",
+    "artist": "University of Tennessee, Knoxville"
+  },
+  "Clarkson University": {
+    "file": "images/institutions/clarkson_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clarkson-university-logo-green.png",
+    "sourceTitle": "Clarkson-university-logo-green.png",
+    "license": "Public domain",
+    "artist": "Clarkson University"
+  },
+  "Auburn University": {
+    "file": "images/institutions/auburn_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Auburn_University_primary_logo.svg",
+    "sourceTitle": "Auburn University primary logo.svg",
+    "license": "Public domain",
+    "artist": "Auburn University"
+  },
+  "Florida State University": {
+    "file": "images/institutions/florida_state_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Florida_State_University_logo.svg",
+    "sourceTitle": "Florida State University logo.svg",
+    "license": "Public domain",
+    "artist": "Florida State University"
+  },
+  "Oklahoma State University": {
+    "file": "images/institutions/oklahoma_state_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oklahoma_State_University_system_logo.svg",
+    "sourceTitle": "Oklahoma State University",
+    "license": "Public domain",
+    "artist": "Oklahoma State University"
+  },
+  "Abilene Christian University": {
+    "file": "images/institutions/abilene_christian_university.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abilene_Christian_University_wordmark.png",
+    "sourceTitle": "Abilene Christian University wordmark.png",
+    "license": "Public domain",
+    "artist": "Abilene Christian University."
+  }
+}

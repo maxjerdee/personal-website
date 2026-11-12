@@ -1,11 +1,11 @@
 graph [
   directed 0
-  creditMustMention "OpenStreetMap"
   author "GridKit (Wiegmans, 2016)"
   compiledBy "Max Jerdee"
   source "https://zenodo.org/records/47317"
   licenseId "ODbL-1.0"
-  credit "Contains data &#169; OpenStreetMap contributors, via GridKit (Wiegmans, 2016)"
+  credit "&#169; OpenStreetMap contributors"
+  creditMustMention "OpenStreetMap"
   layout "map"
   colorAttr "voltage"
   sizeAttr "degree"

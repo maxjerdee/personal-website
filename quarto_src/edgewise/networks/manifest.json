@@ -55,7 +55,10 @@
     },
     "creditMustMention": [
       "SocioPatterns"
-    ]
+    ],
+    "modelDefaults": {
+      "edgeIsWin": false
+    }
   },
   {
     "file": "les_miserables.gml",
@@ -95,8 +98,8 @@
         "full": "University, positioned by its inferred prestige score"
       },
       "edge": {
-        "short": "B hires a PhD from A",
-        "full": "A \u2192 B: B hires a PhD from A, width \u221d number of such hires"
+        "short": "PhD from A hired by B",
+        "full": "A \u2192 B: PhD from A hired by B, width \u221d number of such hires"
       }
     },
     "options": {
@@ -153,7 +156,7 @@
       }
     },
     "options": {
-      "colorAttr": "value",
+      "colorAttr": "politics",
       "sizeAttr": "degree",
       "sizeScale": 2.0,
       "labelAttr": "none",
@@ -173,7 +176,7 @@
         "full": "A WordNet synset (one sense of a word), colored by how far below \"vehicle\" it sits"
       },
       "edge": {
-        "short": "\"A\" is a \"B\"",
+        "short": "\"B\" is a kind of \"A\"",
         "full": "A \u2192 B: B is a more specific kind of A (e.g. car \u2192 convertible)"
       }
     },
@@ -217,6 +220,9 @@
       "coordXAttr": "year",
       "coordYAttr": "issue_area",
       "keyStyle": "graphical"
+    },
+    "modelDefaults": {
+      "edgeIsWin": false
     }
   },
   {
@@ -244,7 +250,11 @@
       "edgeScale": 1.0,
       "edgeOpacity": 0.12,
       "coordYAttr": "bt_score",
-      "keyStyle": "graphical"
+      "keyStyle": "graphical",
+      "rangeAttr": "cited_by",
+      "rangeMin": 681521.0,
+      "rangeMax": 3331664.0,
+      "rangeTarget": "labels"
     },
     "modelDefaults": {
       "edgeIsWin": false,
@@ -290,7 +300,7 @@
     "key": {
       "node": {
         "short": "Hen",
-        "full": "Hen, positioned by dominance rank"
+        "full": "Hen, positioned by its Bradley-Terry score (MAP); numbered by that ranking"
       },
       "edge": {
         "short": "A pecks B",
@@ -306,7 +316,7 @@
       "labelAttr": "label",
       "edgeScale": 1.6,
       "edgeOpacity": 0.233,
-      "coordYAttr": "value",
+      "coordYAttr": "bt_score",
       "keyStyle": "graphical"
     }
   },
@@ -522,5 +532,35 @@
     "creditMustMention": [
       "OpenStreetMap"
     ]
+  },
+  {
+    "file": "english-football.gml",
+    "label": "English Football",
+    "sublabel": "426 nodes \u00b7 directed \u00b7 19 leagues",
+    "category": "Social",
+    "key": {
+      "node": {
+        "short": "Club",
+        "full": "Football club, colored by league tier"
+      },
+      "edge": {
+        "short": "A beats B",
+        "full": "A \u2192 B: A beats B (or draws, if marked as a tie), 2024\u201325 season"
+      }
+    },
+    "options": {
+      "layout": "coord",
+      "colorAttr": "tier",
+      "sizeAttr": "degree",
+      "sizeScale": 1.0,
+      "labelAttr": "none",
+      "edgeScale": 0.5,
+      "edgeOpacity": 0.35,
+      "coordXAttr": "league",
+      "coordYAttr": "ds_score",
+      "fitPanX": -0.03,
+      "fitPanY": -0.03,
+      "keyStyle": "graphical"
+    }
   }
 ]

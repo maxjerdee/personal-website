@@ -4,7 +4,7 @@ graph
   licenseId "NOASSERTION"
   author "Valdis Krebs"
   source "https://networks.skewed.de/net/polbooks"
-  colorAttr "value"
+  colorAttr "politics"
   sizeAttr "degree"
   labelAttr "none"
   edgeScale 0.8
@@ -23,631 +23,631 @@ graph
   [
     id 0
     label "1000 Years for Revenge"
-    value "Neutral"
+    politics "Neutral"
     x 447.07  y 48.98 ]
   node
   [
     id 1
     label "Bush vs. the Beltway"
-    value "Conservative"
+    politics "Conservative"
     x 516.07  y 68.91 ]
   node
   [
     id 2
     label "Charlie Wilson's War"
-    value "Conservative"
+    politics "Conservative"
     x 387.16  y 65.13 ]
   node
   [
     id 3
     label "Losing Bin Laden"
-    value "Conservative"
+    politics "Conservative"
     x 534.88  y 181.09 ]
   node
   [
     id 4
     label "Sleeping With the Devil"
-    value "Neutral"
+    politics "Neutral"
     x 333.71  y 133.61 ]
   node
   [
     id 5
     label "The Man Who Warned America"
-    value "Conservative"
+    politics "Conservative"
     x 434.76  y 111.9 ]
   node
   [
     id 6
     label "Why America Slept"
-    value "Neutral"
+    politics "Neutral"
     x 482.19  y 120.4 ]
   node
   [
     id 7
     label "Ghost Wars"
-    value "Neutral"
+    politics "Neutral"
     x 329.11  y 158.14 ]
   node
   [
     id 8
     label "A National Party No More"
-    value "Conservative"
+    politics "Conservative"
     x 570.63  y 256.37 ]
   node
   [
     id 9
     label "Bush Country"
-    value "Conservative"
+    politics "Conservative"
     x 495.49  y 198.89 ]
   node
   [
     id 10
     label "Dereliction of Duty"
-    value "Conservative"
+    politics "Conservative"
     x 615.28  y 201.85 ]
   node
   [
     id 11
     label "Legacy"
-    value "Conservative"
+    politics "Conservative"
     x 532.29  y 244.7 ]
   node
   [
     id 12
     label "Off with Their Heads"
-    value "Conservative"
+    politics "Conservative"
     x 578.3  y 212.16 ]
   node
   [
     id 13
     label "Persecution"
-    value "Conservative"
+    politics "Conservative"
     x 551.4  y 313.35 ]
   node
   [
     id 14
     label "Rumsfeld's War"
-    value "Conservative"
+    politics "Conservative"
     x 461.78  y 231.08 ]
   node
   [
     id 15
     label "Breakdown"
-    value "Conservative"
+    politics "Conservative"
     x 626.25  y 136.3 ]
   node
   [
     id 16
     label "Betrayal"
-    value "Conservative"
+    politics "Conservative"
     x 597.42  y 99.79 ]
   node
   [
     id 17
     label "Shut Up and Sing"
-    value "Conservative"
+    politics "Conservative"
     x 560.96  y 287.7 ]
   node
   [
     id 18
     label "Meant To Be"
-    value "Neutral"
+    politics "Neutral"
     x 543.69  y 79.32 ]
   node
   [
     id 19
     label "The Right Man"
-    value "Conservative"
+    politics "Conservative"
     x 496.86  y 265.74 ]
   node
   [
     id 20
     label "Ten Minutes from Normal"
-    value "Conservative"
+    politics "Conservative"
     x 477.37  y 281.75 ]
   node
   [
     id 21
     label "Hillary's Scheme"
-    value "Conservative"
+    politics "Conservative"
     x 614.63  y 268.57 ]
   node
   [
     id 22
     label "The French Betrayal of America"
-    value "Conservative"
+    politics "Conservative"
     x 490.8  y 227.38 ]
   node
   [
     id 23
     label "Tales from the Left Coast"
-    value "Conservative"
+    politics "Conservative"
     x 634.6  y 174.25 ]
   node
   [
     id 24
     label "Hating America"
-    value "Conservative"
+    politics "Conservative"
     x 526.4  y 275.25 ]
   node
   [
     id 25
     label "The Third Terrorist"
-    value "Conservative"
+    politics "Conservative"
     x 542.62  y 214.64 ]
   node
   [
     id 26
     label "Endgame"
-    value "Conservative"
+    politics "Conservative"
     x 524.17  y 321.09 ]
   node
   [
     id 27
     label "Spin Sisters"
-    value "Conservative"
+    politics "Conservative"
     x 577.65  y 177.13 ]
   node
   [
     id 28
     label "All the Shah's Men"
-    value "Neutral"
+    politics "Neutral"
     x 213.04  y 145.11 ]
   node
   [
     id 29
     label "Dangerous Dimplomacy"
-    value "Conservative"
+    politics "Conservative"
     x 458.62  y 199.42 ]
   node
   [
     id 30
     label "The Price of Loyalty"
-    value "Liberal"
+    politics "Liberal"
     x 192.5  y 242.7 ]
   node
   [
     id 31
     label "House of Bush, House of Saud"
-    value "Liberal"
+    politics "Liberal"
     x 238.14  y 303.05 ]
   node
   [
     id 32
     label "The Death of Right and Wrong"
-    value "Conservative"
+    politics "Conservative"
     x 637.81  y 279 ]
   node
   [
     id 33
     label "Useful Idiots"
-    value "Conservative"
+    politics "Conservative"
     x 668.51  y 197.24 ]
   node
   [
     id 34
     label "The O'Reilly Factor"
-    value "Conservative"
+    politics "Conservative"
     x 744.56  y 289.62 ]
   node
   [
     id 35
     label "Let Freedom Ring"
-    value "Conservative"
+    politics "Conservative"
     x 664.94  y 313.64 ]
   node
   [
     id 36
     label "Those Who Trespass"
-    value "Conservative"
+    politics "Conservative"
     x 685.48  y 226.84 ]
   node
   [
     id 37
     label "Bias"
-    value "Conservative"
+    politics "Conservative"
     x 688.92  y 264.24 ]
   node
   [
     id 38
     label "Slander"
-    value "Conservative"
+    politics "Conservative"
     x 708.1  y 218.85 ]
   node
   [
     id 39
     label "The Savage Nation"
-    value "Conservative"
+    politics "Conservative"
     x 665.58  y 271.33 ]
   node
   [
     id 40
     label "Deliver Us from Evil"
-    value "Conservative"
+    politics "Conservative"
     x 588.7  y 295.71 ]
   node
   [
     id 41
     label "Give Me a Break"
-    value "Conservative"
+    politics "Conservative"
     x 609.09  y 173.64 ]
   node
   [
     id 42
     label "The Enemy Within"
-    value "Conservative"
+    politics "Conservative"
     x 634.69  y 338.74 ]
   node
   [
     id 43
     label "The Real America"
-    value "Conservative"
+    politics "Conservative"
     x 594.93  y 380.09 ]
   node
   [
     id 44
     label "Who's Looking Out for You?"
-    value "Conservative"
+    politics "Conservative"
     x 606.42  y 342.66 ]
   node
   [
     id 45
     label "The Official Handbook Vast Right Wing Conspiracy"
-    value "Conservative"
+    politics "Conservative"
     x 517  y 297.77 ]
   node
   [
     id 46
     label "Power Plays"
-    value "Neutral"
+    politics "Neutral"
     x 481.06  y 155.28 ]
   node
   [
     id 47
     label "Arrogance"
-    value "Conservative"
+    politics "Conservative"
     x 607.47  y 240.6 ]
   node
   [
     id 48
     label "The Perfect Wife"
-    value "Neutral"
+    politics "Neutral"
     x 406.04  y 218.97 ]
   node
   [
     id 49
     label "The Bushes"
-    value "Conservative"
+    politics "Conservative"
     x 348.57  y 276.34 ]
   node
   [
     id 50
     label "Things Worth Fighting For"
-    value "Conservative"
+    politics "Conservative"
     x 425.45  y 248.42 ]
   node
   [
     id 51
     label "Surprise, Security, the American Experience"
-    value "Neutral"
+    politics "Neutral"
     x 354.92  y 93.94 ]
   node
   [
     id 52
     label "Allies"
-    value "Conservative"
+    politics "Conservative"
     x 395.47  y 163.39 ]
   node
   [
     id 53
     label "Why Courage Matters"
-    value "Conservative"
+    politics "Conservative"
     x 429.45  y 313.35 ]
   node
   [
     id 54
     label "Hollywood Interrupted"
-    value "Conservative"
+    politics "Conservative"
     x 659.65  y 226.1 ]
   node
   [
     id 55
     label "Fighting Back"
-    value "Conservative"
+    politics "Conservative"
     x 635.78  y 241.89 ]
   node
   [
     id 56
     label "We Will Prevail"
-    value "Conservative"
+    politics "Conservative"
     x 517.88  y 370.93 ]
   node
   [
     id 57
     label "The Faith of George W Bush"
-    value "Conservative"
+    politics "Conservative"
     x 444.28  y 348.76 ]
   node
   [
     id 58
     label "Rise of the Vulcans"
-    value "Conservative"
+    politics "Conservative"
     x 324.38  y 195.97 ]
   node
   [
     id 59
     label "Downsize This!"
-    value "Liberal"
+    politics "Liberal"
     x -47.85  y 226.71 ]
   node
   [
     id 60
     label "Stupid White Men"
-    value "Liberal"
+    politics "Liberal"
     x 4.01  y 254.48 ]
   node
   [
     id 61
     label "Rush Limbaugh Is a Big Fat Idiot"
-    value "Liberal"
+    politics "Liberal"
     x 12.12  y 154 ]
   node
   [
     id 62
     label "The Best Democracy Money Can Buy"
-    value "Liberal"
+    politics "Liberal"
     x -10.38  y 294.99 ]
   node
   [
     id 63
     label "The Culture of Fear"
-    value "Liberal"
+    politics "Liberal"
     x -22.66  y 192.17 ]
   node
   [
     id 64
     label "America Unbound"
-    value "Liberal"
+    politics "Liberal"
     x 246.36  y 141.89 ]
   node
   [
     id 65
     label "The Choice"
-    value "Liberal"
+    politics "Liberal"
     x 256.91  y 98.02 ]
   node
   [
     id 66
     label "The Great Unraveling"
-    value "Liberal"
+    politics "Liberal"
     x 131.21  y 212.8 ]
   node
   [
     id 67
     label "Rogue Nation"
-    value "Liberal"
+    politics "Liberal"
     x 168.33  y 107.61 ]
   node
   [
     id 68
     label "Soft Power"
-    value "Liberal"
+    politics "Liberal"
     x 251.94  y 197.84 ]
   node
   [
     id 69
     label "Colossus"
-    value "Neutral"
+    politics "Neutral"
     x 296.35  y 42.82 ]
   node
   [
     id 70
     label "The Sorrows of Empire"
-    value "Liberal"
+    politics "Liberal"
     x 178.19  y 210.41 ]
   node
   [
     id 71
     label "Against All Enemies"
-    value "Liberal"
+    politics "Liberal"
     x 216.43  y 281.54 ]
   node
   [
     id 72
     label "American Dynasty"
-    value "Liberal"
+    politics "Liberal"
     x 173.86  y 284.18 ]
   node
   [
     id 73
     label "Big Lies"
-    value "Liberal"
+    politics "Liberal"
     x 134.49  y 262.74 ]
   node
   [
     id 74
     label "The Lies of George W. Bush"
-    value "Liberal"
+    politics "Liberal"
     x 126.36  y 323.16 ]
   node
   [
     id 75
     label "Worse Than Watergate"
-    value "Liberal"
+    politics "Liberal"
     x 203.49  y 323.74 ]
   node
   [
     id 76
     label "Plan of Attack"
-    value "Neutral"
+    politics "Neutral"
     x 231.38  y 243.62 ]
   node
   [
     id 77
     label "Bush at War"
-    value "Conservative"
+    politics "Conservative"
     x 306.88  y 286.73 ]
   node
   [
     id 78
     label "The New Pearl Harbor"
-    value "Liberal"
+    politics "Liberal"
     x 201.96  y 378.85 ]
   node
   [
     id 79
     label "Bushwomen"
-    value "Liberal"
+    politics "Liberal"
     x 155.72  y 351.38 ]
   node
   [
     id 80
     label "The Bubble of American Supremacy"
-    value "Liberal"
+    politics "Liberal"
     x 104.81  y 258.36 ]
   node
   [
     id 81
     label "Living History"
-    value "Liberal"
+    politics "Liberal"
     x 149.35  y 236.69 ]
   node
   [
     id 82
     label "The Politics of Truth"
-    value "Liberal"
+    politics "Liberal"
     x 179.14  y 341.25 ]
   node
   [
     id 83
     label "Fanatics and Fools"
-    value "Liberal"
+    politics "Liberal"
     x 155.72  y 325.23 ]
   node
   [
     id 84
     label "Bushwhacked"
-    value "Liberal"
+    politics "Liberal"
     x 103.88  y 289.46 ]
   node
   [
     id 85
     label "Disarming Iraq"
-    value "Liberal"
+    politics "Liberal"
     x 224.5  y 187.24 ]
   node
   [
     id 86
     label "Lies and the Lying Liars Who Tell Them"
-    value "Liberal"
+    politics "Liberal"
     x 95.36  y 224.45 ]
   node
   [
     id 87
     label "MoveOn's 50 Ways to Love Your Country"
-    value "Liberal"
+    politics "Liberal"
     x 104.16  y 385.16 ]
   node
   [
     id 88
     label "The Buying of the President 2004"
-    value "Liberal"
+    politics "Liberal"
     x 74.77  y 327.91 ]
   node
   [
     id 89
     label "Perfectly Legal"
-    value "Liberal"
+    politics "Liberal"
     x 140.16  y 298.43 ]
   node
   [
     id 90
     label "Hegemony or Survival"
-    value "Liberal"
+    politics "Liberal"
     x 72.79  y 283.41 ]
   node
   [
     id 91
     label "The Exception to the Rulers"
-    value "Liberal"
+    politics "Liberal"
     x 125.48  y 372.53 ]
   node
   [
     id 92
     label "Freethinkers"
-    value "Liberal"
+    politics "Liberal"
     x 154.71  y 379.83 ]
   node
   [
     id 93
     label "Had Enough?"
-    value "Liberal"
+    politics "Liberal"
     x 127.04  y 162.43 ]
   node
   [
     id 94
     label "It's Still the Economy, Stupid!"
-    value "Liberal"
+    politics "Liberal"
     x 82.73  y 181.67 ]
   node
   [
     id 95
     label "We're Right They're Wrong"
-    value "Liberal"
+    politics "Liberal"
     x 95.78  y 130.99 ]
   node
   [
     id 96
     label "What Liberal Media?"
-    value "Liberal"
+    politics "Liberal"
     x 48.16  y 215.98 ]
   node
   [
     id 97
     label "The Clinton Wars"
-    value "Liberal"
+    politics "Liberal"
     x 45.36  y 264.24 ]
   node
   [
     id 98
     label "Weapons of Mass Deception"
-    value "Liberal"
+    politics "Liberal"
     x 54.39  y 366.05 ]
   node
   [
     id 99
     label "Dude, Where's My Country?"
-    value "Liberal"
+    politics "Liberal"
     x 65.42  y 235.53 ]
   node
   [
     id 100
     label "Thieves in High Places"
-    value "Liberal"
+    politics "Liberal"
     x 58.05  y 304.24 ]
   node
   [
     id 101
     label "Shrub"
-    value "Liberal"
+    politics "Liberal"
     x 17.65  y 229.13 ]
   node
   [
     id 102
     label "Buck Up Suck Up"
-    value "Liberal"
+    politics "Liberal"
     x 205.35  y 115.95 ]
   node
   [
     id 103
     label "The Future of Freedom"
-    value "Neutral"
+    politics "Neutral"
     x 181.29  y -35.8 ]
   node
   [
     id 104
     label "Empire"
-    value "Neutral"
+    politics "Neutral"
     x 238.07  y -28.17 ]
   edge
   [

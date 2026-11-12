@@ -21,6 +21,7 @@ graph [
   keyNodeFull "A majority opinion of the U.S. Supreme Court, placed at the year it was decided and colored by its subject matter"
   keyEdgeShort "A cites B"
   keyEdgeFull "A &#8594; B: opinion A cites opinion B, so every edge points back in time"
+  modelDefaults "{&quot;edgeIsWin&quot;: false}"
   keyStyle "graphical"
   node [
     id 0

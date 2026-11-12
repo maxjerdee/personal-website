@@ -19,6 +19,7 @@ graph [
   keyNodeFull "Student, colored by class (nine classes across four subjects)"
   keyEdgeShort "A names B as friend"
   keyEdgeFull "A &#8594; B: A named B as a friend in the survey. One-way: a nomination need not be returned"
+  modelDefaults "{&quot;edgeIsWin&quot;: false}"
   keyStyle "graphical"
   edgeScale 0.6
   recipColor 1

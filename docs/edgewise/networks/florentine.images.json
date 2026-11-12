@@ -1,0 +1,37 @@
+{
+  "Medici": {
+    "file": "images/florentine/medici.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Augmented_Arms_of_Medici.svg",
+    "sourceTitle": "House of Medici",
+    "license": "CC BY-SA 3.0",
+    "artist": "Heralder"
+  },
+  "Albizzi": {
+    "file": "images/florentine/albizzi.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arm_of_Albizzi.svg",
+    "sourceTitle": "Albizzi",
+    "license": "CC BY-SA 3.0",
+    "artist": "Rolando Ýñigo-Genio"
+  },
+  "Peruzzi": {
+    "file": "images/florentine/peruzzi.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coa_fam_ITA_peruzzi2.jpg",
+    "sourceTitle": "Peruzzi",
+    "license": "CC BY-SA 3.0",
+    "artist": "Massimop"
+  },
+  "Salviati": {
+    "file": "images/florentine/salviati.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stamma_salviati_vetrata2.jpg",
+    "sourceTitle": "Salviati family",
+    "license": "CC BY 2.5",
+    "artist": "No machine-readable author provided. Sailko assumed (based on copyright claims)."
+  },
+  "Pazzi": {
+    "file": "images/florentine/pazzi.JPG",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palazzo_pazzi,_stemma_pazzi_by_donatello_01.JPG",
+    "sourceTitle": "Pazzi",
+    "license": "CC BY-SA 3.0",
+    "artist": "sailko"
+  }
+}

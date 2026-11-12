@@ -1,0 +1,37 @@
+{
+  "Nature": {
+    "file": "images/journals/nature.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nature_volume_536_number_7617_cover_displaying_an_artist%E2%80%99s_impression_of_Proxima_Centauri_b.jpg",
+    "sourceTitle": "Nature (journal)",
+    "license": "CC BY 4.0",
+    "artist": "ESO/M. Kornmesser (photo displayed on the magazine cover)"
+  },
+  "PLoS ONE": {
+    "file": "images/journals/plos_one.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:PLOS_ONE_logo_2012.svg",
+    "sourceTitle": "PLOS One",
+    "license": "CC BY-SA 3.0",
+    "artist": "PLOS"
+  },
+  "Angewandte Chemie International Edition": {
+    "file": "images/journals/angewandte_chemie_international_edition.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Logo_of_Angewandte_Chemie_International_Edition.svg",
+    "sourceTitle": "Angewandte Chemie",
+    "license": "Public domain",
+    "artist": "Wiley (publisher)"
+  },
+  "Science": {
+    "file": "images/journals/science.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Science_Vol._1_(1880).jpg",
+    "sourceTitle": "Science (journal)",
+    "license": "Public domain",
+    "artist": "John Michels (editor)"
+  },
+  "eLife": {
+    "file": "images/journals/elife.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elife-logo-2020.png",
+    "sourceTitle": "ELife",
+    "license": "CC BY 4.0",
+    "artist": "eLife"
+  }
+}

@@ -9,29 +9,29 @@ graph [
   labelAttr "label"
   edgeScale 1.6
   edgeOpacity 0.233
-  coordYAttr "value"
+  coordYAttr "bt_score"
   title "Chicken Pecking Order"
   sublabel "11 nodes &#183; directed"
   category "Social"
   order 15
   keyNodeShort "Hen"
-  keyNodeFull "Hen, positioned by dominance rank"
+  keyNodeFull "Hen, positioned by its Bradley-Terry score (MAP); numbered by that ranking"
   keyEdgeShort "A pecks B"
   keyEdgeFull "A &#8594; B: A pecks B (A dominates B)"
   keyStyle "graphical"
   colorFixed "#a28444"
   sizeScale 2.0
-  node [ id 1  label "Hen 1"  value 11   x 568.9  y 60 ]
-  node [ id 2  label "Hen 2"  value 10   x 357.8  y 94 ]
-  node [ id 3  label "Hen 3"  value  9   x 232.8  y 128 ]
-  node [ id 4  label "Hen 4"  value  8   x 498.2  y 162 ]
-  node [ id 5  label "Hen 5"  value  7   x 419.4  y 196 ]
-  node [ id 6  label "Hen 6"  value  6   x 568.8  y 230 ]
-  node [ id 7  label "Hen 7"  value  5   x 142  y 264 ]
-  node [ id 8  label "Hen 8"  value  4   x 640  y 298 ]
-  node [ id 9  label "Hen 9"  value  3   x 446.1  y 332 ]
-  node [ id 10 label "Hen 10" value  2   x 60  y 366 ]
-  node [ id 11 label "Hen 11" value  1   x 379.9  y 400 ]
+  node [ id 1  label "Hen 2"  bt_score 1.67022  x 568.9  y 94 ]
+  node [ id 2  label "Hen 1"  bt_score 1.75469  x 357.8  y 60 ]
+  node [ id 3  label "Hen 3"  bt_score 1.60910  x 232.8  y 128 ]
+  node [ id 4  label "Hen 5"  bt_score 0.32234  x 498.2  y 196 ]
+  node [ id 5  label "Hen 4"  bt_score 0.61233  x 419.4  y 162 ]
+  node [ id 6  label "Hen 6"  bt_score -0.16026  x 568.8  y 230 ]
+  node [ id 7  label "Hen 7"  bt_score -0.28881  x 142  y 264 ]
+  node [ id 8  label "Hen 9"  bt_score -1.07574  x 640  y 332 ]
+  node [ id 9  label "Hen 8"  bt_score -0.81658  x 446.1  y 298 ]
+  node [ id 10  label "Hen 10"  bt_score -1.26297  x 60  y 366 ]
+  node [ id 11  label "Hen 11"  bt_score -2.51787  x 379.9  y 400 ]
   edge [ source 1  target 3  ]
   edge [ source 1  target 4  ]
   edge [ source 1  target 5  ]

@@ -1,0 +1,730 @@
+{
+  "Fragilariopsis cylindrus": {
+    "file": "images/species/fragilariopsis_cylindrus.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fragi_Cylind3.png",
+    "sourceTitle": "Fragilariopsis cylindrus",
+    "license": "CC BY 4.0",
+    "artist": "Mock et al. (2017)"
+  },
+  "Fragilariopsis kerguelensis": {
+    "file": "images/species/fragilariopsis_kerguelensis.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nitzschia-kerguelensis_hg.jpg",
+    "sourceTitle": "Fragilariopsis kerguelensis",
+    "license": "CC BY 3.0",
+    "artist": "Hannes Grobe"
+  },
+  "Bodo saltans": {
+    "file": "images/species/bodo_saltans.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bodo_saltans_-_400x_(13895749563).jpg",
+    "sourceTitle": "Bodo saltans",
+    "license": "CC BY 2.0",
+    "artist": "Picturepest"
+  },
+  "Euphausia crystallorophias": {
+    "file": "images/species/euphausia_crystallorophias.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Euphausia_crystallorophias.jpg",
+    "sourceTitle": "Euphausia crystallorophias",
+    "license": "CC BY-SA 3.0",
+    "artist": "Unspecified, Bandirma Sheep Breeding Research Institute"
+  },
+  "Euphausia superba": {
+    "file": "images/species/euphausia_superba.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antarctic_krill_(Euphausia_superba).jpg",
+    "sourceTitle": "Antarctic krill",
+    "license": "CC BY-SA 3.0",
+    "artist": "Krill666.jpg: Uwe Kils I am willing to give the image in 1700 resolution to Wikipedia Uwe Kils"
+  },
+  "Hyperia macrocephala": {
+    "file": "images/species/hyperia_macrocephala.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hyperia.jpg",
+    "sourceTitle": "Hyperia macrocephala",
+    "license": "CC BY-SA 3.0",
+    "artist": "Uwe Kils"
+  },
+  "Eurythenes gryllus": {
+    "file": "images/species/eurythenes_gryllus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eurythenes_gryllus_-_Castelnau.jpg",
+    "sourceTitle": "Eurythenes gryllus",
+    "license": "Public domain",
+    "artist": "François-Louis Laporte, comte de Castelnau"
+  },
+  "Themisto gaudichaudii": {
+    "file": "images/species/themisto_gaudichaudii.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Themisto_gaudichaudii.jpg",
+    "sourceTitle": "Themisto gaudichaudii",
+    "license": "Public domain",
+    "artist": "Mypteronura"
+  },
+  "Rhincalanus gigas": {
+    "file": "images/species/rhincalanus_gigas.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adult_Rhincalanus_gigas_female.png",
+    "sourceTitle": "Rhincalanus gigas",
+    "license": "CC BY 4.0",
+    "artist": "Cory Berger, Deborah K. Steinberg, Nancy J. Copley, Ann M Tarrant"
+  },
+  "Calanoides acutus": {
+    "file": "images/species/calanoides_acutus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Calanoides_acutus.jpg",
+    "sourceTitle": "Calanoides acutus",
+    "license": "Public domain",
+    "artist": "Sean Linehan/National Oceanic and Atmospheric Administration"
+  },
+  "Metridia gerlachei": {
+    "file": "images/species/metridia_gerlachei.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Metridia_gerlachei_(10.3897-zookeys.969.52334)_Figure_6.jpg",
+    "sourceTitle": "Metridia gerlachei",
+    "license": "CC BY 4.0",
+    "artist": "Bonello G, Grillo M, Cecchetto M, Giallain M, Granata A, Guglielmo L, Pane L, Schiaparelli S (2020) Distributional records of Ross Sea (Antarctica) planktic Copepoda from bibliographic data and samples curated at the Italian National Antarctic Museum (MNA): checklist of species collected in the Ross Sea sector from 1987 to 1995. ZooKeys 969: 1-22."
+  },
+  "Ceratoserolis meridionalis": {
+    "file": "images/species/ceratoserolis_meridionalis.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serolis_meridionalis_USNM_123970_dorsal_view.jpg",
+    "sourceTitle": "Ceratoserolis meridionalis",
+    "license": "CC0",
+    "artist": "Diane Pitassy"
+  },
+  "Natatolana oculata": {
+    "file": "images/species/natatolana_oculata.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Natatolanaoculata_1.png",
+    "sourceTitle": "Natatolana oculata",
+    "license": "CC0",
+    "artist": "Adrian James Testa"
+  },
+  "Glyptonotus antarcticus": {
+    "file": "images/species/glyptonotus_antarcticus.jpeg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Glyptonotus_antarcticus_(YPM_IZ_047200).jpeg",
+    "sourceTitle": "Glyptonotus antarcticus",
+    "license": "CC0",
+    "artist": "Eric A. Lazo-Wasem"
+  },
+  "Aega antarctica": {
+    "file": "images/species/aega_antarctica.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aega_antarctica.jpg",
+    "sourceTitle": "Aega antarctica",
+    "license": "CC0",
+    "artist": "Diane Pitassy"
+  },
+  "Arcturidae": {
+    "file": "images/species/arcturidae.jpeg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FMIB_49289_Arcturus_bafini,_Sabine.jpeg",
+    "sourceTitle": "Arcturidae",
+    "license": "Public domain",
+    "artist": "Charles Wyville Thomson"
+  },
+  "Eulagisca gigantea": {
+    "file": "images/species/eulagisca_gigantea.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eulagisca_gigantea.jpg",
+    "sourceTitle": "Eulagisca gigantea",
+    "license": "CC0",
+    "artist": "Smithsonian Oceanographic Sorting Center"
+  },
+  "Promachocrinus kerguelensis": {
+    "file": "images/species/promachocrinus_kerguelensis.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Promachocrinus_kerguelensis_(YPM_IZ_049820).jpg",
+    "sourceTitle": "Promachocrinus kerguelensis",
+    "license": "CC0",
+    "artist": "Creator    Eric A. Lazo-Wasem\n\nGall L (2018). Invertebrate Zoology Division, Yale Peabody Museum. Yale University Peabody Museum. Occurrence dataset https://doi.org/10.15468/0lkr3w accessed via GBIF.org on 2018-12-21. https://www.gbif.org/occurrence/350708239"
+  },
+  "Acodontaster conspicuus": {
+    "file": "images/species/acodontaster_conspicuus.jpeg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Acodontaster_conspicuus_(USNM_E13682)_003.jpeg",
+    "sourceTitle": "Acodontaster conspicuus",
+    "license": "CC0",
+    "artist": "Josh Harris"
+  },
+  "Diplasterias brucei": {
+    "file": "images/species/diplasterias_brucei.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diplasterias_brucei_(MNHN-IE-2014-428).jpg",
+    "sourceTitle": "Diplasterias brucei",
+    "license": "CC BY 4.0",
+    "artist": "RECOLNAT (ANR-11-INBS-0004) - Marie HENNION - 2016"
+  },
+  "Labidiaster annulatus": {
+    "file": "images/species/labidiaster_annulatus.JPG",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Labidiaster_annulatus.JPG",
+    "sourceTitle": "Labidiaster annulatus",
+    "license": "CC BY-SA 3.0",
+    "artist": "WereSpielChequers"
+  },
+  "Solaster dawsoni": {
+    "file": "images/species/solaster_dawsoni.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Solaster_dawsoni.jpg",
+    "sourceTitle": "Solaster dawsoni",
+    "license": "CC BY 2.0",
+    "artist": "Jonathan Martin"
+  },
+  "Odontaster validus": {
+    "file": "images/species/odontaster_validus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_starfish,_Odontaster_validus.jpg",
+    "sourceTitle": "Odontaster validus",
+    "license": "CC BY-SA 3.0",
+    "artist": "Zureks"
+  },
+  "Ophionotus victoriae": {
+    "file": "images/species/ophionotus_victoriae.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Underwater_mcmurdo_sound.jpg",
+    "sourceTitle": "Ophionotus victoriae",
+    "license": "Public domain",
+    "artist": "NSF/USAP photo by Steve Clabuesch; uploaded by en:User:Fishdecoy"
+  },
+  "Sterechinus neumayeri": {
+    "file": "images/species/sterechinus_neumayeri.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sea_urchins,_Sterechinus_neumayeri.jpg",
+    "sourceTitle": "Sterechinus neumayeri",
+    "license": "CC BY-SA 3.0",
+    "artist": "Zureks"
+  },
+  "Abatus curvidens": {
+    "file": "images/species/abatus_curvidens.jpeg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abatus_curvidens_(USNM_E31783)_002.jpeg",
+    "sourceTitle": "Abatus curvidens",
+    "license": "CC0",
+    "artist": "Adrian James Testa"
+  },
+  "Abatus cavernosus": {
+    "file": "images/species/abatus_cavernosus.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abatus_cavernosus.png",
+    "sourceTitle": "Abatus cavernosus",
+    "license": "CC BY-SA 4.0",
+    "artist": "Alexander Ziegler, Cornelius Faber, Susanne Mueller &amp;and Thomas Bartolomaeus (published as Creative Commons Attribution-Share Alike 4.0 International)"
+  },
+  "Aporocidaris milleri": {
+    "file": "images/species/aporocidaris_milleri.jpeg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aporocidaris_milleri_(USNM_E11057)_001.jpeg",
+    "sourceTitle": "Aporocidaris milleri",
+    "license": "CC0",
+    "artist": "Adrian James Testa"
+  },
+  "Scotoplanes globosa": {
+    "file": "images/species/scotoplanes_globosa.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scotoplanes_globosa_and_crab_(cropped).jpg",
+    "sourceTitle": "Scotoplanes globosa",
+    "license": "CC0",
+    "artist": "NOAA/MBARI"
+  },
+  "Molpadia musculus": {
+    "file": "images/species/molpadia_musculus.jpeg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Molpadia_musculus_(USNM_1132655)_001.jpeg",
+    "sourceTitle": "Molpadia musculus",
+    "license": "CC0",
+    "artist": "Trang Nguyen"
+  },
+  "Elpidia glacialis": {
+    "file": "images/species/elpidia_glacialis.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sj%C3%B6gurkan_Elpidia_glacialis,_Nordisk_familjebok.png",
+    "sourceTitle": "Elpidia glacialis",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "Nuttallochiton mirandus": {
+    "file": "images/species/nuttallochiton_mirandus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nuttallochiton-mirandus-3-sep-2014471-2BF571K.jpg",
+    "sourceTitle": "Nuttallochiton mirandus",
+    "license": "CC0",
+    "artist": "SBS Eclectic Images / Alamy Stock Photo"
+  },
+  "Trophon longstaffi": {
+    "file": "images/species/trophon_longstaffi.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trophonella_longstaffi_001.jpg",
+    "sourceTitle": "Trophonella longstaffi",
+    "license": "Public domain",
+    "artist": "Charles Hedley"
+  },
+  "Harpovoluta charcoti": {
+    "file": "images/species/harpovoluta_charcoti.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harpovoluta_charcoti_001.jpg",
+    "sourceTitle": "Harpovoluta charcoti",
+    "license": "Public domain",
+    "artist": "J. Thiele"
+  },
+  "Amauropsis rossiana": {
+    "file": "images/species/amauropsis_rossiana.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amauropsis_rossiana_001.jpg",
+    "sourceTitle": "Amauropsis rossiana",
+    "license": "CC0",
+    "artist": "National Museum of Natural History, Smithsonian Institution"
+  },
+  "Falsimargarita gemma": {
+    "file": "images/species/falsimargarita_gemma.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Falsimargarita_gemma_001.jpg",
+    "sourceTitle": "Falsimargarita gemma",
+    "license": "Public domain",
+    "artist": "E.A. Smith"
+  },
+  "Nacella concinna": {
+    "file": "images/species/nacella_concinna.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nacella_concinna.jpg",
+    "sourceTitle": "Nacella concinna",
+    "license": "CC0",
+    "artist": "Simon Tonge"
+  },
+  "Clione limacina": {
+    "file": "images/species/clione_limacina.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clione_limacina_by_NOAA.jpg",
+    "sourceTitle": "Clione limacina",
+    "license": "Public domain",
+    "artist": "Kevin Raskoff, Hidden Ocean 2005 Expedition: NOAA Office of Ocean Exploration."
+  },
+  "Clione antarctica": {
+    "file": "images/species/clione_antarctica.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clione_antarctica.jpg",
+    "sourceTitle": "Clione antarctica",
+    "license": "Public domain",
+    "artist": "National Antarctic Expedition, 1907-1904; Fletcher, Lazarus, Sir 1854-1921; Bell, F. J. (Francis Jeffrey), 1855-1924; British Museum (Natural History)"
+  },
+  "Clio pyramidata": {
+    "file": "images/species/clio_pyramidata.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clio_pyramidata_001.jpg",
+    "sourceTitle": "Clio pyramidata",
+    "license": "CC0",
+    "artist": "Smithsonian Institution"
+  },
+  "Psychroteuthis glacialis": {
+    "file": "images/species/psychroteuthis_glacialis.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Psychroteuthis_glacialis_paralarva.jpg",
+    "sourceTitle": "Psychroteuthis glacialis",
+    "license": "CC BY 3.0",
+    "artist": "Darren Stevens"
+  },
+  "Moroteuthis ingens": {
+    "file": "images/species/moroteuthis_ingens.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Onykia_ingens_384_mm_ML.jpg",
+    "sourceTitle": "Moroteuthopsis ingens",
+    "license": "CC BY 3.0",
+    "artist": "Darren Stevens"
+  },
+  "Alluroteuthis antarcticus": {
+    "file": "images/species/alluroteuthis_antarcticus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alluroteuthis_antarcticus_NIWA_Alluro%2B1670792766.jpg",
+    "sourceTitle": "Antarctic neosquid",
+    "license": "CC BY 4.0",
+    "artist": "Unspecified, Auckland University of Technology"
+  },
+  "Galiteuthis glacialis": {
+    "file": "images/species/galiteuthis_glacialis.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Galiteuthis_glacialis.jpg",
+    "sourceTitle": "Galiteuthis glacialis",
+    "license": "Public domain",
+    "artist": "Ewald Rübsamen"
+  },
+  "Gonatus antarcticus": {
+    "file": "images/species/gonatus_antarcticus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gonatus_antarcticus_210_mm_ML.jpg",
+    "sourceTitle": "Gonatus antarcticus",
+    "license": "CC BY 3.0",
+    "artist": "Darren Stevens"
+  },
+  "Mesonychoteuthis hamiltoni": {
+    "file": "images/species/mesonychoteuthis_hamiltoni.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Colossal_squid_size_comparison.png",
+    "sourceTitle": "Colossal squid",
+    "license": "CC0",
+    "artist": "Middle East birds study"
+  },
+  "Laternula elliptica": {
+    "file": "images/species/laternula_elliptica.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Laternula_elliptica.jpg",
+    "sourceTitle": "Laternula elliptica",
+    "license": "CC BY 4.0",
+    "artist": "elokrx"
+  },
+  "Cephalodiscus": {
+    "file": "images/species/cephalodiscus.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cephalodiscus_dodecalophus_McIntosh.png",
+    "sourceTitle": "Cephalodiscus",
+    "license": "CC BY-SA 4.0",
+    "artist": "Luis Fernández García"
+  },
+  "Corella eumyota": {
+    "file": "images/species/corella_eumyota.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Corella_eumyota.jpg",
+    "sourceTitle": "Corella eumyota",
+    "license": "CC BY 4.0",
+    "artist": "Kelvin Perrie"
+  },
+  "Sycozoa sigillinoides": {
+    "file": "images/species/sycozoa_sigillinoides.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sycozoa_sigillinoides_142508009.jpg",
+    "sourceTitle": "Sycozoa sigillinoides",
+    "license": "CC BY 4.0",
+    "artist": "Shaun Lee"
+  },
+  "Dolloidraco longedorsalis": {
+    "file": "images/species/dolloidraco_longedorsalis.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dolloidraco_longedorsalis2.jpg",
+    "sourceTitle": "Dolloidraco",
+    "license": "Public domain",
+    "artist": "Angel"
+  },
+  "Cygnodraco mawsoni": {
+    "file": "images/species/cygnodraco_mawsoni.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cymaw_u0.png",
+    "sourceTitle": "Mawson's dragonfish",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "Gymnodraco acuticeps": {
+    "file": "images/species/gymnodraco_acuticeps.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gymnodraco_acuticeps.jpg",
+    "sourceTitle": "Ploughfish",
+    "license": "Public domain",
+    "artist": "John Roxborough Norman"
+  },
+  "Prionodraco evansii": {
+    "file": "images/species/prionodraco_evansii.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Prionodraco_evansii.jpg",
+    "sourceTitle": "Prionodraco",
+    "license": "Public domain",
+    "artist": "GM. Woodward"
+  },
+  "Chaenodraco wilsoni": {
+    "file": "images/species/chaenodraco_wilsoni.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chaenodraco_wilsoni.jpg",
+    "sourceTitle": "Spiny icefish",
+    "license": "Public domain",
+    "artist": "GM. Woodward"
+  },
+  "Cryodraco antarcticus": {
+    "file": "images/species/cryodraco_antarcticus.gif",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Long-fingered_icefish_Cryodraco_antarcticus.gif",
+    "sourceTitle": "Cryodraco antarcticus",
+    "license": "CC BY-SA 3.0",
+    "artist": "J. C. Hureau"
+  },
+  "Dacodraco hunteri": {
+    "file": "images/species/dacodraco_hunteri.gif",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dacodraco_hunteri.gif",
+    "sourceTitle": "Dacodraco",
+    "license": "CC BY-SA 3.0",
+    "artist": "J.C. Hureau"
+  },
+  "Pagetopsis maculatus": {
+    "file": "images/species/pagetopsis_maculatus.gif",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Illustration_of_Pagetopsis_maculatus.gif",
+    "sourceTitle": "Pagetopsis maculata",
+    "license": "CC BY-SA 3.0",
+    "artist": "J.C. Hureau"
+  },
+  "Aethotaxis mitopteryx": {
+    "file": "images/species/aethotaxis_mitopteryx.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aethotaxis_mitopteryx_geshafish.jpg",
+    "sourceTitle": "Longfin icedevil",
+    "license": "CC BY-SA 3.0",
+    "artist": "GeSHaFish"
+  },
+  "Dissostichus mawsoni": {
+    "file": "images/species/dissostichus_mawsoni.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dmawsoni_Head_shot.jpg",
+    "sourceTitle": "Antarctic toothfish",
+    "license": "CC BY 2.5",
+    "artist": "No machine-readable author provided. Pcziko assumed (based on copyright claims)."
+  },
+  "Pleuragramma antarcticum": {
+    "file": "images/species/pleuragramma_antarcticum.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pleuragramma_antarcticum.jpg",
+    "sourceTitle": "Antarctic silverfish",
+    "license": "Public domain",
+    "artist": "Louis Dollo (1857–1931)"
+  },
+  "Notothenia coriiceps": {
+    "file": "images/species/notothenia_coriiceps.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_zoology_of_the_voyage_of_the_H.M.S._Erebus_and_Terror_(10327896325).jpg",
+    "sourceTitle": "Notothenia coriiceps",
+    "license": "Public domain",
+    "artist": "Erebus (Ship).; Gray, John Edward; Richardson, John; Ross, James Clark; Terror (Ship)."
+  },
+  "Trematomus bernacchii": {
+    "file": "images/species/trematomus_bernacchii.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trematomus_bernacchii.jpg",
+    "sourceTitle": "Emerald rockcod",
+    "license": "Public domain",
+    "artist": "GM. Woodward"
+  },
+  "Macrourus holotrachys": {
+    "file": "images/species/macrourus_holotrachys.gif",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Macrourus_carinatus_(Ridge_scaled_rattail).gif",
+    "sourceTitle": "Macrourus",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "Electrona antarctica": {
+    "file": "images/species/electrona_antarctica.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fish8712.jpg",
+    "sourceTitle": "Electrona antarctica",
+    "license": "Public domain",
+    "artist": "Valerie Loeb"
+  },
+  "Gymnoscopelus braueri": {
+    "file": "images/species/gymnoscopelus_braueri.gif",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gymnoscopelus_piabilis_(no_common_name).gif",
+    "sourceTitle": "Gymnoscopelus",
+    "license": "CC BY-SA 1.0",
+    "artist": "Dr Tony Ayling"
+  },
+  "Gymnoscopelus nicholsi": {
+    "file": "images/species/gymnoscopelus_nicholsi.gif",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gymnoscopelus_piabilis_(no_common_name).gif",
+    "sourceTitle": "Gymnoscopelus",
+    "license": "CC BY-SA 1.0",
+    "artist": "Dr Tony Ayling"
+  },
+  "Pagetopsis macropterus": {
+    "file": "images/species/pagetopsis_macropterus.gif",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pamac_u0.gif",
+    "sourceTitle": "Pagetopsis macropterus",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "Champsocephalus gunnari": {
+    "file": "images/species/champsocephalus_gunnari.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mackerel_Icefish_(Champsocephalus_gunnari).jpg",
+    "sourceTitle": "Mackerel icefish",
+    "license": "CC BY-SA 2.0",
+    "artist": "Ryan Somma"
+  },
+  "Fulmarus glacialoides": {
+    "file": "images/species/fulmarus_glacialoides.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fulmarus_glacialoides_-_SE_Tasmania.jpg",
+    "sourceTitle": "Southern fulmar",
+    "license": "CC BY-SA 3.0",
+    "artist": "JJ Harrison (https://www.jjharrison.com.au/)"
+  },
+  "Thalassoica antarctica": {
+    "file": "images/species/thalassoica_antarctica.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antarctic_Petrel,_Antarctic_Peninsula_(5940362516).jpg",
+    "sourceTitle": "Antarctic petrel",
+    "license": "CC BY-SA 2.0",
+    "artist": "Nigel Voaden from UK"
+  },
+  "Halobaena caerulea": {
+    "file": "images/species/halobaena_caerulea.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Halobaena_caerulea_in_flight_-_SE_Tasmania.jpg",
+    "sourceTitle": "Blue petrel",
+    "license": "CC BY-SA 3.0",
+    "artist": "JJ Harrison (https://tiny.jjharrison.com.au/t/JieH9NbS0fOOjZpX)"
+  },
+  "Daption capense": {
+    "file": "images/species/daption_capense.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Daption_capense_capense,_at_sea_off_Cape_of_Good_Hope,_South_Africa_08.jpg",
+    "sourceTitle": "Pintado petrel",
+    "license": "CC BY 4.0",
+    "artist": "christoph_moning"
+  },
+  "Pagodroma nivea": {
+    "file": "images/species/pagodroma_nivea.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:P%C3%A9trel_des_neiges_-_Snow_Petrel.jpg",
+    "sourceTitle": "Snow petrel",
+    "license": "CC BY-SA 3.0",
+    "artist": "This illustration was made by Samuel Blanc.\nIf you plan on using it, an email to samuel @ sblanc.com would be greatly appreciated."
+  },
+  "Aphrodroma brevirostris": {
+    "file": "images/species/aphrodroma_brevirostris.jpeg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aphrodroma_brevirostris_-_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%9B%D0%BE%D0%B3%D0%B8%D0%BD%D0%BE%D0%B2_-_455026649.jpeg",
+    "sourceTitle": "Kerguelen petrel",
+    "license": "CC BY 4.0",
+    "artist": "Алексей Логинов"
+  },
+  "Macronectes halli": {
+    "file": "images/species/macronectes_halli.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Macronectes_halli_-Godthul,_South_Georgia,_British_Overseas_Territories,_UK_-flying-8.jpg",
+    "sourceTitle": "Northern giant petrel",
+    "license": "CC BY-SA 2.0",
+    "artist": "Liam Quinn from Canada"
+  },
+  "Macronectes giganteus": {
+    "file": "images/species/macronectes_giganteus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SouthernGiantPetrel.jpg",
+    "sourceTitle": "Southern giant petrel",
+    "license": "CC BY-SA 4.0",
+    "artist": "Polinova"
+  },
+  "Procellaria aequinoctialis": {
+    "file": "images/species/procellaria_aequinoctialis.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Procellaria_aequinoctialis_1_-_SE_Tasmania.jpg",
+    "sourceTitle": "White-chinned petrel",
+    "license": "CC BY-SA 3.0",
+    "artist": "JJ Harrison (https://www.jjharrison.com.au/)"
+  },
+  "Oceanites oceanicus": {
+    "file": "images/species/oceanites_oceanicus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wilson%27s_Storm-petrel_0A2A7191.jpg",
+    "sourceTitle": "Wilson's storm petrel",
+    "license": "CC BY-SA 3.0",
+    "artist": "JJ Harrison"
+  },
+  "Sterna vittata": {
+    "file": "images/species/sterna_vittata.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sterna_vittata_-_Antarctica_I.jpg",
+    "sourceTitle": "Antarctic tern",
+    "license": "CC BY-SA 3.0",
+    "artist": "Butterfly voyages - Serge Ouachée"
+  },
+  "Sterna paradisaea": {
+    "file": "images/species/sterna_paradisaea.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arctic_tern_(Sterna_paradisaea)_Flatey_3.jpg",
+    "sourceTitle": "Arctic tern",
+    "license": "CC BY-SA 4.0",
+    "artist": "Charles J. Sharp"
+  },
+  "Pachyptila desolata": {
+    "file": "images/species/pachyptila_desolata.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antarctic_Prion_0A2A3422.jpg",
+    "sourceTitle": "Antarctic prion",
+    "license": "CC BY-SA 3.0",
+    "artist": "JJ Harrison"
+  },
+  "Aptenodytes forsteri": {
+    "file": "images/species/aptenodytes_forsteri.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aptenodytes_forsteri_-Snow_Hill_Island,_Antarctica_-adults_and_juvenile-8.jpg",
+    "sourceTitle": "Emperor penguin",
+    "license": "CC BY 2.0",
+    "artist": "Ian Duffy from UK"
+  },
+  "Pygoscelis adeliae": {
+    "file": "images/species/pygoscelis_adeliae.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hope_Bay-2016-Trinity_Peninsula%E2%80%93Ad%C3%A9lie_penguin_(Pygoscelis_adeliae)_04.jpg",
+    "sourceTitle": "Adélie penguin",
+    "license": "CC BY-SA 4.0",
+    "artist": "Godot13"
+  },
+  "Lobodon carcinophaga": {
+    "file": "images/species/lobodon_carcinophaga.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lobodon_carcinophagus_on_sea_ice_(cropped).jpg",
+    "sourceTitle": "Crabeater seal",
+    "license": "CC BY-SA 3.0",
+    "artist": "François Guerraz"
+  },
+  "Hydrurga leptonyx": {
+    "file": "images/species/hydrurga_leptonyx.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antarctic_Sound-2016-Brown_Bluff%E2%80%93Leopard_seal_(Hydrurga_leptonyx)_04.jpg",
+    "sourceTitle": "Leopard seal",
+    "license": "CC BY-SA 4.0",
+    "artist": "Godot13"
+  },
+  "Arctocephalus gazella": {
+    "file": "images/species/arctocephalus_gazella.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seeb%C3%A4r_(Arctocephalus)_01.jpg",
+    "sourceTitle": "Antarctic fur seal",
+    "license": "CC BY-SA 4.0",
+    "artist": "Sastognuti"
+  },
+  "Mirounga leonina": {
+    "file": "images/species/mirounga_leonina.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2020-11_Kerguelen_Islands_-_Southern_elephant_seal_30.jpg",
+    "sourceTitle": "Southern elephant seal",
+    "license": "CC BY-SA 4.0",
+    "artist": "Antoine Lamielle"
+  },
+  "Ommatophoca rossii": {
+    "file": "images/species/ommatophoca_rossii.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ommatophoca_rossii_(Ross_Seal),_off_Wilkes_Land,_Antarctica_1.jpg",
+    "sourceTitle": "Ross seal",
+    "license": "CC0",
+    "artist": "botheredbybees"
+  },
+  "Leptonychotes weddelli": {
+    "file": "images/species/leptonychotes_weddelli.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mikkelsen_Harbour-2016-Trinity_Island_(D%27Hainaut_Island)%E2%80%93Weddell_seal_(Leptonychotes_weddellii)_03.jpg",
+    "sourceTitle": "Weddell seal",
+    "license": "CC BY-SA 4.0",
+    "artist": "Godot13"
+  },
+  "Balaenoptera musculus": {
+    "file": "images/species/balaenoptera_musculus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anim1754_-_Flickr_-_NOAA_Photo_Library.jpg",
+    "sourceTitle": "Blue whale",
+    "license": "Public domain",
+    "artist": "NOAA Photo Library"
+  },
+  "Balaenoptera physalus": {
+    "file": "images/species/balaenoptera_physalus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Finhval_(1).jpg",
+    "sourceTitle": "Fin whale",
+    "license": "CC BY 2.0",
+    "artist": "Aqqa Rosing-Asvid - Visit Greenland"
+  },
+  "Balaenoptera acutorostrata": {
+    "file": "images/species/balaenoptera_acutorostrata.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SBNMS_-_Minke_Whale_-_Breach_(28670557361).jpg",
+    "sourceTitle": "Common minke whale",
+    "license": "Public domain",
+    "artist": "National Marine Sanctuaries"
+  },
+  "Physeter macrocephalus": {
+    "file": "images/species/physeter_macrocephalus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mother_and_baby_sperm_whale.jpg",
+    "sourceTitle": "Sperm whale",
+    "license": "CC BY-SA 2.0",
+    "artist": "Gabriel Barathieu"
+  },
+  "Megaptera novaeangliae": {
+    "file": "images/species/megaptera_novaeangliae.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Humpback_whale_breaching_off_Cabo_San_Lucas.jpg",
+    "sourceTitle": "Humpback whale",
+    "license": "CC BY 4.0",
+    "artist": "Juan Cruzado Cortés"
+  },
+  "Orcinus orca": {
+    "file": "images/species/orcinus_orca.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Killerwhales_jumping.jpg",
+    "sourceTitle": "Orca",
+    "license": "Public domain",
+    "artist": "Robert Pittman"
+  },
+  "Lagenorhynchus cruciger": {
+    "file": "images/species/lagenorhynchus_cruciger.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hourglas_dolphin.jpg",
+    "sourceTitle": "Hourglass dolphin",
+    "license": "CC BY-SA 3.0",
+    "artist": "Lomvi2"
+  },
+  "Tursiops truncatus": {
+    "file": "images/species/tursiops_truncatus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tursiops_truncatus_01-cropped.jpg",
+    "sourceTitle": "Common bottlenose dolphin",
+    "license": "Public domain",
+    "artist": "NASA"
+  },
+  "Homaxinella balfourensis": {
+    "file": "images/species/homaxinella_balfourensis.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Underwater_mcmurdo_sound.jpg",
+    "sourceTitle": "Homaxinella balfourensis",
+    "license": "Public domain",
+    "artist": "NSF/USAP photo by Steve Clabuesch; uploaded by en:User:Fishdecoy"
+  },
+  "Anoxycalyx joubini": {
+    "file": "images/species/anoxycalyx_joubini.png",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anoxycalyx_joubini3a.png",
+    "sourceTitle": "Anoxycalyx joubini",
+    "license": "CC BY 4.0",
+    "artist": "Paul K. Dayton, Stacy Kim, Shannon C. Jarrell, John S. Oliver, Kamille Hammerstrom, Jennifer L. Fisher, Kevin O’Connor, Julie S. Barber, Gordon Robilliard, James Barry, Andrew R. Thurber, Kathy Conlan"
+  },
+  "Beroe cucumis": {
+    "file": "images/species/beroe_cucumis.jpeg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beroe_cucumis.jpeg",
+    "sourceTitle": "Beroe cucumis",
+    "license": "CC BY 3.0",
+    "artist": "Mark Norman / Museum Victoria"
+  },
+  "Parborlasia corrugatus": {
+    "file": "images/species/parborlasia_corrugatus.JPG",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Proboscis_worm.JPG",
+    "sourceTitle": "Parborlasia corrugata",
+    "license": "Public domain",
+    "artist": "Henry Kaiser, National Science Foundation"
+  },
+  "Bathylagus antarcticus": {
+    "file": "images/species/bathylagus_antarcticus.gif",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bathylagus_antarcticus_(no_common_name).gif",
+    "sourceTitle": "Bathylagus antarcticus (no common name).gif",
+    "license": "CC BY-SA 1.0",
+    "artist": "Dr Tony Ayling"
+  },
+  "Chionodraco hamatus": {
+    "file": "images/species/chionodraco_hamatus.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chionodraco_hamatus_2.jpg",
+    "sourceTitle": "Chionodraco hamatus 2.jpg",
+    "license": "Public domain",
+    "artist": "GM. Woodward"
+  }
+}

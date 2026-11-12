@@ -18,8 +18,8 @@ graph [
   order 6
   keyNodeShort "Institution"
   keyNodeFull "University, positioned by its inferred prestige score"
-  keyEdgeShort "B hires a PhD from A"
-  keyEdgeFull "A &#8594; B: B hires a PhD from A, width &#8733; number of such hires"
+  keyEdgeShort "PhD from A hired by B"
+  keyEdgeFull "A &#8594; B: PhD from A hired by B, width &#8733; number of such hires"
   keyStyle "graphical"
   geoOutline "usa"
   node [

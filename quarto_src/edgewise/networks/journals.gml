@@ -23,6 +23,10 @@ graph [
   keyEdgeFull "A &#8594; B: A cites B, width &#8733; citation count"
   modelDefaults "{&quot;edgeIsWin&quot;: false, &quot;weightedSBM&quot;: true}"
   keyStyle "graphical"
+  rangeAttr "cited_by"
+  rangeMin 681521.0
+  rangeMax 3331664.0
+  rangeTarget "labels"
   node [
     id 0
     bt_score 1.74625
@@ -33,7 +37,7 @@ graph [
     works_count 92809
     field "Physical Sciences"  discipline "Multidisciplinary"
     cited_by 3331664
-    x 341.37  y 143.71 ]
+    x 351.29 ]
   node [
     id 1
     bt_score 0.353226
@@ -44,7 +48,7 @@ graph [
     works_count 314208
     field "Physical Sciences"  discipline "Multidisciplinary"
     cited_by 2996223
-    x 95.65  y 255.73 ]
+    x 170.5 ]
   node [
     id 2
     bt_score -1.3022
@@ -55,7 +59,7 @@ graph [
     works_count 114528
     field "Life Sciences"  discipline "Life Sciences"
     cited_by 1993222
-    x 385.79  y 388.84 ]
+    x 371.56 ]
   node [
     id 3
     bt_score 2.71112
@@ -66,7 +70,7 @@ graph [
     works_count 448710
     field "Health Sciences"  discipline "Multidisciplinary"
     cited_by 1915033
-    x 373.93  y 66.13 ]
+    x 386.3 ]
   node [
     id 4
     bt_score 0.280854
@@ -77,7 +81,7 @@ graph [
     works_count 112386
     field "Physical Sciences"  discipline "Engineering & Computing"
     cited_by 1865341
-    x 708.89  y 261.55 ]
+    x 578.35 ]
   node [
     id 5
     bt_score 0.42525
@@ -88,7 +92,7 @@ graph [
     works_count 83708
     field "Physical Sciences"  discipline "Environmental Science"
     cited_by 1853352
-    x 369.36  y 249.94 ]
+    x 350.91 ]
   node [
     id 6
     bt_score 0.243518
@@ -99,7 +103,7 @@ graph [
     works_count 342374
     field "Health Sciences"  discipline "Multidisciplinary"
     cited_by 1741166
-    x 677.52  y 264.55 ]
+    x 408.16 ]
   node [
     id 7
     bt_score -0.657108
@@ -110,7 +114,7 @@ graph [
     works_count 109603
     field "Social Sciences"  discipline "Environmental Science"
     cited_by 1658004
-    x 436.21  y 336.97 ]
+    x 411.2 ]
   node [
     id 8
     bt_score 0.483588
@@ -121,7 +125,7 @@ graph [
     works_count 79887
     field "Physical Sciences"  discipline "Chemical Engineering"
     cited_by 1614313
-    x 131.43  y 245.24 ]
+    x 185.73 ]
   node [
     id 9
     bt_score 0.300249
@@ -132,7 +136,7 @@ graph [
     works_count 50459
     field "Physical Sciences"  discipline "Environmental Science"
     cited_by 1423199
-    x 661.32  y 259.99 ]
+    x 260.16 ]
   node [
     id 10
     bt_score 0.445793
@@ -143,7 +147,7 @@ graph [
     works_count 66700
     field "Social Sciences"  discipline "Medicine & Health"
     cited_by 1318456
-    x 604.71  y 248.28 ]
+    x 476.59 ]
   node [
     id 11
     bt_score 1.55052
@@ -154,7 +158,7 @@ graph [
     works_count 82817
     field "Physical Sciences"  discipline "Chemistry"
     cited_by 1310223
-    x 538.96  y 159.45 ]
+    x 521.2 ]
   node [
     id 12
     bt_score 2.78736
@@ -165,7 +169,7 @@ graph [
     works_count 394263
     field "Life Sciences"  discipline "Multidisciplinary"
     cited_by 1282696
-    x 305.94  y 60 ]
+    x 314.73 ]
   node [
     id 13
     bt_score 0.820844
@@ -176,7 +180,7 @@ graph [
     works_count 70568
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 1237693
-    x 176.24  y 218.13 ]
+    x 227.91 ]
   node [
     id 14
     bt_score 1.73414
@@ -187,7 +191,7 @@ graph [
     works_count 172956
     field "Life Sciences"  discipline "Multidisciplinary"
     cited_by 1195416
-    x 402.9  y 144.69 ]
+    x 421.1 ]
   node [
     id 15
     bt_score 1.13834
@@ -198,7 +202,7 @@ graph [
     works_count 46039
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 1193169
-    x 387.33  y 192.6 ]
+    x 429.01 ]
   node [
     id 16
     bt_score 1.76773
@@ -209,7 +213,7 @@ graph [
     works_count 222103
     field "Physical Sciences"  discipline "Chemistry"
     cited_by 1055114
-    x 244.34  y 141.99 ]
+    x 242.36 ]
   node [
     id 17
     bt_score -0.191271
@@ -220,7 +224,7 @@ graph [
     works_count 81524
     field "Physical Sciences"  discipline "Engineering & Computing"
     cited_by 1011367
-    x 382.37  y 299.51 ]
+    x 454.45 ]
   node [
     id 18
     bt_score 0.32922
@@ -231,7 +235,7 @@ graph [
     works_count 57436
     field "Life Sciences"  discipline "Medicine & Health"
     cited_by 1010412
-    x 590.34  y 257.66 ]
+    x 550.38 ]
   node [
     id 19
     bt_score -0.464225
@@ -242,7 +246,7 @@ graph [
     works_count 65823
     field "Health Sciences"  discipline "Chemistry"
     cited_by 985341
-    x 506.57  y 321.46 ]
+    x 547.16 ]
   node [
     id 20
     bt_score 0.799657
@@ -253,7 +257,7 @@ graph [
     works_count 44244
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 970237
-    x 569.65  y 219.83 ]
+    x 547.4 ]
   node [
     id 21
     bt_score -0.566119
@@ -264,7 +268,7 @@ graph [
     works_count 92756
     field "Physical Sciences"  discipline "Engineering & Computing"
     cited_by 886801
-    x 42.65  y 329.65 ]
+    x 128.57 ]
   node [
     id 22
     bt_score 0.465675
@@ -275,7 +279,7 @@ graph [
     works_count 49244
     field "Physical Sciences"  discipline "Engineering & Computing"
     cited_by 800604
-    x 415.45  y 246.68 ]
+    x 440.52 ]
   node [
     id 23
     bt_score 0.627047
@@ -286,7 +290,7 @@ graph [
     works_count 43547
     field "Physical Sciences"  discipline "Environmental Science"
     cited_by 799642
-    x 531.61  y 233.71 ]
+    x 511.22 ]
   node [
     id 24
     bt_score 0.0168802
@@ -297,7 +301,7 @@ graph [
     works_count 39433
     field "Health Sciences"  discipline "Medicine & Health"
     cited_by 774253
-    x 555.44  y 282.77 ]
+    x 564.03 ]
   node [
     id 25
     bt_score 1.6136
@@ -308,7 +312,7 @@ graph [
     works_count 20374
     field "Physical Sciences"  discipline "Multidisciplinary"
     cited_by 770819
-    x 494.34  y 154.38 ]
+    x 469.83 ]
   node [
     id 26
     bt_score 0.259194
@@ -319,7 +323,7 @@ graph [
     works_count 50905
     field "Physical Sciences"  discipline "Environmental Science"
     cited_by 734859
-    x 427.39  y 263.29 ]
+    x 319.64 ]
   node [
     id 27
     bt_score -0.439907
@@ -330,7 +334,7 @@ graph [
     works_count 64738
     field "Physical Sciences"  discipline "Energy"
     cited_by 733180
-    x 247.51  y 319.5 ]
+    x 326.62 ]
   node [
     id 28
     bt_score -0.401766
@@ -341,7 +345,7 @@ graph [
     works_count 49046
     field "Social Sciences"  discipline "Environmental Science"
     cited_by 728457
-    x 409.9  y 316.44 ]
+    x 490.91 ]
   node [
     id 29
     bt_score -0.399155
@@ -352,7 +356,7 @@ graph [
     works_count 52987
     field "Physical Sciences"  discipline "Life Sciences"
     cited_by 726383
-    x 66.84  y 316.23 ]
+    x 168.66 ]
   node [
     id 30
     bt_score 1.0582
@@ -363,7 +367,7 @@ graph [
     works_count 29589
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 701531
-    x 502.88  y 199.04 ]
+    x 490.95 ]
   node [
     id 31
     bt_score 2.46299
@@ -374,7 +378,7 @@ graph [
     works_count 26944
     field "Life Sciences"  discipline "Life Sciences"
     cited_by 681521
-    x 442.25  y 86.08 ]
+    x 448.32 ]
   node [
     id 32
     bt_score -0.504801
@@ -385,7 +389,7 @@ graph [
     works_count 58543
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 681062
-    x 243.7  y 324.72 ]
+    x 284.04 ]
   node [
     id 33
     bt_score -0.11365
@@ -396,7 +400,7 @@ graph [
     works_count 94730
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 675675
-    x 366.42  y 293.27 ]
+    x 313.73 ]
   node [
     id 34
     bt_score 0.141674
@@ -407,7 +411,7 @@ graph [
     works_count 43482
     field "Physical Sciences"  discipline "Engineering & Computing"
     cited_by 668107
-    x 588.08  y 272.74 ]
+    x 532.88 ]
   node [
     id 35
     bt_score 0.113567
@@ -418,7 +422,7 @@ graph [
     works_count 61076
     field "Physical Sciences"  discipline "Energy"
     cited_by 666123
-    x 416.03  y 275 ]
+    x 322.03 ]
   node [
     id 36
     bt_score 0.148086
@@ -429,7 +433,7 @@ graph [
     works_count 37469
     field "Health Sciences"  discipline "Medicine & Health"
     cited_by 664200
-    x 393.36  y 272.22 ]
+    x 397.41 ]
   node [
     id 37
     bt_score 0.781952
@@ -440,7 +444,7 @@ graph [
     works_count 40183
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 651635
-    x 407.05  y 221.25 ]
+    x 421.78 ]
   node [
     id 38
     bt_score 0.0860066
@@ -451,7 +455,7 @@ graph [
     works_count 41911
     field "Life Sciences"  discipline "Life Sciences"
     cited_by 633023
-    x 89.2  y 277.21 ]
+    x 111.26 ]
   node [
     id 39
     bt_score 0.303218
@@ -462,7 +466,7 @@ graph [
     works_count 52240
     field "Life Sciences"  discipline "Chemistry"
     cited_by 611741
-    x 533.17  y 259.75 ]
+    x 502.65 ]
   node [
     id 40
     bt_score 1.94562
@@ -473,7 +477,7 @@ graph [
     works_count 146405
     field "Physical Sciences"  discipline "Physics & Astronomy"
     cited_by 598794
-    x 309.48  y 127.68 ]
+    x 280.68 ]
   node [
     id 41
     bt_score -0.421374
@@ -484,7 +488,7 @@ graph [
     works_count 32631
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 575660
-    x 369.12  y 318.01 ]
+    x 451.75 ]
   node [
     id 42
     bt_score 0.917712
@@ -495,7 +499,7 @@ graph [
     works_count 70891
     field "Physical Sciences"  discipline "Environmental Science"
     cited_by 561940
-    x 453.28  y 210.34 ]
+    x 459.64 ]
   node [
     id 43
     bt_score -0.114159
@@ -506,7 +510,7 @@ graph [
     works_count 52903
     field "Health Sciences"  discipline "Medicine & Health"
     cited_by 553846
-    x 474.57  y 293.31 ]
+    x 500.71 ]
   node [
     id 44
     bt_score -0.159864
@@ -517,7 +521,7 @@ graph [
     works_count 35932
     field "Life Sciences"  discipline "Life Sciences"
     cited_by 540277
-    x 380.07  y 296.98 ]
+    x 406.48 ]
   node [
     id 45
     bt_score 0.225027
@@ -528,7 +532,7 @@ graph [
     works_count 21473
     field "Health Sciences"  discipline "Life Sciences"
     cited_by 535178
-    x 493.11  y 266.04 ]
+    x 442.19 ]
   node [
     id 46
     bt_score 0.681811
@@ -539,7 +543,7 @@ graph [
     works_count 28728
     field "Physical Sciences"  discipline "Energy"
     cited_by 531226
-    x 406.6  y 229.31 ]
+    x 395.33 ]
   node [
     id 47
     bt_score 1.21862
@@ -550,7 +554,7 @@ graph [
     works_count 20170
     field "Physical Sciences"  discipline "Chemical Engineering"
     cited_by 529286
-    x 385  y 186.14 ]
+    x 319.31 ]
   node [
     id 48
     bt_score 0.151931
@@ -561,7 +565,7 @@ graph [
     works_count 47477
     field "Physical Sciences"  discipline "Energy"
     cited_by 528241
-    x 513.55  y 271.91 ]
+    x 475.15 ]
   node [
     id 49
     bt_score 0.221293
@@ -572,7 +576,7 @@ graph [
     works_count 69708
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 522358
-    x 439.02  y 266.34 ]
+    x 369.39 ]
   node [
     id 50
     bt_score -1.44101
@@ -583,7 +587,7 @@ graph [
     works_count 45409
     field "Health Sciences"  discipline "Multidisciplinary"
     cited_by 511181
-    x 312.39  y 400 ]
+    x 301.47 ]
   node [
     id 51
     bt_score -0.0450461
@@ -594,7 +598,7 @@ graph [
     works_count 57354
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 490566
-    x 406.29  y 287.75 ]
+    x 426.79 ]
   node [
     id 52
     bt_score -0.100446
@@ -605,7 +609,7 @@ graph [
     works_count 30934
     field "Physical Sciences"  discipline "Environmental Science"
     cited_by 488729
-    x 149.15  y 292.21 ]
+    x 141.89 ]
   node [
     id 53
     bt_score 0.0499513
@@ -616,7 +620,7 @@ graph [
     works_count 34780
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 484232
-    x 361.11  y 280.11 ]
+    x 231.96 ]
   node [
     id 54
     bt_score 0.29181
@@ -627,7 +631,7 @@ graph [
     works_count 29387
     field "Physical Sciences"  discipline "Environmental Science"
     cited_by 483935
-    x 192.55  y 260.67 ]
+    x 234.6 ]
   node [
     id 55
     bt_score -0.0701924
@@ -638,7 +642,7 @@ graph [
     works_count 83647
     field "Physical Sciences"  discipline "Chemistry"
     cited_by 482030
-    x 218.58  y 289.77 ]
+    x 279.45 ]
   node [
     id 56
     bt_score 1.35457
@@ -649,7 +653,7 @@ graph [
     works_count 56992
     field "Physical Sciences"  discipline "Physics & Astronomy"
     cited_by 475054
-    x 143.87  y 175.21 ]
+    x 175.19 ]
   node [
     id 57
     bt_score 0.336422
@@ -660,7 +664,7 @@ graph [
     works_count 38760
     field "Health Sciences"  discipline "Medicine & Health"
     cited_by 474703
-    x 20.38  y 257.08 ]
+    x 155.01 ]
   node [
     id 58
     bt_score 1.23414
@@ -671,7 +675,7 @@ graph [
     works_count 32910
     field "Life Sciences"  discipline "Life Sciences"
     cited_by 474309
-    x 383.19  y 184.89 ]
+    x 380.01 ]
   node [
     id 59
     bt_score 1.17685
@@ -682,7 +686,7 @@ graph [
     works_count 13285
     field "Physical Sciences"  discipline "Energy"
     cited_by 466466
-    x 75.03  y 189.5 ]
+    x 143.43 ]
   node [
     id 60
     bt_score 0.845182
@@ -693,7 +697,7 @@ graph [
     works_count 35712
     field "Physical Sciences"  discipline "Chemical Engineering"
     cited_by 460502
-    x 257.37  y 216.17 ]
+    x 340.67 ]
   node [
     id 61
     bt_score 2.19073
@@ -704,7 +708,7 @@ graph [
     works_count 95027
     field "Physical Sciences"  discipline "Physics & Astronomy"
     cited_by 459162
-    x 241.04  y 107.97 ]
+    x 390.97 ]
   node [
     id 62
     bt_score 1.50016
@@ -715,7 +719,7 @@ graph [
     works_count 17808
     field "Physical Sciences"  discipline "Chemistry"
     cited_by 459123
-    x 190.76  y 163.5 ]
+    x 195.52 ]
   node [
     id 63
     bt_score 0.0587127
@@ -726,7 +730,7 @@ graph [
     works_count 32385
     field "Life Sciences"  discipline "Medicine & Health"
     cited_by 457462
-    x 295.22  y 279.41 ]
+    x 348.43 ]
   node [
     id 64
     bt_score 0.206814
@@ -737,7 +741,7 @@ graph [
     works_count 17161
     field "Physical Sciences"  discipline "Energy"
     cited_by 452596
-    x 296.02  y 267.5 ]
+    x 282.19 ]
   node [
     id 65
     bt_score 0.583896
@@ -748,7 +752,7 @@ graph [
     works_count 10744
     field "Physical Sciences"  discipline "Chemistry"
     cited_by 444669
-    x 346.35  y 237.18 ]
+    x 365.38 ]
   node [
     id 66
     bt_score -0.331412
@@ -759,7 +763,7 @@ graph [
     works_count 37323
     field "Physical Sciences"  discipline "Chemistry"
     cited_by 439573
-    x 186.48  y 310.78 ]
+    x 245.03 ]
   node [
     id 67
     bt_score 1.24386
@@ -770,7 +774,7 @@ graph [
     works_count 11673
     field "Physical Sciences"  discipline "Energy"
     cited_by 431614
-    x 243.91  y 184.11 ]
+    x 227.78 ]
   node [
     id 68
     bt_score -0.756404
@@ -781,7 +785,7 @@ graph [
     works_count 26902
     field "Life Sciences"  discipline "Life Sciences"
     cited_by 430664
-    x 455.85  y 344.95 ]
+    x 497.52 ]
   node [
     id 69
     bt_score 0.435598
@@ -792,7 +796,7 @@ graph [
     works_count 28604
     field "Physical Sciences"  discipline "Energy"
     cited_by 425812
-    x 289.09  y 249.1 ]
+    x 320.38 ]
   node [
     id 70
     bt_score 0.329322
@@ -803,7 +807,7 @@ graph [
     works_count 21927
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 422055
-    x 80.39  y 257.65 ]
+    x 97.2 ]
   node [
     id 71
     bt_score -0.322217
@@ -814,7 +818,7 @@ graph [
     works_count 22994
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 412848
-    x 339.2  y 310.04 ]
+    x 377.95 ]
   node [
     id 72
     bt_score 0.138397
@@ -825,7 +829,7 @@ graph [
     works_count 41648
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 410483
-    x 140.92  y 273 ]
+    x 177.08 ]
   node [
     id 73
     bt_score 0.801791
@@ -836,7 +840,7 @@ graph [
     works_count 31910
     field "Physical Sciences"  discipline "Environmental Science"
     cited_by 400778
-    x 246.09  y 219.66 ]
+    x 259.35 ]
   node [
     id 74
     bt_score 0.0421825
@@ -847,7 +851,7 @@ graph [
     works_count 50763
     field "Physical Sciences"  discipline "Chemistry"
     cited_by 399648
-    x 186.98  y 280.74 ]
+    x 209.4 ]
   node [
     id 75
     bt_score 2.19757
@@ -858,7 +862,7 @@ graph [
     works_count 135050
     field "Physical Sciences"  discipline "Physics & Astronomy"
     cited_by 386597
-    x 157.22  y 107.42 ]
+    x 328.64 ]
   node [
     id 76
     bt_score -0.516016
@@ -869,7 +873,7 @@ graph [
     works_count 22944
     field "Physical Sciences"  discipline "Energy"
     cited_by 383663
-    x 127.1  y 325.62 ]
+    x 189.53 ]
   node [
     id 77
     bt_score -0.24324
@@ -880,7 +884,7 @@ graph [
     works_count 31805
     field "Physical Sciences"  discipline "Chemical Engineering"
     cited_by 382732
-    x 284.35  y 303.69 ]
+    x 277.23 ]
   node [
     id 78
     bt_score 0.449345
@@ -891,7 +895,7 @@ graph [
     works_count 27001
     field "Physical Sciences"  discipline "Materials Science"
     cited_by 380566
-    x 277.36  y 248 ]
+    x 267.74 ]
   node [
     id 79
     bt_score 1.34145
@@ -902,7 +906,7 @@ graph [
     works_count 17273
     field "Life Sciences"  discipline "Life Sciences"
     cited_by 380281
-    x 313.23  y 176.26 ]
+    x 288.38 ]
   node [
     id 80
     bt_score 0.470783
@@ -913,7 +917,7 @@ graph [
     works_count 19900
     field "Physical Sciences"  discipline "Chemical Engineering"
     cited_by 372871
-    x 221.64  y 246.27 ]
+    x 214.23 ]
   node [
     id 81
     bt_score 0.646526
@@ -924,7 +928,7 @@ graph [
     works_count 141047
     field "Physical Sciences"  discipline "Chemistry"
     cited_by 370388
-    x 126.03  y 232.14 ]
+    x 125.58 ]
   node [
     id 82
     bt_score -0.555157
@@ -935,7 +939,7 @@ graph [
     works_count 32815
     field "Physical Sciences"  discipline "Environmental Science"
     cited_by 366515
-    x 214.32  y 328.77 ]
+    x 228.93 ]
   node [
     id 83
     bt_score 0.822509
@@ -946,7 +950,7 @@ graph [
     works_count 9437
     field "Physical Sciences"  discipline "Chemistry"
     cited_by 359186
-    x 255.32  y 217.99 ]
+    x 300.0 ]
   node [
     id 84
     bt_score -0.50447
@@ -957,7 +961,7 @@ graph [
     works_count 23612
     field "Physical Sciences"  discipline "Environmental Science"
     cited_by 355550
-    x 276.18  y 324.69 ]
+    x 350.78 ]
   edge [
     source 0
     target 3

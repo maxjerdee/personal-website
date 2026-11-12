@@ -1,0 +1,1486 @@
+{
+ "Afghanistan": {
+  "file": "images/flags/af.png",
+  "sourceUrl": "https://flagcdn.com/w320/af.png",
+  "sourceTitle": "Flag of Afghanistan",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Australia": {
+  "file": "images/flags/au.png",
+  "sourceUrl": "https://flagcdn.com/w320/au.png",
+  "sourceTitle": "Flag of Australia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Austria": {
+  "file": "images/flags/at.png",
+  "sourceUrl": "https://flagcdn.com/w320/at.png",
+  "sourceTitle": "Flag of Austria",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Belgium": {
+  "file": "images/flags/be.png",
+  "sourceUrl": "https://flagcdn.com/w320/be.png",
+  "sourceTitle": "Flag of Belgium",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Brazil": {
+  "file": "images/flags/br.png",
+  "sourceUrl": "https://flagcdn.com/w320/br.png",
+  "sourceTitle": "Flag of Brazil",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Canada": {
+  "file": "images/flags/ca.png",
+  "sourceUrl": "https://flagcdn.com/w320/ca.png",
+  "sourceTitle": "Flag of Canada",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "China": {
+  "file": "images/flags/cn.png",
+  "sourceUrl": "https://flagcdn.com/w320/cn.png",
+  "sourceTitle": "Flag of China",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Denmark": {
+  "file": "images/flags/dk.png",
+  "sourceUrl": "https://flagcdn.com/w320/dk.png",
+  "sourceTitle": "Flag of Denmark",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Egypt": {
+  "file": "images/flags/eg.png",
+  "sourceUrl": "https://flagcdn.com/w320/eg.png",
+  "sourceTitle": "Flag of Egypt",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Finland": {
+  "file": "images/flags/fi.png",
+  "sourceUrl": "https://flagcdn.com/w320/fi.png",
+  "sourceTitle": "Flag of Finland",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "France": {
+  "file": "images/flags/fr.png",
+  "sourceUrl": "https://flagcdn.com/w320/fr.png",
+  "sourceTitle": "Flag of France",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Germany": {
+  "file": "images/flags/de.png",
+  "sourceUrl": "https://flagcdn.com/w320/de.png",
+  "sourceTitle": "Flag of Germany",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Guatemala": {
+  "file": "images/flags/gt.png",
+  "sourceUrl": "https://flagcdn.com/w320/gt.png",
+  "sourceTitle": "Flag of Guatemala",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "India": {
+  "file": "images/flags/in.png",
+  "sourceUrl": "https://flagcdn.com/w320/in.png",
+  "sourceTitle": "Flag of India",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Indonesia": {
+  "file": "images/flags/id.png",
+  "sourceUrl": "https://flagcdn.com/w320/id.png",
+  "sourceTitle": "Flag of Indonesia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Iran, Islamic Republic of": {
+  "file": "images/flags/ir.png",
+  "sourceUrl": "https://flagcdn.com/w320/ir.png",
+  "sourceTitle": "Flag of Iran, Islamic Republic of",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Iraq": {
+  "file": "images/flags/iq.png",
+  "sourceUrl": "https://flagcdn.com/w320/iq.png",
+  "sourceTitle": "Flag of Iraq",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Ireland": {
+  "file": "images/flags/ie.png",
+  "sourceUrl": "https://flagcdn.com/w320/ie.png",
+  "sourceTitle": "Flag of Ireland",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Italy": {
+  "file": "images/flags/it.png",
+  "sourceUrl": "https://flagcdn.com/w320/it.png",
+  "sourceTitle": "Flag of Italy",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Japan": {
+  "file": "images/flags/jp.png",
+  "sourceUrl": "https://flagcdn.com/w320/jp.png",
+  "sourceTitle": "Flag of Japan",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Kazakhstan": {
+  "file": "images/flags/kz.png",
+  "sourceUrl": "https://flagcdn.com/w320/kz.png",
+  "sourceTitle": "Flag of Kazakhstan",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Lebanon": {
+  "file": "images/flags/lb.png",
+  "sourceUrl": "https://flagcdn.com/w320/lb.png",
+  "sourceTitle": "Flag of Lebanon",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Malaysia": {
+  "file": "images/flags/my.png",
+  "sourceUrl": "https://flagcdn.com/w320/my.png",
+  "sourceTitle": "Flag of Malaysia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Netherlands, Kingdom of the": {
+  "file": "images/flags/nl.png",
+  "sourceUrl": "https://flagcdn.com/w320/nl.png",
+  "sourceTitle": "Flag of Netherlands, Kingdom of the",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Pakistan": {
+  "file": "images/flags/pk.png",
+  "sourceUrl": "https://flagcdn.com/w320/pk.png",
+  "sourceTitle": "Flag of Pakistan",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Philippines": {
+  "file": "images/flags/ph.png",
+  "sourceUrl": "https://flagcdn.com/w320/ph.png",
+  "sourceTitle": "Flag of Philippines",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Poland": {
+  "file": "images/flags/pl.png",
+  "sourceUrl": "https://flagcdn.com/w320/pl.png",
+  "sourceTitle": "Flag of Poland",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Korea, Republic of": {
+  "file": "images/flags/kr.png",
+  "sourceUrl": "https://flagcdn.com/w320/kr.png",
+  "sourceTitle": "Flag of Korea, Republic of",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Russian Federation": {
+  "file": "images/flags/ru.png",
+  "sourceUrl": "https://flagcdn.com/w320/ru.png",
+  "sourceTitle": "Flag of Russian Federation",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Saudi Arabia": {
+  "file": "images/flags/sa.png",
+  "sourceUrl": "https://flagcdn.com/w320/sa.png",
+  "sourceTitle": "Flag of Saudi Arabia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Singapore": {
+  "file": "images/flags/sg.png",
+  "sourceUrl": "https://flagcdn.com/w320/sg.png",
+  "sourceTitle": "Flag of Singapore",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Spain": {
+  "file": "images/flags/es.png",
+  "sourceUrl": "https://flagcdn.com/w320/es.png",
+  "sourceTitle": "Flag of Spain",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Sweden": {
+  "file": "images/flags/se.png",
+  "sourceUrl": "https://flagcdn.com/w320/se.png",
+  "sourceTitle": "Flag of Sweden",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Switzerland": {
+  "file": "images/flags/ch.png",
+  "sourceUrl": "https://flagcdn.com/w320/ch.png",
+  "sourceTitle": "Flag of Switzerland",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Tajikistan": {
+  "file": "images/flags/tj.png",
+  "sourceUrl": "https://flagcdn.com/w320/tj.png",
+  "sourceTitle": "Flag of Tajikistan",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Thailand": {
+  "file": "images/flags/th.png",
+  "sourceUrl": "https://flagcdn.com/w320/th.png",
+  "sourceTitle": "Flag of Thailand",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "T\u00fcrkiye": {
+  "file": "images/flags/tr.png",
+  "sourceUrl": "https://flagcdn.com/w320/tr.png",
+  "sourceTitle": "Flag of T\u00fcrkiye",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Turkmenistan": {
+  "file": "images/flags/tm.png",
+  "sourceUrl": "https://flagcdn.com/w320/tm.png",
+  "sourceTitle": "Flag of Turkmenistan",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Ukraine": {
+  "file": "images/flags/ua.png",
+  "sourceUrl": "https://flagcdn.com/w320/ua.png",
+  "sourceTitle": "Flag of Ukraine",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "United Arab Emirates": {
+  "file": "images/flags/ae.png",
+  "sourceUrl": "https://flagcdn.com/w320/ae.png",
+  "sourceTitle": "Flag of United Arab Emirates",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "United Kingdom of Great Britain and Northern Ireland": {
+  "file": "images/flags/gb.png",
+  "sourceUrl": "https://flagcdn.com/w320/gb.png",
+  "sourceTitle": "Flag of United Kingdom of Great Britain and Northern Ireland",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "United States of America": {
+  "file": "images/flags/us.png",
+  "sourceUrl": "https://flagcdn.com/w320/us.png",
+  "sourceTitle": "Flag of United States of America",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Uzbekistan": {
+  "file": "images/flags/uz.png",
+  "sourceUrl": "https://flagcdn.com/w320/uz.png",
+  "sourceTitle": "Flag of Uzbekistan",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Viet Nam": {
+  "file": "images/flags/vn.png",
+  "sourceUrl": "https://flagcdn.com/w320/vn.png",
+  "sourceTitle": "Flag of Viet Nam",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Albania": {
+  "file": "images/flags/al.png",
+  "sourceUrl": "https://flagcdn.com/w320/al.png",
+  "sourceTitle": "Flag of Albania",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Argentina": {
+  "file": "images/flags/ar.png",
+  "sourceUrl": "https://flagcdn.com/w320/ar.png",
+  "sourceTitle": "Flag of Argentina",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Bahamas": {
+  "file": "images/flags/bs.png",
+  "sourceUrl": "https://flagcdn.com/w320/bs.png",
+  "sourceTitle": "Flag of Bahamas",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Bosnia and Herzegovina": {
+  "file": "images/flags/ba.png",
+  "sourceUrl": "https://flagcdn.com/w320/ba.png",
+  "sourceTitle": "Flag of Bosnia and Herzegovina",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Bulgaria": {
+  "file": "images/flags/bg.png",
+  "sourceUrl": "https://flagcdn.com/w320/bg.png",
+  "sourceTitle": "Flag of Bulgaria",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Cabo Verde": {
+  "file": "images/flags/cv.png",
+  "sourceUrl": "https://flagcdn.com/w320/cv.png",
+  "sourceTitle": "Flag of Cabo Verde",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Cameroon": {
+  "file": "images/flags/cm.png",
+  "sourceUrl": "https://flagcdn.com/w320/cm.png",
+  "sourceTitle": "Flag of Cameroon",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Colombia": {
+  "file": "images/flags/co.png",
+  "sourceUrl": "https://flagcdn.com/w320/co.png",
+  "sourceTitle": "Flag of Colombia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Comoros": {
+  "file": "images/flags/km.png",
+  "sourceUrl": "https://flagcdn.com/w320/km.png",
+  "sourceTitle": "Flag of Comoros",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Congo": {
+  "file": "images/flags/cg.png",
+  "sourceUrl": "https://flagcdn.com/w320/cg.png",
+  "sourceTitle": "Flag of Congo",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Costa Rica": {
+  "file": "images/flags/cr.png",
+  "sourceUrl": "https://flagcdn.com/w320/cr.png",
+  "sourceTitle": "Flag of Costa Rica",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "C\u00f4te d'Ivoire": {
+  "file": "images/flags/ci.png",
+  "sourceUrl": "https://flagcdn.com/w320/ci.png",
+  "sourceTitle": "Flag of C\u00f4te d'Ivoire",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Croatia": {
+  "file": "images/flags/hr.png",
+  "sourceUrl": "https://flagcdn.com/w320/hr.png",
+  "sourceTitle": "Flag of Croatia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Cuba": {
+  "file": "images/flags/cu.png",
+  "sourceUrl": "https://flagcdn.com/w320/cu.png",
+  "sourceTitle": "Flag of Cuba",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Cyprus": {
+  "file": "images/flags/cy.png",
+  "sourceUrl": "https://flagcdn.com/w320/cy.png",
+  "sourceTitle": "Flag of Cyprus",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Czechia": {
+  "file": "images/flags/cz.png",
+  "sourceUrl": "https://flagcdn.com/w320/cz.png",
+  "sourceTitle": "Flag of Czechia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Dominica": {
+  "file": "images/flags/dm.png",
+  "sourceUrl": "https://flagcdn.com/w320/dm.png",
+  "sourceTitle": "Flag of Dominica",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Dominican Republic": {
+  "file": "images/flags/do.png",
+  "sourceUrl": "https://flagcdn.com/w320/do.png",
+  "sourceTitle": "Flag of Dominican Republic",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Ecuador": {
+  "file": "images/flags/ec.png",
+  "sourceUrl": "https://flagcdn.com/w320/ec.png",
+  "sourceTitle": "Flag of Ecuador",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Ethiopia": {
+  "file": "images/flags/et.png",
+  "sourceUrl": "https://flagcdn.com/w320/et.png",
+  "sourceTitle": "Flag of Ethiopia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Greece": {
+  "file": "images/flags/gr.png",
+  "sourceUrl": "https://flagcdn.com/w320/gr.png",
+  "sourceTitle": "Flag of Greece",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Hungary": {
+  "file": "images/flags/hu.png",
+  "sourceUrl": "https://flagcdn.com/w320/hu.png",
+  "sourceTitle": "Flag of Hungary",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Israel": {
+  "file": "images/flags/il.png",
+  "sourceUrl": "https://flagcdn.com/w320/il.png",
+  "sourceTitle": "Flag of Israel",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Kenya": {
+  "file": "images/flags/ke.png",
+  "sourceUrl": "https://flagcdn.com/w320/ke.png",
+  "sourceTitle": "Flag of Kenya",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Kyrgyzstan": {
+  "file": "images/flags/kg.png",
+  "sourceUrl": "https://flagcdn.com/w320/kg.png",
+  "sourceTitle": "Flag of Kyrgyzstan",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Lithuania": {
+  "file": "images/flags/lt.png",
+  "sourceUrl": "https://flagcdn.com/w320/lt.png",
+  "sourceTitle": "Flag of Lithuania",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Luxembourg": {
+  "file": "images/flags/lu.png",
+  "sourceUrl": "https://flagcdn.com/w320/lu.png",
+  "sourceTitle": "Flag of Luxembourg",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Malawi": {
+  "file": "images/flags/mw.png",
+  "sourceUrl": "https://flagcdn.com/w320/mw.png",
+  "sourceTitle": "Flag of Malawi",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Mexico": {
+  "file": "images/flags/mx.png",
+  "sourceUrl": "https://flagcdn.com/w320/mx.png",
+  "sourceTitle": "Flag of Mexico",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Montenegro": {
+  "file": "images/flags/me.png",
+  "sourceUrl": "https://flagcdn.com/w320/me.png",
+  "sourceTitle": "Flag of Montenegro",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Morocco": {
+  "file": "images/flags/ma.png",
+  "sourceUrl": "https://flagcdn.com/w320/ma.png",
+  "sourceTitle": "Flag of Morocco",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Nicaragua": {
+  "file": "images/flags/ni.png",
+  "sourceUrl": "https://flagcdn.com/w320/ni.png",
+  "sourceTitle": "Flag of Nicaragua",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Norway": {
+  "file": "images/flags/no.png",
+  "sourceUrl": "https://flagcdn.com/w320/no.png",
+  "sourceTitle": "Flag of Norway",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Panama": {
+  "file": "images/flags/pa.png",
+  "sourceUrl": "https://flagcdn.com/w320/pa.png",
+  "sourceTitle": "Flag of Panama",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Portugal": {
+  "file": "images/flags/pt.png",
+  "sourceUrl": "https://flagcdn.com/w320/pt.png",
+  "sourceTitle": "Flag of Portugal",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Moldova, Republic of": {
+  "file": "images/flags/md.png",
+  "sourceUrl": "https://flagcdn.com/w320/md.png",
+  "sourceTitle": "Flag of Moldova, Republic of",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Romania": {
+  "file": "images/flags/ro.png",
+  "sourceUrl": "https://flagcdn.com/w320/ro.png",
+  "sourceTitle": "Flag of Romania",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Sao Tome and Principe": {
+  "file": "images/flags/st.png",
+  "sourceUrl": "https://flagcdn.com/w320/st.png",
+  "sourceTitle": "Flag of Sao Tome and Principe",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Serbia": {
+  "file": "images/flags/rs.png",
+  "sourceUrl": "https://flagcdn.com/w320/rs.png",
+  "sourceTitle": "Flag of Serbia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Slovakia": {
+  "file": "images/flags/sk.png",
+  "sourceUrl": "https://flagcdn.com/w320/sk.png",
+  "sourceTitle": "Flag of Slovakia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Slovenia": {
+  "file": "images/flags/si.png",
+  "sourceUrl": "https://flagcdn.com/w320/si.png",
+  "sourceTitle": "Flag of Slovenia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Syrian Arab Republic": {
+  "file": "images/flags/sy.png",
+  "sourceUrl": "https://flagcdn.com/w320/sy.png",
+  "sourceTitle": "Flag of Syrian Arab Republic",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "North Macedonia": {
+  "file": "images/flags/mk.png",
+  "sourceUrl": "https://flagcdn.com/w320/mk.png",
+  "sourceTitle": "Flag of North Macedonia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Tunisia": {
+  "file": "images/flags/tn.png",
+  "sourceUrl": "https://flagcdn.com/w320/tn.png",
+  "sourceTitle": "Flag of Tunisia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Uganda": {
+  "file": "images/flags/ug.png",
+  "sourceUrl": "https://flagcdn.com/w320/ug.png",
+  "sourceTitle": "Flag of Uganda",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Venezuela, Bolivarian Republic of": {
+  "file": "images/flags/ve.png",
+  "sourceUrl": "https://flagcdn.com/w320/ve.png",
+  "sourceTitle": "Flag of Venezuela, Bolivarian Republic of",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Bolivia, Plurinational State of": {
+  "file": "images/flags/bo.png",
+  "sourceUrl": "https://flagcdn.com/w320/bo.png",
+  "sourceTitle": "Flag of Bolivia, Plurinational State of",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Chile": {
+  "file": "images/flags/cl.png",
+  "sourceUrl": "https://flagcdn.com/w320/cl.png",
+  "sourceTitle": "Flag of Chile",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "El Salvador": {
+  "file": "images/flags/sv.png",
+  "sourceUrl": "https://flagcdn.com/w320/sv.png",
+  "sourceTitle": "Flag of El Salvador",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Estonia": {
+  "file": "images/flags/ee.png",
+  "sourceUrl": "https://flagcdn.com/w320/ee.png",
+  "sourceTitle": "Flag of Estonia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Fiji": {
+  "file": "images/flags/fj.png",
+  "sourceUrl": "https://flagcdn.com/w320/fj.png",
+  "sourceTitle": "Flag of Fiji",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Georgia": {
+  "file": "images/flags/ge.png",
+  "sourceUrl": "https://flagcdn.com/w320/ge.png",
+  "sourceTitle": "Flag of Georgia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Honduras": {
+  "file": "images/flags/hn.png",
+  "sourceUrl": "https://flagcdn.com/w320/hn.png",
+  "sourceTitle": "Flag of Honduras",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Iceland": {
+  "file": "images/flags/is.png",
+  "sourceUrl": "https://flagcdn.com/w320/is.png",
+  "sourceTitle": "Flag of Iceland",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Jamaica": {
+  "file": "images/flags/jm.png",
+  "sourceUrl": "https://flagcdn.com/w320/jm.png",
+  "sourceTitle": "Flag of Jamaica",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Madagascar": {
+  "file": "images/flags/mg.png",
+  "sourceUrl": "https://flagcdn.com/w320/mg.png",
+  "sourceTitle": "Flag of Madagascar",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "New Zealand": {
+  "file": "images/flags/nz.png",
+  "sourceUrl": "https://flagcdn.com/w320/nz.png",
+  "sourceTitle": "Flag of New Zealand",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Papua New Guinea": {
+  "file": "images/flags/pg.png",
+  "sourceUrl": "https://flagcdn.com/w320/pg.png",
+  "sourceTitle": "Flag of Papua New Guinea",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Paraguay": {
+  "file": "images/flags/py.png",
+  "sourceUrl": "https://flagcdn.com/w320/py.png",
+  "sourceTitle": "Flag of Paraguay",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Peru": {
+  "file": "images/flags/pe.png",
+  "sourceUrl": "https://flagcdn.com/w320/pe.png",
+  "sourceTitle": "Flag of Peru",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "South Africa": {
+  "file": "images/flags/za.png",
+  "sourceUrl": "https://flagcdn.com/w320/za.png",
+  "sourceTitle": "Flag of South Africa",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Sri Lanka": {
+  "file": "images/flags/lk.png",
+  "sourceUrl": "https://flagcdn.com/w320/lk.png",
+  "sourceTitle": "Flag of Sri Lanka",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Sudan": {
+  "file": "images/flags/sd.png",
+  "sourceUrl": "https://flagcdn.com/w320/sd.png",
+  "sourceTitle": "Flag of Sudan",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Trinidad and Tobago": {
+  "file": "images/flags/tt.png",
+  "sourceUrl": "https://flagcdn.com/w320/tt.png",
+  "sourceTitle": "Flag of Trinidad and Tobago",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Tanzania, United Republic of": {
+  "file": "images/flags/tz.png",
+  "sourceUrl": "https://flagcdn.com/w320/tz.png",
+  "sourceTitle": "Flag of Tanzania, United Republic of",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Uruguay": {
+  "file": "images/flags/uy.png",
+  "sourceUrl": "https://flagcdn.com/w320/uy.png",
+  "sourceTitle": "Flag of Uruguay",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Zambia": {
+  "file": "images/flags/zm.png",
+  "sourceUrl": "https://flagcdn.com/w320/zm.png",
+  "sourceTitle": "Flag of Zambia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Armenia": {
+  "file": "images/flags/am.png",
+  "sourceUrl": "https://flagcdn.com/w320/am.png",
+  "sourceTitle": "Flag of Armenia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Belarus": {
+  "file": "images/flags/by.png",
+  "sourceUrl": "https://flagcdn.com/w320/by.png",
+  "sourceTitle": "Flag of Belarus",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Central African Republic": {
+  "file": "images/flags/cf.png",
+  "sourceUrl": "https://flagcdn.com/w320/cf.png",
+  "sourceTitle": "Flag of Central African Republic",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Ghana": {
+  "file": "images/flags/gh.png",
+  "sourceUrl": "https://flagcdn.com/w320/gh.png",
+  "sourceTitle": "Flag of Ghana",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Guyana": {
+  "file": "images/flags/gy.png",
+  "sourceUrl": "https://flagcdn.com/w320/gy.png",
+  "sourceTitle": "Flag of Guyana",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Latvia": {
+  "file": "images/flags/lv.png",
+  "sourceUrl": "https://flagcdn.com/w320/lv.png",
+  "sourceTitle": "Flag of Latvia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Mali": {
+  "file": "images/flags/ml.png",
+  "sourceUrl": "https://flagcdn.com/w320/ml.png",
+  "sourceTitle": "Flag of Mali",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Nauru": {
+  "file": "images/flags/nr.png",
+  "sourceUrl": "https://flagcdn.com/w320/nr.png",
+  "sourceTitle": "Flag of Nauru",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Nigeria": {
+  "file": "images/flags/ng.png",
+  "sourceUrl": "https://flagcdn.com/w320/ng.png",
+  "sourceTitle": "Flag of Nigeria",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Oman": {
+  "file": "images/flags/om.png",
+  "sourceUrl": "https://flagcdn.com/w320/om.png",
+  "sourceTitle": "Flag of Oman",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Sierra Leone": {
+  "file": "images/flags/sl.png",
+  "sourceUrl": "https://flagcdn.com/w320/sl.png",
+  "sourceTitle": "Flag of Sierra Leone",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Aruba": {
+  "file": "images/flags/aw.png",
+  "sourceUrl": "https://flagcdn.com/w320/aw.png",
+  "sourceTitle": "Flag of Aruba",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Barbados": {
+  "file": "images/flags/bb.png",
+  "sourceUrl": "https://flagcdn.com/w320/bb.png",
+  "sourceTitle": "Flag of Barbados",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Cura\u00e7ao": {
+  "file": "images/flags/cw.png",
+  "sourceUrl": "https://flagcdn.com/w320/cw.png",
+  "sourceTitle": "Flag of Cura\u00e7ao",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Suriname": {
+  "file": "images/flags/sr.png",
+  "sourceUrl": "https://flagcdn.com/w320/sr.png",
+  "sourceTitle": "Flag of Suriname",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "American Samoa": {
+  "file": "images/flags/as.png",
+  "sourceUrl": "https://flagcdn.com/w320/as.png",
+  "sourceTitle": "Flag of American Samoa",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Antigua and Barbuda": {
+  "file": "images/flags/ag.png",
+  "sourceUrl": "https://flagcdn.com/w320/ag.png",
+  "sourceTitle": "Flag of Antigua and Barbuda",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Azerbaijan": {
+  "file": "images/flags/az.png",
+  "sourceUrl": "https://flagcdn.com/w320/az.png",
+  "sourceTitle": "Flag of Azerbaijan",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Bahrain": {
+  "file": "images/flags/bh.png",
+  "sourceUrl": "https://flagcdn.com/w320/bh.png",
+  "sourceTitle": "Flag of Bahrain",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Bangladesh": {
+  "file": "images/flags/bd.png",
+  "sourceUrl": "https://flagcdn.com/w320/bd.png",
+  "sourceTitle": "Flag of Bangladesh",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Belize": {
+  "file": "images/flags/bz.png",
+  "sourceUrl": "https://flagcdn.com/w320/bz.png",
+  "sourceTitle": "Flag of Belize",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Bermuda": {
+  "file": "images/flags/bm.png",
+  "sourceUrl": "https://flagcdn.com/w320/bm.png",
+  "sourceTitle": "Flag of Bermuda",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Botswana": {
+  "file": "images/flags/bw.png",
+  "sourceUrl": "https://flagcdn.com/w320/bw.png",
+  "sourceTitle": "Flag of Botswana",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Cambodia": {
+  "file": "images/flags/kh.png",
+  "sourceUrl": "https://flagcdn.com/w320/kh.png",
+  "sourceTitle": "Flag of Cambodia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Korea, Democratic People's Republic of": {
+  "file": "images/flags/kp.png",
+  "sourceUrl": "https://flagcdn.com/w320/kp.png",
+  "sourceTitle": "Flag of Korea, Democratic People's Republic of",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Congo, Democratic Republic of the": {
+  "file": "images/flags/cd.png",
+  "sourceUrl": "https://flagcdn.com/w320/cd.png",
+  "sourceTitle": "Flag of Congo, Democratic Republic of the",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Djibouti": {
+  "file": "images/flags/dj.png",
+  "sourceUrl": "https://flagcdn.com/w320/dj.png",
+  "sourceTitle": "Flag of Djibouti",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Eritrea": {
+  "file": "images/flags/er.png",
+  "sourceUrl": "https://flagcdn.com/w320/er.png",
+  "sourceTitle": "Flag of Eritrea",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Guinea": {
+  "file": "images/flags/gn.png",
+  "sourceUrl": "https://flagcdn.com/w320/gn.png",
+  "sourceTitle": "Flag of Guinea",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Jordan": {
+  "file": "images/flags/jo.png",
+  "sourceUrl": "https://flagcdn.com/w320/jo.png",
+  "sourceTitle": "Flag of Jordan",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Lao People's Democratic Republic": {
+  "file": "images/flags/la.png",
+  "sourceUrl": "https://flagcdn.com/w320/la.png",
+  "sourceTitle": "Flag of Lao People's Democratic Republic",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Malta": {
+  "file": "images/flags/mt.png",
+  "sourceUrl": "https://flagcdn.com/w320/mt.png",
+  "sourceTitle": "Flag of Malta",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Marshall Islands": {
+  "file": "images/flags/mh.png",
+  "sourceUrl": "https://flagcdn.com/w320/mh.png",
+  "sourceTitle": "Flag of Marshall Islands",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Mauritius": {
+  "file": "images/flags/mu.png",
+  "sourceUrl": "https://flagcdn.com/w320/mu.png",
+  "sourceTitle": "Flag of Mauritius",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Mongolia": {
+  "file": "images/flags/mn.png",
+  "sourceUrl": "https://flagcdn.com/w320/mn.png",
+  "sourceTitle": "Flag of Mongolia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Mozambique": {
+  "file": "images/flags/mz.png",
+  "sourceUrl": "https://flagcdn.com/w320/mz.png",
+  "sourceTitle": "Flag of Mozambique",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Myanmar": {
+  "file": "images/flags/mm.png",
+  "sourceUrl": "https://flagcdn.com/w320/mm.png",
+  "sourceTitle": "Flag of Myanmar",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Namibia": {
+  "file": "images/flags/na.png",
+  "sourceUrl": "https://flagcdn.com/w320/na.png",
+  "sourceTitle": "Flag of Namibia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Nepal": {
+  "file": "images/flags/np.png",
+  "sourceUrl": "https://flagcdn.com/w320/np.png",
+  "sourceTitle": "Flag of Nepal",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "New Caledonia": {
+  "file": "images/flags/nc.png",
+  "sourceUrl": "https://flagcdn.com/w320/nc.png",
+  "sourceTitle": "Flag of New Caledonia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Niger": {
+  "file": "images/flags/ne.png",
+  "sourceUrl": "https://flagcdn.com/w320/ne.png",
+  "sourceTitle": "Flag of Niger",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Qatar": {
+  "file": "images/flags/qa.png",
+  "sourceUrl": "https://flagcdn.com/w320/qa.png",
+  "sourceTitle": "Flag of Qatar",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Rwanda": {
+  "file": "images/flags/rw.png",
+  "sourceUrl": "https://flagcdn.com/w320/rw.png",
+  "sourceTitle": "Flag of Rwanda",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Saint Lucia": {
+  "file": "images/flags/lc.png",
+  "sourceUrl": "https://flagcdn.com/w320/lc.png",
+  "sourceTitle": "Flag of Saint Lucia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Samoa": {
+  "file": "images/flags/ws.png",
+  "sourceUrl": "https://flagcdn.com/w320/ws.png",
+  "sourceTitle": "Flag of Samoa",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Solomon Islands": {
+  "file": "images/flags/sb.png",
+  "sourceUrl": "https://flagcdn.com/w320/sb.png",
+  "sourceTitle": "Flag of Solomon Islands",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Eswatini": {
+  "file": "images/flags/sz.png",
+  "sourceUrl": "https://flagcdn.com/w320/sz.png",
+  "sourceTitle": "Flag of Eswatini",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Timor-Leste": {
+  "file": "images/flags/tl.png",
+  "sourceUrl": "https://flagcdn.com/w320/tl.png",
+  "sourceTitle": "Flag of Timor-Leste",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Tonga": {
+  "file": "images/flags/to.png",
+  "sourceUrl": "https://flagcdn.com/w320/to.png",
+  "sourceTitle": "Flag of Tonga",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Vanuatu": {
+  "file": "images/flags/vu.png",
+  "sourceUrl": "https://flagcdn.com/w320/vu.png",
+  "sourceTitle": "Flag of Vanuatu",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Yemen": {
+  "file": "images/flags/ye.png",
+  "sourceUrl": "https://flagcdn.com/w320/ye.png",
+  "sourceTitle": "Flag of Yemen",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Zimbabwe": {
+  "file": "images/flags/zw.png",
+  "sourceUrl": "https://flagcdn.com/w320/zw.png",
+  "sourceTitle": "Flag of Zimbabwe",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Algeria": {
+  "file": "images/flags/dz.png",
+  "sourceUrl": "https://flagcdn.com/w320/dz.png",
+  "sourceTitle": "Flag of Algeria",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Burkina Faso": {
+  "file": "images/flags/bf.png",
+  "sourceUrl": "https://flagcdn.com/w320/bf.png",
+  "sourceTitle": "Flag of Burkina Faso",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Grenada": {
+  "file": "images/flags/gd.png",
+  "sourceUrl": "https://flagcdn.com/w320/gd.png",
+  "sourceTitle": "Flag of Grenada",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Kuwait": {
+  "file": "images/flags/kw.png",
+  "sourceUrl": "https://flagcdn.com/w320/kw.png",
+  "sourceTitle": "Flag of Kuwait",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Togo": {
+  "file": "images/flags/tg.png",
+  "sourceUrl": "https://flagcdn.com/w320/tg.png",
+  "sourceTitle": "Flag of Togo",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Falkland Islands (Malvinas)": {
+  "file": "images/flags/fk.png",
+  "sourceUrl": "https://flagcdn.com/w320/fk.png",
+  "sourceTitle": "Flag of Falkland Islands (Malvinas)",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Guam": {
+  "file": "images/flags/gu.png",
+  "sourceUrl": "https://flagcdn.com/w320/gu.png",
+  "sourceTitle": "Flag of Guam",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Somalia": {
+  "file": "images/flags/so.png",
+  "sourceUrl": "https://flagcdn.com/w320/so.png",
+  "sourceTitle": "Flag of Somalia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Saint Kitts and Nevis": {
+  "file": "images/flags/kn.png",
+  "sourceUrl": "https://flagcdn.com/w320/kn.png",
+  "sourceTitle": "Flag of Saint Kitts and Nevis",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Saint Vincent and the Grenadines": {
+  "file": "images/flags/vc.png",
+  "sourceUrl": "https://flagcdn.com/w320/vc.png",
+  "sourceTitle": "Flag of Saint Vincent and the Grenadines",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Angola": {
+  "file": "images/flags/ao.png",
+  "sourceUrl": "https://flagcdn.com/w320/ao.png",
+  "sourceTitle": "Flag of Angola",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Benin": {
+  "file": "images/flags/bj.png",
+  "sourceUrl": "https://flagcdn.com/w320/bj.png",
+  "sourceTitle": "Flag of Benin",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Burundi": {
+  "file": "images/flags/bi.png",
+  "sourceUrl": "https://flagcdn.com/w320/bi.png",
+  "sourceTitle": "Flag of Burundi",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "French Polynesia": {
+  "file": "images/flags/pf.png",
+  "sourceUrl": "https://flagcdn.com/w320/pf.png",
+  "sourceTitle": "Flag of French Polynesia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Gabon": {
+  "file": "images/flags/ga.png",
+  "sourceUrl": "https://flagcdn.com/w320/ga.png",
+  "sourceTitle": "Flag of Gabon",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Haiti": {
+  "file": "images/flags/ht.png",
+  "sourceUrl": "https://flagcdn.com/w320/ht.png",
+  "sourceTitle": "Flag of Haiti",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Liberia": {
+  "file": "images/flags/lr.png",
+  "sourceUrl": "https://flagcdn.com/w320/lr.png",
+  "sourceTitle": "Flag of Liberia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Palestine, State of": {
+  "file": "images/flags/ps.png",
+  "sourceUrl": "https://flagcdn.com/w320/ps.png",
+  "sourceTitle": "Flag of Palestine, State of",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Senegal": {
+  "file": "images/flags/sn.png",
+  "sourceUrl": "https://flagcdn.com/w320/sn.png",
+  "sourceTitle": "Flag of Senegal",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Virgin Islands (British)": {
+  "file": "images/flags/vg.png",
+  "sourceUrl": "https://flagcdn.com/w320/vg.png",
+  "sourceTitle": "Flag of Virgin Islands (British)",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Seychelles": {
+  "file": "images/flags/sc.png",
+  "sourceUrl": "https://flagcdn.com/w320/sc.png",
+  "sourceTitle": "Flag of Seychelles",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Bhutan": {
+  "file": "images/flags/bt.png",
+  "sourceUrl": "https://flagcdn.com/w320/bt.png",
+  "sourceTitle": "Flag of Bhutan",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Cook Islands": {
+  "file": "images/flags/ck.png",
+  "sourceUrl": "https://flagcdn.com/w320/ck.png",
+  "sourceTitle": "Flag of Cook Islands",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Lesotho": {
+  "file": "images/flags/ls.png",
+  "sourceUrl": "https://flagcdn.com/w320/ls.png",
+  "sourceTitle": "Flag of Lesotho",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Gambia": {
+  "file": "images/flags/gm.png",
+  "sourceUrl": "https://flagcdn.com/w320/gm.png",
+  "sourceTitle": "Flag of Gambia",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Guinea-Bissau": {
+  "file": "images/flags/gw.png",
+  "sourceUrl": "https://flagcdn.com/w320/gw.png",
+  "sourceTitle": "Flag of Guinea-Bissau",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Niue": {
+  "file": "images/flags/nu.png",
+  "sourceUrl": "https://flagcdn.com/w320/nu.png",
+  "sourceTitle": "Flag of Niue",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Chad": {
+  "file": "images/flags/td.png",
+  "sourceUrl": "https://flagcdn.com/w320/td.png",
+  "sourceTitle": "Flag of Chad",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Equatorial Guinea": {
+  "file": "images/flags/gq.png",
+  "sourceUrl": "https://flagcdn.com/w320/gq.png",
+  "sourceTitle": "Flag of Equatorial Guinea",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Faroe Islands": {
+  "file": "images/flags/fo.png",
+  "sourceUrl": "https://flagcdn.com/w320/fo.png",
+  "sourceTitle": "Flag of Faroe Islands",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Montserrat": {
+  "file": "images/flags/ms.png",
+  "sourceUrl": "https://flagcdn.com/w320/ms.png",
+  "sourceTitle": "Flag of Montserrat",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Saint Pierre and Miquelon": {
+  "file": "images/flags/pm.png",
+  "sourceUrl": "https://flagcdn.com/w320/pm.png",
+  "sourceTitle": "Flag of Saint Pierre and Miquelon",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Turks and Caicos Islands": {
+  "file": "images/flags/tc.png",
+  "sourceUrl": "https://flagcdn.com/w320/tc.png",
+  "sourceTitle": "Flag of Turks and Caicos Islands",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Brunei Darussalam": {
+  "file": "images/flags/bn.png",
+  "sourceUrl": "https://flagcdn.com/w320/bn.png",
+  "sourceTitle": "Flag of Brunei Darussalam",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Greenland": {
+  "file": "images/flags/gl.png",
+  "sourceUrl": "https://flagcdn.com/w320/gl.png",
+  "sourceTitle": "Flag of Greenland",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Libya": {
+  "file": "images/flags/ly.png",
+  "sourceUrl": "https://flagcdn.com/w320/ly.png",
+  "sourceTitle": "Flag of Libya",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Micronesia, Federated States of": {
+  "file": "images/flags/fm.png",
+  "sourceUrl": "https://flagcdn.com/w320/fm.png",
+  "sourceTitle": "Flag of Micronesia, Federated States of",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Palau": {
+  "file": "images/flags/pw.png",
+  "sourceUrl": "https://flagcdn.com/w320/pw.png",
+  "sourceTitle": "Flag of Palau",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Kiribati": {
+  "file": "images/flags/ki.png",
+  "sourceUrl": "https://flagcdn.com/w320/ki.png",
+  "sourceTitle": "Flag of Kiribati",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Saint Helena, Ascension and Tristan da Cunha": {
+  "file": "images/flags/sh.png",
+  "sourceUrl": "https://flagcdn.com/w320/sh.png",
+  "sourceTitle": "Flag of Saint Helena, Ascension and Tristan da Cunha",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Tuvalu": {
+  "file": "images/flags/tv.png",
+  "sourceUrl": "https://flagcdn.com/w320/tv.png",
+  "sourceTitle": "Flag of Tuvalu",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Cayman Islands": {
+  "file": "images/flags/ky.png",
+  "sourceUrl": "https://flagcdn.com/w320/ky.png",
+  "sourceTitle": "Flag of Cayman Islands",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Mayotte": {
+  "file": "images/flags/yt.png",
+  "sourceUrl": "https://flagcdn.com/w320/yt.png",
+  "sourceTitle": "Flag of Mayotte",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Maldives": {
+  "file": "images/flags/mv.png",
+  "sourceUrl": "https://flagcdn.com/w320/mv.png",
+  "sourceTitle": "Flag of Maldives",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Mauritania": {
+  "file": "images/flags/mr.png",
+  "sourceUrl": "https://flagcdn.com/w320/mr.png",
+  "sourceTitle": "Flag of Mauritania",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Andorra": {
+  "file": "images/flags/ad.png",
+  "sourceUrl": "https://flagcdn.com/w320/ad.png",
+  "sourceTitle": "Flag of Andorra",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Hong Kong": {
+  "file": "images/flags/hk.png",
+  "sourceUrl": "https://flagcdn.com/w320/hk.png",
+  "sourceTitle": "Flag of Hong Kong",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Taiwan, Province of China": {
+  "file": "images/flags/tw.png",
+  "sourceUrl": "https://flagcdn.com/w320/tw.png",
+  "sourceTitle": "Flag of Taiwan, Province of China",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ },
+ "Macao": {
+  "file": "images/flags/mo.png",
+  "sourceUrl": "https://flagcdn.com/w320/mo.png",
+  "sourceTitle": "Flag of Macao",
+  "license": "Public domain (national flag)",
+  "artist": ""
+ }
+}
